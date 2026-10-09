@@ -1,7 +1,10 @@
 {
-  "checkpoint_commit_created": false,
-  "reason": "Git author identity unknown; user.name and user.email must be supplied",
-  "head_verification": "BLOCKED_NO_HEAD",
+  "checkpoint_commit_created": true,
+  "checkpoint_commit": "9ec210201123acac331738ab32607a74c456750d",
+  "author_name": "naoufelbvb2-arch",
+  "author_email": "naoufelbvb2@gmail.com",
+  "author_configuration_scope": "repository-local",
+  "head_verification": "PASS_195_OF_195",
   "staged_original_hash_verification": "PASS_195_OF_195",
   "branch_pushed": false,
   "main_merged": false,
