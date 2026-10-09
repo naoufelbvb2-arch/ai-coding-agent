@@ -1,0 +1,26 @@
+{
+  "phase": "GAIA-C01 Phase 9",
+  "layer_files": 8,
+  "source_baseline_contracts": 27,
+  "distinct_original_declarations_checked": 61,
+  "cross_interface_paths": 12,
+  "source_files_preserved_exact_bytes": 18,
+  "all_original_sources_unchanged": true,
+  "original_declaration_anchor_and_token_checks": "PASS",
+  "owner_layer_published_excerpt_presence": "PASS",
+  "source_digest_roundtrip_to_published_excerpt": "PASS",
+  "structural_interface_path_coverage": "PASS",
+  "effective_field_mapping_conformance": "NOT_PROVEN",
+  "distributed_crash_atomicity_conformance": "NOT_PROVEN",
+  "runtime_tests_performed": 0,
+  "canonical_effective_contracts_frozen": false,
+  "coding_authorized": false,
+  "blockers": [
+    "CapabilityResult transport collision",
+    "MemoryRetrievalResult transport collision",
+    "Commitment crosswalk",
+    "TriggerCondition aggregate/predicate compatibility",
+    "ResumptionCapsule durable payload proof",
+    "remaining field-level preservation proofs"
+  ]
+}

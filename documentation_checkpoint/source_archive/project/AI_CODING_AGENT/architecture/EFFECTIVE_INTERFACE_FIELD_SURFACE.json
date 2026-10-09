@@ -1,0 +1,4582 @@
+{
+  "CapabilityInvocation": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "8fec5e274ffc9f94b0bbde0178edb4b6fdcfe0241105dd079e62d1f954b26ccd",
+    "surface_fields": [
+      {
+        "source_spelling": "invocation_id",
+        "base_name": "invocation_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "capability_kind",
+        "base_name": "capability_kind",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "goal_ref",
+        "base_name": "goal_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "cognitive_context_ref",
+        "base_name": "cognitive_context_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependency_set_ref",
+        "base_name": "dependency_set_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "provider_policy_ref?",
+        "base_name": "provider_policy_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "resource_budget_ref",
+        "base_name": "resource_budget_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "requested_outputs[]",
+        "base_name": "requested_outputs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "CapabilityActivationContract": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "026bb25fd353ffcabaa2ba4b1a5e101238efb218e9af666701f6045a6ccd9282",
+    "surface_fields": [
+      {
+        "source_spelling": "capability_ref",
+        "base_name": "capability_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "intended_operational_scope",
+        "base_name": "intended_operational_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "required_component_refs[]",
+        "base_name": "required_component_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "required_invariant_proofs[]",
+        "base_name": "required_invariant_proofs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "required_conformance_tests[]",
+        "base_name": "required_conformance_tests",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "prohibited_effects_until_activation[]",
+        "base_name": "prohibited_effects_until_activation",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "activation_policy_ref",
+        "base_name": "activation_policy_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "activation_decision",
+        "base_name": "activation_decision",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "ExecutiveTransitionIntegrationBinding": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "74d692bfc0f33d9890f8b7bc9fbe3e4dae3b7563bd8d637370e7288527aa5c2e",
+    "surface_fields": [
+      {
+        "source_spelling": "executive_decision_ref",
+        "base_name": "executive_decision_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "executive_epoch",
+        "base_name": "executive_epoch",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "project_ref",
+        "base_name": "project_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "goal_ref",
+        "base_name": "goal_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "slice_ref?",
+        "base_name": "slice_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "source_cognitive_state",
+        "base_name": "source_cognitive_state",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "selected_operation_ref",
+        "base_name": "selected_operation_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "expected_canonical_versions[]",
+        "base_name": "expected_canonical_versions",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "policy_frontier_ref",
+        "base_name": "policy_frontier_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependency_frontier_ref",
+        "base_name": "dependency_frontier_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "target_transition_contract_ref",
+        "base_name": "target_transition_contract_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "control_commit_ref?",
+        "base_name": "control_commit_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "MemoryRetrievalRequest": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "52a9b95579ab0c8cb214cff7e5cd1fef339e20d509c4a10944811e445f887d36",
+    "surface_fields": [
+      {
+        "source_spelling": "project_ref",
+        "base_name": "project_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "query_context_ref",
+        "base_name": "query_context_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "requested_memory_scopes[]",
+        "base_name": "requested_memory_scopes",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "applicability_context_ref",
+        "base_name": "applicability_context_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "access_policy_ref",
+        "base_name": "access_policy_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "result_budget",
+        "base_name": "result_budget",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "MemoryRetrievalResult": {
+    "effective_schema_selection": "CURATED_SOURCE_DECISION",
+    "source_decl_sha256": "e4ae715a27b230289f343447d8b7723501f62538065a5e61fa5dc5009c17c67d",
+    "surface_fields": [
+      {
+        "source_spelling": "retrieval_id",
+        "base_name": "retrieval_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "query_ref",
+        "base_name": "query_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "candidate_refs[]",
+        "base_name": "candidate_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "omitted_or_filtered_scope[]",
+        "base_name": "omitted_or_filtered_scope",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "ranking_policy_ref",
+        "base_name": "ranking_policy_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "retrieval_coverage",
+        "base_name": "retrieval_coverage",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "freshness_summary",
+        "base_name": "freshness_summary",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "created_at",
+        "base_name": "created_at",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "MemoryRetrievalCoverage": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "141502db00751fe46e006bdf466aa1a1bfda4d18bec292c7a78aada5c4ac500f",
+    "surface_fields": [
+      {
+        "source_spelling": "query_ref",
+        "base_name": "query_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "searchable_universe_ref",
+        "base_name": "searchable_universe_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "index_snapshot_ref",
+        "base_name": "index_snapshot_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "searched_scope",
+        "base_name": "searched_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "retrieval_budget",
+        "base_name": "retrieval_budget",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "completeness",
+        "base_name": "completeness",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "excluded_scope_refs[]",
+        "base_name": "excluded_scope_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "MemoryUseAssessment": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "8f8244a812cfab524dd5c263128acd9995026dfc1c8f9db78537d2e6698e0fb6",
+    "surface_fields": [
+      {
+        "source_spelling": "memory_ref",
+        "base_name": "memory_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "current_goal_ref",
+        "base_name": "current_goal_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "source_scope_ref",
+        "base_name": "source_scope_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "target_scope_ref",
+        "base_name": "target_scope_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "applicability_assessment",
+        "base_name": "applicability_assessment",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependency_evaluation_ref",
+        "base_name": "dependency_evaluation_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "current_evidence_refs[]",
+        "base_name": "current_evidence_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "required_revalidation_refs[]",
+        "base_name": "required_revalidation_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "permitted_use",
+        "base_name": "permitted_use",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "limitations[]",
+        "base_name": "limitations",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "Commitment": {
+    "effective_schema_selection": "CURATED_RDMS02_C01_SUPERSESSION_APPLIED",
+    "source_decl_sha256": "da8ac753225c695d17105d549b2d3eca57f648d2343a84a0a8daefc58e46fce9",
+    "surface_fields": [
+      {
+        "source_spelling": "commitment_id",
+        "base_name": "commitment_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "statement",
+        "base_name": "statement",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "why_temporary",
+        "base_name": "why_temporary",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "scope",
+        "base_name": "scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "ScopeSpec"
+      },
+      {
+        "source_spelling": "owner_ref?",
+        "base_name": "owner_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "linked_entity_refs[]",
+        "base_name": "linked_entity_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "created_at",
+        "base_name": "created_at",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "reactivation_condition_ref",
+        "base_name": "reactivation_condition_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "status",
+        "base_name": "status",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "resolution_ref?",
+        "base_name": "resolution_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "TriggerCondition": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "c3092a02ce0b441049cfe58978e5eaa1bbee23f7b4fd879240b58e666822bdbd",
+    "surface_fields": [
+      {
+        "source_spelling": "condition_id",
+        "base_name": "condition_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "kind",
+        "base_name": "kind",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "predicate_spec",
+        "base_name": "predicate_spec",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependency_set_ref?",
+        "base_name": "dependency_set_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "required_evidence_policy_ref?",
+        "base_name": "required_evidence_policy_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "TriggerDerivedWorkCommitment": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "d9b47cadcb4d7322b954a69c91d8acb6c3e871b54bd31510b1e216f209714373",
+    "surface_fields": [
+      {
+        "source_spelling": "trigger_ref",
+        "base_name": "trigger_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "trigger_generation",
+        "base_name": "trigger_generation",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "source_event_identity",
+        "base_name": "source_event_identity",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "canonical_reaction_identity",
+        "base_name": "canonical_reaction_identity",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "reaction_commit_ref",
+        "base_name": "reaction_commit_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "derived_work_identity",
+        "base_name": "derived_work_identity",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "required_continuation_scope",
+        "base_name": "required_continuation_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "durable_continuation_ref",
+        "base_name": "durable_continuation_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "existing_action_refs[]",
+        "base_name": "existing_action_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "required_authorization_path",
+        "base_name": "required_authorization_path",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "recovery_deduplication_basis",
+        "base_name": "recovery_deduplication_basis",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "current_continuation_assessment",
+        "base_name": "current_continuation_assessment",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "TriggerDefinition": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "349aaa77a493ffa1b2250985d02f46558844cb2d58143502b52fe5b43e532723",
+    "surface_fields": [
+      {
+        "source_spelling": "trigger_id",
+        "base_name": "trigger_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "project_id",
+        "base_name": "project_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "generation",
+        "base_name": "generation",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "condition_ref",
+        "base_name": "condition_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "fire_policy",
+        "base_name": "fire_policy",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "detection_policy",
+        "base_name": "detection_policy",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "source_refs[]",
+        "base_name": "source_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "reaction_spec_ref",
+        "base_name": "reaction_spec_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "owner_ref",
+        "base_name": "owner_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "linked_object_ref",
+        "base_name": "linked_object_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "created_commit_seq",
+        "base_name": "created_commit_seq",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "entity_version",
+        "base_name": "entity_version",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "TriggerReaction": {
+    "effective_schema_selection": "CURATED_SOURCE_DECISION",
+    "source_decl_sha256": "89679654e9b97a64373c679bb1c0a96e71021f9d8d3df7dd19cfa3fa682f0fd3",
+    "surface_fields": [
+      {
+        "source_spelling": "reaction_id",
+        "base_name": "reaction_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "fire_ref",
+        "base_name": "fire_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "target_entity_ref",
+        "base_name": "target_entity_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "expected_target_version",
+        "base_name": "expected_target_version",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "expected_lifecycle",
+        "base_name": "expected_lifecycle",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "target_goal_lineage_ref?",
+        "base_name": "target_goal_lineage_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "frozen_reaction_spec_ref",
+        "base_name": "frozen_reaction_spec_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "status",
+        "base_name": "status",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "TriggerFire": {
+    "effective_schema_selection": "CURATED_SOURCE_DECISION",
+    "source_decl_sha256": "5bdd4a1ad86972d86c9fd8cb77adaec3e60236a88d76f37540b48f091096f69c",
+    "surface_fields": [
+      {
+        "source_spelling": "fire_id",
+        "base_name": "fire_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "trigger_definition_snapshot_ref",
+        "base_name": "trigger_definition_snapshot_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "qualified_occurrence_ref",
+        "base_name": "qualified_occurrence_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "evidence_basis_refs[]",
+        "base_name": "evidence_basis_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "source_frontier_ref",
+        "base_name": "source_frontier_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "fire_identity_key",
+        "base_name": "fire_identity_key",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "created_commit_seq",
+        "base_name": "created_commit_seq",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "TriggerActionCausalityBinding": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "ca5026690cd7b722270eced9f7105032da6a7e6f95e0173c7d2dcad84052bd4c",
+    "surface_fields": [
+      {
+        "source_spelling": "trigger_ref",
+        "base_name": "trigger_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "trigger_generation",
+        "base_name": "trigger_generation",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "source_event_identity",
+        "base_name": "source_event_identity",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "canonical_reaction_identity",
+        "base_name": "canonical_reaction_identity",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "reaction_commit_ref",
+        "base_name": "reaction_commit_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "derived_action_proposal_refs[]",
+        "base_name": "derived_action_proposal_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "derived_action_identity_refs[]",
+        "base_name": "derived_action_identity_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "action_lifecycle_refs[]",
+        "base_name": "action_lifecycle_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "causal_binding_integrity",
+        "base_name": "causal_binding_integrity",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "replay_semantics",
+        "base_name": "replay_semantics",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "deduplication_scope",
+        "base_name": "deduplication_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "DispatchAdmissionCutover": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "6c98bbb843273f8f952861c7c49cd7c8967d3780a4448fd801c529765879ca95",
+    "surface_fields": [
+      {
+        "source_spelling": "action_ref",
+        "base_name": "action_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "executive_epoch",
+        "base_name": "executive_epoch",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "originating_authorization_ref",
+        "base_name": "originating_authorization_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dispatch_intent_commit_ref",
+        "base_name": "dispatch_intent_commit_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependency_frontier_ref",
+        "base_name": "dependency_frontier_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "current_dependency_assessment_ref",
+        "base_name": "current_dependency_assessment_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "current_policy_frontier_ref",
+        "base_name": "current_policy_frontier_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "current_execution_generation",
+        "base_name": "current_execution_generation",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "admission_ordering_ref",
+        "base_name": "admission_ordering_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "applicable_invalidation_refs[]",
+        "base_name": "applicable_invalidation_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "effective_execution_binding_ref",
+        "base_name": "effective_execution_binding_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "cutover_disposition",
+        "base_name": "cutover_disposition",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "possible_dispatch_assessment",
+        "base_name": "possible_dispatch_assessment",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "ResumptionCapsule": {
+    "effective_schema_selection": "CURATED_SOURCE_DECISION",
+    "source_decl_sha256": "1c38a08ce60f890ed64f69cfd6cb8d2928d75d5b6637be31299a5b209e420409",
+    "surface_fields": [
+      {
+        "source_spelling": "capsule_id",
+        "base_name": "capsule_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "task_or_goal_ref",
+        "base_name": "task_or_goal_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "suspended_from_state",
+        "base_name": "suspended_from_state",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "canonical_snapshot_ref",
+        "base_name": "canonical_snapshot_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "relevant_entity_refs[]",
+        "base_name": "relevant_entity_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependency_set_ref",
+        "base_name": "dependency_set_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "unresolved_action_refs[]",
+        "base_name": "unresolved_action_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "next_action_proposal_ref?",
+        "base_name": "next_action_proposal_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "durable_payload_artifact_ref",
+        "base_name": "durable_payload_artifact_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "content_integrity_ref",
+        "base_name": "content_integrity_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "created_commit_seq",
+        "base_name": "created_commit_seq",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "RecoverySuspensionCommitment": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "3b26f4b204905173a8e5b908d644ebc07499fcaba2a2a9b9c7761cfea8b030e8",
+    "surface_fields": [
+      {
+        "source_spelling": "commitment_id",
+        "base_name": "commitment_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "recovery_case_ref",
+        "base_name": "recovery_case_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "unresolved_obligation_refs[]",
+        "base_name": "unresolved_obligation_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "blocked_goal_refs[]",
+        "base_name": "blocked_goal_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependent_action_refs[]",
+        "base_name": "dependent_action_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "suspension_reason",
+        "base_name": "suspension_reason",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "required_reactivation_conditions[]",
+        "base_name": "required_reactivation_conditions",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "durable_trigger_refs[]",
+        "base_name": "durable_trigger_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "responsible_authority_ref",
+        "base_name": "responsible_authority_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "escalation_conditions[]",
+        "base_name": "escalation_conditions",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "suspension_commit_ref",
+        "base_name": "suspension_commit_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "BootstrapHandoffProof": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "01cc1a26ba1a3cc33acd111480bd8dba1b4eecc380f0e4ef4f4f07ac40d31b8c",
+    "surface_fields": [
+      {
+        "source_spelling": "bootstrap_case_ref",
+        "base_name": "bootstrap_case_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "recovery_principal_ref",
+        "base_name": "recovery_principal_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "verified_authority_ref",
+        "base_name": "verified_authority_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "authorized_bootstrap_scope",
+        "base_name": "authorized_bootstrap_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "initial_resource_frontier",
+        "base_name": "initial_resource_frontier",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "performed_operations[]",
+        "base_name": "performed_operations",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "modified_resource_refs[]",
+        "base_name": "modified_resource_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "created_resource_refs[]",
+        "base_name": "created_resource_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "replaced_resource_refs[]",
+        "base_name": "replaced_resource_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "unknown_change_scope[]",
+        "base_name": "unknown_change_scope",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "restoration_evidence_refs[]",
+        "base_name": "restoration_evidence_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "final_resource_frontier",
+        "base_name": "final_resource_frontier",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "audit_completeness",
+        "base_name": "audit_completeness",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "canonical_handoff_status",
+        "base_name": "canonical_handoff_status",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "RecoveryAdmissionBinding": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "6999b109f9532e1ccce580354e9c6bb30c52921f487e04769ee4229fec5f0f6b",
+    "surface_fields": [
+      {
+        "source_spelling": "admission_id",
+        "base_name": "admission_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "recovery_case_ref",
+        "base_name": "recovery_case_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "admitted_project_scope",
+        "base_name": "admitted_project_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "admitted_operation_classes[]",
+        "base_name": "admitted_operation_classes",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "current_executive_epoch",
+        "base_name": "current_executive_epoch",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "canonical_state_frontier",
+        "base_name": "canonical_state_frontier",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "policy_frontier",
+        "base_name": "policy_frontier",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependency_frontier",
+        "base_name": "dependency_frontier",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "security_frontier",
+        "base_name": "security_frontier",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "suppression_frontier",
+        "base_name": "suppression_frontier",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "unresolved_action_constraints[]",
+        "base_name": "unresolved_action_constraints",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "admission_generation",
+        "base_name": "admission_generation",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "invalidation_conditions[]",
+        "base_name": "invalidation_conditions",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "admission_integrity_ref",
+        "base_name": "admission_integrity_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "ActionProposal": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "1d1d2dfa1eaacd278ba44f59a1e7c5a2807b8f4e22cd867864b3688ac7587273",
+    "surface_fields": [
+      {
+        "source_spelling": "action_proposal_id",
+        "base_name": "action_proposal_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "project_id",
+        "base_name": "project_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "requested_by_ref",
+        "base_name": "requested_by_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "goal_id",
+        "base_name": "goal_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "slice_id",
+        "base_name": "slice_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "action_kind",
+        "base_name": "action_kind",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "requested_action_class",
+        "base_name": "requested_action_class",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "intent",
+        "base_name": "intent",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "target_scope[]",
+        "base_name": "target_scope",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "expected_effects[]",
+        "base_name": "expected_effects",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "preconditions[]",
+        "base_name": "preconditions",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "base_repo_ref?",
+        "base_name": "base_repo_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "base_world_ref?",
+        "base_name": "base_world_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependency_set_ref?",
+        "base_name": "dependency_set_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "risk_profile_ref?",
+        "base_name": "risk_profile_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "reversibility",
+        "base_name": "reversibility",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "compensation_plan_ref?",
+        "base_name": "compensation_plan_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "effect_semantics_ref",
+        "base_name": "effect_semantics_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "execution_spec_ref",
+        "base_name": "execution_spec_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "mode",
+        "base_name": "mode",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "ActionRecord": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "b04404a6eafcf8aec73c83958aa5553aca3762a62a892c1cc8e857d5f0e3f386",
+    "surface_fields": [
+      {
+        "source_spelling": "action_id",
+        "base_name": "action_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "proposal_ref",
+        "base_name": "proposal_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "authorization_ref",
+        "base_name": "authorization_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "action_class",
+        "base_name": "action_class",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "lifecycle",
+        "base_name": "lifecycle",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "world_ref_before?",
+        "base_name": "world_ref_before",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "repo_ref_before?",
+        "base_name": "repo_ref_before",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "effect_semantics_ref",
+        "base_name": "effect_semantics_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "latest_attempt_ref?",
+        "base_name": "latest_attempt_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "world_ref_after?",
+        "base_name": "world_ref_after",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "repo_ref_after?",
+        "base_name": "repo_ref_after",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "effect_verification_refs[]",
+        "base_name": "effect_verification_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "compensation_action_ref?",
+        "base_name": "compensation_action_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "created_commit_seq",
+        "base_name": "created_commit_seq",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "updated_commit_seq",
+        "base_name": "updated_commit_seq",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "SealedExecutionIntent": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "8bf749d80ed5502c3a670b64853ea11cd4fb0635541eb7efd087468202bde01a",
+    "surface_fields": [
+      {
+        "source_spelling": "action_ref",
+        "base_name": "action_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "authorized_tool_identity",
+        "base_name": "authorized_tool_identity",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "authorized_operation_kind",
+        "base_name": "authorized_operation_kind",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "effective_argument_ref",
+        "base_name": "effective_argument_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "effective_argument_integrity_ref",
+        "base_name": "effective_argument_integrity_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "authorized_target_identity",
+        "base_name": "authorized_target_identity",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "authorized_resource_scope",
+        "base_name": "authorized_resource_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "authorized_effect_semantics_ref",
+        "base_name": "authorized_effect_semantics_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "execution_boundary_ref",
+        "base_name": "execution_boundary_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "executive_epoch",
+        "base_name": "executive_epoch",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "authorization_generation",
+        "base_name": "authorization_generation",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "required_pre_dispatch_conditions[]",
+        "base_name": "required_pre_dispatch_conditions",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "authorization_receipt_ref",
+        "base_name": "authorization_receipt_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "EffectiveExecutionBinding": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "d5c98f9d9e69edf753fbdda12922a0df68c67cc556e02990bb963f0a93601da1",
+    "surface_fields": [
+      {
+        "source_spelling": "action_ref",
+        "base_name": "action_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "sealed_execution_intent_ref",
+        "base_name": "sealed_execution_intent_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "authorized_operation_kind",
+        "base_name": "authorized_operation_kind",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "adapter_identity",
+        "base_name": "adapter_identity",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "adapter_integrity_ref",
+        "base_name": "adapter_integrity_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "effective_operation_ref",
+        "base_name": "effective_operation_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "effective_argument_integrity_ref",
+        "base_name": "effective_argument_integrity_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "resolved_target_resource_refs[]",
+        "base_name": "resolved_target_resource_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "execution_environment_ref",
+        "base_name": "execution_environment_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "effective_execution_principal_ref",
+        "base_name": "effective_execution_principal_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "authorized_effect_scope",
+        "base_name": "authorized_effect_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "final_validation_ref",
+        "base_name": "final_validation_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dispatch_eligibility",
+        "base_name": "dispatch_eligibility",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "ActionDeliveryContract": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "d9771caf5be03c5c6995858af38e0539561a2f4975711c59d1e28db84713003f",
+    "surface_fields": [
+      {
+        "source_spelling": "action_ref",
+        "base_name": "action_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "delivery_identity",
+        "base_name": "delivery_identity",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "execution_attempt_identity",
+        "base_name": "execution_attempt_identity",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dispatch_intent_ref",
+        "base_name": "dispatch_intent_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "sealed_execution_intent_ref",
+        "base_name": "sealed_execution_intent_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "receiving_worker_identity",
+        "base_name": "receiving_worker_identity",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "receiving_worker_generation",
+        "base_name": "receiving_worker_generation",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "retry_policy_ref",
+        "base_name": "retry_policy_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "delivery_deduplication_scope",
+        "base_name": "delivery_deduplication_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "acknowledgement_semantics",
+        "base_name": "acknowledgement_semantics",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "possible_external_effect_status",
+        "base_name": "possible_external_effect_status",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "required_reconciliation_ref?",
+        "base_name": "required_reconciliation_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "RecoverableActionDeliveryObligation": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "52b78f2353eea358151165a9b085d7c6354098967e027ef30510af0365ac7e76",
+    "surface_fields": [
+      {
+        "source_spelling": "action_ref",
+        "base_name": "action_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "authoritative_lifecycle_ref",
+        "base_name": "authoritative_lifecycle_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dispatch_intent_commit_ref",
+        "base_name": "dispatch_intent_commit_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "sealed_execution_intent_ref",
+        "base_name": "sealed_execution_intent_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "delivery_correlation_ref",
+        "base_name": "delivery_correlation_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "execution_attempt_refs[]",
+        "base_name": "execution_attempt_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "known_external_effect_refs[]",
+        "base_name": "known_external_effect_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "recovery_enumeration_scope",
+        "base_name": "recovery_enumeration_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "unresolved_effect_scope",
+        "base_name": "unresolved_effect_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "legal_continuation_requirement",
+        "base_name": "legal_continuation_requirement",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "recovery_assessment_ref?",
+        "base_name": "recovery_assessment_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "Observation": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "2e8195bef03066422a8996e4d6329cdf17d9415a4d0584a12d65b788d09aebc1",
+    "surface_fields": [
+      {
+        "source_spelling": "observation_id",
+        "base_name": "observation_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "project_id",
+        "base_name": "project_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "observation_kind",
+        "base_name": "observation_kind",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "source_ref",
+        "base_name": "source_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "subject_ref?",
+        "base_name": "subject_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "observed_at",
+        "base_name": "observed_at",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "ingested_commit_seq",
+        "base_name": "ingested_commit_seq",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "repo_ref?",
+        "base_name": "repo_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "world_ref?",
+        "base_name": "world_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "environment_ref?",
+        "base_name": "environment_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "normalized_content",
+        "base_name": "normalized_content",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "raw_artifact_ref?",
+        "base_name": "raw_artifact_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "provenance",
+        "base_name": "provenance",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "capture_integrity",
+        "base_name": "capture_integrity",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "origin_ref?",
+        "base_name": "origin_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "EvidenceLink": {
+    "effective_schema_selection": "CURATED_SOURCE_DECISION",
+    "source_decl_sha256": "b56d24206ab7628d92c266e4a6d8c3e3a63aa29a627ede82c373819a56071e26",
+    "surface_fields": [
+      {
+        "source_spelling": "evidence_link_id",
+        "base_name": "evidence_link_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "observation_refs[]",
+        "base_name": "observation_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "target_ref",
+        "base_name": "target_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "relation",
+        "base_name": "relation",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "derivation",
+        "base_name": "derivation",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "rationale",
+        "base_name": "rationale",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "derivation_ref?",
+        "base_name": "derivation_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependency_set_ref?",
+        "base_name": "dependency_set_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "lifecycle",
+        "base_name": "lifecycle",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "accepted_commit_seq?",
+        "base_name": "accepted_commit_seq",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "FactGrounding": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "7d1365a80728c8d4e2a9340e7262e71274d698c0cdeb9dfb01d9c61d8a54ccca",
+    "surface_fields": [
+      {
+        "source_spelling": "kind",
+        "base_name": "kind",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "source_refs[]",
+        "base_name": "source_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "authority_domain?",
+        "base_name": "authority_domain",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "ContentTrustContext": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "e23cfcddd8eb07ae9047a8525c20108715194aba476cb801827b2462f1e6432e",
+    "surface_fields": [
+      {
+        "source_spelling": "trust_context_id",
+        "base_name": "trust_context_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "content_role",
+        "base_name": "content_role",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "instruction_authority",
+        "base_name": "instruction_authority",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "source_trust_class",
+        "base_name": "source_trust_class",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "domain_authority_binding_ref?",
+        "base_name": "domain_authority_binding_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "created_commit_seq",
+        "base_name": "created_commit_seq",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "ObservationSourceBinding": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "486ffdc2cc70a4eaff365090f9321a578a1cd667846176b85b0974c84e077994",
+    "surface_fields": [
+      {
+        "source_spelling": "observation_ref",
+        "base_name": "observation_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "source_identity",
+        "base_name": "source_identity",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "source_kind",
+        "base_name": "source_kind",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "source_trust_classification",
+        "base_name": "source_trust_classification",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "related_action_ref?",
+        "base_name": "related_action_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "observed_resource_scope",
+        "base_name": "observed_resource_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "observed_event_scope",
+        "base_name": "observed_event_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "raw_report_ref?",
+        "base_name": "raw_report_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "directly_observed_effect_refs[]",
+        "base_name": "directly_observed_effect_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "observation_provenance_ref",
+        "base_name": "observation_provenance_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "observation_integrity_ref",
+        "base_name": "observation_integrity_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "supported_claim_scope",
+        "base_name": "supported_claim_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "known_limitations[]",
+        "base_name": "known_limitations",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "ObservationCausalAttachmentContract": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "6dbabd3c921605671ac0cd84d1d22319559f537e42ec6eb9c930984bf3121851",
+    "surface_fields": [
+      {
+        "source_spelling": "observation_ref",
+        "base_name": "observation_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "source_identity",
+        "base_name": "source_identity",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "source_event_identity?",
+        "base_name": "source_event_identity",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "raw_observation_scope",
+        "base_name": "raw_observation_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "claimed_action_ref?",
+        "base_name": "claimed_action_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "verified_action_ref?",
+        "base_name": "verified_action_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "source_provenance_ref",
+        "base_name": "source_provenance_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "causal_attachment_evidence_refs[]",
+        "base_name": "causal_attachment_evidence_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "missing_parent_refs[]",
+        "base_name": "missing_parent_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "admissible_interpretation_scope",
+        "base_name": "admissible_interpretation_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "reattachment_requirements[]",
+        "base_name": "reattachment_requirements",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "Experiment": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "77b9d1f12e730ad6d94c444aef8d1dd545a8852df355849803557a8712ed4ea8",
+    "surface_fields": [
+      {
+        "source_spelling": "experiment_id",
+        "base_name": "experiment_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "question",
+        "base_name": "question",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "purpose",
+        "base_name": "purpose",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "target_hypothesis_ids[]",
+        "base_name": "target_hypothesis_ids",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "method_spec",
+        "base_name": "method_spec",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "prediction_ids[]",
+        "base_name": "prediction_ids",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "required_action_specs[]",
+        "base_name": "required_action_specs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "risk_refs[]",
+        "base_name": "risk_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "lifecycle",
+        "base_name": "lifecycle",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "prediction_set_frozen_at_commit_seq?",
+        "base_name": "prediction_set_frozen_at_commit_seq",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "ExperimentRun": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "809f19f3dd7a910bff6e6e48f04a1d684257914c8a7706fb57b035fde58fc948",
+    "surface_fields": [
+      {
+        "source_spelling": "experiment_run_id",
+        "base_name": "experiment_run_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "experiment_id",
+        "base_name": "experiment_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "run_number",
+        "base_name": "run_number",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "repo_ref?",
+        "base_name": "repo_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "world_ref?",
+        "base_name": "world_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "environment_ref?",
+        "base_name": "environment_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependency_set_ref?",
+        "base_name": "dependency_set_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "run_state",
+        "base_name": "run_state",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "started_at?",
+        "base_name": "started_at",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "ended_at?",
+        "base_name": "ended_at",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "execution_issue_ref?",
+        "base_name": "execution_issue_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "ExperimentDesignSnapshot": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "fbdf6d6301d7fa360c4f13c7ffbc2cf8ad4c191e341558d219c605548b73966b",
+    "surface_fields": [
+      {
+        "source_spelling": "design_snapshot_id",
+        "base_name": "design_snapshot_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "experiment_id",
+        "base_name": "experiment_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "design_version",
+        "base_name": "design_version",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "question",
+        "base_name": "question",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "purpose",
+        "base_name": "purpose",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "method_spec",
+        "base_name": "method_spec",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "prediction_refs[]",
+        "base_name": "prediction_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "required_action_specs[]",
+        "base_name": "required_action_specs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "risk_refs[]",
+        "base_name": "risk_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "design_scope",
+        "base_name": "design_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "authorized_commit_seq",
+        "base_name": "authorized_commit_seq",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "design_fingerprint",
+        "base_name": "design_fingerprint",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "Prediction": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "557093dfde485e4408fdd764faa37e88d42fc59c27fbadc5f293a1f2de41ee3f",
+    "surface_fields": [
+      {
+        "source_spelling": "prediction_id",
+        "base_name": "prediction_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "experiment_id",
+        "base_name": "experiment_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "hypothesis_id?",
+        "base_name": "hypothesis_id",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "statement",
+        "base_name": "statement",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "expected_observation_spec",
+        "base_name": "expected_observation_spec",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "discrimination_targets[]",
+        "base_name": "discrimination_targets",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "falsification_condition?",
+        "base_name": "falsification_condition",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "created_commit_seq",
+        "base_name": "created_commit_seq",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "frozen_at_commit_seq?",
+        "base_name": "frozen_at_commit_seq",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "VerificationRecord": {
+    "effective_schema_selection": "ONE_COMPLETE_DECLARATION_WITH_OPTIONAL_OVERLAYS",
+    "source_decl_sha256": "732b01c781d88c2661eea6b8463d7a66965593279c0ee897e63d1a005f2892b8",
+    "surface_fields": [
+      {
+        "source_spelling": "verification_record_id",
+        "base_name": "verification_record_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "verification_spec_ref",
+        "base_name": "verification_spec_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "subject_ref",
+        "base_name": "subject_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "repo_ref?",
+        "base_name": "repo_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "world_ref?",
+        "base_name": "world_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "environment_ref?",
+        "base_name": "environment_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependency_set_ref?",
+        "base_name": "dependency_set_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "deterministic_result_refs[]",
+        "base_name": "deterministic_result_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "observation_refs[]",
+        "base_name": "observation_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "semantic_assessment_refs[]",
+        "base_name": "semantic_assessment_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "outcome",
+        "base_name": "outcome",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "derivation",
+        "base_name": "derivation",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "executed_at",
+        "base_name": "executed_at",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "artifact_refs[]",
+        "base_name": "artifact_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "ContradictionRecord": {
+    "effective_schema_selection": "ONE_COMPLETE_DECLARATION_WITH_OPTIONAL_OVERLAYS",
+    "source_decl_sha256": "e8e2641455efb82f3da738cfff8f716fcead8179e6b63ddbd46618cbc58948ed",
+    "surface_fields": [
+      {
+        "source_spelling": "contradiction_id",
+        "base_name": "contradiction_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "observation_refs[]",
+        "base_name": "observation_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "subject_ref?",
+        "base_name": "subject_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "subject_key?",
+        "base_name": "subject_key",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "comparison_scope",
+        "base_name": "comparison_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "comparability",
+        "base_name": "comparability",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dimension_analysis[]",
+        "base_name": "dimension_analysis",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "lifecycle",
+        "base_name": "lifecycle",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "information_need_id?",
+        "base_name": "information_need_id",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "explanation_ref?",
+        "base_name": "explanation_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "resolution_ref?",
+        "base_name": "resolution_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "Claim": {
+    "effective_schema_selection": "CURATED_SOURCE_DECISION",
+    "source_decl_sha256": "0cc9ca22709f89fa2ed2187d5495b91a57d92b5beb04229b530afce7b69d7a45",
+    "surface_fields": [
+      {
+        "source_spelling": "claim_id",
+        "base_name": "claim_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "kind",
+        "base_name": "kind",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "statement",
+        "base_name": "statement",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "scope",
+        "base_name": "scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "ScopeSpec"
+      },
+      {
+        "source_spelling": "support",
+        "base_name": "support",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "support_assessed_at_commit?",
+        "base_name": "support_assessed_at_commit",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "grounding?",
+        "base_name": "grounding",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependency_set_ref?",
+        "base_name": "dependency_set_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "temporal_validity?",
+        "base_name": "temporal_validity",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "status",
+        "base_name": "status",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "superseded_by?",
+        "base_name": "superseded_by",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "OperationalCausalClaim": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "25acaae38d4e0e7933822b74e801146eedd80d82784a97f384e9f359af8ab0d5",
+    "surface_fields": [
+      {
+        "source_spelling": "causal_claim_id",
+        "base_name": "causal_claim_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "source_hypothesis_id",
+        "base_name": "source_hypothesis_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "cause",
+        "base_name": "cause",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "effect",
+        "base_name": "effect",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "mechanism",
+        "base_name": "mechanism",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "scope",
+        "base_name": "scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "CausalScope"
+      },
+      {
+        "source_spelling": "verification_ref",
+        "base_name": "verification_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependency_set_ref",
+        "base_name": "dependency_set_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "validity_conditions[]",
+        "base_name": "validity_conditions",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "contradictory_observation_refs[]",
+        "base_name": "contradictory_observation_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "status",
+        "base_name": "status",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "promoted_commit_seq",
+        "base_name": "promoted_commit_seq",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "superseded_by?",
+        "base_name": "superseded_by",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "DependencySet": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "f596f8c673ea27846249b5dcfa447baa4e251351ee006131cc0ae5688825d270",
+    "surface_fields": [
+      {
+        "source_spelling": "dependency_set_id",
+        "base_name": "dependency_set_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "owner_result_ref",
+        "base_name": "owner_result_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "stamps[]",
+        "base_name": "stamps",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "derivation_context_ref?",
+        "base_name": "derivation_context_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "capture_frontier_ref?",
+        "base_name": "capture_frontier_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependency_set_fingerprint",
+        "base_name": "dependency_set_fingerprint",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "DependencyCaptureReceipt": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "d7ff97834f08dcd7e2556a12314b38b719619e9cec054f56018795a05827beba",
+    "surface_fields": [
+      {
+        "source_spelling": "receipt_id",
+        "base_name": "receipt_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "subject_execution_or_reasoning_ref",
+        "base_name": "subject_execution_or_reasoning_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "trusted_observed_reads[]",
+        "base_name": "trusted_observed_reads",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "trusted_index_queries[]",
+        "base_name": "trusted_index_queries",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "trusted_tool_context_refs[]",
+        "base_name": "trusted_tool_context_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "trusted_environment_refs[]",
+        "base_name": "trusted_environment_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "declared_additional_dependencies[]",
+        "base_name": "declared_additional_dependencies",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "capture_scope",
+        "base_name": "capture_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "capture_coverage",
+        "base_name": "capture_coverage",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "enforcement_basis_refs[]",
+        "base_name": "enforcement_basis_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "capture_fingerprint",
+        "base_name": "capture_fingerprint",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "DependencyAttestation": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "2558385e10da2a9ead0dafaab139ad30b0fe45edb12ae06acd9ec6c36f013373",
+    "surface_fields": [
+      {
+        "source_spelling": "dependency_ref",
+        "base_name": "dependency_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "observed_identity",
+        "base_name": "observed_identity",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "observed_version_or_hash",
+        "base_name": "observed_version_or_hash",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "source_read_context_ref",
+        "base_name": "source_read_context_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "trusted_capture_component_ref",
+        "base_name": "trusted_capture_component_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "capture_time_or_commit_ref",
+        "base_name": "capture_time_or_commit_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "integrity_ref",
+        "base_name": "integrity_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "CompletionStateBinding": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "fa6057f2f9c27814e892375aa6f9af148e8edcf0abcb5239dce4d4210d87b515",
+    "surface_fields": [
+      {
+        "source_spelling": "goal_ref",
+        "base_name": "goal_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "goal_version",
+        "base_name": "goal_version",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "acceptance_criteria_frontier",
+        "base_name": "acceptance_criteria_frontier",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "verified_repository_ref",
+        "base_name": "verified_repository_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "verified_world_state_scope",
+        "base_name": "verified_world_state_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "verification_evidence_refs[]",
+        "base_name": "verification_evidence_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependency_validation_ref",
+        "base_name": "dependency_validation_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "relevant_policy_frontier",
+        "base_name": "relevant_policy_frontier",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "unresolved_obligation_refs[]",
+        "base_name": "unresolved_obligation_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "finalization_commit_preconditions[]",
+        "base_name": "finalization_commit_preconditions",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "finalization_commit_ref?",
+        "base_name": "finalization_commit_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "IntegratedCompletionEvidence": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "61a9b48635b374ccf5a78e9ed18ca8b50097e9d29a11b2dfcef1994e06afd3df",
+    "surface_fields": [
+      {
+        "source_spelling": "goal_ref",
+        "base_name": "goal_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "current_goal_version",
+        "base_name": "current_goal_version",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "acceptance_criteria_refs[]",
+        "base_name": "acceptance_criteria_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "verified_criteria_refs[]",
+        "base_name": "verified_criteria_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "unverified_criteria_refs[]",
+        "base_name": "unverified_criteria_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "failed_criteria_refs[]",
+        "base_name": "failed_criteria_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "verification_record_refs[]",
+        "base_name": "verification_record_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependency_evaluation_ref",
+        "base_name": "dependency_evaluation_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "current_repository_ref",
+        "base_name": "current_repository_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "unresolved_action_constraints[]",
+        "base_name": "unresolved_action_constraints",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "unresolved_specialist_constraints[]",
+        "base_name": "unresolved_specialist_constraints",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "applicable_policy_ref",
+        "base_name": "applicable_policy_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "finalization_assessment_ref",
+        "base_name": "finalization_assessment_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "authorized_completion_scope",
+        "base_name": "authorized_completion_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "MemoryProposal": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "954762e236b07d60a1c7480f60f9383a0f914a88043e9f541e6567ed0a6557af",
+    "surface_fields": [
+      {
+        "source_spelling": "proposal_id",
+        "base_name": "proposal_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "claim",
+        "base_name": "claim",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "proposed_scope",
+        "base_name": "proposed_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "source_episode_refs[]",
+        "base_name": "source_episode_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "causal_basis_ref?",
+        "base_name": "causal_basis_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "applicability_conditions[]",
+        "base_name": "applicability_conditions",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "counter_conditions[]",
+        "base_name": "counter_conditions",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "counterexamples[]",
+        "base_name": "counterexamples",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "evidence_refs[]",
+        "base_name": "evidence_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "confidence_assessment_ref",
+        "base_name": "confidence_assessment_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "proposed_maturity",
+        "base_name": "proposed_maturity",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependency_set_ref",
+        "base_name": "dependency_set_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "provenance_ref",
+        "base_name": "provenance_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "proposed_memory_category",
+        "base_name": "proposed_memory_category",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "LearningAuthorizationBinding": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "b874b8422dc956055f19393b3ef64da2d1e7499648ef92e4920324f6b4bd87b4",
+    "surface_fields": [
+      {
+        "source_spelling": "proposal_snapshot_ref",
+        "base_name": "proposal_snapshot_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "learning_gate_evaluation_ref",
+        "base_name": "learning_gate_evaluation_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "executive_authorization_ref",
+        "base_name": "executive_authorization_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "expected_memory_head_ref?",
+        "base_name": "expected_memory_head_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependency_evaluation_ref",
+        "base_name": "dependency_evaluation_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "authorized_commit_scope",
+        "base_name": "authorized_commit_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "SealedOutboundContext": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "9a32bf619d57ada734a71008191da386626d6d7fbd7d4c8da3bd4383e79674f6",
+    "surface_fields": [
+      {
+        "source_spelling": "invocation_ref",
+        "base_name": "invocation_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "originating_project_ref",
+        "base_name": "originating_project_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "final_destination_provider_ref",
+        "base_name": "final_destination_provider_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "final_destination_boundary_ref",
+        "base_name": "final_destination_boundary_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "final_context_manifest_ref",
+        "base_name": "final_context_manifest_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "included_content_integrity_refs[]",
+        "base_name": "included_content_integrity_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "included_data_classification_refs[]",
+        "base_name": "included_data_classification_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "applicable_disclosure_policy_frontier",
+        "base_name": "applicable_disclosure_policy_frontier",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "authorized_processing_purpose",
+        "base_name": "authorized_processing_purpose",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "disclosure_admission_ref",
+        "base_name": "disclosure_admission_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "outbound_integrity_binding",
+        "base_name": "outbound_integrity_binding",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "release_eligibility",
+        "base_name": "release_eligibility",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "ContextDisclosureAdmission": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "cf8ab1e0abe27665db71d9e9661c8a78dc07d830b2123480121809753ff8df72",
+    "surface_fields": [
+      {
+        "source_spelling": "context_package_ref",
+        "base_name": "context_package_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "originating_project_ref",
+        "base_name": "originating_project_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "destination_provider_ref",
+        "base_name": "destination_provider_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "requested_processing_purpose",
+        "base_name": "requested_processing_purpose",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "included_data_class_refs[]",
+        "base_name": "included_data_class_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "applicable_policy_frontier",
+        "base_name": "applicable_policy_frontier",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "authorized_disclosure_scope",
+        "base_name": "authorized_disclosure_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "prohibited_content_refs[]",
+        "base_name": "prohibited_content_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "source_trust_refs[]",
+        "base_name": "source_trust_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "effective_transfer_scope",
+        "base_name": "effective_transfer_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "admission_status",
+        "base_name": "admission_status",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "RestoreContainmentProof": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "0b16b3bfce95f242d0305488af1d2ec2d2b2e4d4d6586cce16d0a378f4287b03",
+    "surface_fields": [
+      {
+        "source_spelling": "restore_operation_ref",
+        "base_name": "restore_operation_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "restore_source_ref",
+        "base_name": "restore_source_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "destination_scope",
+        "base_name": "destination_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "writable_mount_refs[]",
+        "base_name": "writable_mount_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "reachable_service_refs[]",
+        "base_name": "reachable_service_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "automatic_activation_paths[]",
+        "base_name": "automatic_activation_paths",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "executable_content_paths[]",
+        "base_name": "executable_content_paths",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "credential_exposure_scope",
+        "base_name": "credential_exposure_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "containment_guarantees[]",
+        "base_name": "containment_guarantees",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "relevant_environment_versions[]",
+        "base_name": "relevant_environment_versions",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "unresolved_escape_paths[]",
+        "base_name": "unresolved_escape_paths",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "proof_result",
+        "base_name": "proof_result",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "PossibleExternalEffectAssessment": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "cc9b1b7dbb8cdcf3c67ee0a2c9d5c15eb170d44f8ce70cf6a9f923b008eeb7e9",
+    "surface_fields": [
+      {
+        "source_spelling": "assessment_id",
+        "base_name": "assessment_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "related_action_refs[]",
+        "base_name": "related_action_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "confirmed_effect_refs[]",
+        "base_name": "confirmed_effect_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "possible_unconfirmed_effects[]",
+        "base_name": "possible_unconfirmed_effects",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "unknown_effect_scope[]",
+        "base_name": "unknown_effect_scope",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "external_execution_guarantees[]",
+        "base_name": "external_execution_guarantees",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "outstanding_dispatch_paths[]",
+        "base_name": "outstanding_dispatch_paths",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "effect_identity_refs[]",
+        "base_name": "effect_identity_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "proposed_followup_action_ref?",
+        "base_name": "proposed_followup_action_ref",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "conflict_analysis",
+        "base_name": "conflict_analysis",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "safety_evidence_refs[]",
+        "base_name": "safety_evidence_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "conclusion",
+        "base_name": "conclusion",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "CrossFrontierAdmissionProof": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "a3c71d0e55272f3b8ee54a710026eb0875282e7c0811e1dcdb4341a975dc9203",
+    "surface_fields": [
+      {
+        "source_spelling": "admission_ref",
+        "base_name": "admission_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "project_scope",
+        "base_name": "project_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "permitted_operation_classes[]",
+        "base_name": "permitted_operation_classes",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "executive_epoch",
+        "base_name": "executive_epoch",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "canonical_state_ref",
+        "base_name": "canonical_state_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "policy_frontier_refs[]",
+        "base_name": "policy_frontier_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "security_frontier_refs[]",
+        "base_name": "security_frontier_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "suppression_frontier_refs[]",
+        "base_name": "suppression_frontier_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependency_frontier_refs[]",
+        "base_name": "dependency_frontier_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "outstanding_effect_constraints[]",
+        "base_name": "outstanding_effect_constraints",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "compatibility_results[]",
+        "base_name": "compatibility_results",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "required_revalidation_conditions[]",
+        "base_name": "required_revalidation_conditions",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "applicable_gate_refs[]",
+        "base_name": "applicable_gate_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "admission_status",
+        "base_name": "admission_status",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "RecoveryBootstrapContract": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "3627f5109f1283c25e945cc14599a1d04c351156bf06ccf4b2be3c8b91339d72",
+    "surface_fields": [
+      {
+        "source_spelling": "bootstrap_case_id",
+        "base_name": "bootstrap_case_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "affected_project_scope",
+        "base_name": "affected_project_scope",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "unavailable_control_components[]",
+        "base_name": "unavailable_control_components",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "trusted_bootstrap_source_refs[]",
+        "base_name": "trusted_bootstrap_source_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "recovery_principal_ref",
+        "base_name": "recovery_principal_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "principal_authority_proof_ref",
+        "base_name": "principal_authority_proof_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "permitted_infrastructure_operations[]",
+        "base_name": "permitted_infrastructure_operations",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "prohibited_project_operations[]",
+        "base_name": "prohibited_project_operations",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "source_integrity_requirements[]",
+        "base_name": "source_integrity_requirements",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "destination_integrity_requirements[]",
+        "base_name": "destination_integrity_requirements",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "bootstrap_generation",
+        "base_name": "bootstrap_generation",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "bootstrap_audit_receipts[]",
+        "base_name": "bootstrap_audit_receipts",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "canonical_handoff_requirements[]",
+        "base_name": "canonical_handoff_requirements",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "bootstrap_disposition",
+        "base_name": "bootstrap_disposition",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "RecoveryOwnershipLease": {
+    "effective_schema_selection": "ONE_ATTESTED_DECLARATION",
+    "source_decl_sha256": "cc18adf30b86d39abb8b5a38533743fe9c335e5247cd5cea669f6e60a52862a5",
+    "surface_fields": [
+      {
+        "source_spelling": "recovery_case_ref",
+        "base_name": "recovery_case_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "recovery_owner_id",
+        "base_name": "recovery_owner_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "recovery_generation",
+        "base_name": "recovery_generation",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "governing_executive_epoch",
+        "base_name": "governing_executive_epoch",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "ownership_scope[]",
+        "base_name": "ownership_scope",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "lease_or_fencing_ref",
+        "base_name": "lease_or_fencing_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "expected_control_version",
+        "base_name": "expected_control_version",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "acquisition_commit_ref",
+        "base_name": "acquisition_commit_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "status",
+        "base_name": "status",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "CapabilityTransportResult": {
+    "effective_schema_selection": "SOURCE_NAMING_ALIAS_TO_TRANSPORT",
+    "source_decl_sha256": "e8ae9d35f870fc3efb84694641074038fd2961677393b2a5f5ee6d6f0cb717b5",
+    "surface_fields": [
+      {
+        "source_spelling": "invocation_id",
+        "base_name": "invocation_id",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "proposal_refs[]",
+        "base_name": "proposal_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "information_need_refs[]",
+        "base_name": "information_need_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "tool_request_refs[]",
+        "base_name": "tool_request_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "experiment_request_refs[]",
+        "base_name": "experiment_request_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "assessment_refs[]",
+        "base_name": "assessment_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "dependency_set_ref",
+        "base_name": "dependency_set_ref",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "provenance_refs[]",
+        "base_name": "provenance_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "result_status",
+        "base_name": "result_status",
+        "optional": false,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED",
+    "source_declared_name": "CapabilityResult"
+  },
+  "CapabilityResult": {
+    "effective_schema_selection": "FCA_FROZEN_CANONICAL",
+    "source_decl_sha256": "b60b418b16f38240fec6c0be2929b5701ef1cbb2d8c59cf0014fb6bf2fb26e4a",
+    "surface_fields": [
+      {
+        "source_spelling": "patch_proposal?",
+        "base_name": "patch_proposal",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "proposed_claims[]",
+        "base_name": "proposed_claims",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "proposed_hypotheses[]",
+        "base_name": "proposed_hypotheses",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "proposed_information_needs[]",
+        "base_name": "proposed_information_needs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "evidence_refs[]",
+        "base_name": "evidence_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "tool_requests[]",
+        "base_name": "tool_requests",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "experiment_requests[]",
+        "base_name": "experiment_requests",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "confidence_assessment?",
+        "base_name": "confidence_assessment",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "specialist_request?",
+        "base_name": "specialist_request",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "needs[]",
+        "base_name": "needs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "rationale_summary?",
+        "base_name": "rationale_summary",
+        "optional": true,
+        "collection": false,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  },
+  "MemoryRetrievalTransportResult": {
+    "effective_schema_selection": "SOURCE_NAMING_ALIAS_TO_TRANSPORT",
+    "source_decl_sha256": "a70de6ab479231f1c2f991196c6406715513f940d0af266e1e05b22ce533c35a",
+    "source_declared_name": "MemoryRetrievalResult",
+    "surface_fields": [
+      {
+        "source_spelling": "memory_refs[]",
+        "base_name": "memory_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "relevance_assessments[]",
+        "base_name": "relevance_assessments",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "provenance_refs[]",
+        "base_name": "provenance_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "applicability_assessments[]",
+        "base_name": "applicability_assessments",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      },
+      {
+        "source_spelling": "trust_metadata_refs[]",
+        "base_name": "trust_metadata_refs",
+        "optional": false,
+        "collection": true,
+        "declared_type_or_enum_marker": "UNSPECIFIED_BY_SOURCE"
+      }
+    ],
+    "primitive_type_completeness": "NOT_CLAIMED"
+  }
+}

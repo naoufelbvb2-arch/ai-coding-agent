@@ -1,0 +1,101 @@
+[
+  {
+    "layer": "L2_COGNITION.md",
+    "label": "RDMS02-C01-01 common entity envelope",
+    "old_text_sha256": "bcbf13464372c343e6d3996707202f1dc4cec1a71a21b5ddf39c5694523138d2",
+    "effective_text_sha256": "56b54d1bef37024480f77e09e444fb8745a92793d69a4f8f41ff455c5588fec9",
+    "source_id": "RDMS-02 C01-01",
+    "relation": "SUPERSEDED_IN_CURRENT_LAYER_ONLY",
+    "archive_unmodified": true
+  },
+  {
+    "layer": "L2_COGNITION.md",
+    "label": "RDMS02-C01-32 Commitment legal root fields",
+    "old_text_sha256": "da8ac753225c695d17105d549b2d3eca57f648d2343a84a0a8daefc58e46fce9",
+    "effective_text_sha256": "714a04bc771bfdd0ca8731f5a01757b73b9b48c90c814bf08ea6d761628b5fdd",
+    "source_id": "RDMS-02 C01-32",
+    "relation": "SUPERSEDED_IN_CURRENT_LAYER_ONLY",
+    "archive_unmodified": true
+  },
+  {
+    "layer": "L2_COGNITION.md",
+    "label": "RDMS02-57 Commitment validity amended",
+    "old_text_sha256": "126d7996c534e68775b56bf038f216525e926ceea97ced0e5de0e27b95c63f42",
+    "effective_text_sha256": "843aa8d9eb83d09e2a58078cf1cf70d33e9776a9e130afcf5ca7edd75576c206",
+    "source_id": "RDMS-02 C01-32",
+    "relation": "SUPERSEDED_IN_CURRENT_LAYER_ONLY",
+    "archive_unmodified": true
+  },
+  {
+    "layer": "L4_TEMPORAL_SPECIALISTS.md",
+    "label": "RDMS05 Commitment is a temporal view",
+    "old_text_sha256": "b9f1955870bd84b03c06400dc25992a54d5c6e25ae2af05d74764502e180ae3e",
+    "effective_text_sha256": "825e6e473bc8455279ac645f9497b085d2c95ddfdff87d173733a747ec50aabc",
+    "source_id": "RDMS-05 §25 + RDMS-02 C01-32",
+    "relation": "SUPERSEDED_IN_CURRENT_LAYER_ONLY",
+    "archive_unmodified": true
+  },
+  {
+    "layer": "L4_TEMPORAL_SPECIALISTS.md",
+    "label": "RDMS05-C01 TriggerFire authoritative declaration",
+    "old_text_sha256": "559e11a3e82f870ebb618aa1f4932f5a0c389404f52a5a7d17abf6f1e8a6c9ce",
+    "effective_text_sha256": "aeb3b248c1a9fbcd25146cbe5c09a34cc7e1cfe74a5bfe2aaeaf7790a2549c07",
+    "source_id": "RDMS-05 C01",
+    "relation": "SUPERSEDED_IN_CURRENT_LAYER_ONLY",
+    "archive_unmodified": true
+  },
+  {
+    "layer": "L4_TEMPORAL_SPECIALISTS.md",
+    "label": "RDMS05-C01 TriggerReaction authoritative declaration",
+    "old_text_sha256": "23f43aee7f11e84ef54c3c9e4f2d9d3909f51068ee0230bb59b2ea4d51ae8b4b",
+    "effective_text_sha256": "84ceefd3a8ee4286e4c5c8ab67635a8c52d0d0dfc6721d0dfe4889d7b464384e",
+    "source_id": "RDMS-05 C01",
+    "relation": "SUPERSEDED_IN_CURRENT_LAYER_ONLY",
+    "archive_unmodified": true
+  },
+  {
+    "layer": "L7_RUNTIME_INTEGRATION.md",
+    "label": "RDMS10 transport alias CapabilityResult=>CapabilityTransportResult",
+    "old_text_sha256": "e8ae9d35f870fc3efb84694641074038fd2961677393b2a5f5ee6d6f0cb717b5",
+    "effective_text_sha256": "8e9e89484b7ea3f688a9e9e6cc6cf32f9b8a1a7e8ddb7b43ab0ba65b661e1b68",
+    "source_id": "FCA §23 / RDMS-07 / RDMS-10",
+    "relation": "SUPERSEDED_IN_CURRENT_LAYER_ONLY",
+    "archive_unmodified": true
+  },
+  {
+    "layer": "L7_RUNTIME_INTEGRATION.md",
+    "label": "RDMS10 transport alias MemoryRetrievalResult=>MemoryRetrievalTransportResult",
+    "old_text_sha256": "a70de6ab479231f1c2f991196c6406715513f940d0af266e1e05b22ce533c35a",
+    "effective_text_sha256": "3aac6c558284a8695e62c9b5a9d3b0e1665be81dc39a1400ec3a491b9cddbde3",
+    "source_id": "FCA §23 / RDMS-07 / RDMS-10",
+    "relation": "SUPERSEDED_IN_CURRENT_LAYER_ONLY",
+    "archive_unmodified": true
+  },
+  {
+    "layer": "L1_CONTROL.md",
+    "label": "RDMS01 ControlCommit authority",
+    "old_text_sha256": "1b1cb1e0a03b3928dab98e164345f3ebcb23242f3f4bc82f89c66dc498b4e0f7",
+    "effective_text_sha256": "3eaf93a6cd498e29a7d94acb9a4dc8d1381627a9e6cd1ce44ba2bb9b0733d061",
+    "source_id": "RDMS-01 R1",
+    "relation": "HEADING_SUPERSEDED",
+    "archive_unmodified": true
+  },
+  {
+    "layer": "L1_CONTROL.md",
+    "label": "RDMS01-R1 ControlCommit full effective fields",
+    "old_text_sha256": "5bb4fd8bdebf4cfd5bdf430b9109c2b98e48901b227d5f54c3308254878671fc",
+    "effective_text_sha256": "94441c616210a2b840888d15213822755198623b1e72a62fb5d5834728cf4683",
+    "source_id": "RDMS-01 R1 §5",
+    "relation": "SUPERSEDED_IN_CURRENT_LAYER_ONLY",
+    "archive_unmodified": true
+  },
+  {
+    "layer": "L4_TEMPORAL_SPECIALISTS.md",
+    "label": "RDMS05-C01 ResumptionCapsule header, durable payload required",
+    "old_text_sha256": "c1d22ca4a7ddbf38aa27abd8caa3fbbf1587f636463b3d7827b840bc809528b1",
+    "effective_text_sha256": "1a3595d952c758f339cb49287030532875ec68d96377269b8db8d688e4475197",
+    "source_id": "RDMS-05 C01 ResumptionCapsule",
+    "relation": "SUPERSEDED_IN_CURRENT_LAYER_ONLY",
+    "archive_unmodified": true
+  }
+]

@@ -1,0 +1,2303 @@
+{
+  "phase": "GAIA-C08",
+  "scope": "PRIMARY_SOURCE_INTERFACE_DECLARATION_PROOF_NOT_EFFECTIVE_API_FREEZE",
+  "source_corpus_sha256": "738c22c893892b17584050449811c5fa8bc84c4a7fde87a446810c5563fa3b15",
+  "schema_extraction_rule": "Matched literal Name { ... } balanced-brace declarations in original_message_dom, sorted by actual source order. Each occurrence is a source witness only; field detection is for navigation and never a typed migration.",
+  "verified_original_messages": 27,
+  "route_count": 12,
+  "routes": [
+    {
+      "route_id": "X8-01",
+      "owner": "L7_RUNTIME_INTEGRATION.md",
+      "path": "L2 → L7 → L2",
+      "name": "Capability invocation / result",
+      "schemas": [
+        "CapabilityInvocation",
+        "CapabilityResult",
+        "CapabilityActivationContract",
+        "ExecutiveTransitionIntegrationBinding"
+      ],
+      "safety": "Transport envelope ≠ approved cognitive result or canonical commit.",
+      "source_schemas": [
+        {
+          "symbol": "CapabilityInvocation",
+          "occurrences": [
+            {
+              "symbol": "CapabilityInvocation",
+              "source_message_id": "99533762-bba8-407a-b27b-952a236c00a4",
+              "source_specification": "RDMS-10",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 355,
+              "end_line": 371,
+              "sha256": "8fec5e274ffc9f94b0bbde0178edb4b6fdcfe0241105dd079e62d1f954b26ccd",
+              "text": "CapabilityInvocation {\n    invocation_id\n\n    capability_kind\n\n    goal_ref\n\n    cognitive_context_ref\n\n    dependency_set_ref\n\n    provider_policy_ref?\n\n    resource_budget_ref\n\n    requested_outputs[]\n}",
+              "fields_for_navigation": [
+                "capability_kind",
+                "cognitive_context_ref",
+                "dependency_set_ref",
+                "goal_ref",
+                "invocation_id",
+                "provider_policy_ref?",
+                "requested_outputs[]",
+                "resource_budget_ref"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "CapabilityResult",
+          "occurrences": [
+            {
+              "symbol": "CapabilityResult",
+              "source_message_id": "99533762-bba8-407a-b27b-952a236c00a4",
+              "source_specification": "RDMS-10",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 372,
+              "end_line": 390,
+              "sha256": "e8ae9d35f870fc3efb84694641074038fd2961677393b2a5f5ee6d6f0cb717b5",
+              "text": "CapabilityResult {\n    invocation_id\n\n    proposal_refs[]\n\n    information_need_refs[]\n\n    tool_request_refs[]\n\n    experiment_request_refs[]\n\n    assessment_refs[]\n\n    dependency_set_ref\n\n    provenance_refs[]\n\n    result_status\n}",
+              "fields_for_navigation": [
+                "assessment_refs[]",
+                "dependency_set_ref",
+                "experiment_request_refs[]",
+                "information_need_refs[]",
+                "invocation_id",
+                "proposal_refs[]",
+                "provenance_refs[]",
+                "result_status",
+                "tool_request_refs[]"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "CapabilityActivationContract",
+          "occurrences": [
+            {
+              "symbol": "CapabilityActivationContract",
+              "source_message_id": "e4828797-8ddb-48ae-a3e4-3e9ec47b70c3",
+              "source_specification": "RDMS-10",
+              "source_part": "C01",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 2052,
+              "end_line": 2068,
+              "sha256": "026bb25fd353ffcabaa2ba4b1a5e101238efb218e9af666701f6045a6ccd9282",
+              "text": "CapabilityActivationContract {\n    capability_ref\n\n    intended_operational_scope\n\n    required_component_refs[]\n\n    required_invariant_proofs[]\n\n    required_conformance_tests[]\n\n    prohibited_effects_until_activation[]\n\n    activation_policy_ref\n\n    activation_decision\n}",
+              "fields_for_navigation": [
+                "activation_decision",
+                "activation_policy_ref",
+                "capability_ref",
+                "intended_operational_scope",
+                "prohibited_effects_until_activation[]",
+                "required_component_refs[]",
+                "required_conformance_tests[]",
+                "required_invariant_proofs[]"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "ExecutiveTransitionIntegrationBinding",
+          "occurrences": [
+            {
+              "symbol": "ExecutiveTransitionIntegrationBinding",
+              "source_message_id": "e4828797-8ddb-48ae-a3e4-3e9ec47b70c3",
+              "source_specification": "RDMS-10",
+              "source_part": "C01",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 569,
+              "end_line": 593,
+              "sha256": "74d692bfc0f33d9890f8b7bc9fbe3e4dae3b7563bd8d637370e7288527aa5c2e",
+              "text": "ExecutiveTransitionIntegrationBinding {\n    executive_decision_ref\n\n    executive_epoch\n\n    project_ref\n\n    goal_ref\n\n    slice_ref?\n\n    source_cognitive_state\n\n    selected_operation_ref\n\n    expected_canonical_versions[]\n\n    policy_frontier_ref\n\n    dependency_frontier_ref\n\n    target_transition_contract_ref\n\n    control_commit_ref?\n}",
+              "fields_for_navigation": [
+                "control_commit_ref?",
+                "dependency_frontier_ref",
+                "executive_decision_ref",
+                "executive_epoch",
+                "expected_canonical_versions[]",
+                "goal_ref",
+                "policy_frontier_ref",
+                "project_ref",
+                "selected_operation_ref",
+                "slice_ref?",
+                "source_cognitive_state",
+                "target_transition_contract_ref"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        }
+      ],
+      "source_schema_count": 4,
+      "source_occurrences": 4,
+      "legal_status": "SOURCE_DECLARATIONS_LOCATED__FULL_INTERFACE_SIGNATURE_NOT_RATIFIED",
+      "remaining_work": [
+        "Select effective versions after correction-by-correction review",
+        "Specify authoritative producer/consumer fields and authentication",
+        "Specify transaction/delivery semantics, retries, failure, epoch and reconciliation",
+        "Prove end-to-end implementation, separately from spec freeze"
+      ]
+    },
+    {
+      "route_id": "X8-02",
+      "owner": "L5_MEMORY.md",
+      "path": "L5 → L7 → L2",
+      "name": "Memory retrieval and re-use",
+      "schemas": [
+        "MemoryRetrievalRequest",
+        "MemoryRetrievalResult",
+        "MemoryRetrievalCoverage",
+        "MemoryUseAssessment"
+      ],
+      "safety": "A short transport return cannot omit scope, coverage, ranking or freshness without an authoritative dereference.",
+      "source_schemas": [
+        {
+          "symbol": "MemoryRetrievalRequest",
+          "occurrences": [
+            {
+              "symbol": "MemoryRetrievalRequest",
+              "source_message_id": "99533762-bba8-407a-b27b-952a236c00a4",
+              "source_specification": "RDMS-10",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 1123,
+              "end_line": 1135,
+              "sha256": "52a9b95579ab0c8cb214cff7e5cd1fef339e20d509c4a10944811e445f887d36",
+              "text": "MemoryRetrievalRequest {\n    project_ref\n\n    query_context_ref\n\n    requested_memory_scopes[]\n\n    applicability_context_ref\n\n    access_policy_ref\n\n    result_budget\n}",
+              "fields_for_navigation": [
+                "access_policy_ref",
+                "applicability_context_ref",
+                "project_ref",
+                "query_context_ref",
+                "requested_memory_scopes[]",
+                "result_budget"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "MemoryRetrievalResult",
+          "occurrences": [
+            {
+              "symbol": "MemoryRetrievalResult",
+              "source_message_id": "938c1bc7-97a0-46ad-be19-cd3ba3ca125f",
+              "source_specification": "RDMS-07",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 1068,
+              "end_line": 1084,
+              "sha256": "e4ae715a27b230289f343447d8b7723501f62538065a5e61fa5dc5009c17c67d",
+              "text": "MemoryRetrievalResult {\n    retrieval_id\n\n    query_ref\n\n    candidate_refs[]\n\n    omitted_or_filtered_scope[]\n\n    ranking_policy_ref\n\n    retrieval_coverage\n\n    freshness_summary\n\n    created_at\n}",
+              "fields_for_navigation": [
+                "candidate_refs[]",
+                "created_at",
+                "freshness_summary",
+                "omitted_or_filtered_scope[]",
+                "query_ref",
+                "ranking_policy_ref",
+                "retrieval_coverage",
+                "retrieval_id"
+              ],
+              "ellipsis_present": false
+            },
+            {
+              "symbol": "MemoryRetrievalResult",
+              "source_message_id": "99533762-bba8-407a-b27b-952a236c00a4",
+              "source_specification": "RDMS-10",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 1136,
+              "end_line": 1146,
+              "sha256": "a70de6ab479231f1c2f991196c6406715513f940d0af266e1e05b22ce533c35a",
+              "text": "MemoryRetrievalResult {\n    memory_refs[]\n\n    relevance_assessments[]\n\n    provenance_refs[]\n\n    applicability_assessments[]\n\n    trust_metadata_refs[]\n}",
+              "fields_for_navigation": [
+                "applicability_assessments[]",
+                "memory_refs[]",
+                "provenance_refs[]",
+                "relevance_assessments[]",
+                "trust_metadata_refs[]"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "MemoryRetrievalCoverage",
+          "occurrences": [
+            {
+              "symbol": "MemoryRetrievalCoverage",
+              "source_message_id": "5ee62ad7-b67d-4382-be9d-cd85f6331a8c",
+              "source_specification": "RDMS-07",
+              "source_part": "C01 and Adversarial Freeze Review 02 with freeze decision",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 519,
+              "end_line": 536,
+              "sha256": "141502db00751fe46e006bdf466aa1a1bfda4d18bec292c7a78aada5c4ac500f",
+              "text": "MemoryRetrievalCoverage {\n    query_ref\n\n    searchable_universe_ref\n\n    index_snapshot_ref\n\n    searched_scope\n\n    retrieval_budget\n\n    completeness:\n        COMPLETE_WITHIN_SCOPE\n        PARTIAL\n        UNKNOWN\n\n    excluded_scope_refs[]\n}",
+              "fields_for_navigation": [
+                "completeness",
+                "excluded_scope_refs[]",
+                "index_snapshot_ref",
+                "query_ref",
+                "retrieval_budget",
+                "searchable_universe_ref",
+                "searched_scope"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "MemoryUseAssessment",
+          "occurrences": [
+            {
+              "symbol": "MemoryUseAssessment",
+              "source_message_id": "5ee62ad7-b67d-4382-be9d-cd85f6331a8c",
+              "source_specification": "RDMS-07",
+              "source_part": "C01 and Adversarial Freeze Review 02 with freeze decision",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 450,
+              "end_line": 473,
+              "sha256": "8f8244a812cfab524dd5c263128acd9995026dfc1c8f9db78537d2e6698e0fb6",
+              "text": "MemoryUseAssessment {\n    memory_ref\n\n    current_goal_ref\n\n    source_scope_ref\n    target_scope_ref\n\n    applicability_assessment\n\n    dependency_evaluation_ref\n\n    current_evidence_refs[]\n\n    required_revalidation_refs[]\n\n    permitted_use:\n        HISTORICAL_CONTEXT\n        HYPOTHESIS_SOURCE\n        PROCEDURAL_CANDIDATE\n        CURRENTLY_SUPPORTED_REFERENCE\n\n    limitations[]\n}",
+              "fields_for_navigation": [
+                "applicability_assessment",
+                "current_evidence_refs[]",
+                "current_goal_ref",
+                "dependency_evaluation_ref",
+                "limitations[]",
+                "memory_ref",
+                "permitted_use",
+                "required_revalidation_refs[]",
+                "source_scope_ref",
+                "target_scope_ref"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        }
+      ],
+      "source_schema_count": 4,
+      "source_occurrences": 5,
+      "legal_status": "SOURCE_DECLARATIONS_LOCATED__FULL_INTERFACE_SIGNATURE_NOT_RATIFIED",
+      "remaining_work": [
+        "Select effective versions after correction-by-correction review",
+        "Specify authoritative producer/consumer fields and authentication",
+        "Specify transaction/delivery semantics, retries, failure, epoch and reconciliation",
+        "Prove end-to-end implementation, separately from spec freeze"
+      ]
+    },
+    {
+      "route_id": "X8-03",
+      "owner": "L2_COGNITION.md",
+      "path": "L2 → L4 → L1",
+      "name": "Commitment / reactivation",
+      "schemas": [
+        "Commitment",
+        "TriggerCondition",
+        "TriggerDerivedWorkCommitment",
+        "ExecutiveTransitionIntegrationBinding"
+      ],
+      "safety": "Time/trigger activation cannot fabricate satisfaction of the underlying obligation.",
+      "source_schemas": [
+        {
+          "symbol": "Commitment",
+          "occurrences": [
+            {
+              "symbol": "Commitment",
+              "source_message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+              "source_specification": "RDMS-02",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 1368,
+              "end_line": 1396,
+              "sha256": "da8ac753225c695d17105d549b2d3eca57f648d2343a84a0a8daefc58e46fce9",
+              "text": "Commitment {\n    commitment_id\n\n    statement\n\n    why_temporary\n\n    scope: ScopeSpec\n\n    owner_ref?\n\n    linked_entity_refs[]\n\n    created_at\n\n    due_at?\n\n    removal_trigger_id?\n    revisit_trigger_id?\n\n    status:\n        ACTIVE\n        DUE\n        SATISFIED\n        CANCELLED\n        SUPERSEDED\n\n    resolution_ref?\n}",
+              "fields_for_navigation": [
+                "commitment_id",
+                "created_at",
+                "due_at?",
+                "linked_entity_refs[]",
+                "owner_ref?",
+                "removal_trigger_id?",
+                "resolution_ref?",
+                "revisit_trigger_id?",
+                "scope",
+                "statement",
+                "status",
+                "why_temporary"
+              ],
+              "ellipsis_present": false
+            },
+            {
+              "symbol": "Commitment",
+              "source_message_id": "266bb347-d2a5-41ea-872a-32e140c803eb",
+              "source_specification": "RDMS-02",
+              "source_part": "C01, second review corrections and final freeze decision",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 918,
+              "end_line": 931,
+              "sha256": "bbf875e7b0cbf30ca4d9017a16388b676e74ef8ce1bc2e0840b520c777a78836",
+              "text": "Commitment {\n    ...\n\n    reactivation_condition_ref\n\n    status:\n        ACTIVE\n        DUE\n        SATISFIED\n        CANCELLED\n        SUPERSEDED\n\n    resolution_ref?\n}",
+              "fields_for_navigation": [
+                "reactivation_condition_ref",
+                "resolution_ref?",
+                "status"
+              ],
+              "ellipsis_present": true
+            },
+            {
+              "symbol": "Commitment",
+              "source_message_id": "6276f296-457b-462d-b674-933a15194429",
+              "source_specification": "RDMS-05",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 514,
+              "end_line": 535,
+              "sha256": "b9f1955870bd84b03c06400dc25992a54d5c6e25ae2af05d74764502e180ae3e",
+              "text": "Commitment {\n    commitment_id\n\n    owner_ref\n\n    subject_ref\n\n    reason\n    required_followup\n\n    reactivation_condition_ref\n\n    lifecycle:\n        ACTIVE\n        DUE\n        SATISFIED\n        CANCELLED\n        SUPERSEDED\n\n    created_commit_seq\n    updated_commit_seq\n}",
+              "fields_for_navigation": [
+                "commitment_id",
+                "created_commit_seq",
+                "lifecycle",
+                "owner_ref",
+                "reactivation_condition_ref",
+                "reason",
+                "required_followup",
+                "subject_ref",
+                "updated_commit_seq"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "TriggerCondition",
+          "occurrences": [
+            {
+              "symbol": "TriggerCondition",
+              "source_message_id": "6276f296-457b-462d-b674-933a15194429",
+              "source_specification": "RDMS-05",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 179,
+              "end_line": 197,
+              "sha256": "c3092a02ce0b441049cfe58978e5eaa1bbee23f7b4fd879240b58e666822bdbd",
+              "text": "TriggerCondition {\n    condition_id\n\n    kind:\n        STATE_EVENT\n        REPO_CHANGE\n        METRIC_THRESHOLD\n        TEMPORAL\n        EXTERNAL_EVENT\n        HUMAN_EVENT\n        SEMANTIC_REVIEW\n        COMPOSITE\n\n    predicate_spec\n\n    dependency_set_ref?\n\n    required_evidence_policy_ref?\n}",
+              "fields_for_navigation": [
+                "condition_id",
+                "dependency_set_ref?",
+                "kind",
+                "predicate_spec",
+                "required_evidence_policy_ref?"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "TriggerDerivedWorkCommitment",
+          "occurrences": [
+            {
+              "symbol": "TriggerDerivedWorkCommitment",
+              "source_message_id": "5f33fe0d-af3e-4f37-aeac-8979e64d941f",
+              "source_specification": "RDMS-10",
+              "source_part": "C02",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 2,
+              "start_line": 273,
+              "end_line": 297,
+              "sha256": "d9b47cadcb4d7322b954a69c91d8acb6c3e871b54bd31510b1e216f209714373",
+              "text": "TriggerDerivedWorkCommitment {\n    trigger_ref\n\n    trigger_generation\n\n    source_event_identity\n\n    canonical_reaction_identity\n\n    reaction_commit_ref\n\n    derived_work_identity\n\n    required_continuation_scope\n\n    durable_continuation_ref\n\n    existing_action_refs[]\n\n    required_authorization_path\n\n    recovery_deduplication_basis\n\n    current_continuation_assessment\n}",
+              "fields_for_navigation": [
+                "canonical_reaction_identity",
+                "current_continuation_assessment",
+                "derived_work_identity",
+                "durable_continuation_ref",
+                "existing_action_refs[]",
+                "reaction_commit_ref",
+                "recovery_deduplication_basis",
+                "required_authorization_path",
+                "required_continuation_scope",
+                "source_event_identity",
+                "trigger_generation",
+                "trigger_ref"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "ExecutiveTransitionIntegrationBinding",
+          "occurrences": [
+            {
+              "symbol": "ExecutiveTransitionIntegrationBinding",
+              "source_message_id": "e4828797-8ddb-48ae-a3e4-3e9ec47b70c3",
+              "source_specification": "RDMS-10",
+              "source_part": "C01",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 569,
+              "end_line": 593,
+              "sha256": "74d692bfc0f33d9890f8b7bc9fbe3e4dae3b7563bd8d637370e7288527aa5c2e",
+              "text": "ExecutiveTransitionIntegrationBinding {\n    executive_decision_ref\n\n    executive_epoch\n\n    project_ref\n\n    goal_ref\n\n    slice_ref?\n\n    source_cognitive_state\n\n    selected_operation_ref\n\n    expected_canonical_versions[]\n\n    policy_frontier_ref\n\n    dependency_frontier_ref\n\n    target_transition_contract_ref\n\n    control_commit_ref?\n}",
+              "fields_for_navigation": [
+                "control_commit_ref?",
+                "dependency_frontier_ref",
+                "executive_decision_ref",
+                "executive_epoch",
+                "expected_canonical_versions[]",
+                "goal_ref",
+                "policy_frontier_ref",
+                "project_ref",
+                "selected_operation_ref",
+                "slice_ref?",
+                "source_cognitive_state",
+                "target_transition_contract_ref"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        }
+      ],
+      "source_schema_count": 4,
+      "source_occurrences": 6,
+      "legal_status": "SOURCE_DECLARATIONS_LOCATED__FULL_INTERFACE_SIGNATURE_NOT_RATIFIED",
+      "remaining_work": [
+        "Select effective versions after correction-by-correction review",
+        "Specify authoritative producer/consumer fields and authentication",
+        "Specify transaction/delivery semantics, retries, failure, epoch and reconciliation",
+        "Prove end-to-end implementation, separately from spec freeze"
+      ]
+    },
+    {
+      "route_id": "X8-04",
+      "owner": "L4_TEMPORAL_SPECIALISTS.md",
+      "path": "L4 → L1 → L3",
+      "name": "Trigger firing and actions",
+      "schemas": [
+        "TriggerDefinition",
+        "TriggerReaction",
+        "TriggerFire",
+        "TriggerActionCausalityBinding",
+        "DispatchAdmissionCutover"
+      ],
+      "safety": "Trigger acceptance is not direct ActionGate authority; durable reaction identity is mandatory.",
+      "source_schemas": [
+        {
+          "symbol": "TriggerDefinition",
+          "occurrences": [
+            {
+              "symbol": "TriggerDefinition",
+              "source_message_id": "6276f296-457b-462d-b674-933a15194429",
+              "source_specification": "RDMS-05",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 149,
+              "end_line": 174,
+              "sha256": "349aaa77a493ffa1b2250985d02f46558844cb2d58143502b52fe5b43e532723",
+              "text": "TriggerDefinition {\n    trigger_id\n    project_id\n\n    generation\n\n    condition_ref\n\n    fire_policy:\n        ONE_SHOT\n        REARMABLE\n\n    detection_policy:\n        LEVEL_TRIGGERED\n        EDGE_TRIGGERED\n\n    source_refs[]\n\n    reaction_spec_ref\n\n    owner_ref\n    linked_object_ref\n\n    created_commit_seq\n    entity_version\n}",
+              "fields_for_navigation": [
+                "condition_ref",
+                "created_commit_seq",
+                "detection_policy",
+                "entity_version",
+                "fire_policy",
+                "generation",
+                "linked_object_ref",
+                "owner_ref",
+                "project_id",
+                "reaction_spec_ref",
+                "source_refs[]",
+                "trigger_id"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "TriggerReaction",
+          "occurrences": [
+            {
+              "symbol": "TriggerReaction",
+              "source_message_id": "6276f296-457b-462d-b674-933a15194429",
+              "source_specification": "RDMS-05",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 471,
+              "end_line": 491,
+              "sha256": "23f43aee7f11e84ef54c3c9e4f2d9d3909f51068ee0230bb59b2ea4d51ae8b4b",
+              "text": "TriggerReaction {\n    reaction_id\n\n    fire_ref\n    target_ref\n\n    reaction_kind:\n        MARK_COMMITMENT_DUE\n        REQUEST_GOAL_REACTIVATION\n        REQUEST_SLICE_REVALIDATION\n        REQUEST_EXECUTIVE_ATTENTION\n        RECORD_CONDITION_SATISFIED\n\n    reaction_key\n\n    lifecycle:\n        PENDING\n        APPLIED\n        BLOCKED\n        CANCELLED\n}",
+              "fields_for_navigation": [
+                "fire_ref",
+                "lifecycle",
+                "reaction_id",
+                "reaction_key",
+                "reaction_kind",
+                "target_ref"
+              ],
+              "ellipsis_present": false
+            },
+            {
+              "symbol": "TriggerReaction",
+              "source_message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+              "source_specification": "RDMS-05",
+              "source_part": "C01",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 622,
+              "end_line": 642,
+              "sha256": "89679654e9b97a64373c679bb1c0a96e71021f9d8d3df7dd19cfa3fa682f0fd3",
+              "text": "TriggerReaction {\n    reaction_id\n\n    fire_ref\n\n    target_entity_ref\n    expected_target_version\n    expected_lifecycle\n\n    target_goal_lineage_ref?\n\n    frozen_reaction_spec_ref\n\n    status:\n        PENDING\n        CLAIMED\n        APPLIED\n        BLOCKED\n        OBSOLETE\n        CANCELLED\n}",
+              "fields_for_navigation": [
+                "expected_lifecycle",
+                "expected_target_version",
+                "fire_ref",
+                "frozen_reaction_spec_ref",
+                "reaction_id",
+                "status",
+                "target_entity_ref",
+                "target_goal_lineage_ref?"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "TriggerFire",
+          "occurrences": [
+            {
+              "symbol": "TriggerFire",
+              "source_message_id": "6276f296-457b-462d-b674-933a15194429",
+              "source_specification": "RDMS-05",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 439,
+              "end_line": 454,
+              "sha256": "559e11a3e82f870ebb618aa1f4932f5a0c389404f52a5a7d17abf6f1e8a6c9ce",
+              "text": "TriggerFire {\n    fire_id\n\n    trigger_id\n    generation\n\n    condition_version_ref\n\n    triggering_basis_refs[]\n\n    source_frontier_ref\n\n    fire_identity_key\n\n    fired_at_commit_seq\n}",
+              "fields_for_navigation": [
+                "condition_version_ref",
+                "fire_id",
+                "fire_identity_key",
+                "fired_at_commit_seq",
+                "generation",
+                "source_frontier_ref",
+                "trigger_id",
+                "triggering_basis_refs[]"
+              ],
+              "ellipsis_present": false
+            },
+            {
+              "symbol": "TriggerFire",
+              "source_message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+              "source_specification": "RDMS-05",
+              "source_part": "C01",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 345,
+              "end_line": 357,
+              "sha256": "5bdd4a1ad86972d86c9fd8cb77adaec3e60236a88d76f37540b48f091096f69c",
+              "text": "TriggerFire {\n    fire_id\n\n    trigger_definition_snapshot_ref\n    qualified_occurrence_ref\n\n    evidence_basis_refs[]\n    source_frontier_ref\n\n    fire_identity_key\n\n    created_commit_seq\n}",
+              "fields_for_navigation": [
+                "created_commit_seq",
+                "evidence_basis_refs[]",
+                "fire_id",
+                "fire_identity_key",
+                "qualified_occurrence_ref",
+                "source_frontier_ref",
+                "trigger_definition_snapshot_ref"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "TriggerActionCausalityBinding",
+          "occurrences": [
+            {
+              "symbol": "TriggerActionCausalityBinding",
+              "source_message_id": "e4828797-8ddb-48ae-a3e4-3e9ec47b70c3",
+              "source_specification": "RDMS-10",
+              "source_part": "C01",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 1690,
+              "end_line": 1712,
+              "sha256": "ca5026690cd7b722270eced9f7105032da6a7e6f95e0173c7d2dcad84052bd4c",
+              "text": "TriggerActionCausalityBinding {\n    trigger_ref\n\n    trigger_generation\n\n    source_event_identity\n\n    canonical_reaction_identity\n\n    reaction_commit_ref\n\n    derived_action_proposal_refs[]\n\n    derived_action_identity_refs[]\n\n    action_lifecycle_refs[]\n\n    causal_binding_integrity\n\n    replay_semantics\n\n    deduplication_scope\n}",
+              "fields_for_navigation": [
+                "action_lifecycle_refs[]",
+                "canonical_reaction_identity",
+                "causal_binding_integrity",
+                "deduplication_scope",
+                "derived_action_identity_refs[]",
+                "derived_action_proposal_refs[]",
+                "reaction_commit_ref",
+                "replay_semantics",
+                "source_event_identity",
+                "trigger_generation",
+                "trigger_ref"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "DispatchAdmissionCutover",
+          "occurrences": [
+            {
+              "symbol": "DispatchAdmissionCutover",
+              "source_message_id": "5f33fe0d-af3e-4f37-aeac-8979e64d941f",
+              "source_specification": "RDMS-10",
+              "source_part": "C02",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 2,
+              "start_line": 536,
+              "end_line": 562,
+              "sha256": "6c98bbb843273f8f952861c7c49cd7c8967d3780a4448fd801c529765879ca95",
+              "text": "DispatchAdmissionCutover {\n    action_ref\n\n    executive_epoch\n\n    originating_authorization_ref\n\n    dispatch_intent_commit_ref\n\n    dependency_frontier_ref\n\n    current_dependency_assessment_ref\n\n    current_policy_frontier_ref\n\n    current_execution_generation\n\n    admission_ordering_ref\n\n    applicable_invalidation_refs[]\n\n    effective_execution_binding_ref\n\n    cutover_disposition\n\n    possible_dispatch_assessment\n}",
+              "fields_for_navigation": [
+                "action_ref",
+                "admission_ordering_ref",
+                "applicable_invalidation_refs[]",
+                "current_dependency_assessment_ref",
+                "current_execution_generation",
+                "current_policy_frontier_ref",
+                "cutover_disposition",
+                "dependency_frontier_ref",
+                "dispatch_intent_commit_ref",
+                "effective_execution_binding_ref",
+                "executive_epoch",
+                "originating_authorization_ref",
+                "possible_dispatch_assessment"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        }
+      ],
+      "source_schema_count": 5,
+      "source_occurrences": 7,
+      "legal_status": "SOURCE_DECLARATIONS_LOCATED__FULL_INTERFACE_SIGNATURE_NOT_RATIFIED",
+      "remaining_work": [
+        "Select effective versions after correction-by-correction review",
+        "Specify authoritative producer/consumer fields and authentication",
+        "Specify transaction/delivery semantics, retries, failure, epoch and reconciliation",
+        "Prove end-to-end implementation, separately from spec freeze"
+      ]
+    },
+    {
+      "route_id": "X8-05",
+      "owner": "L6_RECOVERY.md",
+      "path": "L4 → L6 → L1",
+      "name": "Suspension / resumption",
+      "schemas": [
+        "ResumptionCapsule",
+        "RecoverySuspensionCommitment",
+        "BootstrapHandoffProof",
+        "RecoveryAdmissionBinding"
+      ],
+      "safety": "No lossy restoration from abbreviated fields; integrity and pinned state must be checked.",
+      "source_schemas": [
+        {
+          "symbol": "ResumptionCapsule",
+          "occurrences": [
+            {
+              "symbol": "ResumptionCapsule",
+              "source_message_id": "6276f296-457b-462d-b674-933a15194429",
+              "source_specification": "RDMS-05",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 642,
+              "end_line": 678,
+              "sha256": "c1d22ca4a7ddbf38aa27abd8caa3fbbf1587f636463b3d7827b840bc809528b1",
+              "text": "ResumptionCapsule {\n    capsule_id\n\n    project_id\n    task_or_goal_ref\n\n    suspended_from_state\n\n    base_canonical_commit_seq\n\n    repo_ref?\n    world_ref?\n    environment_ref?\n\n    dependency_set_ref?\n\n    current_focus_ref?\n\n    relevant_claim_refs[]\n    relevant_hypothesis_refs[]\n    relevant_evidence_refs[]\n\n    decision_refs[]\n    rejected_path_refs[]\n\n    active_slice_refs[]\n    unresolved_action_refs[]\n\n    open_information_need_refs[]\n    commitment_refs[]\n\n    temporary_change_refs[]\n\n    next_action_proposal_ref?\n\n    created_commit_seq\n}",
+              "fields_for_navigation": [
+                "active_slice_refs[]",
+                "base_canonical_commit_seq",
+                "capsule_id",
+                "commitment_refs[]",
+                "created_commit_seq",
+                "current_focus_ref?",
+                "decision_refs[]",
+                "dependency_set_ref?",
+                "environment_ref?",
+                "next_action_proposal_ref?",
+                "open_information_need_refs[]",
+                "project_id",
+                "rejected_path_refs[]",
+                "relevant_claim_refs[]",
+                "relevant_evidence_refs[]",
+                "relevant_hypothesis_refs[]",
+                "repo_ref?",
+                "suspended_from_state",
+                "task_or_goal_ref",
+                "temporary_change_refs[]",
+                "unresolved_action_refs[]",
+                "world_ref?"
+              ],
+              "ellipsis_present": false
+            },
+            {
+              "symbol": "ResumptionCapsule",
+              "source_message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+              "source_specification": "RDMS-05",
+              "source_part": "C01",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 720,
+              "end_line": 741,
+              "sha256": "1c38a08ce60f890ed64f69cfd6cb8d2928d75d5b6637be31299a5b209e420409",
+              "text": "ResumptionCapsule {\n    capsule_id\n\n    task_or_goal_ref\n\n    suspended_from_state\n\n    canonical_snapshot_ref\n\n    relevant_entity_refs[]\n\n    dependency_set_ref\n\n    unresolved_action_refs[]\n\n    next_action_proposal_ref?\n\n    durable_payload_artifact_ref\n    content_integrity_ref\n\n    created_commit_seq\n}",
+              "fields_for_navigation": [
+                "canonical_snapshot_ref",
+                "capsule_id",
+                "content_integrity_ref",
+                "created_commit_seq",
+                "dependency_set_ref",
+                "durable_payload_artifact_ref",
+                "next_action_proposal_ref?",
+                "relevant_entity_refs[]",
+                "suspended_from_state",
+                "task_or_goal_ref",
+                "unresolved_action_refs[]"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "RecoverySuspensionCommitment",
+          "occurrences": [
+            {
+              "symbol": "RecoverySuspensionCommitment",
+              "source_message_id": "d59160dd-fa7a-4058-8892-69794f57e9b8",
+              "source_specification": "RDMS-09",
+              "source_part": "C02",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 2,
+              "start_line": 1203,
+              "end_line": 1225,
+              "sha256": "3b26f4b204905173a8e5b908d644ebc07499fcaba2a2a9b9c7761cfea8b030e8",
+              "text": "RecoverySuspensionCommitment {\n    commitment_id\n\n    recovery_case_ref\n\n    unresolved_obligation_refs[]\n\n    blocked_goal_refs[]\n\n    dependent_action_refs[]\n\n    suspension_reason\n\n    required_reactivation_conditions[]\n\n    durable_trigger_refs[]\n\n    responsible_authority_ref\n\n    escalation_conditions[]\n\n    suspension_commit_ref\n}",
+              "fields_for_navigation": [
+                "blocked_goal_refs[]",
+                "commitment_id",
+                "dependent_action_refs[]",
+                "durable_trigger_refs[]",
+                "escalation_conditions[]",
+                "recovery_case_ref",
+                "required_reactivation_conditions[]",
+                "responsible_authority_ref",
+                "suspension_commit_ref",
+                "suspension_reason",
+                "unresolved_obligation_refs[]"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "BootstrapHandoffProof",
+          "occurrences": [
+            {
+              "symbol": "BootstrapHandoffProof",
+              "source_message_id": "89e41ed5-ac4e-4b95-9680-b9bec79f278a",
+              "source_specification": "RDMS-09",
+              "source_part": "C03",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 3,
+              "start_line": 120,
+              "end_line": 147,
+              "sha256": "01cc1a26ba1a3cc33acd111480bd8dba1b4eecc380f0e4ef4f4f07ac40d31b8c",
+              "text": "BootstrapHandoffProof {\n    bootstrap_case_ref\n\n    recovery_principal_ref\n    verified_authority_ref\n\n    authorized_bootstrap_scope\n\n    initial_resource_frontier\n\n    performed_operations[]\n\n    modified_resource_refs[]\n\n    created_resource_refs[]\n\n    replaced_resource_refs[]\n\n    unknown_change_scope[]\n\n    restoration_evidence_refs[]\n\n    final_resource_frontier\n\n    audit_completeness\n\n    canonical_handoff_status\n}",
+              "fields_for_navigation": [
+                "audit_completeness",
+                "authorized_bootstrap_scope",
+                "bootstrap_case_ref",
+                "canonical_handoff_status",
+                "created_resource_refs[]",
+                "final_resource_frontier",
+                "initial_resource_frontier",
+                "modified_resource_refs[]",
+                "performed_operations[]",
+                "recovery_principal_ref",
+                "replaced_resource_refs[]",
+                "restoration_evidence_refs[]",
+                "unknown_change_scope[]",
+                "verified_authority_ref"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "RecoveryAdmissionBinding",
+          "occurrences": [
+            {
+              "symbol": "RecoveryAdmissionBinding",
+              "source_message_id": "d59160dd-fa7a-4058-8892-69794f57e9b8",
+              "source_specification": "RDMS-09",
+              "source_part": "C02",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 2,
+              "start_line": 1085,
+              "end_line": 1113,
+              "sha256": "6999b109f9532e1ccce580354e9c6bb30c52921f487e04769ee4229fec5f0f6b",
+              "text": "RecoveryAdmissionBinding {\n    admission_id\n\n    recovery_case_ref\n\n    admitted_project_scope\n\n    admitted_operation_classes[]\n\n    current_executive_epoch\n\n    canonical_state_frontier\n\n    policy_frontier\n\n    dependency_frontier\n\n    security_frontier\n\n    suppression_frontier\n\n    unresolved_action_constraints[]\n\n    admission_generation\n\n    invalidation_conditions[]\n\n    admission_integrity_ref\n}",
+              "fields_for_navigation": [
+                "admission_generation",
+                "admission_id",
+                "admission_integrity_ref",
+                "admitted_operation_classes[]",
+                "admitted_project_scope",
+                "canonical_state_frontier",
+                "current_executive_epoch",
+                "dependency_frontier",
+                "invalidation_conditions[]",
+                "policy_frontier",
+                "recovery_case_ref",
+                "security_frontier",
+                "suppression_frontier",
+                "unresolved_action_constraints[]"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        }
+      ],
+      "source_schema_count": 4,
+      "source_occurrences": 5,
+      "legal_status": "SOURCE_DECLARATIONS_LOCATED__FULL_INTERFACE_SIGNATURE_NOT_RATIFIED",
+      "remaining_work": [
+        "Select effective versions after correction-by-correction review",
+        "Specify authoritative producer/consumer fields and authentication",
+        "Specify transaction/delivery semantics, retries, failure, epoch and reconciliation",
+        "Prove end-to-end implementation, separately from spec freeze"
+      ]
+    },
+    {
+      "route_id": "X8-06",
+      "owner": "L3_ACTIONS.md",
+      "path": "L2 → L3 → L1",
+      "name": "External execution and journal",
+      "schemas": [
+        "ActionProposal",
+        "ActionRecord",
+        "SealedExecutionIntent",
+        "EffectiveExecutionBinding",
+        "ActionDeliveryContract",
+        "DispatchAdmissionCutover",
+        "RecoverableActionDeliveryObligation"
+      ],
+      "safety": "Ledger atomicity cannot imply atomic external-world effects; IN_DOUBT and repairable delivery are required.",
+      "source_schemas": [
+        {
+          "symbol": "ActionProposal",
+          "occurrences": [
+            {
+              "symbol": "ActionProposal",
+              "source_message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+              "source_specification": "RDMS-04",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 85,
+              "end_line": 137,
+              "sha256": "1d1d2dfa1eaacd278ba44f59a1e7c5a2807b8f4e22cd867864b3688ac7587273",
+              "text": "ActionProposal {\n    action_proposal_id\n    project_id\n\n    requested_by_ref\n    goal_id\n    slice_id\n\n    action_kind:\n        TERMINAL\n        FILESYSTEM\n        GIT\n        TEST\n        BUILD\n        DEBUGGER\n        DATABASE\n        NETWORK\n        DEPLOYMENT\n        OTHER\n\n    requested_action_class:\n        EPHEMERAL_SANDBOX\n        SHARED_WORLD\n\n    intent\n\n    target_scope[]\n    expected_effects[]\n    preconditions[]\n\n    base_repo_ref?\n    base_world_ref?\n\n    dependency_set_ref?\n\n    risk_profile_ref?\n\n    reversibility:\n        REVERSIBLE\n        COMPENSATABLE\n        PARTIALLY_REVERSIBLE\n        IRREVERSIBLE\n\n    compensation_plan_ref?\n\n    effect_semantics_ref\n\n    execution_spec_ref\n\n    mode:\n        DIAGNOSTIC\n        PRODUCTION\n}",
+              "fields_for_navigation": [
+                "action_kind",
+                "action_proposal_id",
+                "base_repo_ref?",
+                "base_world_ref?",
+                "compensation_plan_ref?",
+                "dependency_set_ref?",
+                "effect_semantics_ref",
+                "execution_spec_ref",
+                "expected_effects[]",
+                "goal_id",
+                "intent",
+                "mode",
+                "preconditions[]",
+                "project_id",
+                "requested_action_class",
+                "requested_by_ref",
+                "reversibility",
+                "risk_profile_ref?",
+                "slice_id",
+                "target_scope[]"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "ActionRecord",
+          "occurrences": [
+            {
+              "symbol": "ActionRecord",
+              "source_message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+              "source_specification": "RDMS-04",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 196,
+              "end_line": 221,
+              "sha256": "b04404a6eafcf8aec73c83958aa5553aca3762a62a892c1cc8e857d5f0e3f386",
+              "text": "ActionRecord {\n    action_id\n    proposal_ref\n    authorization_ref\n\n    action_class\n\n    lifecycle\n\n    world_ref_before?\n    repo_ref_before?\n\n    effect_semantics_ref\n\n    latest_attempt_ref?\n\n    world_ref_after?\n    repo_ref_after?\n\n    effect_verification_refs[]\n\n    compensation_action_ref?\n\n    created_commit_seq\n    updated_commit_seq\n}",
+              "fields_for_navigation": [
+                "action_class",
+                "action_id",
+                "authorization_ref",
+                "compensation_action_ref?",
+                "created_commit_seq",
+                "effect_semantics_ref",
+                "effect_verification_refs[]",
+                "latest_attempt_ref?",
+                "lifecycle",
+                "proposal_ref",
+                "repo_ref_after?",
+                "repo_ref_before?",
+                "updated_commit_seq",
+                "world_ref_after?",
+                "world_ref_before?"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "SealedExecutionIntent",
+          "occurrences": [
+            {
+              "symbol": "SealedExecutionIntent",
+              "source_message_id": "e4828797-8ddb-48ae-a3e4-3e9ec47b70c3",
+              "source_specification": "RDMS-10",
+              "source_part": "C01",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 748,
+              "end_line": 774,
+              "sha256": "8bf749d80ed5502c3a670b64853ea11cd4fb0635541eb7efd087468202bde01a",
+              "text": "SealedExecutionIntent {\n    action_ref\n\n    authorized_tool_identity\n\n    authorized_operation_kind\n\n    effective_argument_ref\n\n    effective_argument_integrity_ref\n\n    authorized_target_identity\n\n    authorized_resource_scope\n\n    authorized_effect_semantics_ref\n\n    execution_boundary_ref\n\n    executive_epoch\n\n    authorization_generation\n\n    required_pre_dispatch_conditions[]\n\n    authorization_receipt_ref\n}",
+              "fields_for_navigation": [
+                "action_ref",
+                "authorization_generation",
+                "authorization_receipt_ref",
+                "authorized_effect_semantics_ref",
+                "authorized_operation_kind",
+                "authorized_resource_scope",
+                "authorized_target_identity",
+                "authorized_tool_identity",
+                "effective_argument_integrity_ref",
+                "effective_argument_ref",
+                "execution_boundary_ref",
+                "executive_epoch",
+                "required_pre_dispatch_conditions[]"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "EffectiveExecutionBinding",
+          "occurrences": [
+            {
+              "symbol": "EffectiveExecutionBinding",
+              "source_message_id": "5f33fe0d-af3e-4f37-aeac-8979e64d941f",
+              "source_specification": "RDMS-10",
+              "source_part": "C02",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 2,
+              "start_line": 423,
+              "end_line": 449,
+              "sha256": "d5c98f9d9e69edf753fbdda12922a0df68c67cc556e02990bb963f0a93601da1",
+              "text": "EffectiveExecutionBinding {\n    action_ref\n\n    sealed_execution_intent_ref\n\n    authorized_operation_kind\n\n    adapter_identity\n\n    adapter_integrity_ref\n\n    effective_operation_ref\n\n    effective_argument_integrity_ref\n\n    resolved_target_resource_refs[]\n\n    execution_environment_ref\n\n    effective_execution_principal_ref\n\n    authorized_effect_scope\n\n    final_validation_ref\n\n    dispatch_eligibility\n}",
+              "fields_for_navigation": [
+                "action_ref",
+                "adapter_identity",
+                "adapter_integrity_ref",
+                "authorized_effect_scope",
+                "authorized_operation_kind",
+                "dispatch_eligibility",
+                "effective_argument_integrity_ref",
+                "effective_execution_principal_ref",
+                "effective_operation_ref",
+                "execution_environment_ref",
+                "final_validation_ref",
+                "resolved_target_resource_refs[]",
+                "sealed_execution_intent_ref"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "ActionDeliveryContract",
+          "occurrences": [
+            {
+              "symbol": "ActionDeliveryContract",
+              "source_message_id": "e4828797-8ddb-48ae-a3e4-3e9ec47b70c3",
+              "source_specification": "RDMS-10",
+              "source_part": "C01",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 867,
+              "end_line": 891,
+              "sha256": "d9771caf5be03c5c6995858af38e0539561a2f4975711c59d1e28db84713003f",
+              "text": "ActionDeliveryContract {\n    action_ref\n\n    delivery_identity\n\n    execution_attempt_identity\n\n    dispatch_intent_ref\n\n    sealed_execution_intent_ref\n\n    receiving_worker_identity\n\n    receiving_worker_generation\n\n    retry_policy_ref\n\n    delivery_deduplication_scope\n\n    acknowledgement_semantics\n\n    possible_external_effect_status\n\n    required_reconciliation_ref?\n}",
+              "fields_for_navigation": [
+                "acknowledgement_semantics",
+                "action_ref",
+                "delivery_deduplication_scope",
+                "delivery_identity",
+                "dispatch_intent_ref",
+                "execution_attempt_identity",
+                "possible_external_effect_status",
+                "receiving_worker_generation",
+                "receiving_worker_identity",
+                "required_reconciliation_ref?",
+                "retry_policy_ref",
+                "sealed_execution_intent_ref"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "DispatchAdmissionCutover",
+          "occurrences": [
+            {
+              "symbol": "DispatchAdmissionCutover",
+              "source_message_id": "5f33fe0d-af3e-4f37-aeac-8979e64d941f",
+              "source_specification": "RDMS-10",
+              "source_part": "C02",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 2,
+              "start_line": 536,
+              "end_line": 562,
+              "sha256": "6c98bbb843273f8f952861c7c49cd7c8967d3780a4448fd801c529765879ca95",
+              "text": "DispatchAdmissionCutover {\n    action_ref\n\n    executive_epoch\n\n    originating_authorization_ref\n\n    dispatch_intent_commit_ref\n\n    dependency_frontier_ref\n\n    current_dependency_assessment_ref\n\n    current_policy_frontier_ref\n\n    current_execution_generation\n\n    admission_ordering_ref\n\n    applicable_invalidation_refs[]\n\n    effective_execution_binding_ref\n\n    cutover_disposition\n\n    possible_dispatch_assessment\n}",
+              "fields_for_navigation": [
+                "action_ref",
+                "admission_ordering_ref",
+                "applicable_invalidation_refs[]",
+                "current_dependency_assessment_ref",
+                "current_execution_generation",
+                "current_policy_frontier_ref",
+                "cutover_disposition",
+                "dependency_frontier_ref",
+                "dispatch_intent_commit_ref",
+                "effective_execution_binding_ref",
+                "executive_epoch",
+                "originating_authorization_ref",
+                "possible_dispatch_assessment"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "RecoverableActionDeliveryObligation",
+          "occurrences": [
+            {
+              "symbol": "RecoverableActionDeliveryObligation",
+              "source_message_id": "5f33fe0d-af3e-4f37-aeac-8979e64d941f",
+              "source_specification": "RDMS-10",
+              "source_part": "C02",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 2,
+              "start_line": 130,
+              "end_line": 152,
+              "sha256": "52b78f2353eea358151165a9b085d7c6354098967e027ef30510af0365ac7e76",
+              "text": "RecoverableActionDeliveryObligation {\n    action_ref\n\n    authoritative_lifecycle_ref\n\n    dispatch_intent_commit_ref\n\n    sealed_execution_intent_ref\n\n    delivery_correlation_ref\n\n    execution_attempt_refs[]\n\n    known_external_effect_refs[]\n\n    recovery_enumeration_scope\n\n    unresolved_effect_scope\n\n    legal_continuation_requirement\n\n    recovery_assessment_ref?\n}",
+              "fields_for_navigation": [
+                "action_ref",
+                "authoritative_lifecycle_ref",
+                "delivery_correlation_ref",
+                "dispatch_intent_commit_ref",
+                "execution_attempt_refs[]",
+                "known_external_effect_refs[]",
+                "legal_continuation_requirement",
+                "recovery_assessment_ref?",
+                "recovery_enumeration_scope",
+                "sealed_execution_intent_ref",
+                "unresolved_effect_scope"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        }
+      ],
+      "source_schema_count": 7,
+      "source_occurrences": 7,
+      "legal_status": "SOURCE_DECLARATIONS_LOCATED__FULL_INTERFACE_SIGNATURE_NOT_RATIFIED",
+      "remaining_work": [
+        "Select effective versions after correction-by-correction review",
+        "Specify authoritative producer/consumer fields and authentication",
+        "Specify transaction/delivery semantics, retries, failure, epoch and reconciliation",
+        "Prove end-to-end implementation, separately from spec freeze"
+      ]
+    },
+    {
+      "route_id": "X8-07",
+      "owner": "L3_ACTIONS.md",
+      "path": "L3 → L2 → L1",
+      "name": "Observation and evidence",
+      "schemas": [
+        "Observation",
+        "EvidenceLink",
+        "FactGrounding",
+        "ContentTrustContext",
+        "ObservationSourceBinding",
+        "ObservationCausalAttachmentContract"
+      ],
+      "safety": "Source acceptance differs from epistemic certainty and causal attribution.",
+      "source_schemas": [
+        {
+          "symbol": "Observation",
+          "occurrences": [
+            {
+              "symbol": "Observation",
+              "source_message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+              "source_specification": "RDMS-03",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 70,
+              "end_line": 96,
+              "sha256": "2e8195bef03066422a8996e4d6329cdf17d9415a4d0584a12d65b788d09aebc1",
+              "text": "Observation {\n    observation_id\n    project_id\n\n    observation_kind\n\n    source_ref\n\n    subject_ref?\n\n    observed_at\n    ingested_commit_seq\n\n    repo_ref?\n    world_ref?\n    environment_ref?\n\n    normalized_content\n\n    raw_artifact_ref?\n\n    provenance\n\n    capture_integrity\n\n    origin_ref?\n}",
+              "fields_for_navigation": [
+                "capture_integrity",
+                "environment_ref?",
+                "ingested_commit_seq",
+                "normalized_content",
+                "observation_id",
+                "observation_kind",
+                "observed_at",
+                "origin_ref?",
+                "project_id",
+                "provenance",
+                "raw_artifact_ref?",
+                "repo_ref?",
+                "source_ref",
+                "subject_ref?",
+                "world_ref?"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "EvidenceLink",
+          "occurrences": [
+            {
+              "symbol": "EvidenceLink",
+              "source_message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+              "source_specification": "RDMS-03",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 449,
+              "end_line": 480,
+              "sha256": "b56d24206ab7628d92c266e4a6d8c3e3a63aa29a627ede82c373819a56071e26",
+              "text": "EvidenceLink {\n    evidence_link_id\n\n    observation_refs[]\n\n    target_ref\n\n    relation:\n        SUPPORTS\n        WEAKENS\n        CONTRADICTS\n        RELEVANT\n\n    derivation:\n        DETERMINISTIC\n        SEMANTIC\n        AUTHORITATIVE\n\n    rationale\n\n    derivation_ref?\n\n    dependency_set_ref?\n\n    lifecycle:\n        PROPOSED\n        ACCEPTED\n        REJECTED\n        SUPERSEDED\n\n    accepted_commit_seq?\n}",
+              "fields_for_navigation": [
+                "accepted_commit_seq?",
+                "dependency_set_ref?",
+                "derivation",
+                "derivation_ref?",
+                "evidence_link_id",
+                "lifecycle",
+                "observation_refs[]",
+                "rationale",
+                "relation",
+                "target_ref"
+              ],
+              "ellipsis_present": false
+            },
+            {
+              "symbol": "EvidenceLink",
+              "source_message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+              "source_specification": "RDMS-03",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 502,
+              "end_line": 505,
+              "sha256": "c3afbd4eb962992437673decec2fc0f1672639db8a9a935f704eb0c450995eaa",
+              "text": "EvidenceLink {\n    observation_refs = []\n    rationale = \"I strongly believe...\"\n}",
+              "fields_for_navigation": [
+                "observation_refs",
+                "rationale"
+              ],
+              "ellipsis_present": true
+            }
+          ]
+        },
+        {
+          "symbol": "FactGrounding",
+          "occurrences": [
+            {
+              "symbol": "FactGrounding",
+              "source_message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+              "source_specification": "RDMS-02",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 161,
+              "end_line": 170,
+              "sha256": "7d1365a80728c8d4e2a9340e7262e71274d698c0cdeb9dfb01d9c61d8a54ccca",
+              "text": "FactGrounding {\n    kind:\n        OBSERVED\n        DETERMINISTIC\n        AUTHORITATIVE\n\n    source_refs[]\n\n    authority_domain?\n}",
+              "fields_for_navigation": [
+                "authority_domain?",
+                "kind",
+                "source_refs[]"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "ContentTrustContext",
+          "occurrences": [
+            {
+              "symbol": "ContentTrustContext",
+              "source_message_id": "a1ca0249-b287-4c4b-8254-773c8f6edbda",
+              "source_specification": "RDMS-03",
+              "source_part": "C01 and Freeze Review 02 Final",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 19,
+              "end_line": 42,
+              "sha256": "e23cfcddd8eb07ae9047a8525c20108715194aba476cb801827b2462f1e6432e",
+              "text": "ContentTrustContext {\n    trust_context_id\n\n    content_role:\n        DATA\n        CODE\n        DOCUMENTATION\n        TOOL_OUTPUT\n        HUMAN_REQUIREMENT\n        SYSTEM_POLICY\n        OTHER\n\n    instruction_authority:\n        NONE\n        USER_TASK\n        PROJECT\n        SYSTEM\n\n    source_trust_class\n\n    domain_authority_binding_ref?\n\n    created_commit_seq\n}",
+              "fields_for_navigation": [
+                "content_role",
+                "created_commit_seq",
+                "domain_authority_binding_ref?",
+                "instruction_authority",
+                "source_trust_class",
+                "trust_context_id"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "ObservationSourceBinding",
+          "occurrences": [
+            {
+              "symbol": "ObservationSourceBinding",
+              "source_message_id": "e4828797-8ddb-48ae-a3e4-3e9ec47b70c3",
+              "source_specification": "RDMS-10",
+              "source_part": "C01",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 1122,
+              "end_line": 1148,
+              "sha256": "486ffdc2cc70a4eaff365090f9321a578a1cd667846176b85b0974c84e077994",
+              "text": "ObservationSourceBinding {\n    observation_ref\n\n    source_identity\n\n    source_kind\n\n    source_trust_classification\n\n    related_action_ref?\n\n    observed_resource_scope\n\n    observed_event_scope\n\n    raw_report_ref?\n\n    directly_observed_effect_refs[]\n\n    observation_provenance_ref\n\n    observation_integrity_ref\n\n    supported_claim_scope\n\n    known_limitations[]\n}",
+              "fields_for_navigation": [
+                "directly_observed_effect_refs[]",
+                "known_limitations[]",
+                "observation_integrity_ref",
+                "observation_provenance_ref",
+                "observation_ref",
+                "observed_event_scope",
+                "observed_resource_scope",
+                "raw_report_ref?",
+                "related_action_ref?",
+                "source_identity",
+                "source_kind",
+                "source_trust_classification",
+                "supported_claim_scope"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "ObservationCausalAttachmentContract",
+          "occurrences": [
+            {
+              "symbol": "ObservationCausalAttachmentContract",
+              "source_message_id": "5f33fe0d-af3e-4f37-aeac-8979e64d941f",
+              "source_specification": "RDMS-10",
+              "source_part": "C02",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 2,
+              "start_line": 754,
+              "end_line": 776,
+              "sha256": "6dbabd3c921605671ac0cd84d1d22319559f537e42ec6eb9c930984bf3121851",
+              "text": "ObservationCausalAttachmentContract {\n    observation_ref\n\n    source_identity\n\n    source_event_identity?\n\n    raw_observation_scope\n\n    claimed_action_ref?\n\n    verified_action_ref?\n\n    source_provenance_ref\n\n    causal_attachment_evidence_refs[]\n\n    missing_parent_refs[]\n\n    admissible_interpretation_scope\n\n    reattachment_requirements[]\n}",
+              "fields_for_navigation": [
+                "admissible_interpretation_scope",
+                "causal_attachment_evidence_refs[]",
+                "claimed_action_ref?",
+                "missing_parent_refs[]",
+                "observation_ref",
+                "raw_observation_scope",
+                "reattachment_requirements[]",
+                "source_event_identity?",
+                "source_identity",
+                "source_provenance_ref",
+                "verified_action_ref?"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        }
+      ],
+      "source_schema_count": 6,
+      "source_occurrences": 7,
+      "legal_status": "SOURCE_DECLARATIONS_LOCATED__FULL_INTERFACE_SIGNATURE_NOT_RATIFIED",
+      "remaining_work": [
+        "Select effective versions after correction-by-correction review",
+        "Specify authoritative producer/consumer fields and authentication",
+        "Specify transaction/delivery semantics, retries, failure, epoch and reconciliation",
+        "Prove end-to-end implementation, separately from spec freeze"
+      ]
+    },
+    {
+      "route_id": "X8-08",
+      "owner": "L3_ACTIONS.md",
+      "path": "L2 → L3 → L2",
+      "name": "Experiment and causal verification",
+      "schemas": [
+        "Experiment",
+        "ExperimentRun",
+        "ExperimentDesignSnapshot",
+        "Prediction",
+        "VerificationRecord"
+      ],
+      "safety": "A prediction is frozen before intervention; Experiment ≠ ExperimentRun.",
+      "source_schemas": [
+        {
+          "symbol": "Experiment",
+          "occurrences": [
+            {
+              "symbol": "Experiment",
+              "source_message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+              "source_specification": "RDMS-03",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 859,
+              "end_line": 891,
+              "sha256": "77b9d1f12e730ad6d94c444aef8d1dd545a8852df355849803557a8712ed4ea8",
+              "text": "Experiment {\n    experiment_id\n\n    question\n\n    purpose:\n        REPRODUCTION\n        DISCRIMINATING\n        CAUSAL_INTERVENTION\n        REGRESSION\n        PERFORMANCE\n        EXPLORATORY\n        OTHER\n\n    target_hypothesis_ids[]\n\n    method_spec\n\n    prediction_ids[]\n\n    required_action_specs[]\n\n    risk_refs[]\n\n    lifecycle:\n        DRAFT\n        DESIGNED\n        AUTHORIZED\n        RETIRED\n        CANCELLED\n\n    prediction_set_frozen_at_commit_seq?\n}",
+              "fields_for_navigation": [
+                "experiment_id",
+                "lifecycle",
+                "method_spec",
+                "prediction_ids[]",
+                "prediction_set_frozen_at_commit_seq?",
+                "purpose",
+                "question",
+                "required_action_specs[]",
+                "risk_refs[]",
+                "target_hypothesis_ids[]"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "ExperimentRun",
+          "occurrences": [
+            {
+              "symbol": "ExperimentRun",
+              "source_message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+              "source_specification": "RDMS-03",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 918,
+              "end_line": 943,
+              "sha256": "809f19f3dd7a910bff6e6e48f04a1d684257914c8a7706fb57b035fde58fc948",
+              "text": "ExperimentRun {\n    experiment_run_id\n\n    experiment_id\n    run_number\n\n    repo_ref?\n    world_ref?\n    environment_ref?\n\n    dependency_set_ref?\n\n    run_state:\n        PREPARED\n        RUNNING\n        BLOCKED\n        COMPLETED\n        PARTIAL\n        FAILED_TO_EXECUTE\n        CANCELLED\n\n    started_at?\n    ended_at?\n\n    execution_issue_ref?\n}",
+              "fields_for_navigation": [
+                "dependency_set_ref?",
+                "ended_at?",
+                "environment_ref?",
+                "execution_issue_ref?",
+                "experiment_id",
+                "experiment_run_id",
+                "repo_ref?",
+                "run_number",
+                "run_state",
+                "started_at?",
+                "world_ref?"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "ExperimentDesignSnapshot",
+          "occurrences": [
+            {
+              "symbol": "ExperimentDesignSnapshot",
+              "source_message_id": "a1ca0249-b287-4c4b-8254-773c8f6edbda",
+              "source_specification": "RDMS-03",
+              "source_part": "C01 and Freeze Review 02 Final",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 535,
+              "end_line": 559,
+              "sha256": "fbdf6d6301d7fa360c4f13c7ffbc2cf8ad4c191e341558d219c605548b73966b",
+              "text": "ExperimentDesignSnapshot {\n    design_snapshot_id\n\n    experiment_id\n    design_version\n\n    question\n\n    purpose\n\n    method_spec\n\n    prediction_refs[]:\n        VersionedEntityRef<Prediction>\n\n    required_action_specs[]\n\n    risk_refs[]\n\n    design_scope\n\n    authorized_commit_seq\n\n    design_fingerprint\n}",
+              "fields_for_navigation": [
+                "authorized_commit_seq",
+                "design_fingerprint",
+                "design_scope",
+                "design_snapshot_id",
+                "design_version",
+                "experiment_id",
+                "method_spec",
+                "prediction_refs[]",
+                "purpose",
+                "question",
+                "required_action_specs[]",
+                "risk_refs[]"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "Prediction",
+          "occurrences": [
+            {
+              "symbol": "Prediction",
+              "source_message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+              "source_specification": "RDMS-03",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 753,
+              "end_line": 771,
+              "sha256": "557093dfde485e4408fdd764faa37e88d42fc59c27fbadc5f293a1f2de41ee3f",
+              "text": "Prediction {\n    prediction_id\n\n    experiment_id\n\n    hypothesis_id?\n\n    statement\n\n    expected_observation_spec\n\n    discrimination_targets[]\n\n    falsification_condition?\n\n    created_commit_seq\n\n    frozen_at_commit_seq?\n}",
+              "fields_for_navigation": [
+                "created_commit_seq",
+                "discrimination_targets[]",
+                "expected_observation_spec",
+                "experiment_id",
+                "falsification_condition?",
+                "frozen_at_commit_seq?",
+                "hypothesis_id?",
+                "prediction_id",
+                "statement"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "VerificationRecord",
+          "occurrences": [
+            {
+              "symbol": "VerificationRecord",
+              "source_message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+              "source_specification": "RDMS-03",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 1100,
+              "end_line": 1131,
+              "sha256": "732b01c781d88c2661eea6b8463d7a66965593279c0ee897e63d1a005f2892b8",
+              "text": "VerificationRecord {\n    verification_record_id\n\n    verification_spec_ref\n    subject_ref\n\n    repo_ref?\n    world_ref?\n    environment_ref?\n\n    dependency_set_ref?\n\n    deterministic_result_refs[]\n    observation_refs[]\n    semantic_assessment_refs[]\n\n    outcome:\n        SATISFIED\n        NOT_SATISFIED\n        INCONCLUSIVE\n        ERROR\n\n    derivation:\n        DETERMINISTIC\n        BEHAVIORAL\n        SEMANTIC\n        COMPOSITE\n\n    executed_at\n\n    artifact_refs[]\n}",
+              "fields_for_navigation": [
+                "artifact_refs[]",
+                "dependency_set_ref?",
+                "derivation",
+                "deterministic_result_refs[]",
+                "environment_ref?",
+                "executed_at",
+                "observation_refs[]",
+                "outcome",
+                "repo_ref?",
+                "semantic_assessment_refs[]",
+                "subject_ref",
+                "verification_record_id",
+                "verification_spec_ref",
+                "world_ref?"
+              ],
+              "ellipsis_present": false
+            },
+            {
+              "symbol": "VerificationRecord",
+              "source_message_id": "a1ca0249-b287-4c4b-8254-773c8f6edbda",
+              "source_specification": "RDMS-03",
+              "source_part": "C01 and Freeze Review 02 Final",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 759,
+              "end_line": 774,
+              "sha256": "4c6bf58fb82d972bb101d884919cb328c00f46fe9641b16685375716196b5d14",
+              "text": "VerificationRecord {\n    verification_record_id\n\n    verification_spec_ref:\n        VersionedEntityRef<VerificationSpec>\n\n    subject_ref\n\n    repo_ref?\n    world_ref?\n    environment_ref?\n\n    dependency_set_ref?\n\n    ...\n}",
+              "fields_for_navigation": [
+                "dependency_set_ref?",
+                "environment_ref?",
+                "repo_ref?",
+                "subject_ref",
+                "verification_record_id",
+                "verification_spec_ref",
+                "world_ref?"
+              ],
+              "ellipsis_present": true
+            }
+          ]
+        }
+      ],
+      "source_schema_count": 5,
+      "source_occurrences": 6,
+      "legal_status": "SOURCE_DECLARATIONS_LOCATED__FULL_INTERFACE_SIGNATURE_NOT_RATIFIED",
+      "remaining_work": [
+        "Select effective versions after correction-by-correction review",
+        "Specify authoritative producer/consumer fields and authentication",
+        "Specify transaction/delivery semantics, retries, failure, epoch and reconciliation",
+        "Prove end-to-end implementation, separately from spec freeze"
+      ]
+    },
+    {
+      "route_id": "X8-09",
+      "owner": "L3_ACTIONS.md",
+      "path": "L3 → L2",
+      "name": "Contradiction and reality mismatch",
+      "schemas": [
+        "ContradictionRecord",
+        "Claim",
+        "OperationalCausalClaim"
+      ],
+      "safety": "An unresolved discrepancy is not silently resolved, nor an independent source of causal truth.",
+      "source_schemas": [
+        {
+          "symbol": "ContradictionRecord",
+          "occurrences": [
+            {
+              "symbol": "ContradictionRecord",
+              "source_message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+              "source_specification": "RDMS-03",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 620,
+              "end_line": 645,
+              "sha256": "e8e2641455efb82f3da738cfff8f716fcead8179e6b63ddbd46618cbc58948ed",
+              "text": "ContradictionRecord {\n    contradiction_id\n\n    observation_refs[]\n\n    subject_ref?\n    subject_key?\n\n    comparison_scope\n\n    comparability\n\n    dimension_analysis[]\n\n    lifecycle:\n        CANDIDATE\n        CONFIRMED\n        EXPLAINED\n        RESOLVED\n        DISMISSED\n\n    information_need_id?\n\n    explanation_ref?\n    resolution_ref?\n}",
+              "fields_for_navigation": [
+                "comparability",
+                "comparison_scope",
+                "contradiction_id",
+                "dimension_analysis[]",
+                "explanation_ref?",
+                "information_need_id?",
+                "lifecycle",
+                "observation_refs[]",
+                "resolution_ref?",
+                "subject_key?",
+                "subject_ref?"
+              ],
+              "ellipsis_present": false
+            },
+            {
+              "symbol": "ContradictionRecord",
+              "source_message_id": "a1ca0249-b287-4c4b-8254-773c8f6edbda",
+              "source_specification": "RDMS-03",
+              "source_part": "C01 and Freeze Review 02 Final",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 468,
+              "end_line": 473,
+              "sha256": "02fb0ca2cc801ad9abf3659661af8e9d5ba4e2cd3cae7b81c41e31be927f788f",
+              "text": "ContradictionRecord {\n    ...\n\n    dimension_analysis[]\n    explanation_ref?\n}",
+              "fields_for_navigation": [
+                "dimension_analysis[]",
+                "explanation_ref?"
+              ],
+              "ellipsis_present": true
+            }
+          ]
+        },
+        {
+          "symbol": "Claim",
+          "occurrences": [
+            {
+              "symbol": "Claim",
+              "source_message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+              "source_specification": "RDMS-02",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 120,
+              "end_line": 152,
+              "sha256": "0cc9ca22709f89fa2ed2187d5495b91a57d92b5beb04229b530afce7b69d7a45",
+              "text": "Claim {\n    claim_id\n\n    kind:\n        FACT\n        BELIEF\n        ASSUMPTION\n\n    statement\n\n    scope: ScopeSpec\n\n    support:\n        UNASSESSED\n        WEAK\n        MODERATE\n        STRONG\n        VERIFIED\n\n    support_assessed_at_commit?\n\n    grounding?\n    dependency_set_ref?\n\n    temporal_validity?\n\n    status:\n        ACTIVE\n        REFUTED\n        SUPERSEDED\n\n    superseded_by?\n}",
+              "fields_for_navigation": [
+                "claim_id",
+                "dependency_set_ref?",
+                "grounding?",
+                "kind",
+                "scope",
+                "statement",
+                "status",
+                "superseded_by?",
+                "support",
+                "support_assessed_at_commit?",
+                "temporal_validity?"
+              ],
+              "ellipsis_present": false
+            },
+            {
+              "symbol": "Claim",
+              "source_message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+              "source_specification": "RDMS-02",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 199,
+              "end_line": 202,
+              "sha256": "28c429da95506d97a29d01a07cf4519a2f805ab04ce63aac809e9827a1698367",
+              "text": "Claim {\n    kind = FACT\n    grounding = null\n}",
+              "fields_for_navigation": [
+                "grounding",
+                "kind"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "OperationalCausalClaim",
+          "occurrences": [
+            {
+              "symbol": "OperationalCausalClaim",
+              "source_message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+              "source_specification": "RDMS-02",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 449,
+              "end_line": 477,
+              "sha256": "25acaae38d4e0e7933822b74e801146eedd80d82784a97f384e9f359af8ab0d5",
+              "text": "OperationalCausalClaim {\n    causal_claim_id\n\n    source_hypothesis_id\n\n    cause\n    effect\n    mechanism\n\n    scope: CausalScope\n\n    verification_ref\n\n    dependency_set_ref\n\n    validity_conditions[]\n\n    contradictory_observation_refs[]\n\n    status:\n        OPERATIONALLY_VERIFIED\n        STALE\n        CONTRADICTED\n        SUPERSEDED\n\n    promoted_commit_seq\n\n    superseded_by?\n}",
+              "fields_for_navigation": [
+                "causal_claim_id",
+                "cause",
+                "contradictory_observation_refs[]",
+                "dependency_set_ref",
+                "effect",
+                "mechanism",
+                "promoted_commit_seq",
+                "scope",
+                "source_hypothesis_id",
+                "status",
+                "superseded_by?",
+                "validity_conditions[]",
+                "verification_ref"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        }
+      ],
+      "source_schema_count": 3,
+      "source_occurrences": 5,
+      "legal_status": "SOURCE_DECLARATIONS_LOCATED__FULL_INTERFACE_SIGNATURE_NOT_RATIFIED",
+      "remaining_work": [
+        "Select effective versions after correction-by-correction review",
+        "Specify authoritative producer/consumer fields and authentication",
+        "Specify transaction/delivery semantics, retries, failure, epoch and reconciliation",
+        "Prove end-to-end implementation, separately from spec freeze"
+      ]
+    },
+    {
+      "route_id": "X8-10",
+      "owner": "L4_TEMPORAL_SPECIALISTS.md",
+      "path": "L4 → L2 → L1",
+      "name": "Freshness and completion",
+      "schemas": [
+        "DependencySet",
+        "DependencyCaptureReceipt",
+        "DependencyAttestation",
+        "CompletionStateBinding",
+        "IntegratedCompletionEvidence"
+      ],
+      "safety": "Freshness is dependency-scoped; completion requires an appropriate proof of acceptance.",
+      "source_schemas": [
+        {
+          "symbol": "DependencySet",
+          "occurrences": [
+            {
+              "symbol": "DependencySet",
+              "source_message_id": "4bcbb2bf-86d9-4b93-9b1c-9f9529916667",
+              "source_specification": "RDMS-06",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 676,
+              "end_line": 688,
+              "sha256": "f596f8c673ea27846249b5dcfa447baa4e251351ee006131cc0ae5688825d270",
+              "text": "DependencySet {\n    dependency_set_id\n\n    owner_result_ref\n\n    stamps[]\n\n    derivation_context_ref?\n\n    capture_frontier_ref?\n\n    dependency_set_fingerprint\n}",
+              "fields_for_navigation": [
+                "capture_frontier_ref?",
+                "dependency_set_fingerprint",
+                "dependency_set_id",
+                "derivation_context_ref?",
+                "owner_result_ref",
+                "stamps[]"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "DependencyCaptureReceipt",
+          "occurrences": [
+            {
+              "symbol": "DependencyCaptureReceipt",
+              "source_message_id": "1ed5a815-4917-47b8-9e00-0b450a0581e2",
+              "source_specification": "RDMS-06",
+              "source_part": "C01 and Adversarial Freeze Review 02 with freeze decision",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 609,
+              "end_line": 634,
+              "sha256": "d7ff97834f08dcd7e2556a12314b38b719619e9cec054f56018795a05827beba",
+              "text": "DependencyCaptureReceipt {\n    receipt_id\n\n    subject_execution_or_reasoning_ref\n\n    trusted_observed_reads[]\n\n    trusted_index_queries[]\n\n    trusted_tool_context_refs[]\n\n    trusted_environment_refs[]\n\n    declared_additional_dependencies[]\n\n    capture_scope\n\n    capture_coverage:\n        COMPLETE_WITHIN_DEFINED_SCOPE\n        PARTIAL\n        UNKNOWN\n\n    enforcement_basis_refs[]\n\n    capture_fingerprint\n}",
+              "fields_for_navigation": [
+                "capture_coverage",
+                "capture_fingerprint",
+                "capture_scope",
+                "declared_additional_dependencies[]",
+                "enforcement_basis_refs[]",
+                "receipt_id",
+                "subject_execution_or_reasoning_ref",
+                "trusted_environment_refs[]",
+                "trusted_index_queries[]",
+                "trusted_observed_reads[]",
+                "trusted_tool_context_refs[]"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "DependencyAttestation",
+          "occurrences": [
+            {
+              "symbol": "DependencyAttestation",
+              "source_message_id": "1ed5a815-4917-47b8-9e00-0b450a0581e2",
+              "source_specification": "RDMS-06",
+              "source_part": "C01 and Adversarial Freeze Review 02 with freeze decision",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 655,
+              "end_line": 668,
+              "sha256": "2558385e10da2a9ead0dafaab139ad30b0fe45edb12ae06acd9ec6c36f013373",
+              "text": "DependencyAttestation {\n    dependency_ref\n\n    observed_identity\n    observed_version_or_hash\n\n    source_read_context_ref\n\n    trusted_capture_component_ref\n\n    capture_time_or_commit_ref\n\n    integrity_ref\n}",
+              "fields_for_navigation": [
+                "capture_time_or_commit_ref",
+                "dependency_ref",
+                "integrity_ref",
+                "observed_identity",
+                "observed_version_or_hash",
+                "source_read_context_ref",
+                "trusted_capture_component_ref"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "CompletionStateBinding",
+          "occurrences": [
+            {
+              "symbol": "CompletionStateBinding",
+              "source_message_id": "5f33fe0d-af3e-4f37-aeac-8979e64d941f",
+              "source_specification": "RDMS-10",
+              "source_part": "C02",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 2,
+              "start_line": 972,
+              "end_line": 994,
+              "sha256": "fa6057f2f9c27814e892375aa6f9af148e8edcf0abcb5239dce4d4210d87b515",
+              "text": "CompletionStateBinding {\n    goal_ref\n\n    goal_version\n\n    acceptance_criteria_frontier\n\n    verified_repository_ref\n\n    verified_world_state_scope\n\n    verification_evidence_refs[]\n\n    dependency_validation_ref\n\n    relevant_policy_frontier\n\n    unresolved_obligation_refs[]\n\n    finalization_commit_preconditions[]\n\n    finalization_commit_ref?\n}",
+              "fields_for_navigation": [
+                "acceptance_criteria_frontier",
+                "dependency_validation_ref",
+                "finalization_commit_preconditions[]",
+                "finalization_commit_ref?",
+                "goal_ref",
+                "goal_version",
+                "relevant_policy_frontier",
+                "unresolved_obligation_refs[]",
+                "verification_evidence_refs[]",
+                "verified_repository_ref",
+                "verified_world_state_scope"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "IntegratedCompletionEvidence",
+          "occurrences": [
+            {
+              "symbol": "IntegratedCompletionEvidence",
+              "source_message_id": "e4828797-8ddb-48ae-a3e4-3e9ec47b70c3",
+              "source_specification": "RDMS-10",
+              "source_part": "C01",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 1212,
+              "end_line": 1240,
+              "sha256": "61a9b48635b374ccf5a78e9ed18ca8b50097e9d29a11b2dfcef1994e06afd3df",
+              "text": "IntegratedCompletionEvidence {\n    goal_ref\n\n    current_goal_version\n\n    acceptance_criteria_refs[]\n\n    verified_criteria_refs[]\n\n    unverified_criteria_refs[]\n\n    failed_criteria_refs[]\n\n    verification_record_refs[]\n\n    dependency_evaluation_ref\n\n    current_repository_ref\n\n    unresolved_action_constraints[]\n\n    unresolved_specialist_constraints[]\n\n    applicable_policy_ref\n\n    finalization_assessment_ref\n\n    authorized_completion_scope\n}",
+              "fields_for_navigation": [
+                "acceptance_criteria_refs[]",
+                "applicable_policy_ref",
+                "authorized_completion_scope",
+                "current_goal_version",
+                "current_repository_ref",
+                "dependency_evaluation_ref",
+                "failed_criteria_refs[]",
+                "finalization_assessment_ref",
+                "goal_ref",
+                "unresolved_action_constraints[]",
+                "unresolved_specialist_constraints[]",
+                "unverified_criteria_refs[]",
+                "verification_record_refs[]",
+                "verified_criteria_refs[]"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        }
+      ],
+      "source_schema_count": 5,
+      "source_occurrences": 5,
+      "legal_status": "SOURCE_DECLARATIONS_LOCATED__FULL_INTERFACE_SIGNATURE_NOT_RATIFIED",
+      "remaining_work": [
+        "Select effective versions after correction-by-correction review",
+        "Specify authoritative producer/consumer fields and authentication",
+        "Specify transaction/delivery semantics, retries, failure, epoch and reconciliation",
+        "Prove end-to-end implementation, separately from spec freeze"
+      ]
+    },
+    {
+      "route_id": "X8-11",
+      "owner": "L7_RUNTIME_INTEGRATION.md",
+      "path": "L3 → L5 → L7",
+      "name": "Learning and context egress",
+      "schemas": [
+        "MemoryProposal",
+        "LearningAuthorizationBinding",
+        "SealedOutboundContext",
+        "ContextDisclosureAdmission",
+        "MemoryRetrievalCoverage"
+      ],
+      "safety": "No unreviewed auto-learning; egress must bind exact destination, payload and permitted context.",
+      "source_schemas": [
+        {
+          "symbol": "MemoryProposal",
+          "occurrences": [
+            {
+              "symbol": "MemoryProposal",
+              "source_message_id": "938c1bc7-97a0-46ad-be19-cd3ba3ca125f",
+              "source_specification": "RDMS-07",
+              "source_part": "Original draft",
+              "source_classification": "HISTORICAL_DRAFT",
+              "source_order": 0,
+              "start_line": 474,
+              "end_line": 500,
+              "sha256": "954762e236b07d60a1c7480f60f9383a0f914a88043e9f541e6567ed0a6557af",
+              "text": "MemoryProposal {\n    proposal_id\n\n    claim\n\n    proposed_scope\n\n    source_episode_refs[]\n\n    causal_basis_ref?\n\n    applicability_conditions[]\n    counter_conditions[]\n    counterexamples[]\n\n    evidence_refs[]\n\n    confidence_assessment_ref\n\n    proposed_maturity\n\n    dependency_set_ref\n\n    provenance_ref\n\n    proposed_memory_category\n}",
+              "fields_for_navigation": [
+                "applicability_conditions[]",
+                "causal_basis_ref?",
+                "claim",
+                "confidence_assessment_ref",
+                "counter_conditions[]",
+                "counterexamples[]",
+                "dependency_set_ref",
+                "evidence_refs[]",
+                "proposal_id",
+                "proposed_maturity",
+                "proposed_memory_category",
+                "proposed_scope",
+                "provenance_ref",
+                "source_episode_refs[]"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "LearningAuthorizationBinding",
+          "occurrences": [
+            {
+              "symbol": "LearningAuthorizationBinding",
+              "source_message_id": "5ee62ad7-b67d-4382-be9d-cd85f6331a8c",
+              "source_specification": "RDMS-07",
+              "source_part": "C01 and Adversarial Freeze Review 02 with freeze decision",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 392,
+              "end_line": 404,
+              "sha256": "b874b8422dc956055f19393b3ef64da2d1e7499648ef92e4920324f6b4bd87b4",
+              "text": "LearningAuthorizationBinding {\n    proposal_snapshot_ref\n\n    learning_gate_evaluation_ref\n\n    executive_authorization_ref\n\n    expected_memory_head_ref?\n\n    dependency_evaluation_ref\n\n    authorized_commit_scope\n}",
+              "fields_for_navigation": [
+                "authorized_commit_scope",
+                "dependency_evaluation_ref",
+                "executive_authorization_ref",
+                "expected_memory_head_ref?",
+                "learning_gate_evaluation_ref",
+                "proposal_snapshot_ref"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "SealedOutboundContext",
+          "occurrences": [
+            {
+              "symbol": "SealedOutboundContext",
+              "source_message_id": "5f33fe0d-af3e-4f37-aeac-8979e64d941f",
+              "source_specification": "RDMS-10",
+              "source_part": "C02",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 2,
+              "start_line": 858,
+              "end_line": 882,
+              "sha256": "9a32bf619d57ada734a71008191da386626d6d7fbd7d4c8da3bd4383e79674f6",
+              "text": "SealedOutboundContext {\n    invocation_ref\n\n    originating_project_ref\n\n    final_destination_provider_ref\n\n    final_destination_boundary_ref\n\n    final_context_manifest_ref\n\n    included_content_integrity_refs[]\n\n    included_data_classification_refs[]\n\n    applicable_disclosure_policy_frontier\n\n    authorized_processing_purpose\n\n    disclosure_admission_ref\n\n    outbound_integrity_binding\n\n    release_eligibility\n}",
+              "fields_for_navigation": [
+                "applicable_disclosure_policy_frontier",
+                "authorized_processing_purpose",
+                "disclosure_admission_ref",
+                "final_context_manifest_ref",
+                "final_destination_boundary_ref",
+                "final_destination_provider_ref",
+                "included_content_integrity_refs[]",
+                "included_data_classification_refs[]",
+                "invocation_ref",
+                "originating_project_ref",
+                "outbound_integrity_binding",
+                "release_eligibility"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "ContextDisclosureAdmission",
+          "occurrences": [
+            {
+              "symbol": "ContextDisclosureAdmission",
+              "source_message_id": "e4828797-8ddb-48ae-a3e4-3e9ec47b70c3",
+              "source_specification": "RDMS-10",
+              "source_part": "C01",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 1460,
+              "end_line": 1482,
+              "sha256": "cf8ab1e0abe27665db71d9e9661c8a78dc07d830b2123480121809753ff8df72",
+              "text": "ContextDisclosureAdmission {\n    context_package_ref\n\n    originating_project_ref\n\n    destination_provider_ref\n\n    requested_processing_purpose\n\n    included_data_class_refs[]\n\n    applicable_policy_frontier\n\n    authorized_disclosure_scope\n\n    prohibited_content_refs[]\n\n    source_trust_refs[]\n\n    effective_transfer_scope\n\n    admission_status\n}",
+              "fields_for_navigation": [
+                "admission_status",
+                "applicable_policy_frontier",
+                "authorized_disclosure_scope",
+                "context_package_ref",
+                "destination_provider_ref",
+                "effective_transfer_scope",
+                "included_data_class_refs[]",
+                "originating_project_ref",
+                "prohibited_content_refs[]",
+                "requested_processing_purpose",
+                "source_trust_refs[]"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "MemoryRetrievalCoverage",
+          "occurrences": [
+            {
+              "symbol": "MemoryRetrievalCoverage",
+              "source_message_id": "5ee62ad7-b67d-4382-be9d-cd85f6331a8c",
+              "source_specification": "RDMS-07",
+              "source_part": "C01 and Adversarial Freeze Review 02 with freeze decision",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 519,
+              "end_line": 536,
+              "sha256": "141502db00751fe46e006bdf466aa1a1bfda4d18bec292c7a78aada5c4ac500f",
+              "text": "MemoryRetrievalCoverage {\n    query_ref\n\n    searchable_universe_ref\n\n    index_snapshot_ref\n\n    searched_scope\n\n    retrieval_budget\n\n    completeness:\n        COMPLETE_WITHIN_SCOPE\n        PARTIAL\n        UNKNOWN\n\n    excluded_scope_refs[]\n}",
+              "fields_for_navigation": [
+                "completeness",
+                "excluded_scope_refs[]",
+                "index_snapshot_ref",
+                "query_ref",
+                "retrieval_budget",
+                "searchable_universe_ref",
+                "searched_scope"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        }
+      ],
+      "source_schema_count": 5,
+      "source_occurrences": 5,
+      "legal_status": "SOURCE_DECLARATIONS_LOCATED__FULL_INTERFACE_SIGNATURE_NOT_RATIFIED",
+      "remaining_work": [
+        "Select effective versions after correction-by-correction review",
+        "Specify authoritative producer/consumer fields and authentication",
+        "Specify transaction/delivery semantics, retries, failure, epoch and reconciliation",
+        "Prove end-to-end implementation, separately from spec freeze"
+      ]
+    },
+    {
+      "route_id": "X8-12",
+      "owner": "L6_RECOVERY.md",
+      "path": "L3 → L6 → L1",
+      "name": "Containment and recovery",
+      "schemas": [
+        "RestoreContainmentProof",
+        "PossibleExternalEffectAssessment",
+        "CrossFrontierAdmissionProof",
+        "RecoveryBootstrapContract",
+        "RecoveryOwnershipLease"
+      ],
+      "safety": "A sandbox isolation claim requires evidence; ambiguous effects are not blindly retried.",
+      "source_schemas": [
+        {
+          "symbol": "RestoreContainmentProof",
+          "occurrences": [
+            {
+              "symbol": "RestoreContainmentProof",
+              "source_message_id": "89e41ed5-ac4e-4b95-9680-b9bec79f278a",
+              "source_specification": "RDMS-09",
+              "source_part": "C03",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 3,
+              "start_line": 739,
+              "end_line": 766,
+              "sha256": "0b16b3bfce95f242d0305488af1d2ec2d2b2e4d4d6586cce16d0a378f4287b03",
+              "text": "RestoreContainmentProof {\n    restore_operation_ref\n\n    restore_source_ref\n\n    destination_scope\n\n    writable_mount_refs[]\n\n    reachable_service_refs[]\n\n    automatic_activation_paths[]\n\n    executable_content_paths[]\n\n    credential_exposure_scope\n\n    containment_guarantees[]\n\n    relevant_environment_versions[]\n\n    unresolved_escape_paths[]\n\n    proof_result:\n        CONTAINED_WITHIN_SCOPE\n        NOT_CONTAINED\n        UNKNOWN\n}",
+              "fields_for_navigation": [
+                "automatic_activation_paths[]",
+                "containment_guarantees[]",
+                "credential_exposure_scope",
+                "destination_scope",
+                "executable_content_paths[]",
+                "proof_result",
+                "reachable_service_refs[]",
+                "relevant_environment_versions[]",
+                "restore_operation_ref",
+                "restore_source_ref",
+                "unresolved_escape_paths[]",
+                "writable_mount_refs[]"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "PossibleExternalEffectAssessment",
+          "occurrences": [
+            {
+              "symbol": "PossibleExternalEffectAssessment",
+              "source_message_id": "89e41ed5-ac4e-4b95-9680-b9bec79f278a",
+              "source_specification": "RDMS-09",
+              "source_part": "C03",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 3,
+              "start_line": 509,
+              "end_line": 537,
+              "sha256": "cc9b1b7dbb8cdcf3c67ee0a2c9d5c15eb170d44f8ce70cf6a9f923b008eeb7e9",
+              "text": "PossibleExternalEffectAssessment {\n    assessment_id\n\n    related_action_refs[]\n\n    confirmed_effect_refs[]\n\n    possible_unconfirmed_effects[]\n\n    unknown_effect_scope[]\n\n    external_execution_guarantees[]\n\n    outstanding_dispatch_paths[]\n\n    effect_identity_refs[]\n\n    proposed_followup_action_ref?\n\n    conflict_analysis\n\n    safety_evidence_refs[]\n\n    conclusion:\n        CONFLICT_IMPOSSIBLE\n        EFFECTS_RECONCILED\n        FOLLOWUP_SAFE_UNDER_UNCERTAINTY\n        NOT_PROVEN\n}",
+              "fields_for_navigation": [
+                "assessment_id",
+                "conclusion",
+                "confirmed_effect_refs[]",
+                "conflict_analysis",
+                "effect_identity_refs[]",
+                "external_execution_guarantees[]",
+                "outstanding_dispatch_paths[]",
+                "possible_unconfirmed_effects[]",
+                "proposed_followup_action_ref?",
+                "related_action_refs[]",
+                "safety_evidence_refs[]",
+                "unknown_effect_scope[]"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "CrossFrontierAdmissionProof",
+          "occurrences": [
+            {
+              "symbol": "CrossFrontierAdmissionProof",
+              "source_message_id": "89e41ed5-ac4e-4b95-9680-b9bec79f278a",
+              "source_specification": "RDMS-09",
+              "source_part": "C03",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 3,
+              "start_line": 378,
+              "end_line": 406,
+              "sha256": "a3c71d0e55272f3b8ee54a710026eb0875282e7c0811e1dcdb4341a975dc9203",
+              "text": "CrossFrontierAdmissionProof {\n    admission_ref\n\n    project_scope\n\n    permitted_operation_classes[]\n\n    executive_epoch\n\n    canonical_state_ref\n\n    policy_frontier_refs[]\n\n    security_frontier_refs[]\n\n    suppression_frontier_refs[]\n\n    dependency_frontier_refs[]\n\n    outstanding_effect_constraints[]\n\n    compatibility_results[]\n\n    required_revalidation_conditions[]\n\n    applicable_gate_refs[]\n\n    admission_status\n}",
+              "fields_for_navigation": [
+                "admission_ref",
+                "admission_status",
+                "applicable_gate_refs[]",
+                "canonical_state_ref",
+                "compatibility_results[]",
+                "dependency_frontier_refs[]",
+                "executive_epoch",
+                "outstanding_effect_constraints[]",
+                "permitted_operation_classes[]",
+                "policy_frontier_refs[]",
+                "project_scope",
+                "required_revalidation_conditions[]",
+                "security_frontier_refs[]",
+                "suppression_frontier_refs[]"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "RecoveryBootstrapContract",
+          "occurrences": [
+            {
+              "symbol": "RecoveryBootstrapContract",
+              "source_message_id": "d59160dd-fa7a-4058-8892-69794f57e9b8",
+              "source_specification": "RDMS-09",
+              "source_part": "C02",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 2,
+              "start_line": 147,
+              "end_line": 175,
+              "sha256": "3627f5109f1283c25e945cc14599a1d04c351156bf06ccf4b2be3c8b91339d72",
+              "text": "RecoveryBootstrapContract {\n    bootstrap_case_id\n\n    affected_project_scope\n\n    unavailable_control_components[]\n\n    trusted_bootstrap_source_refs[]\n\n    recovery_principal_ref\n\n    principal_authority_proof_ref\n\n    permitted_infrastructure_operations[]\n\n    prohibited_project_operations[]\n\n    source_integrity_requirements[]\n\n    destination_integrity_requirements[]\n\n    bootstrap_generation\n\n    bootstrap_audit_receipts[]\n\n    canonical_handoff_requirements[]\n\n    bootstrap_disposition\n}",
+              "fields_for_navigation": [
+                "affected_project_scope",
+                "bootstrap_audit_receipts[]",
+                "bootstrap_case_id",
+                "bootstrap_disposition",
+                "bootstrap_generation",
+                "canonical_handoff_requirements[]",
+                "destination_integrity_requirements[]",
+                "permitted_infrastructure_operations[]",
+                "principal_authority_proof_ref",
+                "prohibited_project_operations[]",
+                "recovery_principal_ref",
+                "source_integrity_requirements[]",
+                "trusted_bootstrap_source_refs[]",
+                "unavailable_control_components[]"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        },
+        {
+          "symbol": "RecoveryOwnershipLease",
+          "occurrences": [
+            {
+              "symbol": "RecoveryOwnershipLease",
+              "source_message_id": "74cf7fd3-01ca-4f35-abed-fbbc8716eb5c",
+              "source_specification": "RDMS-09",
+              "source_part": "C01",
+              "source_classification": "APPROVED_LATER_SOURCE_TEXT",
+              "source_order": 1,
+              "start_line": 194,
+              "end_line": 212,
+              "sha256": "cc18adf30b86d39abb8b5a38533743fe9c335e5247cd5cea669f6e60a52862a5",
+              "text": "RecoveryOwnershipLease {\n    recovery_case_ref\n\n    recovery_owner_id\n\n    recovery_generation\n\n    governing_executive_epoch\n\n    ownership_scope[]\n\n    lease_or_fencing_ref\n\n    expected_control_version\n\n    acquisition_commit_ref\n\n    status\n}",
+              "fields_for_navigation": [
+                "acquisition_commit_ref",
+                "expected_control_version",
+                "governing_executive_epoch",
+                "lease_or_fencing_ref",
+                "ownership_scope[]",
+                "recovery_case_ref",
+                "recovery_generation",
+                "recovery_owner_id",
+                "status"
+              ],
+              "ellipsis_present": false
+            }
+          ]
+        }
+      ],
+      "source_schema_count": 5,
+      "source_occurrences": 5,
+      "legal_status": "SOURCE_DECLARATIONS_LOCATED__FULL_INTERFACE_SIGNATURE_NOT_RATIFIED",
+      "remaining_work": [
+        "Select effective versions after correction-by-correction review",
+        "Specify authoritative producer/consumer fields and authentication",
+        "Specify transaction/delivery semantics, retries, failure, epoch and reconciliation",
+        "Prove end-to-end implementation, separately from spec freeze"
+      ]
+    }
+  ],
+  "all_original_archive_sha256": {
+    "reviews/source_archive/Formal Cognitive Architecture v1.0.md": "a9ca433645ac493bc0c483cd78ba0aebb2872272b1c182acee1591e8181e722c",
+    "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md": "74d0923cbd343b71740da0fc2368a84aad2ea97f8e4e15f156122f48ebe53539",
+    "reviews/source_archive/Formal_Cognitive_Architecture_v1.0_FROZEN_SPEC.sha256": "f85e00a94f59310b32e99fc718278af9f07f80cba9b271904ae6454b3aee326d",
+    "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.sha256": "6418193fb39c620b36a4d03ba5c959a5f52fd4f6eeeac774b53d47b4d4c6fcf8",
+    "reviews/source_archive/GAIA_C02_PHASE13_LAYER_SNAPSHOT_SHA256.json": "ce483765ff80210379d38e8c7db2d4b16da1b48a1d87c96e6d5722b4da397808",
+    "reviews/source_archive/Formal_Cognitive_Architecture_v1.0_FROZEN_SPEC.md": "e38e98167c56dbe44215c7dd0a0c0eb25e1a6a9106f27b9d76f4b2e049008199",
+    "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt": "5464a1a1db1a64d90990f7a205b32dbe7988a91a2f1d018ea48e2cd822251935",
+    "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt": "97f836c691a373b9a2a9e6e98b33cb7e121545cfc68732f1bde25c21599e79ab",
+    "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt": "b5b023dff0003f456d13e9d0492d674d36860427dda67874157467c19721038b",
+    "reviews/source_archive/RDMS_ORIGINAL_SOURCES/README_AR.md": "e18cd6044c7e8b94112b91ecab06564d68550e55f4f7df9949579d0c46a42b82",
+    "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt": "fe065cda37c20625ac4c42c64251f87d4daabb9d5d466d49a8c201784d948700",
+    "reviews/source_archive/RDMS_ORIGINAL_SOURCES/SOURCE_MANIFEST.json": "28055b4adc03d9f6b32f068ca75d5e25b1a038b0361ffca75a1a7bcb457d19ea",
+    "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-08_APPROVED_SOURCE_SET.txt": "fff70116d3f26bd42cba1cde8c071659674d4028eee57b5c304e045993fc69c6",
+    "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt": "c06407aad889cad4d0bd942ffade2636d32ebae454983b49b5c19afec2b27394",
+    "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt": "a55748e558446497a4be82835bcf7590e3b5ec7235f03674c2e6fe925143f262",
+    "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-09_APPROVED_SOURCE_SET.txt": "84ed1246a86b6f5923b6bf3320c2830e10c8e3fddac14e778c8c503272062a4b",
+    "reviews/source_archive/RDMS_ORIGINAL_SOURCES/original_message_dom.json": "738c22c893892b17584050449811c5fa8bc84c4a7fde87a446810c5563fa3b15",
+    "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt": "54772a75a54baea03c51107152eb1fe19849479e8ec9341654cf0ba45573c446",
+    "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt": "9152f6eb671ce1c95235fa49c960922f3166249d58076b61e00d958520fc6763"
+  },
+  "frozen_spec_modified": false,
+  "production_code_created": false,
+  "global_freeze_approved": false
+}

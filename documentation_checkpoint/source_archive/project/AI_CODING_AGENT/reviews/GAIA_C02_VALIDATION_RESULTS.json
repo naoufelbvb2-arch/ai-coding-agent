@@ -1,0 +1,21 @@
+{
+  "phase": "GAIA-C02",
+  "audit": "source/baseline/publication structure only",
+  "passed": true,
+  "checks": [
+    "SOURCE_HASHES_18",
+    "EIGHT_LAYER_FRONTS_AND_SNAPSHOTS",
+    "27_OWNED_CONTRACTS_12_WITNESSES",
+    "27_RDMS_SOURCE_MESSAGES"
+  ],
+  "errors": [],
+  "counts": {
+    "source_files": 18,
+    "layer_docs": 8,
+    "contracts": 27,
+    "interface_paths": 12,
+    "rdms_source_messages": 27
+  },
+  "effective_full_law_frozen": false,
+  "production_conformance_tested": false
+}

@@ -1,0 +1,2908 @@
+RDMS-05 — ORIGINAL APPROVED SOURCE SET
+Source: https://chatgpt.com/share/6ac82d7b-ba7c-83ea-a3a9-b41734948bb2
+
+ملاحظة تحريرية: هذا الملف تجميع للنصوص الأصلية المسترجعة من المحادثة، لا إعادة صياغة ولا مواصفة موحدة جديدة. حالة التجميد مثبتة في قرار المراجعة النهائي المرفق؛ عبارة DRAFT داخل النص الأساسي تصف مرحلته التاريخية قبل التصحيحات. تُقرأ المسودة مع التصحيحات وقرار الاعتماد، ولا يجوز استعمال نص سابق يخالف تصحيحًا معتمدًا لاحقًا. لم نغير نصوص القوانين ولم نضف FCA.
+
+
+========================================================================
+SOURCE PART: Original draft
+MESSAGE ID: 6276f296-457b-462d-b674-933a15194429
+BEGIN ORIGINAL MESSAGE
+========================================================================
+
+Runtime & Data Model Specification v1.0
+Runtime & Data Model Specification v1.0
+RDMS-05 — Temporal Runtime, Durable Triggers, Commitments & Resumption
+
+Parent: FCA v1.0.1 — FROZEN
+Dependencies: RDMS-01, RDMS-02, RDMS-03, RDMS-04 — FROZEN
+Status: DRAFT v1.0 — NOT FROZEN
+Next gate: Adversarial Freeze Review 01
+
+PART I — PURPOSE AND AUTHORITY
+1. Purpose
+
+RDMS-05 تمنح النظام استمرارية زمنية يمكن استرجاعها من الحالة الدائمة، وليس من ذاكرة الـLLM أو استمرار process واحدة.
+
+يجب أن يستطيع النظام تحديد:
+
+ما العمل المعلّق؟
+
+لماذا توقف؟
+
+ما الشرط الذي ينتظره؟
+
+هل تحقق هذا الشرط؟
+
+ما الذي تغيّر أثناء الانتظار؟
+
+هل ما زالت الخطة السابقة صالحة؟
+
+من يملك سلطة استئناف العمل؟
+
+كيف نمنع تكرار الاستئناف أو الإجراءات الخارجية؟
+
+2. Authority Boundary
+
+نثبت الفصل التالي:
+
+Clock / External Event / Repository Change
+                  │
+                  ▼
+           Event Ingress
+                  │
+                  ▼
+        Durable Trigger Engine
+                  │
+                  ▼
+           TriggerEvaluation
+                  │
+                  ▼
+           TriggerReaction
+                  │
+                  ▼
+        Executive Reactivation
+                  │
+                  ▼
+       Reconcile & Revalidate
+                  │
+                  ▼
+           Authorized Work
+
+Trigger Engine لا تمتلك سلطة معرفية مستقلة.
+
+يمكنها إجراء انتقالات تشغيلية حتمية سمحت بها السياسة، لكنها لا تستطيع:
+
+اتخاذ قرار هندسي جديد بدل Executive.
+
+تحويل Observation إلى Fact.
+
+إعادة تشغيل Action غير محسومة.
+
+تغيير أهداف المشروع دلاليًا من تلقاء نفسها.
+
+منح صلاحية تنفيذ جديدة لمجرد وصول موعد زمني.
+
+PART II — TEMPORAL MODEL
+3. Three Different Time Concepts
+
+لا يجوز استخدام timestamp واحدة لجميع أغراض النظام.
+
+TemporalCoordinates {
+    source_event_time?
+    observation_capture_time?
+    canonical_commit_seq?
+    scheduler_evaluation_time?
+}
+
+Source event time: متى وقع الحدث في مصدره، وفق ما تسمح به دقة وثقة ذلك المصدر.
+
+Capture time: متى التقطه النظام.
+
+Canonical order: متى أصبح جزءًا من التاريخ المعتمد، باستخدام RDMS-01.
+
+Scheduler time: متى قيّمت Trigger Engine الشروط.
+
+هذه قيم قد تختلف بصورة مشروعة.
+
+4. Wall Clock vs Monotonic Time
+
+نفصل بين:
+
+WALL_CLOCK
+MONOTONIC_ELAPSED
+CANONICAL_EVENT_ORDER
+
+WALL_CLOCK: المواعيد المدنية والتقويمية.
+
+MONOTONIC_ELAPSED: قياس المدة أثناء التشغيل حيث تتوافر ساعة مناسبة.
+
+CANONICAL_EVENT_ORDER: الترتيب المعتمد في Ledger.
+
+لا يجوز استخدام monotonic clock محلية باعتبارها مرجعًا دائمًا عبر restart أو نقل العمل إلى جهاز آخر.
+
+5. TemporalSchedule
+TemporalSchedule {
+    schedule_id
+
+    schedule_kind:
+        INSTANT
+        INTERVAL
+        RECURRING
+
+    time_zone?
+
+    local_time_rule?
+    absolute_instant?
+
+    recurrence_rule?
+
+    not_before?
+    valid_until?
+
+    ambiguous_time_policy?
+    nonexistent_time_policy?
+    missed_occurrence_policy
+}
+
+يجب تحديد التعامل مع تغييرات التوقيت الصيفي.
+
+مثلًا موعد 02:30 قد لا يوجد في يوم انتقال الساعة، وقد تكون بعض الأوقات المحلية ملتبسة في انتقال آخر.
+
+لا نترك هذا لسلوك مكتبة الوقت الافتراضي دون مواصفة.
+
+PART III — DURABLE TRIGGER MODEL
+6. TriggerDefinition
+
+نصحح نقطة غموض في التصور الأولي: ONE_SHOT / REARMABLE ليست بدائل منطقية لـLEVEL_TRIGGERED / EDGE_TRIGGERED.
+
+الأولى تصف التكرار، والثانية تصف كيفية اكتشاف الشرط.
+
+TriggerDefinition {
+    trigger_id
+    project_id
+
+    generation
+
+    condition_ref
+
+    fire_policy:
+        ONE_SHOT
+        REARMABLE
+
+    detection_policy:
+        LEVEL_TRIGGERED
+        EDGE_TRIGGERED
+
+    source_refs[]
+
+    reaction_spec_ref
+
+    owner_ref
+    linked_object_ref
+
+    created_commit_seq
+    entity_version
+}
+
+وهذا يحافظ على معاني FCA الأصلية مع تحويلها إلى بعدين مستقلين.
+
+7. TriggerCondition
+TriggerCondition {
+    condition_id
+
+    kind:
+        STATE_EVENT
+        REPO_CHANGE
+        METRIC_THRESHOLD
+        TEMPORAL
+        EXTERNAL_EVENT
+        HUMAN_EVENT
+        SEMANTIC_REVIEW
+        COMPOSITE
+
+    predicate_spec
+
+    dependency_set_ref?
+
+    required_evidence_policy_ref?
+}
+
+الـpredicate يجب أن تكون محددة بطريقة تسمح بتقييمها على بيانات معتمدة، دون مطالبة LLM بإعادة تفسير معناها عند كل فحص.
+
+إذا احتاج الشرط إلى حكم دلالي، تكون نتيجة المراجعة الدلالية سجلًا منفصلًا يمر عبر السلطة المناسبة، ثم تستخدمها Trigger Engine كمدخل معتمد وفق السياسة.
+
+8. TriggerEvaluation
+TriggerEvaluation {
+    evaluation_id
+
+    trigger_ref
+
+    evaluated_source_frontier_ref
+
+    observed_basis_refs[]
+
+    outcome:
+        TRUE
+        FALSE
+        UNKNOWN
+
+    evaluator_version_ref
+
+    evaluated_at_commit_seq?
+    evaluated_at_time?
+}
+
+نستخدم ثلاث قيم بدل منطق Boolean الثنائي.
+
+UNKNOWN تعني أن البيانات غير كافية لإثبات تحقق الشرط أو عدم تحققه.
+
+ممنوع:
+
+No event observed
+    =
+Event did not happen
+
+ما لم تكن لدينا تغطية مصدرية تسمح فعلًا بإثبات عدم حدوثه.
+
+PART IV — TRIGGER SEMANTICS
+9. Level-Triggered
+
+يتحقق عندما تكون الحالة الحالية مطابقة للشرط.
+
+مثال:
+
+All required tests are complete.
+
+إذا كانت الحالة صحيحة عند فحص Trigger Engine، فيمكن إطلاق reaction قانونية.
+
+لكن يجب منع إطلاق reaction جديدة مع كل إعادة فحص للقيمة نفسها.
+
+10. Edge-Triggered
+
+يتحقق عند انتقال مؤهل:
+
+FALSE → TRUE
+
+أو عند حدث محدد قابل لإعادة الإثبات.
+
+مثال:
+
+A pull request moved from OPEN to MERGED.
+
+إذا كان المصدر يعرض الحالة الحالية فقط ولا يحتفظ بالأحداث التاريخية، فقد لا نستطيع معرفة ما إذا حدث الانتقال أثناء غياب النظام.
+
+لذلك:
+
+EDGE_TRIGGERED requires replayable evidence of the relevant transition.
+
+إذا كان إثبات الانتقال غير متاح، تصبح النتيجة UNKNOWN، ولا يخترع النظام transition.
+
+11. One-Shot
+ONE_SHOT
+
+تعني أن Trigger generation الحالية يمكن أن تنتج fire قانونية واحدة فقط.
+
+إعادة تقييم الشرط أو إعادة تشغيل runtime لا تنشئ fire أخرى لنفس generation.
+
+12. Rearmable
+REARMABLE
+
+تسمح بتفعيل trigger مرة أخرى وفق rearm policy محددة.
+
+لكن يجب أن نمنع:
+
+Condition TRUE
+↓
+Fire
+↓
+Rearm
+↓
+Condition still TRUE
+↓
+Fire again endlessly
+
+ولذلك تحتاج كل trigger قابلة لإعادة التسليح إلى rearm criterion واضحة، مثل حصول دورة جديدة مؤهلة أو reset مثبت.
+
+13. Trigger State
+
+نحتفظ بالحالات المفهومية المتوافقة مع FCA:
+
+ARMED
+FIRED
+SATISFIED
+CANCELLED
+
+لكن تفاصيل تسليم reactions لا نضعها داخل Trigger lifecycle وحدها.
+
+نحتاج سجلات منفصلة لـ:
+
+evaluation
+fire
+reaction delivery
+reaction application
+
+لأن اكتشاف الشرط يختلف عن نجاح معالجة نتيجته.
+
+PART V — COMPOSITE CONDITIONS
+14. Condition Composition
+CompositeCondition {
+    composite_id
+
+    operator:
+        ALL_OF
+        ANY_OF
+
+    child_condition_refs[]
+
+    evaluation_scope_ref
+}
+15. Three-Valued Logic
+
+نعتمد المنطق التالي:
+
+A	B	ALL_OF	ANY_OF
+TRUE	TRUE	TRUE	TRUE
+TRUE	FALSE	FALSE	TRUE
+TRUE	UNKNOWN	UNKNOWN	TRUE
+FALSE	UNKNOWN	FALSE	UNKNOWN
+UNKNOWN	UNKNOWN	UNKNOWN	UNKNOWN
+
+هذا يمنع أن يتحول غياب المعلومات إلى تحقق افتراضي.
+
+16. Example — Wait for Two Conditions
+
+لنفترض:
+
+Condition A:
+Human approval received.
+
+Condition B:
+CI tests completed successfully.
+
+ننشئ:
+
+ALL_OF(A, B)
+
+لا يصبح العمل READY للاستئناف لمجرد نجاح CI إذا ظلت الموافقة البشرية معلقة.
+
+17. Composite Identity and Cycles
+
+يجب منع:
+
+Condition A
+    ↓
+Condition B
+    ↓
+Condition A
+
+من إنشاء دورة شرطية غير مضبوطة.
+
+Composite condition graph يجب أن يكون acyclic وفق سياسة التقييم الأساسية.
+
+والاعتماديات نفسها تدخل في fingerprint الشرط حتى لا يؤدي تغيير child condition إلى إعادة تفسير نتائج قديمة بصمت.
+
+PART VI — SOURCE CURSORS & EVENT REPLAY
+18. TriggerSourceCursor
+TriggerSourceCursor {
+    cursor_id
+
+    trigger_id
+    source_ref
+
+    source_generation
+
+    last_processed_position
+
+    coverage_state:
+        COMPLETE
+        GAP_DETECTED
+        UNKNOWN
+
+    updated_commit_seq
+}
+
+يجب أن يكون معنى last_processed_position محددًا بواسطة source adapter.
+
+لا نفترض أن جميع مصادر الأحداث توفر أرقامًا متسلسلة أو replay.
+
+19. Atomic Cursor Advancement
+
+نواجه أخطر مشكلة في Trigger Engine:
+
+Observe event E
+↓
+Advance cursor
+↓
+Crash before persisting reaction
+
+إذا استأنفنا من cursor الجديدة، قد يضيع الحدث إلى الأبد.
+
+لذلك يجب أن تكون عملية:
+
+Persist TriggerFire
++
+Advance source cursor
++
+Persist reaction intent
+
+ذرية داخل ControlCommit عندما تعتمد إحداها على الأخرى.
+
+إذا لم تكن معاملة واحدة ممكنة بسبب source خارجي، نستخدم durable inbox قبل الإقرار للمصدر ثم نعالجها idempotently.
+
+20. Source Coverage
+
+إذا حدثت فجوة في event history:
+
+GAP_DETECTED
+
+فلا يجوز إثبات أن شرط Edge لم يحدث أثناء الفجوة.
+
+تحتاج trigger إلى:
+
+source reconciliation
+snapshot comparison where sufficient
+human/authority resolution if necessary
+
+وقد يبقى بعض الانتقال التاريخي غير قابل للإثبات حتى لو عرفنا الحالة الحالية.
+
+PART VII — TRIGGER FIRE & REACTION
+21. TriggerFire
+TriggerFire {
+    fire_id
+
+    trigger_id
+    generation
+
+    condition_version_ref
+
+    triggering_basis_refs[]
+
+    source_frontier_ref
+
+    fire_identity_key
+
+    fired_at_commit_seq
+}
+22. Idempotent Fire Identity
+
+لا تُنشأ fire_id جديدة لمجرد إعادة تقييم نفس الحدث بعد restart.
+
+يُشتق مفتاح هوية fire بصورة مستقرة من:
+
+trigger identity
+generation
+qualified occurrence identity
+reaction identity
+
+بحسب trigger semantics.
+
+أما periodic/recurring triggers فيجب أن تكون لها occurrence identity مميزة لكل موعد قانوني.
+
+23. TriggerReaction
+TriggerReaction {
+    reaction_id
+
+    fire_ref
+    target_ref
+
+    reaction_kind:
+        MARK_COMMITMENT_DUE
+        REQUEST_GOAL_REACTIVATION
+        REQUEST_SLICE_REVALIDATION
+        REQUEST_EXECUTIVE_ATTENTION
+        RECORD_CONDITION_SATISFIED
+
+    reaction_key
+
+    lifecycle:
+        PENDING
+        APPLIED
+        BLOCKED
+        CANCELLED
+}
+
+Reaction لا تنفذ world action مباشرة.
+
+يمكنها تغيير حالة تحكم محددة إذا كانت transition حتمية ومصرحًا بها قانونيًا.
+
+أما اتخاذ قرار جديد أو إصدار ActionProposal جديدة فهو من مسؤولية Executive.
+
+24. Reaction Deduplication
+
+استخدام:
+
+reaction_key
+
+يضمن أن تسليم fire أكثر من مرة لا ينشئ انتقالًا معرفيًا أو تشغيليًا مكررًا.
+
+فشل إرسال notification أو انقطاع worker لا يعني أن تطبيق reaction يجب أن يتكرر من البداية دون فحص حالتها القانونية.
+
+PART VIII — COMMITMENTS
+25. Commitment Entity
+
+نعتمد نموذج RDMS-02 للالتزامات:
+
+Commitment {
+    commitment_id
+
+    owner_ref
+
+    subject_ref
+
+    reason
+    required_followup
+
+    reactivation_condition_ref
+
+    lifecycle:
+        ACTIVE
+        DUE
+        SATISFIED
+        CANCELLED
+        SUPERSEDED
+
+    created_commit_seq
+    updated_commit_seq
+}
+
+RDMS-05 هي المسؤولة عن معنى reactivation_condition_ref وتركيب الشروط وتقييمها.
+
+26. Commitment Validity
+
+لا يجوز إنشاء التزام مستقبلي دون:
+
+owner
+purpose
+reactivation condition
+
+ولا يجوز أن يتحول:
+
+ACTIVE
+
+إلى:
+
+SATISFIED
+
+فقط لأن الموعد المحدد قد وصل.
+
+الوصول إلى الموعد يعني غالبًا:
+
+DUE
+
+أما الوفاء بالالتزام فيحتاج evidence أو authorization ملائمة لطبيعة الالتزام.
+
+27. Example — Temporary Engineering Workaround
+
+الوكيل اضطر لإضافة workaround مؤقتة لمشكلة في dependency خارجية.
+
+يسجل:
+
+Commitment:
+  subject: temporary workaround
+  reason: external dependency bug
+  required_followup: revisit workaround
+
+Reactivation:
+  when dependency fix is available
+  OR by agreed review deadline
+
+عند تحقق الشرط، لا يحذف workaround تلقائيًا.
+
+بل يعيد فتح العمل ويختبر ما إذا زالت الحاجة إليها.
+
+PART IX — WAITING, BLOCKED, SUSPENDED, DEFERRED
+28. Distinct Meanings
+
+نحافظ على حالات Goal وSlice المجمدة في RDMS-02، دون إدخال state machine منافسة.
+
+نعرف المعاني الزمنية:
+
+WAITING: العمل ينتظر حدثًا أو شرطًا خارجيًا محددًا، وله آلية reactivation.
+
+BLOCKED: العمل لا يمكن أن يتقدم لأن شرطًا لازمًا غير مستوفى أو يوجد تعارض غير محسوم.
+
+SUSPENDED: العمل أوقف عمدًا مع الاحتفاظ بسياق العودة.
+
+DEFERRED: العمل مؤجل نتيجة أولوية أو قرار تخطيطي.
+
+هذه الحالات ليست مترادفات.
+
+29. WorkReactivationBinding
+WorkReactivationBinding {
+    binding_id
+
+    goal_or_slice_ref
+
+    suspension_or_wait_reason_ref
+
+    trigger_refs[]
+
+    resumption_capsule_ref?
+
+    created_commit_seq
+}
+
+الربط يشير إلى حالات Goal/Slice الموجودة، ولا ينشئ lifecycle جديدة تخالفها.
+
+30. Reactivation Is Not Execution
+
+عند إطلاق trigger:
+
+WAITING
+   ↓
+Condition satisfied
+   ↓
+REACTIVATION_REQUESTED
+   ↓
+Revalidate
+   ↓
+READY / BLOCKED / WAITING / other legal state
+
+لا نسمح بـ:
+
+WAITING
+   ↓
+Trigger fires
+   ↓
+RUN PREVIOUS SHELL COMMAND IMMEDIATELY
+
+لأن العالم قد تغير أثناء الانتظار.
+
+PART X — RESUMPTION CAPSULE
+31. Durable Resumption Capsule
+ResumptionCapsule {
+    capsule_id
+
+    project_id
+    task_or_goal_ref
+
+    suspended_from_state
+
+    base_canonical_commit_seq
+
+    repo_ref?
+    world_ref?
+    environment_ref?
+
+    dependency_set_ref?
+
+    current_focus_ref?
+
+    relevant_claim_refs[]
+    relevant_hypothesis_refs[]
+    relevant_evidence_refs[]
+
+    decision_refs[]
+    rejected_path_refs[]
+
+    active_slice_refs[]
+    unresolved_action_refs[]
+
+    open_information_need_refs[]
+    commitment_refs[]
+
+    temporary_change_refs[]
+
+    next_action_proposal_ref?
+
+    created_commit_seq
+}
+
+هذا توسع تفصيلي لـResumption Capsule في FCA، وليس مخزنًا معرفيًا ثانيًا.
+
+32. Capsule Is a Restoration Guide
+
+لا تتحول Capsule إلى سلطة منفصلة عن الكيانات الأصلية.
+
+إذا قالت:
+
+Hypothesis H1 was supported.
+
+ثم ظهر دليل جديد أثناء التوقف، لا يجوز اعتبار النص المخزن إثباتًا لبقاء دعم H1.
+
+الـCapsule تحفظ المراجع والسياق، وRDMS-06 ستقيّم صلاحية الاعتماديات.
+
+33. Capsule Creation
+
+عند تعليق مهمة:
+
+Validate suspension transition
+↓
+Persist ResumptionCapsule
+↓
+Persist work status
+↓
+Arm required triggers
+↓
+Commit atomically
+
+لا يجوز أن تكون المهمة SUSPENDED بصورة قانونية دون Capsule قابلة للاسترجاع.
+
+34. Capsule Versioning
+
+إذا تغيرت المهمة أثناء فترة التعليق بصورة قانونية، لا نعدّل Capsule التاريخية كما لو أنها لم تتغير.
+
+يُنشأ snapshot أو نسخة جديدة مرتبطة بالأصل.
+
+المراجع القديمة تظل صالحة لإعادة بناء التاريخ، لا لإثبات صلاحية الخطة الحالية.
+
+PART XI — RESUMPTION PROTOCOL
+35. Resume Sequence
+1. Detect eligible reactivation
+           ↓
+2. Acquire valid Executive epoch
+           ↓
+3. Restore canonical project state
+           ↓
+4. Load ResumptionCapsule
+           ↓
+5. Inspect unresolved ActionRecords
+           ↓
+6. Reconcile potentially dispatched effects
+           ↓
+7. Compare relevant repo/world/environment
+           ↓
+8. Evaluate dependency freshness
+           ↓
+9. Revalidate Goal, Slice, Decisions
+           ↓
+10. Rebuild current focus
+           ↓
+11. Replan if necessary
+           ↓
+12. Authorize next work
+
+هذه ليست مجرد إعادة إرسال آخر prompt إلى LLM.
+
+36. ResumeAssessment
+ResumeAssessment {
+    assessment_id
+
+    capsule_ref
+
+    current_repo_ref?
+    current_world_ref?
+
+    dependency_evaluation_ref
+
+    unresolved_action_refs[]
+
+    result:
+        RESUMABLE
+        REPLAN_REQUIRED
+        BLOCKED
+        UNKNOWN
+
+    basis_refs[]
+
+    created_commit_seq
+}
+
+RESUMABLE لا تعني أن كل الإجراءات السابقة ما زالت مخوّلة. تعني أن شروط الانتقال إلى العمل المعرفي التالي متحققة، مع استمرار تطبيق ActionGate عند التنفيذ.
+
+37. Unresolved Actions
+
+إذا كان لدينا:
+
+Action A = IN_DOUBT
+
+وكانت Slice المقبلة تعتمد على أثر A:
+
+ResumeAssessment = BLOCKED
+
+حتى تتم reconciliation أو يُتخذ قرار قانوني يغير المسار.
+
+لكن عملًا مستقلًا لا يتعارض مع A قد يستمر وفق السياسات المعتمدة.
+
+PART XII — TEMPORAL VALIDITY
+38. TemporalValidity
+
+نحافظ على مفهوم FCA:
+
+TemporalValidity {
+    observed_at?
+    verified_at?
+
+    repo_ref?
+    state_version?
+
+    valid_until_condition?
+
+    freshness:
+        CURRENT
+        STALE
+        UNKNOWN
+}
+
+لكن freshness نتيجة مشتقة وليست حقل حقيقة مطلقة يملكها Scheduler.
+
+39. No Duplicate Freshness Engine
+
+RDMS-06 ستحتوي Dependency Evaluation Engine الوحيدة.
+
+RDMS-05 لا تنشئ آلية منافسة لحساب صلاحية Claim أو Decision أو Verification.
+
+هي تقدم:
+
+temporal events
+deadline facts
+trigger evidence
+time/source provenance
+
+ثم تستخدم نتائج Dependency Engine عند استئناف العمل.
+
+PART XIII — HUMAN & EXTERNAL EVENTS
+40. Human Event
+
+مثال:
+
+Human approves design.
+
+لا يعني مجرد وصول نص يحتوي كلمة:
+
+approved
+
+أن موافقة مخوّلة حصلت.
+
+نحتاج:
+
+source identity
+authority binding
+scope
+trust context
+event provenance
+
+وفق RDMS-03.
+
+41. External Events
+
+يمكن أن تأتي الأحداث من:
+
+CI completion
+Git repository update
+test runner
+deployment system
+external issue tracker
+human response
+calendar/deadline source
+
+لكن Adapter لا يملك سلطة معرفية لمجرد استقباله Webhook.
+
+يجب أن يكون مصدر الحدث، وإجراء التحقق، وحدود الثقة محددين.
+
+42. Event Absence
+
+إذا لم تتلقَّ Trigger Engine نتيجة من CI، فذلك لا يعني:
+
+Tests are still running.
+
+قد تكون انتهت وفُقد إشعارها.
+
+لذلك تحتاج بعض المصادر إلى reconciliation polling أو query state وفق contract المصدر، مع المحافظة على أن polling لا يحل محل historical event replay عندما تكون Edge semantics مطلوبة.
+
+PART XIV — TRIGGER RECOVERY
+43. Startup Trigger Recovery
+Restore Control Ledger
+↓
+Load armed trigger generations
+↓
+Load durable source cursors
+↓
+Inspect incomplete reactions
+↓
+Reconcile event-source coverage
+↓
+Replay eligible events
+↓
+Deduplicate fires
+↓
+Apply pending legal reactions
+↓
+Schedule Executive attention
+44. At-Least-Once Detection
+
+قد تكتشف Trigger Engine الحدث ذاته أكثر من مرة.
+
+هذا مقبول إذا كانت reaction application idempotent.
+
+القاعدة:
+
+At-least-once detection
++
+Durable deduplication
+=
+No duplicate canonical reaction for same legal fire
+
+لكنها لا تضمن تنفيذًا خارجيًا مرة واحدة بالضبط.
+
+أي world action ناشئة عن الاستئناف تمر عبر RDMS-04.
+
+45. Reaction Crash Window
+
+إذا حصل crash:
+
+Fire persisted
+↓
+Reaction not yet applied
+
+تبقى reaction في PENDING، ويعاد النظر في تطبيقها باستخدام نفس reaction key.
+
+وإذا:
+
+Reaction applied atomically
+↓
+Worker crashes before acknowledgement
+
+لا يجوز تطبيقها ثانية كأنها جديدة.
+
+PART XV — REARMING & CANCELLATION
+46. Trigger Generation
+
+كل دورة تفعيل قانونية لها:
+
+trigger_id
+generation
+
+لا تُستخدم نتائج generation قديمة لإطلاق reactions خاصة بالجيل الجديد.
+
+47. Rearming Rule
+
+لا نسمح بـrearm تلقائي لمجرد أن الحالة السابقة أصبحت FIRED.
+
+يلزم:
+
+rearm policy satisfied
++
+no disqualifying pending reaction
++
+legal transition
++
+generation advancement
+
+وتسجل العملية في Control Ledger.
+
+48. Trigger Cancellation
+
+إلغاء trigger يمنع fires مستقبلية وفق نقطة الإلغاء القانونية.
+
+لكنه لا يمحو fires أو reactions حدثت بالفعل.
+
+وإذا كانت reaction قد أدت إلى shared-world Action عند DISPATCH_INTENT، فإن إلغاء trigger لا يلغي التزام reconciliation.
+
+PART XVI — SCHEDULING, FAIRNESS & BUDGETS
+49. Reactivation Queue
+ReactivationRequest {
+    request_id
+
+    fire_ref
+    target_work_ref
+
+    urgency
+    required_revalidation_ref
+
+    enqueued_commit_seq
+
+    status:
+        PENDING
+        CLAIMED
+        COMPLETED
+        BLOCKED
+}
+
+الـqueue لا تمنح سلطة تنفيذ.
+
+هي تحدد الأعمال التي تحتاج انتباه Executive.
+
+50. Fairness & Storm Control
+
+عند وصول آلاف الأحداث أو تغير repository بصورة كثيفة:
+
+ندمج التكرارات المنطقية عندما تسمح semantics بذلك.
+
+نحافظ على هوية الأحداث اللازمة للـaudit.
+
+نطبق حدودًا على work budget.
+
+نمنع trigger واحدة من احتكار Executive.
+
+لا نسقط التزامات durable بصمت نتيجة الحمل المرتفع.
+
+إذا تعذر معالجة backlog فورًا، يجب أن يبقى قابلًا للاسترجاع.
+
+51. Missed Deadlines
+
+إذا أغلق البرنامج قبل الموعد، ثم عاد بعده:
+
+deadline passed
+
+يجب ألا تعني تلقائيًا أن العمل فشل أو أن trigger تُلغى.
+
+تحدد سياسة الجدولة هل:
+
+fire missed occurrence
+coalesce occurrences
+mark missed
+require review
+
+مع تسجيل ما حدث.
+
+PART XVII — CROSS-RDMS INTEGRATION
+52. RDMS-01 Integration
+
+جميع انتقالات trigger/reaction/commitment التي تحتاج authority دائمة تمر عبر ControlCommit.
+
+لا تُنشئ Trigger Engine قاعدة حقيقة ثانية.
+
+53. RDMS-02 Integration
+
+تعتمد على Goal وSlice وCommitment وDecision، لكنها لا تعيد تعريف lifecycles الخاصة بها.
+
+54. RDMS-03 Integration
+
+الأحداث الخارجية تدخل عبر Observation Ingress عندما تمثل observations.
+
+تظل provenance وtrust وevidence مستقلة عن مجرد إطلاق trigger.
+
+55. RDMS-04 Integration
+
+لا تنفذ TriggerReaction نفسها عمليات Terminal أو Git أو deployment.
+
+بل تعيد تنشيط العمل، ثم تُنشأ ActionProposal جديدة إذا سمحت السلطة والاعتماديات بذلك.
+
+56. RDMS-06 Integration
+
+Dependency Evaluation Engine تحدد ما إذا أصبحت المعرفة أو الخطة stale.
+
+RDMS-05 تقدم الأدلة الزمنية والحدود اللازمة للتقييم، ولا تتملك محرك freshness منافسًا.
+
+PART XVIII — PROPOSED INVARIANTS
+RDMS05-I01
+Temporal work continuity must survive process restart
+without relying on conversational context.
+
+RDMS05-I02
+Trigger detection and Executive authorization are separate.
+
+RDMS05-I03
+A fired trigger does not directly authorize world mutation.
+
+RDMS05-I04
+Source event time, capture time, scheduler time and
+canonical commit order remain distinct.
+
+RDMS05-I05
+Wall-clock and monotonic-time semantics are not interchangeable.
+
+RDMS05-I06
+ONE_SHOT/REARMABLE and LEVEL/EDGE are orthogonal dimensions.
+
+RDMS05-I07
+Unknown trigger evidence cannot be treated as false or true.
+
+RDMS05-I08
+Edge-triggered conditions require replayable proof of the edge.
+
+RDMS05-I09
+A trigger source cursor cannot advance past an event whose
+required durable reaction state has not been preserved.
+
+RDMS05-I10
+Detection may occur at least once; canonical reactions
+deduplicate by stable identity.
+
+RDMS05-I11
+Rearming cannot create repeated firing while an unchanged
+level condition remains satisfied.
+
+RDMS05-I12
+Condition composition preserves explicit three-valued logic.
+
+RDMS05-I13
+Semantic assessments enter trigger evaluation only through
+authorized, provenance-preserving evidence paths.
+
+RDMS05-I14
+Every temporary Commitment requires an operational
+reactivation condition.
+
+RDMS05-I15
+Commitment DUE and Commitment SATISFIED are distinct.
+
+RDMS05-I16
+WAITING, BLOCKED, SUSPENDED and DEFERRED are not synonyms.
+
+RDMS05-I17
+Every suspended task has a durable ResumptionCapsule.
+
+RDMS05-I18
+A ResumptionCapsule cannot replace canonical cognitive entities
+as a source of truth.
+
+RDMS05-I19
+Resume must reconcile relevant repository/world changes
+before execution continues.
+
+RDMS05-I20
+Unresolved potentially dispatched effects remain subject
+to RDMS-04 reconciliation across suspension.
+
+RDMS05-I21
+Temporal freshness follows the shared dependency model,
+not a second scheduler-owned freshness authority.
+
+RDMS05-I22
+Source coverage gaps cannot silently prove that an
+edge-triggered event did not occur.
+
+RDMS05-I23
+Human event wording cannot create its own authority.
+
+RDMS05-I24
+Cancellation cannot erase previously committed fires,
+reactions or world effects.
+
+RDMS05-I25
+Missed schedules and downtime behavior require explicit policy.
+
+RDMS05-I26
+Reactivation requests do not themselves grant Action authority.
+
+RDMS05-I27
+Recurring triggers preserve distinct qualified occurrence
+identities and must not duplicate the same occurrence.
+
+RDMS05-I28
+Trigger overload cannot silently discard durable obligations.
+
+RDMS05-I29
+Restart and replay cannot manufacture new evidentiary support.
+
+RDMS05-I30
+All recoverability-critical trigger transitions must retain
+the atomic control guarantees of RDMS-01.
+PART XIX — EXAMPLE SCENARIOS
+Scenario A — Long Test Suite
+Agent starts authorized test process.
+         ↓
+Test process continues.
+         ↓
+Agent suspends unrelated cognitive work.
+         ↓
+TestCompletion trigger armed.
+         ↓
+Test process exits.
+         ↓
+ObservationIngress records result.
+         ↓
+Trigger fires.
+         ↓
+Executive examines failures.
+         ↓
+Replans or proceeds.
+
+انتهاء العملية لا يعني تلقائيًا نجاح الاختبارات.
+
+Scenario B — Human Architectural Approval
+Agent proposes architecture.
+         ↓
+Decision requires human approval.
+         ↓
+Goal enters WAITING.
+         ↓
+Authorized HumanEvent arrives.
+         ↓
+Trigger evaluation succeeds.
+         ↓
+Executive revalidates project context.
+         ↓
+Goal becomes eligible for work.
+
+إذا تغيرت المعمارية أثناء الانتظار، فقد تصبح الموافقة القديمة غير كافية رغم صحة نسبتها إلى صاحبها.
+
+Scenario C — Recovery After Three Days
+Day 1:
+Agent suspends with ResumptionCapsule.
+
+Day 2:
+Repository changes externally.
+
+Day 3:
+Machine starts again.
+
+Recovery:
+Restore capsule.
+Inspect changed repository.
+Evaluate relevant dependencies.
+Reconcile unresolved actions.
+Rebuild working focus.
+Replan if necessary.
+
+لا يكرر الوكيل آخر أمر محفوظ اعتمادًا على السياق القديم.
+
+Scenario D — Trigger Fires Twice
+External event E delivered.
+         ↓
+TriggerFire F persisted.
+         ↓
+Worker crashes.
+         ↓
+External event E redelivered.
+         ↓
+Same fire identity recognized.
+         ↓
+No duplicate canonical reaction.
+
+هذا يوفر idempotent canonical control، وليس ضمان exactly-once لأثر خارجي.
+
+PART XX — ADVERSARIAL REVIEW TARGETS
+
+قبل تجميد RDMS-05، يجب اختبار:
+
+وصول event مرتين مع تعاقب Executive epochs.
+
+Crash بين إنشاء TriggerFire وتطبيق reaction.
+
+تقدم source cursor قبل حفظ reaction.
+
+فقدان حدث أثناء توقف source adapter.
+
+إطلاق edge trigger من snapshot لا يثبت edge.
+
+Rearm تؤدي إلى firing مستمر لأن المستوى ما زال TRUE.
+
+تغيير condition بعد إنشاء TriggerFire.
+
+تركيب ALL_OF يستخدم بيانات من أزمنة غير متوافقة.
+
+انتهاء deadline أثناء عدم توفر clock أو تصحيح ساعة النظام.
+
+تغير التوقيت الصيفي وتكرار موعد محلي أو اختفاؤه.
+
+Commitment تصبح DUE ثم تُلغى بالتزامن مع reaction.
+
+Goal تُلغى بينما TriggerFire معلقة.
+
+استئناف Slice اعتمادًا على Decision أصبحت stale.
+
+Trigger تنتج Action جديدة رغم وجود Action سابقة IN_DOUBT.
+
+Source يدّعي human approval دون AuthorityBinding صحيحة.
+
+Trigger تستخدم LLM semantic output كحقيقة بلا اعتماد.
+
+إعادة تشغيل النظام تؤدي إلى duplicate support evidence.
+
+آلاف triggers تسبب starvation لالتزامات مهمة.
+
+حدث قديم يصل بعد حدث أحدث ويغير استنتاجات الزمن.
+
+تكرار recurring occurrence بعد restart.
+
+فقدان ResumptionCapsule مع وجود حالة SUSPENDED.
+
+Trigger cancellation أثناء وجود world action مرسلة.
+
+ReactivationRequest تصبح orphaned بعد تغير Goal lineage.
+
+Composite condition تحتوي دورة أو تعيد استعمال subcondition غير صالحة.
+
+Dependency evaluation UNKNOWN لكن runtime تستأنف التنفيذ تلقائيًا.
+
+FINAL DRAFT VERDICT
+Temporal concepts                DEFINED
+Trigger schema                   DEFINED
+One-shot / Rearmable             DEFINED
+Level / Edge semantics           DEFINED
+Composite conditions             DEFINED
+Source cursors                   DEFINED
+Trigger fire identity            DEFINED
+Reaction deduplication           DEFINED
+Commitment reactivation          DEFINED
+Resumption Capsule               DEFINED
+Resume protocol                  DEFINED
+Recovery replay                  DEFINED
+Cross-RDMS authority             DEFINED
+
+Adversarial Freeze Review        PENDING
+Implementation                   NOT AUTHORIZED
+
+RDMS-05 — DRAFT v1.0 COMPLETE. NOT FROZEN.
+
+Next authorized step: RDMS-05 — Adversarial Freeze Review 01.
+
+الخلاصة المعمارية
+
+بهذا التصميم أصبحت لدينا حلقة استمرارية زمنية واضحة:
+
+عمل هندسي قائم
+
+Goal / Slice / Executive
+
+حفظ السياق
+
+Resumption Capsule
+
+انتظار الشروط
+
+Durable Triggers
+
+Reactivation & Reconciliation
+
+التحقق مما تغير أثناء الانتظار
+
+استئناف قانوني أو إعادة تخطيط
+
+هذا القسم مهم لأن الوكيل البرمجي الذي نريد بناءه لا ينبغي أن يكون مجرد مساعد يعمل ما دام الـLLM يتلقى رسائل. نريد نظامًا يحافظ على المهام والقرارات والالتزامات عبر الزمن، ويعيد بناء سياق عمله عند الحاجة، مع استرجاع الحقيقة من السجلات والمصادر لا من افتراضات الذاكرة.
+
+في المرحلة التالية سنهاجم هذه المسودة، خصوصًا مشكلة فقدان الأحداث أثناء الانقطاع، وتكرار TriggerFire، وصلاحية السياق عند الاستئناف. ولن نجمّد RDMS-05 إلا بعد إغلاق أي ثغرات مؤثرة.
+
+END ORIGINAL MESSAGE
+
+========================================================================
+SOURCE PART: C01
+MESSAGE ID: 77caba5f-8e8e-4b8e-a9fe-027c4801efad
+BEGIN ORIGINAL MESSAGE
+========================================================================
+
+RDMS-05 C01 — Durable Event Integrity, Trigger Coherence & Safe Resumption Closure
+RDMS-05 C01 — Durable Event Integrity, Trigger Coherence & Safe Resumption Closure
+
+Parent: RDMS-05 Draft v1.0 + Adversarial Freeze Review 01
+Scope: FR05-G01…G16, FR05-H01…H06
+Status: C01 CORRECTED — READY FOR FREEZE REVIEW 02
+Architectural compatibility: FCA v1.0.1 and RDMS-01…04 unchanged
+
+Part I — Ownership and Architectural Boundaries
+C01-01 — Canonical Ownership
+
+RDMS-05 تملك فقط الآليات الزمنية التالية:
+
+تسجيل الأحداث المؤهلة للمتابعة الزمنية.
+
+تعريف وتقييم Triggers.
+
+اكتشاف occurrences وإصدار TriggerFire.
+
+تسجيل TriggerReaction وتطبيق نتائجها التشغيلية القانونية.
+
+تحديد آليات استحقاق Commitments وإعادة التنشيط.
+
+إنشاء واسترجاع ResumptionCapsules.
+
+إعداد طلبات الاستئناف والتحقق من شروطه الزمنية.
+
+ولا تملك:
+
+صلاحية Executive في اتخاذ قرارات هندسية جديدة.
+
+تعريف lifecycles بديلة لـGoal وSlice وCommitment.
+
+تنفيذ إجراءات خارجية مباشرة.
+
+منح الموافقات البشرية أو الاستدلالية.
+
+إنشاء Facts من الأحداث.
+
+محركًا مستقلًا لتقييم صلاحية الاعتماديات.
+
+يظل توزيع الملكية:
+
+Authority	Owner
+Atomic control persistence	RDMS-01
+Goals, Slices, Commitments	RDMS-02
+Observation provenance and evidence	RDMS-03
+External actions and reconciliation	RDMS-04
+Temporal triggers and reactivation	RDMS-05
+Dependency Evaluation Engine	RDMS-06
+Executive and policy enforcement integration	RDMS-08
+Part II — Durable Event Ingress
+C01-02 — SourceContract
+
+لا يمكن تسجيل Trigger تراقب مصدرًا دون تعريف قدراته.
+
+TriggerSourceContract {
+    source_id
+    source_generation
+
+    delivery_mode:
+        PUSH
+        POLL
+        HYBRID
+
+    history_capability:
+        REPLAYABLE_LOG
+        STATE_SNAPSHOT_ONLY
+        BOUNDED_HISTORY
+
+    event_identity_capability
+
+    source_ordering_contract
+    coverage_contract
+
+    acknowledgement_contract?
+    authentication_policy_ref
+
+    event_schema_version
+}
+
+يجب معرفة ما إذا كان المصدر يدعم:
+
+إعادة تسليم الأحداث.
+
+هوية ثابتة لكل حدث.
+
+ترتيبًا موثوقًا للأحداث.
+
+Watermarks أو إثبات اكتمال نافذة زمنية.
+
+استرجاع أحداث وقعت أثناء انقطاع الاتصال.
+
+غياب هذه الضمانات لا يجوز إخفاؤه داخل TriggerAdapter.
+
+C01-03 — DurableEventInbox
+DurableEventInboxEntry {
+    inbox_entry_id
+
+    source_id
+    source_generation
+
+    source_event_identity?
+    source_position?
+
+    raw_payload_artifact_ref
+    raw_payload_integrity_ref
+
+    ingress_authentication_ref
+    temporal_provenance_ref
+    trust_context_ref
+
+    received_commit_seq
+
+    state:
+        RECEIVED
+        QUARANTINED
+        ELIGIBLE
+        PROCESSED
+}
+
+المحتوى القادم من source خارجية يظل خاضعًا لـRDMS-03. تسجيل الحدث لا يعني أن مضمونه صحيح أو مخوّل.
+
+C01-04 — Acknowledgement Fence
+
+الترتيب القانوني:
+
+Receive external event
+        ↓
+Validate ingress envelope
+        ↓
+Durably store event identity and content
+        ↓
+Verify durable persistence
+        ↓
+Acknowledge external delivery
+        ↓
+Evaluate relevant triggers
+
+لا يُرسل acknowledgement ناجح إلى المصدر قبل ضمان حفظ الحدث إذا كانت دلالات المصدر تسمح بهذا البروتوكول.
+
+إذا فشل الحفظ، لا يجوز الادعاء بأن الحدث تمت معالجته.
+
+وإذا كان المصدر لا يوفر إعادة تسليم موثوقة بعد فشل الإقرار، فيجب تسجيل حد الضمان ووجود احتمال لفجوة.
+
+C01-05 — Two Different Cursor Concepts
+
+نمنع الخلط بين حفظ الحدث ومعالجته:
+
+IngressCursor
+    Tracks durable capture from source
+
+TriggerProcessingCursor
+    Tracks durable trigger evaluation obligations
+
+قد تتقدم IngressCursor عندما تُحفظ الأحداث في Durable Inbox، حتى لو لم تقيّم جميع Triggers بعد.
+
+أما TriggerProcessingCursor فلا تتقدم متجاوزة حدثًا إلا بعد حفظ نتيجة تقييمه وما يلزم من Fire/Reaction أو التزام إعادة تقييم مؤجل.
+
+بهذا لا نحتاج إلى تعليق استلام كل الأحداث بسبب Trigger بطيئة، ولا نفقد أحداثًا بسبب التقدم المبكر للمؤشر.
+
+C01-06 — Atomic Trigger Processing
+
+بالنسبة إلى حدث مؤهل:
+
+Read durable event E
+        ↓
+Evaluate trigger T
+        ↓
+One ControlCommit:
+    TriggerEvaluation
+    TriggerFire if qualified
+    TriggerReactionIntent if fired
+    TriggerProcessingCursor advancement
+
+إذا كانت النتيجة UNKNOWN وتحتاج إعادة تقييم مستقبلية، يُحفظ واجب إعادة التقييم قبل تقدم المؤشر.
+
+إذا وقع crash قبل ControlCommit، تعاد المعالجة.
+
+إذا وقع crash بعدها، تستخدم replay نفس الهويات ولا تنشئ reactions جديدة.
+
+C01-07 — Sources Without Stable Event Identity
+
+إذا لم يوفر المصدر Event ID ثابتة ولا cursor أو sequence موثوقة، فلا يجوز ادعاء deduplication كاملة لانتقالات Edge.
+
+Hash محتوى الحدث وحده ليس بديلًا عامًا عن هوية occurrence؛ فقد تقع أحداث مختلفة ذات محتوى متطابق.
+
+لهذا:
+
+يمكن استخدام Level-triggered reconciliation حيث يكفي فحص الحالة الحالية.
+
+تبقى Edge-triggered guarantees غير متاحة إلا بوجود witness كافية.
+
+الأحداث غير القابلة للتمييز تُعالج وفق سياسة صريحة، وقد تتطلب مراجعة أو مصالحة خارجية.
+
+Part III — Event Continuity and Negative Evidence
+C01-08 — EventCoverage
+EventCoverage {
+    coverage_id
+
+    source_id
+    source_generation
+
+    covered_interval_or_range
+
+    source_frontier_ref
+
+    status:
+        COMPLETE
+        PARTIAL
+        GAP_DETECTED
+        UNKNOWN
+
+    completeness_basis_refs[]
+
+    consistency_model
+    allowed_lateness_policy?
+}
+
+COMPLETE لا تعني أن الوكيل لم يشاهد أخطاءً فقط؛ بل أن المصدر يضمن تغطية المجال الزمني أو التسلسلي المحدد ضمن شروط موثقة.
+
+C01-09 — EdgeWitness
+EdgeWitness {
+    witness_id
+
+    source_ref
+
+    transition_identity
+
+    from_state_ref?
+    to_state_ref?
+
+    event_ref?
+
+    continuity_proof_ref
+
+    source_scope_ref
+    source_generation
+
+    witness_quality:
+        DIRECT_TRANSITION
+        DERIVED_EXISTENCE_ONLY
+        INSUFFICIENT
+}
+
+DIRECT_TRANSITION تستخدم عند وجود حدث انتقال مؤهل أو سجل متصل يثبت الانتقال المحدد.
+
+أما مقارنة snapshot قديمة بأخرى حديثة فقد تثبت وجود انتقال واحد على الأقل في بعض الحالات، لكنها لا تثبت عدد الانتقالات أو هوياتها أو ترتيب الأحداث الوسيطة.
+
+ولهذا لا نستعمل DERIVED_EXISTENCE_ONLY عندما تحتاج Trigger هوية كل transition.
+
+C01-10 — Absence-Based Predicate
+
+مثال:
+
+No new errors for 30 minutes.
+
+يشترط:
+
+Trusted source coverage
++
+Complete relevant interval
++
+No disqualifying event within covered interval
++
+Consistency/watermark requirements satisfied
+
+إذا انقطعت logs أو لم تصل watermark موثوقة:
+
+TriggerEvaluation = UNKNOWN
+
+ولا يتحول عدم وصول حدث إلى إثبات أنه لم يحدث.
+
+C01-11 — Late Evidence After Completion
+
+إذا وصل حدث متأخر يناقض coverage اعتُمدت سابقًا:
+
+لا نمحو TriggerFire التاريخية.
+
+نحفظ الحدث الجديد مع provenance.
+
+نعيد تقييم النتائج المعتمدة على تلك coverage عبر آلية صلاحية الاعتماديات.
+
+نمنع القرارات الجديدة المبنية على فرضية لم تعد صالحة.
+
+نفتح remediation أو review إذا كان fire قد تسبب في إجراء مؤثر.
+
+هذا يحافظ على التاريخ دون الادعاء أن استنتاجات الماضي لا يمكن أن تتغير صلاحيتها.
+
+Part IV — Immutable Trigger Definitions and Fire Identity
+C01-12 — TriggerDefinitionSnapshot
+TriggerDefinitionSnapshot {
+    trigger_id
+    generation
+
+    condition_snapshot_ref
+    reaction_spec_snapshot_ref
+
+    source_contract_refs[]
+    evaluation_policy_ref
+
+    fire_policy
+    detection_policy
+    rearm_policy_ref?
+
+    definition_fingerprint
+
+    activated_commit_seq
+}
+
+أي تغيير مادي في:
+
+condition
+reaction
+source assumptions
+detection semantics
+rearm rules
+
+يتطلب generation جديدة.
+
+لا يُعاد تفسير Fire سابقة بناءً على تعريف لاحق.
+
+C01-13 — QualifiedOccurrenceIdentity
+
+نضيف:
+
+QualifiedOccurrenceIdentity {
+    trigger_id
+    generation
+
+    occurrence_kind:
+        SOURCE_EVENT
+        EDGE_TRANSITION
+        LEVEL_CYCLE
+        SCHEDULE_OCCURRENCE
+
+    occurrence_key
+
+    identity_derivation_version
+}
+
+الهوية تُبنى من الحدث أو الدورة المؤهلة نفسها، لا من وقت معالجة worker.
+
+C01-14 — Stable TriggerFire
+TriggerFire {
+    fire_id
+
+    trigger_definition_snapshot_ref
+    qualified_occurrence_ref
+
+    evidence_basis_refs[]
+    source_frontier_ref
+
+    fire_identity_key
+
+    created_commit_seq
+}
+
+مع uniqueness constraint على:
+
+trigger_id
+generation
+occurrence_key
+
+حيث تحدد سياسة trigger أي occurrences قانونية.
+
+أي إعادة معالجة لنفس occurrence تعيد Fire نفسها، لا كيانًا جديدًا.
+
+C01-15 — Reaction Identity
+ReactionIdentity =
+    stable_hash(
+        fire_identity,
+        frozen_reaction_spec_identity
+    )
+
+لا يسمح أن تتغير هوية reaction بسبب worker جديد أو Executive epoch جديدة.
+
+وكل Reaction تحتفظ بمرجع النسخة الأصلية لتعريف Trigger.
+
+Part V — Rearming and Feedback Loops
+C01-16 — RearmPolicy
+RearmPolicy {
+    policy_id
+
+    reset_requirement:
+        WITNESSED_FALSE
+        NEW_SOURCE_OCCURRENCE
+        NEW_SCHEDULE_OCCURRENCE
+        EXPLICIT_REARM_CONDITION
+
+    reset_condition_ref?
+
+    minimum_source_progress_ref?
+    generation_advance_rule
+}
+
+لا يجوز إعادة تسليح Level-trigger بناءً على TRUE القديمة نفسها.
+
+C01-17 — Level Trigger Cycle
+Generation N
+    ↓
+Condition becomes TRUE
+    ↓
+Fire N
+    ↓
+WAIT_FOR_RESET
+    ↓
+Trusted evidence that condition became FALSE
+    ↓
+Rearm / Generation N+1
+    ↓
+Wait for a new qualified TRUE
+
+إذا كان شرط TRUE قائمًا ولم يثبت reset، لا توجد Fire جديدة.
+
+C01-18 — Edge Trigger Cycle
+
+الانتقال الجديد يحتاج EdgeWitness جديدة ومميزة.
+
+لا يمكن لـEvent قديمة أن تتحول إلى Edge جديدة فقط لأن Trigger أُعيد تسليحها.
+
+C01-19 — Feedback-Loop Control
+
+يمكن وجود feedback loops مشروعة:
+
+Trigger A
+    ↓
+State change B
+    ↓
+Trigger B
+
+لكن نحتاج:
+
+reaction_causal_chain_ref
+bounded_evaluation_budget
+recurrence_identity
+deduplication
+loop_detection_policy
+
+عند تجاوز budget أو اكتشاف دورة غير مستقرة، تُحفظ obligations وتُوقف المعالجة التلقائية أو تُطلب مراجعة.
+
+لا يجوز إسقاط obligations بصمت، ولا تعطيل كل حلقات feedback لمجرد أنها دورية.
+
+Part VI — Composite Temporal Coherence
+C01-20 — EvaluationContext
+ConditionEvaluationContext {
+    context_id
+
+    canonical_snapshot_ref
+
+    repo_ref?
+    world_ref?
+    environment_ref?
+
+    source_frontier_refs[]
+
+    dependency_scope_refs[]
+
+    evaluation_time_ref
+
+    temporal_join_policy_ref
+}
+
+يجب أن تكون شروط Composite قابلة للجمع في السياق الذي يتطلبه معناها.
+
+C01-21 — CompositeCoherenceAssessment
+CompositeCoherenceAssessment {
+    assessment_id
+
+    composite_condition_ref
+
+    child_evaluation_refs[]
+
+    coherence:
+        COHERENT
+        INCOHERENT
+        UNKNOWN
+
+    basis_refs[]
+}
+
+في الحالة التالية:
+
+Tests passed for commit C1
+Approval granted for commit C2
+
+لا يجوز اعتبار:
+
+ALL_OF = TRUE
+
+إذا كان الشرط يتطلب أن الاختبارات والموافقة تخصان commit نفسها.
+
+حتى لو كان كل تقييم صحيحًا بمفرده.
+
+C01-22 — Logical Evaluation Order
+
+نحدد ترتيبًا واضحًا:
+
+Evaluate children
+    ↓
+Establish required context compatibility
+    ↓
+Apply three-valued condition logic
+    ↓
+Produce qualified result
+
+إذا كانت compatibility مجهولة وكان لها أثر على الاستنتاج، فالنتيجة UNKNOWN.
+
+ويمكن أن تصبح النتيجة FALSE عندما يوجد دليل حاسم على عدم تحقق composite وفق نطاقها، دون الحاجة لاختلاق coherence غير موجودة.
+
+C01-23 — Dependency Engine Boundary
+
+RDMS-05 تحفظ evaluation contexts والنتائج الزمنية.
+
+أما تقييم صلاحية dependency stamps الحالية فيعود إلى RDMS-06.
+
+العقد المطلوب منها:
+
+DependencyEvaluation(
+    pinned_dependencies,
+    current_relevant_state
+)
+    → CURRENT
+    → STALE
+    → UNKNOWN
+
+مع أسباب ومراجع داعمة.
+
+لا تستخدم RDMS-05 مقارنة Global State Version لتقرير freshness دلالية لجميع الأشياء.
+
+Part VII — Scheduling and Clock Semantics
+C01-24 — Schedule Definition
+TemporalSchedule {
+    schedule_id
+    version
+
+    schedule_kind:
+        INSTANT
+        INTERVAL
+        RECURRING
+
+    time_zone_id?
+
+    time_zone_rules_version?
+
+    recurrence_rule?
+
+    ambiguous_local_time_policy
+    nonexistent_local_time_policy
+
+    missed_occurrence_policy
+    clock_discontinuity_policy
+}
+C01-25 — ScheduleOccurrence
+ScheduleOccurrence {
+    schedule_id
+    schedule_version
+
+    logical_occurrence_key
+
+    local_datetime?
+    utc_instant?
+
+    timezone_fold_index?
+
+    time_rules_version_ref
+
+    due_window_ref?
+}
+
+الهوية لا تُشتق من وقت فحص Scheduler.
+
+ويجب منع إعادة إنشاء occurrence نفسها بعد restart أو تصحيح ساعة النظام.
+
+C01-26 — DST Policy
+
+عند وقت محلي ملتبس:
+
+FIRST_OCCURRENCE
+SECOND_OCCURRENCE
+BOTH_DISTINCT
+SKIP
+REQUIRE_REVIEW
+
+وعند وقت محلي غير موجود:
+
+SKIP
+SHIFT_FORWARD
+REQUIRE_REVIEW
+
+هذه سياسات اختيارية تحددها schedule؛ لا تعتمد على افتراضات خفية.
+
+إذا تغيرت نسخة قواعد المنطقة الزمنية بصورة تؤثر على occurrences المقبلة، تحتاج الجدولة إلى version-aware reconciliation. لا نعيد كتابة occurrences تاريخية.
+
+C01-27 — Clock Discontinuity
+
+نميز بين:
+
+clock moved forward;
+
+clock moved backward;
+
+clock uncertainty exceeds acceptable threshold;
+
+process restarted and monotonic anchor was lost.
+
+أي discontinuity قد تستوجب إعادة تقييم due occurrences، لكنها لا تسمح بإصدار Fire مكررة.
+
+C01-28 — Missed Occurrence Handling
+MissedOccurrencePolicy:
+    REPLAY_EACH
+    COALESCE
+    SKIP_WITH_RECORD
+    REQUIRE_REVIEW
+
+التصرف يحدده نوع الالتزام.
+
+مثال: تقرير دوري يمكن جمع الفترات الفائتة أحيانًا، لكن التزامًا هندسيًا حساسًا لا يجوز تجاوزه صامتًا.
+
+Part VIII — Concurrency and Reaction Application
+C01-29 — Target-Bound Reaction
+TriggerReaction {
+    reaction_id
+
+    fire_ref
+
+    target_entity_ref
+    expected_target_version
+    expected_lifecycle
+
+    target_goal_lineage_ref?
+
+    frozen_reaction_spec_ref
+
+    status:
+        PENDING
+        CLAIMED
+        APPLIED
+        BLOCKED
+        OBSOLETE
+        CANCELLED
+}
+
+حالة OBSOLETE تخص محاولة تطبيق reaction على هدف لم تعد شروطه متحققة، ولا تعني حذف Fire التاريخية.
+
+C01-30 — Atomic Reaction Application
+
+عند التطبيق:
+
+Read target state
+    ↓
+Validate target version/lifecycle
+    ↓
+Validate trigger generation and authority
+    ↓
+One ControlCommit:
+    legal target transition
+    reaction APPLIED
+    reaction key consumed
+
+إذا ألغى المستخدم Goal قبل هذه المعاملة، تفشل CAS ويُعاد تقييم العملية.
+
+لا يجوز استعادة Goal ملغاة بواسطة reaction قديمة.
+
+C01-31 — ReactionExecutionClaim
+ReactionExecutionClaim {
+    reaction_id
+
+    worker_id
+    worker_generation
+
+    fencing_token
+    claim_version
+
+    claim_status
+
+    claimed_commit_seq
+}
+
+يمكن لـRecovery إعادة امتلاك reaction عالقة بعد زوال صلاحية claim القديمة.
+
+لكن reaction نفسها لا تنفذ world mutation؛ إذا كانت هناك Action خرجت من Control Plane، فتعافيها يقع تحت RDMS-04.
+
+C01-32 — No Duplicate Canonical Effect
+
+إذا وقعت:
+
+Reaction applied
+    ↓
+Worker crashed before acknowledgement
+
+فـControlCommit السابقة تحتوي انتقال الهدف وتطبيق reaction معًا.
+
+إعادة تشغيل worker ترى reaction:
+
+APPLIED
+
+ولا تطبق الانتقال ثانية.
+
+C01-33 — Orphaned Reactivation
+
+كل ReactivationRequest تثبت:
+
+target entity
+expected lifecycle
+expected version or permitted compatible successor
+goal lineage
+trigger generation
+
+إذا أصبحت Slice:
+
+CANCELLED / OBSOLETE / FAILED
+
+وفق الحالات القانونية للكيان، فلا تُعاد إلى التنفيذ بناءً على طلب قديم.
+
+أي نقل للعمل إلى successor يحتاج قرارًا صريحًا؛ لا تقوم Trigger Engine بإعادة توجيه الطلب تلقائيًا.
+
+Part IX — Resumption Capsule Integrity
+C01-34 — Durable Capsule Content
+ResumptionCapsule {
+    capsule_id
+
+    task_or_goal_ref
+
+    suspended_from_state
+
+    canonical_snapshot_ref
+
+    relevant_entity_refs[]
+
+    dependency_set_ref
+
+    unresolved_action_refs[]
+
+    next_action_proposal_ref?
+
+    durable_payload_artifact_ref
+    content_integrity_ref
+
+    created_commit_seq
+}
+
+تظل Capsule دليل استرجاع وسياق، وليست مصدرًا ثانيًا للمعرفة.
+
+C01-35 — Atomic Suspension
+
+الترتيب:
+
+Prepare capsule payload
+    ↓
+Durably store and verify payload
+    ↓
+One ControlCommit:
+    attach capsule reference
+    change work lifecycle to SUSPENDED
+    establish reactivation obligations
+
+إذا لم يكتمل حفظ Capsule بصورة قابلة للاسترجاع، لا يجوز اعتماد انتقال SUSPENDED.
+
+C01-36 — Missing or Corrupted Capsule
+
+إذا اكتُشف تلف لاحق:
+
+Capsule usability = INVALID / UNKNOWN
+
+لا نعيد تشغيل next_action_proposal_ref تلقائيًا.
+
+يدخل العمل Recovery Path لإعادة البناء من الكيانات canonical الباقية، مع تسجيل نقص الأدلة.
+
+تفاصيل RecoveryIncident ومخطط migration النهائي ستكون من مسؤوليات RDMS-09.
+
+Part X — Resume Gate
+C01-37 — Safe Resume Protocol
+Trigger fires
+    ↓
+ReactivationRequest
+    ↓
+Acquire valid Executive epoch
+    ↓
+Restore canonical state
+    ↓
+Validate capsule integrity
+    ↓
+Inspect unresolved ActionRecords
+    ↓
+Reconcile relevant external effects
+    ↓
+Evaluate repo/world/environment changes
+    ↓
+Dependency Evaluation Engine
+    ↓
+Validate Goal/Slice/Decision scope
+    ↓
+Executive resumes cognition or replans
+    ↓
+New Action authorization if needed
+
+الـTrigger لا تستأنف Shell command بنفسها.
+
+C01-38 — ResumeAssessment
+ResumeAssessment {
+    assessment_id
+
+    capsule_ref
+
+    current_context_refs[]
+
+    action_reconciliation_refs[]
+
+    dependency_evaluation_ref
+
+    goal_slice_validity_refs[]
+
+    result:
+        RESUMABLE
+        REPLAN_REQUIRED
+        BLOCKED
+        UNKNOWN
+
+    basis_refs[]
+}
+
+RESUMABLE تسمح باستعادة العمل المعرفي وفق الشروط المحددة، ولا تعفي أي mutation لاحقة من التفويض وإعادة فحص الشروط.
+
+C01-39 — Relevant Change, Not Global Change
+
+تغير README لا ينبغي أن يبطل اختبارًا يعتمد فقط على module لا علاقة لها به.
+
+لكن تغير:
+
+target repository revision
+schema version
+required dependency
+accepted Decision scope
+external Action effect
+
+قد يبطل المسار المحفوظ.
+
+تحدد RDMS-06 هذا عبر Typed Dependency Evaluation.
+
+C01-40 — Time-of-Check / Time-of-Use
+
+حتى لو كان ResumeAssessment صحيحًا عند T1:
+
+T1: dependency CURRENT
+T2: repository changes
+T3: next action dispatches
+
+لا يجوز الاعتماد على تقييم T1 دون حراسة dependency وtarget preconditions عند التنفيذ.
+
+RDMS-04 تعيد فحص الشروط المؤثرة عند ActionGate/dispatch boundary.
+
+C01-41 — Unresolved Action Barrier
+
+إذا كانت Action سابقة:
+
+IN_DOUBT
+
+فلا تنطلق عملية متعارضة أو تعتمد على نتيجتها المفترضة.
+
+يمكن استمرار أعمال مستقلة إذا أثبتت آلية الاعتماديات عدم التعارض.
+
+Part XI — Trusted Human and Semantic Events
+C01-42 — TrustedEventBinding
+TrustedEventBinding {
+    event_ref
+
+    authenticated_source_ref?
+
+    trust_context_ref
+
+    authority_binding_ref?
+
+    authorized_subject_scope
+
+    target_entity_version_ref?
+
+    provenance_ref
+}
+
+موافقة بشرية يجب أن ترتبط بالطلب أو القرار والإصدار الذي أُعطيت له.
+
+نص داخل repository يقول:
+
+The user approved deployment.
+
+لا يستطيع أن يصبح Human Approval event بمجرد وروده في Observation.
+
+C01-43 — Semantic Review Boundary
+
+Trigger تعتمد فقط على review outcome مقبولة قانونيًا، مع تثبيت:
+
+subject identity/version
+review specification
+assessment provenance
+acceptance authority
+dependency validity
+
+SemanticAssessment غير المقبولة أو التي تحمل توصية مثل BLOCK_RECOMMENDED لا تملك سلطة تنفيذ أو رفض مستقلة.
+
+C01-44 — Monitoring Cannot Bypass ActionGate
+
+أي polling أو source query تنفذها Trigger Engine تمر عبر الصلاحيات المناسبة.
+
+إذا كانت العملية مثبتة القراءة وتملك ReadAccessGrant يمكن تشغيلها وفق مسار القراءة.
+
+إذا كانت قادرة على mutation في shared-world، فتحتاج RDMS-04 Action authority.
+
+لا تستدعي Scheduler أدوات خطرة كأنها مجرد operations داخلية غير خاضعة للضبط.
+
+Part XII — Hardening
+C01-45 — Fairness and Durable Backlog
+
+نحدد SchedulerWorkPolicy تشمل:
+
+priority class
+aging
+per-trigger budget
+per-project quota
+recovery-critical priority
+backpressure behavior
+
+عند الضغط لا تُحذف events أو commitments المهمة.
+
+يمكن أن تدخل work items في حالة مؤجلة durable، مع إمكانية استرجاعها.
+
+C01-46 — Late and Out-of-Order Events
+
+Arrival order وsource order وworld-event time ليست متطابقة دائمًا.
+
+تستخدم كل trigger ordering semantics المصرح بها في SourceContract.
+
+لا يغير حدث قديم ترتيب Control Ledger، لكنه قد يقدم Evidence جديدة تغير صلاحية استنتاج موجود.
+
+C01-47 — Recurring Backlog
+
+عند التوقف الطويل:
+
+REPLAY_EACH
+COALESCE
+SKIP_WITH_RECORD
+REQUIRE_REVIEW
+
+طبقًا إلى SchedulePolicy.
+
+كل occurrence فائتة يجب أن تكون قابلة للمحاسبة، حتى لو جُمعت معالجة عدة occurrences معًا.
+
+C01-48 — Threshold Stability
+ThresholdConditionPolicy {
+    threshold
+
+    hysteresis?
+    sustained_duration?
+    debounce_policy?
+}
+
+لا يفترض Scheduler hysteresis من تلقاء نفسه.
+
+أي filtering يؤثر في إطلاق Trigger يجب أن يكون جزءًا من condition definition المجمدة.
+
+C01-49 — End-to-End Audit Lineage
+
+كل Reactivation يجب أن تكون قابلة للتتبع عبر:
+
+Source Event / ScheduleOccurrence
+    ↓
+Durable Inbox
+    ↓
+TriggerEvaluation
+    ↓
+TriggerFire
+    ↓
+TriggerReaction
+    ↓
+ReactivationRequest
+    ↓
+ResumeAssessment
+    ↓
+Executive transition
+
+ولا نعيد تشغيل LLM لتخمين سبب قرار تاريخي.
+
+C01-50 — Reaction Causal Chain Bound
+
+كل reaction مشتقة من events أو reactions أخرى تحمل causal lineage مناسبة.
+
+الحدود التشغيلية تمنع recursion غير المحدودة.
+
+عند تجاوزها، تُحفظ obligation وتُعلّق الدورة للتحقيق؛ لا يُسقط الحدث بصمت.
+
+Part XIII — Added Invariants
+
+إضافة إلى RDMS05-I01…I30:
+
+RDMS05-I31: External event acknowledgement cannot precede durable capture when the source protocol supports acknowledgement-based delivery guarantees.
+
+RDMS05-I32: Ingress cursor and per-trigger processing cursor are distinct; processing progress cannot erase an unprocessed event obligation.
+
+RDMS05-I33: Edge occurrence claims require adequate historical witnesses; incomplete snapshot evidence cannot fabricate event multiplicity or ordering.
+
+RDMS05-I34: Negative event conclusions require explicit interval coverage and source consistency guarantees.
+
+RDMS05-I35: TriggerFire identity is independent from worker identity, clock evaluation time and reaction execution attempt.
+
+RDMS05-I36: Material trigger definition changes create a new immutable generation.
+
+RDMS05-I37: Level rearming requires a qualified reset or fresh occurrence according to the frozen rearm policy.
+
+RDMS05-I38: Composite condition success requires compatible versions, scopes and temporal contexts.
+
+RDMS05-I39: Schedule occurrences possess stable identities across restarts and clock changes.
+
+RDMS05-I40: Clock discontinuity and daylight-saving ambiguities are handled by explicit scheduling policy.
+
+RDMS05-I41: Reaction application and the resulting canonical target transition must be atomic and version-guarded.
+
+RDMS05-I42: Canceled, superseded or obsolete work cannot be resurrected by stale reactivation requests.
+
+RDMS05-I43: Durable suspension requires a recoverable and integrity-verified ResumptionCapsule.
+
+RDMS05-I44: ResumeAssessment cannot directly authorize mutation and cannot bypass RDMS-04 precondition revalidation.
+
+RDMS05-I45: An IN_DOUBT effect blocks relevant conflicting or dependent work until lawful reconciliation.
+
+RDMS05-I46: Human approval is scoped to an authenticated/authorized source and the exact target to which it applies.
+
+RDMS05-I47: Raw semantic outputs and untrusted event contents cannot become authoritative trigger inputs by wording alone.
+
+RDMS05-I48: Trigger monitoring has no special exemption from ActionGate and information-access policies.
+
+RDMS05-I49: Reaction worker recovery cannot duplicate a canonical transition already committed.
+
+RDMS05-I50: Trigger overload and recursive reaction loops cannot silently discard durable obligations.
+
+RDMS05-I51: A late contradicting event preserves historical TriggerFire while requiring re-evaluation of current reliance on its basis.
+
+RDMS05-I52: Scheduler deduplication guarantees are never stronger than the available source occurrence identity and persistence guarantees.
+
+Part XIV — Correction Ledger
+Finding	Correction	Result
+G01 Event lost after acknowledgement	C01-02…06	CLOSED FOR REVIEW
+G02 Edge without complete history	C01-08…09	CLOSED FOR REVIEW
+G03 Fire identity drift	C01-12…15	CLOSED FOR REVIEW
+G04 Infinite rearming	C01-16…18	CLOSED FOR REVIEW
+G05 Cross-world composite	C01-20…23	CLOSED FOR REVIEW
+G06 Definition mutation	C01-12, 15	CLOSED FOR REVIEW
+G07 Clock and DST	C01-24…28	CLOSED FOR REVIEW
+G08 Cancellation race	C01-29…32	CLOSED FOR REVIEW
+G09 Missing capsule	C01-34…36	CLOSED FOR REVIEW
+G10 Unsafe resume	C01-37…41	CLOSED FOR REVIEW
+G11 Forged human event	C01-42	CLOSED FOR REVIEW
+G12 Semantic authority	C01-43	CLOSED FOR REVIEW
+G13 Monitoring side effects	C01-44	CLOSED FOR REVIEW
+G14 Worker crash	C01-31…32	CLOSED FOR REVIEW
+G15 Orphan reactivation	C01-33	CLOSED FOR REVIEW
+G16 False negative evidence	C01-08, 10…11	CLOSED FOR REVIEW
+H01 Trigger storms	C01-45	HARDENED
+H02 Out-of-order events	C01-46	HARDENED
+H03 Recurring backlog	C01-47	HARDENED
+H04 Threshold oscillation	C01-48	HARDENED
+H05 Audit lineage	C01-49	HARDENED
+H06 Trigger feedback cycles	C01-19, 50	HARDENED
+C01 Correction Verdict
+
+جميع findings الأولى أصبحت لها عقود وهوية وسلطة انتقال أو حارس محدد.
+
+RDMS-05 C01: COMPLETE — READY FOR ADVERSARIAL FREEZE REVIEW 02.
+
+لا يتضمن هذا الحكم إثباتًا لتشغيل implementation؛ فهو إغلاق رسمي للتصحيح على مستوى المواصفة.
+
+END ORIGINAL MESSAGE
+
+========================================================================
+SOURCE PART: Adversarial Freeze Review 02 and freeze decision
+MESSAGE ID: 87d8aced-dfbc-477b-80dc-e6d90997fe59
+BEGIN ORIGINAL MESSAGE
+========================================================================
+
+RDMS-05 — Adversarial Freeze Review 02
+RDMS-05 — Adversarial Freeze Review 02
+
+Target: RDMS-05 Draft v1.0 + C01 Correction Set
+Review: Independent specification-level re-audit
+Scope: Event integrity, temporal coherence, authority, recovery and safe resumption
+
+1. Freeze Criteria
+
+تنجح المراجعة الثانية فقط إذا كانت المواصفة:
+
+تمنع ضياع الحدث ضمن ضمانات المصدر المعلنة.
+
+تمنع تطبيق reaction canonical مرتين لنفس occurrence.
+
+لا تخترع وقوع حدث أو عدم وقوعه عندما تكون التغطية مجهولة.
+
+لا تدمج أدلة غير متوافقة في نطاقها الزمني أو الإصدار.
+
+تمنع إعادة إحياء Goal أو Slice غير صالحة.
+
+تمنع تنفيذ Action خارج سلطة Executive وActionGate.
+
+تضمن أن التوقف والاستئناف لا يمحوان آثارًا خارجية مجهولة.
+
+تستطيع تحديد متى يجب الامتناع عن الاستئناف بسبب نقص المعلومات.
+
+2. Final Freeze Clarifications
+
+خلال إعادة المراجعة، نثبت توضيحين ملزمين ضمن C01 قبل إصدار قرار التجميد.
+
+FC05-01 — Pending Reactions From Superseded Generations
+
+إذا استُبدلت TriggerDefinition بعد إنشاء Fire لكن قبل تطبيق reaction:
+
+Generation N: Fire persisted
+           ↓
+Generation N+1 becomes active
+           ↓
+Old reaction still PENDING
+
+لا يجوز تفسير reaction القديمة باستخدام تعريف N+1.
+
+Default rule: لا تُطبّق reaction القديمة بعد supersession مؤثر إلا إذا كانت قد التزمت قانونيًا قبل supersession أو سمحت سياسة انتقال صريحة بحملها إلى الجيل الجديد.
+
+وإلا تصبح OBSOLETE أو BLOCKED، مع الحفاظ على سجل Fire الأصلي.
+
+أي carry-forward يحتاج transition صريحة وهوية محددة؛ لا يحدث بصمت.
+
+FC05-02 — Late Events After Cancellation
+
+إذا ألغيت Trigger ثم وصل حدث قديم:
+
+Cancellation committed at N
+           ↓
+Delayed source event arrives at N+1
+
+يبقى الحدث Observation تاريخية صالحة للإدخال والفحص.
+
+لكنه لا يستطيع إنشاء reaction تشغيلية جديدة لـTrigger الملغاة بمجرد أن source_event_time تسبق وقت الإلغاء.
+
+الترتيب القانوني للـControlCommit يحدد حالة التسجيل عند التقييم، ما لم يوجد بروتوكول retroactive reconciliation مصرّح به صراحة؛ وهذا لا يمنح سلطة لإعادة تشغيل world actions.
+
+هذان التوضيحان يغلقان ثغرتين في تفسير التزامن دون تغيير FCA.
+
+3. Adversarial Test Results
+T01 — Crash Before External Acknowledgement
+
+Attack: يصل event، ويحاول runtime تأكيد الاستلام قبل durable persistence.
+
+Required guard: acknowledgement fence.
+
+Result: لا يمكن إصدار إقرار التسليم قبل تحقق الحفظ عندما يعتمد البروتوكول على تلك الضمانة.
+
+PASS — CONTRACT.
+
+T02 — Crash After Inbox Persistence
+
+Attack: يحفظ event ثم ينهار قبل تقييم trigger.
+
+Required guard: durable inbox + separate processing cursor.
+
+Result: الحدث يبقى قابلًا للمعالجة بعد restart.
+
+PASS — CONTRACT.
+
+T03 — Cursor Advancement Before Fire
+
+Attack: محاولة تجاوز حدث قبل حفظ Fire/Reaction المطلوبة.
+
+Required guard: atomic processing commit.
+
+Result: لا تتقدم processing cursor بصورة تضيع معها obligation غير محفوظة.
+
+PASS — CONTRACT.
+
+T04 — Duplicate Event Delivery
+
+Attack: source تعيد event نفسها مع وصولها إلى worker جديدة.
+
+Required guard: stable source occurrence identity and uniqueness.
+
+Result: event المؤهلة ذات هوية ثابتة لا تنتج Fire قانونية ثانية.
+
+PASS — CONTRACT.
+
+T05 — Source Has No Stable Event ID
+
+Attack: webhook بلا occurrence ID موثوقة.
+
+Required guard: source capability disclosure.
+
+Result: لا يدّعي النظام deduplication أو edge guarantees أقوى مما يتيح المصدر؛ يستخدم reconciliation أو UNKNOWN.
+
+PASS — CONSERVATIVE FALLBACK.
+
+T06 — Missed OPEN → MERGED → REOPENED
+
+Attack: وقعت عدة انتقالات أثناء downtime، والحالة النهائية تماثل البداية.
+
+Required guard: EdgeWitness and coverage.
+
+Result: لا يستنتج النظام غياب الانتقال من snapshot النهائية.
+
+PASS — CONTRACT.
+
+T07 — Old Event Arrives Out of Order
+
+Attack: يصل حدث ذو source time أقدم بعد حدث أحدث.
+
+Required guard: separate source/capture/canonical ordering.
+
+Result: لا يعيد النظام ترتيب Control Ledger اصطناعيًا، ولا يستخدم timestamp وحدها كدليل causal ordering.
+
+PASS — CONTRACT.
+
+T08 — Repeated TRUE Level
+
+Attack: TRUE مستمرة، مع rearming متكرر.
+
+Required guard: witnessed reset or new qualified occurrence.
+
+Result: لا تُنتج دورة firing لا نهائية من TRUE نفسها.
+
+PASS — CONTRACT.
+
+T09 — Condition Changed After Fire
+
+Attack: تغيير شرط الاختبارات بعد Fire.
+
+Required guard: immutable generation snapshot.
+
+Result: Fire القديمة مرتبطة بالشرط القديم؛ لا يُعاد تفسيرها.
+
+PASS — CONTRACT.
+
+T10 — Pending Old Reaction After Supersession
+
+Attack: reaction من generation N تحاول تطبيق نتيجة بعد تفعيل generation N+1.
+
+Required guard: FC05-01.
+
+Result: التطبيق الافتراضي مرفوض دون carry-forward قانوني صريح.
+
+PASS — CONTRACT.
+
+T11 — Composite Mixes Commits C1 and C2
+
+Attack: اختبارات C1 مع موافقة C2.
+
+Required guard: context coherence and dependency scope.
+
+Result: لا ينتج ALL_OF = TRUE للشرط الذي يطلب الإصدار نفسه.
+
+PASS — CONTRACT.
+
+T12 — Composite Contains UNKNOWN
+
+Attack: شرط يحتاج دليلًا غير متاح.
+
+Required guard: three-valued logic + compatibility check.
+
+Result: لا يتحول UNKNOWN إلى TRUE بسبب نجاح شروط أخرى، إلا إذا كانت semantics مثل ANY_OF تجعل النجاح مثبتًا مستقلًا.
+
+PASS — CONTRACT.
+
+T13 — Clock Moves Backward
+
+Attack: ساعة النظام تتراجع بعد Fire دورية.
+
+Required guard: stable occurrence identity.
+
+Result: لا تُطلق occurrence السابقة مجددًا.
+
+PASS — CONTRACT.
+
+T14 — Nonexistent DST Local Time
+
+Attack: موعد 02:30 في يوم لا توجد فيه هذه الساعة المحلية.
+
+Required guard: explicit nonexistent-time policy.
+
+Result: لا يخترع Scheduler instant دون سياسة محددة.
+
+PASS — CONTRACT.
+
+T15 — Ambiguous DST Local Time
+
+Attack: موعد محلي يقع مرتين.
+
+Required guard: fold-aware occurrence identity and policy.
+
+Result: يمكن اختيار occurrence الأولى أو الثانية أو الاثنتين بهويتين مستقلتين حسب السياسة، دون duplication غير مقصود.
+
+PASS — CONTRACT.
+
+T16 — Long Downtime With Recurring Obligations
+
+Attack: يتوقف النظام عشرة أيام وتتراكم occurrences.
+
+Required guard: missed occurrence policy and durable accounting.
+
+Result: لا تضيع الالتزامات بصمت، ويمكن coalescing فقط وفق سياسة صريحة.
+
+PASS — CONTRACT.
+
+T17 — Human Cancels Goal During Reaction
+
+Attack: worker تملك reaction بينما تُلغى Goal.
+
+Required guard: entity-version CAS and lifecycle validation.
+
+Result: لا يُعاد إحياء Goal بعد إلغائها.
+
+PASS — CONTRACT.
+
+T18 — Late Event After Trigger Cancellation
+
+Attack: يصل event قديم بعد إلغاء Trigger.
+
+Required guard: FC05-02.
+
+Result: يمكن حفظ الحدث، لكن لا ينشئ تفعيلًا تشغيليًا جديدًا للـTrigger الملغاة.
+
+PASS — CONTRACT.
+
+T19 — Reaction Worker Crashes After Claim
+
+Attack: worker تنهار وreaction في CLAIMED.
+
+Required guard: recoverable claims and fencing.
+
+Result: يمكن إعادة حيازة العمل بصورة آمنة مع المحافظة على reaction identity نفسها.
+
+PASS — CONTRACT.
+
+T20 — Reaction Committed, Acknowledgement Lost
+
+Attack: تم تطبيق انتقال Goal ثم انهارت worker قبل الإقرار.
+
+Required guard: atomic reaction and target transition.
+
+Result: إعادة المعالجة ترى APPLIED ولا تطبق الانتقال مرة ثانية.
+
+PASS — CONTRACT.
+
+T21 — Suspension Capsule Not Persisted
+
+Attack: محاولة اعتماد SUSPENDED قبل اكتمال حفظ Capsule.
+
+Required guard: verified durable artifact before control transition.
+
+Result: لا يُقبل الانتقال.
+
+PASS — CONTRACT.
+
+T22 — Capsule Corrupted After Restart
+
+Attack: Capsule محفوظة metadata لكن محتواها تالف.
+
+Required guard: integrity verification and recovery fallback.
+
+Result: لا ينفذ النظام next action القديمة؛ يدخل recovery بدل ذلك.
+
+PASS — CONTRACT.
+
+T23 — External Action Remains IN_DOUBT
+
+Attack: Resume يطلب متابعة Slice تعتمد على mutation مجهولة النتيجة.
+
+Required guard: action reconciliation barrier.
+
+Result: العمل المعتمد أو المتعارض BLOCKED إلى أن يُحسم أثر العملية أو يُعالج قانونيًا.
+
+PASS — CONTRACT.
+
+T24 — Repository Changes After ResumeAssessment
+
+Attack: كانت dependencies CURRENT، ثم تغير target قبل dispatch.
+
+Required guard: RDMS-04 revalidation at action boundary.
+
+Result: ResumeAssessment لا تعطي حصانة من تغير لاحق؛ يلزم التحقق من الشروط المؤثرة عند التنفيذ.
+
+PASS — CONTRACT.
+
+T25 — Forged Human Approval
+
+Attack: محتوى repository يقول إن المستخدم وافق.
+
+Required guard: authenticated authority-scoped event binding.
+
+Result: لا تتحول العبارة إلى موافقة قانونية.
+
+PASS — CONTRACT.
+
+T26 — Unaccepted Semantic Review
+
+Attack: LLM تُخرج PASS لمراجعة معمارية دون gate مناسبة.
+
+Required guard: review provenance and authorized acceptance.
+
+Result: لا تمنح النتيجة سلطة تشغيلية.
+
+PASS — CONTRACT.
+
+T27 — Scheduler Monitoring With Side Effects
+
+Attack: فحص حالة خدمة ينفذ أمرًا يؤدي إلى mutation.
+
+Required guard: RDMS-04 classification and ActionGate.
+
+Result: لا تملك Scheduler طريقًا جانبيًا للتنفيذ.
+
+PASS — CONTRACT.
+
+T28 — No Errors During Incomplete Log Window
+
+Attack: source logging منقطعة في منتصف نافذة الثلاثين دقيقة.
+
+Required guard: EventCoverage.
+
+Result: النتيجة UNKNOWN لا TRUE.
+
+PASS — CONTRACT.
+
+T29 — Event Arrives Late and Contradicts Earlier Coverage
+
+Attack: يصل خطأ متأخر بعد اعتماد نتيجة غياب الأخطاء.
+
+Required guard: historical preservation and reliance invalidation.
+
+Result: لا تُحذف Fire السابقة، لكن يعاد تقييم صلاحية الاعتماد على دليلها ولا تُنفذ خطوات جديدة بافتراض أنه ما زال صحيحًا.
+
+PASS — CONTRACT.
+
+T30 — Trigger Feedback Loop
+
+Attack: Trigger A تفعّل B وB تفعّل A باستمرار.
+
+Required guard: causal-chain tracing, deduplication and bounded processing.
+
+Result: يمكن إيقاف الدورة التلقائية وحفظ obligations للمراجعة دون فقدانها.
+
+PASS — CONTRACT.
+
+4. Freeze Review Matrix
+Area	Formal verdict
+Durable Event Ingress	PASS
+External acknowledgement integrity	PASS
+Cursor progression	PASS
+Source coverage	PASS
+Edge witness semantics	PASS
+Fire identity and deduplication	PASS
+Trigger definition immutability	PASS
+Rearming safety	PASS
+Composite context coherence	PASS
+Clock, DST and recurrence	PASS
+Cancellation concurrency	PASS
+Reaction worker recovery	PASS
+ResumptionCapsule integrity	PASS
+Resume authority	PASS
+IN_DOUBT action integration	PASS
+Human/event trust boundary	PASS
+Semantic review authority	PASS
+Monitoring tool permissions	PASS
+Negative evidence	PASS
+Scheduling fairness and bounded loops	PASS
+5. Residual Implementation Gates
+
+المراجعة لم تثبت أن كل منصة أو مصدر بيانات يستطيع تقديم الضمانات المطلوبة.
+
+هذه ليست استثناءات تبيح تجاوز العقود؛ بل قيود capability يجب أن يتعامل معها التنفيذ بأمان.
+
+IG05-01 — Source replay and identity: إذا لم يقدم المصدر هوية أو replay كافية، تُخفض القدرة المتاحة ولا يُدعى إثبات Edge غير ممكنة.
+
+IG05-02 — Durable storage: يجب اختبار crash consistency للمخزن الفعلي وartifacts وControlCommit.
+
+IG05-03 — Trusted time: يجب اختبار سياسات timezone/DST وتصحيح الساعة باستخدام حالات مضبوطة.
+
+IG05-04 — Concurrency: يجب تنفيذ اختبارات races حقيقية بين cancellation وreaction workers وExecutive epochs.
+
+IG05-05 — Recovery: يجب اختبار restart بعد كل boundary مهمة، مع فحص replay وidempotency.
+
+IG05-06 — Dependency integration: RDMS-06 يجب أن تحقق العقد المتفق عليه لتقييم dependencies. لا يجوز لـRDMS-05 افتراض CURRENT دون نتيجة مؤهلة.
+
+عدم توافر capability مطلوبة يعني UNKNOWN أو BLOCKED أو رفض التفعيل، لا نجاحًا افتراضيًا.
+
+6. Final Governance Decision
+
+بعد C01 والتوضيحين FC05-01 وFC05-02:
+
+Original blocking findings:         16
+Addressed in C01:                   16
+
+Original hardening findings:         6
+Addressed in C01:                    6
+
+New unresolved specification blockers: 0
+
+Changes required to frozen FCA:      0
+Changes required to RDMS-01…04:      0
+
+Adversarial Freeze Review 02:
+PASS — FORMAL SPECIFICATION
+
+RDMS-05 — Temporal Runtime, Durable Triggers, Commitments & Resumption: FROZEN AT SPECIFICATION LEVEL.
+
+هذا قرار تجميد للعقود المعمارية بعد مراجعة نظرية، وليس شهادة اختبارات تشغيلية. تبقى بوابات التنفيذ الفعلية إلزامية لاحقًا.
+
+7. Next Authorized Phase
+
+RDMS-06 — Specialists, Coordination & Dependency Evaluation Engine
+
+ستحدد هذه المرحلة:
+
+إنشاء واستدعاء Specialists دون نقل السلطة المعرفية إليها.
+
+العزل بين مساحات عمل الوكلاء المؤقتين.
+
+إدارة المهام المتوازية والميزانيات.
+
+تبادل النتائج والملاحظات والأدلة.
+
+منع التصويت أو consensus من تجاوز الأدلة الأقوى.
+
+التكامل القانوني لنتائج Specialists في Canonical Workspace.
+
+محرك واحد لتقييم صلاحية dependencies.
+
+الاعتماديات الإيجابية والسلبية.
+
+Invalidation الدقيق دون إبطال كل المعرفة عند أي تغيير.
+
+حراسة القرارات والخطط والاستئناف ضد stale dependency stamps.
+
+RDMS-05: CLOSED / FROZEN.
+
+حالة المشروع بعد المراجعة الثانية
+
+FCA v1.0.1
+
+RDMS-01 — Runtime Foundations
+
+RDMS-02 — Canonical Entities
+
+RDMS-03 — Evidence & Experiments
+
+RDMS-04 — Action Runtime & Tools
+
+RDMS-05 — Temporal Runtime
+
+RDMS-06 — Specialists & Dependencies
+
+التالي
+
+RDMS-07–10 — Remaining design
+
+أصبح لدينا الآن على مستوى التصميم الرسمي ثلاثة عناصر مترابطة: عقل يملك سلطة اتخاذ القرارات، ونظام أدوات ينفذها تحت الحراسة، ونظام زمني يحفظ العمل والالتزامات ويتيح استئنافها بأمان.
+
+المرحلة التالية هي RDMS-06، وسندخل فيها إلى أحد أهم جوانب محاكاة فريق هندسي بشري محترف: كيف يتعاون عدة Specialists في الوقت نفسه، وكيف تُدمج نتائجهم دون خلق عدة عقول تمتلك السلطة على المشروع نفسه.
+
+END ORIGINAL MESSAGE

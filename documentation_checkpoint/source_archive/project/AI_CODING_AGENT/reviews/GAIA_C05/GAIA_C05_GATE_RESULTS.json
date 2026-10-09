@@ -1,0 +1,42 @@
+{
+  "phase": "GAIA-C05",
+  "source_message_integrity": "PASS",
+  "source_messages": 27,
+  "source_files_unchanged": 19,
+  "new_before_after_witnesses": 12,
+  "schema_deltas_examined": 3,
+  "cross_layer_routes_registered": 12,
+  "routes_with_additional_verified_guards": 4,
+  "full_contract_migration_certified": false,
+  "full_interface_signatures_certified": 0,
+  "layer_freeze": "HOLD",
+  "implementation_modified": false,
+  "outstanding": [
+    "Full correction-by-base-clause normalization RDMS-01 through RDMS-10",
+    "Contract owner/producer/consumer schema ratification for 12 interfaces",
+    "Schema migration preservation proof including ResumptionCapsule"
+  ],
+  "verified_original_files": 19,
+  "shape_deltas": {
+    "ResumptionCapsule": {
+      "old_fields": 22,
+      "correction_fields": 11,
+      "unmapped_same_name": 16
+    },
+    "TriggerFire": {
+      "old_fields": 8,
+      "correction_fields": 7,
+      "unmapped_same_name": 5
+    },
+    "ObservationAmendment": {
+      "old_fields": 7,
+      "correction_fields": 8,
+      "unmapped_same_name": 1
+    }
+  },
+  "reference_retests": {
+    "phase11": "PASS_26_OF_26",
+    "phase12": "PASS_9_OF_9",
+    "c02_structural_integrity": "PASS"
+  }
+}

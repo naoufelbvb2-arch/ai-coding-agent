@@ -1,0 +1,30 @@
+{
+  "phase": "GAIA-C01 Phase 7",
+  "source_count": 11,
+  "source_integrity": "PASSED",
+  "compared_repeated_type_names_current_phase": 22,
+  "compared_total_cross_source_names_including_phase6": 27,
+  "classification_counts": {
+    "CONDITIONAL_PRESERVATION": 9,
+    "SEMANTIC_GATE_OPEN": 8,
+    "LOW_RISK_MAPPING_CANDIDATE": 5
+  },
+  "acceptance_vectors_specified": 22,
+  "runtime_tests_performed": 0,
+  "source_hashes": {
+    "FCA-1.0.1": "74d0923cbd343b71740da0fc2368a84aad2ea97f8e4e15f156122f48ebe53539",
+    "RDMS-01": "b5b023dff0003f456d13e9d0492d674d36860427dda67874157467c19721038b",
+    "RDMS-02": "54772a75a54baea03c51107152eb1fe19849479e8ec9341654cf0ba45573c446",
+    "RDMS-03": "97f836c691a373b9a2a9e6e98b33cb7e121545cfc68732f1bde25c21599e79ab",
+    "RDMS-04": "c06407aad889cad4d0bd942ffade2636d32ebae454983b49b5c19afec2b27394",
+    "RDMS-05": "9152f6eb671ce1c95235fa49c960922f3166249d58076b61e00d958520fc6763",
+    "RDMS-06": "a55748e558446497a4be82835bcf7590e3b5ec7235f03674c2e6fe925143f262",
+    "RDMS-07": "fe065cda37c20625ac4c42c64251f87d4daabb9d5d466d49a8c201784d948700",
+    "RDMS-08": "fff70116d3f26bd42cba1cde8c071659674d4028eee57b5c304e045993fc69c6",
+    "RDMS-09": "84ed1246a86b6f5923b6bf3320c2830e10c8e3fddac14e778c8c503272062a4b",
+    "RDMS-10": "5464a1a1db1a64d90990f7a205b32dbe7988a91a2f1d018ea48e2cd822251935"
+  },
+  "canonical_layer_docs": "DRAFT_NOT_FROZEN",
+  "implementation": "NOT_AUTHORIZED",
+  "schema_projections_approved": 0
+}

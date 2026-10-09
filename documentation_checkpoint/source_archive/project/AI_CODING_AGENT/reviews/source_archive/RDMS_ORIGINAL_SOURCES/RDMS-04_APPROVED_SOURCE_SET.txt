@@ -1,0 +1,2821 @@
+RDMS-04 — ORIGINAL APPROVED SOURCE SET
+Source: https://chatgpt.com/share/6ac82d7b-ba7c-83ea-a3a9-b41734948bb2
+
+ملاحظة تحريرية: هذا الملف تجميع للنصوص الأصلية المسترجعة من المحادثة، لا إعادة صياغة ولا مواصفة موحدة جديدة. حالة التجميد مثبتة في قرار المراجعة النهائي المرفق؛ عبارة DRAFT داخل النص الأساسي تصف مرحلته التاريخية قبل التصحيحات. تُقرأ المسودة مع التصحيحات وقرار الاعتماد، ولا يجوز استعمال نص سابق يخالف تصحيحًا معتمدًا لاحقًا. لم نغير نصوص القوانين ولم نضف FCA.
+
+
+========================================================================
+SOURCE PART: Original draft
+MESSAGE ID: 32ad532a-40cd-4b2a-8a0a-3372937cf6db
+BEGIN ORIGINAL MESSAGE
+========================================================================
+
+Runtime & Data Model Specification v1.0
+Runtime & Data Model Specification v1.0
+RDMS-04 — Action Runtime, Terminal, Sandbox & Tool Execution
+
+Parent: FCA v1.0.1 — FROZEN
+Dependencies: RDMS-01, RDMS-02, RDMS-03 — FROZEN
+Input: Terminal / PTY / Filesystem / Git / Debugger engineering study
+Status: DRAFT v1.0 — NOT FROZEN
+
+Part I — Action Runtime Architecture
+1. Purpose
+
+RDMS-04 يحدد كيف ينتقل الوكيل من الاستدلال والتخطيط إلى التعامل مع العالم الخارجي.
+
+يجب أن يستطيع الوكيل:
+
+تشغيل Terminal وأوامر Shell.
+
+إدارة العمليات القصيرة والطويلة والتفاعلية.
+
+قراءة الملفات والبحث داخل المشاريع.
+
+تعديل الملفات باستخدام patches مع ضمانات الاتساق.
+
+استخدام Git وإدارة التغييرات.
+
+تشغيل الاختبارات وأدوات البناء.
+
+التحكم في Debugger.
+
+التعامل مستقبلًا مع المتصفح وقواعد البيانات والأدوات الخارجية.
+
+التحقق من نتائج الأفعال والتعافي عند الفشل.
+
+لكن لا نريد أن تصبح القدرة على استدعاء أداة مساوية للحق في استخدام جميع صلاحياتها.
+
+2. Architecture
+                COGNITIVE PLANE
+                     │
+             Cognitive Executive
+                     │
+              ActionProposal
+                     │
+                     ▼
+                CONTROL PLANE
+                     │
+              Authority Check
+                     │
+                ActionGate
+                     │
+        ┌────────────┴────────────┐
+        ▼                         ▼
+ EPHEMERAL_SANDBOX          SHARED_WORLD
+        │                         │
+ Sandbox Policy Gate       Durable Action Journal
+        │                         │
+        └────────────┬────────────┘
+                     ▼
+                ACTION PLANE
+                     │
+              Reality Executor
+                     │
+          ┌──────────┼───────────┐
+          ▼          ▼           ▼
+       Terminal   Files/Git    Debugger
+          │          │           │
+          └──────────┼───────────┘
+                     ▼
+              OBSERVATION PLANE
+                     │
+              Observation Ingress
+                     │
+               Reconciliation
+                     │
+                     ▼
+              Cognitive Workspace
+Foundational rule
+
+Action Runtime controls execution mechanics; Cognitive Executive controls semantic authorization.
+
+Reality Executor لا يستطيع ترقية إجراء إلى عملية مسموحة اعتمادًا على نص الأمر أو استنتاج الـLLM.
+
+Part II — Action Identity & Authority
+3. ActionProposal
+ActionProposal {
+    action_proposal_id
+    project_id
+
+    requested_by_ref
+    goal_id
+    slice_id
+
+    action_kind:
+        TERMINAL
+        FILESYSTEM
+        GIT
+        TEST
+        BUILD
+        DEBUGGER
+        DATABASE
+        NETWORK
+        DEPLOYMENT
+        OTHER
+
+    requested_action_class:
+        EPHEMERAL_SANDBOX
+        SHARED_WORLD
+
+    intent
+
+    target_scope[]
+    expected_effects[]
+    preconditions[]
+
+    base_repo_ref?
+    base_world_ref?
+
+    dependency_set_ref?
+
+    risk_profile_ref?
+
+    reversibility:
+        REVERSIBLE
+        COMPENSATABLE
+        PARTIALLY_REVERSIBLE
+        IRREVERSIBLE
+
+    compensation_plan_ref?
+
+    effect_semantics_ref
+
+    execution_spec_ref
+
+    mode:
+        DIAGNOSTIC
+        PRODUCTION
+}
+
+requested_action_class مجرد طلب من Capability وليس التصنيف النهائي.
+
+التصنيف القانوني يصدر عن ActionGate بناءً على execution environment والأثر الممكن.
+
+4. Action Authorization
+ActionAuthorization {
+    authorization_id
+
+    proposal_ref
+    proposal_fingerprint
+
+    executive_epoch
+
+    approved_scope
+    approved_effects
+
+    approved_execution_policy_ref
+
+    approved_action_class
+
+    validity_conditions[]
+    dependency_set_ref?
+
+    authorized_commit_seq
+}
+
+لا يجوز استخدام authorization لطلب مختلف عن الطلب الذي تم اعتماده.
+
+تغيير executable أو arguments أو scope مؤثر يستوجب authorization جديدة.
+
+5. ActionGate
+
+قبل السماح بالتنفيذ، تتحقق البوابة من:
+
+valid current Executive authority
+proposal identity and fingerprint
+legal Goal/Slice lineage
+approved target scope
+tool availability
+permissions and capabilities
+applicable hard invariants
+effect classification
+dependency freshness
+credential policy
+environment containment
+retry/outcome semantics
+
+إذا لم يمكن إثبات شرط أساسي مطلوب:
+
+DENY
+or
+REQUIRE_REAUTHORIZATION
+
+ولا يُحوّل الشك إلى موافقة تلقائية.
+
+Part III — Action Journal & Reality Effects
+6. ActionRecord
+ActionRecord {
+    action_id
+    proposal_ref
+    authorization_ref
+
+    action_class
+
+    lifecycle
+
+    world_ref_before?
+    repo_ref_before?
+
+    effect_semantics_ref
+
+    latest_attempt_ref?
+
+    world_ref_after?
+    repo_ref_after?
+
+    effect_verification_refs[]
+
+    compensation_action_ref?
+
+    created_commit_seq
+    updated_commit_seq
+}
+
+كل shared-world mutation مهمة تملك ActionRecord مستقلة.
+
+7. Action Lifecycle
+
+نحافظ على حالات FCA:
+
+PROPOSED
+    ↓
+AUTHORIZED
+    ↓
+DISPATCH_INTENT
+    ↓
+RESULT_REPORTED
+    ↓
+EFFECT_VERIFIED
+    ↓
+RECONCILED
+
+لكن التنفيذ ليس دائمًا نجاحًا خطيًا.
+
+المسارات البديلة تشمل:
+
+PARTIAL
+FAILED
+IN_DOUBT
+RECONCILING
+
+هذه الحالات لها معانٍ مختلفة.
+
+FAILED لا تستخدم لمجرد أن الأمر انتهى برمز خروج غير صفري؛ يجب أن نحدد هل الفشل متعلق بمحاولة العملية، أو بالمهمة المطلوبة، أو بالتأثير الخارجي.
+
+8. ActionAttempt
+
+نفصل Action عن كل محاولة إرسال.
+
+ActionAttempt {
+    attempt_id
+    action_id
+
+    attempt_number
+
+    authorization_ref
+
+    dispatch_intent_commit_seq
+
+    executor_ref
+    execution_context_ref
+
+    dispatch_ack_ref?
+
+    execution_started_at?
+    execution_ended_at?
+
+    reported_result_ref?
+
+    outcome_probe_refs[]
+
+    attempt_outcome:
+        UNKNOWN
+        REPORTED_SUCCESS
+        REPORTED_FAILURE
+        OBSERVED_PARTIAL_EFFECT
+        EFFECT_CONFIRMED
+        NO_EFFECT_CONFIRMED
+        IN_DOUBT
+}
+
+قد تتطلب Action واحدة عدة محاولات، لكن لا تبدأ محاولة جديدة إلا إذا سمحت بها EffectSemantics ونتائج reconciliation.
+
+9. Write-Ahead Dispatch Protocol
+
+أي SHARED_WORLD mutation تتبع:
+
+ActionProposal
+      ↓
+Executive Authorization
+      ↓
+ActionGate
+      ↓
+Durable AUTHORIZED
+      ↓
+Durable DISPATCH_INTENT
+      ↓
+Durability acknowledgement
+      ↓
+Executor revalidates dispatch capability
+      ↓
+Dispatch
+      ↓
+Capture reported result
+      ↓
+Observation / Outcome Probe
+      ↓
+Reconciliation
+
+هذه الترتيبات ليست تحسينًا اختياريًا؛ هي جزء من السلامة.
+
+Crash windows
+موضع الانهيار	المعنى
+قبل AUTHORIZED	لا يوجد تفويض نافذ
+بعد AUTHORIZED، قبل DISPATCH_INTENT	لا يجوز افتراض التنفيذ؛ يحتاج adoption/reauthorization وفق epoch
+بعد DISPATCH_INTENT، قبل تأكيد الوصول	تأثير محتمل غير مؤكد
+أثناء التنفيذ	التأثير قد يكون جزئيًا
+بعد انتهاء الأمر، قبل حفظ النتيجة	نحتاج probing/reconciliation
+بعد RESULT_REPORTED	النتيجة المبلغ عنها لا تكفي لإثبات الأثر
+10. ActionEffectSemantics
+ActionEffectSemantics {
+    effect_identity?
+
+    retry_policy:
+        IDEMPOTENT
+        PROBE_THEN_RETRY
+        NO_AUTOMATIC_RETRY
+
+    idempotency_key?
+
+    outcome_probe_spec?
+
+    compensation_spec?
+
+    verification_mode:
+        DIRECT_EFFECT
+        ACKNOWLEDGEMENT_ONLY
+        BEST_EFFORT
+
+    timeout_policy_ref
+}
+
+Idempotent لا تعني exactly-once.
+
+يجب أن تدعم الخدمة أو الأداة المعنية semantics اللازمة، وإلا لا يجوز الادعاء أن إعادة الإرسال آمنة.
+
+11. IN_DOUBT
+
+إذا فقدنا التأكد مما حدث، نسجل:
+
+IN_DOUBT
+
+ولا نستنتج:
+
+FAILED
+
+أو:
+
+SUCCESS
+
+من timeout أو اتصال منقطع وحدهما.
+
+الـruntime لا يكرر العمليات غير المضمونة تلقائيًا.
+
+Part IV — Tool Adapter Model
+12. ToolAdapter
+ToolAdapter {
+    tool_id
+
+    capability_kind
+    adapter_version
+
+    supported_operations[]
+
+    effect_declarations[]
+
+    supported_execution_backends[]
+
+    required_capabilities[]
+
+    input_schema_ref
+    output_schema_ref
+
+    observation_normalizer_ref
+
+    error_semantics_ref
+}
+
+الأداة لا تقرر authority.
+
+هي تعلن واجهتها ومتطلبات تشغيلها.
+
+13. Execution Modes
+
+نعتمد ثلاثة أنماط Process Execution:
+
+EXEC
+PTY
+SERVICE
+
+لكن الثلاثة تستخدم Process Runtime واحدة.
+
+Mode	الاستخدام
+EXEC	أوامر محددة، غالبًا غير تفاعلية
+PTY	برامج تحتاج Terminal تفاعلية
+SERVICE	عمليات طويلة مثل Dev Servers
+
+SERVICE نمط إدارة lifecycle، وليس بالضرورة نوعًا مختلفًا من pseudo-terminal. يمكن أن يستخدم pipes أو PTY حسب الحاجة.
+
+Part V — Terminal & Process Runtime
+14. ProcessExecutionRequest
+ProcessExecutionRequest {
+    execution_id
+
+    action_ref
+
+    mode:
+        EXEC
+        PTY
+        SERVICE
+
+    executable
+    arguments[]
+
+    shell_spec?
+
+    working_directory_ref
+
+    environment_policy_ref
+    credential_policy_ref
+
+    stdin_policy
+    output_policy
+
+    timeout_policy
+    resource_limits
+
+    sandbox_ref?
+
+    process_group_policy
+}
+
+يُفضّل استخدام executable مع argument vector للأوامر غير التفاعلية عندما لا تكون Shell semantics مطلوبة.
+
+إذا احتجنا Shell، يجب تسجيل نوعها ومجالها، مثل Bash أو PowerShell، لأن quoting وexpansion تختلف.
+
+15. TerminalSession
+TerminalSession {
+    session_id
+
+    project_id
+
+    execution_backend_ref
+    terminal_profile
+
+    workspace_ref
+
+    owner_action_ref
+
+    process_identity_ref?
+
+    lifecycle:
+        CREATING
+        ACTIVE
+        DISCONNECTED
+        CLOSING
+        CLOSED
+        LOST
+
+    created_at
+    closed_at?
+}
+
+TerminalSession تمثل الجلسة.
+
+ولا تساوي ProcessRun واحدة بالضرورة.
+
+16. ProcessRun
+ProcessRun {
+    process_run_id
+
+    execution_request_ref
+    action_attempt_ref?
+
+    terminal_session_ref?
+
+    process_identity_ref
+
+    execution_environment_ref
+
+    state:
+        CREATED
+        STARTING
+        RUNNING
+        EXITED
+        TERMINATING
+        TERMINATED
+        LOST
+        UNKNOWN
+
+    exit_code?
+    termination_reason?
+
+    stdout_artifact_ref?
+    stderr_artifact_ref?
+    terminal_stream_ref?
+
+    started_at?
+    ended_at?
+}
+
+UNKNOWN تعني أننا لا نعرف حالة العملية على نحو موثوق.
+
+ليست مساوية لـEXITED.
+
+17. Streaming Output
+
+Runtime يجب أن تستطيع استلام المخرجات تدريجيًا.
+
+لكنها لا ترسل كل بايت إلى الـLLM.
+
+نستخدم:
+
+OutputCapturePolicy {
+    max_live_window
+
+    chunk_size_limit
+
+    total_capture_limit
+
+    overflow_behavior:
+        SPILL_TO_ARTIFACT
+        TRUNCATE_WITH_MARKER
+        TERMINATE_ON_LIMIT
+
+    sanitization_policy_ref
+}
+
+يمكن تخزين output كاملًا كـArtifact ضمن حدود الموارد، ثم تقديم:
+
+relevant output window
+error summary
+test failures
+artifact references
+
+إلى Reasoning Gateway.
+
+يجب أن يكون أي truncation معلنًا، لا صامتًا.
+
+18. EXEC Output
+
+عند استخدام pipes:
+
+stdout
+stderr
+exit_code
+
+قد تكون منفصلة.
+
+لكن ترتيب الأحداث بين stdout وstderr ليس بالضرورة قابلًا للاستنتاج من ترتيب استلامهما.
+
+إذا كانت temporal ordering مهمة، يجب تسجيل capture metadata مناسبة.
+
+19. PTY Output
+
+في PTY قد يصلنا تدفق Terminal موحد يحتوي على:
+
+text
+ANSI control sequences
+cursor movement
+terminal redraws
+
+لا يجوز افتراض أن كل chunk تمثل سطرًا مستقلًا أو رسالة كاملة.
+
+ونفصل:
+
+raw_terminal_stream
+rendered_terminal_view
+
+إذا استخدمنا terminal emulator/parser.
+
+20. Process Cancellation
+
+نفرق بين:
+
+REQUEST_CANCEL
+SEND_INTERRUPT
+SEND_TERMINATE
+FORCE_KILL
+VERIFY_EXIT
+
+مثال سياسة:
+
+interrupt
+  ↓
+wait for observed termination
+  ↓
+terminate if permitted
+  ↓
+wait
+  ↓
+force kill if permitted
+  ↓
+verify process tree / effects
+
+لكن هذه ليست سلسلة ثابتة لكل نظام تشغيل.
+
+Windows وLinux وmacOS قد تختلف آليات إيقاف العمليات فيها.
+
+إرسال إشارة إيقاف ليس إثباتًا أن العملية انتهت.
+
+21. Process Trees
+
+قد ينشئ Shell عدة عمليات فرعية.
+
+Shell
+ ├── npm
+ │    └── node
+ └── auxiliary process
+
+إيقاف Shell وحدها قد لا يوقف جميع العمليات التابعة.
+
+لذلك يجب تحديد:
+
+process_group / job ownership
+child-process tracking
+cleanup policy
+orphan handling
+
+مع التحقق من الآثار الفعلية بعد الإيقاف.
+
+22. Long-Running Services
+
+مثال:
+
+start development server
+↓
+wait for readiness
+↓
+run browser tests
+↓
+capture logs
+↓
+stop server
+↓
+verify cleanup
+
+لا نعتبر ظهور كلمة Listening في stdout إثباتًا نهائيًا لصحة الخدمة.
+
+يمكن استخدام:
+
+readiness probe
+health check
+port/socket observation
+application-level check
+
+بحسب الخدمة.
+
+23. Terminal Ownership & Resumption
+
+كل TerminalSession لديها:
+
+session owner
+workspace owner
+runtime instance / executor
+
+عند restart لا نفترض أننا نستطيع إعادة وصل كل جلسة.
+
+قد تكون:
+
+REATTACHABLE
+NOT_REATTACHABLE
+UNKNOWN
+
+بحسب execution backend.
+
+إذا تعذر reattach، نتحقق من بقاء العملية وآثارها قبل تشغيل نسخة أخرى من الأمر.
+
+Part VI — Filesystem
+24. File Read
+
+واجهات القراءة المقترحة:
+
+read_file
+read_lines
+list_directory
+search_text
+search_symbols
+inspect_metadata
+
+عمليات القراءة يجب أن تحتفظ بـ:
+
+repository identity
+file identity
+snapshot/fingerprint
+content provenance
+trust context
+
+قراءة ملف لا تجعل محتواه تعليمات authoritative.
+
+25. FilePatchProposal
+FilePatchProposal {
+    patch_id
+
+    target_file_ref
+
+    expected_content_hash
+
+    patch_format:
+        UNIFIED_DIFF
+        SEARCH_REPLACE
+        STRUCTURED_EDIT
+
+    patch_artifact_ref
+
+    expected_result_hash?
+
+    intended_effect
+
+    allowed_scope[]
+}
+26. Safe Patch Application
+read target version
+↓
+verify expected hash
+↓
+check patch applicability
+↓
+apply in authorized workspace
+↓
+read resulting content
+↓
+inspect actual diff
+↓
+verify intended change
+
+لا نسمح بـblind overwrite.
+
+إذا تغير target بعد قراءة النسخة الأصلية:
+
+FILE_VERSION_CONFLICT
+
+ولا يُطبّق patch تلقائيًا على نسخة جديدة دون reconciliation.
+
+27. Atomic File Replacement
+
+عندما تسمح البيئة:
+
+prepare new content
+↓
+validate
+↓
+atomic replacement
+
+لكن عملية ذرية على ملف واحد لا تعني أن تغيير عشرين ملفًا أصبح transaction ذرية.
+
+تغيير عدة ملفات يتطلب:
+
+staged workspace
+controlled promotion
+verification
+recovery/compensation plan
+28. Path Safety
+
+Paths يجب أن تُفسر داخل root مصرّح به، مع الحذر من:
+
+symlinks
+path traversal
+case sensitivity
+mount boundaries
+concurrent path replacement
+
+منع ../ نصيًا وحده ليس ضمانًا كافيًا.
+
+Part VII — Git Runtime
+29. Git Operations
+
+واجهات مقترحة:
+
+status
+diff
+inspect_commit
+inspect_branch
+create_branch
+create_worktree
+stage
+commit
+merge
+rebase
+push
+fetch
+
+لكنها ليست متساوية من ناحية effects.
+
+مثلًا:
+
+git diff
+
+قد يكون مجرد قراءة.
+
+بينما:
+
+git reset --hard
+
+قد يدمر عملًا غير محفوظ.
+
+و:
+
+git push
+
+قد يغير remote repository.
+
+30. GitScope
+GitScope {
+    repository_id
+
+    worktree_ref?
+
+    branch_ref?
+
+    expected_head_commit?
+
+    expected_index_fingerprint?
+
+    expected_worktree_fingerprint?
+}
+31. Git Mutation Preconditions
+
+قبل بعض عمليات Git يجب التحقق من:
+
+expected HEAD
+branch identity
+worktree identity
+index state
+uncommitted changes
+authorization scope
+
+ولا نستخدم Git لتجاوز ActionGate.
+
+32. Branch / Worktree Isolation
+
+يمكن لعدة specialists العمل في worktrees منفصلة.
+
+لكن:
+
+worktree isolation
+
+لا يعني بالضرورة:
+
+network isolation
+credential isolation
+database isolation
+
+تظل classification مبنية على reachable effects.
+
+33. Commit and Push
+
+تسجيل:
+
+commit created
+
+لا يساوي:
+
+remote branch updated
+
+و:
+
+push command exited with code 0
+
+قد يحتاج verification للـremote state بحسب risk والهدف.
+
+كل عملية لها effect semantics مستقلة.
+
+Part VIII — Testing & Build Systems
+34. TestRunner Adapter
+TestExecutionRequest {
+    verification_spec_ref?
+
+    test_selection
+
+    environment_ref
+    repo_ref
+
+    command_spec
+
+    expected_artifact_refs[]
+
+    timeout_policy
+
+    isolation_profile_ref
+}
+35. Test Result Extraction
+
+Output raw تصبح Observation.
+
+ثم يمكن إنشاء:
+
+test case outcomes
+failure names
+stack traces
+assertion details
+duration
+coverage reference
+
+كـnormalized structured results.
+
+لكن:
+
+exit_code != 0
+
+لا يساوي بالضرورة:
+
+product defect
+
+قد يكون:
+
+harness failure
+configuration error
+missing dependency
+timeout
+real assertion failure
+36. Test Side Effects
+
+حتى لو command اسمها pytest:
+
+يجب تقييم ما إذا كانت تستطيع الوصول إلى:
+
+real database
+network endpoint
+shared filesystem
+secrets
+production service
+
+اختبار غير معزول لا يحصل على EPHEMERAL_SANDBOX classification تلقائيًا.
+
+Part IX — Debugger Runtime
+37. DebuggerAdapter
+
+DAP مناسب كبروتوكول مبدئي لدعم جلسات Debugger متوافقة.
+
+DebuggerSession {
+    debugger_session_id
+
+    adapter_ref
+
+    launch_or_attach_ref
+
+    target_process_ref
+
+    action_authorization_ref
+
+    lifecycle
+
+    breakpoints[]
+
+    current_stop_context_ref?
+}
+38. Debug Operations
+launch
+attach
+set_breakpoints
+continue
+next
+step_in
+step_out
+pause
+stack_trace
+scopes
+variables
+evaluate
+disconnect
+
+لكن classification تختلف حسب العملية والـadapter والبيئة.
+
+39. Debugger Read vs Effect
+
+مثال:
+
+stack_trace
+
+غالبًا قراءة حالة.
+
+بينما:
+
+evaluate("dangerous_function()")
+
+قد ينفذ تعليمات تغير البرنامج أو العالم.
+
+وكذلك:
+
+continue
+
+يسمح للتطبيق بمواصلة تنفيذ آثاره.
+
+لذلك لا نعامل كل Debugger requests كـread-only.
+
+40. Breakpoint Provenance
+
+Breakpoint على:
+
+file line 125
+
+قد تصبح غير صحيحة بعد تغير الكود.
+
+يجب أن ترتبط بـ:
+
+repo_ref
+source identity
+resolved location
+
+وتتحقق من صلاحيتها قبل الاعتماد عليها.
+
+Part X — Sandboxing & Containment
+41. Legal Action Classes
+
+نلتزم بقانون FCA:
+
+EPHEMERAL_SANDBOX
+SHARED_WORLD
+
+لا نضيف فئة ثالثة للمسخّرات ذات الآثار الخارجية غير المعروفة.
+
+EPHEMERAL_SANDBOX
+
+مسموح فقط إذا ثبت أن كل reachable effects قابلة للتخلص منها وغير متصلة بموارد canonical/shared.
+
+SHARED_WORLD
+
+أي إجراء يمكنه تغيير shared state أو external system أو canonical repository.
+
+إذا لم يثبت العزل:
+
+SHARED_WORLD
+
+بالنسبة إلى mutating actions.
+
+عمليات القراءة الخالصة ستحتاج read-access policy مستقلة عن بروتوكول write-ahead الخاص بالطفرات؛ ولا نعتبرها صنف mutation ثالثًا.
+
+42. SandboxProfile
+SandboxProfile {
+    sandbox_id
+
+    base_snapshot_ref
+
+    disposable_root_ref
+
+    filesystem_policy
+
+    network_policy
+
+    credential_policy
+
+    process_policy
+
+    resource_limits
+
+    mount_policy
+
+    containment_proof_ref
+
+    lifecycle
+}
+43. ContainmentProof
+ContainmentProof {
+    proof_id
+
+    sandbox_ref
+
+    filesystem_isolation_verified
+
+    shared_writable_mounts_absent
+
+    dangerous_credentials_absent
+
+    mutating_network_paths_blocked
+
+    privileged_interfaces_blocked
+
+    reachable_effects_disposable
+
+    verified_against_configuration_ref
+
+    evaluated_at
+}
+
+هذه ليست مجرد بيانات يكتبها الـLLM.
+
+يجب أن تصدر عن trusted deterministic enforcement/inspection components.
+
+44. Sandbox Fast Path
+bounded sandbox activity authorized
+↓
+containment proof validated
+↓
+execute disposable operations
+↓
+aggregate outputs
+↓
+SandboxActivityRecord
+
+لا نحتاج ActionJournal entry لكل micro-edit داخل sandbox معزولة فعلًا.
+
+45. SandboxActivityRecord
+SandboxActivityRecord {
+    activity_id
+
+    project_id
+    slice_id
+
+    sandbox_ref
+    containment_proof_ref
+
+    base_snapshot_ref
+
+    operation_count
+
+    activity_summary
+
+    output_artifact_refs[]
+    observation_refs[]
+
+    final_sandbox_snapshot_ref?
+
+    completed_at
+}
+46. Promotion to Shared World
+
+Sandbox قد تولد patch صحيحًا.
+
+لكن:
+
+sandbox patch created
+
+لا يعني:
+
+canonical repository changed
+
+الترقية تمر عبر:
+
+FilePatchProposal
+↓
+Executive authorization
+↓
+ActionGate
+↓
+SHARED_WORLD Action Journal
+↓
+apply
+↓
+verify
+Part XI — Security & Credentials
+47. Credentials Boundary
+
+النموذج اللغوي لا يحتاج غالبًا إلى رؤية سر لتنفيذ أداة مخوّلة تستخدمه.
+
+نريد فصلًا:
+
+LLM / Cognitive Proposal
+         │
+         ▼
+Credential-free operation intent
+         │
+         ▼
+ActionGate + Credential Policy
+         │
+         ▼
+Trusted Executor
+         │
+         ▼
+Credential broker / secret access
+48. CredentialPolicy
+CredentialPolicy {
+    allowed_secret_refs[]
+
+    allowed_tool_operations[]
+
+    allowed_destinations[]
+
+    allow_raw_secret_exposure: false
+
+    redaction_policy_ref
+}
+
+الـruntime يجب أن يمنع إفشاء أسرار من خلال:
+
+stdout
+stderr
+logs
+error messages
+environment dump
+tool arguments
+artifacts
+
+لا نعتمد على redaction النصي فقط؛ نعتمد أولًا على تقليل إمكانية الوصول إلى الأسرار.
+
+49. Network Policy
+NetworkPolicy {
+    mode:
+        DENY
+        ALLOWLIST
+        CONTROLLED
+
+    allowed_destinations[]
+
+    allowed_protocols[]
+
+    mutation_policy
+}
+
+فصل السماح بالاتصال عن السماح بأثره مهم.
+
+الوصول إلى HTTPS endpoint لا يعني أن كل POST مسموح.
+
+50. Privilege Boundary
+
+أي تشغيل elevated privileges يحتاج authority صريحة.
+
+ولا نسمح للأداة بترقية صلاحياتها بسبب prompt أو tool output.
+
+Part XII — Observation & Reconciliation
+51. Tool Result ≠ Reality Effect
+
+مثال:
+
+ToolResult {
+    exit_code = 0
+}
+
+لا يكفي لإثبات:
+
+database migration fully applied
+
+يجب أن يستطيع الوكيل استخدام:
+
+OutcomeProbe
+
+مثل فحص schema/version والبيانات المتأثرة.
+
+52. OutcomeProbe
+OutcomeProbe {
+    probe_id
+
+    action_id
+
+    expected_effect_ref
+
+    probe_spec
+
+    read_scope
+
+    execution_context_ref
+
+    observation_refs[]
+
+    outcome:
+        EFFECT_CONFIRMED
+        NO_EFFECT_CONFIRMED
+        PARTIAL_EFFECT
+        INCONCLUSIVE
+}
+53. ReconciliationRecord
+ReconciliationRecord {
+    reconciliation_id
+
+    action_id
+
+    attempt_refs[]
+
+    probe_refs[]
+
+    concluded_effect_state:
+        VERIFIED_APPLIED
+        VERIFIED_NOT_APPLIED
+        PARTIALLY_APPLIED
+        STILL_UNKNOWN
+
+    basis_refs[]
+
+    reconciled_at_commit_seq
+
+    next_required_step?
+}
+
+Reconciliation لا تصنع النتيجة.
+
+بل تستنتج الحالة التشغيلية بناءً على Observations موثوقة.
+
+54. Compensation
+
+Compensation ليست rollback سحرية.
+
+مثال:
+
+send payment
+↓
+refund payment
+
+حتى لو أعادت الرصيد نفسه، هناك حدثان خارجيان، وليس إلغاء تاريخي للحدث الأول.
+
+لذلك أي compensation mutating action تحتاج authority وAction semantics مناسبة.
+
+Part XIII — Recovery
+55. Process Crash
+
+إذا وقع crash أثناء Action:
+
+load Control Ledger
+↓
+inspect ActionRecord
+↓
+inspect DispatchIntent
+↓
+fence old Executive epoch
+↓
+identify possibly in-flight effects
+↓
+OutcomeProbe / reconciliation
+↓
+resume safe work
+56. Old Epoch
+
+عندما يتغير Executive epoch:
+
+يمنع القديم من إصدار authorization جديدة.
+
+يمنع dispatch جديد لم يكن مغطى بسلطة صالحة.
+
+لا نفترض أن العالم ألغى الإجراءات التي بدأت بالفعل.
+
+تُعالَج آثار الإجراءات in-flight عبر reconciliation.
+
+57. Recovery Priority
+
+العمل الجديد لا يجوز أن يتجاهل shared-world effect غير محسومة إذا كان سيتعارض معها.
+
+مثال:
+
+database migration IN_DOUBT
+
+لا يسمح بتنفيذ migration متعارضة فوقها قبل reconciliation.
+
+أما المهام المستقلة، فيمكن أن تستمر إذا ثبت عدم التعارض، وفق recovery barrier والسياسة.
+
+Part XIV — Interaction with RDMS-03
+58. Action ↔ Observation
+ActionAttempt
+      ↓
+ToolResult
+      ↓
+Observation Ingress
+      ↓
+Observation
+      ↓
+EvidenceLink / VerificationRecord
+      ↓
+Cognitive Update
+
+Observation لا تثبت causal effect تلقائيًا.
+
+59. Action ↔ Experiment
+
+ExperimentRun تستطيع استخدام ActionRecords.
+
+لكن:
+
+ExperimentRun COMPLETED
+
+ممنوعة إذا required mutating action لا تزال IN_DOUBT.
+
+60. Action ↔ Verification
+
+VerificationRecord يمكنها الرجوع إلى:
+
+ActionAttempt
+ProcessRun
+Tool Result Observation
+OutcomeProbe
+
+لكنها لا تدمج تلك الكيانات في سجل واحد.
+
+Part XV — Proposed Invariants
+
+هذه Invariants مرشحة ولم تُجمّد بعد.
+
+RDMS04-I01
+All tool-driven shared-world mutations must pass
+Executive authorization and ActionGate.
+
+RDMS04-I02
+Reasoning providers and Specialists cannot dispatch
+world-mutating tool operations directly.
+
+RDMS04-I03
+Action classification is determined by reachable effects,
+not by command names or model-declared intent.
+
+RDMS04-I04
+Every shared-world mutation must have durable DispatchIntent
+and acknowledgement before dispatch.
+
+RDMS04-I05
+Action identity, execution attempt, reported result and
+verified effect remain distinct.
+
+RDMS04-I06
+An unreconciled non-idempotent mutation must not be
+blindly retried.
+
+RDMS04-I07
+Process exit does not prove external-effect completion.
+
+RDMS04-I08
+PTY, EXEC and SERVICE are execution modes over a common
+Process Runtime, not separate authorities.
+
+RDMS04-I09
+Terminal session identity and process-run identity remain
+distinct.
+
+RDMS04-I10
+Timeout and cancellation are not evidence that all child
+processes or external effects have stopped.
+
+RDMS04-I11
+Filesystem mutations must validate their expected target
+revision before applying changes.
+
+RDMS04-I12
+Git operations must not bypass shared-world action policy.
+
+RDMS04-I13
+Testing and debugging operations are classified by reachable
+effects, not by their diagnostic labels.
+
+RDMS04-I14
+Ephemeral sandbox classification requires proven containment.
+
+RDMS04-I15
+Sandbox artifacts enter canonical/shared world only through
+authorized shared-world promotion.
+
+RDMS04-I16
+Credentials must not be exposed to reasoning providers merely
+because an authorized tool needs them.
+
+RDMS04-I17
+Tool output enters cognition as attributed observations,
+not as trusted instructions or direct Facts.
+
+RDMS04-I18
+Recovery must reconcile potentially dispatched world effects
+before allowing conflicting new mutations.
+
+RDMS04-I19
+Compensation is a new effect-bearing operation and cannot erase
+the historical existence of the original operation.
+
+RDMS04-I20
+ActionGate revalidates relevant authority, scope and dependencies
+at the legal execution boundary.
+
+RDMS04-I21
+Output truncation and loss of process/session observability must
+be explicitly represented rather than hidden.
+
+RDMS04-I22
+ToolAdapter interfaces cannot grant themselves authority
+beyond the ActionAuthorization.
+Part XVI — Open Questions for Adversarial Review
+
+قبل تجميد RDMS-04 يجب مهاجمة ما يلي:
+
+A. Authority & Action Lifecycle
+
+ماذا يحدث إذا انتهى Executive epoch بين DISPATCH_INTENT والإرسال الفعلي؟
+
+كيف نمنع dispatch مرتين عندما يتسابق Executor قديم وآخر جديد؟
+
+كيف نسحب Action مفوضة قبل Dispatch دون اختراع lifecycle متناقضة مع FCA؟
+
+كيف نصنف read-only tools التي تعمل خارج sandbox ولا تملك آثارًا mutating؟
+
+هل يمكن لأمر يبدو read-only أن يستدعي hook أو child process يغير العالم؟
+
+B. Terminal & Process
+
+هل EXEC / PTY / SERVICE تصنيف orthogonal فعلًا، أم أن SERVICE يجب أن تكون lifecycle policy فوق EXEC/PTY؟
+
+كيف نحدد نهاية Process إذا اختفت جلسة PTY وبقيت عملية فرعية؟
+
+كيف نعيد وصل TerminalSession بعد restart دون تكرار الأمر؟
+
+كيف نمنع command output الضخمة من ملء الذاكرة أو artifact store؟
+
+هل يمكن لـANSI control sequences أو Terminal output خداع parsers أو الـLLM؟
+
+C. Filesystem & Git
+
+كيف نمنع symlink race بين path validation والكتابة؟
+
+كيف نضمن أن multi-file patch لا يترك repository نصف معدلة عند crash؟
+
+كيف نميز بين Git worktree معزولة وبيئة execution معزولة فعلًا؟
+
+ماذا يحدث إذا تغيّر HEAD بعد فحصه وقبل commit أو merge؟
+
+كيف نمنع تنفيذ Git hooks غير متوقعة؟
+
+D. Sandbox & Security
+
+كيف نثبت containment بدل مجرد الثقة في configuration؟
+
+هل يمكن للـsandbox الوصول إلى خدمة shared عبر Unix socket أو localhost أو bind mount؟
+
+كيف نمنع تسرب credentials عبر logs أو child processes؟
+
+ماذا لو تغيرت SandboxProfile بعد إصدار ContainmentProof؟
+
+هل يمكن لعملية طويلة البقاء حية بعد إغلاق sandbox nominally؟
+
+E. Evidence & Recovery
+
+هل يمكن اعتبار Exit Code = 0 نجاحًا بينما الأثر غير موجود؟
+
+كيف نتعامل مع Action ذات تأثير جزئي لا يمكن rollback له؟
+
+كيف نمنع probe غير كافية من إصدار VERIFIED_NOT_APPLIED خاطئة؟
+
+كيف تتفاعل ActionCancellation مع ExperimentRun ما زالت تحتاج تلك العملية؟
+
+ما الحدود بين Recovery Runtime الحتمي وقرار Executive الجديد؟
+
+Part XVII — Draft Verdict
+
+RDMS-04 Draft v1.0 — COMPLETE FOR REVIEW
+
+القرارات المعمارية الأساسية الآن واضحة:
+
+One Action Runtime.
+
+Tool adapters دون سلطة مستقلة.
+
+Distinct proposal, authorization, attempt, observation and effect.
+
+Terminal/process lifecycle.
+
+Controlled file and Git mutation.
+
+Debugger effect classification.
+
+Proven sandbox fast path.
+
+Durable shared-world mutation.
+
+Reconciliation of unknown outcomes.
+
+لكن توجد أسئلة مؤثرة في سلامة التنفيذ والـrecovery تحتاج المراجعة العدائية قبل التجميد.
+
+Next authorized step: RDMS-04 — Adversarial Freeze Review 01.
+
+النتيجة التي وصلنا إليها
+
+أصبح لدينا الآن تصور تشغيلي ملموس للوكيل: يستطيع في التصميم تشغيل Terminal، وإدارة خادم تطوير، وتعديل ملفات، واستخدام Git، وتشغيل الاختبارات والتحكم في Debugger، مع الاحتفاظ بالفصل بين القدرة على استخدام الأداة والصلاحية لاستخدامها.
+
+ولاحظت أثناء صياغة المسودة ثلاثة قرارات ينبغي ألا نتسرع في تجميدها:
+
+هل SERVICE نمط تنفيذ مستقل أم مجرد lifecycle فوق EXEC/PTY؟
+
+كيف نسمح بعمليات القراءة الحقيقية دون تحميلها بروتوكول الـwrite-ahead الكامل، ومن دون فتح ثغرة للصلاحيات؟
+
+كيف نثبت عدم تكرار Dispatch بعد crash أو تبديل Executive epoch؟
+
+هذه ليست تفاصيل صغيرة؛ يمكن أن تغيّر الـschemas والـstate machines. لذلك سأجعلها أول أهداف RDMS-04 Freeze Review 01، ثم نعالج النتائج في C01 كما فعلنا في الأقسام السابقة.
+
+الحالة الحالية: RDMS-04 DRAFT — غير مجمد، ولم نبدأ البرمجة بعد.
+
+END ORIGINAL MESSAGE
+
+========================================================================
+SOURCE PART: C01
+MESSAGE ID: 4f585132-49b6-448d-8506-4b502aee6311
+BEGIN ORIGINAL MESSAGE
+========================================================================
+
+RDMS-04 C01 — Execution Authority, Containment & Recovery Corrections
+RDMS-04 C01 — Execution Authority, Containment & Recovery Corrections
+
+Parent: RDMS-04 Draft v1.0 + Adversarial Freeze Review 01
+Scope: FR04-G01…G16 and FR04-H01…H06
+Status: CORRECTION SPECIFICATION — CLOSED FOR SECOND REVIEW
+Governance: FCA v1.0.1 / RDMS-01 / RDMS-02 / RDMS-03 remain unchanged.
+
+Part I — Unified Action Authority
+C01-01 — One Canonical Control Authority
+
+نثبت أن Action lifecycle لا تمتلك مصدرَي حقيقة مستقلين.
+
+ControlCommit
+  ├── ActionRecord after-image
+  ├── ActionAttempt after-image
+  ├── DispatchOwnership after-image
+  ├── ControlEvent(s)
+  └── Project HEAD advancement
+
+تُحفظ هذه التغييرات كوحدة ذرية عند احتياجها إلى الاتساق المشترك.
+
+Action Journal ليست قاعدة أخرى تمنح الإذن. هي العرض التشغيلي للسجل، وتشمل:
+
+الأحداث القانونية المعتمدة.
+
+محاولات الإرسال.
+
+نتائج الأدوات.
+
+مراجع Observations والأدلة.
+
+مراجع artifacts.
+
+يمكن تخزين artifacts الكبيرة خارج قاعدة التحكم، لكن مراجعها ومعلومات سلامتها اللازمة للتعافي يجب أن تكون ثابتة عند اعتماد الحدث الذي يعتمد عليها.
+
+Invariant: لا يمكن أن توجد DISPATCH_INTENT معتمدة دون ActionRecord ومحاولة تنفيذ قانونية يمكن استرجاعهما من الحالة المرجعية نفسها.
+
+C01-02 — Action Execution Identity
+
+نفصل أربع هويات:
+
+ActionProposalId
+  └── ActionId
+        └── AttemptId
+              └── DispatchId
+
+ActionProposalId: طلب ذو معنى هندسي محدد.
+
+ActionId: العملية المعتمدة داخل المشروع.
+
+AttemptId: محاولة واحدة لتنفيذ العملية.
+
+DispatchId: هوية عملية الإرسال الواحدة إلى Executor أو العالم الخارجي.
+
+لا تعتبر إعادة إرسال رسالة إلى Executor محاولة جديدة تلقائيًا؛ يجب التحقق من DispatchId الحالية أولًا.
+
+C01-03 — Durable Dispatch Ownership
+DispatchOwnership {
+    action_id
+    attempt_id
+    dispatch_id
+
+    executor_id
+    executor_generation
+
+    executive_epoch
+    fencing_token
+
+    ownership_state:
+        CLAIMED
+        DISPATCH_POSSIBLE
+        RELEASED
+        UNCERTAIN
+
+    claimed_at_commit_seq
+}
+
+إنشاء CLAIMED يتم بمعاملة atomic compare-and-set مقابل النسخة المتوقعة من ActionRecord.
+
+لا يُسمح لمحاولتين متنافستين بحيازة حق dispatch جديد لنفس الأثر عندما لا تسمح retry policy بذلك.
+
+C01-04 — Dispatch Protocol
+AUTHORIZED
+    ↓
+Validate current authority and preconditions
+    ↓
+Atomic DispatchOwnership CLAIMED
+    ↓
+Persist DISPATCH_INTENT
+    ↓
+Durability acknowledged
+    ↓
+Executor validates claim and fencing
+    ↓
+External dispatch boundary
+    ↓
+Result / Unknown
+    ↓
+Observation / Reconciliation
+
+القاعدة المهمة:
+
+لا يجوز إرسال shared-world mutation قبل إقرار durable dispatch intent.
+
+لكن وصول العملية إلى DISPATCH_INTENT لا يثبت أنها أُرسلت فعلًا.
+
+C01-05 — Executive Epoch Change
+
+نحدد ثلاثة سيناريوهات.
+
+A — Authorization قديمة لم تصل إلى dispatch:
+
+تحتاج adoption أو إعادة تفويض وفق سلطة Executive الجديدة.
+
+B — DispatchIntent معتمدة لكن لا يوجد دليل كافٍ على الإرسال أو عدمه:
+
+لا نعيد التنفيذ تلقائيًا. ندخل recovery/reconciliation أو IN_DOUBT.
+
+C — External dispatch بدأت بالفعل:
+
+الـepoch الجديدة لا تستطيع إلغاء التاريخ. تتولى reconciliation وتمنع العمليات المتعارضة.
+
+الـfencing يجب أن يُفرض عند trusted executor boundary، وعند النظام الخارجي إن كان يدعمه.
+
+إذا لم يستطع النظام الخارجي احترام fencing، فلا نزعم منع كل أثر صادر بالفعل عن محاولة قديمة.
+
+C01-06 — The External Exactly-Once Limit
+
+يمكن للـRuntime أن تضمن، ضمن شروط تنفيذها:
+
+عدم اعتماد DispatchOwnership متنافسة لنفس الأثر.
+
+عدم إنشاء retry غير قانونية.
+
+حفظ كل dispatch محتملة.
+
+وقف العمليات المتعارضة عند عدم اليقين.
+
+لكنها لا تضمن exactly-once external effect دون دعم كافٍ من النظام الخارجي.
+
+هذا حد معماري صريح.
+
+Part II — Read Access and Effect Classification
+C01-07 — Two Independent Dimensions
+
+نحتفظ بـActionClass المجمدة:
+
+ExecutionContainment:
+    EPHEMERAL_SANDBOX
+    SHARED_WORLD
+
+ونضيف بُعدًا مستقلًا:
+
+EffectCapability:
+    PROVEN_READ_ONLY
+    MUTATION_POSSIBLE
+    UNKNOWN
+
+هذه ليست ActionClass ثالثة.
+
+PROVEN_READ_ONLY تعني أن العملية المحددة ضمن بيئة التشغيل المقيدة لا تستطيع إحداث mutation خارج حدودها المصرّح بها.
+
+ولا تعني أن البيانات المقروءة مباحة للنموذج.
+
+C01-08 — ReadAccessGrant
+ReadAccessGrant {
+    grant_id
+
+    requester_ref
+    project_id
+
+    resource_scope
+    allowed_read_operations[]
+
+    sensitivity_policy_ref
+    information_egress_policy_ref
+
+    tool_adapter_version_ref
+    environment_constraint_ref
+
+    valid_until?
+    executive_epoch?
+}
+
+قد تستخدم عمليات القراءة مسارًا سريعًا دون write-ahead للطفرة، لكن يجب أن تظل خاضعة لـActionGate أو بوابة الوصول المعتمدة من Control Plane.
+
+C01-09 — Read-Only Classification
+
+لا يجوز إثبات PROVEN_READ_ONLY اعتمادًا على اسم أمر مثل:
+
+git status
+grep
+cat
+pytest --collect-only
+
+فقط.
+
+تُقيّم:
+
+effective executable
+arguments
+shell behavior
+configuration
+plugins/hooks/helpers
+filesystem permissions
+network permissions
+credentials
+environment
+
+إذا لم نتمكن من إثبات عدم إمكان الطفرة ضمن الحدود المطلوبة:
+
+MUTATION_POSSIBLE
+or UNKNOWN
+
+وعند احتمال shared-world mutation نستخدم بروتوكولها الكامل أو نرفض الطلب.
+
+C01-10 — Information Disclosure Is Separately Governed
+
+حتى عملية قراءة بلا mutation قد تسرب secret أو بيانات خاصة.
+
+لذلك:
+
+Read Effect Safety
+≠
+Information Egress Permission
+
+ولا تصل النتائج إلى Reasoning Gateway إلا بعد تطبيق سياسة المعلومات المناسبة، مع Trust Context الخاصة بها وفق RDMS-03.
+
+Part III — Terminal Authority
+C01-11 — Orthogonal Process Dimensions
+
+نستبدل EXEC / PTY / SERVICE كاختيارات متنافية بالنموذج التالي:
+
+ProcessLaunch {
+    invocation_mode:
+        DIRECT_EXEC
+        SHELL_COMMAND
+
+    interaction_transport:
+        PIPES
+        PTY
+        NONE
+
+    lifecycle_policy:
+        ONE_SHOT
+        MANAGED_SERVICE
+        INTERACTIVE_SESSION
+}
+
+بهذا يمكن أن يكون لدينا:
+
+DIRECT_EXEC + PIPES + ONE_SHOT
+SHELL_COMMAND + PTY + INTERACTIVE_SESSION
+DIRECT_EXEC + PIPES + MANAGED_SERVICE
+
+ولا يحتاج Dev Server إلى PTY بالضرورة.
+
+C01-12 — SessionGrant and InputGrant
+TerminalSessionGrant {
+    session_grant_id
+
+    session_id
+    parent_action_ref
+
+    allowed_execution_scope
+
+    containment_ref
+    resource_limits_ref
+
+    executable_policy_ref
+    input_policy_ref
+
+    authorization_ref
+}
+TerminalInputGrant {
+    input_grant_id
+
+    session_id
+
+    input_kind:
+        PROGRAM_INPUT
+        COMMAND
+        CONTROL_SIGNAL
+        TERMINAL_RESIZE
+
+    input_scope
+
+    authorization_ref
+    single_use_or_bounded_use
+}
+
+إنشاء TerminalSession لا يمنح TerminalInputGrant عامة غير محدودة.
+
+C01-13 — Arbitrary Interactive Shells
+
+هذه النقطة تحتاج قاعدة صارمة:
+
+لا يمكن للـRuntime ضمان حدود صلاحية أوامر Shell حرة بمجرد تفتيش نصوص stdin.
+
+لهذا نعتمد في الإصدار الأول:
+
+Shell تفاعلية حرة: داخل Sandbox ثبتت حدودها، أو بيئة مقيدة فعليًا بصلاحيات مناسبة.
+
+Shared-world commands: تمر عبر Action authorization مرتبطة بالعملية الفعلية.
+
+Shared-world PTY غير مقيدة وتستطيع الوصول إلى موارد خارج التفويض: ممنوعة في v1.
+
+الـLLM لا يستطيع تحويل جلسة مخوّلة لتشغيل الاختبارات إلى قناة مفتوحة لتنفيذ أوامر جديدة.
+
+C01-14 — Terminal Input Is Effect-Bearing
+
+أي input تستطيع أن تجعل عملية قائمة تنفذ أثرًا خارج النطاق تعد فعلًا ذا أثر.
+
+مثال:
+
+Shell receives:
+git push
+
+ليس مجرد إرسال حروف.
+
+أما إدخال إجابة إلى برنامج مقيد مخوّل مسبقًا فيمكن أن يكون ضمن grant العملية الأصلية، بشرط أن تكون reachable effects محكومة بالفعل.
+
+Part IV — Process Identity and Lifetime
+C01-15 — Durable Process Identity
+ProcessIdentity {
+    executor_instance_id
+    host_or_container_ref
+
+    native_process_id
+    native_start_identity
+
+    process_group_or_job_ref?
+    runtime_generation
+
+    identity_proof_ref?
+}
+
+لا يجوز الاعتماد على PID منفردة عند:
+
+Reattach.
+
+Cancel.
+
+Kill.
+
+Outcome reconciliation.
+
+إذا لم يثبت أن العملية الموجودة هي نفسها العملية التاريخية:
+
+Process identity = UNKNOWN
+C01-16 — ProcessGroup Ownership
+ProcessGroupRecord {
+    group_ref
+
+    root_process_ref
+
+    ownership_boundary_ref
+
+    child_tracking_policy
+    detach_policy
+    cleanup_policy
+
+    lifecycle
+}
+
+إغلاق TerminalSession لا يعني إيقاف ProcessGroup.
+
+قد تبقى:
+
+child process
+daemon
+detached service
+external effect
+
+بعد انتهاء parent process.
+
+C01-17 — Process Termination Semantics
+
+نفصل بين:
+
+TERMINATION_REQUESTED
+SIGNAL_DELIVERED
+PROCESS_EXIT_OBSERVED
+GROUP_CLEANUP_VERIFIED
+EFFECT_RECONCILED
+
+الإشارات ليست ضمانًا لانتهاء الأثر.
+
+والـRuntime لا تحول timeout إلى PROCESS_EXIT_OBSERVED.
+
+C01-18 — Reattachment
+ReattachmentAssessment {
+    session_or_process_ref
+
+    identity_status:
+        VERIFIED
+        UNCERTAIN
+        NOT_FOUND
+
+    backend_recoverability:
+        SUPPORTED
+        UNSUPPORTED
+        UNKNOWN
+
+    observation_refs[]
+}
+
+إذا فقدت الجلسة ولم نعرف حالة العملية، لا نطلق نسخة جديدة من Dev Server تلقائيًا قبل reconciliation الملائمة.
+
+Part V — Filesystem and Changesets
+C01-19 — Object-Bound File Authorization
+
+يجب أن يكون object الذي نعدّله مطابقًا للملف الذي تحققنا من هويته وإصداره.
+
+AuthorizedFileTarget {
+    workspace_ref
+    file_identity_ref
+    expected_content_hash
+    expected_metadata_ref?
+    allowed_operation
+}
+
+يجب استخدام OS primitives تمنع أو تكشف path replacement بين التحقق والتنفيذ، مع مراعاة symlinks وmounts وfile handles.
+
+الفحص النصي للمسار وحده غير كافٍ.
+
+C01-20 — ChangeSet
+ChangeSet {
+    change_set_id
+
+    base_repo_ref
+    target_workspace_ref
+
+    patch_refs[]
+    expected_change_surface[]
+
+    required_verification_refs[]
+
+    promotion_strategy
+
+    rollback_or_recovery_policy_ref
+
+    lifecycle:
+        PLANNED
+        PREPARED
+        VERIFIED
+        PROMOTION_INTENT
+        PROMOTING
+        INTEGRATED
+        PARTIAL
+        FAILED
+        CANCELLED
+}
+
+يجب أن يكون ChangeSet مترابطًا مع Slice وActionRecord المصرّح بها.
+
+C01-21 — Isolated Preparation
+
+المسار المفضل:
+
+Prepare isolated workspace
+    ↓
+Apply patch set
+    ↓
+Verify files / tests / contracts
+    ↓
+Record expected change surface
+    ↓
+Authorize promotion
+    ↓
+Perform controlled integration
+    ↓
+Verify final shared state
+
+لا نفترض أن ترقية عدة ملفات ذرية تلقائيًا.
+
+إذا كانت promotion عبارة عن تحديث Git ref واحدة بشروط compare-and-swap مناسبة، يمكن أن تتمتع تلك العملية بذرية على مستوى ref، لكن هذا لا يجعل أي تعديل موازٍ لملفات workspace أو أنظمة خارجية جزءًا من المعاملة نفسها.
+
+C01-22 — Partial Promotion
+
+إذا توقفت promotion بعد تطبيق بعض الآثار:
+
+ChangeSet = PARTIAL
+ActionRecord = PARTIAL / IN_DOUBT according to evidence
+
+ولا يعتبر المشروع مدمجًا.
+
+يجب reconciliation ومعرفة ما تم تعديله فعلًا قبل استكمال العملية.
+
+Part VI — Git Execution Boundary
+C01-23 — Effective Git Execution Context
+GitExecutionContext {
+    repository_ref
+    worktree_ref?
+
+    expected_head_ref?
+    expected_index_ref?
+    expected_worktree_ref?
+
+    git_tool_version_ref
+
+    effective_config_ref
+    hook_policy_ref
+    filter_policy_ref
+    helper_policy_ref
+
+    credential_policy_ref
+
+    environment_ref
+}
+
+لا تُستنتج السلامة من Git subcommand فقط.
+
+C01-24 — Hidden Executable Effects
+
+يجب احتساب:
+
+hooks
+filters
+credential helpers
+pagers
+external diff tools
+aliases/wrappers
+subprocesses
+
+عند تصنيف الآثار القابلة للوصول.
+
+حيث تسمح العملية، يمكن استخدام configuration مقيدة تمنع تنفيذ أدوات غير متوقعة.
+
+C01-25 — Git Concurrency
+
+أي عملية تعتمد على:
+
+HEAD
+branch
+index
+worktree
+
+تحتاج expected state مناسبة.
+
+إذا تغيرت حالة المشروع قبل commit/promotion:
+
+CONFLICT
+
+وتحتاج إعادة تقييم بدل الكتابة فوق عمل متزامن.
+
+C01-26 — Git Remote Effects
+
+git push لها أثر خارجي.
+
+حتى إذا عاد exit code ناجحًا، يمكن لسياسة المهمة أن تتطلب التحقق من remote ref.
+
+وإذا انقطع الاتصال بعد إرسال push، نستخدم remote probing قبل التفكير بإعادة المحاولة.
+
+Part VII — Sandbox Containment
+C01-27 — Effective Containment Binding
+ContainmentProof {
+    proof_id
+
+    sandbox_ref
+
+    effective_config_fingerprint
+    executor_generation
+
+    mount_namespace_ref?
+    filesystem_policy_ref
+    network_policy_ref
+    credential_policy_ref
+    process_policy_ref
+
+    enforcement_basis_refs[]
+
+    coverage_scope
+
+    evaluated_at
+}
+
+يجب أن تكون أدلة العزل صادرة عن trusted enforcement/inspection components، لا من وصف الـLLM للبيئة.
+
+C01-28 — Continuous Enforcement
+
+الـContainmentProof وحدها لا تكفي إذا كان العزل يُرفع لاحقًا.
+
+نحتاج:
+
+effective policy enforced during execution
++
+configuration drift detection where applicable
++
+failure response
+
+إذا تغيرت حدود العزل بصورة غير مصرّح بها، لا يسمح بإطلاق عمليات جديدة اعتمادًا على proof قديمة.
+
+وأي أثر قد يكون خرج إلى shared-world يجب التعامل معه باعتباره احتمالًا حقيقيًا لا مجرد فشل Sandbox محلي.
+
+C01-29 — No Implicit Artifact Promotion
+
+أي ناتج من Sandbox أو Specialist workspace ينتقل إلى canonical repository يجب أن يمر عبر SHARED_WORLD ActionProposal.
+
+النسخ المباشر للملفات بين المساحات لا يُعفى من ActionGate.
+
+Part VIII — Credentials and Output
+C01-30 — End-to-End Credential Boundary
+CredentialExposurePolicy {
+    allowed_secret_refs[]
+
+    authorized_operations[]
+
+    authorized_destinations[]
+
+    process_inheritance_policy
+
+    output_exposure_policy
+
+    artifact_access_policy
+
+    reasoning_visibility_policy
+}
+
+الأفضل أن يحصل Executor على credential محدودة النطاق والمدة، وليس أن يكشفها للـLLM.
+
+C01-31 — Secret Output
+
+إذا ظهر secret في stdout أو stderr، لا يجوز أن يصل تلقائيًا إلى reasoning context.
+
+المسار:
+
+Raw process output
+    ↓
+Protected capture / classification
+    ↓
+Access + redaction decisions
+    ↓
+Attributed Observation with trust context
+    ↓
+Reasoning-safe view
+
+لكن لا ندّعي أن redaction نصية تستطيع كشف كل secret مهما كان ترميزها.
+
+إذا كان البرنامج يملك وصولًا واسعًا لأسرار حساسة، فقد يكون تشغيله نفسه خارج السياسة المسموحة.
+
+C01-32 — Output Completeness
+OutputCaptureStatus:
+    COMPLETE
+    PARTIAL
+    TRUNCATED
+    LOST
+    UNKNOWN
+
+يجب حفظ ما إذا كانت المخرجات ناقصة.
+
+ولا يصح بناء verification على افتراض أنها كاملة إذا كانت truncated.
+
+Part IX — Outcome Probes & Compensation
+C01-33 — Probe Adequacy
+OutcomeProbeSpec {
+    probe_spec_id
+
+    target_effect_ref
+
+    observable_scope
+
+    consistency_model
+
+    required_preconditions[]
+
+    detection_limitations[]
+
+    observation_window_policy?
+
+    permitted_conclusions[]
+
+    read_authority_ref
+}
+C01-34 — Verified Absence
+
+لا يجوز إنتاج:
+
+VERIFIED_NOT_APPLIED
+
+من مجرد:
+
+query returned nothing
+
+إذا كانت الخدمة eventual-consistent أو كان الـprobe لا يغطي كل حالات الأثر.
+
+عندما لا يمكن إثبات عدم حدوثه:
+
+STILL_UNKNOWN
+
+ويستمر منع retry غير الآمنة.
+
+C01-35 — Compensation Is an Action
+CompensationProposal {
+    original_action_ref
+
+    intended_restoration
+
+    expected_compensation_effects[]
+
+    residual_irreversibility[]
+
+    action_proposal_ref
+}
+
+المقترح يمر عبر السلطة العادية.
+
+لا يوجد bypass باسم rollback.
+
+وحتى compensation الناجحة لا تمحو تاريخ الإجراء الأصلي.
+
+Part X — Debugger Classification
+C01-36 — Debugger Effect Semantics
+DebuggerOperationPolicy {
+    operation_kind
+
+    target_process_scope
+
+    possible_effects[]
+
+    supported_readonly_guarantees?
+
+    required_authority
+
+    containment_requirements
+}
+
+تُقيَّم كل عملية وفق تأثيرها.
+
+أمثلة:
+
+stackTrace
+→ often observational
+
+variables
+→ observational only within adapter guarantees
+
+evaluate
+→ potentially executable/mutating
+
+continue
+→ resumes potentially effect-bearing program behavior
+
+launch/attach
+→ depends on target and privileges
+
+إذا لم توجد ضمانات read-only موثوقة، لا نصف العملية بأنها pure read.
+
+Part XI — Runtime Hardening
+C01-37 — Tool Version Pinning
+
+ActionAuthorization تربط:
+
+ToolAdapter version
+Execution spec fingerprint
+Effective policy version
+
+التغيّر المؤثر في السلوك يستدعي revalidation أو authorization جديدة.
+
+C01-38 — Service Readiness
+
+نفصل بين:
+
+PROCESS_ALIVE
+SERVICE_READY
+SERVICE_HEALTHY
+
+قد تعمل العملية ولا تكون الخدمة جاهزة.
+
+Readiness/health تأتي من Observations أو probes، وليس من مجرد lifecycle status.
+
+C01-39 — Cancellation States
+
+نميز بين:
+
+PROPOSAL_WITHDRAWN
+UNUSED_AUTHORIZATION_REVOKED
+TERMINATION_REQUESTED
+TERMINATION_OBSERVED
+EFFECT_RECONCILED
+
+هذه أحداث أو حالات typed مناسبة، وليست كلها synonym لكلمة CANCELLED.
+
+يجب ربطها بالمراحل القانونية للـAction، دون اختراع terminal state تمحو IN_DOUBT.
+
+C01-40 — Resource Limits
+ExecutionResourcePolicy {
+    cpu_limit?
+    memory_limit?
+    wall_time_limit?
+    process_count_limit?
+    filesystem_budget?
+    output_budget?
+    network_budget?
+
+    reconciliation_safety_reserve?
+}
+
+الـresource limits تُفرض بواسطة execution boundary حيثما أمكن.
+
+إذا انتهت ميزانية العمل، لا ينبغي التخلي عن shared-world action غير محسومة. تُستخدم safety reserve أو يُسجل IN_DOUBT وتُعلّق الأعمال المعتمدة عليها.
+
+C01-41 — Cross-Workspace Promotion
+
+عند ترقية artifact من specialist/sandbox:
+
+source artifact identity
+source provenance
+content integrity
+destination expected version
+authorized change surface
+
+تُتحقق قبل الكتابة في shared workspace.
+
+Part XII — New Corrected Invariants
+RDMS04-I23
+Action lifecycle transitions and their authoritative events
+share one canonical transactional authority.
+
+RDMS04-I24
+No new shared-world dispatch may occur without a legal,
+durable dispatch claim and write-ahead dispatch intent.
+
+RDMS04-I25
+Executor fencing protects local dispatch ownership but
+does not imply exactly-once external effects.
+
+RDMS04-I26
+Read authorization is independent from permission to expose
+the read content to the reasoning provider.
+
+RDMS04-I27
+Read-only classification must be based on enforceable
+effect bounds, not operation names.
+
+RDMS04-I28
+A TerminalSessionGrant does not confer unrestricted
+authority over future terminal input.
+
+RDMS04-I29
+Arbitrary interactive shared-world shells require enforceable
+scope containment; otherwise they are rejected.
+
+RDMS04-I30
+Process recovery and termination cannot rely on PID alone.
+
+RDMS04-I31
+Session closure does not prove process-tree cleanup or
+external-effect completion.
+
+RDMS04-I32
+Filesystem authorization binds the object actually
+mutated, not merely a previously checked path string.
+
+RDMS04-I33
+Multi-file ChangeSet integration cannot claim atomicity
+unless the chosen promotion mechanism actually provides it.
+
+RDMS04-I34
+Git execution classification includes configured helpers,
+hooks and other reachable executables.
+
+RDMS04-I35
+Sandbox containment proof is bound to effective enforced
+configuration, not only an initial description.
+
+RDMS04-I36
+Credential exposure governance includes subprocesses,
+outputs, artifacts and reasoning retrieval.
+
+RDMS04-I37
+Verified absence of an effect requires a probe adequate
+for that negative conclusion.
+
+RDMS04-I38
+Compensation follows the same action-authority rules
+as other effect-bearing operations.
+
+RDMS04-I39
+Debugger classification follows executable effects,
+not diagnostic naming.
+
+RDMS04-I40
+Tool results preserve completeness, provenance and
+version-sensitive execution context.
+
+RDMS04-I41
+Cancellation cannot erase a potentially dispatched effect
+or suppress its reconciliation.
+
+RDMS04-I42
+Sandbox and specialist artifact promotion requires an
+authorized destination mutation.
+Part XIII — Resolution Mapping
+Finding	Corrective clauses	Status
+G01 Dual authority	C01-01	RESOLVED IN DESIGN
+G02 Double dispatch	C01-02…04	RESOLVED WITH EXTERNAL LIMIT
+G03 Epoch race	C01-05…06	RESOLVED WITH IN_DOUBT FALLBACK
+G04 Read-only ambiguity	C01-07…10	RESOLVED
+G05 Mode overlap	C01-11	RESOLVED
+G06 PTY privilege bypass	C01-12…14	RESOLVED
+G07 PID reuse	C01-15	RESOLVED
+G08 Surviving child processes	C01-16…18	RESOLVED
+G09 Filesystem TOCTOU	C01-19	RESOLVED AT CONTRACT LEVEL
+G10 Multi-file partial mutation	C01-20…22	RESOLVED
+G11 Git hidden effects	C01-23…26	RESOLVED
+G12 Stale sandbox proof	C01-27…28	RESOLVED
+G13 Credential leakage	C01-30…32	RESOLVED WITH EXPLICIT LIMITS
+G14 False no-effect probe	C01-33…34	RESOLVED
+G15 Compensation bypass	C01-35	RESOLVED
+G16 Debugger effect escalation	C01-36	RESOLVED
+H01 Output completeness	C01-32	HARDENED
+H02 Adapter versions	C01-37	HARDENED
+H03 Readiness	C01-38	HARDENED
+H04 Cancellation	C01-39	HARDENED
+H05 Resources	C01-40	HARDENED
+H06 Promotion	C01-41	HARDENED
+
+C01 correction set: COMPLETE.
+
+This means the identified architectural ambiguities now have explicit proposed contracts and guards. It does not constitute executable verification of their implementations.
+
+END ORIGINAL MESSAGE
+
+========================================================================
+SOURCE PART: Adversarial Freeze Review 02 and freeze decision
+MESSAGE ID: 9c2e281b-8959-48e4-b6f8-17a51d8185f2
+BEGIN ORIGINAL MESSAGE
+========================================================================
+
+RDMS-04 — Adversarial Freeze Review 02
+
+أعدت اختبار التصميم المصحح ضد حالات فشل محددة. المراجعة هنا تحقق منطقي من العقود والانتقالات، وليست تشغيل اختبارات على برنامج؛ لأننا لم نبدأ تنفيذ الـRuntime بعد.
+
+RDMS-04 — Adversarial Freeze Review 02
+RDMS-04 — Adversarial Freeze Review 02
+
+Target: RDMS-04 Draft + C01 Corrections
+Review: Narrow, safety- and authority-focused
+Status: FINAL SPECIFICATION REVIEW
+
+A. Durable Authority & Dispatch
+T01 — Crash Between AUTHORIZED and DISPATCH_INTENT
+
+Attack: تنهار العملية بعد تسجيل authorization، لكن قبل تسجيل dispatch intent.
+
+Expected: لا يمكن إرسال العملية اعتمادًا على authorization القديمة وحدها؛ وعند تبديل epoch تحتاج adoption/revalidation.
+
+Verdict: PASS BY DESIGN.
+
+T02 — Crash After DISPATCH_INTENT
+
+Attack: سجلنا dispatch intent ثم انهار Executor قبل تأكيد هل أرسل الطلب أم لا.
+
+Expected: لا نفترض أن الأثر حدث أو لم يحدث. تُحفظ المحاولة للمصالحة، ولا توجد retry عمياء.
+
+Verdict: PASS BY DESIGN.
+
+T03 — Two Executors Race
+
+Attack: منفذان يحاولان حيازة dispatch لنفس Action.
+
+Expected: CAS تمنح ownership قانونية واحدة في Control Ledger. التنفيذ الفعلي يخضع لـtrusted executor fencing.
+
+Limit: لا ندّعي أن العالم الخارجي يدعم exactly-once دون بروتوكول مناسب.
+
+Verdict: PASS WITH EXPLICIT LIMIT.
+
+T04 — Old Executive Sends After Leadership Handoff
+
+Attack: تُفقد قيادة Executive القديمة بينما لديها عملية قد تكون دخلت مرحلة الإرسال.
+
+Expected: ترفض الحدود التنفيذية الخاضعة للتحكم claims القديمة حيث يمكن فرض fencing؛ أما الآثار المرسلة أو الممكنة فلا تُمحى، بل تدخل reconciliation.
+
+Verdict: PASS WITH EXPLICIT LIMIT.
+
+B. Terminal & Processes
+T05 — Authorized PTY Receives Unauthorized Git Push
+
+Attack: جلسة Bash مخولة للاختبارات تستقبل أمر git push عبر stdin.
+
+Expected: لا تمنح SessionGrant صلاحية مستقلة. الإرسال يحتاج تفويضًا مناسبًا أو يقع ضمن Sandbox/Policy تثبت containment. إذا لم يمكن فرض الحدود، يُرفض.
+
+Verdict: PASS.
+
+T06 — Shell Command Hidden in Program Input
+
+Attack: برنامج تفاعلي يستقبل نصًا ثم يمرره إلى Shell.
+
+Expected: تصنيف PROGRAM_INPUT لا يتجاهل الآثار التي يمكن للبرنامج نفسه الوصول إليها. حدود البيئة الفعلية تمنع تجاوز التفويض.
+
+Verdict: PASS.
+
+T07 — Process PID Reused
+
+Attack: PID قديمة تُعاد لعملية أخرى بعد crash.
+
+Expected: لا يسمح بـreattach أو kill دون التحقق من ProcessIdentity الكاملة.
+
+Verdict: PASS.
+
+T08 — Parent Process Ends, Child Survives
+
+Attack: Shell تنتهي ويظل Server نشطًا.
+
+Expected: lifecycle الخاصة بالجلسة لا تثبت cleanup. يجب التحقق من process group أو الأثر الخارجي.
+
+Verdict: PASS.
+
+T09 — Large Terminal Output
+
+Attack: أمر يطبع مخرجات بلا حدود.
+
+Expected: تُطبق حدود capture والموارد، ويُسجل truncation أو loss صراحة. لا تُقدَّم مخرجات ناقصة كأنها سجل كامل.
+
+Verdict: PASS.
+
+C. Filesystem & Git
+T10 — Symlink Race
+
+Attack: target path تتغير بعد validation.
+
+Expected: يشترط عقد Filesystem أن تتطابق هوية object المعدلة مع الهوية المفوضة، باستخدام enforcement مناسب للـOS.
+
+Verdict: PASS AT CONTRACT LEVEL.
+
+Implementation gate: يجب اختبار primitive المختارة لاحقًا على نظام التشغيل المستهدف؛ لا يكفي تطبيق string-path check.
+
+T11 — Crash During Ten-File Patch
+
+Attack: تُعدّل بعض الملفات ثم يقع crash.
+
+Expected: ChangeSet لا تصبح INTEGRATED. تحفظ الحالة الجزئية وتحتاج reconciliation أو استكمالًا قانونيًا.
+
+Verdict: PASS.
+
+T12 — Concurrent Git HEAD Change
+
+Attack: يراجع الوكيل HEAD ثم يغيّرها طرف آخر قبل integration.
+
+Expected: Expected state validation ترفض العملية غير المطابقة، ولا تستبدل عمل الطرف الآخر بصمت.
+
+Verdict: PASS.
+
+T13 — Git Hook Executes Hidden Process
+
+Attack: أمر Git يستدعي hook أو helper غير متوقع.
+
+Expected: يؤخذ effective Git execution context بالحسبان. لا تمنح العملية تصنيف read-only أو sandbox-safe دون إثبات فعلي.
+
+Verdict: PASS.
+
+D. Sandbox, Credentials & Debugger
+T14 — Sandbox Reconfigured After Proof
+
+Attack: تتغير mounts أو network access بعد إصدار ContainmentProof.
+
+Expected: proof مقيدة بالتكوين الفعلي وإنفاذه المستمر. لا يُسمح بالاعتماد على attestation قديمة بعد تغير مؤثر.
+
+Verdict: PASS.
+
+T15 — Tool Dumps Secret to Stdout
+
+Attack: عملية مرخصة تحتاج credential ثم تطبعها.
+
+Expected: CredentialPolicy تشمل inheritance/output/artifacts/retrieval. لا تُمرر المخرجات الخام تلقائيًا إلى LLM، وقد يُرفض أصل التشغيل إذا كان التعرض غير قابل للضبط.
+
+Verdict: PASS WITH EXPLICIT LIMIT.
+
+T16 — Debugger Evaluate Executes Mutation
+
+Attack: evaluate() تستدعي دالة تغيّر database.
+
+Expected: تصنيف العملية بحسب الآثار الممكنة لا باسم Debugger command.
+
+Verdict: PASS.
+
+T17 — Debugger Continue Resumes Production Writes
+
+Attack: continue يسمح للتطبيق بمتابعة عمليات كتابة خارجية.
+
+Expected: continuation effect-bearing ضمن الصلاحيات الفعلية للتطبيق والبيئة. لا تعامل كقراءة بريئة.
+
+Verdict: PASS.
+
+E. Observation, Recovery & Compensation
+T18 — Exit Code Zero, Effect Missing
+
+Attack: أمر deployment يخرج بـ0 لكن الخدمة لم تتحدث فعليًا.
+
+Expected: Process result لا يساوي verified effect. OutcomeProbe/Verification مطلوبة بحسب السياسة.
+
+Verdict: PASS.
+
+T19 — Eventually Consistent External Service
+
+Attack: timeout بعد إرسال mutation، والـquery الأولى لا ترى النتيجة.
+
+Expected: لا يجوز إنشاء VERIFIED_NOT_APPLIED من probe لا تستطيع إثبات الغياب. تبقى النتيجة STILL_UNKNOWN.
+
+Verdict: PASS.
+
+T20 — Compensation Outside Original Scope
+
+Attack: rollback مقترحة تحذف ملفات لم تكن ضمن التفويض الأصلي.
+
+Expected: Compensation تمر عبر ActionProposal وActionGate مستقلة؛ لا تحصل على authority تلقائية.
+
+Verdict: PASS.
+
+T21 — Cancel Experiment During Action
+
+Attack: تجربة تُلغى، لكن Action الخارجية وصلت إلى DispatchIntent.
+
+Expected: إلغاء التجربة لا يلغي obligation المصالحة الخاصة بالـAction.
+
+Verdict: PASS.
+
+T22 — Specialist Promotes Sandbox Artifact
+
+Attack: Specialist ينسخ patch مباشرة إلى canonical workspace.
+
+Expected: الترقية تخضع لـshared-world mutation authorization، ولا يستطيع specialist استعمال مسار جانبي لتجاوزها.
+
+Verdict: PASS.
+
+Final Integration Checks
+Contract boundary	Result
+FCA action classes preserved	PASS
+RDMS-01 transactional authority preserved	PASS
+RDMS-02 Goal/Slice lineage preserved	PASS
+RDMS-03 Observation/Evidence separation preserved	PASS
+Executive authority preserved	PASS
+Specialist cannot gain implicit mutation rights	PASS
+External outcome uncertainty represented honestly	PASS
+Sandbox fast path preserved	PASS
+Tool interfaces remain replaceable	PASS
+Freeze Decision
+
+Blocking contradictions remaining in the reviewed formal contracts: 0.
+
+RDMS-04 — Action Runtime, Terminal, Sandbox & Tool Execution: FROZEN AT SPECIFICATION LEVEL.
+
+This freeze certifies the architectural contracts and legality rules reviewed here. It does not certify platform-specific containment, process management, filesystem safety, Git integration, or end-to-end recovery implementations. Those must pass executable conformance and adversarial tests during implementation.
+
+Future implementations are forbidden from weakening these contracts to simplify tool execution.
+
+Next Authorized Phase
+
+RDMS-05 — Temporal Runtime, Durable Triggers, Commitments & Resumption
+
+Primary scope:
+
+Trigger definitions and evaluation.
+
+Event/condition matching.
+
+ANY_OF / ALL_OF composition.
+
+One-shot vs rearmable triggers.
+
+Waiting, blocked and suspended work.
+
+Resumption capsules.
+
+Safe reactivation.
+
+Trigger idempotency and deduplication.
+
+Clock and time semantics.
+
+Recovery-time replay.
+
+Coordination with unresolved ActionRecords.
+
+RDMS-04: CLOSED / FROZEN.
+
+أين وصلنا الآن؟
+
+FCA v1.0.1
+
+المعمارية المعرفية
+
+RDMS-01
+
+أساسات Runtime
+
+RDMS-02
+
+الكيانات المعرفية
+
+RDMS-03
+
+الأدلة والتجارب والتحقق
+
+RDMS-04
+
+Terminal والأدوات وتنفيذ الإجراءات
+
+RDMS-05
+
+الوقت والاستئناف والالتزامات
+
+التالي
+
+RDMS-06–10
+
+بقية مواصفات التشغيل والتكامل
+
+أهم ما حققناه في RDMS-04 أننا وضعنا تصورًا يجعل الوكيل قادرًا على استخدام أدوات حقيقية، مع منع اختلاط تفويض التنفيذ ونتيجة التنفيذ والحقيقة التي رُصدت بعده.
+
+أما المرحلة التالية، RDMS-05، فستعالج قدرة مختلفة: أن يعرف الوكيل متى يتوقف، لماذا ينتظر، وما الشروط التي تسمح له باستئناف العمل بصورة صحيحة، حتى لو أُغلق البرنامج وأعيد تشغيله لاحقًا.
+
+ونحتفظ باتفاقنا بشأن أوراق الطبقات المستقلة وتنظيم المستودع النهائي إلى ما بعد RDMS-10.
+
+END ORIGINAL MESSAGE

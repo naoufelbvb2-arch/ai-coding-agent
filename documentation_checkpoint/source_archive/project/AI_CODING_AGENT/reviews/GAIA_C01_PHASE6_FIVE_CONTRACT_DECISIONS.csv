@@ -1,0 +1,6 @@
+contract,canonical_source,secondary_source,canonical_layer,projection_layer,proposed_name,decision_kind,required_identity_or_proof,status,nonloss_rule
+CapabilityResult,FCA §23,RDMS-10 transport,L2,L7,CapabilityTransportResult,RENAME_PROJECTION,canonical_capability_result_ref,PROPOSED_APPROVAL_PENDING,No drop of needs/specialist_request/rationale_summary
+MemoryRetrievalResult,RDMS-07,RDMS-10 transport,L5,L7,MemoryRetrievalTransportResult,RENAME_PROJECTION,canonical_memory_retrieval_result_ref,PROPOSED_APPROVAL_PENDING,Must recover coverage/omissions/freshness
+Commitment,RDMS-02 C01,RDMS-05 runtime,L2,L4,CommitmentLifecycleProjection,FIELD_CROSSWALK_REQUIRED,commitment_id,BLOCKED_SEMANTIC_NON_EQUIVALENCE,"statement/required_followup, scope/subject, missing owner"
+TriggerCondition,FCA §56 aggregate,RDMS-05 condition,L4,L4,TriggerPredicateCondition,DISAMBIGUATE_ROLE,TriggerDefinition.trigger_id+generation,BLOCKED_RECONSTRUCTION_PROOF,"fire vs detection, reaction/cursor/status refs"
+ResumptionCapsule,FCA §53,RDMS-05 C01,L4,L4,ResumptionCapsulePayload,DURABLE_PAYLOAD_PROOF,durable_payload_artifact_ref+content_integrity_ref,CONDITIONAL_PAYLOAD_PROOF,all FCA §53 fields recoverable; next_concrete_action distinct

@@ -1,0 +1,9 @@
+{
+  "checkpoint_commit_created": false,
+  "reason": "Git author identity unknown; user.name and user.email must be supplied",
+  "head_verification": "BLOCKED_NO_HEAD",
+  "staged_original_hash_verification": "PASS_195_OF_195",
+  "branch_pushed": false,
+  "main_merged": false,
+  "canonical_architecture_rewritten": false
+}

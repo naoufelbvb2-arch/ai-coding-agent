@@ -1,0 +1,673 @@
+{
+  "status": "PROPOSED_NOT_APPROVED",
+  "sections": [
+    {
+      "section": "0",
+      "heading": "Purpose, provenance, and freeze boundary",
+      "line": 11,
+      "proposed_owner": "L0",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "1",
+      "heading": "The system we are building",
+      "line": 87,
+      "proposed_owner": "L0",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "2",
+      "heading": "Agent ≠ LLM",
+      "line": 114,
+      "proposed_owner": "L0",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "3",
+      "heading": "High-level runtime",
+      "line": 162,
+      "proposed_owner": "L0",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "4",
+      "heading": "Authority model",
+      "line": 218,
+      "proposed_owner": "L0",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "5",
+      "heading": "Cognitive Kernel",
+      "line": 258,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "6",
+      "heading": "Canonical Cognitive Workspace",
+      "line": 278,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "7",
+      "heading": "Epistemic separation",
+      "line": 367,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "8",
+      "heading": "Claim",
+      "line": 384,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "9",
+      "heading": "InformationNeed",
+      "line": 435,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "10",
+      "heading": "Hypothesis",
+      "line": 469,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "11",
+      "heading": "Observation",
+      "line": 576,
+      "proposed_owner": "L3",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "12",
+      "heading": "EvidenceLink",
+      "line": 611,
+      "proposed_owner": "L3",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "13",
+      "heading": "Contradictory observations",
+      "line": 657,
+      "proposed_owner": "L3",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "14",
+      "heading": "Confidence",
+      "line": 693,
+      "proposed_owner": "L3",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "15",
+      "heading": "Goal and Goal Stack",
+      "line": 732,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "16",
+      "heading": "Focus State",
+      "line": 775,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "17",
+      "heading": "Decision",
+      "line": 802,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "18",
+      "heading": "Decision Gravity",
+      "line": 853,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "19",
+      "heading": "Invariant",
+      "line": 884,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "20",
+      "heading": "Contracts",
+      "line": 950,
+      "proposed_owner": "L0",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "21",
+      "heading": "Canonical vocabulary",
+      "line": 966,
+      "proposed_owner": "L0",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "22",
+      "heading": "Capability is not a module, service, agent, or LLM call",
+      "line": 976,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "23",
+      "heading": "Capability contract",
+      "line": 999,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "24",
+      "heading": "Core cognitive capabilities",
+      "line": 1040,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "25",
+      "heading": "Executive responsibilities",
+      "line": 1115,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "26",
+      "heading": "Executive state machine",
+      "line": 1135,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "27",
+      "heading": "Fast path and deep path",
+      "line": 1186,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "28",
+      "heading": "Execution plan",
+      "line": 1222,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "29",
+      "heading": "Slice",
+      "line": 1243,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "30",
+      "heading": "Valid state transitions",
+      "line": 1296,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "31",
+      "heading": "Deviation",
+      "line": 1312,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "32",
+      "heading": "Constrained synthesis",
+      "line": 1328,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "33",
+      "heading": "Concept-to-code mapping",
+      "line": 1353,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "34",
+      "heading": "State-space discipline",
+      "line": 1375,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "35",
+      "heading": "Verification layers",
+      "line": 1389,
+      "proposed_owner": "L3",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "36",
+      "heading": "Reader Simulation / MMRT",
+      "line": 1445,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "37",
+      "heading": "Metacognitive laws",
+      "line": 1506,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "38",
+      "heading": "Prediction error",
+      "line": 1526,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "39",
+      "heading": "Detectors",
+      "line": 1553,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "40",
+      "heading": "Experiment",
+      "line": 1592,
+      "proposed_owner": "L3",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "41",
+      "heading": "Cognitive mutation vs world mutation",
+      "line": 1641,
+      "proposed_owner": "L3",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "42",
+      "heading": "ActionProposal",
+      "line": 1660,
+      "proposed_owner": "L3",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "43",
+      "heading": "Action Effect Semantics",
+      "line": 1751,
+      "proposed_owner": "L3",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "44",
+      "heading": "Action lifecycle",
+      "line": 1783,
+      "proposed_owner": "L3",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "45",
+      "heading": "Write-Ahead Action Protocol",
+      "line": 1808,
+      "proposed_owner": "L3",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "46",
+      "heading": "Action Record",
+      "line": 1880,
+      "proposed_owner": "L3",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "47",
+      "heading": "Safe cancellation",
+      "line": 1907,
+      "proposed_owner": "L3",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "48",
+      "heading": "Control Ledger",
+      "line": 1921,
+      "proposed_owner": "L1",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "49",
+      "heading": "Atomic control transitions",
+      "line": 1949,
+      "proposed_owner": "L1",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "50",
+      "heading": "Executive epoch and fencing",
+      "line": 1967,
+      "proposed_owner": "L1",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "51",
+      "heading": "Leadership handoff",
+      "line": 1989,
+      "proposed_owner": "L1",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "52",
+      "heading": "Startup recovery",
+      "line": 2009,
+      "proposed_owner": "L6",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "53",
+      "heading": "Resumption Capsule",
+      "line": 2032,
+      "proposed_owner": "L4",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "54",
+      "heading": "Temporal validity",
+      "line": 2083,
+      "proposed_owner": "L4",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "55",
+      "heading": "Commitments",
+      "line": 2106,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "56",
+      "heading": "Durable Trigger Condition",
+      "line": 2123,
+      "proposed_owner": "L4",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "57",
+      "heading": "Memory categories",
+      "line": 2174,
+      "proposed_owner": "L5",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "58",
+      "heading": "Episode vs learned knowledge",
+      "line": 2194,
+      "proposed_owner": "L5",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "59",
+      "heading": "Memory maturity",
+      "line": 2216,
+      "proposed_owner": "L5",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "60",
+      "heading": "MemoryProposal",
+      "line": 2234,
+      "proposed_owner": "L5",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "61",
+      "heading": "Memory metadata",
+      "line": 2260,
+      "proposed_owner": "L5",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "62",
+      "heading": "Retrieval law",
+      "line": 2294,
+      "proposed_owner": "L5",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "63",
+      "heading": "One mind, many temporary specialists",
+      "line": 2314,
+      "proposed_owner": "L4",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "64",
+      "heading": "Specialist creation conditions",
+      "line": 2334,
+      "proposed_owner": "L4",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "65",
+      "heading": "Specialist",
+      "line": 2348,
+      "proposed_owner": "L4",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "66",
+      "heading": "Specialist contract",
+      "line": 2410,
+      "proposed_owner": "L4",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "67",
+      "heading": "Independent reviewer",
+      "line": 2442,
+      "proposed_owner": "L4",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "68",
+      "heading": "Integration",
+      "line": 2458,
+      "proposed_owner": "L4",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "69",
+      "heading": "DependencySet",
+      "line": 2481,
+      "proposed_owner": "L4",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "70",
+      "heading": "Negative knowledge",
+      "line": 2524,
+      "proposed_owner": "L4",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "71",
+      "heading": "Integration freshness result",
+      "line": 2601,
+      "proposed_owner": "L4",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "72",
+      "heading": "Content envelope",
+      "line": 2618,
+      "proposed_owner": "L0",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "73",
+      "heading": "Untrusted execution",
+      "line": 2656,
+      "proposed_owner": "L0",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "74",
+      "heading": "Canonical cognitive mutation",
+      "line": 2674,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "75",
+      "heading": "World mutation",
+      "line": 2694,
+      "proposed_owner": "L3",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "76",
+      "heading": "Observation append",
+      "line": 2716,
+      "proposed_owner": "L3",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "77",
+      "heading": "Memory promotion",
+      "line": 2732,
+      "proposed_owner": "L5",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "78",
+      "heading": "Specialist result",
+      "line": 2748,
+      "proposed_owner": "L4",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "79",
+      "heading": "Tools as epistemic instruments",
+      "line": 2771,
+      "proposed_owner": "L3",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "80",
+      "heading": "Cognitive continuity",
+      "line": 2810,
+      "proposed_owner": "L4",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "81",
+      "heading": "WIP and task states",
+      "line": 2822,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "82",
+      "heading": "Safe suspension",
+      "line": 2842,
+      "proposed_owner": "L4",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "83",
+      "heading": "Goal/architecture drift",
+      "line": 2854,
+      "proposed_owner": "L2",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "84",
+      "heading": "Frozen principles",
+      "line": 2874,
+      "proposed_owner": "L0",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "85",
+      "heading": "Normal cognitive loop",
+      "line": 3155,
+      "proposed_owner": "L7",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "86",
+      "heading": "Final freeze verdict",
+      "line": 3211,
+      "proposed_owner": "L0",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    },
+    {
+      "section": "87",
+      "heading": "Change-control rule",
+      "line": 3241,
+      "proposed_owner": "L0",
+      "source": "source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+    }
+  ],
+  "appendices": [
+    {
+      "appendix": "A",
+      "heading": "Mapping from the original cognitive-engineer document",
+      "line": 3316,
+      "proposed_owner": "L0",
+      "handling": "Preserve normative status of source content; cross-cutting matrix/scenarios reference single operative owner contracts; Appendix B stays explicitly non-normative"
+    },
+    {
+      "appendix": "B",
+      "heading": "Non-normative engineering heuristics preserved from Studies 01–10",
+      "line": 3341,
+      "proposed_owner": "L0",
+      "handling": "Preserve normative status of source content; cross-cutting matrix/scenarios reference single operative owner contracts; Appendix B stays explicitly non-normative"
+    },
+    {
+      "appendix": "C",
+      "heading": "Final authority matrix",
+      "line": 3517,
+      "proposed_owner": "L0",
+      "handling": "Preserve normative status of source content; cross-cutting matrix/scenarios reference single operative owner contracts; Appendix B stays explicitly non-normative"
+    },
+    {
+      "appendix": "D",
+      "heading": "Composite canonical-state view",
+      "line": 3536,
+      "proposed_owner": "L2",
+      "handling": "Preserve normative status of source content; cross-cutting matrix/scenarios reference single operative owner contracts; Appendix B stays explicitly non-normative"
+    },
+    {
+      "appendix": "E",
+      "heading": "Correction and freeze history",
+      "line": 3629,
+      "proposed_owner": "L0",
+      "handling": "Preserve normative status of source content; cross-cutting matrix/scenarios reference single operative owner contracts; Appendix B stays explicitly non-normative"
+    },
+    {
+      "appendix": "F",
+      "heading": "Minimum conformance scenario suite",
+      "line": 3742,
+      "proposed_owner": "L0",
+      "handling": "Preserve normative status of source content; cross-cutting matrix/scenarios reference single operative owner contracts; Appendix B stays explicitly non-normative"
+    },
+    {
+      "appendix": "G",
+      "heading": "Frozen architecture in one page",
+      "line": 3832,
+      "proposed_owner": "L0",
+      "handling": "Preserve normative status of source content; cross-cutting matrix/scenarios reference single operative owner contracts; Appendix B stays explicitly non-normative"
+    }
+  ],
+  "unnumbered_invariants": "FCA-I01 onward: index in L0; each operative rule owned in its responsible layer with explicit source locator"
+}

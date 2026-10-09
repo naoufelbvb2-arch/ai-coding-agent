@@ -1,0 +1,225 @@
+{
+  "phase": "GAIA-C01 Phase 11",
+  "decision": "PARTIAL_REFERENCE_PROOF__GLOBAL_FREEZE_DENIED",
+  "source_archived_files_compared_to_phase10": 18,
+  "source_files_identical": true,
+  "verbatim_contract_names": 27,
+  "verbatim_occurrence_checks": 61,
+  "layer_files_present": 8,
+  "reference_execution": {
+    "tests_run": 26,
+    "acceptance_vectors_reference_passed": 18,
+    "negative_checks_reference_passed": 8,
+    "failures": 0,
+    "errors": 0,
+    "scope": "isolated in-memory model; no production adapters or real durable transactions"
+  },
+  "proofs_not_claimed": [
+    "exact RDMS real adapter preservation",
+    "real database/queue crash atomicity",
+    "real network/provider confidentiality",
+    "real world action effect verification",
+    "end-to-end RDMS01-10 conforming executable system"
+  ],
+  "cross_interface_paths": {
+    "total": 12,
+    "documented": 12,
+    "real_integrated_tested": 0
+  },
+  "all_27_contracts": [
+    {
+      "contract": "ActionEffectSemantics",
+      "owner_candidate": "L3",
+      "risk": "CONDITIONAL",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "Probe/compensation/timeout_spec refs resolve to exact original semantics; unknown non-idempotent effect never blindly retried"
+    },
+    {
+      "contract": "ActionProposal",
+      "owner_candidate": "L3",
+      "risk": "SEMANTIC",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "Signed/effective operation specs with explicit discriminator; version/integrity-resolvable context; downstream use and reverse-projection proof."
+    },
+    {
+      "contract": "ActionRecord",
+      "owner_candidate": "L3",
+      "risk": "CONDITIONAL",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "Recover all attempts, reports, observations, compensation, timestamps; latest_attempt_ref alone insufficient"
+    },
+    {
+      "contract": "CapabilityResult",
+      "owner_candidate": "L2",
+      "risk": "HIGH_PRIORITY",
+      "phase11_reference_status": "REFERENCE_ROUNDTRIP_PASS__ALIAS_NOT_LEGALLY_APPROVED",
+      "remaining_gate": "Approve editorial alias via change control; conformance-test real trusted transport and immutable canonical ref"
+    },
+    {
+      "contract": "Claim",
+      "owner_candidate": "L2",
+      "risk": "SEMANTIC",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "Source version lineage, evidence links, grounding, support-assessment provenance and temporal validity reconstruct FCA-level meaning."
+    },
+    {
+      "contract": "Commitment",
+      "owner_candidate": "L2",
+      "risk": "HIGH_PRIORITY",
+      "phase11_reference_status": "REFERENCE_BOUNDED_POSITIVE_AND_NEGATIVE_PASS__EFFECTIVE_MIGRATION_BLOCKED",
+      "remaining_gate": "Source-compatible migration/atomic recovery/effect semantics need independent proof before effective schema adoption"
+    },
+    {
+      "contract": "ConfidenceAssessment",
+      "owner_candidate": "L3",
+      "risk": "CONDITIONAL",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "Evidence/verification refs resolve and wall-clock timestamps not silently mapped to commit sequence"
+    },
+    {
+      "contract": "ContradictionRecord",
+      "owner_candidate": "L3",
+      "risk": "SEMANTIC",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "State history with comparability assessment, observation references, interpretation/proof separation and unresolved-state query."
+    },
+    {
+      "contract": "Decision",
+      "owner_candidate": "L2",
+      "risk": "CONDITIONAL",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "Preserve chosen option, rejected option reasons, evidence, alternatives, constraints, scope, version"
+    },
+    {
+      "contract": "DependencyStamp",
+      "owner_candidate": "L4",
+      "risk": "CONDITIONAL",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "Enumerate all nine FCA kinds; RDMS-01 projections cannot bypass currentness checks"
+    },
+    {
+      "contract": "EvidenceLink",
+      "owner_candidate": "L3",
+      "risk": "SEMANTIC",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "Observation ID multiplicity, link IDs, acceptance history, signed source trace and exact target/relation preservation."
+    },
+    {
+      "contract": "Experiment",
+      "owner_candidate": "L3",
+      "risk": "SEMANTIC",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "ExperimentID/RunID mapping, immutable prediction hashes, risk/authorization, run timestamps, observations and status history."
+    },
+    {
+      "contract": "Goal",
+      "owner_candidate": "L2",
+      "risk": "LOW_RISK",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "Preserve hierarchy, status, acceptance criteria, blockers, provenance and priority as typed-or-unresolved"
+    },
+    {
+      "contract": "GoalStack",
+      "owner_candidate": "L2",
+      "risk": "LOW_RISK",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "Empty/populated stack yields same focus, project/version and ordering"
+    },
+    {
+      "contract": "Hypothesis",
+      "owner_candidate": "L2",
+      "risk": "SEMANTIC",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "Typed reference resolution for each FCA cognitive relation and explicit authorized OVC verification record."
+    },
+    {
+      "contract": "InformationNeed",
+      "owner_candidate": "L2",
+      "risk": "LOW_RISK",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "Preserve route, blockers and resolution reference, else require review"
+    },
+    {
+      "contract": "Invariant",
+      "owner_candidate": "L2",
+      "risk": "CONDITIONAL",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "All enforcement modes, severity, scope and failure semantics survive"
+    },
+    {
+      "contract": "MemoryProposal",
+      "owner_candidate": "L5",
+      "risk": "CONDITIONAL",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "Evidence, counterexamples, applicability, consent/provenance and approval path preserved"
+    },
+    {
+      "contract": "MemoryRetrievalResult",
+      "owner_candidate": "L5",
+      "risk": "HIGH_PRIORITY",
+      "phase11_reference_status": "REFERENCE_ROUNDTRIP_PASS__ALIAS_NOT_LEGALLY_APPROVED",
+      "remaining_gate": "Approve editorial alias via change control; conformance-test real trusted transport and immutable canonical ref"
+    },
+    {
+      "contract": "Observation",
+      "owner_candidate": "L3",
+      "risk": "SEMANTIC",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "Raw byte hash, explicit source identity, clock trust, event order, capture integrity and interpretation provenance."
+    },
+    {
+      "contract": "OperationalCausalClaim",
+      "owner_candidate": "L2",
+      "risk": "SEMANTIC",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "Ref dereference yields full source checklist with chronological commits, authority, specific environment and dependency frontier."
+    },
+    {
+      "contract": "QueryDependencyStamp",
+      "owner_candidate": "L4",
+      "risk": "LOW_RISK",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "Validate exact frontier, proof scope, revision, index generation/hash and freshness"
+    },
+    {
+      "contract": "ResumptionCapsule",
+      "owner_candidate": "L4",
+      "risk": "HIGH_PRIORITY",
+      "phase11_reference_status": "REFERENCE_BOUNDED_POSITIVE_AND_NEGATIVE_PASS__EFFECTIVE_MIGRATION_BLOCKED",
+      "remaining_gate": "Source-compatible migration/atomic recovery/effect semantics need independent proof before effective schema adoption"
+    },
+    {
+      "contract": "SandboxActivityRecord",
+      "owner_candidate": "L3",
+      "risk": "CONDITIONAL",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "Recover evidence of isolation, op counts, output/observation refs and result including partial failure"
+    },
+    {
+      "contract": "Slice",
+      "owner_candidate": "L2",
+      "risk": "CONDITIONAL",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "Actual-vs-expected change surface, rollback/proof obligations and all slice statuses remain separate"
+    },
+    {
+      "contract": "TemporalValidity",
+      "owner_candidate": "L4",
+      "risk": "LOW_RISK",
+      "phase11_reference_status": "SOURCE_PUBLICATION_PASS__CONTRACT_MAPPING_PROOF_PENDING",
+      "remaining_gate": "CURRENT/STALE/UNKNOWN map case-insensitively but CURRENT requires validity reevaluation"
+    },
+    {
+      "contract": "TriggerCondition",
+      "owner_candidate": "L4",
+      "risk": "HIGH_PRIORITY",
+      "phase11_reference_status": "REFERENCE_BOUNDED_POSITIVE_AND_NEGATIVE_PASS__EFFECTIVE_MIGRATION_BLOCKED",
+      "remaining_gate": "Source-compatible migration/atomic recovery/effect semantics need independent proof before effective schema adoption"
+    }
+  ],
+  "global_layer_freeze": false,
+  "coding_authorized": false,
+  "source_ref": "reviews/source_archive",
+  "test_script": "reviews/verification/gaia_phase11_reference_tests.py",
+  "test_log": "reviews/verification/GAIA_C01_PHASE11_REFERENCE_TEST_LOG.txt"
+}

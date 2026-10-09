@@ -1,0 +1,14 @@
+test_archive_no_frozen_overwrite (__main__.DecisionAudit.test_archive_no_frozen_overwrite) ... ok
+test_complete_unique_decisions (__main__.DecisionAudit.test_complete_unique_decisions) ... ok
+test_distinct_aliases (__main__.DecisionAudit.test_distinct_aliases) ... ok
+test_eight_layers_and_one_index_each (__main__.DecisionAudit.test_eight_layers_and_one_index_each) ... ok
+test_explicit_dispositions (__main__.DecisionAudit.test_explicit_dispositions) ... ok
+test_high_risk_remain_blocked (__main__.DecisionAudit.test_high_risk_remain_blocked) ... ok
+test_no_product_code (__main__.DecisionAudit.test_no_product_code) ... ok
+test_original_sha256_manifest (__main__.DecisionAudit.test_original_sha256_manifest) ... ok
+test_primary_paths_resolve (__main__.DecisionAudit.test_primary_paths_resolve) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.018s
+
+OK

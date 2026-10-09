@@ -1,0 +1,204 @@
+{
+  "count": 18,
+  "runtime_executions": 0,
+  "vectors": [
+    {
+      "id": "V01",
+      "contract": "CapabilityResult",
+      "input_condition": "full FCA semantics survive by canonical ref",
+      "required_outcome": "PASS only if every semantic field can be resolved",
+      "owner": "L2",
+      "review_evidence": "CHECKED_AGAINST_SOURCE_FIELDS_AND_CANDIDATE_FAILURE_RULES",
+      "actual_adapter_test": "NOT_EXECUTED",
+      "required_approval_gate": "EDITORIAL_ALIAS_AFTER_CHANGE_CONTROL_ONLY",
+      "result": "TEST_SPECIFIED_NOT_RUN"
+    },
+    {
+      "id": "V02",
+      "contract": "CapabilityResult",
+      "input_condition": "missing/unresolvable canonical reference",
+      "required_outcome": "FAIL CLOSED; no reconstructed semantic result",
+      "owner": "L2",
+      "review_evidence": "CHECKED_AGAINST_SOURCE_FIELDS_AND_CANDIDATE_FAILURE_RULES",
+      "actual_adapter_test": "NOT_EXECUTED",
+      "required_approval_gate": "EDITORIAL_ALIAS_AFTER_CHANGE_CONTROL_ONLY",
+      "result": "TEST_SPECIFIED_NOT_RUN"
+    },
+    {
+      "id": "V03",
+      "contract": "CapabilityResult",
+      "input_condition": "transport reports SUCCESS",
+      "required_outcome": "no automatic canonical acceptance",
+      "owner": "L2",
+      "review_evidence": "CHECKED_AGAINST_SOURCE_FIELDS_AND_CANDIDATE_FAILURE_RULES",
+      "actual_adapter_test": "NOT_EXECUTED",
+      "required_approval_gate": "EDITORIAL_ALIAS_AFTER_CHANGE_CONTROL_ONLY",
+      "result": "TEST_SPECIFIED_NOT_RUN"
+    },
+    {
+      "id": "V04",
+      "contract": "MemoryRetrievalResult",
+      "input_condition": "partial retrieval in transport",
+      "required_outcome": "coverage and omissions resolvable from canonical record",
+      "owner": "L5",
+      "review_evidence": "CHECKED_AGAINST_SOURCE_FIELDS_AND_CANDIDATE_FAILURE_RULES",
+      "actual_adapter_test": "NOT_EXECUTED",
+      "required_approval_gate": "EDITORIAL_ALIAS_AFTER_CHANGE_CONTROL_ONLY",
+      "result": "TEST_SPECIFIED_NOT_RUN"
+    },
+    {
+      "id": "V05",
+      "contract": "MemoryRetrievalResult",
+      "input_condition": "zero transported refs with partial coverage",
+      "required_outcome": "no inference that no memory exists",
+      "owner": "L5",
+      "review_evidence": "CHECKED_AGAINST_SOURCE_FIELDS_AND_CANDIDATE_FAILURE_RULES",
+      "actual_adapter_test": "NOT_EXECUTED",
+      "required_approval_gate": "EDITORIAL_ALIAS_AFTER_CHANGE_CONTROL_ONLY",
+      "result": "TEST_SPECIFIED_NOT_RUN"
+    },
+    {
+      "id": "V06",
+      "contract": "MemoryRetrievalResult",
+      "input_condition": "missing canonical result ref",
+      "required_outcome": "FAIL CLOSED",
+      "owner": "L5",
+      "review_evidence": "CHECKED_AGAINST_SOURCE_FIELDS_AND_CANDIDATE_FAILURE_RULES",
+      "actual_adapter_test": "NOT_EXECUTED",
+      "required_approval_gate": "EDITORIAL_ALIAS_AFTER_CHANGE_CONTROL_ONLY",
+      "result": "TEST_SPECIFIED_NOT_RUN"
+    },
+    {
+      "id": "V07",
+      "contract": "Commitment",
+      "input_condition": "semantic entity projected to L4",
+      "required_outcome": "statement/scope/linked entities/resolution remain recoverable",
+      "owner": "L2",
+      "review_evidence": "CHECKED_AGAINST_SOURCE_FIELDS_AND_CANDIDATE_FAILURE_RULES",
+      "actual_adapter_test": "NOT_EXECUTED",
+      "required_approval_gate": "BLOCKED_UNTIL_NONLOSS_PROOF",
+      "result": "TEST_SPECIFIED_NOT_RUN"
+    },
+    {
+      "id": "V08",
+      "contract": "Commitment",
+      "input_condition": "two related entity refs vs one subject_ref",
+      "required_outcome": "no automatic many-to-one destructive conversion",
+      "owner": "L2",
+      "review_evidence": "CHECKED_AGAINST_SOURCE_FIELDS_AND_CANDIDATE_FAILURE_RULES",
+      "actual_adapter_test": "NOT_EXECUTED",
+      "required_approval_gate": "BLOCKED_UNTIL_NONLOSS_PROOF",
+      "result": "TEST_SPECIFIED_NOT_RUN"
+    },
+    {
+      "id": "V09",
+      "contract": "Commitment",
+      "input_condition": "legacy due/trigger fields",
+      "required_outcome": "explicit single composite root migration; preserve ANY_OF/ALL_OF",
+      "owner": "L2",
+      "review_evidence": "CHECKED_AGAINST_SOURCE_FIELDS_AND_CANDIDATE_FAILURE_RULES",
+      "actual_adapter_test": "NOT_EXECUTED",
+      "required_approval_gate": "BLOCKED_UNTIL_NONLOSS_PROOF",
+      "result": "TEST_SPECIFIED_NOT_RUN"
+    },
+    {
+      "id": "V10",
+      "contract": "Commitment",
+      "input_condition": "owner missing while ACTIVE",
+      "required_outcome": "migration review/denial, no fabricated owner",
+      "owner": "L2",
+      "review_evidence": "CHECKED_AGAINST_SOURCE_FIELDS_AND_CANDIDATE_FAILURE_RULES",
+      "actual_adapter_test": "NOT_EXECUTED",
+      "required_approval_gate": "BLOCKED_UNTIL_NONLOSS_PROOF",
+      "result": "TEST_SPECIFIED_NOT_RUN"
+    },
+    {
+      "id": "V11",
+      "contract": "TriggerCondition",
+      "input_condition": "FCA full aggregate from RDMS-05",
+      "required_outcome": "identity/generation/policies/status/reaction/cursors fully reconstructed",
+      "owner": "L4",
+      "review_evidence": "CHECKED_AGAINST_SOURCE_FIELDS_AND_CANDIDATE_FAILURE_RULES",
+      "actual_adapter_test": "NOT_EXECUTED",
+      "required_approval_gate": "BLOCKED_UNTIL_AGGREGATE_PROOF",
+      "result": "TEST_SPECIFIED_NOT_RUN"
+    },
+    {
+      "id": "V12",
+      "contract": "TriggerCondition",
+      "input_condition": "predicate result TRUE",
+      "required_outcome": "no direct world mutation authority",
+      "owner": "L4",
+      "review_evidence": "CHECKED_AGAINST_SOURCE_FIELDS_AND_CANDIDATE_FAILURE_RULES",
+      "actual_adapter_test": "NOT_EXECUTED",
+      "required_approval_gate": "BLOCKED_UNTIL_AGGREGATE_PROOF",
+      "result": "TEST_SPECIFIED_NOT_RUN"
+    },
+    {
+      "id": "V13",
+      "contract": "TriggerCondition",
+      "input_condition": "missing fire or detection policy",
+      "required_outcome": "migration review; no guessed axis",
+      "owner": "L4",
+      "review_evidence": "CHECKED_AGAINST_SOURCE_FIELDS_AND_CANDIDATE_FAILURE_RULES",
+      "actual_adapter_test": "NOT_EXECUTED",
+      "required_approval_gate": "BLOCKED_UNTIL_AGGREGATE_PROOF",
+      "result": "TEST_SPECIFIED_NOT_RUN"
+    },
+    {
+      "id": "V14",
+      "contract": "TriggerCondition",
+      "input_condition": "same trigger event replay",
+      "required_outcome": "no duplicate legal fire under same occurrence key",
+      "owner": "L4",
+      "review_evidence": "CHECKED_AGAINST_SOURCE_FIELDS_AND_CANDIDATE_FAILURE_RULES",
+      "actual_adapter_test": "NOT_EXECUTED",
+      "required_approval_gate": "BLOCKED_UNTIL_AGGREGATE_PROOF",
+      "result": "TEST_SPECIFIED_NOT_RUN"
+    },
+    {
+      "id": "V15",
+      "contract": "ResumptionCapsule",
+      "input_condition": "compact capsule + durable payload",
+      "required_outcome": "every FCA §53 required semantic field recoverable",
+      "owner": "L4",
+      "review_evidence": "CHECKED_AGAINST_SOURCE_FIELDS_AND_CANDIDATE_FAILURE_RULES",
+      "actual_adapter_test": "NOT_EXECUTED",
+      "required_approval_gate": "BLOCKED_UNTIL_DURABLE_PAYLOAD_AND_RECOVERY_PROOF",
+      "result": "TEST_SPECIFIED_NOT_RUN"
+    },
+    {
+      "id": "V16",
+      "contract": "ResumptionCapsule",
+      "input_condition": "only relevant_entity_refs[] present",
+      "required_outcome": "does not prove recovered hypotheses/focus/rejected paths",
+      "owner": "L4",
+      "review_evidence": "CHECKED_AGAINST_SOURCE_FIELDS_AND_CANDIDATE_FAILURE_RULES",
+      "actual_adapter_test": "NOT_EXECUTED",
+      "required_approval_gate": "BLOCKED_UNTIL_DURABLE_PAYLOAD_AND_RECOVERY_PROOF",
+      "result": "TEST_SPECIFIED_NOT_RUN"
+    },
+    {
+      "id": "V17",
+      "contract": "ResumptionCapsule",
+      "input_condition": "payload tampered/missing",
+      "required_outcome": "INVALID/UNKNOWN, recovery path, no auto-resume",
+      "owner": "L4",
+      "review_evidence": "CHECKED_AGAINST_SOURCE_FIELDS_AND_CANDIDATE_FAILURE_RULES",
+      "actual_adapter_test": "NOT_EXECUTED",
+      "required_approval_gate": "BLOCKED_UNTIL_DURABLE_PAYLOAD_AND_RECOVERY_PROOF",
+      "result": "TEST_SPECIFIED_NOT_RUN"
+    },
+    {
+      "id": "V18",
+      "contract": "ResumptionCapsule",
+      "input_condition": "next_action_proposal_ref present",
+      "required_outcome": "no automatic execution or conflation with cognitive next step",
+      "owner": "L4",
+      "review_evidence": "CHECKED_AGAINST_SOURCE_FIELDS_AND_CANDIDATE_FAILURE_RULES",
+      "actual_adapter_test": "NOT_EXECUTED",
+      "required_approval_gate": "BLOCKED_UNTIL_DURABLE_PAYLOAD_AND_RECOVERY_PROOF",
+      "result": "TEST_SPECIFIED_NOT_RUN"
+    }
+  ]
+}

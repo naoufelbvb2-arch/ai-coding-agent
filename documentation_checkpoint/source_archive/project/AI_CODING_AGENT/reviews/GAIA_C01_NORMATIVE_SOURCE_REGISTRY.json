@@ -1,0 +1,218 @@
+{
+  "manifest_type": "GAIA-C01 normative source intake registry",
+  "version": "phase4-2026-10-08",
+  "global_freeze_authorized": false,
+  "production_coding_authorized": false,
+  "primary_sources": [
+    {
+      "source_id": "FCA-1.0.1",
+      "status": "VERIFIED_FROZEN_SOURCE",
+      "relative_path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+      "sha256": "74d0923cbd343b71740da0fc2368a84aad2ea97f8e4e15f156122f48ebe53539",
+      "section_count": 88,
+      "appendix_count": 7,
+      "layer_annex_status": "PRESERVED_NOT_SUPERSEDING"
+    },
+    {
+      "source_id": "RDMS-01",
+      "declared_design_status": "historically FROZEN at specification level",
+      "primary_source_status": "ADMITTED_USER_SUPPLIED_ORIGINAL_MESSAGE_SET",
+      "approved_primary_file": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt",
+      "approved_version": "Original draft plus correction and freeze-decision messages; no new unified edition",
+      "approved_sha256": "b5b023dff0003f456d13e9d0492d674d36860427dda67874157467c19721038b",
+      "recovery_status": "RECOVERED_AND_INTERNALLY_SHA256_VERIFIED",
+      "migration_eligibility": "VERBATIM_ANNEX_ONLY_PENDING_CONTRACT_NORMALIZATION",
+      "target_layer_documents": [
+        "L1_CONTROL.md"
+      ],
+      "candidate_scope_not_normative": "Control Ledger, CommitGate, epoch & canonical mutation",
+      "provenance_note": "Original text extracted from user-supplied shared-chat archive; per-message SHA256 matches attached SOURCE_MANIFEST. Archive hashes do not independently certify underlying conversation provenance. Current layer annex is historical source material, not current unified law.",
+      "original_message_parts": 2,
+      "primary_layer_source_annex": "L1_CONTROL.md"
+    },
+    {
+      "source_id": "RDMS-02",
+      "declared_design_status": "historically FROZEN at specification level",
+      "primary_source_status": "ADMITTED_USER_SUPPLIED_ORIGINAL_MESSAGE_SET",
+      "approved_primary_file": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+      "approved_version": "Original draft plus correction and freeze-decision messages; no new unified edition",
+      "approved_sha256": "54772a75a54baea03c51107152eb1fe19849479e8ec9341654cf0ba45573c446",
+      "recovery_status": "RECOVERED_AND_INTERNALLY_SHA256_VERIFIED",
+      "migration_eligibility": "VERBATIM_ANNEX_ONLY_PENDING_CONTRACT_NORMALIZATION",
+      "target_layer_documents": [
+        "L2_COGNITION.md",
+        "L1_CONTROL.md"
+      ],
+      "candidate_scope_not_normative": "Canonical cognitive state, goals, plans and decisions",
+      "provenance_note": "Original text extracted from user-supplied shared-chat archive; per-message SHA256 matches attached SOURCE_MANIFEST. Archive hashes do not independently certify underlying conversation provenance. Current layer annex is historical source material, not current unified law.",
+      "original_message_parts": 2,
+      "primary_layer_source_annex": "L2_COGNITION.md"
+    },
+    {
+      "source_id": "RDMS-03",
+      "declared_design_status": "historically FROZEN at specification level",
+      "primary_source_status": "ADMITTED_USER_SUPPLIED_ORIGINAL_MESSAGE_SET",
+      "approved_primary_file": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+      "approved_version": "Original draft plus correction and freeze-decision messages; no new unified edition",
+      "approved_sha256": "97f836c691a373b9a2a9e6e98b33cb7e121545cfc68732f1bde25c21599e79ab",
+      "recovery_status": "RECOVERED_AND_INTERNALLY_SHA256_VERIFIED",
+      "migration_eligibility": "VERBATIM_ANNEX_ONLY_PENDING_CONTRACT_NORMALIZATION",
+      "target_layer_documents": [
+        "L2_COGNITION.md",
+        "L3_ACTIONS.md"
+      ],
+      "candidate_scope_not_normative": "Evidence, observations, interpretation, epistemic states",
+      "provenance_note": "Original text extracted from user-supplied shared-chat archive; per-message SHA256 matches attached SOURCE_MANIFEST. Archive hashes do not independently certify underlying conversation provenance. Current layer annex is historical source material, not current unified law.",
+      "original_message_parts": 2,
+      "primary_layer_source_annex": "L3_ACTIONS.md"
+    },
+    {
+      "source_id": "RDMS-04",
+      "declared_design_status": "historically FROZEN at specification level",
+      "primary_source_status": "ADMITTED_USER_SUPPLIED_ORIGINAL_MESSAGE_SET",
+      "approved_primary_file": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+      "approved_version": "Original draft plus correction and freeze-decision messages; no new unified edition",
+      "approved_sha256": "c06407aad889cad4d0bd942ffade2636d32ebae454983b49b5c19afec2b27394",
+      "recovery_status": "RECOVERED_AND_INTERNALLY_SHA256_VERIFIED",
+      "migration_eligibility": "VERBATIM_ANNEX_ONLY_PENDING_CONTRACT_NORMALIZATION",
+      "target_layer_documents": [
+        "L3_ACTIONS.md",
+        "L1_CONTROL.md",
+        "L7_RUNTIME_INTEGRATION.md"
+      ],
+      "candidate_scope_not_normative": "ActionGate, ActionRecord, action journal and effect semantics",
+      "provenance_note": "Original text extracted from user-supplied shared-chat archive; per-message SHA256 matches attached SOURCE_MANIFEST. Archive hashes do not independently certify underlying conversation provenance. Current layer annex is historical source material, not current unified law.",
+      "original_message_parts": 3,
+      "primary_layer_source_annex": "L3_ACTIONS.md"
+    },
+    {
+      "source_id": "RDMS-05",
+      "declared_design_status": "historically FROZEN at specification level",
+      "primary_source_status": "ADMITTED_USER_SUPPLIED_ORIGINAL_MESSAGE_SET",
+      "approved_primary_file": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+      "approved_version": "Original draft plus correction and freeze-decision messages; no new unified edition",
+      "approved_sha256": "9152f6eb671ce1c95235fa49c960922f3166249d58076b61e00d958520fc6763",
+      "recovery_status": "RECOVERED_AND_INTERNALLY_SHA256_VERIFIED",
+      "migration_eligibility": "VERBATIM_ANNEX_ONLY_PENDING_CONTRACT_NORMALIZATION",
+      "target_layer_documents": [
+        "L4_TEMPORAL_SPECIALISTS.md",
+        "L1_CONTROL.md"
+      ],
+      "candidate_scope_not_normative": "Temporal triggers, durable commitments, reaction identity",
+      "provenance_note": "Original text extracted from user-supplied shared-chat archive; per-message SHA256 matches attached SOURCE_MANIFEST. Archive hashes do not independently certify underlying conversation provenance. Current layer annex is historical source material, not current unified law.",
+      "original_message_parts": 3,
+      "primary_layer_source_annex": "L4_TEMPORAL_SPECIALISTS.md"
+    },
+    {
+      "source_id": "RDMS-06",
+      "declared_design_status": "historically FROZEN at specification level",
+      "primary_source_status": "ADMITTED_USER_SUPPLIED_ORIGINAL_MESSAGE_SET",
+      "approved_primary_file": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt",
+      "approved_version": "Original draft plus correction and freeze-decision messages; no new unified edition",
+      "approved_sha256": "a55748e558446497a4be82835bcf7590e3b5ec7235f03674c2e6fe925143f262",
+      "recovery_status": "RECOVERED_AND_INTERNALLY_SHA256_VERIFIED",
+      "migration_eligibility": "VERBATIM_ANNEX_ONLY_PENDING_CONTRACT_NORMALIZATION",
+      "target_layer_documents": [
+        "L4_TEMPORAL_SPECIALISTS.md",
+        "L2_COGNITION.md"
+      ],
+      "candidate_scope_not_normative": "Specialists, dependency freshness and integration",
+      "provenance_note": "Original text extracted from user-supplied shared-chat archive; per-message SHA256 matches attached SOURCE_MANIFEST. Archive hashes do not independently certify underlying conversation provenance. Current layer annex is historical source material, not current unified law.",
+      "original_message_parts": 2,
+      "primary_layer_source_annex": "L4_TEMPORAL_SPECIALISTS.md"
+    },
+    {
+      "source_id": "RDMS-07",
+      "declared_design_status": "historically FROZEN at specification level",
+      "primary_source_status": "ADMITTED_USER_SUPPLIED_ORIGINAL_MESSAGE_SET",
+      "approved_primary_file": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+      "approved_version": "Original draft plus correction and freeze-decision messages; no new unified edition",
+      "approved_sha256": "fe065cda37c20625ac4c42c64251f87d4daabb9d5d466d49a8c201784d948700",
+      "recovery_status": "RECOVERED_AND_INTERNALLY_SHA256_VERIFIED",
+      "migration_eligibility": "VERBATIM_ANNEX_ONLY_PENDING_CONTRACT_NORMALIZATION",
+      "target_layer_documents": [
+        "L5_MEMORY.md",
+        "L0_FOUNDATION.md"
+      ],
+      "candidate_scope_not_normative": "Memory, learning authority, suppression and disclosure",
+      "provenance_note": "Original text extracted from user-supplied shared-chat archive; per-message SHA256 matches attached SOURCE_MANIFEST. Archive hashes do not independently certify underlying conversation provenance. Current layer annex is historical source material, not current unified law.",
+      "original_message_parts": 2,
+      "primary_layer_source_annex": "L5_MEMORY.md"
+    },
+    {
+      "source_id": "RDMS-08",
+      "declared_design_status": "historically FROZEN at specification level",
+      "primary_source_status": "ADMITTED_USER_SUPPLIED_ORIGINAL_MESSAGE_SET",
+      "approved_primary_file": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-08_APPROVED_SOURCE_SET.txt",
+      "approved_version": "Original draft plus correction and freeze-decision messages; no new unified edition",
+      "approved_sha256": "fff70116d3f26bd42cba1cde8c071659674d4028eee57b5c304e045993fc69c6",
+      "recovery_status": "RECOVERED_AND_INTERNALLY_SHA256_VERIFIED",
+      "migration_eligibility": "VERBATIM_ANNEX_ONLY_PENDING_CONTRACT_NORMALIZATION",
+      "target_layer_documents": [
+        "L2_COGNITION.md"
+      ],
+      "candidate_scope_not_normative": "Executive cognitive control and planning transitions",
+      "provenance_note": "Original text extracted from user-supplied shared-chat archive; per-message SHA256 matches attached SOURCE_MANIFEST. Archive hashes do not independently certify underlying conversation provenance. Current layer annex is historical source material, not current unified law.",
+      "original_message_parts": 2,
+      "primary_layer_source_annex": "L2_COGNITION.md"
+    },
+    {
+      "source_id": "RDMS-09",
+      "declared_design_status": "historically FROZEN at specification level",
+      "primary_source_status": "ADMITTED_USER_SUPPLIED_ORIGINAL_MESSAGE_SET",
+      "approved_primary_file": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-09_APPROVED_SOURCE_SET.txt",
+      "approved_version": "Original draft plus correction and freeze-decision messages; no new unified edition",
+      "approved_sha256": "84ed1246a86b6f5923b6bf3320c2830e10c8e3fddac14e778c8c503272062a4b",
+      "recovery_status": "RECOVERED_AND_INTERNALLY_SHA256_VERIFIED",
+      "migration_eligibility": "VERBATIM_ANNEX_ONLY_PENDING_CONTRACT_NORMALIZATION",
+      "target_layer_documents": [
+        "L6_RECOVERY.md",
+        "L1_CONTROL.md"
+      ],
+      "candidate_scope_not_normative": "Recovery admission, durability and containment",
+      "provenance_note": "Original text extracted from user-supplied shared-chat archive; per-message SHA256 matches attached SOURCE_MANIFEST. Archive hashes do not independently certify underlying conversation provenance. Current layer annex is historical source material, not current unified law.",
+      "original_message_parts": 5,
+      "primary_layer_source_annex": "L6_RECOVERY.md"
+    },
+    {
+      "source_id": "RDMS-10",
+      "declared_design_status": "FROZEN at architectural level in conversation",
+      "primary_source_status": "ADMITTED_USER_SUPPLIED_ORIGINAL_MESSAGE_SET",
+      "approved_primary_file": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+      "approved_version": "Original draft plus correction and freeze-decision messages; no new unified edition",
+      "approved_sha256": "5464a1a1db1a64d90990f7a205b32dbe7988a91a2f1d018ea48e2cd822251935",
+      "recovery_status": "RECOVERED_AND_INTERNALLY_SHA256_VERIFIED",
+      "migration_eligibility": "VERBATIM_ANNEX_ONLY_PENDING_CONTRACT_NORMALIZATION",
+      "target_layer_documents": [
+        "L7_RUNTIME_INTEGRATION.md"
+      ],
+      "candidate_scope_not_normative": "Cross-boundary interfaces, dispatch, envelopes and activation",
+      "provenance_note": "Original text extracted from user-supplied shared-chat archive; per-message SHA256 matches attached SOURCE_MANIFEST. Archive hashes do not independently certify underlying conversation provenance. Current layer annex is historical source material, not current unified law.",
+      "original_message_parts": 4,
+      "primary_layer_source_annex": "L7_RUNTIME_INTEGRATION.md"
+    }
+  ],
+  "source_locations_checked": [
+    "current project/conversation files",
+    "personal library filename/content search",
+    "list of connected GitHub repositories"
+  ],
+  "admission_required": [
+    "exact final bytes",
+    "source/version/provenance",
+    "freeze decision or attestation",
+    "SHA-256 identity",
+    "schema owner table",
+    "lossless migration",
+    "adversarial change impact",
+    "explicit consolidated freeze"
+  ],
+  "rdms_source_gap_status": "CLOSED_FOR_SOURCE_AVAILABILITY_ONLY",
+  "phase4_evidence": {
+    "source_messages_verified": 27,
+    "source_sets_verified": 10,
+    "cross_source_type_name_candidates": 27,
+    "traceability_csv": "reviews/GAIA_C01_PHASE4_SOURCE_TRACEABILITY.csv",
+    "contract_name_review_csv": "reviews/GAIA_C01_PHASE4_SCHEMA_NAME_REVIEW.csv"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "stage": "A_ONLY",
+  "source_files_verified": 195,
+  "source_unit_locators_verified": 27,
+  "fca_sections_owned_once": 88,
+  "fca_appendices_indexed": 7,
+  "interface_paths_indexed": 12,
+  "local_report_links_checked": 8,
+  "git_blob_hash_checks": 195,
+  "git_check_target": "index",
+  "branch": "docs/canonical-source-checkpoint",
+  "origin": "https://github.com/naoufelbvb2-arch/ai-coding-agent.git",
+  "errors": [],
+  "status": "PASS",
+  "limitation": "Inventory and custody checks, not full semantic reconciliation or interface proof"
+}

@@ -1,0 +1,711 @@
+[
+  {
+    "route": "X8-01",
+    "native_declared_shapes": [
+      {
+        "name": "CapabilityResult",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-10",
+            "part": "Original draft",
+            "message_id": "99533762-bba8-407a-b27b-952a236c00a4",
+            "lines": [
+              372,
+              390
+            ],
+            "sha256": "e8ae9d35f870fc3efb84694641074038fd2961677393b2a5f5ee6d6f0cb717b5"
+          }
+        ]
+      },
+      {
+        "name": "CapabilityTransportResult",
+        "status": "NO_EXACT_BRACE_SCHEMA_FOUND",
+        "sources": []
+      },
+      {
+        "name": "CapabilityInvocation",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-10",
+            "part": "Original draft",
+            "message_id": "99533762-bba8-407a-b27b-952a236c00a4",
+            "lines": [
+              355,
+              371
+            ],
+            "sha256": "8fec5e274ffc9f94b0bbde0178edb4b6fdcfe0241105dd079e62d1f954b26ccd"
+          }
+        ]
+      }
+    ],
+    "signature_certified": false,
+    "reconciliation_status": "SOURCE_FIELDS_LOCATED_NOT_TRANSPORT_SIGNATURE_RATIFIED"
+  },
+  {
+    "route": "X8-02",
+    "native_declared_shapes": [
+      {
+        "name": "MemoryRetrievalResult",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-07",
+            "part": "Original draft",
+            "message_id": "938c1bc7-97a0-46ad-be19-cd3ba3ca125f",
+            "lines": [
+              1068,
+              1084
+            ],
+            "sha256": "e4ae715a27b230289f343447d8b7723501f62538065a5e61fa5dc5009c17c67d"
+          },
+          {
+            "source": "RDMS-10",
+            "part": "Original draft",
+            "message_id": "99533762-bba8-407a-b27b-952a236c00a4",
+            "lines": [
+              1136,
+              1146
+            ],
+            "sha256": "a70de6ab479231f1c2f991196c6406715513f940d0af266e1e05b22ce533c35a"
+          }
+        ]
+      },
+      {
+        "name": "MemoryRetrievalTransportResult",
+        "status": "NO_EXACT_BRACE_SCHEMA_FOUND",
+        "sources": []
+      },
+      {
+        "name": "MemoryRetrievalRequest",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-10",
+            "part": "Original draft",
+            "message_id": "99533762-bba8-407a-b27b-952a236c00a4",
+            "lines": [
+              1123,
+              1135
+            ],
+            "sha256": "52a9b95579ab0c8cb214cff7e5cd1fef339e20d509c4a10944811e445f887d36"
+          }
+        ]
+      }
+    ],
+    "signature_certified": false,
+    "reconciliation_status": "SOURCE_FIELDS_LOCATED_NOT_TRANSPORT_SIGNATURE_RATIFIED"
+  },
+  {
+    "route": "X8-03",
+    "native_declared_shapes": [
+      {
+        "name": "Commitment",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-02",
+            "part": "Original draft",
+            "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+            "lines": [
+              1368,
+              1396
+            ],
+            "sha256": "da8ac753225c695d17105d549b2d3eca57f648d2343a84a0a8daefc58e46fce9"
+          },
+          {
+            "source": "RDMS-02",
+            "part": "C01, second review corrections and final freeze decision",
+            "message_id": "266bb347-d2a5-41ea-872a-32e140c803eb",
+            "lines": [
+              918,
+              931
+            ],
+            "sha256": "bbf875e7b0cbf30ca4d9017a16388b676e74ef8ce1bc2e0840b520c777a78836"
+          },
+          {
+            "source": "RDMS-05",
+            "part": "Original draft",
+            "message_id": "6276f296-457b-462d-b674-933a15194429",
+            "lines": [
+              514,
+              535
+            ],
+            "sha256": "b9f1955870bd84b03c06400dc25992a54d5c6e25ae2af05d74764502e180ae3e"
+          }
+        ]
+      },
+      {
+        "name": "CanonicalEntityMeta",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-02",
+            "part": "C01, second review corrections and final freeze decision",
+            "message_id": "266bb347-d2a5-41ea-872a-32e140c803eb",
+            "lines": [
+              21,
+              33
+            ],
+            "sha256": "a204c7f788c096bf676e6b401f2f8b8ac2a56cfa820e321535ee0512e97ccc27"
+          }
+        ]
+      },
+      {
+        "name": "ReactivationCondition",
+        "status": "NO_EXACT_BRACE_SCHEMA_FOUND",
+        "sources": []
+      }
+    ],
+    "signature_certified": false,
+    "reconciliation_status": "SOURCE_FIELDS_LOCATED_NOT_TRANSPORT_SIGNATURE_RATIFIED"
+  },
+  {
+    "route": "X8-04",
+    "native_declared_shapes": [
+      {
+        "name": "TriggerDefinition",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-05",
+            "part": "Original draft",
+            "message_id": "6276f296-457b-462d-b674-933a15194429",
+            "lines": [
+              149,
+              174
+            ],
+            "sha256": "349aaa77a493ffa1b2250985d02f46558844cb2d58143502b52fe5b43e532723"
+          }
+        ]
+      },
+      {
+        "name": "TriggerCondition",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-05",
+            "part": "Original draft",
+            "message_id": "6276f296-457b-462d-b674-933a15194429",
+            "lines": [
+              179,
+              197
+            ],
+            "sha256": "c3092a02ce0b441049cfe58978e5eaa1bbee23f7b4fd879240b58e666822bdbd"
+          }
+        ]
+      },
+      {
+        "name": "TriggerFire",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-05",
+            "part": "Original draft",
+            "message_id": "6276f296-457b-462d-b674-933a15194429",
+            "lines": [
+              439,
+              454
+            ],
+            "sha256": "559e11a3e82f870ebb618aa1f4932f5a0c389404f52a5a7d17abf6f1e8a6c9ce"
+          },
+          {
+            "source": "RDMS-05",
+            "part": "C01",
+            "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+            "lines": [
+              345,
+              357
+            ],
+            "sha256": "5bdd4a1ad86972d86c9fd8cb77adaec3e60236a88d76f37540b48f091096f69c"
+          }
+        ]
+      },
+      {
+        "name": "TriggerEvaluation",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-05",
+            "part": "Original draft",
+            "message_id": "6276f296-457b-462d-b674-933a15194429",
+            "lines": [
+              204,
+              222
+            ],
+            "sha256": "4fbb6bfdf077671afdbdcc8730f329e333eb205e85428f93a39f0d14ef8816c1"
+          }
+        ]
+      },
+      {
+        "name": "ReactionExecutionRecord",
+        "status": "NO_EXACT_BRACE_SCHEMA_FOUND",
+        "sources": []
+      }
+    ],
+    "signature_certified": false,
+    "reconciliation_status": "SOURCE_FIELDS_LOCATED_NOT_TRANSPORT_SIGNATURE_RATIFIED"
+  },
+  {
+    "route": "X8-05",
+    "native_declared_shapes": [
+      {
+        "name": "ResumptionCapsule",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-05",
+            "part": "Original draft",
+            "message_id": "6276f296-457b-462d-b674-933a15194429",
+            "lines": [
+              642,
+              678
+            ],
+            "sha256": "c1d22ca4a7ddbf38aa27abd8caa3fbbf1587f636463b3d7827b840bc809528b1"
+          },
+          {
+            "source": "RDMS-05",
+            "part": "C01",
+            "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+            "lines": [
+              720,
+              741
+            ],
+            "sha256": "1c38a08ce60f890ed64f69cfd6cb8d2928d75d5b6637be31299a5b209e420409"
+          }
+        ]
+      },
+      {
+        "name": "SuspensionRecord",
+        "status": "NO_EXACT_BRACE_SCHEMA_FOUND",
+        "sources": []
+      }
+    ],
+    "signature_certified": false,
+    "reconciliation_status": "SOURCE_FIELDS_LOCATED_NOT_TRANSPORT_SIGNATURE_RATIFIED"
+  },
+  {
+    "route": "X8-06",
+    "native_declared_shapes": [
+      {
+        "name": "ActionProposal",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-04",
+            "part": "Original draft",
+            "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+            "lines": [
+              85,
+              137
+            ],
+            "sha256": "1d1d2dfa1eaacd278ba44f59a1e7c5a2807b8f4e22cd867864b3688ac7587273"
+          }
+        ]
+      },
+      {
+        "name": "ActionRecord",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-04",
+            "part": "Original draft",
+            "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+            "lines": [
+              196,
+              221
+            ],
+            "sha256": "b04404a6eafcf8aec73c83958aa5553aca3762a62a892c1cc8e857d5f0e3f386"
+          }
+        ]
+      },
+      {
+        "name": "ActionAttempt",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-04",
+            "part": "Original draft",
+            "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+            "lines": [
+              258,
+              288
+            ],
+            "sha256": "bdf8b138e13f4298c23e829cedba72bbbf83f148c6b24ad54b3c708cabf2acb8"
+          }
+        ]
+      },
+      {
+        "name": "ControlCommit",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-01",
+            "part": "Original draft",
+            "message_id": "2aacdc73-38d8-4456-9a73-9900fe14f900",
+            "lines": [
+              109,
+              131
+            ],
+            "sha256": "5bb4fd8bdebf4cfd5bdf430b9109c2b98e48901b227d5f54c3308254878671fc"
+          },
+          {
+            "source": "RDMS-01",
+            "part": "R1 corrections and final freeze decision",
+            "message_id": "e3a45231-ddae-4ed4-9bd1-35202ecdfcf7",
+            "lines": [
+              138,
+              161
+            ],
+            "sha256": "41502380fc6597de922a89d6827a323f77c3f445e3f4c795a7bb04930990a837"
+          }
+        ]
+      },
+      {
+        "name": "SealedExecutionIntent",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-10",
+            "part": "C01",
+            "message_id": "e4828797-8ddb-48ae-a3e4-3e9ec47b70c3",
+            "lines": [
+              748,
+              774
+            ],
+            "sha256": "8bf749d80ed5502c3a670b64853ea11cd4fb0635541eb7efd087468202bde01a"
+          }
+        ]
+      }
+    ],
+    "signature_certified": false,
+    "reconciliation_status": "SOURCE_FIELDS_LOCATED_NOT_TRANSPORT_SIGNATURE_RATIFIED"
+  },
+  {
+    "route": "X8-07",
+    "native_declared_shapes": [
+      {
+        "name": "Observation",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-03",
+            "part": "Original draft",
+            "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+            "lines": [
+              70,
+              96
+            ],
+            "sha256": "2e8195bef03066422a8996e4d6329cdf17d9415a4d0584a12d65b788d09aebc1"
+          }
+        ]
+      },
+      {
+        "name": "EvidenceLink",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-03",
+            "part": "Original draft",
+            "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+            "lines": [
+              449,
+              480
+            ],
+            "sha256": "b56d24206ab7628d92c266e4a6d8c3e3a63aa29a627ede82c373819a56071e26"
+          },
+          {
+            "source": "RDMS-03",
+            "part": "Original draft",
+            "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+            "lines": [
+              502,
+              505
+            ],
+            "sha256": "c3afbd4eb962992437673decec2fc0f1672639db8a9a935f704eb0c450995eaa"
+          }
+        ]
+      },
+      {
+        "name": "SupportAssessment",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-02",
+            "part": "C01, second review corrections and final freeze decision",
+            "message_id": "266bb347-d2a5-41ea-872a-32e140c803eb",
+            "lines": [
+              43,
+              63
+            ],
+            "sha256": "3dc75d0e803592fc2881698a2fe7844835709b648ce5110b119e4ad5e3efa1e9"
+          }
+        ]
+      }
+    ],
+    "signature_certified": false,
+    "reconciliation_status": "SOURCE_FIELDS_LOCATED_NOT_TRANSPORT_SIGNATURE_RATIFIED"
+  },
+  {
+    "route": "X8-08",
+    "native_declared_shapes": [
+      {
+        "name": "Experiment",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-03",
+            "part": "Original draft",
+            "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+            "lines": [
+              859,
+              891
+            ],
+            "sha256": "77b9d1f12e730ad6d94c444aef8d1dd545a8852df355849803557a8712ed4ea8"
+          }
+        ]
+      },
+      {
+        "name": "ExperimentRun",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-03",
+            "part": "Original draft",
+            "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+            "lines": [
+              918,
+              943
+            ],
+            "sha256": "809f19f3dd7a910bff6e6e48f04a1d684257914c8a7706fb57b035fde58fc948"
+          }
+        ]
+      },
+      {
+        "name": "Hypothesis",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-02",
+            "part": "Original draft",
+            "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+            "lines": [
+              370,
+              404
+            ],
+            "sha256": "5470bd7bd74b0f796f4368162311fa068f2ad31a715fd1b7571832e0a87d6d23"
+          },
+          {
+            "source": "RDMS-02",
+            "part": "C01, second review corrections and final freeze decision",
+            "message_id": "266bb347-d2a5-41ea-872a-32e140c803eb",
+            "lines": [
+              193,
+              205
+            ],
+            "sha256": "4bc5f8ebc0e4c08e573a6f04ff8b16b8cb24d204594cbd5d87ed409c3f8b830a"
+          }
+        ]
+      },
+      {
+        "name": "CausalVerificationRecord",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-02",
+            "part": "Original draft",
+            "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+            "lines": [
+              503,
+              517
+            ],
+            "sha256": "1ffe32b15eb4ffab0601a991b0088af0871234a3a3b88d93d6f8a27bebd65598"
+          }
+        ]
+      }
+    ],
+    "signature_certified": false,
+    "reconciliation_status": "SOURCE_FIELDS_LOCATED_NOT_TRANSPORT_SIGNATURE_RATIFIED"
+  },
+  {
+    "route": "X8-09",
+    "native_declared_shapes": [
+      {
+        "name": "ContradictionRecord",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-03",
+            "part": "Original draft",
+            "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+            "lines": [
+              620,
+              645
+            ],
+            "sha256": "e8e2641455efb82f3da738cfff8f716fcead8179e6b63ddbd46618cbc58948ed"
+          },
+          {
+            "source": "RDMS-03",
+            "part": "C01 and Freeze Review 02 Final",
+            "message_id": "a1ca0249-b287-4c4b-8254-773c8f6edbda",
+            "lines": [
+              468,
+              473
+            ],
+            "sha256": "02fb0ca2cc801ad9abf3659661af8e9d5ba4e2cd3cae7b81c41e31be927f788f"
+          }
+        ]
+      },
+      {
+        "name": "ObservationComparison",
+        "status": "NO_EXACT_BRACE_SCHEMA_FOUND",
+        "sources": []
+      }
+    ],
+    "signature_certified": false,
+    "reconciliation_status": "SOURCE_FIELDS_LOCATED_NOT_TRANSPORT_SIGNATURE_RATIFIED"
+  },
+  {
+    "route": "X8-10",
+    "native_declared_shapes": [
+      {
+        "name": "DependencyStamp",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-01",
+            "part": "Original draft",
+            "message_id": "2aacdc73-38d8-4456-9a73-9900fe14f900",
+            "lines": [
+              782,
+              795
+            ],
+            "sha256": "7e0052bac2d827cb5d4770490ec81ece9fb83698c2c07c0eaf39aa113425d53e"
+          },
+          {
+            "source": "RDMS-06",
+            "part": "Original draft",
+            "message_id": "4bcbb2bf-86d9-4b93-9b1c-9f9529916667",
+            "lines": [
+              647,
+              671
+            ],
+            "sha256": "eebe0f2d3f0cbd14f6cc9881d28b165d4410f5c08e645141c582ad48cb4d9588"
+          }
+        ]
+      },
+      {
+        "name": "TemporalValidity",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-05",
+            "part": "Original draft",
+            "message_id": "6276f296-457b-462d-b674-933a15194429",
+            "lines": [
+              791,
+              804
+            ],
+            "sha256": "250b7997581e6b41d4a3de5ae7b300e8b17108baf13eff0590e3173bf1e43969"
+          }
+        ]
+      },
+      {
+        "name": "QueryDependencyStamp",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-06",
+            "part": "Original draft",
+            "message_id": "4bcbb2bf-86d9-4b93-9b1c-9f9529916667",
+            "lines": [
+              885,
+              910
+            ],
+            "sha256": "1b3ae40841edc5f5853a4b5867cfaa3c76e2ed21564b77df463f92fe64b69e1f"
+          }
+        ]
+      }
+    ],
+    "signature_certified": false,
+    "reconciliation_status": "SOURCE_FIELDS_LOCATED_NOT_TRANSPORT_SIGNATURE_RATIFIED"
+  },
+  {
+    "route": "X8-11",
+    "native_declared_shapes": [
+      {
+        "name": "MemoryProposal",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-07",
+            "part": "Original draft",
+            "message_id": "938c1bc7-97a0-46ad-be19-cd3ba3ca125f",
+            "lines": [
+              474,
+              500
+            ],
+            "sha256": "954762e236b07d60a1c7480f60f9383a0f914a88043e9f541e6567ed0a6557af"
+          }
+        ]
+      },
+      {
+        "name": "OutboundContextDisclosure",
+        "status": "NO_EXACT_BRACE_SCHEMA_FOUND",
+        "sources": []
+      },
+      {
+        "name": "ContentEnvelope",
+        "status": "NO_EXACT_BRACE_SCHEMA_FOUND",
+        "sources": []
+      }
+    ],
+    "signature_certified": false,
+    "reconciliation_status": "SOURCE_FIELDS_LOCATED_NOT_TRANSPORT_SIGNATURE_RATIFIED"
+  },
+  {
+    "route": "X8-12",
+    "native_declared_shapes": [
+      {
+        "name": "SandboxActivityRecord",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-04",
+            "part": "Original draft",
+            "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+            "lines": [
+              1112,
+              1133
+            ],
+            "sha256": "cba4e17ccdd40f411d046f637d1f356611c940f30120987d45d657ff5f8fd855"
+          }
+        ]
+      },
+      {
+        "name": "ActionAttempt",
+        "status": "EXACT_STRUCT_FOUND",
+        "sources": [
+          {
+            "source": "RDMS-04",
+            "part": "Original draft",
+            "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+            "lines": [
+              258,
+              288
+            ],
+            "sha256": "bdf8b138e13f4298c23e829cedba72bbbf83f148c6b24ad54b3c708cabf2acb8"
+          }
+        ]
+      },
+      {
+        "name": "RecoverySession",
+        "status": "NO_EXACT_BRACE_SCHEMA_FOUND",
+        "sources": []
+      }
+    ],
+    "signature_certified": false,
+    "reconciliation_status": "SOURCE_FIELDS_LOCATED_NOT_TRANSPORT_SIGNATURE_RATIFIED"
+  }
+]

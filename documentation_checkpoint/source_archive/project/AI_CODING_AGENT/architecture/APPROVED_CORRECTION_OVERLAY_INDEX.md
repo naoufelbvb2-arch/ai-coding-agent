@@ -1,0 +1,1066 @@
+# GAIA-C06 — Full Source Amendment Navigation Index (Candidate, Not Frozen)
+
+**Boundary:** Covers EVERY heading recognized by the GAIA-C04 parser in all 27 message sources; not every paragraph is a heading, and correction/narrative headings are not necessarily supersession. The original messages are the authority. No automatic linking in this index is a legal judgment.
+
+## Counts and source order
+
+| Specification | Legal owner | Candidate headings in later sources | New direct source witnesses |
+|---|---|---:|---:|
+| RDMS-01 | `L1_CONTROL.md` | 31 | 0 |
+| RDMS-02 | `L2_COGNITION.md` | 35 | 0 |
+| RDMS-03 | `L3_ACTIONS.md` | 48 | 0 |
+| RDMS-04 | `L3_ACTIONS.md` | 41 | 0 |
+| RDMS-05 | `L4_TEMPORAL_SPECIALISTS.md` | 57 | 0 |
+| RDMS-06 | `L4_TEMPORAL_SPECIALISTS.md` | 47 | 2 |
+| RDMS-07 | `L5_MEMORY.md` | 63 | 3 |
+| RDMS-08 | `L2_COGNITION.md` | 99 | 2 |
+| RDMS-09 | `L6_RECOVERY.md` | 325 | 4 |
+| RDMS-10 | `L7_RUNTIME_INTEGRATION.md` | 268 | 4 |
+
+## Navigate amendments / later-source clauses
+
+`GAIA_C06_ALL_CORRECTION_CANDIDATE_LINKS.json` enumerates every machine-detected later heading, its original message and line range, and the highest-ranked lexical predecessor candidates (if any). **No candidate is approved as superseded without separately proven semantic relation.**
+
+### RDMS-01
+
+- `C06-A0001` — **1. النتيجة الرئيسية للمراجعة** — source `e3a45231` lines 12–42; Possible predecessor `2aacdc73`:485; **UNREVIEWED**
+- `C06-A0002` — **2. Hybrid Transactional Persistence Model** — source `e3a45231` lines 43–83; Possible predecessor `2aacdc73`:1141; **UNREVIEWED**
+- `C06-A0003` — **3. ProjectHead** — source `e3a45231` lines 84–109; Possible predecessor `2aacdc73`:1044; **UNREVIEWED**
+- `C06-A0004` — **4. commit_seq** — source `e3a45231` lines 110–136; Possible predecessor `2aacdc73`:89; **UNREVIEWED**
+- `C06-A0005` — **5. ControlCommit النهائية** — source `e3a45231` lines 137–161; Possible predecessor `2aacdc73`:89; **UNREVIEWED**
+- `C06-A0006` — **6. Authority Context** — source `e3a45231` lines 162–210; Possible predecessor `2aacdc73`:1222; **UNREVIEWED**
+- `C06-A0007` — **7. Initiator ≠ Authorizer** — source `e3a45231` lines 211–232; Possible predecessor `2aacdc73`:625; **UNREVIEWED**
+- `C06-A0008` — **8. CanonicalMutation** — source `e3a45231` lines 233–272; Possible predecessor `2aacdc73`:275; **UNREVIEWED**
+- `C06-A0009` — **9. لماذا After-Image؟** — source `e3a45231` lines 273–306; Possible predecessor `2aacdc73`:381; **UNREVIEWED**
+- `C06-A0010` — **10. Semantic Events منفصلة عن Replay Mutations** — source `e3a45231` lines 307–340; Possible predecessor `2aacdc73`:159; **UNREVIEWED**
+- `C06-A0011` — **11. Event Ordinal** — source `e3a45231` lines 341–352; Possible predecessor `2aacdc73`:89; **UNREVIEWED**
+- `C06-A0012` — **12. IDs** — source `e3a45231` lines 353–385; Possible predecessor `2aacdc73`:184; **UNREVIEWED**
+- `C06-A0013` — **13. Entity Versioning** — source `e3a45231` lines 386–406; Possible predecessor `2aacdc73`:275; **UNREVIEWED**
+- `C06-A0014` — **14. Conflict Granularity في v1** — source `e3a45231` lines 407–438; Possible predecessor `2aacdc73`:1020; **UNREVIEWED**
+- `C06-A0015` — **15. Staleness ≠ Write Conflict** — source `e3a45231` lines 439–456; Possible predecessor `2aacdc73`:1020; **UNREVIEWED**
+- `C06-A0016` — **16. Idempotency** — source `e3a45231` lines 457–474; Possible predecessor `2aacdc73`:89; **UNREVIEWED**
+- `C06-A0017` — **17. Schema Evolution** — source `e3a45231` lines 475–501; Possible predecessor `2aacdc73`:159; **UNREVIEWED**
+- `C06-A0018` — **18. Snapshot Model المصحح** — source `e3a45231` lines 502–528; Possible predecessor `2aacdc73`:1044; **UNREVIEWED**
+- `C06-A0019` — **19. Snapshot Schema** — source `e3a45231` lines 529–554; Possible predecessor `2aacdc73`:381; **UNREVIEWED**
+- `C06-A0020` — **20. Current-State Integrity Marker** — source `e3a45231` lines 555–576; Possible predecessor `2aacdc73`:1044; **UNREVIEWED**
+- `C06-A0021` — **21. Artifact Store** — source `e3a45231` lines 577–606; Possible predecessor `2aacdc73`:450; **UNREVIEWED**
+- `C06-A0022` — **22. Derived Indexes** — source `e3a45231` lines 607–632; Possible predecessor `2aacdc73`:524; **UNREVIEWED**
+- `C06-A0023` — **23. Repository References** — source `e3a45231` lines 633–658; Possible predecessor `2aacdc73`:713; **UNREVIEWED**
+- `C06-A0024` — **24. Runtime Status Split** — source `e3a45231` lines 659–690; Possible predecessor `2aacdc73`:1097; **UNREVIEWED**
+- `C06-A0025` — **25. Recovery Model النهائي لـRDMS-01** — source `e3a45231` lines 691–725; Possible predecessor `2aacdc73`:1078; **UNREVIEWED**
+- `C06-A0026` — **26. Observation Concurrency** — source `e3a45231` lines 726–750; Possible predecessor `2aacdc73`:485; **UNREVIEWED**
+- `C06-A0027` — **27. Canonical Commit Isolation** — source `e3a45231` lines 751–763; Possible predecessor `2aacdc73`:89; **UNREVIEWED**
+- `C06-A0028` — **28. Revised Runtime Invariants** — source `e3a45231` lines 764–840; Possible predecessor `2aacdc73`:1141; **UNREVIEWED**
+- `C06-A0029` — **29. Adversarial Re-test** — source `e3a45231` lines 841–859; Possible predecessor `2aacdc73`:485; **UNREVIEWED**
+- `C06-A0030` — **30. Freeze Verdict for RDMS-01** — source `e3a45231` lines 860–889; Possible predecessor `2aacdc73`:89; **UNREVIEWED**
+- `C06-A0031` — **31. Next Authorized Specification** — source `e3a45231` lines 890–931; Possible predecessor `2aacdc73`:1222; **UNREVIEWED**
+
+### RDMS-02
+
+- `C06-A0032` — **C01-01 — Common Entity Metadata** — source `266bb347` lines 11–36; Possible predecessor `a62cc59d`:37; **UNREVIEWED**
+- `C06-A0033` — **C01-02 — SupportAssessment** — source `266bb347` lines 37–78; Possible predecessor `a62cc59d`:119; **UNREVIEWED**
+- `C06-A0034` — **C01-03 — Assessment Validity** — source `266bb347` lines 79–102; Possible predecessor `a62cc59d`:1838; **UNREVIEWED**
+- `C06-A0035` — **C01-04 — Claim Epistemic Promotion** — source `266bb347` lines 103–125; Possible predecessor `a62cc59d`:153; **UNREVIEWED**
+- `C06-A0036` — **C01-05 — Claim Meaning Change** — source `266bb347` lines 126–150; Possible predecessor `a62cc59d`:1016; **UNREVIEWED**
+- `C06-A0037` — **C01-06 — Fact Freshness** — source `266bb347` lines 151–188; Possible predecessor `a62cc59d`:542; **UNREVIEWED**
+- `C06-A0038` — **C01-07 — Hypothesis Closure** — source `266bb347` lines 189–221; Possible predecessor `a62cc59d`:369; **UNREVIEWED**
+- `C06-A0039` — **C01-08 — OVC Freshness** — source `266bb347` lines 222–251; Possible predecessor `a62cc59d`:448; **UNREVIEWED**
+- `C06-A0040` — **C01-09 — Goal Tree يصبح Goal Graph شجري مرن** — source `266bb347` lines 252–284; Possible predecessor `a62cc59d`:634; **UNREVIEWED**
+- `C06-A0041` — **C01-10 — GoalPath** — source `266bb347` lines 285–317; Possible predecessor `a62cc59d`:718; **UNREVIEWED**
+- `C06-A0042` — **C01-11 — Goal Lifecycle** — source `266bb347` lines 318–344; Possible predecessor `a62cc59d`:652; **UNREVIEWED**
+- `C06-A0043` — **C01-12 — Acceptance Criteria Governance** — source `266bb347` lines 345–366; Possible predecessor `a62cc59d`:604; **UNREVIEWED**
+- `C06-A0044` — **C01-13 — Goal Requirement Mutation** — source `266bb347` lines 367–396; Possible predecessor `a62cc59d`:693; **UNREVIEWED**
+- `C06-A0045` — **C01-14 — Declared Priority** — source `266bb347` lines 397–415; Possible predecessor `a62cc59d`:563; **UNREVIEWED**
+- `C06-A0046` — **C01-15 — Decision Immutability After Acceptance** — source `266bb347` lines 416–459; Possible predecessor `a62cc59d`:842; **UNREVIEWED**
+- `C06-A0047` — **C01-16 — Decision Freshness** — source `266bb347` lines 460–489; Possible predecessor `a62cc59d`:448; **UNREVIEWED**
+- `C06-A0048` — **C01-17 — Contract / Invariant Identity** — source `266bb347` lines 490–510; Possible predecessor `a62cc59d`:37; **UNREVIEWED**
+- `C06-A0049` — **C01-18 — Version-Pinned Engineering References** — source `266bb347` lines 511–538; Possible predecessor `a62cc59d`:74; **UNREVIEWED**
+- `C06-A0050` — **C01-19 — Generic Entity Lineage** — source `266bb347` lines 539–572; Possible predecessor `a62cc59d`:1573; **UNREVIEWED**
+- `C06-A0051` — **C01-20 — Hypothesis Relations** — source `266bb347` lines 573–602; Possible predecessor `a62cc59d`:369; **UNREVIEWED**
+- `C06-A0052` — **C01-21 — Slice State Decomposition** — source `266bb347` lines 603–628; Possible predecessor `a62cc59d`:1204; **UNREVIEWED**
+- `C06-A0053` — **C01-22 — Slice State Meaning** — source `266bb347` lines 629–658; Possible predecessor `a62cc59d`:1204; **UNREVIEWED**
+- `C06-A0054` — **C01-23 — Slice Failure** — source `266bb347` lines 659–679; Possible predecessor `a62cc59d`:1204; **UNREVIEWED**
+- `C06-A0055` — **C01-24 — Slice Closure Rules** — source `266bb347` lines 680–690; Possible predecessor `a62cc59d`:1204; **UNREVIEWED**
+- `C06-A0056` — **C01-25 — Slice Freshness** — source `266bb347` lines 691–706; Possible predecessor `a62cc59d`:1204; **UNREVIEWED**
+- `C06-A0057` — **C01-26 — Canonical Focus Compression** — source `266bb347` lines 707–739; Possible predecessor `a62cc59d`:782; **UNREVIEWED**
+- `C06-A0058` — **C01-27 — Mental Model Is Not Shadow Truth** — source `266bb347` lines 740–792; Possible predecessor `a62cc59d`:1470; **UNREVIEWED**
+- `C06-A0059` — **C01-28 — Invariant Severity ≠ Detectability** — source `266bb347` lines 793–825; Possible predecessor `a62cc59d`:934; **UNREVIEWED**
+- `C06-A0060` — **C01-29 — Hard Invariant Rule** — source `266bb347` lines 826–845; Possible predecessor `a62cc59d`:1873; **UNREVIEWED**
+- `C06-A0061` — **C01-30 — Risk Lifecycle vs Treatment** — source `266bb347` lines 846–877; Possible predecessor `a62cc59d`:1127; **UNREVIEWED**
+- `C06-A0062` — **C01-31 — RiskAssessment** — source `266bb347` lines 878–906; Possible predecessor `a62cc59d`:1127; **UNREVIEWED**
+- `C06-A0063` — **C01-32 — Commitment Reactivation** — source `266bb347` lines 907–944; Possible predecessor `a62cc59d`:1364; **UNREVIEWED**
+- `C06-A0064` — **C01-33 — Relation Ownership Rule** — source `266bb347` lines 945–960; Possible predecessor `a62cc59d`:369; **UNREVIEWED**
+- `C06-A0065` — **C01-34 — Referential Version Policy** — source `266bb347` lines 961–983; Possible predecessor `a62cc59d`:74; **UNREVIEWED**
+- `C06-A0066` — **C01-35 — Updated RDMS-02 Core Invariants** — source `266bb347` lines 984–1599; Possible predecessor `a62cc59d`:1536; **UNREVIEWED**
+
+### RDMS-03
+
+- `C06-A0067` — **C01-01 — Content Trust Must Travel With Content** — source `a1ca0249` lines 11–59; Possible predecessor `11d811dc`:185; **UNREVIEWED**
+- `C06-A0068` — **C01-02 — Content Cannot Elevate Authority** — source `a1ca0249` lines 60–75; Possible predecessor `11d811dc`:185; **UNREVIEWED**
+- `C06-A0069` — **C01-03 — Domain Authority Becomes Canonical State** — source `a1ca0249` lines 76–105; Possible predecessor `11d811dc`:1194; **UNREVIEWED**
+- `C06-A0070` — **C01-04 — Authoritative Evidence Pins Authority Version** — source `a1ca0249` lines 106–119; Possible predecessor `11d811dc`:445; **UNREVIEWED**
+- `C06-A0071` — **C01-05 — Authority Validity Is Time-Scoped** — source `a1ca0249` lines 120–154; Possible predecessor `11d811dc`:1476; **UNREVIEWED**
+- `C06-A0072` — **C01-06 — Observation Normalization Is Mechanically Bounded** — source `a1ca0249` lines 155–184; Possible predecessor `11d811dc`:1709; **UNREVIEWED**
+- `C06-A0073` — **C01-07 — Observation Amendment Governance** — source `a1ca0249` lines 185–210; Possible predecessor `11d811dc`:370; **UNREVIEWED**
+- `C06-A0074` — **C01-08 — Semantic Disagreement Cannot Amend Observation** — source `a1ca0249` lines 211–233; Possible predecessor `11d811dc`:370; **UNREVIEWED**
+- `C06-A0075` — **C01-09 — Observation Usability** — source `a1ca0249` lines 234–251; Possible predecessor `11d811dc`:404; **UNREVIEWED**
+- `C06-A0076` — **C01-10 — Evidence Basis Semantics** — source `a1ca0249` lines 252–271; Possible predecessor `11d811dc`:445; **UNREVIEWED**
+- `C06-A0077` — **C01-11 — ALL_REQUIRED** — source `a1ca0249` lines 272–285; Possible predecessor `11d811dc`:517; **UNREVIEWED**
+- `C06-A0078` — **C01-12 — STRUCTURED** — source `a1ca0249` lines 286–303; Possible predecessor `11d811dc`:445; **UNREVIEWED**
+- `C06-A0079` — **C01-13 — EvidenceLink Usability** — source `a1ca0249` lines 304–329; Possible predecessor `11d811dc`:445; **UNREVIEWED**
+- `C06-A0080` — **C01-14 — Stable Epistemic Target Identity** — source `a1ca0249` lines 330–356; Possible predecessor `11d811dc`:481; **UNREVIEWED**
+- `C06-A0081` — **C01-15 — Evidence Origin Group** — source `a1ca0249` lines 357–381; Possible predecessor `11d811dc`:317; **UNREVIEWED**
+- `C06-A0082` — **C01-16 — Distinct Origin ≠ Proven Statistical Independence** — source `a1ca0249` lines 382–405; Possible predecessor `11d811dc`:317; **UNREVIEWED**
+- `C06-A0083` — **C01-17 — Evidence Basis Signature** — source `a1ca0249` lines 406–435; Possible predecessor `11d811dc`:1709; **UNREVIEWED**
+- `C06-A0084` — **C01-18 — No Wrapper Inflation** — source `a1ca0249` lines 436–443; Possible predecessor `11d811dc`:1556; **UNREVIEWED**
+- `C06-A0085` — **C01-19 — Evidence Cycles** — source `a1ca0249` lines 444–463; Possible predecessor `11d811dc`:1709; **UNREVIEWED**
+- `C06-A0086` — **C01-20 — ContradictionRecord Boundary** — source `a1ca0249` lines 464–496; Possible predecessor `11d811dc`:619; **UNREVIEWED**
+- `C06-A0087` — **C01-21 — Temporal Provenance** — source `a1ca0249` lines 497–515; Possible predecessor `11d811dc`:293; **UNREVIEWED**
+- `C06-A0088` — **C01-22 — Canonical Order ≠ World Causal Order** — source `a1ca0249` lines 516–530; Possible predecessor `11d811dc`:1476; **UNREVIEWED**
+- `C06-A0089` — **C01-23 — Experiment Design Snapshot** — source `a1ca0249` lines 531–559; Possible predecessor `11d811dc`:858; **UNREVIEWED**
+- `C06-A0090` — **C01-24 — Prediction Freeze** — source `a1ca0249` lines 560–571; Possible predecessor `11d811dc`:1638; **UNREVIEWED**
+- `C06-A0091` — **C01-25 — No Run Against “Current Experiment”** — source `a1ca0249` lines 572–589; Possible predecessor `11d811dc`:917; **UNREVIEWED**
+- `C06-A0092` — **C01-26 — Experiment Redesign Rule** — source `a1ca0249` lines 590–612; Possible predecessor `11d811dc`:892; **UNREVIEWED**
+- `C06-A0093` — **C01-27 — Run Preflight** — source `a1ca0249` lines 613–639; Possible predecessor `11d811dc`:917; **UNREVIEWED**
+- `C06-A0094` — **C01-28 — Nonconforming Run** — source `a1ca0249` lines 640–655; Possible predecessor `11d811dc`:1709; **UNREVIEWED**
+- `C06-A0095` — **C01-29 — ExperimentRun State** — source `a1ca0249` lines 656–668; Possible predecessor `11d811dc`:917; **UNREVIEWED**
+- `C06-A0096` — **C01-30 — INVALID** — source `a1ca0249` lines 669–687; Possible predecessor `11d811dc`:917; **UNREVIEWED**
+- `C06-A0097` — **C01-31 — Required Action Reconciliation** — source `a1ca0249` lines 688–709; Possible predecessor `11d811dc`:1852; **UNREVIEWED**
+- `C06-A0098` — **C01-32 — Cancellation Does Not Cancel Reality** — source `a1ca0249` lines 710–725; Possible predecessor `11d811dc`:1627; **UNREVIEWED**
+- `C06-A0099` — **C01-33 — PredictionEvaluation Input** — source `a1ca0249` lines 726–740; Possible predecessor `11d811dc`:796; **UNREVIEWED**
+- `C06-A0100` — **C01-34 — Execution Failure vs Scientific Result** — source `a1ca0249` lines 741–754; Possible predecessor `11d811dc`:944; **UNREVIEWED**
+- `C06-A0101` — **C01-35 — VerificationSpec Version Pinning** — source `a1ca0249` lines 755–782; Possible predecessor `11d811dc`:1096; **UNREVIEWED**
+- `C06-A0102` — **C01-36 — Verification Execution Context** — source `a1ca0249` lines 783–801; Possible predecessor `11d811dc`:1096; **UNREVIEWED**
+- `C06-A0103` — **C01-37 — Verification Usability** — source `a1ca0249` lines 802–811; Possible predecessor `11d811dc`:1384; **UNREVIEWED**
+- `C06-A0104` — **C01-38 — Determinism Profile** — source `a1ca0249` lines 812–844; Possible predecessor `11d811dc`:1144; **UNREVIEWED**
+- `C06-A0105` — **C01-39 — Deterministic Evidence Gate** — source `a1ca0249` lines 845–867; Possible predecessor `11d811dc`:1144; **UNREVIEWED**
+- `C06-A0106` — **C01-40 — Complete Means Scoped Determinism** — source `a1ca0249` lines 868–877; Possible predecessor `11d811dc`:1876; **UNREVIEWED**
+- `C06-A0107` — **C01-41 — Support vs Confidence Responsibilities** — source `a1ca0249` lines 878–909; Possible predecessor `11d811dc`:1872; **UNREVIEWED**
+- `C06-A0108` — **C01-42 — OVC Assessment** — source `a1ca0249` lines 910–920; Possible predecessor `11d811dc`:1396; **UNREVIEWED**
+- `C06-A0109` — **C01-43 — Semantic Assessment Is Advisory** — source `a1ca0249` lines 921–941; Possible predecessor `11d811dc`:1194; **UNREVIEWED**
+- `C06-A0110` — **C01-44 — Semantic Review Gate** — source `a1ca0249` lines 942–953; Possible predecessor `11d811dc`:1194; **UNREVIEWED**
+- `C06-A0111` — **C01-45 — Evidence Consumption Rule** — source `a1ca0249` lines 954–967; Possible predecessor `11d811dc`:1709; **UNREVIEWED**
+- `C06-A0112` — **C01-46 — Duplicate vs Replication** — source `a1ca0249` lines 968–980; Possible predecessor `11d811dc`:1865; **UNREVIEWED**
+- `C06-A0113` — **C01-47 — Current Evidence Lineage View** — source `a1ca0249` lines 981–1000; Possible predecessor `11d811dc`:1709; **UNREVIEWED**
+- `C06-A0114` — **C01-48 — Updated RDMS-03 Invariants** — source `a1ca0249` lines 1001–1698; Possible predecessor `11d811dc`:1709; **UNREVIEWED**
+
+### RDMS-04
+
+- `C06-A0115` — **C01-01 — One Canonical Control Authority** — source `4f585132` lines 10–38; Possible predecessor `32ad532a`:1378; **UNREVIEWED**
+- `C06-A0116` — **C01-02 — Action Execution Identity** — source `4f585132` lines 39–57; Possible predecessor `32ad532a`:254; **UNREVIEWED**
+- `C06-A0117` — **C01-03 — Durable Dispatch Ownership** — source `4f585132` lines 58–82; Possible predecessor `32ad532a`:254; **UNREVIEWED**
+- `C06-A0118` — **C01-04 — Dispatch Protocol** — source `4f585132` lines 83–107; Possible predecessor `32ad532a`:292; **UNREVIEWED**
+- `C06-A0119` — **C01-05 — Executive Epoch Change** — source `4f585132` lines 108–127; Possible predecessor `32ad532a`:254; **UNREVIEWED**
+- `C06-A0120` — **C01-06 — The External Exactly-Once Limit** — source `4f585132` lines 128–144; Possible predecessor `32ad532a`:1378; **UNREVIEWED**
+- `C06-A0121` — **C01-07 — Two Independent Dimensions** — source `4f585132` lines 145–165; Possible predecessor `32ad532a`:84; **UNREVIEWED**
+- `C06-A0122` — **C01-08 — ReadAccessGrant** — source `4f585132` lines 166–187; Possible predecessor `32ad532a`:84; **UNREVIEWED**
+- `C06-A0123` — **C01-09 — Read-Only Classification** — source `4f585132` lines 188–217; Possible predecessor `32ad532a`:688; **UNREVIEWED**
+- `C06-A0124` — **C01-10 — Information Disclosure Is Separately Governed** — source `4f585132` lines 218–230; Possible predecessor `32ad532a`:1378; **UNREVIEWED**
+- `C06-A0125` — **C01-11 — Orthogonal Process Dimensions** — source `4f585132` lines 231–258; Possible predecessor `32ad532a`:419; **UNREVIEWED**
+- `C06-A0126` — **C01-12 — SessionGrant and InputGrant** — source `4f585132` lines 259–294; Possible predecessor `32ad532a`:455; **UNREVIEWED**
+- `C06-A0127` — **C01-13 — Arbitrary Interactive Shells** — source `4f585132` lines 295–310; Possible predecessor `32ad532a`:1134; **UNREVIEWED**
+- `C06-A0128` — **C01-14 — Terminal Input Is Effect-Bearing** — source `4f585132` lines 311–324; Possible predecessor `32ad532a`:455; **UNREVIEWED**
+- `C06-A0129` — **C01-15 — Durable Process Identity** — source `4f585132` lines 325–351; Possible predecessor `32ad532a`:1311; **UNREVIEWED**
+- `C06-A0130` — **C01-16 — ProcessGroup Ownership** — source `4f585132` lines 352–377; Possible predecessor `32ad532a`:667; **UNREVIEWED**
+- `C06-A0131` — **C01-17 — Process Termination Semantics** — source `4f585132` lines 378–391; Possible predecessor `32ad532a`:419; **UNREVIEWED**
+- `C06-A0132` — **C01-18 — Reattachment** — source `4f585132` lines 392–411; Possible predecessor `32ad532a`:1111; **UNREVIEWED**
+- `C06-A0133` — **C01-19 — Object-Bound File Authorization** — source `4f585132` lines 412–427; Possible predecessor `32ad532a`:709; **UNREVIEWED**
+- `C06-A0134` — **C01-20 — ChangeSet** — source `4f585132` lines 428–457; Possible predecessor `32ad532a`:84; **UNREVIEWED**
+- `C06-A0135` — **C01-21 — Isolated Preparation** — source `4f585132` lines 458–479; Possible predecessor `32ad532a`:730; **UNREVIEWED**
+- `C06-A0136` — **C01-22 — Partial Promotion** — source `4f585132` lines 480–491; Possible predecessor `32ad532a`:254; **UNREVIEWED**
+- `C06-A0137` — **C01-23 — Effective Git Execution Context** — source `4f585132` lines 492–514; Possible predecessor `32ad532a`:419; **UNREVIEWED**
+- `C06-A0138` — **C01-24 — Hidden Executable Effects** — source `4f585132` lines 515–530; Possible predecessor `32ad532a`:930; **UNREVIEWED**
+- `C06-A0139` — **C01-25 — Git Concurrency** — source `4f585132` lines 531–547; Possible predecessor `32ad532a`:821; **UNREVIEWED**
+- `C06-A0140` — **C01-26 — Git Remote Effects** — source `4f585132` lines 548–556; Possible predecessor `32ad532a`:930; **UNREVIEWED**
+- `C06-A0141` — **C01-27 — Effective Containment Binding** — source `4f585132` lines 557–580; Possible predecessor `32ad532a`:1071; **UNREVIEWED**
+- `C06-A0142` — **C01-28 — Continuous Enforcement** — source `4f585132` lines 581–596; Possible predecessor `32ad532a`:1071; **UNREVIEWED**
+- `C06-A0143` — **C01-29 — No Implicit Artifact Promotion** — source `4f585132` lines 597–603; Possible predecessor `32ad532a`:37; **UNREVIEWED**
+- `C06-A0144` — **C01-30 — End-to-End Credential Boundary** — source `4f585132` lines 604–622; Possible predecessor `32ad532a`:1179; **UNREVIEWED**
+- `C06-A0145` — **C01-31 — Secret Output** — source `4f585132` lines 623–642; Possible predecessor `32ad532a`:558; **UNREVIEWED**
+- `C06-A0146` — **C01-32 — Output Completeness** — source `4f585132` lines 643–655; Possible predecessor `32ad532a`:1378; **UNREVIEWED**
+- `C06-A0147` — **C01-33 — Probe Adequacy** — source `4f585132` lines 656–675; Possible predecessor `32ad532a`:1247; **UNREVIEWED**
+- `C06-A0148` — **C01-34 — Verified Absence** — source `4f585132` lines 676–693; Possible predecessor `32ad532a`:1269; **UNREVIEWED**
+- `C06-A0149` — **C01-35 — Compensation Is an Action** — source `4f585132` lines 694–713; Possible predecessor `32ad532a`:84; **UNREVIEWED**
+- `C06-A0150` — **C01-36 — Debugger Effect Semantics** — source `4f585132` lines 714–750; Possible predecessor `32ad532a`:983; **UNREVIEWED**
+- `C06-A0151` — **C01-37 — Tool Version Pinning** — source `4f585132` lines 751–760; Possible predecessor `32ad532a`:1378; **UNREVIEWED**
+- `C06-A0152` — **C01-38 — Service Readiness** — source `4f585132` lines 761–772; Possible predecessor `32ad532a`:640; **UNREVIEWED**
+- `C06-A0153` — **C01-39 — Cancellation States** — source `4f585132` lines 773–786; Possible predecessor `32ad532a`:225; **UNREVIEWED**
+- `C06-A0154` — **C01-40 — Resource Limits** — source `4f585132` lines 787–803; Possible predecessor `32ad532a`:254; **UNREVIEWED**
+- `C06-A0155` — **C01-41 — Cross-Workspace Promotion** — source `4f585132` lines 804–922; Possible predecessor `32ad532a`:254; **UNREVIEWED**
+
+### RDMS-05
+
+- `C06-A0156` — **C01-01 — Canonical Ownership** — source `77caba5f` lines 10–52; Possible predecessor `6276f296`:33; **UNREVIEWED**
+- `C06-A0157` — **C01-02 — SourceContract** — source `77caba5f` lines 53–95; Possible predecessor `6276f296`:374; **UNREVIEWED**
+- `C06-A0158` — **C01-03 — DurableEventInbox** — source `77caba5f` lines 96–123; Possible predecessor `6276f296`:374; **UNREVIEWED**
+- `C06-A0159` — **C01-04 — Acknowledgement Fence** — source `77caba5f` lines 124–145; Possible predecessor `6276f296`:1041; **UNREVIEWED**
+- `C06-A0160` — **C01-05 — Two Different Cursor Concepts** — source `77caba5f` lines 146–161; Possible predecessor `6276f296`:75; **UNREVIEWED**
+- `C06-A0161` — **C01-06 — Atomic Trigger Processing** — source `77caba5f` lines 162–181; Possible predecessor `6276f296`:397; **UNREVIEWED**
+- `C06-A0162` — **C01-07 — Sources Without Stable Event Identity** — source `77caba5f` lines 182–196; Possible predecessor `6276f296`:862; **UNREVIEWED**
+- `C06-A0163` — **C01-08 — EventCoverage** — source `77caba5f` lines 197–221; Possible predecessor `6276f296`:374; **UNREVIEWED**
+- `C06-A0164` — **C01-09 — EdgeWitness** — source `77caba5f` lines 222–251; Possible predecessor `6276f296`:374; **UNREVIEWED**
+- `C06-A0165` — **C01-10 — Absence-Based Predicate** — source `77caba5f` lines 252–273; Possible predecessor `6276f296`:33; **UNREVIEWED**
+- `C06-A0166` — **C01-11 — Late Evidence After Completion** — source `77caba5f` lines 274–290; Possible predecessor `6276f296`:1041; **UNREVIEWED**
+- `C06-A0167` — **C01-12 — TriggerDefinitionSnapshot** — source `77caba5f` lines 291–322; Possible predecessor `6276f296`:143; **UNREVIEWED**
+- `C06-A0168` — **C01-13 — QualifiedOccurrenceIdentity** — source `77caba5f` lines 323–343; Possible predecessor `6276f296`:143; **UNREVIEWED**
+- `C06-A0169` — **C01-14 — Stable TriggerFire** — source `77caba5f` lines 344–368; Possible predecessor `6276f296`:438; **UNREVIEWED**
+- `C06-A0170` — **C01-15 — Reaction Identity** — source `77caba5f` lines 369–380; Possible predecessor `6276f296`:470; **UNREVIEWED**
+- `C06-A0171` — **C01-16 — RearmPolicy** — source `77caba5f` lines 381–398; Possible predecessor `6276f296`:276; **UNREVIEWED**
+- `C06-A0172` — **C01-17 — Level Trigger Cycle** — source `77caba5f` lines 399–415; Possible predecessor `6276f296`:143; **UNREVIEWED**
+- `C06-A0173` — **C01-18 — Edge Trigger Cycle** — source `77caba5f` lines 416–421; Possible predecessor `6276f296`:203; **UNREVIEWED**
+- `C06-A0174` — **C01-19 — Feedback-Loop Control** — source `77caba5f` lines 422–444; Possible predecessor `6276f296`:1041; **UNREVIEWED**
+- `C06-A0175` — **C01-20 — EvaluationContext** — source `77caba5f` lines 445–465; Possible predecessor `6276f296`:641; **UNREVIEWED**
+- `C06-A0176` — **C01-21 — CompositeCoherenceAssessment** — source `77caba5f` lines 466–494; Possible predecessor `6276f296`:746; **UNREVIEWED**
+- `C06-A0177` — **C01-22 — Logical Evaluation Order** — source `77caba5f` lines 495–510; Possible predecessor `6276f296`:203; **UNREVIEWED**
+- `C06-A0178` — **C01-23 — Dependency Engine Boundary** — source `77caba5f` lines 511–531; Possible predecessor `6276f296`:33; **UNREVIEWED**
+- `C06-A0179` — **C01-24 — Schedule Definition** — source `77caba5f` lines 532–553; Possible predecessor `6276f296`:112; **UNREVIEWED**
+- `C06-A0180` — **C01-25 — ScheduleOccurrence** — source `77caba5f` lines 554–574; Possible predecessor `6276f296`:112; **UNREVIEWED**
+- `C06-A0181` — **C01-26 — DST Policy** — source `77caba5f` lines 575–594; Possible predecessor `6276f296`:112; **UNREVIEWED**
+- `C06-A0182` — **C01-27 — Clock Discontinuity** — source `77caba5f` lines 595–608; Possible predecessor `6276f296`:96; **UNREVIEWED**
+- `C06-A0183` — **C01-28 — Missed Occurrence Handling** — source `77caba5f` lines 609–620; Possible predecessor `6276f296`:1001; **UNREVIEWED**
+- `C06-A0184` — **C01-29 — Target-Bound Reaction** — source `77caba5f` lines 621–645; Possible predecessor `6276f296`:470; **UNREVIEWED**
+- `C06-A0185` — **C01-30 — Atomic Reaction Application** — source `77caba5f` lines 646–664; Possible predecessor `6276f296`:397; **UNREVIEWED**
+- `C06-A0186` — **C01-31 — ReactionExecutionClaim** — source `77caba5f` lines 665–683; Possible predecessor `6276f296`:470; **UNREVIEWED**
+- `C06-A0187` — **C01-32 — No Duplicate Canonical Effect** — source `77caba5f` lines 684–699; Possible predecessor `6276f296`:397; **UNREVIEWED**
+- `C06-A0188` — **C01-33 — Orphaned Reactivation** — source `77caba5f` lines 700–718; Possible predecessor `6276f296`:962; **UNREVIEWED**
+- `C06-A0189` — **C01-34 — Durable Capsule Content** — source `77caba5f` lines 719–744; Possible predecessor `6276f296`:641; **UNREVIEWED**
+- `C06-A0190` — **C01-35 — Atomic Suspension** — source `77caba5f` lines 745–759; Possible predecessor `6276f296`:397; **UNREVIEWED**
+- `C06-A0191` — **C01-36 — Missing or Corrupted Capsule** — source `77caba5f` lines 760–772; Possible predecessor `6276f296`:641; **UNREVIEWED**
+- `C06-A0192` — **C01-37 — Safe Resume Protocol** — source `77caba5f` lines 773–799; Possible predecessor `6276f296`:1041; **UNREVIEWED**
+- `C06-A0193` — **C01-38 — ResumeAssessment** — source `77caba5f` lines 800–824; Possible predecessor `6276f296`:746; **UNREVIEWED**
+- `C06-A0194` — **C01-39 — Relevant Change, Not Global Change** — source `77caba5f` lines 825–840; Possible predecessor `6276f296`:732; **UNREVIEWED**
+- `C06-A0195` — **C01-40 — Time-of-Check / Time-of-Use** — source `77caba5f` lines 841–852; Possible predecessor `6276f296`:746; **UNREVIEWED**
+- `C06-A0196` — **C01-41 — Unresolved Action Barrier** — source `77caba5f` lines 853–863; Possible predecessor `6276f296`:772; **UNREVIEWED**
+- `C06-A0197` — **C01-42 — TrustedEventBinding** — source `77caba5f` lines 864–888; Possible predecessor `6276f296`:824; **UNREVIEWED**
+- `C06-A0198` — **C01-43 — Semantic Review Boundary** — source `77caba5f` lines 889–900; Possible predecessor `6276f296`:33; **UNREVIEWED**
+- `C06-A0199` — **C01-44 — Monitoring Cannot Bypass ActionGate** — source `77caba5f` lines 901–911; Possible predecessor `6276f296`:746; **UNREVIEWED**
+- `C06-A0200` — **C01-45 — Fairness and Durable Backlog** — source `77caba5f` lines 912–926; Possible predecessor `6276f296`:985; **UNREVIEWED**
+- `C06-A0201` — **C01-46 — Late and Out-of-Order Events** — source `77caba5f` lines 927–934; Possible predecessor `6276f296`:846; **UNREVIEWED**
+- `C06-A0202` — **C01-47 — Recurring Backlog** — source `77caba5f` lines 935–947; Possible predecessor `6276f296`:112; **UNREVIEWED**
+- `C06-A0203` — **C01-48 — Threshold Stability** — source `77caba5f` lines 948–960; Possible predecessor `6276f296`:143; **UNREVIEWED**
+- `C06-A0204` — **C01-49 — End-to-End Audit Lineage** — source `77caba5f` lines 961–982; Possible predecessor `6276f296`:33; **UNREVIEWED**
+- `C06-A0205` — **C01-50 — Reaction Causal Chain Bound** — source `77caba5f` lines 983–1069; Possible predecessor `6276f296`:1041; **UNREVIEWED**
+- `C06-A0206` — **1. Freeze Criteria** — source `87d8aced` lines 8–27; Possible predecessor `77caba5f`:983; **UNREVIEWED**
+- `C06-A0207` — **2. Final Freeze Clarifications** — source `87d8aced` lines 28–65; Possible predecessor `6276f296`:75; **UNREVIEWED**
+- `C06-A0208` — **3. Adversarial Test Results** — source `87d8aced` lines 66–366; Possible predecessor `77caba5f`:983; **UNREVIEWED**
+- `C06-A0209` — **4. Freeze Review Matrix** — source `87d8aced` lines 367–388; Possible predecessor `6276f296`:1041; **UNREVIEWED**
+- `C06-A0210` — **5. Residual Implementation Gates** — source `87d8aced` lines 389–408; Possible predecessor `77caba5f`:162; **UNREVIEWED**
+- `C06-A0211` — **6. Final Governance Decision** — source `87d8aced` lines 409–430; Possible predecessor `6276f296`:1041; **UNREVIEWED**
+- `C06-A0212` — **7. Next Authorized Phase** — source `87d8aced` lines 431–481; Possible predecessor `6276f296`:742; **UNREVIEWED**
+
+### RDMS-06
+
+- `C06-A0213` — **1. Non-Negotiable Architecture** — source `1ed5a815` lines 20–58; Possible predecessor `4bcbb2bf`:59; **UNREVIEWED**
+- `C06-A0214` — **2. SpecialistCapabilityGrant** — source `1ed5a815` lines 59–95; Possible predecessor `4bcbb2bf`:185; **UNREVIEWED**
+- `C06-A0215` — **3. Capability Enforcement Protocol** — source `1ed5a815` lines 96–123; Possible predecessor `4bcbb2bf`:185; **UNREVIEWED**
+- `C06-A0216` — **4. Resource Identity Binding** — source `1ed5a815` lines 124–147; Possible predecessor `4bcbb2bf`:447; **UNREVIEWED**
+- `C06-A0217` — **5. Grant Expiration and Revocation** — source `1ed5a815` lines 148–170; Possible predecessor `4bcbb2bf`:1082; **UNREVIEWED**
+- `C06-A0218` — **6. Delegation Control** — source `1ed5a815` lines 171–207; Possible predecessor `4bcbb2bf`:185; **UNREVIEWED**
+- `C06-A0219` — **7. SpecialistIsolationProfile** — source `1ed5a815` lines 208–240; Possible predecessor `4bcbb2bf`:185; **UNREVIEWED**
+- `C06-A0220` — **8. Isolation Admission Rule** — source `1ed5a815` lines 241–261; Possible predecessor `4bcbb2bf`:324; **UNREVIEWED**
+- `C06-A0221` — **9. Specialist Evidence Validation** — source `1ed5a815` lines 262–302; Possible predecessor `4bcbb2bf`:468; **UNREVIEWED**
+- `C06-A0222` — **10. Evidence Origin Conservation** — source `1ed5a815` lines 303–321; Possible predecessor `4bcbb2bf`:570; **UNREVIEWED**
+- `C06-A0223` — **11. Transitive Content Trust** — source `1ed5a815` lines 322–342; Possible predecessor `4bcbb2bf`:1334; **UNREVIEWED**
+- `C06-A0224` — **12. No Authority Laundering** — source `1ed5a815` lines 343–364; Possible predecessor `4bcbb2bf`:522; **UNREVIEWED**
+- `C06-A0225` — **13. ReviewerContextManifest** — source `1ed5a815` lines 365–381; Possible predecessor `4bcbb2bf`:536; **UNREVIEWED**
+- `C06-A0226` — **14. Independence Semantics** — source `1ed5a815` lines 382–398; Possible predecessor `4bcbb2bf`:558; **UNREVIEWED**
+- `C06-A0227` — **15. Review Orientation** — source `1ed5a815` lines 399–412; Possible predecessor `4bcbb2bf`:558; **UNREVIEWED**
+- `C06-A0228` — **16. ResourceBudget Enforcement** — source `1ed5a815` lines 413–438; Possible predecessor `4bcbb2bf`:447; **UNREVIEWED**
+- `C06-A0229` — **17. Resource Accounting** — source `1ed5a815` lines 439–454; Possible predecessor `4bcbb2bf`:1010; **UNREVIEWED**
+- `C06-A0230` — **18. IntegrationOperation** — source `1ed5a815` lines 455–493; Possible predecessor `4bcbb2bf`:1048; **UNREVIEWED**
+- `C06-A0231` — **19. Integration Protocol** — source `1ed5a815` lines 494–532; Possible predecessor `4bcbb2bf`:1082; **UNREVIEWED**
+- `C06-A0232` — **20. Crash During Integration** — source `1ed5a815` lines 533–564; Possible predecessor `4bcbb2bf`:1100; **UNREVIEWED**
+- `C06-A0233` — **21. Conflict Analysis** — source `1ed5a815` lines 565–593; Possible predecessor `4bcbb2bf`:961; **UNREVIEWED**
+- `C06-A0234` — **22. Core Principle** — source `1ed5a815` lines 594–607; Possible predecessor `4bcbb2bf`:591; **UNREVIEWED**
+- `C06-A0235` — **23. DependencyCaptureReceipt** — source `1ed5a815` lines 608–639; Possible predecessor `4bcbb2bf`:694; **UNREVIEWED**
+- `C06-A0236` — **24. Dependency Completeness Boundary** — source `1ed5a815` lines 640–653; Possible predecessor `4bcbb2bf`:591; **UNREVIEWED**
+- `C06-A0237` — **25. Trusted Dependency Attestation** — source `1ed5a815` lines 654–671; Possible predecessor `4bcbb2bf`:643; **UNREVIEWED**
+- `C06-A0238` — **26. FreshnessRequirement Ownership** — source `1ed5a815` lines 672–691; Possible predecessor `4bcbb2bf`:643; **UNREVIEWED**
+- `C06-A0239` — **27. Compatibility Proof** — source `1ed5a815` lines 692–715; Possible predecessor `4bcbb2bf`:643; **UNREVIEWED**
+- `C06-A0240` — **28. QueryUniverseContract** — source `1ed5a815` lines 716–739; Possible predecessor `4bcbb2bf`:884; **UNREVIEWED**
+- `C06-A0241` — **29. Existing Members vs New Entrants** — source `1ed5a815` lines 740–757; Possible predecessor `4bcbb2bf`:937; **UNREVIEWED**
+- `C06-A0242` — **30. NegativeQueryProof** — source `1ed5a815` lines 758–793; Possible predecessor `4bcbb2bf`:911; **UNREVIEWED**
+- `C06-A0243` — **31. DependencyEvaluationUniverse** — source `1ed5a815` lines 794–825; Possible predecessor `4bcbb2bf`:735; **UNREVIEWED**
+- `C06-A0244` — **32. Index Consistency** — source `1ed5a815` lines 826–843; Possible predecessor `4bcbb2bf`:961; **UNREVIEWED**
+- `C06-A0245` — **33. DependencyLineageGraph** — source `1ed5a815` lines 844–868; Possible predecessor `4bcbb2bf`:694; **UNREVIEWED**
+- `C06-A0246` — **34. Evaluation Rules** — source `1ed5a815` lines 869–881; Possible predecessor `4bcbb2bf`:972; **UNREVIEWED**
+- `C06-A0247` — **35. Partial Staleness** — source `1ed5a815` lines 882–893; Possible predecessor `4bcbb2bf`:1334; **UNREVIEWED**
+- `C06-A0248` — **36. No Universal Invalidation** — source `1ed5a815` lines 894–900; Possible predecessor `4bcbb2bf`:1193; **UNREVIEWED**
+- `C06-A0249` — **37. Stable Recruitment Identity** — source `1ed5a815` lines 901–927; Possible predecessor `4bcbb2bf`:146; **UNREVIEWED**
+- `C06-A0250` — **38. SpecialistRunIdentity** — source `1ed5a815` lines 928–946; Possible predecessor `4bcbb2bf`:185; **UNREVIEWED**
+- `C06-A0251` — **39. Integration Application Idempotency** — source `1ed5a815` lines 947–965; Possible predecessor `4bcbb2bf`:1100; **UNREVIEWED**
+- `C06-A0252` — **40. Late Specialist Results** — source `1ed5a815` lines 966–984; Possible predecessor `4bcbb2bf`:185; **UNREVIEWED**
+- `C06-A0253` — **41. Unresolved World Actions** — source `1ed5a815` lines 985–999; Possible predecessor `4bcbb2bf`:1334; **UNREVIEWED**
+- `C06-A0254` — **42. H01 — Intentional Independent Specialists** — source `1ed5a815` lines 1000–1005; Possible predecessor `4bcbb2bf`:536; **UNREVIEWED**
+- `C06-A0255` — **43. H02 — Context Disclosure** — source `1ed5a815` lines 1006–1022; Possible predecessor `4bcbb2bf`:1334; **UNREVIEWED**
+- `C06-A0256` — **44. H03 — Scheduler Fairness** — source `1ed5a815` lines 1023–1033; Possible predecessor `4bcbb2bf`:1334; **UNREVIEWED**
+- `C06-A0257` — **45. H04 — Provider Cost Attribution** — source `1ed5a815` lines 1034–1045; Possible predecessor `4bcbb2bf`:146; **UNREVIEWED**
+- `C06-A0258` — **46. H05 — Integration Auditability** — source `1ed5a815` lines 1046–1062; Possible predecessor `4bcbb2bf`:1082; **UNREVIEWED**
+- `C06-A0259` — **47. H06 — Revalidation Storm Control** — source `1ed5a815` lines 1063–1707; Possible predecessor `4bcbb2bf`:1334; **UNREVIEWED**
+
+### RDMS-07
+
+- `C06-A0260` — **1. Canonical Learning Architecture** — source `5ee62ad7` lines 26–74; Possible predecessor `938c1bc7`:144; **UNREVIEWED**
+- `C06-A0261` — **2. Verified Episode Source Binding** — source `5ee62ad7` lines 75–110; Possible predecessor `938c1bc7`:221; **UNREVIEWED**
+- `C06-A0262` — **3. Episode Completeness** — source `5ee62ad7` lines 111–143; Possible predecessor `938c1bc7`:1513; **UNREVIEWED**
+- `C06-A0263` — **4. Historical Event vs Interpretation** — source `5ee62ad7` lines 144–160; Possible predecessor `938c1bc7`:63; **UNREVIEWED**
+- `C06-A0264` — **5. MemoryEvidenceLineage** — source `5ee62ad7` lines 161–183; Possible predecessor `938c1bc7`:470; **UNREVIEWED**
+- `C06-A0265` — **6. No Evidence Multiplication** — source `5ee62ad7` lines 184–207; Possible predecessor `938c1bc7`:1309; **UNREVIEWED**
+- `C06-A0266` — **7. Circular Support Detection** — source `5ee62ad7` lines 208–230; Possible predecessor `938c1bc7`:1513; **UNREVIEWED**
+- `C06-A0267` — **8. Memory Claim Semantics** — source `5ee62ad7` lines 231–265; Possible predecessor `938c1bc7`:762; **UNREVIEWED**
+- `C06-A0268` — **9. Causal Memory Promotion** — source `5ee62ad7` lines 266–283; Possible predecessor `938c1bc7`:1444; **UNREVIEWED**
+- `C06-A0269` — **10. MaturityPromotionAssessment** — source `5ee62ad7` lines 284–321; Possible predecessor `938c1bc7`:1458; **UNREVIEWED**
+- `C06-A0270` — **11. Scope Expansion Rule** — source `5ee62ad7` lines 322–337; Possible predecessor `938c1bc7`:387; **UNREVIEWED**
+- `C06-A0271` — **12. Evidence Diversity** — source `5ee62ad7` lines 338–358; Possible predecessor `938c1bc7`:144; **UNREVIEWED**
+- `C06-A0272` — **13. MemoryProposalSnapshot** — source `5ee62ad7` lines 359–390; Possible predecessor `938c1bc7`:470; **UNREVIEWED**
+- `C06-A0273` — **14. Authorization Binding** — source `5ee62ad7` lines 391–408; Possible predecessor `938c1bc7`:522; **UNREVIEWED**
+- `C06-A0274` — **15. Commit-Time Revalidation** — source `5ee62ad7` lines 409–434; Possible predecessor `938c1bc7`:571; **UNREVIEWED**
+- `C06-A0275` — **16. Observation Frontier** — source `5ee62ad7` lines 435–445; Possible predecessor `938c1bc7`:571; **UNREVIEWED**
+- `C06-A0276` — **17. MemoryUseAssessment** — source `5ee62ad7` lines 446–478; Possible predecessor `938c1bc7`:1029; **UNREVIEWED**
+- `C06-A0277` — **18. Historical Knowledge Is Not Current Fact** — source `5ee62ad7` lines 479–498; Possible predecessor `938c1bc7`:668; **UNREVIEWED**
+- `C06-A0278` — **19. Retrieval Eligibility** — source `5ee62ad7` lines 499–514; Possible predecessor `938c1bc7`:1067; **UNREVIEWED**
+- `C06-A0279` — **20. Retrieval Coverage** — source `5ee62ad7` lines 515–540; Possible predecessor `938c1bc7`:1067; **UNREVIEWED**
+- `C06-A0280` — **21. Procedure Invocation Boundary** — source `5ee62ad7` lines 541–564; Possible predecessor `938c1bc7`:1328; **UNREVIEWED**
+- `C06-A0281` — **22. Procedure Applicability** — source `5ee62ad7` lines 565–588; Possible predecessor `938c1bc7`:785; **UNREVIEWED**
+- `C06-A0282` — **23. Transitive Memory Trust** — source `5ee62ad7` lines 589–610; Possible predecessor `938c1bc7`:1309; **UNREVIEWED**
+- `C06-A0283` — **24. Instruction Authority Conservation** — source `5ee62ad7` lines 611–632; Possible predecessor `938c1bc7`:101; **UNREVIEWED**
+- `C06-A0284` — **25. Canonical Memory Head** — source `5ee62ad7` lines 633–656; Possible predecessor `938c1bc7`:182; **UNREVIEWED**
+- `C06-A0285` — **26. Memory Status Separation** — source `5ee62ad7` lines 657–685; Possible predecessor `938c1bc7`:622; **UNREVIEWED**
+- `C06-A0286` — **27. Scope-Aware Contradiction** — source `5ee62ad7` lines 686–709; Possible predecessor `938c1bc7`:1179; **UNREVIEWED**
+- `C06-A0287` — **28. Contradiction Governance** — source `5ee62ad7` lines 710–728; Possible predecessor `938c1bc7`:1206; **UNREVIEWED**
+- `C06-A0288` — **29. MemoryDerivationGraph** — source `5ee62ad7` lines 729–750; Possible predecessor `938c1bc7`:587; **UNREVIEWED**
+- `C06-A0289` — **30. Transitive Invalidation** — source `5ee62ad7` lines 751–776; Possible predecessor `938c1bc7`:1513; **UNREVIEWED**
+- `C06-A0290` — **31. Support Graph Cycles** — source `5ee62ad7` lines 777–786; Possible predecessor `938c1bc7`:740; **UNREVIEWED**
+- `C06-A0291` — **32. MemoryConsolidationAssessment** — source `5ee62ad7` lines 787–809; Possible predecessor `938c1bc7`:1370; **UNREVIEWED**
+- `C06-A0292` — **33. Consolidation Rules** — source `5ee62ad7` lines 810–830; Possible predecessor `938c1bc7`:1513; **UNREVIEWED**
+- `C06-A0293` — **34. Memory Access Policy** — source `5ee62ad7` lines 831–854; Possible predecessor `938c1bc7`:1029; **UNREVIEWED**
+- `C06-A0294` — **35. Derived Information Restrictions** — source `5ee62ad7` lines 855–871; Possible predecessor `938c1bc7`:1250; **UNREVIEWED**
+- `C06-A0295` — **36. Epistemic Retirement vs Physical Erasure** — source `5ee62ad7` lines 872–887; Possible predecessor `938c1bc7`:1259; **UNREVIEWED**
+- `C06-A0296` — **37. Erasure Architecture Contract** — source `5ee62ad7` lines 888–913; Possible predecessor `938c1bc7`:144; **UNREVIEWED**
+- `C06-A0297` — **38. Append-Only Compatibility** — source `5ee62ad7` lines 914–931; Possible predecessor `938c1bc7`:1341; **UNREVIEWED**
+- `C06-A0298` — **39. RDMS-09 Boundary** — source `5ee62ad7` lines 932–948; Possible predecessor `938c1bc7`:1388; **UNREVIEWED**
+- `C06-A0299` — **40. Canonical Memory Schema** — source `5ee62ad7` lines 949–980; Possible predecessor `938c1bc7`:470; **UNREVIEWED**
+- `C06-A0300` — **41. Provider Migration** — source `5ee62ad7` lines 981–997; Possible predecessor `938c1bc7`:1424; **UNREVIEWED**
+- `C06-A0301` — **42. MemoryRevisionTransaction** — source `5ee62ad7` lines 998–1023; Possible predecessor `938c1bc7`:571; **UNREVIEWED**
+- `C06-A0302` — **43. Concurrent Revision Conflict** — source `5ee62ad7` lines 1024–1035; Possible predecessor `938c1bc7`:1179; **UNREVIEWED**
+- `C06-A0303` — **44. Promotion Replay** — source `5ee62ad7` lines 1036–1046; Possible predecessor `938c1bc7`:1444; **UNREVIEWED**
+- `C06-A0304` — **45. H01 — Confidence Calibration** — source `5ee62ad7` lines 1047–1052; Possible predecessor `938c1bc7`:470; **UNREVIEWED**
+- `C06-A0305` — **46. H02 — Memory Growth Governance** — source `5ee62ad7` lines 1053–1064; Possible predecessor `938c1bc7`:470; **UNREVIEWED**
+- `C06-A0306` — **47. H03 — Retrieval Diversity** — source `5ee62ad7` lines 1065–1075; Possible predecessor `938c1bc7`:991; **UNREVIEWED**
+- `C06-A0307` — **48. H04 — Knowledge Identity** — source `5ee62ad7` lines 1076–1086; Possible predecessor `938c1bc7`:1341; **UNREVIEWED**
+- `C06-A0308` — **49. H05 — Derived Index Recovery** — source `5ee62ad7` lines 1087–1097; Possible predecessor `938c1bc7`:1473; **UNREVIEWED**
+- `C06-A0309` — **50. H06 — Learning Budget** — source `5ee62ad7` lines 1098–1108; Possible predecessor `938c1bc7`:1357; **UNREVIEWED**
+- `C06-A0310` — **51. H07 — Memory Quality Monitoring** — source `5ee62ad7` lines 1109–1220; Possible predecessor `938c1bc7`:1513; **UNREVIEWED**
+- `C06-A0311` — **1. Freeze Acceptance Criteria** — source `5ee62ad7` lines 1221–1244; Possible predecessor `938c1bc7`:1513; **UNREVIEWED**
+- `C06-A0312` — **2. EXPERIENCE AND EVIDENCE ATTACKS** — source `5ee62ad7` lines 1245–1295; Possible predecessor `938c1bc7`:144; **UNREVIEWED**
+- `C06-A0313` — **3. MATURITY AND LEARNING AUTHORITY** — source `5ee62ad7` lines 1296–1344; Possible predecessor `938c1bc7`:571; **UNREVIEWED**
+- `C06-A0314` — **4. RETRIEVAL AND PROCEDURAL SAFETY** — source `5ee62ad7` lines 1345–1385; Possible predecessor `938c1bc7`:1328; **UNREVIEWED**
+- `C06-A0315` — **5. MEMORY EVOLUTION** — source `5ee62ad7` lines 1386–1438; Possible predecessor `938c1bc7`:522; **UNREVIEWED**
+- `C06-A0316` — **6. PRIVACY AND PORTABILITY** — source `5ee62ad7` lines 1439–1485; Possible predecessor `938c1bc7`:587; **UNREVIEWED**
+- `C06-A0317` — **7. CONCURRENCY AND RECOVERY** — source `5ee62ad7` lines 1486–1526; Possible predecessor `938c1bc7`:1444; **UNREVIEWED**
+- `C06-A0318` — **8. SECOND-ROUND EDGE CASES** — source `5ee62ad7` lines 1527–1591; Possible predecessor `938c1bc7`:522; **UNREVIEWED**
+- `C06-A0319` — **9. FREEZE REVIEW MATRIX** — source `5ee62ad7` lines 1592–1616; Possible predecessor `938c1bc7`:144; **UNREVIEWED**
+- `C06-A0320` — **10. RESIDUAL IMPLEMENTATION GATES** — source `5ee62ad7` lines 1617–1654; Possible predecessor `938c1bc7`:1444; **UNREVIEWED**
+- `C06-A0321` — **11. FINAL FREEZE DECISION** — source `5ee62ad7` lines 1655–1681; Possible predecessor `938c1bc7`:63; **UNREVIEWED**
+- `C06-A0322` — **12. NEXT AUTHORIZED PHASE** — source `5ee62ad7` lines 1682–1748; Possible predecessor `938c1bc7`:1513; **UNREVIEWED**
+
+### RDMS-08
+
+- `C06-A0323` — **1. The Central Executive Law** — source `a0f04ffe` lines 22–67; Possible predecessor `c955b372`:109; **UNREVIEWED**
+- `C06-A0324` — **2. Fundamental Separation** — source `a0f04ffe` lines 68–88; Possible predecessor `c955b372`:1837; **UNREVIEWED**
+- `C06-A0325` — **3. ExecutiveAuthorizationBinding** — source `a0f04ffe` lines 89–119; Possible predecessor `c955b372`:230; **UNREVIEWED**
+- `C06-A0326` — **4. Authorization Issuance** — source `a0f04ffe` lines 120–152; Possible predecessor `c955b372`:230; **UNREVIEWED**
+- `C06-A0327` — **5. Semantic Authority Preservation** — source `a0f04ffe` lines 153–169; Possible predecessor `c955b372`:132; **UNREVIEWED**
+- `C06-A0328` — **6. Legal Operation Mapping** — source `a0f04ffe` lines 170–199; Possible predecessor `c955b372`:501; **UNREVIEWED**
+- `C06-A0329` — **7. Transition Eligibility** — source `a0f04ffe` lines 200–233; Possible predecessor `c955b372`:279; **UNREVIEWED**
+- `C06-A0330` — **8. No Implicit State Creation** — source `a0f04ffe` lines 234–246; Possible predecessor `c955b372`:501; **UNREVIEWED**
+- `C06-A0331` — **9. ControlDecisionTransaction** — source `a0f04ffe` lines 247–270; Possible predecessor `c955b372`:230; **UNREVIEWED**
+- `C06-A0332` — **10. Atomic Control Boundary** — source `a0f04ffe` lines 271–284; Possible predecessor `c955b372`:548; **UNREVIEWED**
+- `C06-A0333` — **11. Separate World Effects** — source `a0f04ffe` lines 285–299; Possible predecessor `c955b372`:548; **UNREVIEWED**
+- `C06-A0334` — **12. ReadinessSnapshot** — source `a0f04ffe` lines 300–327; Possible predecessor `c955b372`:230; **UNREVIEWED**
+- `C06-A0335` — **13. Readiness Revalidation** — source `a0f04ffe` lines 328–347; Possible predecessor `c955b372`:992; **UNREVIEWED**
+- `C06-A0336` — **14. Readiness Is Not Permission** — source `a0f04ffe` lines 348–355; Possible predecessor `c955b372`:1021; **UNREVIEWED**
+- `C06-A0337` — **15. MandatoryContextManifest** — source `a0f04ffe` lines 356–384; Possible predecessor `c955b372`:328; **UNREVIEWED**
+- `C06-A0338` — **16. Context Safety Rule** — source `a0f04ffe` lines 385–396; Possible predecessor `c955b372`:1967; **UNREVIEWED**
+- `C06-A0339` — **17. Context Is Operation-Specific** — source `a0f04ffe` lines 397–405; Possible predecessor `c955b372`:548; **UNREVIEWED**
+- `C06-A0340` — **18. DecisionEstimate** — source `a0f04ffe` lines 406–431; Possible predecessor `c955b372`:548; **UNREVIEWED**
+- `C06-A0341` — **19. Estimate Rules** — source `a0f04ffe` lines 432–451; Possible predecessor `c955b372`:2140; **UNREVIEWED**
+- `C06-A0342` — **20. Unknown Estimates** — source `a0f04ffe` lines 452–462; Possible predecessor `c955b372`:548; **UNREVIEWED**
+- `C06-A0343` — **21. AggregateDecisionRisk** — source `a0f04ffe` lines 463–484; Possible predecessor `c955b372`:1383; **UNREVIEWED**
+- `C06-A0344` — **22. Gravity Inheritance** — source `a0f04ffe` lines 485–498; Possible predecessor `c955b372`:672; **UNREVIEWED**
+- `C06-A0345` — **23. Risk Reclassification** — source `a0f04ffe` lines 499–507; Possible predecessor `c955b372`:1939; **UNREVIEWED**
+- `C06-A0346` — **24. Conservative Selection Policy** — source `a0f04ffe` lines 508–513; Possible predecessor `c955b372`:424; **UNREVIEWED**
+- `C06-A0347` — **1. Determine mandatory obligations.** — source `a0f04ffe` lines 514–515; Possible predecessor `c955b372`:631; **UNREVIEWED**
+- `C06-A0348` — **2. Remove operations that violate hard constraints.** — source `a0f04ffe` lines 516–517; Possible predecessor `c955b372`:635; **UNREVIEWED**
+- `C06-A0349` — **3. Identify critical unknowns.** — source `a0f04ffe` lines 518–519; Possible predecessor `c955b372`:633; **UNREVIEWED**
+- `C06-A0350` — **4. Determine whether information acquisition is required.** — source `a0f04ffe` lines 520–521; Possible predecessor `c955b372`:749; **UNREVIEWED**
+- `C06-A0351` — **5. Eliminate clearly dominated operations.** — source `a0f04ffe` lines 522–523; Possible predecessor `c955b372`:635; **UNREVIEWED**
+- `C06-A0352` — **6. Compare admissible operations.** — source `a0f04ffe` lines 524–525; Possible predecessor `c955b372`:637; **UNREVIEWED**
+- `C06-A0353` — **7. Select a justified operation.** — source `a0f04ffe` lines 526–527; Possible predecessor `c955b372`:464; **UNREVIEWED**
+- `C06-A0354` — **8. Record stopping and revisit conditions.** — source `a0f04ffe` lines 528–528; Possible predecessor `c955b372`:631; **UNREVIEWED**
+- `C06-A0355` — **25. No Artificial Utility Score** — source `a0f04ffe` lines 529–542; Possible predecessor `c955b372`:610; **UNREVIEWED**
+- `C06-A0356` — **26. Incomparable Operations** — source `a0f04ffe` lines 543–557; Possible predecessor `c955b372`:171; **UNREVIEWED**
+- `C06-A0357` — **27. CognitiveLoopStabilityAssessment** — source `a0f04ffe` lines 558–582; Possible predecessor `c955b372`:1189; **UNREVIEWED**
+- `C06-A0358` — **28. Repetition Detection** — source `a0f04ffe` lines 583–596; Possible predecessor `c955b372`:1189; **UNREVIEWED**
+- `C06-A0359` — **29. Bounded Deliberation** — source `a0f04ffe` lines 597–617; Possible predecessor `c955b372`:1304; **UNREVIEWED**
+- `C06-A0360` — **30. Avoid False Stagnation** — source `a0f04ffe` lines 618–626; Possible predecessor `c955b372`:1726; **UNREVIEWED**
+- `C06-A0361` — **31. NoAdmissibleOperationResolution** — source `a0f04ffe` lines 627–650; Possible predecessor `c955b372`:328; **UNREVIEWED**
+- `C06-A0362` — **32. Safe Fallback** — source `a0f04ffe` lines 651–670; Possible predecessor `c955b372`:266; **UNREVIEWED**
+- `C06-A0363` — **33. Safety Obligation Exception** — source `a0f04ffe` lines 671–677; Possible predecessor `c955b372`:109; **UNREVIEWED**
+- `C06-A0364` — **34. HumanDecisionBinding** — source `a0f04ffe` lines 678–700; Possible predecessor `c955b372`:585; **UNREVIEWED**
+- `C06-A0365` — **35. Human Response Semantics** — source `a0f04ffe` lines 701–711; Possible predecessor `c955b372`:1304; **UNREVIEWED**
+- `C06-A0366` — **36. Late Human Answers** — source `a0f04ffe` lines 712–726; Possible predecessor `c955b372`:805; **UNREVIEWED**
+- `C06-A0367` — **37. SimulationUseContract** — source `a0f04ffe` lines 727–749; Possible predecessor `c955b372`:839; **UNREVIEWED**
+- `C06-A0368` — **38. Simulation Cannot Prove Reality** — source `a0f04ffe` lines 750–759; Possible predecessor `c955b372`:839; **UNREVIEWED**
+- `C06-A0369` — **39. Simulation-to-Readiness Rule** — source `a0f04ffe` lines 760–768; Possible predecessor `c955b372`:826; **UNREVIEWED**
+- `C06-A0370` — **40. SpikeExecutionContract** — source `a0f04ffe` lines 769–793; Possible predecessor `c955b372`:913; **UNREVIEWED**
+- `C06-A0371` — **41. Effect Classification** — source `a0f04ffe` lines 794–805; Possible predecessor `c955b372`:1967; **UNREVIEWED**
+- `C06-A0372` — **42. Spike Artifact Promotion** — source `a0f04ffe` lines 806–814; Possible predecessor `c955b372`:969; **UNREVIEWED**
+- `C06-A0373` — **43. ImplementationReadinessProof** — source `a0f04ffe` lines 815–841; Possible predecessor `c955b372`:992; **UNREVIEWED**
+- `C06-A0374` — **44. Readiness Conditions** — source `a0f04ffe` lines 842–863; Possible predecessor `c955b372`:1030; **UNREVIEWED**
+- `C06-A0375` — **45. Gravity-Dependent Depth** — source `a0f04ffe` lines 864–872; Possible predecessor `c955b372`:705; **UNREVIEWED**
+- `C06-A0376` — **46. Intent vs Actual Effects** — source `a0f04ffe` lines 873–888; Possible predecessor `c955b372`:1121; **UNREVIEWED**
+- `C06-A0377` — **47. ToolInvocationEffectAssessment** — source `a0f04ffe` lines 889–906; Possible predecessor `c955b372`:548; **UNREVIEWED**
+- `C06-A0378` — **48. No Cognitive Label Bypass** — source `a0f04ffe` lines 907–919; Possible predecessor `c955b372`:501; **UNREVIEWED**
+- `C06-A0379` — **49. DelegationPortfolioAssessment** — source `a0f04ffe` lines 920–942; Possible predecessor `c955b372`:328; **UNREVIEWED**
+- `C06-A0380` — **50. Marginal Delegation Rule** — source `a0f04ffe` lines 943–951; Possible predecessor `c955b372`:913; **UNREVIEWED**
+- `C06-A0381` — **51. Delegation Does Not Evade Budget** — source `a0f04ffe` lines 952–958; Possible predecessor `c955b372`:1967; **UNREVIEWED**
+- `C06-A0382` — **52. ReplanningImpactAssessment** — source `a0f04ffe` lines 959–977; Possible predecessor `c955b372`:1383; **UNREVIEWED**
+- `C06-A0383` — **53. Transitive Impact** — source `a0f04ffe` lines 978–993; Possible predecessor `c955b372`:22; **UNREVIEWED**
+- `C06-A0384` — **54. In-Flight Effects** — source `a0f04ffe` lines 994–1002; Possible predecessor `c955b372`:1121; **UNREVIEWED**
+- `C06-A0385` — **55. ProgressEvidenceAssessment** — source `a0f04ffe` lines 1003–1027; Possible predecessor `c955b372`:1189; **UNREVIEWED**
+- `C06-A0386` — **56. Two Progress Dimensions** — source `a0f04ffe` lines 1028–1041; Possible predecessor `c955b372`:1237; **UNREVIEWED**
+- `C06-A0387` — **57. Progress Integrity** — source `a0f04ffe` lines 1042–1057; Possible predecessor `c955b372`:1217; **UNREVIEWED**
+- `C06-A0388` — **58. Independent Verification** — source `a0f04ffe` lines 1058–1064; Possible predecessor `c955b372`:1146; **UNREVIEWED**
+- `C06-A0389` — **59. CognitiveInterruptAdmission** — source `a0f04ffe` lines 1065–1087; Possible predecessor `c955b372`:1383; **UNREVIEWED**
+- `C06-A0390` — **60. Interrupt Authority** — source `a0f04ffe` lines 1088–1098; Possible predecessor `c955b372`:1368; **UNREVIEWED**
+- `C06-A0391` — **61. Duplicate Events** — source `a0f04ffe` lines 1099–1105; Possible predecessor `c955b372`:230; **UNREVIEWED**
+- `C06-A0392` — **62. DispatchInterruptOrdering** — source `a0f04ffe` lines 1106–1131; Possible predecessor `c955b372`:627; **UNREVIEWED**
+- `C06-A0393` — **63. Serialization Boundary** — source `a0f04ffe` lines 1132–1137; Possible predecessor `c955b372`:230; **UNREVIEWED**
+- `C06-A0394` — **64. Long-Running Operations** — source `a0f04ffe` lines 1138–1144; Possible predecessor `c955b372`:381; **UNREVIEWED**
+- `C06-A0395` — **65. ExecutiveAttentionScheduling** — source `a0f04ffe` lines 1145–1163; Possible predecessor `c955b372`:407; **UNREVIEWED**
+- `C06-A0396` — **66. Fairness Policy** — source `a0f04ffe` lines 1164–1175; Possible predecessor `c955b372`:627; **UNREVIEWED**
+- `C06-A0397` — **67. Safety Precedence** — source `a0f04ffe` lines 1176–1181; Possible predecessor `c955b372`:631; **UNREVIEWED**
+- `C06-A0398` — **68. WIP Limit** — source `a0f04ffe` lines 1182–1188; Possible predecessor `c955b372`:455; **UNREVIEWED**
+- `C06-A0399` — **69. ReasoningResultAdoption** — source `a0f04ffe` lines 1189–1207; Possible predecessor `c955b372`:230; **UNREVIEWED**
+- `C06-A0400` — **70. Old Epoch Results** — source `a0f04ffe` lines 1208–1221; Possible predecessor `c955b372`:1702; **UNREVIEWED**
+- `C06-A0401` — **71. No Automatic Adoption** — source `a0f04ffe` lines 1222–1228; Possible predecessor `c955b372`:1967; **UNREVIEWED**
+- `C06-A0402` — **72. FinalizationEvidenceContract** — source `a0f04ffe` lines 1229–1253; Possible predecessor `c955b372`:1801; **UNREVIEWED**
+- `C06-A0403` — **73. Finalization Dispositions** — source `a0f04ffe` lines 1254–1269; Possible predecessor `c955b372`:1787; **UNREVIEWED**
+- `C06-A0404` — **74. Verified Completion Rule** — source `a0f04ffe` lines 1270–1279; Possible predecessor `c955b372`:1819; **UNREVIEWED**
+- `C06-A0405` — **75. Finalization Freshness** — source `a0f04ffe` lines 1280–1288; Possible predecessor `c955b372`:2140; **UNREVIEWED**
+- `C06-A0406` — **76. ExecutivePolicyBinding** — source `a0f04ffe` lines 1289–1309; Possible predecessor `c955b372`:109; **UNREVIEWED**
+- `C06-A0407` — **77. Policy Change** — source `a0f04ffe` lines 1310–1324; Possible predecessor `c955b372`:986; **UNREVIEWED**
+- `C06-A0408` — **78. No Silent Policy Drift** — source `a0f04ffe` lines 1325–1330; Possible predecessor `c955b372`:627; **UNREVIEWED**
+- `C06-A0409` — **79. In-Flight Effects** — source `a0f04ffe` lines 1331–1339; Possible predecessor `c955b372`:1121; **UNREVIEWED**
+- `C06-A0410` — **80. H01 — Decision Audit Cost** — source `a0f04ffe` lines 1340–1352; Possible predecessor `c955b372`:585; **UNREVIEWED**
+- `C06-A0411` — **81. H02 — Clarification Efficiency** — source `a0f04ffe` lines 1353–1366; Possible predecessor `c955b372`:585; **UNREVIEWED**
+- `C06-A0412` — **82. H03 — Provider Fallback** — source `a0f04ffe` lines 1367–1378; Possible predecessor `c955b372`:1901; **UNREVIEWED**
+- `C06-A0413` — **83. H04 — Cognitive Observability** — source `a0f04ffe` lines 1379–1387; Possible predecessor `c955b372`:464; **UNREVIEWED**
+- `C06-A0414` — **84. H05 — Decision Reproducibility** — source `a0f04ffe` lines 1388–1395; Possible predecessor `c955b372`:548; **UNREVIEWED**
+- `C06-A0415` — **85. H06 — Context Disclosure** — source `a0f04ffe` lines 1396–1401; Possible predecessor `c955b372`:1959; **UNREVIEWED**
+- `C06-A0416` — **86. H07 — Evaluation Integrity** — source `a0f04ffe` lines 1402–1531; Possible predecessor `c955b372`:1967; **UNREVIEWED**
+- `C06-A0417` — **1. Acceptance Criteria** — source `a0f04ffe` lines 1532–1555; Possible predecessor `c955b372`:1564; **UNREVIEWED**
+- `C06-A0418` — **2. Review Scope** — source `a0f04ffe` lines 1556–2153; Possible predecessor `c955b372`:2140; **UNREVIEWED**
+- `C06-A0419` — **1. يعرف ماذا يفعل** — source `a0f04ffe` lines 2154–2157; No lexical predecessor located; **UNREVIEWED**
+- `C06-A0420` — **2. يعرف متى يغيّر استراتيجيته** — source `a0f04ffe` lines 2158–2161; No lexical predecessor located; **UNREVIEWED**
+- `C06-A0421` — **3. يعرف حدود معرفته وسلطته** — source `a0f04ffe` lines 2162–2186; Possible predecessor `c955b372`:1967; **UNREVIEWED**
+
+### RDMS-09
+
+- `C06-A0422` — **1. Recovery Is Not a Second Authority** — source `74cf7fd3` lines 23–65; Possible predecessor `6ee1a6d1`:367; **UNREVIEWED**
+- `C06-A0423` — **2. Conserved Authorities** — source `74cf7fd3` lines 66–80; Possible predecessor `6ee1a6d1`:367; **UNREVIEWED**
+- `C06-A0424` — **3. Fundamental Recovery Separation** — source `74cf7fd3` lines 81–103; Possible predecessor `6ee1a6d1`:367; **UNREVIEWED**
+- `C06-A0425` — **4. RecoveryModeAuthorityContract** — source `74cf7fd3` lines 104–126; Possible predecessor `6ee1a6d1`:246; **UNREVIEWED**
+- `C06-A0426` — **5. Operational Modes** — source `74cf7fd3` lines 127–163; Possible predecessor `6ee1a6d1`:246; **UNREVIEWED**
+- `C06-A0427` — **6. Emergency Containment** — source `74cf7fd3` lines 164–189; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0428` — **7. RecoveryOwnershipLease** — source `74cf7fd3` lines 190–212; Possible predecessor `6ee1a6d1`:1465; **UNREVIEWED**
+- `C06-A0429` — **8. Single Recovery Owner Per Conflicting Scope** — source `74cf7fd3` lines 213–230; Possible predecessor `6ee1a6d1`:141; **UNREVIEWED**
+- `C06-A0430` — **9. Recovery Generation** — source `74cf7fd3` lines 231–243; Possible predecessor `6ee1a6d1`:310; **UNREVIEWED**
+- `C06-A0431` — **10. Lease Expiry Is Not World-Effect Cancellation** — source `74cf7fd3` lines 244–252; Possible predecessor `6ee1a6d1`:647; **UNREVIEWED**
+- `C06-A0432` — **11. RecoveryConsistencyManifest** — source `74cf7fd3` lines 253–281; Possible predecessor `6ee1a6d1`:454; **UNREVIEWED**
+- `C06-A0433` — **12. Three Levels of Integrity** — source `74cf7fd3` lines 282–304; Possible predecessor `6ee1a6d1`:437; **UNREVIEWED**
+- `C06-A0434` — **13. Missing Recovery-Critical Artifact** — source `74cf7fd3` lines 305–319; Possible predecessor `6ee1a6d1`:1007; **UNREVIEWED**
+- `C06-A0435` — **14. Incomplete Ledger** — source `74cf7fd3` lines 320–334; Possible predecessor `6ee1a6d1`:488; **UNREVIEWED**
+- `C06-A0436` — **15. DurabilityCapabilityAssessment** — source `74cf7fd3` lines 335–357; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0437` — **16. Durable Means Recoverably Durable** — source `74cf7fd3` lines 358–371; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0438` — **17. Replication and Failover** — source `74cf7fd3` lines 372–385; Possible predecessor `6ee1a6d1`:1580; **UNREVIEWED**
+- `C06-A0439` — **18. Fail-Closed Dispatch** — source `74cf7fd3` lines 386–393; Possible predecessor `6ee1a6d1`:663; **UNREVIEWED**
+- `C06-A0440` — **19. AuthorityAntiRollbackAssessment** — source `74cf7fd3` lines 394–414; Possible predecessor `6ee1a6d1`:367; **UNREVIEWED**
+- `C06-A0441` — **20. Backup Is Not Authority** — source `74cf7fd3` lines 415–428; Possible predecessor `6ee1a6d1`:367; **UNREVIEWED**
+- `C06-A0442` — **21. Monotonic Authority Recovery** — source `74cf7fd3` lines 429–436; Possible predecessor `6ee1a6d1`:367; **UNREVIEWED**
+- `C06-A0443` — **22. Lost Authority Frontier** — source `74cf7fd3` lines 437–450; Possible predecessor `6ee1a6d1`:367; **UNREVIEWED**
+- `C06-A0444` — **23. ExternalEffectRecoveryCoverage** — source `74cf7fd3` lines 451–473; Possible predecessor `6ee1a6d1`:310; **UNREVIEWED**
+- `C06-A0445` — **24. Recovery Point vs External Reality** — source `74cf7fd3` lines 474–485; Possible predecessor `6ee1a6d1`:573; **UNREVIEWED**
+- `C06-A0446` — **25. Required Recovery Search** — source `74cf7fd3` lines 486–499; Possible predecessor `6ee1a6d1`:614; **UNREVIEWED**
+- `C06-A0447` — **26. Irrecoverable History Gap** — source `74cf7fd3` lines 500–510; Possible predecessor `6ee1a6d1`:1364; **UNREVIEWED**
+- `C06-A0448` — **27. RecoveryProbeEvidence** — source `74cf7fd3` lines 511–535; Possible predecessor `6ee1a6d1`:614; **UNREVIEWED**
+- `C06-A0449` — **28. Probe Result Semantics** — source `74cf7fd3` lines 536–548; Possible predecessor `6ee1a6d1`:261; **UNREVIEWED**
+- `C06-A0450` — **29. Stale Probe Protection** — source `74cf7fd3` lines 549–561; Possible predecessor `6ee1a6d1`:691; **UNREVIEWED**
+- `C06-A0451` — **30. Probe Cannot Resolve Ambiguity** — source `74cf7fd3` lines 562–574; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0452` — **31. ActionRecoveryOwnership** — source `74cf7fd3` lines 575–595; Possible predecessor `6ee1a6d1`:614; **UNREVIEWED**
+- `C06-A0453` — **32. Single Conflicting-Effect Authority** — source `74cf7fd3` lines 596–601; Possible predecessor `6ee1a6d1`:367; **UNREVIEWED**
+- `C06-A0454` — **33. Reconciliation Is Not Compensation Authorization** — source `74cf7fd3` lines 602–607; Possible predecessor `6ee1a6d1`:602; **UNREVIEWED**
+- `C06-A0455` — **34. Ownership Transfer** — source `74cf7fd3` lines 608–622; Possible predecessor `6ee1a6d1`:1108; **UNREVIEWED**
+- `C06-A0456` — **35. CompensationEffectLineage** — source `74cf7fd3` lines 623–643; Possible predecessor `6ee1a6d1`:185; **UNREVIEWED**
+- `C06-A0457` — **36. Compensation Is Another World Action** — source `74cf7fd3` lines 644–655; Possible predecessor `6ee1a6d1`:614; **UNREVIEWED**
+- `C06-A0458` — **37. No Automatic Compensation Chain** — source `74cf7fd3` lines 656–671; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0459` — **38. Residual World State** — source `74cf7fd3` lines 672–684; Possible predecessor `6ee1a6d1`:647; **UNREVIEWED**
+- `C06-A0460` — **39. RecoverableProcessIdentity** — source `74cf7fd3` lines 685–705; Possible predecessor `6ee1a6d1`:614; **UNREVIEWED**
+- `C06-A0461` — **40. PID Is Not Sufficient** — source `74cf7fd3` lines 706–718; Possible predecessor `6ee1a6d1`:805; **UNREVIEWED**
+- `C06-A0462` — **41. Safe Termination** — source `74cf7fd3` lines 719–729; Possible predecessor `6ee1a6d1`:825; **UNREVIEWED**
+- `C06-A0463` — **42. Termination Does Not Prove Effect Reversal** — source `74cf7fd3` lines 730–739; Possible predecessor `6ee1a6d1`:825; **UNREVIEWED**
+- `C06-A0464` — **43. DownstreamFencingAssessment** — source `74cf7fd3` lines 740–762; Possible predecessor `6ee1a6d1`:310; **UNREVIEWED**
+- `C06-A0465` — **44. Fencing Boundaries** — source `74cf7fd3` lines 763–776; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0466` — **45. Unfenceable External Sessions** — source `74cf7fd3` lines 777–789; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0467` — **46. RecoveredInvocationBinding** — source `74cf7fd3` lines 790–812; Possible predecessor `6ee1a6d1`:865; **UNREVIEWED**
+- `C06-A0468` — **47. Delayed Response Rule** — source `74cf7fd3` lines 813–818; Possible predecessor `6ee1a6d1`:731; **UNREVIEWED**
+- `C06-A0469` — **48. Result Adoption** — source `74cf7fd3` lines 819–833; Possible predecessor `6ee1a6d1`:367; **UNREVIEWED**
+- `C06-A0470` — **49. TriggerRecoveryFrontier** — source `74cf7fd3` lines 834–854; Possible predecessor `6ee1a6d1`:908; **UNREVIEWED**
+- `C06-A0471` — **50. Source Cursor and Reaction Cursor** — source `74cf7fd3` lines 855–868; Possible predecessor `6ee1a6d1`:185; **UNREVIEWED**
+- `C06-A0472` — **51. Replay Safety** — source `74cf7fd3` lines 869–874; Possible predecessor `6ee1a6d1`:1383; **UNREVIEWED**
+- `C06-A0473` — **52. Edge Trigger Limitation** — source `74cf7fd3` lines 875–883; Possible predecessor `6ee1a6d1`:840; **UNREVIEWED**
+- `C06-A0474` — **53. SpecialistRecoveryOwnership** — source `74cf7fd3` lines 884–906; Possible predecessor `6ee1a6d1`:865; **UNREVIEWED**
+- `C06-A0475` — **54. No Duplicate Recruitment** — source `74cf7fd3` lines 907–920; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0476` — **55. Replacement Semantics** — source `74cf7fd3` lines 921–928; Possible predecessor `6ee1a6d1`:261; **UNREVIEWED**
+- `C06-A0477` — **56. Workspace Ownership** — source `74cf7fd3` lines 929–935; Possible predecessor `6ee1a6d1`:934; **UNREVIEWED**
+- `C06-A0478` — **57. RecoveryDependencyCoverage** — source `74cf7fd3` lines 936–954; Possible predecessor `6ee1a6d1`:960; **UNREVIEWED**
+- `C06-A0479` — **58. Incomplete Index Rule** — source `74cf7fd3` lines 955–966; Possible predecessor `6ee1a6d1`:488; **UNREVIEWED**
+- `C06-A0480` — **59. Conservative Fallback** — source `74cf7fd3` lines 967–972; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0481` — **60. Derived Index Rebuild** — source `74cf7fd3` lines 973–979; Possible predecessor `6ee1a6d1`:1025; **UNREVIEWED**
+- `C06-A0482` — **61. ObservationRecoveryCoverage** — source `74cf7fd3` lines 980–1000; Possible predecessor `6ee1a6d1`:367; **UNREVIEWED**
+- `C06-A0483` — **62. Missing Observation Is Not Success** — source `74cf7fd3` lines 1001–1012; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0484` — **63. Delayed Observation Ingress** — source `74cf7fd3` lines 1013–1023; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0485` — **64. Incomplete Observation History** — source `74cf7fd3` lines 1024–1030; Possible predecessor `6ee1a6d1`:488; **UNREVIEWED**
+- `C06-A0486` — **65. ScopedRecoveryAdmission** — source `74cf7fd3` lines 1031–1055; Possible predecessor `6ee1a6d1`:1492; **UNREVIEWED**
+- `C06-A0487` — **66. Partial Recovery** — source `74cf7fd3` lines 1056–1069; Possible predecessor `6ee1a6d1`:246; **UNREVIEWED**
+- `C06-A0488` — **67. Shared Dependency Rule** — source `74cf7fd3` lines 1070–1075; Possible predecessor `6ee1a6d1`:392; **UNREVIEWED**
+- `C06-A0489` — **68. Unknown Isolation** — source `74cf7fd3` lines 1076–1082; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0490` — **69. RecoveryTrustAnchorAssessment** — source `74cf7fd3` lines 1083–1103; Possible predecessor `6ee1a6d1`:1066; **UNREVIEWED**
+- `C06-A0491` — **70. Checksum vs Trusted Integrity** — source `74cf7fd3` lines 1104–1116; Possible predecessor `6ee1a6d1`:437; **UNREVIEWED**
+- `C06-A0492` — **71. Independent Trust Boundary** — source `74cf7fd3` lines 1117–1124; Possible predecessor `6ee1a6d1`:585; **UNREVIEWED**
+- `C06-A0493` — **72. All Trust Anchors Compromised** — source `74cf7fd3` lines 1125–1136; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0494` — **73. CredentialSessionRecoveryAssessment** — source `74cf7fd3` lines 1137–1157; Possible predecessor `6ee1a6d1`:805; **UNREVIEWED**
+- `C06-A0495` — **74. Four Distinct Claims** — source `74cf7fd3` lines 1158–1168; Possible predecessor `6ee1a6d1`:1230; **UNREVIEWED**
+- `C06-A0496` — **75. Revocation Limits** — source `74cf7fd3` lines 1169–1174; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0497` — **76. Security Incident Continuity** — source `74cf7fd3` lines 1175–1179; Possible predecessor `6ee1a6d1`:1052; **UNREVIEWED**
+- `C06-A0498` — **77. RecoveryContentTrustPreservation** — source `74cf7fd3` lines 1180–1198; Possible predecessor `6ee1a6d1`:1007; **UNREVIEWED**
+- `C06-A0499` — **78. Recovery Logs Are Data** — source `74cf7fd3` lines 1199–1210; Possible predecessor `6ee1a6d1`:96; **UNREVIEWED**
+- `C06-A0500` — **79. Trusted Recovery Instructions** — source `74cf7fd3` lines 1211–1217; Possible predecessor `6ee1a6d1`:367; **UNREVIEWED**
+- `C06-A0501` — **80. MigrationRecoveryManifest** — source `74cf7fd3` lines 1218–1241; Possible predecessor `6ee1a6d1`:310; **UNREVIEWED**
+- `C06-A0502` — **81. Partial Migration** — source `74cf7fd3` lines 1242–1254; Possible predecessor `6ee1a6d1`:647; **UNREVIEWED**
+- `C06-A0503` — **82. Migration Commit Boundaries** — source `74cf7fd3` lines 1255–1266; Possible predecessor `6ee1a6d1`:1202; **UNREVIEWED**
+- `C06-A0504` — **83. Unknown Migration State** — source `74cf7fd3` lines 1267–1277; Possible predecessor `6ee1a6d1`:1202; **UNREVIEWED**
+- `C06-A0505` — **84. UpgradeRollbackAssessment** — source `74cf7fd3` lines 1278–1300; Possible predecessor `6ee1a6d1`:1180; **UNREVIEWED**
+- `C06-A0506` — **85. Rollback Is Not Time Travel** — source `74cf7fd3` lines 1301–1304; Possible predecessor `6ee1a6d1`:520; **UNREVIEWED**
+- `C06-A0507` — **86. Rollback Eligibility** — source `74cf7fd3` lines 1305–1319; Possible predecessor `6ee1a6d1`:744; **UNREVIEWED**
+- `C06-A0508` — **87. DurableDataPlacementPolicy** — source `74cf7fd3` lines 1320–1340; Possible predecessor `6ee1a6d1`:1248; **UNREVIEWED**
+- `C06-A0509` — **88. Immutable Metadata Boundary** — source `74cf7fd3` lines 1341–1352; Possible predecessor `6ee1a6d1`:585; **UNREVIEWED**
+- `C06-A0510` — **89. Opaque References** — source `74cf7fd3` lines 1353–1367; Possible predecessor `6ee1a6d1`:437; **UNREVIEWED**
+- `C06-A0511` — **90. Already Contaminated Ledger** — source `74cf7fd3` lines 1368–1374; Possible predecessor `6ee1a6d1`:386; **UNREVIEWED**
+- `C06-A0512` — **91. ErasureCoverageAssessment** — source `74cf7fd3` lines 1375–1399; Possible predecessor `6ee1a6d1`:1291; **UNREVIEWED**
+- `C06-A0513` — **92. Transitive Data Lineage** — source `74cf7fd3` lines 1400–1421; Possible predecessor `6ee1a6d1`:1270; **UNREVIEWED**
+- `C06-A0514` — **93. External Copies** — source `74cf7fd3` lines 1422–1433; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0515` — **94. Physical Erasure Verification** — source `74cf7fd3` lines 1434–1444; Possible predecessor `6ee1a6d1`:1364; **UNREVIEWED**
+- `C06-A0516` — **95. ErasureAntiRollbackFrontier** — source `74cf7fd3` lines 1445–1463; Possible predecessor `6ee1a6d1`:1315; **UNREVIEWED**
+- `C06-A0517` — **96. Restore-Time Suppression** — source `74cf7fd3` lines 1464–1477; Possible predecessor `6ee1a6d1`:393; **UNREVIEWED**
+- `C06-A0518` — **97. Anti-Rollback Authority** — source `74cf7fd3` lines 1478–1487; Possible predecessor `6ee1a6d1`:367; **UNREVIEWED**
+- `C06-A0519` — **98. Restoration Does Not Reverse Erasure Legality** — source `74cf7fd3` lines 1488–1501; Possible predecessor `6ee1a6d1`:1291; **UNREVIEWED**
+- `C06-A0520` — **99. DataLifecycleConflictAssessment** — source `74cf7fd3` lines 1502–1522; Possible predecessor `6ee1a6d1`:1291; **UNREVIEWED**
+- `C06-A0521` — **100. Conflict Semantics** — source `74cf7fd3` lines 1523–1534; Possible predecessor `6ee1a6d1`:261; **UNREVIEWED**
+- `C06-A0522` — **101. Interim Protection** — source `74cf7fd3` lines 1535–1540; Possible predecessor `6ee1a6d1`:691; **UNREVIEWED**
+- `C06-A0523` — **102. Resolution Binding** — source `74cf7fd3` lines 1541–1553; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0524` — **103. RecoveryActionAuthorizationAssessment** — source `74cf7fd3` lines 1554–1576; Possible predecessor `6ee1a6d1`:614; **UNREVIEWED**
+- `C06-A0525` — **104. Destructive Recovery Is a World Action** — source `74cf7fd3` lines 1577–1586; Possible predecessor `6ee1a6d1`:614; **UNREVIEWED**
+- `C06-A0526` — **105. Preconditions** — source `74cf7fd3` lines 1587–1597; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0527` — **106. Unknown Destructive Impact** — source `74cf7fd3` lines 1598–1611; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0528` — **107. RecoveryProgressControl** — source `74cf7fd3` lines 1612–1636; Possible predecessor `6ee1a6d1`:1393; **UNREVIEWED**
+- `C06-A0529` — **108. Recovery Must Not Loop Indefinitely** — source `74cf7fd3` lines 1637–1646; Possible predecessor `6ee1a6d1`:345; **UNREVIEWED**
+- `C06-A0530` — **109. Failed Recovery Can Still Gain Evidence** — source `74cf7fd3` lines 1647–1658; Possible predecessor `6ee1a6d1`:141; **UNREVIEWED**
+- `C06-A0531` — **110. Safe Recovery Stopping** — source `74cf7fd3` lines 1659–1674; Possible predecessor `6ee1a6d1`:246; **UNREVIEWED**
+- `C06-A0532` — **111. RecoveryCase Continuity** — source `74cf7fd3` lines 1675–1681; Possible predecessor `6ee1a6d1`:310; **UNREVIEWED**
+- `C06-A0533` — **112. H01 — Measurable Recovery Objectives** — source `74cf7fd3` lines 1682–1694; Possible predecessor `6ee1a6d1`:573; **UNREVIEWED**
+- `C06-A0534` — **113. H02 — Recovery Observability** — source `74cf7fd3` lines 1695–1707; Possible predecessor `6ee1a6d1`:1465; **UNREVIEWED**
+- `C06-A0535` — **114. H03 — Backup Failure-Domain Independence** — source `74cf7fd3` lines 1708–1720; Possible predecessor `6ee1a6d1`:503; **UNREVIEWED**
+- `C06-A0536` — **115. H04 — Recovery Drills** — source `74cf7fd3` lines 1721–1733; Possible predecessor `6ee1a6d1`:96; **UNREVIEWED**
+- `C06-A0537` — **116. H05 — Recovery Backpressure** — source `74cf7fd3` lines 1734–1745; Possible predecessor `6ee1a6d1`:141; **UNREVIEWED**
+- `C06-A0538` — **117. H06 — Recovery Artifact Retention** — source `74cf7fd3` lines 1746–1757; Possible predecessor `6ee1a6d1`:310; **UNREVIEWED**
+- `C06-A0539` — **118. H07 — Human Escalation** — source `74cf7fd3` lines 1758–1770; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0540` — **119. H08 — Recovery Scalability** — source `74cf7fd3` lines 1771–1784; Possible predecessor `6ee1a6d1`:141; **UNREVIEWED**
+- `C06-A0541` — **120. Recovery Evidence Conservation** — source `74cf7fd3` lines 1785–1792; Possible predecessor `6ee1a6d1`:141; **UNREVIEWED**
+- `C06-A0542` — **121. Trust Before Execution** — source `74cf7fd3` lines 1793–1806; Possible predecessor `6ee1a6d1`:792; **UNREVIEWED**
+- `C06-A0543` — **122. Cross-Domain Recovery Barrier** — source `74cf7fd3` lines 1807–1820; Possible predecessor `6ee1a6d1`:96; **UNREVIEWED**
+- `C06-A0544` — **123. Recovery Admission Must Be Scope-Aware** — source `74cf7fd3` lines 1821–1829; Possible predecessor `6ee1a6d1`:141; **UNREVIEWED**
+- `C06-A0545` — **124. Recovery Cannot Upgrade Evidence** — source `74cf7fd3` lines 1830–1835; Possible predecessor `6ee1a6d1`:141; **UNREVIEWED**
+- `C06-A0546` — **125. Reconciliation Before Conflicting Continuation** — source `74cf7fd3` lines 1836–2044; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0547` — **1. هل استعدنا البيانات الصحيحة؟** — source `74cf7fd3` lines 2045–2047; Possible predecessor `6ee1a6d1`:26; **UNREVIEWED**
+- `C06-A0548` — **2. هل استعدنا السلطة الصحيحة؟** — source `74cf7fd3` lines 2048–2050; Possible predecessor `6ee1a6d1`:96; **UNREVIEWED**
+- `C06-A0549` — **3. هل نعرف ما حدث في العالم الخارجي؟** — source `74cf7fd3` lines 2051–2053; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0550` — **4. هل من القانوني والآمن استئناف العمل؟** — source `74cf7fd3` lines 2054–2072; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0551` — **1. Purpose** — source `d59160dd` lines 28–53; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0552` — **2. Fundamental Recovery Principle** — source `d59160dd` lines 54–69; Possible predecessor `6ee1a6d1`:68; **UNREVIEWED**
+- `C06-A0553` — **3. Three Independent Recovery Questions** — source `d59160dd` lines 70–88; Possible predecessor `74cf7fd3`:81; **UNREVIEWED**
+- `C06-A0554` — **4. Recovery Cannot Create Truth** — source `d59160dd` lines 89–115; Possible predecessor `74cf7fd3`:81; **UNREVIEWED**
+- `C06-A0555` — **5. Finding** — source `d59160dd` lines 116–127; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0556` — **6. Architectural Decision** — source `d59160dd` lines 128–145; Possible predecessor `74cf7fd3`:1836; **UNREVIEWED**
+- `C06-A0557` — **7. RecoveryBootstrapContract** — source `d59160dd` lines 146–175; Possible predecessor `6ee1a6d1`:310; **UNREVIEWED**
+- `C06-A0558` — **8. Bootstrap Principal** — source `d59160dd` lines 176–197; Possible predecessor `6ee1a6d1`:398; **UNREVIEWED**
+- `C06-A0559` — **9. Bootstrap Scope** — source `d59160dd` lines 198–226; Possible predecessor `74cf7fd3`:213; **UNREVIEWED**
+- `C06-A0560` — **10. Important Authority Boundary** — source `d59160dd` lines 227–234; Possible predecessor `6ee1a6d1`:367; **UNREVIEWED**
+- `C06-A0561` — **11. Bootstrap Procedure** — source `d59160dd` lines 235–257; Possible predecessor `6ee1a6d1`:141; **UNREVIEWED**
+- `C06-A0562` — **12. Bootstrap Failure** — source `d59160dd` lines 258–268; Possible predecessor `6ee1a6d1`:310; **UNREVIEWED**
+- `C06-A0563` — **13. Bootstrap Idempotency** — source `d59160dd` lines 269–277; Possible predecessor `74cf7fd3`:386; **UNREVIEWED**
+- `C06-A0564` — **14. Finding** — source `d59160dd` lines 278–287; Possible predecessor `74cf7fd3`:394; **UNREVIEWED**
+- `C06-A0565` — **15. RecoveryAuthorityFrontier** — source `d59160dd` lines 288–316; Possible predecessor `74cf7fd3`:253; **UNREVIEWED**
+- `C06-A0566` — **16. Authority Frontier Rules** — source `d59160dd` lines 317–332; Possible predecessor `74cf7fd3`:437; **UNREVIEWED**
+- `C06-A0567` — **17. Compatibility Requirement** — source `d59160dd` lines 333–356; Possible predecessor `6ee1a6d1`:1335; **UNREVIEWED**
+- `C06-A0568` — **18. Anti-Rollback Decision** — source `d59160dd` lines 357–368; Possible predecessor `74cf7fd3`:394; **UNREVIEWED**
+- `C06-A0569` — **19. Unknown Frontier** — source `d59160dd` lines 369–376; Possible predecessor `74cf7fd3`:437; **UNREVIEWED**
+- `C06-A0570` — **20. No Global Atomicity Assumption** — source `d59160dd` lines 377–387; Possible predecessor `6ee1a6d1`:978; **UNREVIEWED**
+- `C06-A0571` — **21. Finding** — source `d59160dd` lines 388–397; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0572` — **22. DurabilityFailureModel** — source `d59160dd` lines 398–423; Possible predecessor `74cf7fd3`:335; **UNREVIEWED**
+- `C06-A0573` — **23. Durability Classes** — source `d59160dd` lines 424–445; Possible predecessor `74cf7fd3`:335; **UNREVIEWED**
+- `C06-A0574` — **24. Write-Ahead Enforcement** — source `d59160dd` lines 446–465; Possible predecessor `74cf7fd3`:358; **UNREVIEWED**
+- `C06-A0575` — **25. Storage Failover** — source `d59160dd` lines 466–481; Possible predecessor `74cf7fd3`:372; **UNREVIEWED**
+- `C06-A0576` — **26. Out-of-Model Disaster** — source `d59160dd` lines 482–491; Possible predecessor `6ee1a6d1`:557; **UNREVIEWED**
+- `C06-A0577` — **27. Verification Requirement** — source `d59160dd` lines 492–498; Possible predecessor `74cf7fd3`:437; **UNREVIEWED**
+- `C06-A0578` — **28. Finding** — source `d59160dd` lines 499–508; Possible predecessor `74cf7fd3`:1836; **UNREVIEWED**
+- `C06-A0579` — **29. ExternalHistoryCoverageProof** — source `d59160dd` lines 509–535; Possible predecessor `74cf7fd3`:451; **UNREVIEWED**
+- `C06-A0580` — **30. Completeness Is a Positive Claim** — source `d59160dd` lines 536–551; Possible predecessor `74cf7fd3`:1836; **UNREVIEWED**
+- `C06-A0581` — **31. Recovery Coverage Dimensions** — source `d59160dd` lines 552–571; Possible predecessor `74cf7fd3`:451; **UNREVIEWED**
+- `C06-A0582` — **32. Lost Identity Problem** — source `d59160dd` lines 572–577; Possible predecessor `74cf7fd3`:437; **UNREVIEWED**
+- `C06-A0583` — **33. Conflicting Continuation Rule** — source `d59160dd` lines 578–589; Possible predecessor `74cf7fd3`:1836; **UNREVIEWED**
+- `C06-A0584` — **34. Independent Dispatch Evidence** — source `d59160dd` lines 590–605; Possible predecessor `74cf7fd3`:511; **UNREVIEWED**
+- `C06-A0585` — **35. No Exactly-Once Promise** — source `d59160dd` lines 606–614; Possible predecessor `74cf7fd3`:869; **UNREVIEWED**
+- `C06-A0586` — **36. Finding** — source `d59160dd` lines 615–624; Possible predecessor `74cf7fd3`:1836; **UNREVIEWED**
+- `C06-A0587` — **37. DispatchQuiescenceAssessment** — source `d59160dd` lines 625–651; Possible predecessor `74cf7fd3`:386; **UNREVIEWED**
+- `C06-A0588` — **38. Dispatch Cutover Principle** — source `d59160dd` lines 652–667; Possible predecessor `6ee1a6d1`:68; **UNREVIEWED**
+- `C06-A0589` — **39. Pre-Dispatch Guard** — source `d59160dd` lines 668–673; Possible predecessor `74cf7fd3`:386; **UNREVIEWED**
+- `C06-A0590` — **40. Previously Committed Dispatch** — source `d59160dd` lines 674–691; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0591` — **41. Quiescence Requirement** — source `d59160dd` lines 692–711; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0592` — **42. Late Dispatch Problem** — source `d59160dd` lines 712–719; Possible predecessor `6ee1a6d1`:715; **UNREVIEWED**
+- `C06-A0593` — **43. Compensation Interaction** — source `d59160dd` lines 720–725; Possible predecessor `74cf7fd3`:602; **UNREVIEWED**
+- `C06-A0594` — **44. Irreducible Uncertainty** — source `d59160dd` lines 726–734; Possible predecessor `6ee1a6d1`:707; **UNREVIEWED**
+- `C06-A0595` — **45. Finding** — source `d59160dd` lines 735–744; Possible predecessor `74cf7fd3`:1180; **UNREVIEWED**
+- `C06-A0596` — **46. RecoveryArtifactQuarantine** — source `d59160dd` lines 745–768; Possible predecessor `74cf7fd3`:1083; **UNREVIEWED**
+- `C06-A0597` — **47. Quarantine Must Precede Activation** — source `d59160dd` lines 769–784; Possible predecessor `6ee1a6d1`:1086; **UNREVIEWED**
+- `C06-A0598` — **48. Restore-Time Forbidden Operations** — source `d59160dd` lines 785–802; Possible predecessor `74cf7fd3`:1464; **UNREVIEWED**
+- `C06-A0599` — **49. Data That Becomes Executable** — source `d59160dd` lines 803–822; Possible predecessor `6ee1a6d1`:865; **UNREVIEWED**
+- `C06-A0600` — **50. Trusted Inspection** — source `d59160dd` lines 823–828; Possible predecessor `74cf7fd3`:1104; **UNREVIEWED**
+- `C06-A0601` — **51. Failed Quarantine** — source `d59160dd` lines 829–837; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0602` — **52. Finding** — source `d59160dd` lines 838–847; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0603` — **53. RecoveryDisclosureBarrier** — source `d59160dd` lines 848–875; Possible predecessor `74cf7fd3`:1807; **UNREVIEWED**
+- `C06-A0604` — **54. Suppression Before Disclosure** — source `d59160dd` lines 876–893; Possible predecessor `74cf7fd3`:1836; **UNREVIEWED**
+- `C06-A0605` — **55. Covered Exposure Paths** — source `d59160dd` lines 894–916; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0606` — **56. Necessary Internal Processing** — source `d59160dd` lines 917–932; Possible predecessor `6ee1a6d1`:68; **UNREVIEWED**
+- `C06-A0607` — **57. Missing Suppression Frontier** — source `d59160dd` lines 933–942; Possible predecessor `74cf7fd3`:1445; **UNREVIEWED**
+- `C06-A0608` — **58. Derived Data** — source `d59160dd` lines 943–950; Possible predecessor `6ee1a6d1`:986; **UNREVIEWED**
+- `C06-A0609` — **59. External Provider Boundary** — source `d59160dd` lines 951–957; Possible predecessor `6ee1a6d1`:585; **UNREVIEWED**
+- `C06-A0610` — **60. Finding** — source `d59160dd` lines 958–967; Possible predecessor `6ee1a6d1`:1202; **UNREVIEWED**
+- `C06-A0611` — **61. CanonicalSchemaVisibilityContract** — source `d59160dd` lines 968–993; Possible predecessor `74cf7fd3`:1218; **UNREVIEWED**
+- `C06-A0612` — **62. Single Authoritative Meaning** — source `d59160dd` lines 994–1001; Possible predecessor `74cf7fd3`:213; **UNREVIEWED**
+- `C06-A0613` — **63. Migration Visibility Phases** — source `d59160dd` lines 1002–1024; Possible predecessor `74cf7fd3`:1218; **UNREVIEWED**
+- `C06-A0614` — **64. Atomic Cutover Requirement** — source `d59160dd` lines 1025–1030; Possible predecessor `6ee1a6d1`:454; **UNREVIEWED**
+- `C06-A0615` — **65. Mixed-Version Readers** — source `d59160dd` lines 1031–1034; Possible predecessor `74cf7fd3`:1218; **UNREVIEWED**
+- `C06-A0616` — **66. Writer Compatibility** — source `d59160dd` lines 1035–1046; Possible predecessor `6ee1a6d1`:1335; **UNREVIEWED**
+- `C06-A0617` — **67. Crash Before Cutover** — source `d59160dd` lines 1047–1057; Possible predecessor `74cf7fd3`:1836; **UNREVIEWED**
+- `C06-A0618` — **68. Crash After Cutover** — source `d59160dd` lines 1058–1066; Possible predecessor `6ee1a6d1`:948; **UNREVIEWED**
+- `C06-A0619` — **69. Unknown Visibility State** — source `d59160dd` lines 1067–1075; Possible predecessor `74cf7fd3`:1024; **UNREVIEWED**
+- `C06-A0620` — **70. Finding** — source `d59160dd` lines 1076–1083; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0621` — **71. RecoveryAdmissionBinding** — source `d59160dd` lines 1084–1113; Possible predecessor `6ee1a6d1`:310; **UNREVIEWED**
+- `C06-A0622` — **72. Admission Is Scoped** — source `d59160dd` lines 1114–1123; Possible predecessor `74cf7fd3`:1031; **UNREVIEWED**
+- `C06-A0623` — **73. Admission Revalidation** — source `d59160dd` lines 1124–1143; Possible predecessor `74cf7fd3`:1031; **UNREVIEWED**
+- `C06-A0624` — **74. Admission Invalidation** — source `d59160dd` lines 1144–1165; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0625` — **75. Concurrent Admission and Revocation** — source `d59160dd` lines 1166–1173; Possible predecessor `6ee1a6d1`:367; **UNREVIEWED**
+- `C06-A0626` — **76. Degraded Admission** — source `d59160dd` lines 1174–1191; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0627` — **77. Finding** — source `d59160dd` lines 1192–1201; Possible predecessor `6ee1a6d1`:310; **UNREVIEWED**
+- `C06-A0628` — **78. RecoverySuspensionCommitment** — source `d59160dd` lines 1202–1225; Possible predecessor `74cf7fd3`:1612; **UNREVIEWED**
+- `C06-A0629` — **79. Suspension Is Not Obligation Removal** — source `d59160dd` lines 1226–1239; Possible predecessor `6ee1a6d1`:585; **UNREVIEWED**
+- `C06-A0630` — **80. Durable Reactivation** — source `d59160dd` lines 1240–1253; Possible predecessor `6ee1a6d1`:390; **UNREVIEWED**
+- `C06-A0631` — **81. Atomic Suspension Requirements** — source `d59160dd` lines 1254–1267; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0632` — **82. Recovery Trigger Ordering** — source `d59160dd` lines 1268–1290; Possible predecessor `74cf7fd3`:834; **UNREVIEWED**
+- `C06-A0633` — **83. Source Cursor vs Reaction Commit** — source `d59160dd` lines 1291–1302; Possible predecessor `74cf7fd3`:855; **UNREVIEWED**
+- `C06-A0634` — **84. At-Least-Once Detection** — source `d59160dd` lines 1303–1308; Possible predecessor `74cf7fd3`:834; **UNREVIEWED**
+- `C06-A0635` — **85. Non-Replayable Sources** — source `d59160dd` lines 1309–1324; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0636` — **86. Recovery Reactivation Failure** — source `d59160dd` lines 1325–1331; Possible predecessor `6ee1a6d1`:310; **UNREVIEWED**
+- `C06-A0637` — **87. Recovery Safety Barrier** — source `d59160dd` lines 1332–1353; Possible predecessor `74cf7fd3`:1807; **UNREVIEWED**
+- `C06-A0638` — **88. No Shadow Authority** — source `d59160dd` lines 1354–1369; Possible predecessor `6ee1a6d1`:367; **UNREVIEWED**
+- `C06-A0639` — **89. Fail-Closed Scope** — source `d59160dd` lines 1370–1389; Possible predecessor `74cf7fd3`:386; **UNREVIEWED**
+- `C06-A0640` — **90. Recovery Uncertainty Is Persistent** — source `d59160dd` lines 1390–1406; Possible predecessor `74cf7fd3`:1675; **UNREVIEWED**
+- `C06-A0641` — **91. R2-H01 — Recovery Priority and Backpressure** — source `d59160dd` lines 1407–1426; Possible predecessor `74cf7fd3`:1734; **UNREVIEWED**
+- `C06-A0642` — **92. R2-H02 — Recovery Test Dimensions** — source `d59160dd` lines 1427–1450; Possible predecessor `6ee1a6d1`:141; **UNREVIEWED**
+- `C06-A0643` — **93. R2-H03 — Configuration Drift** — source `d59160dd` lines 1451–1470; Possible predecessor `74cf7fd3`:1836; **UNREVIEWED**
+- `C06-A0644` — **94. R2-H04 — Sensitive Recovery Receipts** — source `d59160dd` lines 1471–1488; Possible predecessor `74cf7fd3`:486; **UNREVIEWED**
+- `C06-A0645` — **95. R2-H05 — Human Escalation** — source `d59160dd` lines 1489–1809; Possible predecessor `74cf7fd3`:1836; **UNREVIEWED**
+- `C06-A0646` — **1. Scope** — source `89e41ed5` lines 37–52; Possible predecessor `d59160dd`:198; **UNREVIEWED**
+- `C06-A0647` — **2. Central Recovery Rule** — source `89e41ed5` lines 53–66; Possible predecessor `6ee1a6d1`:1465; **UNREVIEWED**
+- `C06-A0648` — **3. Architectural Conservation** — source `89e41ed5` lines 67–98; Possible predecessor `6ee1a6d1`:367; **UNREVIEWED**
+- `C06-A0649` — **4. Finding** — source `89e41ed5` lines 99–110; Possible predecessor `d59160dd`:1489; **UNREVIEWED**
+- `C06-A0650` — **5. Design Decision** — source `89e41ed5` lines 111–118; Possible predecessor `d59160dd`:128; **UNREVIEWED**
+- `C06-A0651` — **6. BootstrapHandoffProof** — source `89e41ed5` lines 119–147; Possible predecessor `d59160dd`:146; **UNREVIEWED**
+- `C06-A0652` — **7. Mandatory Enforcement** — source `89e41ed5` lines 148–171; Possible predecessor `d59160dd`:446; **UNREVIEWED**
+- `C06-A0653` — **8. Unknown Bootstrap Effects** — source `89e41ed5` lines 172–183; Possible predecessor `d59160dd`:146; **UNREVIEWED**
+- `C06-A0654` — **9. Bootstrap Authority Boundary** — source `89e41ed5` lines 184–205; Possible predecessor `d59160dd`:227; **UNREVIEWED**
+- `C06-A0655` — **10. Handoff Failure** — source `89e41ed5` lines 206–222; Possible predecessor `6ee1a6d1`:585; **UNREVIEWED**
+- `C06-A0656` — **11. Finding** — source `89e41ed5` lines 223–236; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0657` — **12. Design Decision** — source `89e41ed5` lines 237–244; Possible predecessor `d59160dd`:357; **UNREVIEWED**
+- `C06-A0658` — **13. AcknowledgedHistoryContinuity** — source `89e41ed5` lines 245–273; Possible predecessor `d59160dd`:509; **UNREVIEWED**
+- `C06-A0659` — **14. Two Distinct Frontiers** — source `89e41ed5` lines 274–297; Possible predecessor `6ee1a6d1`:1230; **UNREVIEWED**
+- `C06-A0660` — **15. Missing Acknowledgement Evidence** — source `89e41ed5` lines 298–311; Possible predecessor `d59160dd`:933; **UNREVIEWED**
+- `C06-A0661` — **16. Effect-Domain Restriction** — source `89e41ed5` lines 312–329; Possible predecessor `74cf7fd3`:451; **UNREVIEWED**
+- `C06-A0662` — **17. Durability Limits** — source `89e41ed5` lines 330–345; Possible predecessor `74cf7fd3`:335; **UNREVIEWED**
+- `C06-A0663` — **18. No Historical Fabrication** — source `89e41ed5` lines 346–356; Possible predecessor `74cf7fd3`:819; **UNREVIEWED**
+- `C06-A0664` — **19. Finding** — source `89e41ed5` lines 357–370; Possible predecessor `d59160dd`:288; **UNREVIEWED**
+- `C06-A0665` — **20. Design Decision** — source `89e41ed5` lines 371–376; Possible predecessor `d59160dd`:128; **UNREVIEWED**
+- `C06-A0666` — **21. CrossFrontierAdmissionProof** — source `89e41ed5` lines 377–406; Possible predecessor `74cf7fd3`:104; **UNREVIEWED**
+- `C06-A0667` — **22. Enforcement Sequence** — source `89e41ed5` lines 407–424; Possible predecessor `74cf7fd3`:23; **UNREVIEWED**
+- `C06-A0668` — **23. Current-State Requirement** — source `89e41ed5` lines 425–441; Possible predecessor `d59160dd`:333; **UNREVIEWED**
+- `C06-A0669` — **24. No Universal Global Transaction** — source `89e41ed5` lines 442–459; Possible predecessor `6ee1a6d1`:978; **UNREVIEWED**
+- `C06-A0670` — **25. Authority Changes During Dispatch** — source `89e41ed5` lines 460–467; Possible predecessor `d59160dd`:1354; **UNREVIEWED**
+- `C06-A0671` — **26. Scoped Admission** — source `89e41ed5` lines 468–489; Possible predecessor `74cf7fd3`:1031; **UNREVIEWED**
+- `C06-A0672` — **27. Finding** — source `89e41ed5` lines 490–499; Possible predecessor `d59160dd`:1489; **UNREVIEWED**
+- `C06-A0673` — **28. Design Decision** — source `89e41ed5` lines 500–507; Possible predecessor `d59160dd`:128; **UNREVIEWED**
+- `C06-A0674` — **29. PossibleExternalEffectAssessment** — source `89e41ed5` lines 508–537; Possible predecessor `d59160dd`:625; **UNREVIEWED**
+- `C06-A0675` — **30. Conservative Effect Set** — source `89e41ed5` lines 538–559; Possible predecessor `74cf7fd3`:244; **UNREVIEWED**
+- `C06-A0676` — **31. Safe Follow-Up Rule** — source `89e41ed5` lines 560–581; Possible predecessor `74cf7fd3`:719; **UNREVIEWED**
+- `C06-A0677` — **32. Unknown Effect Space** — source `89e41ed5` lines 582–589; Possible predecessor `d59160dd`:625; **UNREVIEWED**
+- `C06-A0678` — **33. Compensation** — source `89e41ed5` lines 590–597; Possible predecessor `74cf7fd3`:602; **UNREVIEWED**
+- `C06-A0679` — **34. No Global Exactly-Once** — source `89e41ed5` lines 598–608; Possible predecessor `d59160dd`:606; **UNREVIEWED**
+- `C06-A0680` — **35. Finding** — source `89e41ed5` lines 609–618; Possible predecessor `d59160dd`:968; **UNREVIEWED**
+- `C06-A0681` — **36. Design Decision** — source `89e41ed5` lines 619–626; Possible predecessor `d59160dd`:128; **UNREVIEWED**
+- `C06-A0682` — **37. SchemaCutoverEnforcement** — source `89e41ed5` lines 627–653; Possible predecessor `d59160dd`:968; **UNREVIEWED**
+- `C06-A0683` — **38. Cutover Preconditions** — source `89e41ed5` lines 654–668; Possible predecessor `74cf7fd3`:1587; **UNREVIEWED**
+- `C06-A0684` — **39. Writer Fencing** — source `89e41ed5` lines 669–680; Possible predecessor `74cf7fd3`:763; **UNREVIEWED**
+- `C06-A0685` — **40. In-Flight Writes** — source `89e41ed5` lines 681–688; Possible predecessor `74cf7fd3`:372; **UNREVIEWED**
+- `C06-A0686` — **41. Crash Before Cutover** — source `89e41ed5` lines 689–699; Possible predecessor `d59160dd`:1047; **UNREVIEWED**
+- `C06-A0687` — **42. Crash After Cutover** — source `89e41ed5` lines 700–710; Possible predecessor `d59160dd`:1058; **UNREVIEWED**
+- `C06-A0688` — **43. Mixed-Version Compatibility** — source `89e41ed5` lines 711–721; Possible predecessor `d59160dd`:1031; **UNREVIEWED**
+- `C06-A0689` — **44. Finding** — source `89e41ed5` lines 722–731; Possible predecessor `d59160dd`:1489; **UNREVIEWED**
+- `C06-A0690` — **45. Design Decision** — source `89e41ed5` lines 732–737; Possible predecessor `d59160dd`:128; **UNREVIEWED**
+- `C06-A0691` — **46. RestoreContainmentProof** — source `89e41ed5` lines 738–766; Possible predecessor `74cf7fd3`:164; **UNREVIEWED**
+- `C06-A0692` — **47. Restore Procedure** — source `89e41ed5` lines 767–783; Possible predecessor `d59160dd`:235; **UNREVIEWED**
+- `C06-A0693` — **48. Active Destination Risk** — source `89e41ed5` lines 784–795; Possible predecessor `6ee1a6d1`:393; **UNREVIEWED**
+- `C06-A0694` — **49. Indirect Execution** — source `89e41ed5` lines 796–815; Possible predecessor `6ee1a6d1`:792; **UNREVIEWED**
+- `C06-A0695` — **50. Quarantine Release** — source `89e41ed5` lines 816–832; Possible predecessor `74cf7fd3`:1024; **UNREVIEWED**
+- `C06-A0696` — **51. Finding** — source `89e41ed5` lines 833–842; Possible predecessor `d59160dd`:848; **UNREVIEWED**
+- `C06-A0697` — **52. Design Decision** — source `89e41ed5` lines 843–848; Possible predecessor `d59160dd`:128; **UNREVIEWED**
+- `C06-A0698` — **53. RestoredDataProcessingAdmission** — source `89e41ed5` lines 849–874; Possible predecessor `d59160dd`:848; **UNREVIEWED**
+- `C06-A0699` — **54. Processing Gate** — source `89e41ed5` lines 875–889; Possible predecessor `d59160dd`:917; **UNREVIEWED**
+- `C06-A0700` — **55. Restricted Restore Procedure** — source `89e41ed5` lines 890–901; Possible predecessor `d59160dd`:235; **UNREVIEWED**
+- `C06-A0701` — **56. External Provider Protection** — source `89e41ed5` lines 902–918; Possible predecessor `d59160dd`:951; **UNREVIEWED**
+- `C06-A0702` — **57. Necessary Internal Processing** — source `89e41ed5` lines 919–926; Possible predecessor `d59160dd`:917; **UNREVIEWED**
+- `C06-A0703` — **58. Derived Artifacts** — source `89e41ed5` lines 927–944; Possible predecessor `6ee1a6d1`:1025; **UNREVIEWED**
+- `C06-A0704` — **59. Missing Current Policy** — source `89e41ed5` lines 945–958; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0705` — **60. Finding** — source `89e41ed5` lines 959–970; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0706` — **61. Design Decision** — source `89e41ed5` lines 971–976; Possible predecessor `d59160dd`:128; **UNREVIEWED**
+- `C06-A0707` — **62. RecoveryContinuationDurability** — source `89e41ed5` lines 977–1002; Possible predecessor `74cf7fd3`:1612; **UNREVIEWED**
+- `C06-A0708` — **63. Atomic Suspension** — source `89e41ed5` lines 1003–1016; Possible predecessor `d59160dd`:1254; **UNREVIEWED**
+- `C06-A0709` — **64. Trigger Cursor Ordering** — source `89e41ed5` lines 1017–1030; Possible predecessor `d59160dd`:1268; **UNREVIEWED**
+- `C06-A0710` — **65. Legal Replay Options** — source `89e41ed5` lines 1031–1048; Possible predecessor `6ee1a6d1`:920; **UNREVIEWED**
+- `C06-A0711` — **66. Crash Before Reaction Commit** — source `89e41ed5` lines 1049–1056; Possible predecessor `d59160dd`:1291; **UNREVIEWED**
+- `C06-A0712` — **67. Crash After Reaction Commit** — source `89e41ed5` lines 1057–1068; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0713` — **68. Non-Replayable Sources** — source `89e41ed5` lines 1069–1083; Possible predecessor `d59160dd`:1309; **UNREVIEWED**
+- `C06-A0714` — **69. Persistence Failure During Suspension** — source `89e41ed5` lines 1084–1096; Possible predecessor `d59160dd`:1202; **UNREVIEWED**
+- `C06-A0715` — **70. Recovery After Repeated Crash** — source `89e41ed5` lines 1097–1119; Possible predecessor `6ee1a6d1`:345; **UNREVIEWED**
+- `C06-A0716` — **71. Recovery Admission Principle** — source `89e41ed5` lines 1120–1157; Possible predecessor `6ee1a6d1`:367; **UNREVIEWED**
+- `C06-A0717` — **72. Unknown Does Not Always Mean Global Shutdown** — source `89e41ed5` lines 1158–1174; Possible predecessor `6ee1a6d1`:978; **UNREVIEWED**
+- `C06-A0718` — **73. Safety Under Partial Recovery** — source `89e41ed5` lines 1175–1188; Possible predecessor `74cf7fd3`:1056; **UNREVIEWED**
+- `C06-A0719` — **74. No Inferred Completion** — source `89e41ed5` lines 1189–1204; Possible predecessor `6ee1a6d1`:1505; **UNREVIEWED**
+- `C06-A0720` — **75. Authority and Reality Remain Separate** — source `89e41ed5` lines 1205–1284; Possible predecessor `d59160dd`:1489; **UNREVIEWED**
+- `C06-A0721` — **76. Freeze Review Criteria** — source `89e41ed5` lines 1285–1304; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0722` — **77. Implementation Boundary** — source `89e41ed5` lines 1305–1402; Possible predecessor `74cf7fd3`:1836; **UNREVIEWED**
+- `C06-A0723` — **78. Specification vs Implementation** — source `89e41ed5` lines 1403–1418; Possible predecessor `74cf7fd3`:1836; **UNREVIEWED**
+- `C06-A0724` — **79. No Endless Review Rule** — source `89e41ed5` lines 1419–1436; No lexical predecessor located; **UNREVIEWED**
+- `C06-A0725` — **80. Freeze Decision Authority** — source `89e41ed5` lines 1437–1514; Possible predecessor `74cf7fd3`:1836; **UNREVIEWED**
+- `C06-A0726` — **1. Objective** — source `79d37199` lines 37–62; Possible predecessor `6ee1a6d1`:26; **UNREVIEWED**
+- `C06-A0727` — **2. Acceptance Standard** — source `79d37199` lines 63–106; Possible predecessor `89e41ed5`:119; **UNREVIEWED**
+- `C06-A0728` — **1. Control Ledger becomes unavailable.** — source `79d37199` lines 107–108; Possible predecessor `6ee1a6d1`:386; **UNREVIEWED**
+- `C06-A0729` — **2. External infrastructure operator restores it.** — source `79d37199` lines 109–110; Possible predecessor `74cf7fd3`:451; **UNREVIEWED**
+- `C06-A0730` — **3. Operator changes a repository mount.** — source `79d37199` lines 111–112; Possible predecessor `6ee1a6d1`:934; **UNREVIEWED**
+- `C06-A0731` — **4. Cognitive Executive becomes available.** — source `79d37199` lines 113–114; Possible predecessor `6ee1a6d1`:152; **UNREVIEWED**
+- `C06-A0732` — **5. Executive attempts to resume an old plan.** — source `79d37199` lines 115–748; Possible predecessor `d59160dd`:1489; **UNREVIEWED**
+- `C06-A0733` — **1. Authority Model** — source `79d37199` lines 749–764; Possible predecessor `74cf7fd3`:23; **UNREVIEWED**
+- `C06-A0734` — **2. Canonical State Model** — source `79d37199` lines 765–780; Possible predecessor `d59160dd`:1489; **UNREVIEWED**
+- `C06-A0735` — **3. World Action Model** — source `79d37199` lines 781–808; Possible predecessor `6ee1a6d1`:585; **UNREVIEWED**
+- `C06-A0736` — **4. Temporal Model** — source `79d37199` lines 809–816; Possible predecessor `6ee1a6d1`:934; **UNREVIEWED**
+- `C06-A0737` — **5. Dependency Model** — source `79d37199` lines 817–826; Possible predecessor `6ee1a6d1`:948; **UNREVIEWED**
+- `C06-A0738` — **6. Memory and Data Governance** — source `79d37199` lines 827–909; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0739` — **1. Previous Findings** — source `79d37199` lines 910–919; Possible predecessor `d59160dd`:1489; **UNREVIEWED**
+- `C06-A0740` — **2. Review Summary** — source `79d37199` lines 920–948; Possible predecessor `6ee1a6d1`:1596; **UNREVIEWED**
+- `C06-A0741` — **3. Scope of PASS** — source `79d37199` lines 949–971; Possible predecessor `6ee1a6d1`:68; **UNREVIEWED**
+- `C06-A0742` — **1. Freeze Decision** — source `79d37199` lines 972–1005; Possible predecessor `74cf7fd3`:23; **UNREVIEWED**
+- `C06-A0743` — **2. Final Verdict** — source `79d37199` lines 1006–1027; Possible predecessor `d59160dd`:1489; **UNREVIEWED**
+- `C06-A0744` — **3. Frozen Architectural Identity** — source `79d37199` lines 1028–1031; Possible predecessor `89e41ed5`:67; **UNREVIEWED**
+- `C06-A0745` — **4. Implementation Status** — source `79d37199` lines 1032–1049; Possible predecessor `d59160dd`:1489; **UNREVIEWED**
+- `C06-A0746` — **5. Next Authorized Step** — source `79d37199` lines 1050–1099; Possible predecessor `d59160dd`:1489; **UNREVIEWED**
+
+### RDMS-10
+
+- `C06-A0747` — **1. Objective** — source `e4828797` lines 36–75; Possible predecessor `99533762`:86; **UNREVIEWED**
+- `C06-A0748` — **2. Fundamental Integration Principle** — source `e4828797` lines 76–103; Possible predecessor `99533762`:1085; **UNREVIEWED**
+- `C06-A0749` — **3. Legal Ownership Conservation** — source `e4828797` lines 104–121; Possible predecessor `99533762`:225; **UNREVIEWED**
+- `C06-A0750` — **4. Integration-Level Rule** — source `e4828797` lines 122–142; Possible predecessor `99533762`:1880; **UNREVIEWED**
+- `C06-A0751` — **5. Finding** — source `e4828797` lines 143–162; Possible predecessor `99533762`:1370; **UNREVIEWED**
+- `C06-A0752` — **6. Architectural Decision** — source `e4828797` lines 163–174; Possible predecessor `99533762`:1785; **UNREVIEWED**
+- `C06-A0753` — **7. CanonicalContractRegistry** — source `e4828797` lines 175–198; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0754` — **8. Registry Authority** — source `e4828797` lines 199–216; Possible predecessor `99533762`:476; **UNREVIEWED**
+- `C06-A0755` — **9. Contract Categories** — source `e4828797` lines 217–246; Possible predecessor `99533762`:210; **UNREVIEWED**
+- `C06-A0756` — **10. Contract Compatibility Rule** — source `e4828797` lines 247–263; Possible predecessor `99533762`:2674; **UNREVIEWED**
+- `C06-A0757` — **11. Finding** — source `e4828797` lines 264–279; Possible predecessor `99533762`:1370; **UNREVIEWED**
+- `C06-A0758` — **12. Architectural Decision** — source `e4828797` lines 280–287; Possible predecessor `99533762`:1785; **UNREVIEWED**
+- `C06-A0759` — **13. TrustedEnvelopeAdmission** — source `e4828797` lines 288–315; Possible predecessor `99533762`:1370; **UNREVIEWED**
+- `C06-A0760` — **14. Trusted Field Ownership** — source `e4828797` lines 316–335; Possible predecessor `99533762`:225; **UNREVIEWED**
+- `C06-A0761` — **15. Receiving Boundary Enforcement** — source `e4828797` lines 336–355; Possible predecessor `99533762`:1402; **UNREVIEWED**
+- `C06-A0762` — **16. Replay Protection** — source `e4828797` lines 356–373; Possible predecessor `99533762`:1303; **UNREVIEWED**
+- `C06-A0763` — **17. Trusted Transport Is Not Trusted Content** — source `e4828797` lines 374–386; Possible predecessor `99533762`:1370; **UNREVIEWED**
+- `C06-A0764` — **18. Finding** — source `e4828797` lines 387–396; Possible predecessor `99533762`:113; **UNREVIEWED**
+- `C06-A0765` — **19. HumanIngressAuthorityBinding** — source `e4828797` lines 397–420; Possible predecessor `99533762`:1122; **UNREVIEWED**
+- `C06-A0766` — **20. Domain-Specific Authority** — source `e4828797` lines 421–428; Possible predecessor `99533762`:476; **UNREVIEWED**
+- `C06-A0767` — **21. User Content vs Authoritative Request** — source `e4828797` lines 429–439; Possible predecessor `99533762`:1499; **UNREVIEWED**
+- `C06-A0768` — **22. Human Response Adoption** — source `e4828797` lines 440–450; Possible predecessor `99533762`:1880; **UNREVIEWED**
+- `C06-A0769` — **23. Finding** — source `e4828797` lines 451–462; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0770` — **24. Architectural Decision** — source `e4828797` lines 463–478; Possible predecessor `99533762`:113; **UNREVIEWED**
+- `C06-A0771` — **25. RepositoryMutationIntegrationContract** — source `e4828797` lines 479–508; Possible predecessor `99533762`:655; **UNREVIEWED**
+- `C06-A0772` — **26. Legal Mutation Path** — source `e4828797` lines 509–526; Possible predecessor `99533762`:784; **UNREVIEWED**
+- `C06-A0773` — **27. Candidate Is Not Canonical** — source `e4828797` lines 527–532; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0774` — **28. Repository Base Validation** — source `e4828797` lines 533–538; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0775` — **29. Mutation and Acceptance Separation** — source `e4828797` lines 539–559; Possible predecessor `99533762`:113; **UNREVIEWED**
+- `C06-A0776` — **30. Finding** — source `e4828797` lines 560–567; Possible predecessor `99533762`:1420; **UNREVIEWED**
+- `C06-A0777` — **31. ExecutiveTransitionIntegrationBinding** — source `e4828797` lines 568–593; Possible predecessor `99533762`:557; **UNREVIEWED**
+- `C06-A0778` — **32. Decision Adoption Rule** — source `e4828797` lines 594–597; Possible predecessor `99533762`:113; **UNREVIEWED**
+- `C06-A0779` — **33. Transition Commit** — source `e4828797` lines 598–615; Possible predecessor `99533762`:557; **UNREVIEWED**
+- `C06-A0780` — **34. Concurrent State Changes** — source `e4828797` lines 616–630; Possible predecessor `99533762`:557; **UNREVIEWED**
+- `C06-A0781` — **35. Finding** — source `e4828797` lines 631–640; Possible predecessor `99533762`:113; **UNREVIEWED**
+- `C06-A0782` — **36. Architectural Decision** — source `e4828797` lines 641–650; Possible predecessor `99533762`:1785; **UNREVIEWED**
+- `C06-A0783` — **37. ControlActionDurabilityContract** — source `e4828797` lines 651–674; Possible predecessor `99533762`:655; **UNREVIEWED**
+- `C06-A0784` — **38. No Dual Lifecycle Authority** — source `e4828797` lines 675–680; Possible predecessor `99533762`:759; **UNREVIEWED**
+- `C06-A0785` — **39. Required Dispatch Ordering** — source `e4828797` lines 681–697; Possible predecessor `99533762`:784; **UNREVIEWED**
+- `C06-A0786` — **40. Physical Storage Alternatives** — source `e4828797` lines 698–713; Possible predecessor `99533762`:2618; **UNREVIEWED**
+- `C06-A0787` — **41. Crash Between Stores** — source `e4828797` lines 714–727; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0788` — **42. Recovery Consistency** — source `e4828797` lines 728–738; Possible predecessor `99533762`:1659; **UNREVIEWED**
+- `C06-A0789` — **43. Finding** — source `e4828797` lines 739–746; Possible predecessor `99533762`:1402; **UNREVIEWED**
+- `C06-A0790` — **44. SealedExecutionIntent** — source `e4828797` lines 747–774; Possible predecessor `99533762`:808; **UNREVIEWED**
+- `C06-A0791` — **45. Sealing Rule** — source `e4828797` lines 775–798; Possible predecessor `99533762`:655; **UNREVIEWED**
+- `C06-A0792` — **46. Effective Arguments** — source `e4828797` lines 799–812; Possible predecessor `99533762`:1420; **UNREVIEWED**
+- `C06-A0793` — **47. TOCTOU Protection** — source `e4828797` lines 813–828; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0794` — **48. Executor Rule** — source `e4828797` lines 829–844; Possible predecessor `99533762`:1968; **UNREVIEWED**
+- `C06-A0795` — **49. Intent Integrity vs Outcome** — source `e4828797` lines 845–857; Possible predecessor `99533762`:113; **UNREVIEWED**
+- `C06-A0796` — **50. Finding** — source `e4828797` lines 858–865; Possible predecessor `99533762`:784; **UNREVIEWED**
+- `C06-A0797` — **51. ActionDeliveryContract** — source `e4828797` lines 866–891; Possible predecessor `99533762`:655; **UNREVIEWED**
+- `C06-A0798` — **52. Critical Distinction** — source `e4828797` lines 892–905; Possible predecessor `99533762`:1659; **UNREVIEWED**
+- `C06-A0799` — **53. Redelivery Rule** — source `e4828797` lines 906–911; Possible predecessor `99533762`:476; **UNREVIEWED**
+- `C06-A0800` — **54. IN_DOUBT Behavior** — source `e4828797` lines 912–921; Possible predecessor `99533762`:759; **UNREVIEWED**
+- `C06-A0801` — **55. Retry Eligibility** — source `e4828797` lines 922–939; Possible predecessor `99533762`:904; **UNREVIEWED**
+- `C06-A0802` — **56. Worker Generation** — source `e4828797` lines 940–952; Possible predecessor `99533762`:2632; **UNREVIEWED**
+- `C06-A0803` — **57. Finding** — source `e4828797` lines 953–960; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0804` — **58. ArtifactPublicationContract** — source `e4828797` lines 961–984; Possible predecessor `99533762`:925; **UNREVIEWED**
+- `C06-A0805` — **59. Publication Ordering** — source `e4828797` lines 985–1000; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0806` — **60. Artifact Classes** — source `e4828797` lines 1001–1014; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0807` — **61. Garbage Collection Safety** — source `e4828797` lines 1015–1020; Possible predecessor `99533762`:1769; **UNREVIEWED**
+- `C06-A0808` — **62. Integrity After Recovery** — source `e4828797` lines 1021–1031; Possible predecessor `99533762`:197; **UNREVIEWED**
+- `C06-A0809` — **63. Finding** — source `e4828797` lines 1032–1039; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0810` — **64. CrossComponentEventContract** — source `e4828797` lines 1040–1067; Possible predecessor `99533762`:1370; **UNREVIEWED**
+- `C06-A0811` — **65. Causal Ordering vs Arrival Ordering** — source `e4828797` lines 1068–1083; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0812` — **66. No Universal Total Order Requirement** — source `e4828797` lines 1084–1091; Possible predecessor `99533762`:1297; **UNREVIEWED**
+- `C06-A0813` — **67. Duplicate Events** — source `e4828797` lines 1092–1097; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0814` — **68. Unknown Parent Event** — source `e4828797` lines 1098–1108; Possible predecessor `99533762`:113; **UNREVIEWED**
+- `C06-A0815` — **69. Finding** — source `e4828797` lines 1109–1120; Possible predecessor `99533762`:113; **UNREVIEWED**
+- `C06-A0816` — **70. ObservationSourceBinding** — source `e4828797` lines 1121–1148; Possible predecessor `99533762`:925; **UNREVIEWED**
+- `C06-A0817` — **71. Report vs Observation** — source `e4828797` lines 1149–1162; Possible predecessor `99533762`:966; **UNREVIEWED**
+- `C06-A0818` — **72. Source Authority** — source `e4828797` lines 1163–1183; Possible predecessor `99533762`:476; **UNREVIEWED**
+- `C06-A0819` — **73. Observation Ingress Rule** — source `e4828797` lines 1184–1189; Possible predecessor `99533762`:925; **UNREVIEWED**
+- `C06-A0820` — **74. Evidence Promotion** — source `e4828797` lines 1190–1200; Possible predecessor `99533762`:980; **UNREVIEWED**
+- `C06-A0821` — **75. Finding** — source `e4828797` lines 1201–1210; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0822` — **76. IntegratedCompletionEvidence** — source `e4828797` lines 1211–1240; Possible predecessor `99533762`:330; **UNREVIEWED**
+- `C06-A0823` — **77. Completion Semantics** — source `e4828797` lines 1241–1256; Possible predecessor `99533762`:1554; **UNREVIEWED**
+- `C06-A0824` — **78. Finalization Gate** — source `e4828797` lines 1257–1270; Possible predecessor `99533762`:702; **UNREVIEWED**
+- `C06-A0825` — **79. Partial Completion** — source `e4828797` lines 1271–1276; Possible predecessor `99533762`:225; **UNREVIEWED**
+- `C06-A0826` — **80. No Completion From Fluency** — source `e4828797` lines 1277–1289; Possible predecessor `99533762`:225; **UNREVIEWED**
+- `C06-A0827` — **81. Finding** — source `e4828797` lines 1290–1297; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0828` — **82. ActiveWorkInvalidationContract** — source `e4828797` lines 1298–1325; Possible predecessor `99533762`:702; **UNREVIEWED**
+- `C06-A0829` — **83. Invalidation Propagation** — source `e4828797` lines 1326–1339; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0830` — **84. Pending vs Dispatched** — source `e4828797` lines 1340–1355; Possible predecessor `99533762`:1309; **UNREVIEWED**
+- `C06-A0831` — **85. Scoped Invalidation** — source `e4828797` lines 1356–1363; Possible predecessor `99533762`:1420; **UNREVIEWED**
+- `C06-A0832` — **86. Race With Dispatch** — source `e4828797` lines 1364–1374; Possible predecessor `99533762`:330; **UNREVIEWED**
+- `C06-A0833` — **87. Finding** — source `e4828797` lines 1375–1382; Possible predecessor `99533762`:330; **UNREVIEWED**
+- `C06-A0834` — **88. ReasoningProviderCapabilityContract** — source `e4828797` lines 1383–1408; Possible predecessor `99533762`:2640; **UNREVIEWED**
+- `C06-A0835` — **89. Capability Negotiation** — source `e4828797` lines 1409–1414; Possible predecessor `99533762`:2640; **UNREVIEWED**
+- `C06-A0836` — **90. Output Validation** — source `e4828797` lines 1415–1424; Possible predecessor `99533762`:330; **UNREVIEWED**
+- `C06-A0837` — **91. Provider Fallback** — source `e4828797` lines 1425–1439; Possible predecessor `99533762`:433; **UNREVIEWED**
+- `C06-A0838` — **92. Provider Failure** — source `e4828797` lines 1440–1450; Possible predecessor `99533762`:433; **UNREVIEWED**
+- `C06-A0839` — **93. Finding** — source `e4828797` lines 1451–1458; Possible predecessor `99533762`:521; **UNREVIEWED**
+- `C06-A0840` — **94. ContextDisclosureAdmission** — source `e4828797` lines 1459–1482; Possible predecessor `99533762`:433; **UNREVIEWED**
+- `C06-A0841` — **95. Disclosure Boundary** — source `e4828797` lines 1483–1488; Possible predecessor `99533762`:1402; **UNREVIEWED**
+- `C06-A0842` — **96. Multi-Project Memory** — source `e4828797` lines 1489–1494; Possible predecessor `99533762`:1114; **UNREVIEWED**
+- `C06-A0843` — **97. Context Minimization** — source `e4828797` lines 1495–1500; Possible predecessor `99533762`:557; **UNREVIEWED**
+- `C06-A0844` — **98. Provider Switching** — source `e4828797` lines 1501–1511; Possible predecessor `99533762`:508; **UNREVIEWED**
+- `C06-A0845` — **99. Finding** — source `e4828797` lines 1512–1519; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0846` — **100. SpecialistExecutionAuthorityBinding** — source `e4828797` lines 1520–1543; Possible predecessor `99533762`:1019; **UNREVIEWED**
+- `C06-A0847` — **101. End-to-End Specialist Authority** — source `e4828797` lines 1544–1559; Possible predecessor `99533762`:1048; **UNREVIEWED**
+- `C06-A0848` — **102. Tool Authority Intersection** — source `e4828797` lines 1560–1575; Possible predecessor `99533762`:476; **UNREVIEWED**
+- `C06-A0849` — **103. Specialist Scope Changes** — source `e4828797` lines 1576–1581; Possible predecessor `99533762`:1019; **UNREVIEWED**
+- `C06-A0850` — **104. Nested Specialists** — source `e4828797` lines 1582–1594; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0851` — **105. Finding** — source `e4828797` lines 1595–1602; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0852` — **106. SpecialistIntegrationTransaction** — source `e4828797` lines 1603–1630; Possible predecessor `99533762`:1085; **UNREVIEWED**
+- `C06-A0853` — **107. Integration Preconditions** — source `e4828797` lines 1631–1647; Possible predecessor `99533762`:1085; **UNREVIEWED**
+- `C06-A0854` — **108. Parallel Result Handling** — source `e4828797` lines 1648–1653; Possible predecessor `99533762`:1829; **UNREVIEWED**
+- `C06-A0855` — **109. Physical Merge vs Cognitive Acceptance** — source `e4828797` lines 1654–1669; Possible predecessor `99533762`:225; **UNREVIEWED**
+- `C06-A0856` — **110. Verification After Combination** — source `e4828797` lines 1670–1680; Possible predecessor `99533762`:2727; **UNREVIEWED**
+- `C06-A0857` — **111. Finding** — source `e4828797` lines 1681–1688; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0858` — **112. TriggerActionCausalityBinding** — source `e4828797` lines 1689–1712; Possible predecessor `99533762`:1204; **UNREVIEWED**
+- `C06-A0859` — **113. Trigger Reaction vs Action** — source `e4828797` lines 1713–1728; Possible predecessor `99533762`:1204; **UNREVIEWED**
+- `C06-A0860` — **114. Stable Causality** — source `e4828797` lines 1729–1734; Possible predecessor `99533762`:330; **UNREVIEWED**
+- `C06-A0861` — **115. External Effect Limitation** — source `e4828797` lines 1735–1740; Possible predecessor `99533762`:1968; **UNREVIEWED**
+- `C06-A0862` — **116. Crash Recovery** — source `e4828797` lines 1741–1751; Possible predecessor `99533762`:904; **UNREVIEWED**
+- `C06-A0863` — **117. Finding** — source `e4828797` lines 1752–1759; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0864` — **118. RuntimeActivationContract** — source `e4828797` lines 1760–1783; Possible predecessor `99533762`:655; **UNREVIEWED**
+- `C06-A0865` — **119. Component Running vs Operationally Admitted** — source `e4828797` lines 1784–1795; Possible predecessor `99533762`:210; **UNREVIEWED**
+- `C06-A0866` — **120. Activation Scope** — source `e4828797` lines 1796–1809; Possible predecessor `99533762`:1525; **UNREVIEWED**
+- `C06-A0867` — **121. Recovery Ordering** — source `e4828797` lines 1810–1815; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0868` — **122. Admission Invalidation** — source `e4828797` lines 1816–1836; Possible predecessor `99533762`:1818; **UNREVIEWED**
+- `C06-A0869` — **123. Finding** — source `e4828797` lines 1837–1846; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0870` — **124. ProjectExecutionBoundary** — source `e4828797` lines 1847–1870; Possible predecessor `99533762`:1370; **UNREVIEWED**
+- `C06-A0871` — **125. Project Identity Binding** — source `e4828797` lines 1871–1878; Possible predecessor `99533762`:557; **UNREVIEWED**
+- `C06-A0872` — **126. Cross-Project Access** — source `e4828797` lines 1879–1884; Possible predecessor `99533762`:1984; **UNREVIEWED**
+- `C06-A0873` — **127. Shared Provider** — source `e4828797` lines 1885–1902; Possible predecessor `99533762`:476; **UNREVIEWED**
+- `C06-A0874` — **128. Shared Storage** — source `e4828797` lines 1903–1913; Possible predecessor `99533762`:1659; **UNREVIEWED**
+- `C06-A0875` — **129. Finding** — source `e4828797` lines 1914–1921; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0876` — **130. ExecutionContainmentContract** — source `e4828797` lines 1922–1945; Possible predecessor `99533762`:808; **UNREVIEWED**
+- `C06-A0877` — **131. Classification by Reachable Effects** — source `e4828797` lines 1946–1961; Possible predecessor `99533762`:874; **UNREVIEWED**
+- `C06-A0878` — **132. Sandbox Requirements** — source `e4828797` lines 1962–1976; Possible predecessor `99533762`:888; **UNREVIEWED**
+- `C06-A0879` — **133. Unknown Containment** — source `e4828797` lines 1977–1985; Possible predecessor `99533762`:784; **UNREVIEWED**
+- `C06-A0880` — **134. Containment Across Workers** — source `e4828797` lines 1986–1996; Possible predecessor `99533762`:2107; **UNREVIEWED**
+- `C06-A0881` — **135. Finding** — source `e4828797` lines 1997–2008; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0882` — **136. ImplementationDependencyGraph** — source `e4828797` lines 2009–2028; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0883` — **137. Implementation vs Activation** — source `e4828797` lines 2029–2050; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0884` — **138. Capability Activation Contract** — source `e4828797` lines 2051–2068; Possible predecessor `99533762`:330; **UNREVIEWED**
+- `C06-A0885` — **139. No Safety Stub Bypass** — source `e4828797` lines 2069–2088; Possible predecessor `99533762`:1968; **UNREVIEWED**
+- `C06-A0886` — **140. Initial Walking Skeleton** — source `e4828797` lines 2089–2114; Possible predecessor `99533762`:113; **UNREVIEWED**
+- `C06-A0887` — **141. Safe Growth** — source `e4828797` lines 2115–2139; Possible predecessor `99533762`:2192; **UNREVIEWED**
+- `C06-A0888` — **142. H01 — Interface Duplication Control** — source `e4828797` lines 2140–2147; Possible predecessor `99533762`:1420; **UNREVIEWED**
+- `C06-A0889` — **143. H02 — Runtime Performance** — source `e4828797` lines 2148–2163; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0890` — **144. H03 — Diagnostic Data Governance** — source `e4828797` lines 2164–2171; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0891` — **145. H04 — Provider Quality Evaluation** — source `e4828797` lines 2172–2189; Possible predecessor `99533762`:2640; **UNREVIEWED**
+- `C06-A0892` — **146. H05 — Resource Backpressure** — source `e4828797` lines 2190–2207; Possible predecessor `99533762`:2658; **UNREVIEWED**
+- `C06-A0893` — **147. H06 — Package Dependency Direction** — source `e4828797` lines 2208–2225; Possible predecessor `99533762`:2167; **UNREVIEWED**
+- `C06-A0894` — **148. H07 — Engineering Quality Benchmarking** — source `e4828797` lines 2226–2250; Possible predecessor `99533762`:197; **UNREVIEWED**
+- `C06-A0895` — **149. No Second Executive** — source `e4828797` lines 2251–2254; Possible predecessor `99533762`:225; **UNREVIEWED**
+- `C06-A0896` — **150. No Second CommitGate** — source `e4828797` lines 2255–2258; Possible predecessor `99533762`:557; **UNREVIEWED**
+- `C06-A0897` — **151. No Second ActionGate** — source `e4828797` lines 2259–2262; Possible predecessor `99533762`:655; **UNREVIEWED**
+- `C06-A0898` — **152. No Second Dependency Engine** — source `e4828797` lines 2263–2266; Possible predecessor `99533762`:702; **UNREVIEWED**
+- `C06-A0899` — **153. No Second Scheduler** — source `e4828797` lines 2267–2270; Possible predecessor `99533762`:1183; **UNREVIEWED**
+- `C06-A0900` — **154. No Direct Provider Authority** — source `e4828797` lines 2271–2274; Possible predecessor `99533762`:476; **UNREVIEWED**
+- `C06-A0901` — **155. No Implicit Specialist Authority** — source `e4828797` lines 2275–2278; Possible predecessor `99533762`:1048; **UNREVIEWED**
+- `C06-A0902` — **156. No Reinterpretation of External Effects** — source `e4828797` lines 2279–2282; Possible predecessor `99533762`:2048; **UNREVIEWED**
+- `C06-A0903` — **157. No Recovery-Based Authority Escalation** — source `e4828797` lines 2283–2491; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0904` — **158. C01 Acceptance Conditions** — source `e4828797` lines 2492–2527; Possible predecessor `99533762`:2699; **UNREVIEWED**
+- `C06-A0905` — **159. Technical Details Deferred** — source `e4828797` lines 2528–2551; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0906` — **160. No Automatic Freeze** — source `e4828797` lines 2552–2627; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0907` — **1. التفويض يجب أن يرتبط بالعملية الفعلية** — source `e4828797` lines 2628–2635; Possible predecessor `99533762`:113; **UNREVIEWED**
+- `C06-A0908` — **2. لا نحتاج إلى معاملات ذرية عالمية لكل الأنظمة** — source `e4828797` lines 2636–2643; Possible predecessor `99533762`:1919; **UNREVIEWED**
+- `C06-A0909` — **3. تنفيذ المكونات لا يعني السماح بتشغيلها** — source `e4828797` lines 2644–2673; Possible predecessor `99533762`:2727; **UNREVIEWED**
+- `C06-A0910` — **1. Purpose** — source `5f33fe0d` lines 28–36; Possible predecessor `99533762`:34; **UNREVIEWED**
+- `C06-A0911` — **2. Architectural Conservation** — source `5f33fe0d` lines 37–81; Possible predecessor `e4828797`:104; **UNREVIEWED**
+- `C06-A0912` — **3. Central Integration Principle** — source `5f33fe0d` lines 82–104; Possible predecessor `e4828797`:76; **UNREVIEWED**
+- `C06-A0913` — **4. Finding** — source `5f33fe0d` lines 105–118; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0914` — **5. Architectural Decision** — source `5f33fe0d` lines 119–128; Possible predecessor `e4828797`:641; **UNREVIEWED**
+- `C06-A0915` — **6. RecoverableActionDeliveryObligation** — source `5f33fe0d` lines 129–157; Possible predecessor `e4828797`:866; **UNREVIEWED**
+- `C06-A0916` — **7. Durable Enumeration** — source `5f33fe0d` lines 158–179; Possible predecessor `99533762`:759; **UNREVIEWED**
+- `C06-A0917` — **8. Recovery Decision** — source `5f33fe0d` lines 180–202; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0918` — **9. Old Executive Epoch** — source `5f33fe0d` lines 203–210; Possible predecessor `99533762`:784; **UNREVIEWED**
+- `C06-A0919` — **10. Queue Authority** — source `5f33fe0d` lines 211–232; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0920` — **11. Enforcement Point** — source `5f33fe0d` lines 233–238; Possible predecessor `e4828797`:336; **UNREVIEWED**
+- `C06-A0921` — **12. Crash Cases** — source `5f33fe0d` lines 239–246; Possible predecessor `99533762`:784; **UNREVIEWED**
+- `C06-A0922` — **13. Closure Requirement** — source `5f33fe0d` lines 247–253; Possible predecessor `e4828797`:2283; **UNREVIEWED**
+- `C06-A0923` — **14. Finding** — source `5f33fe0d` lines 254–263; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0924` — **15. Architectural Decision** — source `5f33fe0d` lines 264–271; Possible predecessor `e4828797`:641; **UNREVIEWED**
+- `C06-A0925` — **16. TriggerDerivedWorkCommitment** — source `5f33fe0d` lines 272–297; Possible predecessor `e4828797`:1689; **UNREVIEWED**
+- `C06-A0926` — **17. Atomicity Rule** — source `5f33fe0d` lines 298–315; Possible predecessor `99533762`:1919; **UNREVIEWED**
+- `C06-A0927` — **18. Action Proposal Creation** — source `5f33fe0d` lines 316–331; Possible predecessor `99533762`:784; **UNREVIEWED**
+- `C06-A0928` — **19. Replay Rule** — source `5f33fe0d` lines 332–345; Possible predecessor `99533762`:1303; **UNREVIEWED**
+- `C06-A0929` — **20. Example** — source `5f33fe0d` lines 346–371; Possible predecessor `99533762`:1682; **UNREVIEWED**
+- `C06-A0930` — **21. Ownership Boundary** — source `5f33fe0d` lines 372–383; Possible predecessor `99533762`:1420; **UNREVIEWED**
+- `C06-A0931` — **22. Required Compatibility** — source `5f33fe0d` lines 384–392; Possible predecessor `e4828797`:728; **UNREVIEWED**
+- `C06-A0932` — **23. Finding** — source `5f33fe0d` lines 393–413; Possible predecessor `e4828797`:747; **UNREVIEWED**
+- `C06-A0933` — **24. Architectural Decision** — source `5f33fe0d` lines 414–421; Possible predecessor `e4828797`:163; **UNREVIEWED**
+- `C06-A0934` — **25. EffectiveExecutionBinding** — source `5f33fe0d` lines 422–449; Possible predecessor `e4828797`:747; **UNREVIEWED**
+- `C06-A0935` — **26. Three Execution Representations** — source `5f33fe0d` lines 450–470; Possible predecessor `99533762`:113; **UNREVIEWED**
+- `C06-A0936` — **27. Last Enforceable Boundary** — source `5f33fe0d` lines 471–476; Possible predecessor `99533762`:1402; **UNREVIEWED**
+- `C06-A0937` — **28. Resource Identity** — source `5f33fe0d` lines 477–490; Possible predecessor `e4828797`:2190; **UNREVIEWED**
+- `C06-A0938` — **29. Tool Version** — source `5f33fe0d` lines 491–494; Possible predecessor `99533762`:848; **UNREVIEWED**
+- `C06-A0939` — **30. Failure Behavior** — source `5f33fe0d` lines 495–505; Possible predecessor `e4828797`:247; **UNREVIEWED**
+- `C06-A0940` — **31. No Hidden Tool Effects** — source `5f33fe0d` lines 506–514; Possible predecessor `e4828797`:247; **UNREVIEWED**
+- `C06-A0941` — **32. Finding** — source `5f33fe0d` lines 515–522; Possible predecessor `e4828797`:2283; **UNREVIEWED**
+- `C06-A0942` — **33. Architectural Decision** — source `5f33fe0d` lines 523–534; Possible predecessor `e4828797`:163; **UNREVIEWED**
+- `C06-A0943` — **34. DispatchAdmissionCutover** — source `5f33fe0d` lines 535–562; Possible predecessor `99533762`:655; **UNREVIEWED**
+- `C06-A0944` — **35. Legal Ordering** — source `5f33fe0d` lines 563–574; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0945` — **36. Pre-Dispatch Protection** — source `5f33fe0d` lines 575–594; Possible predecessor `99533762`:784; **UNREVIEWED**
+- `C06-A0946` — **37. Race After Admission** — source `5f33fe0d` lines 595–610; Possible predecessor `99533762`:1328; **UNREVIEWED**
+- `C06-A0947` — **38. Revocation Rule** — source `5f33fe0d` lines 611–618; Possible predecessor `e4828797`:2283; **UNREVIEWED**
+- `C06-A0948` — **39. No Unbounded Global Lock** — source `5f33fe0d` lines 619–626; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0949` — **40. Required Enforcement** — source `5f33fe0d` lines 627–635; Possible predecessor `e4828797`:1501; **UNREVIEWED**
+- `C06-A0950` — **41. Finding** — source `5f33fe0d` lines 636–645; Possible predecessor `e4828797`:2283; **UNREVIEWED**
+- `C06-A0951` — **42. Architectural Decision** — source `5f33fe0d` lines 646–653; Possible predecessor `e4828797`:280; **UNREVIEWED**
+- `C06-A0952` — **43. EffectiveExecutionAuthorityScope** — source `5f33fe0d` lines 654–679; Possible predecessor `99533762`:808; **UNREVIEWED**
+- `C06-A0953` — **44. Authority Intersection** — source `5f33fe0d` lines 680–699; Possible predecessor `e4828797`:2283; **UNREVIEWED**
+- `C06-A0954` — **45. Shared Worker Rule** — source `5f33fe0d` lines 700–713; Possible predecessor `99533762`:2632; **UNREVIEWED**
+- `C06-A0955` — **46. Credential Binding** — source `5f33fe0d` lines 714–721; Possible predecessor `e4828797`:397; **UNREVIEWED**
+- `C06-A0956` — **47. Resource Resolution** — source `5f33fe0d` lines 722–727; Possible predecessor `e4828797`:1847; **UNREVIEWED**
+- `C06-A0957` — **48. Enforcement Limits** — source `5f33fe0d` lines 728–736; Possible predecessor `e4828797`:1098; **UNREVIEWED**
+- `C06-A0958` — **49. Finding** — source `5f33fe0d` lines 737–746; Possible predecessor `99533762`:1420; **UNREVIEWED**
+- `C06-A0959` — **50. Architectural Decision** — source `5f33fe0d` lines 747–752; Possible predecessor `e4828797`:163; **UNREVIEWED**
+- `C06-A0960` — **51. ObservationCausalAttachmentContract** — source `5f33fe0d` lines 753–776; Possible predecessor `99533762`:925; **UNREVIEWED**
+- `C06-A0961` — **52. Raw Observation Admission** — source `5f33fe0d` lines 777–782; Possible predecessor `99533762`:925; **UNREVIEWED**
+- `C06-A0962` — **53. Example** — source `5f33fe0d` lines 783–800; Possible predecessor `99533762`:1682; **UNREVIEWED**
+- `C06-A0963` — **54. Deferred Causal Attachment** — source `5f33fe0d` lines 801–816; Possible predecessor `99533762`:1420; **UNREVIEWED**
+- `C06-A0964` — **55. Duplicate Delivery** — source `5f33fe0d` lines 817–822; Possible predecessor `e4828797`:866; **UNREVIEWED**
+- `C06-A0965` — **56. Unsupported Causality** — source `5f33fe0d` lines 823–831; Possible predecessor `e4828797`:1977; **UNREVIEWED**
+- `C06-A0966` — **57. Owner** — source `5f33fe0d` lines 832–842; Possible predecessor `e4828797`:2283; **UNREVIEWED**
+- `C06-A0967` — **58. Finding** — source `5f33fe0d` lines 843–852; Possible predecessor `99533762`:521; **UNREVIEWED**
+- `C06-A0968` — **59. Architectural Decision** — source `5f33fe0d` lines 853–856; Possible predecessor `e4828797`:463; **UNREVIEWED**
+- `C06-A0969` — **60. SealedOutboundContext** — source `5f33fe0d` lines 857–882; Possible predecessor `e4828797`:1459; **UNREVIEWED**
+- `C06-A0970` — **61. Outbound Sequence** — source `5f33fe0d` lines 883–896; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0971` — **62. Content Modification** — source `5f33fe0d` lines 897–905; Possible predecessor `e4828797`:374; **UNREVIEWED**
+- `C06-A0972` — **63. Provider Switching** — source `5f33fe0d` lines 906–915; Possible predecessor `99533762`:508; **UNREVIEWED**
+- `C06-A0973` — **64. Streaming** — source `5f33fe0d` lines 916–921; Possible predecessor `99533762`:2640; **UNREVIEWED**
+- `C06-A0974` — **65. Post-Seal Transformations** — source `5f33fe0d` lines 922–943; Possible predecessor `99533762`:330; **UNREVIEWED**
+- `C06-A0975` — **66. Trusted Egress Enforcement** — source `5f33fe0d` lines 944–949; Possible predecessor `99533762`:1370; **UNREVIEWED**
+- `C06-A0976` — **67. No Independent Disclosure Authority** — source `5f33fe0d` lines 950–958; Possible predecessor `e4828797`:1190; **UNREVIEWED**
+- `C06-A0977` — **68. Finding** — source `5f33fe0d` lines 959–966; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A0978` — **69. Architectural Decision** — source `5f33fe0d` lines 967–970; Possible predecessor `e4828797`:280; **UNREVIEWED**
+- `C06-A0979` — **70. CompletionStateBinding** — source `5f33fe0d` lines 971–994; Possible predecessor `e4828797`:568; **UNREVIEWED**
+- `C06-A0980` — **71. Evidence Scope** — source `5f33fe0d` lines 995–1006; Possible predecessor `e4828797`:1211; **UNREVIEWED**
+- `C06-A0981` — **72. Scoped Freshness** — source `5f33fe0d` lines 1007–1012; Possible predecessor `99533762`:1315; **UNREVIEWED**
+- `C06-A0982` — **73. Finalization Commit** — source `5f33fe0d` lines 1013–1025; Possible predecessor `99533762`:557; **UNREVIEWED**
+- `C06-A0983` — **74. External State Limitation** — source `5f33fe0d` lines 1026–1035; Possible predecessor `e4828797`:1735; **UNREVIEWED**
+- `C06-A0984` — **75. Example** — source `5f33fe0d` lines 1036–1048; Possible predecessor `99533762`:1682; **UNREVIEWED**
+- `C06-A0985` — **76. Historical Completion** — source `5f33fe0d` lines 1049–1057; Possible predecessor `e4828797`:1364; **UNREVIEWED**
+- `C06-A0986` — **77. Required Failure Behavior** — source `5f33fe0d` lines 1058–1071; Possible predecessor `99533762`:784; **UNREVIEWED**
+- `C06-A0987` — **78. Important Conservation** — source `5f33fe0d` lines 1072–1090; Possible predecessor `e4828797`:104; **UNREVIEWED**
+- `C06-A0988` — **79. H01 — Projection Conformance** — source `5f33fe0d` lines 1091–1120; Possible predecessor `e4828797`:199; **UNREVIEWED**
+- `C06-A0989` — **80. H02 — Cancellation Semantics** — source `5f33fe0d` lines 1121–1134; Possible predecessor `99533762`:1554; **UNREVIEWED**
+- `C06-A0990` — **81. H03 — Backpressure** — source `5f33fe0d` lines 1135–1150; Possible predecessor `99533762`:2658; **UNREVIEWED**
+- `C06-A0991` — **82. H04 — Interface Complexity** — source `5f33fe0d` lines 1151–1216; Possible predecessor `e4828797`:2283; **UNREVIEWED**
+- `C06-A0992` — **83. Targeted Adversarial Scenarios** — source `5f33fe0d` lines 1217–1317; Possible predecessor `99533762`:784; **UNREVIEWED**
+- `C06-A0993` — **84. Contract-Level Requirements** — source `5f33fe0d` lines 1318–1345; Possible predecessor `e4828797`:122; **UNREVIEWED**
+- `C06-A0994` — **85. Implementation-Level Obligations** — source `5f33fe0d` lines 1346–1369; Possible predecessor `99533762`:2192; **UNREVIEWED**
+- `C06-A0995` — **86. No Endless Review Principle** — source `5f33fe0d` lines 1370–1570; Possible predecessor `e4828797`:2552; **UNREVIEWED**
+- `C06-A0996` — **1. Objective** — source `2c677ac2` lines 20–31; Possible predecessor `e4828797`:36; **UNREVIEWED**
+- `C06-A0997` — **2. Acceptance Standard** — source `2c677ac2` lines 32–53; Possible predecessor `e4828797`:539; **UNREVIEWED**
+- `C06-A0998` — **3. Conservation Requirements** — source `2c677ac2` lines 54–395; Possible predecessor `5f33fe0d`:1151; **UNREVIEWED**
+- `C06-A0999` — **4. Combined Failure Scenarios** — source `2c677ac2` lines 396–417; Possible predecessor `5f33fe0d`:1217; **UNREVIEWED**
+- `C06-A1000` — **5. Canonical Authority** — source `2c677ac2` lines 418–423; Possible predecessor `99533762`:1420; **UNREVIEWED**
+- `C06-A1001` — **6. World Mutation Authority** — source `2c677ac2` lines 424–431; Possible predecessor `5f33fe0d`:1151; **UNREVIEWED**
+- `C06-A1002` — **7. Action Lifecycle** — source `2c677ac2` lines 432–457; Possible predecessor `99533762`:759; **UNREVIEWED**
+- `C06-A1003` — **8. Observation Authority** — source `2c677ac2` lines 458–463; Possible predecessor `99533762`:960; **UNREVIEWED**
+- `C06-A1004` — **9. Temporal Authority** — source `2c677ac2` lines 464–469; Possible predecessor `5f33fe0d`:1151; **UNREVIEWED**
+- `C06-A1005` — **10. Dependency Authority** — source `2c677ac2` lines 470–477; Possible predecessor `99533762`:702; **UNREVIEWED**
+- `C06-A1006` — **11. Recovery Authority** — source `2c677ac2` lines 478–530; Possible predecessor `5f33fe0d`:316; **UNREVIEWED**
+- `C06-A1007` — **12. What This Review Accepts** — source `2c677ac2` lines 531–550; Possible predecessor `99533762`:86; **UNREVIEWED**
+- `C06-A1008` — **13. What This Review Does Not Prove** — source `2c677ac2` lines 551–585; Possible predecessor `5f33fe0d`:422; **UNREVIEWED**
+- `C06-A1009` — **14. Contract Registry Limitation** — source `2c677ac2` lines 586–611; Possible predecessor `e4828797`:175; **UNREVIEWED**
+- `C06-A1010` — **15. No New Runtime Authorities** — source `2c677ac2` lines 612–648; Possible predecessor `5f33fe0d`:37; **UNREVIEWED**
+- `C06-A1011` — **16. Review Summary** — source `2c677ac2` lines 649–678; Possible predecessor `e4828797`:2552; **UNREVIEWED**
+- `C06-A1012` — **17. Freeze Verdict** — source `2c677ac2` lines 679–699; Possible predecessor `99533762`:2311; **UNREVIEWED**
+- `C06-A1013` — **18. Frozen Architectural Identity** — source `2c677ac2` lines 700–703; Possible predecessor `5f33fe0d`:37; **UNREVIEWED**
+- `C06-A1014` — **19. Next Authorized Step** — source `2c677ac2` lines 704–758; Possible predecessor `5f33fe0d`:1370; **UNREVIEWED**

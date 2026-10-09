@@ -1,0 +1,169 @@
+{
+  "phase": "GAIA-C01 Phase 13",
+  "fca_sections": 88,
+  "fca_appendices": 7,
+  "rdms_source_sets": 10,
+  "rdms_original_messages": 27,
+  "reused_contract_decisions": 27,
+  "counts": {
+    "DIRECT_CANONICAL_USE_SELECTED": 22,
+    "EDITORIAL_TRANSPORT_ALIAS_SELECTED_FOR_CONSOLIDATION_DRAFT": 2,
+    "LEGACY_EFFECTIVE_MAPPING_BLOCKED": 3
+  },
+  "layers": {
+    "L0": {
+      "layer": "L0",
+      "document": "L0_FOUNDATION.md",
+      "mission": "Constitutional authority and trust principles",
+      "fca_section_or_appendix_count": 19,
+      "rdms_source_sets": [],
+      "rdms_message_parts": 0,
+      "owned_27_contracts": [],
+      "complete_verbatim_rdms_annexes": true,
+      "source_hash_verified": true,
+      "effective_current_law_fully_integrated": false,
+      "freeze_status": "HOLD__CONSOLIDATION_DRAFT"
+    },
+    "L1": {
+      "layer": "L1",
+      "document": "L1_CONTROL.md",
+      "mission": "Canonical control, Control Ledger and CommitGate",
+      "fca_section_or_appendix_count": 7,
+      "rdms_source_sets": [
+        "RDMS-01"
+      ],
+      "rdms_message_parts": 2,
+      "owned_27_contracts": [],
+      "complete_verbatim_rdms_annexes": true,
+      "source_hash_verified": true,
+      "effective_current_law_fully_integrated": false,
+      "freeze_status": "HOLD__CONSOLIDATION_DRAFT"
+    },
+    "L2": {
+      "layer": "L2",
+      "document": "L2_COGNITION.md",
+      "mission": "Cognitive state, planning and Executive semantics",
+      "fca_section_or_appendix_count": 32,
+      "rdms_source_sets": [
+        "RDMS-02",
+        "RDMS-08"
+      ],
+      "rdms_message_parts": 4,
+      "owned_27_contracts": [
+        "CapabilityResult",
+        "Claim",
+        "Commitment",
+        "Decision",
+        "Goal",
+        "GoalStack",
+        "Hypothesis",
+        "InformationNeed",
+        "Invariant",
+        "OperationalCausalClaim",
+        "Slice"
+      ],
+      "complete_verbatim_rdms_annexes": true,
+      "source_hash_verified": true,
+      "effective_current_law_fully_integrated": false,
+      "freeze_status": "HOLD__CONSOLIDATION_DRAFT"
+    },
+    "L3": {
+      "layer": "L3",
+      "document": "L3_ACTIONS.md",
+      "mission": "Actions, raw observations and operational evidence",
+      "fca_section_or_appendix_count": 10,
+      "rdms_source_sets": [
+        "RDMS-03",
+        "RDMS-04"
+      ],
+      "rdms_message_parts": 5,
+      "owned_27_contracts": [
+        "ActionEffectSemantics",
+        "ActionProposal",
+        "ActionRecord",
+        "ConfidenceAssessment",
+        "ContradictionRecord",
+        "EvidenceLink",
+        "Experiment",
+        "Observation",
+        "SandboxActivityRecord"
+      ],
+      "complete_verbatim_rdms_annexes": true,
+      "source_hash_verified": true,
+      "effective_current_law_fully_integrated": false,
+      "freeze_status": "HOLD__CONSOLIDATION_DRAFT"
+    },
+    "L4": {
+      "layer": "L4",
+      "document": "L4_TEMPORAL_SPECIALISTS.md",
+      "mission": "Triggers, specialists and dependency freshness",
+      "fca_section_or_appendix_count": 15,
+      "rdms_source_sets": [
+        "RDMS-05",
+        "RDMS-06"
+      ],
+      "rdms_message_parts": 5,
+      "owned_27_contracts": [
+        "DependencyStamp",
+        "QueryDependencyStamp",
+        "ResumptionCapsule",
+        "TemporalValidity",
+        "TriggerCondition"
+      ],
+      "complete_verbatim_rdms_annexes": true,
+      "source_hash_verified": true,
+      "effective_current_law_fully_integrated": false,
+      "freeze_status": "HOLD__CONSOLIDATION_DRAFT"
+    },
+    "L5": {
+      "layer": "L5",
+      "document": "L5_MEMORY.md",
+      "mission": "Memory retrieval and governed learning",
+      "fca_section_or_appendix_count": 7,
+      "rdms_source_sets": [
+        "RDMS-07"
+      ],
+      "rdms_message_parts": 2,
+      "owned_27_contracts": [
+        "MemoryProposal",
+        "MemoryRetrievalResult"
+      ],
+      "complete_verbatim_rdms_annexes": true,
+      "source_hash_verified": true,
+      "effective_current_law_fully_integrated": false,
+      "freeze_status": "HOLD__CONSOLIDATION_DRAFT"
+    },
+    "L6": {
+      "layer": "L6",
+      "document": "L6_RECOVERY.md",
+      "mission": "Recovery lifecycle, fencing and resilience",
+      "fca_section_or_appendix_count": 3,
+      "rdms_source_sets": [
+        "RDMS-09"
+      ],
+      "rdms_message_parts": 5,
+      "owned_27_contracts": [],
+      "complete_verbatim_rdms_annexes": true,
+      "source_hash_verified": true,
+      "effective_current_law_fully_integrated": false,
+      "freeze_status": "HOLD__CONSOLIDATION_DRAFT"
+    },
+    "L7": {
+      "layer": "L7",
+      "document": "L7_RUNTIME_INTEGRATION.md",
+      "mission": "Runtime transport, integration and capability boundaries",
+      "fca_section_or_appendix_count": 2,
+      "rdms_source_sets": [
+        "RDMS-10"
+      ],
+      "rdms_message_parts": 4,
+      "owned_27_contracts": [],
+      "complete_verbatim_rdms_annexes": true,
+      "source_hash_verified": true,
+      "effective_current_law_fully_integrated": false,
+      "freeze_status": "HOLD__CONSOLIDATION_DRAFT"
+    }
+  },
+  "layer_freeze_authorized": false,
+  "production_code_authorized": false
+}

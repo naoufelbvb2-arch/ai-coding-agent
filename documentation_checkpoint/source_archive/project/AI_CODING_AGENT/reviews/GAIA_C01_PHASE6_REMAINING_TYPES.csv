@@ -1,0 +1,23 @@
+type,previous_classification,owner_proposal,status,source_locations
+ActionEffectSemantics,FIELD_ALIAS_AND_REF_MAPPING,L3,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @1756;RDMS-04 Original draft @341
+ActionProposal,ENUM_AND_IDENTITY_RECONCILIATION,L3,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @1663;RDMS-04 Original draft @97
+ActionRecord,LIFECYCLE_PROJECTION_RECONCILIATION,L3,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @1883;RDMS-04 Original draft @208
+Claim,CORRECTION_SUPERSESSION,L2,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @387;RDMS-02 Original draft @132;RDMS-02 Original draft @211
+ConfidenceAssessment,PARENT_REFINEMENT,L3 epistemic evidence; L2 consumers,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @698;RDMS-03 Original draft @1412
+ContradictionRecord,STATUS_SEMANTICS_REVIEW,L3 observations; L2 interpretation,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @662;RDMS-03 Original draft @632;RDMS-03 C01 and Freeze Review 02 Final @2381
+Decision,PARENT_REFINEMENT,L2,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @805;RDMS-02 Original draft @855
+DependencyStamp,THREE_WAY_PROJECTION,L4 dependency semantics; L1 generic reference,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @2486;RDMS-01 Original draft @794;RDMS-06 Original draft @659
+EvidenceLink,CARDINALITY_AND_LIFECYCLE_REVIEW,L3,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @616;RDMS-03 Original draft @461;RDMS-03 Original draft @514
+Experiment,LIFECYCLE_AND_PREDICTION_MAPPING,L3 evidence/experiments,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @1595;RDMS-03 Original draft @871
+Goal,PARENT_REFINEMENT,L2,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @735;RDMS-02 Original draft @576
+GoalStack,PARENT_REFINEMENT,L2,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @760;RDMS-02 Original draft @736
+Hypothesis,CORRECTION_SUPERSESSION,L2,NOT_VERIFIED_IN_PHASE6,"FCA v1.0.1 FCA v1.0.1 baseline @472;RDMS-02 Original draft @382;RDMS-02 C01, second review corrections and final freeze decision @2117"
+InformationNeed,PARENT_REFINEMENT,L2,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @440;RDMS-02 Original draft @285
+Invariant,PARENT_REFINEMENT,L2 semantic model; L1 gate,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @887;RDMS-02 Original draft @947
+MemoryProposal,PARENT_REFINEMENT,L5,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @2237;RDMS-07 Original draft @486
+Observation,RAW_NORMALIZATION_MAPPING,L3,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @581;RDMS-03 Original draft @82
+OperationalCausalClaim,PARENT_REFINEMENT,L2,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @514;RDMS-02 Original draft @461
+QueryDependencyStamp,ENUM_AND_REFERENCE_MAPPING,L4,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @2544;RDMS-06 Original draft @897
+SandboxActivityRecord,PARENT_REFINEMENT,L3,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @1857;RDMS-04 Original draft @1124
+Slice,PARENT_REFINEMENT,L2,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @1246;RDMS-02 Original draft @1217
+TemporalValidity,ENUM_CASE_NORMALIZATION,L4,NOT_VERIFIED_IN_PHASE6,FCA v1.0.1 FCA v1.0.1 baseline @2088;RDMS-05 Original draft @803

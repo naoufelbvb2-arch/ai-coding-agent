@@ -1,0 +1,2042 @@
+# GAIA-C04 — Source-Anchored Clause Inventory
+
+**Status:** Exhaustive extraction of machine-recognizable section headings from all 27 archived messages, **NOT** exhaustive semantic application. A heading is not automatically a supersession. Lists and unnumbered changes require manual review.
+
+- Verified source messages: 27
+- Rule: later approved correction supersedes an incompatible base clause, but only after direct identification of the clause pair.
+- No deleted or changed archived source bytes.
+
+| Source | Original message ID | Part | Extracted sections |
+|---|---|---|---:|
+| RDMS-01 | `2aacdc73-38d8-4456-9a73-9900fe14f900` | Original draft | 57 |
+| RDMS-01 | `e3a45231-ddae-4ed4-9bd1-35202ecdfcf7` | R1 corrections and final freeze decision | 31 |
+| RDMS-02 | `a62cc59d-b288-4be8-97c4-ac84d835a933` | Original draft | 87 |
+| RDMS-02 | `266bb347-d2a5-41ea-872a-32e140c803eb` | C01, second review corrections and final freeze decision | 35 |
+| RDMS-03 | `11d811dc-87b8-4c44-8322-bdae96f7b95d` | Original draft | 113 |
+| RDMS-03 | `a1ca0249-b287-4c4b-8254-773c8f6edbda` | C01 and Freeze Review 02 Final | 48 |
+| RDMS-04 | `32ad532a-40cd-4b2a-8a0a-3372937cf6db` | Original draft | 60 |
+| RDMS-04 | `4f585132-49b6-448d-8506-4b502aee6311` | C01 | 41 |
+| RDMS-04 | `9c2e281b-8959-48e4-b6f8-17a51d8185f2` | Adversarial Freeze Review 02 and freeze decision | 0 |
+| RDMS-05 | `6276f296-457b-462d-b674-933a15194429` | Original draft | 68 |
+| RDMS-05 | `77caba5f-8e8e-4b8e-a9fe-027c4801efad` | C01 | 50 |
+| RDMS-05 | `87d8aced-dfbc-477b-80dc-e6d90997fe59` | Adversarial Freeze Review 02 and freeze decision | 7 |
+| RDMS-06 | `4bcbb2bf-86d9-4b93-9b1c-9f9529916667` | Original draft | 72 |
+| RDMS-06 | `1ed5a815-4917-47b8-9e00-0b450a0581e2` | C01 and Adversarial Freeze Review 02 with freeze decision | 47 |
+| RDMS-07 | `938c1bc7-97a0-46ad-be19-cd3ba3ca125f` | Original draft | 93 |
+| RDMS-07 | `5ee62ad7-b67d-4382-be9d-cd85f6331a8c` | C01 and Adversarial Freeze Review 02 with freeze decision | 63 |
+| RDMS-08 | `c955b372-e904-441b-8a0f-c8d9ae56c2f7` | Original draft | 133 |
+| RDMS-08 | `a0f04ffe-181e-409d-9f94-d7d5c426502b` | C01 and Adversarial Freeze Review 02 with freeze decision | 99 |
+| RDMS-09 | `6ee1a6d1-3dfe-4de8-8c44-54ac4b07f8d4` | Original draft | 116 |
+| RDMS-09 | `74cf7fd3-01ca-4f35-abed-fbbc8716eb5c` | C01 | 129 |
+| RDMS-09 | `d59160dd-fa7a-4058-8892-69794f57e9b8` | C02 | 95 |
+| RDMS-09 | `89e41ed5-ac4e-4b95-9680-b9bec79f278a` | C03 | 80 |
+| RDMS-09 | `79d37199-2fe2-4973-bbe9-ac99b4bb5b34` | Adversarial Freeze Review 04 and final freeze decision | 21 |
+| RDMS-10 | `99533762-bba8-407a-b27b-952a236c00a4` | Original draft | 114 |
+| RDMS-10 | `e4828797-8ddb-48ae-a3e4-3e9ec47b70c3` | C01 | 163 |
+| RDMS-10 | `5f33fe0d-af3e-4f37-aeac-8979e64d941f` | C02 | 86 |
+| RDMS-10 | `2c677ac2-0588-4d02-8149-fabfe690afd8` | Final Freeze Review 03 and final decisions | 19 |
+
+## Section locator index
+
+Each entry links to the exact archived original message and 1-based line range. Numeric headings may include numbered lists: they must not be used as evidence of a legal override without reading the clause body.
+
+### RDMS-01
+
+**Original draft** — `2aacdc73-38d8-4456-9a73-9900fe14f900`
+- `1. Runtime Unit` — source lines 13–49, SHA `6fdf29a007f09366`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. طبقات البيانات الدائمة` — source lines 50–53, SHA `aab6d879513fa147`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. Control Ledger` — source lines 54–54, SHA `25af814db958945d`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Canonical Entity State` — source lines 55–55, SHA `598084d5564d535e`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Snapshots` — source lines 56–56, SHA `4c22e7039e57eff8`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Immutable Artifacts` — source lines 57–57, SHA `8d8112e2fe7775f9`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Derived Indexes / Read Models` — source lines 58–61, SHA `deadb9b39178ba24`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Control Ledger — Source of Truth` — source lines 62–88, SHA `ca02792f46f2759d`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Control Commit` — source lines 89–131, SHA `a3899dd0fb6e7968`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. commit_seq` — source lines 132–158, SHA `60c07f5f72031cd3`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. Event Ordering داخل Commit واحدة` — source lines 159–183, SHA `f6d83a99d495b20d`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. Event Identity` — source lines 184–222, SHA `6be495c634e09f77`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. Typed IDs` — source lines 223–248, SHA `1f49671603ad5333`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Global State Version` — source lines 249–274, SHA `8a81ea771070b898`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. Entity Version` — source lines 275–312, SHA `58f0a925d49f6d5e`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. Immutable Entities` — source lines 313–332, SHA `a0b706288bd0c99a`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. Canonical Entity State` — source lines 333–357, SHA `0584d59876f12c69`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. Source of Truth Hierarchy` — source lines 358–361, SHA `e605c10b6d823a31`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. Control Ledger` — source lines 362–363, SHA `d14674b9e34b39d2`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Rebuilt Canonical State` — source lines 364–365, SHA `9c443aa4bfceb15a`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Snapshots / materialized projections` — source lines 366–367, SHA `6de98bc8328f2973`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Search indexes / caches` — source lines 368–380, SHA `d9f008de1af4f958`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. Snapshot` — source lines 381–412, SHA `249781ab24135f93`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. Snapshot ليست Authority مستقلة` — source lines 413–430, SHA `2a9c87c7aadf4aa9`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. Snapshot Integrity` — source lines 431–449, SHA `949d0946ac1f7ce5`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. Immutable Artifact Store` — source lines 450–484, SHA `f08f1e5885cc19d3`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. Artifact Commit Rule` — source lines 485–509, SHA `25c82aebbab9b429`; **NUMERICAL-HEADING-CANDIDATE**
+- `19. Artifact Immutability` — source lines 510–523, SHA `fd6e32c45e4856b4`; **NUMERICAL-HEADING-CANDIDATE**
+- `20. Derived Indexes` — source lines 524–552, SHA `cc79e19c30abcd44`; **NUMERICAL-HEADING-CANDIDATE**
+- `21. Control Transaction` — source lines 553–588, SHA `d82bce84eae9f939`; **NUMERICAL-HEADING-CANDIDATE**
+- `22. Idempotency` — source lines 589–609, SHA `a91a56faf548fe78`; **NUMERICAL-HEADING-CANDIDATE**
+- `23. Idempotency Conflict` — source lines 610–624, SHA `13bee3897e3cf32a`; **NUMERICAL-HEADING-CANDIDATE**
+- `24. Actor Identity` — source lines 625–651, SHA `6ab408f9548ef322`; **NUMERICAL-HEADING-CANDIDATE**
+- `25. Correlation and Causation` — source lines 652–690, SHA `cba65c18be35a344`; **NUMERICAL-HEADING-CANDIDATE**
+- `26. Logical Clock vs Wall Clock` — source lines 691–712, SHA `690fa4e187f1d359`; **NUMERICAL-HEADING-CANDIDATE**
+- `27. Repository Reference` — source lines 713–751, SHA `a0e3150beed8b4c4`; **NUMERICAL-HEADING-CANDIDATE**
+- `28. World Reference` — source lines 752–777, SHA `678c3a763e814743`; **NUMERICAL-HEADING-CANDIDATE**
+- `29. Dependency Stamp Foundation` — source lines 778–812, SHA `3485ba80b8e7ba9e`; **NUMERICAL-HEADING-CANDIDATE**
+- `30. Canonical Transition Classes` — source lines 813–830, SHA `1cc418cbe3870673`; **NUMERICAL-HEADING-CANDIDATE**
+- `31. Cognitive Commit` — source lines 831–848, SHA `d4f803f48315f055`; **NUMERICAL-HEADING-CANDIDATE**
+- `32. Observation Append` — source lines 849–872, SHA `8917cae37c447f30`; **NUMERICAL-HEADING-CANDIDATE**
+- `33. Control Lifecycle` — source lines 873–886, SHA `83a81549c08b388d`; **NUMERICAL-HEADING-CANDIDATE**
+- `34. Memory Promotion` — source lines 887–902, SHA `b59a509547fca871`; **NUMERICAL-HEADING-CANDIDATE**
+- `35. World Action Lifecycle` — source lines 903–915, SHA `09eb938b34f05dc9`; **NUMERICAL-HEADING-CANDIDATE**
+- `36. Transaction Boundary Rule` — source lines 916–937, SHA `94a5f14385ce4ff8`; **NUMERICAL-HEADING-CANDIDATE**
+- `37. What MUST NOT be transactionally coupled` — source lines 938–965, SHA `de5f27e5d0b1dbaa`; **NUMERICAL-HEADING-CANDIDATE**
+- `38. Concurrency Model` — source lines 966–985, SHA `8231603b1e5c288a`; **NUMERICAL-HEADING-CANDIDATE**
+- `39. Optimistic Canonical Concurrency` — source lines 986–1019, SHA `69784861de1d7aec`; **NUMERICAL-HEADING-CANDIDATE**
+- `40. Hard Conflict vs Staleness` — source lines 1020–1043, SHA `573c49c39c19f647`; **NUMERICAL-HEADING-CANDIDATE**
+- `41. Recovery Head` — source lines 1044–1059, SHA `26e059a384897e87`; **NUMERICAL-HEADING-CANDIDATE**
+- `42. Recovery Principle` — source lines 1060–1077, SHA `e98f166fbc964a3d`; **NUMERICAL-HEADING-CANDIDATE**
+- `43. Recovery Barrier` — source lines 1078–1096, SHA `81bb01fd031196b9`; **NUMERICAL-HEADING-CANDIDATE**
+- `44. Runtime Status` — source lines 1097–1119, SHA `80cdcd834854e3c1`; **NUMERICAL-HEADING-CANDIDATE**
+- `45. Physical Storage Is Not Yet Frozen` — source lines 1120–1140, SHA `409e16f7e9c27738`; **NUMERICAL-HEADING-CANDIDATE**
+- `46. Runtime Foundation Invariants` — source lines 1141–1194, SHA `5dced80b1b4f7b1a`; **NUMERICAL-HEADING-CANDIDATE**
+- `47. What RDMS-01 Has Frozen Conceptually` — source lines 1195–1221, SHA `3ccb61da56df1e78`; **NUMERICAL-HEADING-CANDIDATE**
+- `48. Next RDMS Sections` — source lines 1222–1272, SHA `15da907e7f7100d5`; **NUMERICAL-HEADING-CANDIDATE**
+
+**R1 corrections and final freeze decision** — `e3a45231-ddae-4ed4-9bd1-35202ecdfcf7`
+- `1. النتيجة الرئيسية للمراجعة` — source lines 12–42, SHA `513a6d1e71fc2233`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Hybrid Transactional Persistence Model` — source lines 43–83, SHA `f45b4a9a206a13ba`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. ProjectHead` — source lines 84–109, SHA `1030512370b25258`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. commit_seq` — source lines 110–136, SHA `eaf2fe88a86bc5fd`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. ControlCommit النهائية` — source lines 137–161, SHA `a348a8b950dbd52a`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. Authority Context` — source lines 162–210, SHA `fa6a800295d4a951`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. Initiator ≠ Authorizer` — source lines 211–232, SHA `f9d139f755b6087b`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. CanonicalMutation` — source lines 233–272, SHA `df85eb407e3b196f`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. لماذا After-Image؟` — source lines 273–306, SHA `7855e11d8b42d14c`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. Semantic Events منفصلة عن Replay Mutations` — source lines 307–340, SHA `84368981bab693c1`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. Event Ordinal` — source lines 341–352, SHA `9e60f5887fcf52b3`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. IDs` — source lines 353–385, SHA `c78095971da66522`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. Entity Versioning` — source lines 386–406, SHA `fee6c7161b92a218`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. Conflict Granularity في v1` — source lines 407–438, SHA `69ddc1c5bc6fcf2a`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. Staleness ≠ Write Conflict` — source lines 439–456, SHA `bc4a84ad10501218`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. Idempotency` — source lines 457–474, SHA `cd554c5495e3f8dd`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. Schema Evolution` — source lines 475–501, SHA `6c84e3430cf05451`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. Snapshot Model المصحح` — source lines 502–528, SHA `8417cbf68595de62`; **NUMERICAL-HEADING-CANDIDATE**
+- `19. Snapshot Schema` — source lines 529–554, SHA `a14f8ed78a02cec8`; **NUMERICAL-HEADING-CANDIDATE**
+- `20. Current-State Integrity Marker` — source lines 555–576, SHA `57ca1f677474889d`; **NUMERICAL-HEADING-CANDIDATE**
+- `21. Artifact Store` — source lines 577–606, SHA `19ada5c23bfa3396`; **NUMERICAL-HEADING-CANDIDATE**
+- `22. Derived Indexes` — source lines 607–632, SHA `77c98512879e9457`; **NUMERICAL-HEADING-CANDIDATE**
+- `23. Repository References` — source lines 633–658, SHA `f50d637ff5414974`; **NUMERICAL-HEADING-CANDIDATE**
+- `24. Runtime Status Split` — source lines 659–690, SHA `6e9b88b0a74b365b`; **NUMERICAL-HEADING-CANDIDATE**
+- `25. Recovery Model النهائي لـRDMS-01` — source lines 691–725, SHA `00e36995cbf303a1`; **NUMERICAL-HEADING-CANDIDATE**
+- `26. Observation Concurrency` — source lines 726–750, SHA `e169c3b2d554ebc8`; **NUMERICAL-HEADING-CANDIDATE**
+- `27. Canonical Commit Isolation` — source lines 751–763, SHA `abfef69628b249f4`; **NUMERICAL-HEADING-CANDIDATE**
+- `28. Revised Runtime Invariants` — source lines 764–840, SHA `a14552dde0d64830`; **NUMERICAL-HEADING-CANDIDATE**
+- `29. Adversarial Re-test` — source lines 841–859, SHA `f2e827478cbe0a07`; **NUMERICAL-HEADING-CANDIDATE**
+- `30. Freeze Verdict for RDMS-01` — source lines 860–889, SHA `f047b35fdb54625b`; **NUMERICAL-HEADING-CANDIDATE**
+- `31. Next Authorized Specification` — source lines 890–931, SHA `b84e46c91dc2e192`; **NUMERICAL-HEADING-CANDIDATE**
+
+### RDMS-02
+
+**Original draft** — `a62cc59d-b288-4be8-97c4-ac84d835a933`
+- `1. Purpose` — source lines 11–36, SHA `3eb9607c51d29490`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Common Canonical Entity Envelope` — source lines 37–73, SHA `346ee2eb2c430027`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Reference Model` — source lines 74–92, SHA `4497806a7e309146`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Scope Model` — source lines 93–118, SHA `3c55a423862a5943`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Claim` — source lines 119–152, SHA `381e7b65fd3ec4d0`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. Fact Grounding` — source lines 153–194, SHA `eaf082e7b23d84b5`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. Claim Rules` — source lines 195–219, SHA `553e7b8fe1981cd8`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. Claim Support ≠ Claim Status` — source lines 220–250, SHA `a48b23795b32b8d2`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Claim Supersession` — source lines 251–271, SHA `f9a3ce32f4a578b7`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. InformationNeed` — source lines 272–309, SHA `39880ca606fe140f`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. InformationNeed Lifecycle` — source lines 310–334, SHA `31f91406a5891a8c`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. Resolution` — source lines 335–356, SHA `cdcb11b90af7abae`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. Human Escalation` — source lines 357–368, SHA `83a612c9e7a1620d`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. Hypothesis` — source lines 369–409, SHA `71965c94be229e82`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. Hypothesis Legal Combinations` — source lines 410–435, SHA `f7b3512e21a7104e`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. Confirmed Hypothesis ≠ OVC` — source lines 436–447, SHA `288759a8ddec41ff`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. OperationalCausalClaim` — source lines 448–477, SHA `1cc80b4fc91a24c1`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. CausalScope` — source lines 478–498, SHA `310c75368687d709`; **NUMERICAL-HEADING-CANDIDATE**
+- `19. Causal Verification Record` — source lines 499–520, SHA `dae5b5dde07a0b5b`; **NUMERICAL-HEADING-CANDIDATE**
+- `20. OVC Promotion` — source lines 521–541, SHA `ffc7e0766892b6a2`; **NUMERICAL-HEADING-CANDIDATE**
+- `21. OVC Invalidation` — source lines 542–562, SHA `c41edc30c218f35e`; **NUMERICAL-HEADING-CANDIDATE**
+- `22. Goal` — source lines 563–603, SHA `c80c3abac2d54809`; **NUMERICAL-HEADING-CANDIDATE**
+- `23. AcceptanceCriterion` — source lines 604–633, SHA `7926e17a7539b694`; **NUMERICAL-HEADING-CANDIDATE**
+- `24. Goal Hierarchy` — source lines 634–651, SHA `8b6afd83ce7741f9`; **NUMERICAL-HEADING-CANDIDATE**
+- `25. Goal Lifecycle` — source lines 652–672, SHA `0f5eae98351849d9`; **NUMERICAL-HEADING-CANDIDATE**
+- `26. VERIFIED vs CLOSED` — source lines 673–692, SHA `60b0bf12189c8d15`; **NUMERICAL-HEADING-CANDIDATE**
+- `27. Goal Constraints` — source lines 693–717, SHA `557696d3d1e1ce0b`; **NUMERICAL-HEADING-CANDIDATE**
+- `28. GoalStack` — source lines 718–741, SHA `9ff78e02837b1e43`; **NUMERICAL-HEADING-CANDIDATE**
+- `29. GoalStack Invariants` — source lines 742–757, SHA `be042cd5b0a86a38`; **NUMERICAL-HEADING-CANDIDATE**
+- `30. Current Operation` — source lines 758–772, SHA `34f320791dca915e`; **NUMERICAL-HEADING-CANDIDATE**
+- `31. FocusState` — source lines 773–781, SHA `1533b47ff4f56831`; **NUMERICAL-HEADING-CANDIDATE**
+- `32. CanonicalFocusState` — source lines 782–807, SHA `95db468b6711b6f3`; **NUMERICAL-HEADING-CANDIDATE**
+- `33. EphemeralAttentionFrame` — source lines 808–822, SHA `29e8de76ab886165`; **NUMERICAL-HEADING-CANDIDATE**
+- `34. Focus Persistence Rule` — source lines 823–841, SHA `0c11244a167200d5`; **NUMERICAL-HEADING-CANDIDATE**
+- `35. Decision` — source lines 842–882, SHA `82f600a0fe05953b`; **NUMERICAL-HEADING-CANDIDATE**
+- `36. DecisionOption` — source lines 883–898, SHA `b9d8cb44581aba6f`; **NUMERICAL-HEADING-CANDIDATE**
+- `37. Decision Rules` — source lines 899–919, SHA `55874bea658879f5`; **NUMERICAL-HEADING-CANDIDATE**
+- `38. Decision Revisit` — source lines 920–933, SHA `1373dfe7724d2d40`; **NUMERICAL-HEADING-CANDIDATE**
+- `39. Invariant` — source lines 934–988, SHA `0f61fa005a55ca02`; **NUMERICAL-HEADING-CANDIDATE**
+- `40. Invariant Enforcement Rule` — source lines 989–1015, SHA `5eef164d74c03d3d`; **NUMERICAL-HEADING-CANDIDATE**
+- `41. Hard Invariant Change` — source lines 1016–1037, SHA `bd08c54da8a888d7`; **NUMERICAL-HEADING-CANDIDATE**
+- `42. Contract` — source lines 1038–1072, SHA `39b2a082ee807d53`; **NUMERICAL-HEADING-CANDIDATE**
+- `43. ContractClause` — source lines 1073–1093, SHA `622c086abd1ab325`; **NUMERICAL-HEADING-CANDIDATE**
+- `44. Contract Ownership` — source lines 1094–1108, SHA `9450563cca27852f`; **NUMERICAL-HEADING-CANDIDATE**
+- `45. Contract Supersession` — source lines 1109–1126, SHA `05ce289f49e29cdc`; **NUMERICAL-HEADING-CANDIDATE**
+- `46. Risk` — source lines 1127–1179, SHA `75de956c76e4e6bb`; **NUMERICAL-HEADING-CANDIDATE**
+- `47. Risk Semantics` — source lines 1180–1203, SHA `3825845f35b9e8bd`; **NUMERICAL-HEADING-CANDIDATE**
+- `48. Slice` — source lines 1204–1255, SHA `581025f6c6f5a3f9`; **NUMERICAL-HEADING-CANDIDATE**
+- `49. ExpectedChangeSurface` — source lines 1256–1267, SHA `967a73e8ba9c7ba6`; **NUMERICAL-HEADING-CANDIDATE**
+- `50. ProofObligation` — source lines 1268–1292, SHA `2c60fe9a5ca4e268`; **NUMERICAL-HEADING-CANDIDATE**
+- `51. Slice Lifecycle` — source lines 1293–1321, SHA `3222f052751300cf`; **NUMERICAL-HEADING-CANDIDATE**
+- `52. Slice READY Gate` — source lines 1322–1331, SHA `0aa4d1340b245afb`; **NUMERICAL-HEADING-CANDIDATE**
+- `53. Slice VERIFIED Gate` — source lines 1332–1343, SHA `9e1934c3f2c1205c`; **NUMERICAL-HEADING-CANDIDATE**
+- `54. Slice INTEGRATED` — source lines 1344–1351, SHA `e09cc2a3589a8286`; **NUMERICAL-HEADING-CANDIDATE**
+- `55. Slice Failure` — source lines 1352–1363, SHA `276f6dcc89b6531e`; **NUMERICAL-HEADING-CANDIDATE**
+- `56. Commitment` — source lines 1364–1396, SHA `5251883043627edc`; **NUMERICAL-HEADING-CANDIDATE**
+- `57. Commitment Validity Rule` — source lines 1397–1410, SHA `c19bd3841ecc8f2b`; **NUMERICAL-HEADING-CANDIDATE**
+- `58. DUE ≠ Failure` — source lines 1411–1425, SHA `bb36b063a6b3c935`; **NUMERICAL-HEADING-CANDIDATE**
+- `59. VocabularyTerm` — source lines 1426–1469, SHA `a706163168e8b140`; **NUMERICAL-HEADING-CANDIDATE**
+- `60. MentalModelElement` — source lines 1470–1501, SHA `cc191e8fed174d9f`; **NUMERICAL-HEADING-CANDIDATE**
+- `61. لماذا ModelElement؟` — source lines 1502–1515, SHA `3cadf186d5b2d669`; **NUMERICAL-HEADING-CANDIDATE**
+- `62. Risk Model vs Risk Entity` — source lines 1516–1535, SHA `07246a73cbc73f04`; **NUMERICAL-HEADING-CANDIDATE**
+- `63. Entity Mutability Matrix` — source lines 1536–1552, SHA `71231832b543e177`; **NUMERICAL-HEADING-CANDIDATE**
+- `64. No Hard Delete Rule` — source lines 1553–1572, SHA `ddce4f1e279bb79d`; **NUMERICAL-HEADING-CANDIDATE**
+- `65. Cross-Entity Referential Integrity` — source lines 1573–1585, SHA `2397d8dda88184b3`; **NUMERICAL-HEADING-CANDIDATE**
+- `66. Same-Commit References` — source lines 1586–1603, SHA `36e3fcbe894a9c40`; **NUMERICAL-HEADING-CANDIDATE**
+- `67. Cross-Project References` — source lines 1604–1621, SHA `87e31220c403c9c8`; **NUMERICAL-HEADING-CANDIDATE**
+- `68. Status Transitions Are Validated` — source lines 1622–1643, SHA `28aaf22262ea538a`; **NUMERICAL-HEADING-CANDIDATE**
+- `69. Free Text vs Structured State` — source lines 1644–1665, SHA `40e61d29213ff57f`; **NUMERICAL-HEADING-CANDIDATE**
+- `70. Large Content Rule` — source lines 1666–1683, SHA `2ac9dc51fdab25b1`; **NUMERICAL-HEADING-CANDIDATE**
+- `71. Canonical Entity Write Authority` — source lines 1684–1704, SHA `839826f45da0136a`; **NUMERICAL-HEADING-CANDIDATE**
+- `72. Derived Summaries` — source lines 1705–1720, SHA `54b76a2679eeb07e`; **NUMERICAL-HEADING-CANDIDATE**
+- `73. Composite State Reconstruction` — source lines 1721–1748, SHA `093ed49a54ab5524`; **NUMERICAL-HEADING-CANDIDATE**
+- `74. RDMS-02 Invariants` — source lines 1749–1837, SHA `e07e55a42fdd2151`; **NUMERICAL-HEADING-CANDIDATE**
+- `75. What RDMS-02 Deliberately Defers` — source lines 1838–1856, SHA `5e7c8606e7256c52`; **NUMERICAL-HEADING-CANDIDATE**
+- `76. Questions for Adversarial Review` — source lines 1857–1860, SHA `c025b9f206a828f2`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. هل Claim.support قابل لأن يصبح stale مستقلًا عن Claim نفسها؟` — source lines 1861–1862, SHA `f2f90bec36c5db9c`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. هل CONFIRMED Hypothesis وOVC يخلقان duplicate truth؟` — source lines 1863–1864, SHA `073e00345184c8dc`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. هل Goal hierarchy المحددة MISSION→MILESTONE→TASK→SUBGOAL` — source lines 1865–1867, SHA `77a6c6b25836443f`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. هل CanonicalFocusState ستظل كثيرة الكتابة رغم checkpoint policy؟` — source lines 1868–1869, SHA `d76bd3de14a706da`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. هل Contract identity الجديدة عند semantic change` — source lines 1870–1872, SHA `0bf047c7bfa7151a`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. هل Hard Invariant لا يمكن machine-enforceها يجب فعلًا منعها` — source lines 1873–1875, SHA `ce5565cdc1769390`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. هل Slice lifecycle تحتوي حالات أكثر مما يحتاج runtime الفعلي؟` — source lines 1876–1877, SHA `aafce263782fff9c`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. هل Commitment وGoal WAITING/DEFERRED يتداخلان دلاليًا؟` — source lines 1878–1879, SHA `53aba782282bed21`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. هل MentalModelElement generic أكثر من اللازم؟` — source lines 1880–1881, SHA `e64ba428d2a9a86a`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. هل Risk يجب أن يكون canonical entity أصلًا أم projection` — source lines 1882–1886, SHA `990c0d498357087a`; **NUMERICAL-HEADING-CANDIDATE**
+- `77. Current Status` — source lines 1887–1903, SHA `a1a23fd8702a1ec4`; **NUMERICAL-HEADING-CANDIDATE**
+
+**C01, second review corrections and final freeze decision** — `266bb347-d2a5-41ea-872a-32e140c803eb`
+- `C01-01 — Common Entity Metadata` — source lines 11–36, SHA `c583a79b5249aed5`; **C-NUMBERED**
+- `C01-02 — SupportAssessment` — source lines 37–78, SHA `23af0de8d44bed28`; **C-NUMBERED**
+- `C01-03 — Assessment Validity` — source lines 79–102, SHA `b1ef9067f7137f5c`; **C-NUMBERED**
+- `C01-04 — Claim Epistemic Promotion` — source lines 103–125, SHA `3224b5faf334bd7c`; **C-NUMBERED**
+- `C01-05 — Claim Meaning Change` — source lines 126–150, SHA `4fbf782c93c27eda`; **C-NUMBERED**
+- `C01-06 — Fact Freshness` — source lines 151–188, SHA `e89652875f91ab51`; **C-NUMBERED**
+- `C01-07 — Hypothesis Closure` — source lines 189–221, SHA `37b32c092ca3aca6`; **C-NUMBERED**
+- `C01-08 — OVC Freshness` — source lines 222–251, SHA `8c497e83f4501821`; **C-NUMBERED**
+- `C01-09 — Goal Tree يصبح Goal Graph شجري مرن` — source lines 252–284, SHA `40fd9ed0738b4e24`; **C-NUMBERED**
+- `C01-10 — GoalPath` — source lines 285–317, SHA `a592d8dba84dee43`; **C-NUMBERED**
+- `C01-11 — Goal Lifecycle` — source lines 318–344, SHA `3766bd7dfb89111e`; **C-NUMBERED**
+- `C01-12 — Acceptance Criteria Governance` — source lines 345–366, SHA `01dafc33702a3851`; **C-NUMBERED**
+- `C01-13 — Goal Requirement Mutation` — source lines 367–396, SHA `d1a348745629088d`; **C-NUMBERED**
+- `C01-14 — Declared Priority` — source lines 397–415, SHA `3c847876861268da`; **C-NUMBERED**
+- `C01-15 — Decision Immutability After Acceptance` — source lines 416–459, SHA `345adb637aec79d2`; **C-NUMBERED**
+- `C01-16 — Decision Freshness` — source lines 460–489, SHA `86fe236e78e2b2b6`; **C-NUMBERED**
+- `C01-17 — Contract / Invariant Identity` — source lines 490–510, SHA `d7a2b2821c7e15d7`; **C-NUMBERED**
+- `C01-18 — Version-Pinned Engineering References` — source lines 511–538, SHA `fa312a2e3188fce4`; **C-NUMBERED**
+- `C01-19 — Generic Entity Lineage` — source lines 539–572, SHA `48d92a81bce5797f`; **C-NUMBERED**
+- `C01-20 — Hypothesis Relations` — source lines 573–602, SHA `922417d234d527ac`; **C-NUMBERED**
+- `C01-21 — Slice State Decomposition` — source lines 603–628, SHA `5504ca1c6149db42`; **C-NUMBERED**
+- `C01-22 — Slice State Meaning` — source lines 629–658, SHA `3dceca675aa7bfc9`; **C-NUMBERED**
+- `C01-23 — Slice Failure` — source lines 659–679, SHA `78c8efddfe231bb3`; **C-NUMBERED**
+- `C01-24 — Slice Closure Rules` — source lines 680–690, SHA `a776c3d87d04b24a`; **C-NUMBERED**
+- `C01-25 — Slice Freshness` — source lines 691–706, SHA `7ce9d79cd211aeaf`; **C-NUMBERED**
+- `C01-26 — Canonical Focus Compression` — source lines 707–739, SHA `6a24069adf85726d`; **C-NUMBERED**
+- `C01-27 — Mental Model Is Not Shadow Truth` — source lines 740–792, SHA `eb53e2d71ce3bdd8`; **C-NUMBERED**
+- `C01-28 — Invariant Severity ≠ Detectability` — source lines 793–825, SHA `67281a6546798b8f`; **C-NUMBERED**
+- `C01-29 — Hard Invariant Rule` — source lines 826–845, SHA `6e779c4e0eb852cc`; **C-NUMBERED**
+- `C01-30 — Risk Lifecycle vs Treatment` — source lines 846–877, SHA `dd4d08f497988474`; **C-NUMBERED**
+- `C01-31 — RiskAssessment` — source lines 878–906, SHA `02a82f3c639c4ec0`; **C-NUMBERED**
+- `C01-32 — Commitment Reactivation` — source lines 907–944, SHA `81683d007bde77b0`; **C-NUMBERED**
+- `C01-33 — Relation Ownership Rule` — source lines 945–960, SHA `2cf6866781b4dcdf`; **C-NUMBERED**
+- `C01-34 — Referential Version Policy` — source lines 961–983, SHA `86c0f68a05013e68`; **C-NUMBERED**
+- `C01-35 — Updated RDMS-02 Core Invariants` — source lines 984–1599, SHA `c90b1fa16d8f4aa5`; **C-NUMBERED**
+
+### RDMS-03
+
+**Original draft** — `11d811dc-87b8-4c44-8322-bdae96f7b95d`
+- `1. Fundamental Separation` — source lines 11–36, SHA `e4e3d2695ac52978`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Observation Does Not Mean Truth` — source lines 37–68, SHA `fa4fbd05c857de56`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Observation` — source lines 69–99, SHA `09d0a3e293271505`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Observation Kinds` — source lines 100–118, SHA `648b81308cd88e8a`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. SourceRef` — source lines 119–141, SHA `ae0be5130c434f4f`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. Three Independent Trust Dimensions` — source lines 142–145, SHA `8e1039fc7d5ab51f`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. Capture Integrity` — source lines 146–146, SHA `1597f0127a9b8aa5`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Instruction Authority` — source lines 147–147, SHA `1d52938c057d3dc7`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Domain Authority` — source lines 148–151, SHA `ccfd2d83347b3d58`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. Capture Integrity` — source lines 152–184, SHA `02cc1a98fd6ab4e6`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. Instruction Authority` — source lines 185–207, SHA `10752b450d4fa51d`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Domain Authority` — source lines 208–232, SHA `a2e0fcf91e04bae3`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. Authority Comes From Metadata` — source lines 233–251, SHA `1ac556f516d84ddd`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. Observation Normalization` — source lines 252–273, SHA `bc8179040c3b31ff`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. Raw Artifact` — source lines 274–292, SHA `665f5ab938b7d8ba`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. Provenance` — source lines 293–316, SHA `2af6758c9ed5af12`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. OriginRef` — source lines 317–334, SHA `476eba39ba0221f7`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. Observation Append` — source lines 335–354, SHA `5d82027fb85d02aa`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. Batch Observation Append` — source lines 355–369, SHA `9ff2411bb5b8f87d`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. Observation Correction` — source lines 370–403, SHA `fc6116433c832e84`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. Observation Usability` — source lines 404–422, SHA `77b7fc5bd051bc9b`; **NUMERICAL-HEADING-CANDIDATE**
+- `19. Source Being Wrong Is Not a Capture Correction` — source lines 423–444, SHA `0055497a3ea672ef`; **NUMERICAL-HEADING-CANDIDATE**
+- `20. EvidenceLink` — source lines 445–480, SHA `6e3b53110cbaad30`; **NUMERICAL-HEADING-CANDIDATE**
+- `21. Evidence Target Types` — source lines 481–495, SHA `43df56a58852671f`; **NUMERICAL-HEADING-CANDIDATE**
+- `22. Evidence Source Rule` — source lines 496–516, SHA `f4a31d2690ed9f74`; **NUMERICAL-HEADING-CANDIDATE**
+- `23. Multi-Observation Evidence` — source lines 517–530, SHA `9b9e3a106b6126ae`; **NUMERICAL-HEADING-CANDIDATE**
+- `24. Deterministic Evidence Derivation` — source lines 531–547, SHA `a877a4a2ddbe1e2d`; **NUMERICAL-HEADING-CANDIDATE**
+- `25. Semantic Evidence Derivation` — source lines 548–564, SHA `707113dd7cd84742`; **NUMERICAL-HEADING-CANDIDATE**
+- `26. Authoritative Evidence Derivation` — source lines 565–575, SHA `04a2305c0c56c8db`; **NUMERICAL-HEADING-CANDIDATE**
+- `27. Accepted Evidence Immutability` — source lines 576–596, SHA `fe692e0bb94aeeed`; **NUMERICAL-HEADING-CANDIDATE**
+- `28. RELEVANT Is Not Support` — source lines 597–605, SHA `77106081fa4da703`; **NUMERICAL-HEADING-CANDIDATE**
+- `29. Evidence Does Not Vote` — source lines 606–618, SHA `f36fcb8d8bdc363c`; **NUMERICAL-HEADING-CANDIDATE**
+- `30. ContradictionRecord` — source lines 619–645, SHA `13210f41b24790aa`; **NUMERICAL-HEADING-CANDIDATE**
+- `31. Comparability` — source lines 646–664, SHA `1cc70179587f4c07`; **NUMERICAL-HEADING-CANDIDATE**
+- `32. Apparent vs Real Contradiction` — source lines 665–684, SHA `42fb500d7f779d07`; **NUMERICAL-HEADING-CANDIDATE**
+- `33. Contradiction Lifecycle` — source lines 685–716, SHA `da2a04e685023078`; **NUMERICAL-HEADING-CANDIDATE**
+- `34. Nondeterminism` — source lines 717–735, SHA `4f48180b30e0d288`; **NUMERICAL-HEADING-CANDIDATE**
+- `35. Contradiction Effect on Facts` — source lines 736–748, SHA `73a9fc72f4825a71`; **NUMERICAL-HEADING-CANDIDATE**
+- `36. Prediction Is First-Class` — source lines 749–771, SHA `8a6e84637c4fcdbf`; **NUMERICAL-HEADING-CANDIDATE**
+- `37. Prediction Mutability` — source lines 772–785, SHA `f7672dfc292506f6`; **NUMERICAL-HEADING-CANDIDATE**
+- `38. Prediction Cannot Be Backfilled` — source lines 786–795, SHA `952e9599b193ce56`; **NUMERICAL-HEADING-CANDIDATE**
+- `39. Prediction Evaluation Is Separate` — source lines 796–823, SHA `e62f4dea34801a41`; **NUMERICAL-HEADING-CANDIDATE**
+- `40. Why Separate Evaluation?` — source lines 824–835, SHA `f2a3b20e169de1ce`; **NUMERICAL-HEADING-CANDIDATE**
+- `41. Experiment Design vs Experiment Run` — source lines 836–857, SHA `f4586fd9214d4f02`; **NUMERICAL-HEADING-CANDIDATE**
+- `42. Experiment` — source lines 858–891, SHA `4b32884579f6d91b`; **NUMERICAL-HEADING-CANDIDATE**
+- `43. Experiment Authorization` — source lines 892–916, SHA `17801e6096d170b8`; **NUMERICAL-HEADING-CANDIDATE**
+- `44. ExperimentRun` — source lines 917–943, SHA `0d8a59b64083967f`; **NUMERICAL-HEADING-CANDIDATE**
+- `45. Experiment Failure ≠ Hypothesis Failure` — source lines 944–967, SHA `d107b2a829e2c474`; **NUMERICAL-HEADING-CANDIDATE**
+- `46. Experiment Actions` — source lines 968–981, SHA `88bfe04aef069de6`; **NUMERICAL-HEADING-CANDIDATE**
+- `47. Experiment Observations` — source lines 982–997, SHA `4f4aa692152f151f`; **NUMERICAL-HEADING-CANDIDATE**
+- `48. Repeated Runs` — source lines 998–1020, SHA `e42a9c3a750d077a`; **NUMERICAL-HEADING-CANDIDATE**
+- `49. Experiment Conclusion` — source lines 1021–1048, SHA `27e291ec242d524e`; **NUMERICAL-HEADING-CANDIDATE**
+- `50. Causal Closure Use` — source lines 1049–1063, SHA `c1fc060caac2b7d4`; **NUMERICAL-HEADING-CANDIDATE**
+- `51. VerificationSpec` — source lines 1064–1095, SHA `75092753aad111b5`; **NUMERICAL-HEADING-CANDIDATE**
+- `52. VerificationRecord` — source lines 1096–1131, SHA `d4b9e299e8d921f0`; **NUMERICAL-HEADING-CANDIDATE**
+- `53. Verification Records Are Immutable` — source lines 1132–1143, SHA `91a4f1d00d46a11c`; **NUMERICAL-HEADING-CANDIDATE**
+- `54. DeterministicResult` — source lines 1144–1181, SHA `40a84e4225ffd3f6`; **NUMERICAL-HEADING-CANDIDATE**
+- `55. Why DeterministicResult Is Not Observation` — source lines 1182–1193, SHA `e6e00cb8ffee6398`; **NUMERICAL-HEADING-CANDIDATE**
+- `56. SemanticAssessment` — source lines 1194–1229, SHA `a02a5043ccc074d2`; **NUMERICAL-HEADING-CANDIDATE**
+- `57. SemanticAssessment Authority` — source lines 1230–1245, SHA `815ecb3c6877188c`; **NUMERICAL-HEADING-CANDIDATE**
+- `58. MMRT Result` — source lines 1246–1257, SHA `e0b1866640f71a96`; **NUMERICAL-HEADING-CANDIDATE**
+- `59. Structural Diff` — source lines 1258–1275, SHA `87b48abddcfc45ac`; **NUMERICAL-HEADING-CANDIDATE**
+- `60. Behavioral Verification` — source lines 1276–1293, SHA `e81c975f55059110`; **NUMERICAL-HEADING-CANDIDATE**
+- `61. Conformance Evaluation` — source lines 1294–1311, SHA `91391587d41042ea`; **NUMERICAL-HEADING-CANDIDATE**
+- `62. Verification Outcome ≠ Enforcement Effect` — source lines 1312–1336, SHA `93cce4b4f0883c94`; **NUMERICAL-HEADING-CANDIDATE**
+- `63. Test Harness Failure` — source lines 1337–1352, SHA `6996f188bb6d60c1`; **NUMERICAL-HEADING-CANDIDATE**
+- `64. Inconclusive Verification` — source lines 1353–1364, SHA `1dc9f31207a7d442`; **NUMERICAL-HEADING-CANDIDATE**
+- `65. Verification Freshness` — source lines 1365–1383, SHA `5fc90f930dfe7b10`; **NUMERICAL-HEADING-CANDIDATE**
+- `66. Verification Reuse` — source lines 1384–1395, SHA `f5e16eda6234277c`; **NUMERICAL-HEADING-CANDIDATE**
+- `67. ConfidenceAssessment` — source lines 1396–1423, SHA `251e76df632182f8`; **NUMERICAL-HEADING-CANDIDATE**
+- `68. Confidence Freshness` — source lines 1424–1439, SHA `491a4cdfedf1332c`; **NUMERICAL-HEADING-CANDIDATE**
+- `69. VERIFIED Confidence` — source lines 1440–1447, SHA `73dd42dd654d7727`; **NUMERICAL-HEADING-CANDIDATE**
+- `70. Observation Deduplication` — source lines 1448–1460, SHA `565f019ca4f0da22`; **NUMERICAL-HEADING-CANDIDATE**
+- `71. Observation Identity` — source lines 1461–1475, SHA `9f84e07c9ec9edfe`; **NUMERICAL-HEADING-CANDIDATE**
+- `72. Observation Time` — source lines 1476–1491, SHA `550b8dacb9940a75`; **NUMERICAL-HEADING-CANDIDATE**
+- `73. Late Observation` — source lines 1492–1504, SHA `5d226cea65379b9b`; **NUMERICAL-HEADING-CANDIDATE**
+- `74. Unknown Time` — source lines 1505–1514, SHA `20ab7117737d8fd7`; **NUMERICAL-HEADING-CANDIDATE**
+- `75. Human Input` — source lines 1515–1529, SHA `eadf888b4c33718c`; **NUMERICAL-HEADING-CANDIDATE**
+- `76. Repository Observation` — source lines 1530–1544, SHA `3435fefd2b1f6203`; **NUMERICAL-HEADING-CANDIDATE**
+- `77. Tool Error Observation` — source lines 1545–1555, SHA `13fec23b9f22840a`; **NUMERICAL-HEADING-CANDIDATE**
+- `78. No Recursive Evidence Inflation` — source lines 1556–1569, SHA `b624d6772b1ca7ec`; **NUMERICAL-HEADING-CANDIDATE**
+- `79. No Self-Supporting Epistemic Cycles` — source lines 1570–1582, SHA `329c9c2c67e942c1`; **NUMERICAL-HEADING-CANDIDATE**
+- `80. Experiment Independence From Desired Outcome` — source lines 1583–1600, SHA `aa9b0715044eafb1`; **NUMERICAL-HEADING-CANDIDATE**
+- `81. Competing Hypotheses` — source lines 1601–1616, SHA `4787d38de1c26b1f`; **NUMERICAL-HEADING-CANDIDATE**
+- `82. Failed Experiment Is Valuable` — source lines 1617–1626, SHA `28b90374bb63b37e`; **NUMERICAL-HEADING-CANDIDATE**
+- `83. Experiment Cancellation` — source lines 1627–1637, SHA `a7fd30b1cc4bdb98`; **NUMERICAL-HEADING-CANDIDATE**
+- `84. Prediction Version Rule` — source lines 1638–1656, SHA `8febde53bda147a5`; **NUMERICAL-HEADING-CANDIDATE**
+- `85. Experiment Run Reproduction` — source lines 1657–1671, SHA `37908bc48edc1dda`; **NUMERICAL-HEADING-CANDIDATE**
+- `86. Verification and Experiment Are Different` — source lines 1672–1695, SHA `88b096acea44223d`; **NUMERICAL-HEADING-CANDIDATE**
+- `87. Shared Observations Are Allowed` — source lines 1696–1708, SHA `a4c9df0a72e60000`; **NUMERICAL-HEADING-CANDIDATE**
+- `88. RDMS-03 Authority Matrix` — source lines 1709–1723, SHA `ac8154188514a56b`; **NUMERICAL-HEADING-CANDIDATE**
+- `89. RDMS-03 Invariants` — source lines 1724–1803, SHA `2814c34222c785fb`; **NUMERICAL-HEADING-CANDIDATE**
+- `90. Deliberately Deferred` — source lines 1804–1827, SHA `2ee3895e5bb0563d`; **NUMERICAL-HEADING-CANDIDATE**
+- `91. Adversarial Review Targets` — source lines 1828–1831, SHA `46e76f69f158f06e`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. Can ObservationAmendment become a hidden way to rewrite history?` — source lines 1832–1833, SHA `0f846e39feb32f2a`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Can "normalized_content" accidentally become semantic interpretation?` — source lines 1834–1835, SHA `477a77f973762635`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Can HUMAN_STATEMENT + domain authority be abused to manufacture` — source lines 1836–1838, SHA `a1703b6d56bd12c6`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Can an accepted EvidenceLink remain active after its Observation becomes` — source lines 1839–1841, SHA `02646998ed437678`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Can EvidenceLink multi-observation sources create dependency ambiguity?` — source lines 1842–1843, SHA `22b238cde7c9dfcc`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. Can ContradictionRecord itself become a second truth source?` — source lines 1844–1845, SHA `947ebeb98d941cbd`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. Are Experiment predictions really impossible to change after seeing` — source lines 1846–1848, SHA `ba1b94cd5d1f2039`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. Can a new ExperimentRun accidentally reuse stale Predictions against` — source lines 1849–1851, SHA `11517b3c473e8ee0`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Can an ExperimentRun be COMPLETED while a required Action remains` — source lines 1852–1854, SHA `0ac6b800b696b42a`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. Can FAILED_TO_EXECUTE and NOT_MATCHED still be confused in downstream` — source lines 1855–1857, SHA `24803d5697a43557`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. Can VerificationRecord SATISFIED be reused after code/world change?` — source lines 1858–1859, SHA `06f895560b841ddf`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. Can SemanticAssessment recommendations accidentally become hard vetoes?` — source lines 1860–1861, SHA `018589746b13e640`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. Can DeterministicResult claim determinism while its tool/procedure is` — source lines 1862–1864, SHA `a722ee0dffc877ab`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. Can duplicate observations inflate SupportAssessment?` — source lines 1865–1866, SHA `5e63bc299e10cd2a`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. Can delayed observations corrupt temporal causal reasoning?` — source lines 1867–1868, SHA `36a4b02dfbad0e7d`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. Can source authority change over time while old authoritative Evidence` — source lines 1869–1871, SHA `07eff631e8543afb`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. Are ConfidenceAssessment and SupportAssessment too overlapping?` — source lines 1872–1873, SHA `496a724bcd17de18`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. Can one physical test used for Experiment + Verification create` — source lines 1874–1875, SHA `4e6332231c83ea4a`; **NUMERICAL-HEADING-CANDIDATE**
+- `92. Current Status` — source lines 1876–1892, SHA `f77423e56097ff9d`; **NUMERICAL-HEADING-CANDIDATE**
+
+**C01 and Freeze Review 02 Final** — `a1ca0249-b287-4c4b-8254-773c8f6edbda`
+- `C01-01 — Content Trust Must Travel With Content` — source lines 11–59, SHA `c826880def32c3b7`; **C-NUMBERED**
+- `C01-02 — Content Cannot Elevate Authority` — source lines 60–75, SHA `a4de3b768e8244e1`; **C-NUMBERED**
+- `C01-03 — Domain Authority Becomes Canonical State` — source lines 76–105, SHA `42f6d2f138588208`; **C-NUMBERED**
+- `C01-04 — Authoritative Evidence Pins Authority Version` — source lines 106–119, SHA `8d119d89a8cc0b2c`; **C-NUMBERED**
+- `C01-05 — Authority Validity Is Time-Scoped` — source lines 120–154, SHA `7a9cb457e5b9329f`; **C-NUMBERED**
+- `C01-06 — Observation Normalization Is Mechanically Bounded` — source lines 155–184, SHA `59482698b3c48011`; **C-NUMBERED**
+- `C01-07 — Observation Amendment Governance` — source lines 185–210, SHA `e61b86407d56ad39`; **C-NUMBERED**
+- `C01-08 — Semantic Disagreement Cannot Amend Observation` — source lines 211–233, SHA `a440ba757305fa53`; **C-NUMBERED**
+- `C01-09 — Observation Usability` — source lines 234–251, SHA `da23336d30bcc95b`; **C-NUMBERED**
+- `C01-10 — Evidence Basis Semantics` — source lines 252–271, SHA `c57c5535155ec9c3`; **C-NUMBERED**
+- `C01-11 — ALL_REQUIRED` — source lines 272–285, SHA `b8de8c7eeefa7302`; **C-NUMBERED**
+- `C01-12 — STRUCTURED` — source lines 286–303, SHA `d7696d39cf593710`; **C-NUMBERED**
+- `C01-13 — EvidenceLink Usability` — source lines 304–329, SHA `9929dfe9a6e31917`; **C-NUMBERED**
+- `C01-14 — Stable Epistemic Target Identity` — source lines 330–356, SHA `cc3c3d21fe5a7539`; **C-NUMBERED**
+- `C01-15 — Evidence Origin Group` — source lines 357–381, SHA `445dfa1ae2b41723`; **C-NUMBERED**
+- `C01-16 — Distinct Origin ≠ Proven Statistical Independence` — source lines 382–405, SHA `982559a4acb4a6e7`; **C-NUMBERED**
+- `C01-17 — Evidence Basis Signature` — source lines 406–435, SHA `339c7841a04a57dc`; **C-NUMBERED**
+- `C01-18 — No Wrapper Inflation` — source lines 436–443, SHA `e11099775562138f`; **C-NUMBERED**
+- `C01-19 — Evidence Cycles` — source lines 444–463, SHA `4214705aead20155`; **C-NUMBERED**
+- `C01-20 — ContradictionRecord Boundary` — source lines 464–496, SHA `84603635af52b83a`; **C-NUMBERED**
+- `C01-21 — Temporal Provenance` — source lines 497–515, SHA `3b1d03c5407f83b2`; **C-NUMBERED**
+- `C01-22 — Canonical Order ≠ World Causal Order` — source lines 516–530, SHA `15de73a16374fe14`; **C-NUMBERED**
+- `C01-23 — Experiment Design Snapshot` — source lines 531–559, SHA `742d35472a6c52ce`; **C-NUMBERED**
+- `C01-24 — Prediction Freeze` — source lines 560–571, SHA `3e49d659b81a8009`; **C-NUMBERED**
+- `C01-25 — No Run Against “Current Experiment”` — source lines 572–589, SHA `f4b3704510846459`; **C-NUMBERED**
+- `C01-26 — Experiment Redesign Rule` — source lines 590–612, SHA `b3a9e8f34e15c7d4`; **C-NUMBERED**
+- `C01-27 — Run Preflight` — source lines 613–639, SHA `4bd177e0f6367db5`; **C-NUMBERED**
+- `C01-28 — Nonconforming Run` — source lines 640–655, SHA `12fcb7530b69f53b`; **C-NUMBERED**
+- `C01-29 — ExperimentRun State` — source lines 656–668, SHA `2a2f60d7ea7a56ad`; **C-NUMBERED**
+- `C01-30 — INVALID` — source lines 669–687, SHA `fd4b518972650c59`; **C-NUMBERED**
+- `C01-31 — Required Action Reconciliation` — source lines 688–709, SHA `2e0689020f03fafe`; **C-NUMBERED**
+- `C01-32 — Cancellation Does Not Cancel Reality` — source lines 710–725, SHA `0056620be6ac8fad`; **C-NUMBERED**
+- `C01-33 — PredictionEvaluation Input` — source lines 726–740, SHA `05678ad21024deca`; **C-NUMBERED**
+- `C01-34 — Execution Failure vs Scientific Result` — source lines 741–754, SHA `8b6281ce5756faa0`; **C-NUMBERED**
+- `C01-35 — VerificationSpec Version Pinning` — source lines 755–782, SHA `3a8d83dd1d622b62`; **C-NUMBERED**
+- `C01-36 — Verification Execution Context` — source lines 783–801, SHA `0c0404a167a5c941`; **C-NUMBERED**
+- `C01-37 — Verification Usability` — source lines 802–811, SHA `567a8b7ae3f33a5a`; **C-NUMBERED**
+- `C01-38 — Determinism Profile` — source lines 812–844, SHA `6ce91c482675c58f`; **C-NUMBERED**
+- `C01-39 — Deterministic Evidence Gate` — source lines 845–867, SHA `31f67a03b08fed2b`; **C-NUMBERED**
+- `C01-40 — Complete Means Scoped Determinism` — source lines 868–877, SHA `171707ceb07bb867`; **C-NUMBERED**
+- `C01-41 — Support vs Confidence Responsibilities` — source lines 878–909, SHA `0a079bfde386e26b`; **C-NUMBERED**
+- `C01-42 — OVC Assessment` — source lines 910–920, SHA `e53577149775b535`; **C-NUMBERED**
+- `C01-43 — Semantic Assessment Is Advisory` — source lines 921–941, SHA `aabd80c26793e453`; **C-NUMBERED**
+- `C01-44 — Semantic Review Gate` — source lines 942–953, SHA `b52334a3dcf0f19e`; **C-NUMBERED**
+- `C01-45 — Evidence Consumption Rule` — source lines 954–967, SHA `7e76426662ea2746`; **C-NUMBERED**
+- `C01-46 — Duplicate vs Replication` — source lines 968–980, SHA `65f5973a6c9b09df`; **C-NUMBERED**
+- `C01-47 — Current Evidence Lineage View` — source lines 981–1000, SHA `5bc6e4946ac5e4db`; **C-NUMBERED**
+- `C01-48 — Updated RDMS-03 Invariants` — source lines 1001–1698, SHA `ee2f2ab79a58b343`; **C-NUMBERED**
+
+### RDMS-04
+
+**Original draft** — `32ad532a-40cd-4b2a-8a0a-3372937cf6db`
+- `1. Purpose` — source lines 11–36, SHA `c28a9a4b59f698f2`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Architecture` — source lines 37–83, SHA `1548cf13df9ed804`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. ActionProposal` — source lines 84–142, SHA `320d378498711b3c`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Action Authorization` — source lines 143–168, SHA `debc299c1985b70c`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. ActionGate` — source lines 169–194, SHA `e0e1b3efe8cc2965`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. ActionRecord` — source lines 195–224, SHA `fd594aedc1dc752f`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. Action Lifecycle` — source lines 225–253, SHA `356212119249e0d9`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. ActionAttempt` — source lines 254–291, SHA `2b6078cd724bf098`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Write-Ahead Dispatch Protocol` — source lines 292–327, SHA `d1e6b96ca0e271e1`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. ActionEffectSemantics` — source lines 328–354, SHA `b543bcde419cb476`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. IN_DOUBT` — source lines 355–373, SHA `cd535fccbd6b26d6`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. ToolAdapter` — source lines 374–400, SHA `d5c861084bb18bb7`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. Execution Modes` — source lines 401–418, SHA `94df9247e0239d6e`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. ProcessExecutionRequest` — source lines 419–454, SHA `7101cf506a8740e3`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. TerminalSession` — source lines 455–485, SHA `7c3c6e98cd2a6659`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. ProcessRun` — source lines 486–523, SHA `7a372cadaa7e5cf2`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. Streaming Output` — source lines 524–557, SHA `fd86d5a27624bcab`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. EXEC Output` — source lines 558–571, SHA `a567e2d61b5e9c5a`; **NUMERICAL-HEADING-CANDIDATE**
+- `19. PTY Output` — source lines 572–589, SHA `aebd582ac410aea8`; **NUMERICAL-HEADING-CANDIDATE**
+- `20. Process Cancellation` — source lines 590–619, SHA `d81ace88dde0e127`; **NUMERICAL-HEADING-CANDIDATE**
+- `21. Process Trees` — source lines 620–639, SHA `8fd164559ccc13ea`; **NUMERICAL-HEADING-CANDIDATE**
+- `22. Long-Running Services` — source lines 640–666, SHA `80dd25c3e454628f`; **NUMERICAL-HEADING-CANDIDATE**
+- `23. Terminal Ownership & Resumption` — source lines 667–687, SHA `ff0cf70b4b167982`; **NUMERICAL-HEADING-CANDIDATE**
+- `24. File Read` — source lines 688–708, SHA `75cc304462545220`; **NUMERICAL-HEADING-CANDIDATE**
+- `25. FilePatchProposal` — source lines 709–729, SHA `289b7e9d461ba53e`; **NUMERICAL-HEADING-CANDIDATE**
+- `26. Safe Patch Application` — source lines 730–752, SHA `152c2fdf5ac0054c`; **NUMERICAL-HEADING-CANDIDATE**
+- `27. Atomic File Replacement` — source lines 753–770, SHA `551bb83783b249ba`; **NUMERICAL-HEADING-CANDIDATE**
+- `28. Path Safety` — source lines 771–783, SHA `a6ed4602128f2199`; **NUMERICAL-HEADING-CANDIDATE**
+- `29. Git Operations` — source lines 784–820, SHA `775c56a4e55c68ca`; **NUMERICAL-HEADING-CANDIDATE**
+- `30. GitScope` — source lines 821–834, SHA `ac4e5a3c3dbe93a9`; **NUMERICAL-HEADING-CANDIDATE**
+- `31. Git Mutation Preconditions` — source lines 835–847, SHA `7943226caea1e544`; **NUMERICAL-HEADING-CANDIDATE**
+- `32. Branch / Worktree Isolation` — source lines 848–863, SHA `863c224a4719a05e`; **NUMERICAL-HEADING-CANDIDATE**
+- `33. Commit and Push` — source lines 864–882, SHA `b06f717caad23d3a`; **NUMERICAL-HEADING-CANDIDATE**
+- `34. TestRunner Adapter` — source lines 883–899, SHA `b5cab4656b52571f`; **NUMERICAL-HEADING-CANDIDATE**
+- `35. Test Result Extraction` — source lines 900–929, SHA `e4ccf4ae26e1c1b1`; **NUMERICAL-HEADING-CANDIDATE**
+- `36. Test Side Effects` — source lines 930–944, SHA `50627af73dcd0198`; **NUMERICAL-HEADING-CANDIDATE**
+- `37. DebuggerAdapter` — source lines 945–965, SHA `bcbba319213dcdc1`; **NUMERICAL-HEADING-CANDIDATE**
+- `38. Debug Operations` — source lines 966–982, SHA `4793c0f562b047a7`; **NUMERICAL-HEADING-CANDIDATE**
+- `39. Debugger Read vs Effect` — source lines 983–1004, SHA `4eb2dcb9b64a7a7b`; **NUMERICAL-HEADING-CANDIDATE**
+- `40. Breakpoint Provenance` — source lines 1005–1021, SHA `678ae7dcf3041a8b`; **NUMERICAL-HEADING-CANDIDATE**
+- `41. Legal Action Classes` — source lines 1022–1046, SHA `b14aecaac8a403bb`; **NUMERICAL-HEADING-CANDIDATE**
+- `42. SandboxProfile` — source lines 1047–1070, SHA `10a289498612461e`; **NUMERICAL-HEADING-CANDIDATE**
+- `43. ContainmentProof` — source lines 1071–1097, SHA `304e5b47d2a328ef`; **NUMERICAL-HEADING-CANDIDATE**
+- `44. Sandbox Fast Path` — source lines 1098–1110, SHA `c7cca4058a7f97d5`; **NUMERICAL-HEADING-CANDIDATE**
+- `45. SandboxActivityRecord` — source lines 1111–1133, SHA `1860df0579a4c16a`; **NUMERICAL-HEADING-CANDIDATE**
+- `46. Promotion to Shared World` — source lines 1134–1159, SHA `9a37c65c815932a2`; **NUMERICAL-HEADING-CANDIDATE**
+- `47. Credentials Boundary` — source lines 1160–1178, SHA `ac8fe296b677d53b`; **NUMERICAL-HEADING-CANDIDATE**
+- `48. CredentialPolicy` — source lines 1179–1203, SHA `75e46f36926b70f8`; **NUMERICAL-HEADING-CANDIDATE**
+- `49. Network Policy` — source lines 1204–1221, SHA `7ae7f48f1c19e354`; **NUMERICAL-HEADING-CANDIDATE**
+- `50. Privilege Boundary` — source lines 1222–1228, SHA `bbd187b12b8e2f30`; **NUMERICAL-HEADING-CANDIDATE**
+- `51. Tool Result ≠ Reality Effect` — source lines 1229–1246, SHA `ef3a87eb529ddc62`; **NUMERICAL-HEADING-CANDIDATE**
+- `52. OutcomeProbe` — source lines 1247–1268, SHA `7f322fc7fa4e7644`; **NUMERICAL-HEADING-CANDIDATE**
+- `53. ReconciliationRecord` — source lines 1269–1295, SHA `b8f074716cbe2860`; **NUMERICAL-HEADING-CANDIDATE**
+- `54. Compensation` — source lines 1296–1310, SHA `170bb239df9eaf52`; **NUMERICAL-HEADING-CANDIDATE**
+- `55. Process Crash` — source lines 1311–1327, SHA `2af6fc5a8adedb64`; **NUMERICAL-HEADING-CANDIDATE**
+- `56. Old Epoch` — source lines 1328–1339, SHA `eba735f704556a21`; **NUMERICAL-HEADING-CANDIDATE**
+- `57. Recovery Priority` — source lines 1340–1352, SHA `f779ed6bc4548019`; **NUMERICAL-HEADING-CANDIDATE**
+- `58. Action ↔ Observation` — source lines 1353–1367, SHA `2b72c24af7dff88f`; **NUMERICAL-HEADING-CANDIDATE**
+- `59. Action ↔ Experiment` — source lines 1368–1377, SHA `9d03f3ccdf44b043`; **NUMERICAL-HEADING-CANDIDATE**
+- `60. Action ↔ Verification` — source lines 1378–1583, SHA `2b17153913ae3589`; **NUMERICAL-HEADING-CANDIDATE**
+
+**C01** — `4f585132-49b6-448d-8506-4b502aee6311`
+- `C01-01 — One Canonical Control Authority` — source lines 10–38, SHA `9c44affb7bef9d6f`; **C-NUMBERED**
+- `C01-02 — Action Execution Identity` — source lines 39–57, SHA `68ae8c4e36f7f61a`; **C-NUMBERED**
+- `C01-03 — Durable Dispatch Ownership` — source lines 58–82, SHA `f4a18224e9b21e6f`; **C-NUMBERED**
+- `C01-04 — Dispatch Protocol` — source lines 83–107, SHA `65c3779e5cd04542`; **C-NUMBERED**
+- `C01-05 — Executive Epoch Change` — source lines 108–127, SHA `14437e8b7f947aac`; **C-NUMBERED**
+- `C01-06 — The External Exactly-Once Limit` — source lines 128–144, SHA `071e9e3098e35dbf`; **C-NUMBERED**
+- `C01-07 — Two Independent Dimensions` — source lines 145–165, SHA `2f62f4f1d2e0bb72`; **C-NUMBERED**
+- `C01-08 — ReadAccessGrant` — source lines 166–187, SHA `eff831f8f9e81fbb`; **C-NUMBERED**
+- `C01-09 — Read-Only Classification` — source lines 188–217, SHA `6ed6b7dd5e33d5d3`; **C-NUMBERED**
+- `C01-10 — Information Disclosure Is Separately Governed` — source lines 218–230, SHA `fe6ec82086df737b`; **C-NUMBERED**
+- `C01-11 — Orthogonal Process Dimensions` — source lines 231–258, SHA `15d9d7b6d2512ba4`; **C-NUMBERED**
+- `C01-12 — SessionGrant and InputGrant` — source lines 259–294, SHA `87e6a5a3f04779f4`; **C-NUMBERED**
+- `C01-13 — Arbitrary Interactive Shells` — source lines 295–310, SHA `d3b92f2e47b499ae`; **C-NUMBERED**
+- `C01-14 — Terminal Input Is Effect-Bearing` — source lines 311–324, SHA `2c920338cf5ba2da`; **C-NUMBERED**
+- `C01-15 — Durable Process Identity` — source lines 325–351, SHA `0e45e4cdf033e82d`; **C-NUMBERED**
+- `C01-16 — ProcessGroup Ownership` — source lines 352–377, SHA `6237bde792fdf66e`; **C-NUMBERED**
+- `C01-17 — Process Termination Semantics` — source lines 378–391, SHA `c586190be20bd1e7`; **C-NUMBERED**
+- `C01-18 — Reattachment` — source lines 392–411, SHA `feda1debce8e3e02`; **C-NUMBERED**
+- `C01-19 — Object-Bound File Authorization` — source lines 412–427, SHA `4402e324e639f4d8`; **C-NUMBERED**
+- `C01-20 — ChangeSet` — source lines 428–457, SHA `096c75d69ac524cb`; **C-NUMBERED**
+- `C01-21 — Isolated Preparation` — source lines 458–479, SHA `9b55d25ebd74e60e`; **C-NUMBERED**
+- `C01-22 — Partial Promotion` — source lines 480–491, SHA `48b2083a99fcf83b`; **C-NUMBERED**
+- `C01-23 — Effective Git Execution Context` — source lines 492–514, SHA `bc760d1a71f85f88`; **C-NUMBERED**
+- `C01-24 — Hidden Executable Effects` — source lines 515–530, SHA `f540eaf52900ec83`; **C-NUMBERED**
+- `C01-25 — Git Concurrency` — source lines 531–547, SHA `a61e5414358c30b0`; **C-NUMBERED**
+- `C01-26 — Git Remote Effects` — source lines 548–556, SHA `276967cd6888ce5b`; **C-NUMBERED**
+- `C01-27 — Effective Containment Binding` — source lines 557–580, SHA `04ada2e745f2446e`; **C-NUMBERED**
+- `C01-28 — Continuous Enforcement` — source lines 581–596, SHA `eae159ca12ed572c`; **C-NUMBERED**
+- `C01-29 — No Implicit Artifact Promotion` — source lines 597–603, SHA `038dad37ddf52d59`; **C-NUMBERED**
+- `C01-30 — End-to-End Credential Boundary` — source lines 604–622, SHA `00acea047bcd0c17`; **C-NUMBERED**
+- `C01-31 — Secret Output` — source lines 623–642, SHA `cf8591bccead58d5`; **C-NUMBERED**
+- `C01-32 — Output Completeness` — source lines 643–655, SHA `d74515feaa5c9f20`; **C-NUMBERED**
+- `C01-33 — Probe Adequacy` — source lines 656–675, SHA `43ce1f4e46f7f96e`; **C-NUMBERED**
+- `C01-34 — Verified Absence` — source lines 676–693, SHA `7009611740f4087b`; **C-NUMBERED**
+- `C01-35 — Compensation Is an Action` — source lines 694–713, SHA `a0287d9513d25144`; **C-NUMBERED**
+- `C01-36 — Debugger Effect Semantics` — source lines 714–750, SHA `714a984eacda0e6e`; **C-NUMBERED**
+- `C01-37 — Tool Version Pinning` — source lines 751–760, SHA `b3aa641887abc30d`; **C-NUMBERED**
+- `C01-38 — Service Readiness` — source lines 761–772, SHA `b08395409557d4df`; **C-NUMBERED**
+- `C01-39 — Cancellation States` — source lines 773–786, SHA `d0a9a38267b9e324`; **C-NUMBERED**
+- `C01-40 — Resource Limits` — source lines 787–803, SHA `76aa773e6be00ca2`; **C-NUMBERED**
+- `C01-41 — Cross-Workspace Promotion` — source lines 804–922, SHA `e27033cd158ff845`; **C-NUMBERED**
+
+**Adversarial Freeze Review 02 and freeze decision** — `9c2e281b-8959-48e4-b6f8-17a51d8185f2`
+
+### RDMS-05
+
+**Original draft** — `6276f296-457b-462d-b674-933a15194429`
+- `1. Purpose` — source lines 11–32, SHA `55a9aa2deeed53a5`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Authority Boundary` — source lines 33–74, SHA `662188a140e35209`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Three Different Time Concepts` — source lines 75–95, SHA `7a37ea2d2ef32043`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Wall Clock vs Monotonic Time` — source lines 96–111, SHA `a031450df39abe6d`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. TemporalSchedule` — source lines 112–142, SHA `69dc9ee8c10c9e4b`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. TriggerDefinition` — source lines 143–177, SHA `0118b5c8a747a119`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. TriggerCondition` — source lines 178–202, SHA `83091891ceb75857`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. TriggerEvaluation` — source lines 203–236, SHA `eff85c7eb42a119d`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Level-Triggered` — source lines 237–248, SHA `bb29393a432afe6b`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. Edge-Triggered` — source lines 249–268, SHA `8a8e4dd598432cd4`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. One-Shot` — source lines 269–275, SHA `33a52721793e2d0d`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. Rearmable` — source lines 276–294, SHA `8d334e773d2ea70e`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. Trigger State` — source lines 295–315, SHA `7f7e25e0c99bc402`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. Condition Composition` — source lines 316–327, SHA `14f8148fc9dceae0`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. Three-Valued Logic` — source lines 328–340, SHA `bc7e076e0ef00bba`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. Example — Wait for Two Conditions` — source lines 341–356, SHA `17834ec4b78730de`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. Composite Identity and Cycles` — source lines 357–373, SHA `1c086a080230779a`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. TriggerSourceCursor` — source lines 374–396, SHA `84147e3f7511fab4`; **NUMERICAL-HEADING-CANDIDATE**
+- `19. Atomic Cursor Advancement` — source lines 397–420, SHA `d1372d8258032788`; **NUMERICAL-HEADING-CANDIDATE**
+- `20. Source Coverage` — source lines 421–437, SHA `aa9f1534eabd0bca`; **NUMERICAL-HEADING-CANDIDATE**
+- `21. TriggerFire` — source lines 438–454, SHA `12dc7896326632e0`; **NUMERICAL-HEADING-CANDIDATE**
+- `22. Idempotent Fire Identity` — source lines 455–469, SHA `d4dcc2c8916b0ccf`; **NUMERICAL-HEADING-CANDIDATE**
+- `23. TriggerReaction` — source lines 470–498, SHA `bb341f52f2c83be0`; **NUMERICAL-HEADING-CANDIDATE**
+- `24. Reaction Deduplication` — source lines 499–509, SHA `ee6b01de7aaf53dd`; **NUMERICAL-HEADING-CANDIDATE**
+- `25. Commitment Entity` — source lines 510–538, SHA `c497a5da15956a70`; **NUMERICAL-HEADING-CANDIDATE**
+- `26. Commitment Validity` — source lines 539–562, SHA `65f551390972a6dc`; **NUMERICAL-HEADING-CANDIDATE**
+- `27. Example — Temporary Engineering Workaround` — source lines 563–582, SHA `423a20782ecc1719`; **NUMERICAL-HEADING-CANDIDATE**
+- `28. Distinct Meanings` — source lines 583–598, SHA `1a816ef9a462c5fc`; **NUMERICAL-HEADING-CANDIDATE**
+- `29. WorkReactivationBinding` — source lines 599–615, SHA `6276a0aa50520db8`; **NUMERICAL-HEADING-CANDIDATE**
+- `30. Reactivation Is Not Execution` — source lines 616–640, SHA `35d6ce1d85e74957`; **NUMERICAL-HEADING-CANDIDATE**
+- `31. Durable Resumption Capsule` — source lines 641–681, SHA `993d3472b4c80a77`; **NUMERICAL-HEADING-CANDIDATE**
+- `32. Capsule Is a Restoration Guide` — source lines 682–693, SHA `081f71bbd522331d`; **NUMERICAL-HEADING-CANDIDATE**
+- `33. Capsule Creation` — source lines 694–709, SHA `0cf2f6bdb3eaec95`; **NUMERICAL-HEADING-CANDIDATE**
+- `34. Capsule Versioning` — source lines 710–718, SHA `1eb8a1c600b49c8e`; **NUMERICAL-HEADING-CANDIDATE**
+- `35. Resume Sequence` — source lines 719–719, SHA `1027adb4cb47b987`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. Detect eligible reactivation` — source lines 720–721, SHA `a1f1a31fcfbafdb4`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Acquire valid Executive epoch` — source lines 722–723, SHA `448e311d7d1bf4d8`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Restore canonical project state` — source lines 724–725, SHA `225710e546d018d5`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Load ResumptionCapsule` — source lines 726–727, SHA `ddf45600369af5d7`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Inspect unresolved ActionRecords` — source lines 728–729, SHA `94e543fa3ae85438`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. Reconcile potentially dispatched effects` — source lines 730–731, SHA `2f3f45aada48d6b3`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. Compare relevant repo/world/environment` — source lines 732–733, SHA `d63679b9889e2fb0`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. Evaluate dependency freshness` — source lines 734–735, SHA `3300c6db867bfb45`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Revalidate Goal, Slice, Decisions` — source lines 736–737, SHA `886ce24e37f506ce`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. Rebuild current focus` — source lines 738–739, SHA `d7186b020da13f0c`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. Replan if necessary` — source lines 740–741, SHA `f8fc255bc9962d9c`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. Authorize next work` — source lines 742–745, SHA `05e7ab88d378068e`; **NUMERICAL-HEADING-CANDIDATE**
+- `36. ResumeAssessment` — source lines 746–771, SHA `668c2b23506693ee`; **NUMERICAL-HEADING-CANDIDATE**
+- `37. Unresolved Actions` — source lines 772–786, SHA `5b33919050fd907e`; **NUMERICAL-HEADING-CANDIDATE**
+- `38. TemporalValidity` — source lines 787–807, SHA `1c0b531a7c826e15`; **NUMERICAL-HEADING-CANDIDATE**
+- `39. No Duplicate Freshness Engine` — source lines 808–823, SHA `d86a32062a3a236d`; **NUMERICAL-HEADING-CANDIDATE**
+- `40. Human Event` — source lines 824–845, SHA `648ca644e9ed0ce0`; **NUMERICAL-HEADING-CANDIDATE**
+- `41. External Events` — source lines 846–861, SHA `144321043f191f22`; **NUMERICAL-HEADING-CANDIDATE**
+- `42. Event Absence` — source lines 862–872, SHA `9214508fb69b7b6f`; **NUMERICAL-HEADING-CANDIDATE**
+- `43. Startup Trigger Recovery` — source lines 873–890, SHA `20691776e5628c27`; **NUMERICAL-HEADING-CANDIDATE**
+- `44. At-Least-Once Detection` — source lines 891–908, SHA `a41c05b4fc08ece2`; **NUMERICAL-HEADING-CANDIDATE**
+- `45. Reaction Crash Window` — source lines 909–927, SHA `e75dced27d25390f`; **NUMERICAL-HEADING-CANDIDATE**
+- `46. Trigger Generation` — source lines 928–936, SHA `9844d510cda7d55c`; **NUMERICAL-HEADING-CANDIDATE**
+- `47. Rearming Rule` — source lines 937–952, SHA `6a7be5e7e18c2ac1`; **NUMERICAL-HEADING-CANDIDATE**
+- `48. Trigger Cancellation` — source lines 953–961, SHA `81820078aafdd2db`; **NUMERICAL-HEADING-CANDIDATE**
+- `49. Reactivation Queue` — source lines 962–984, SHA `e891d573ab531a2d`; **NUMERICAL-HEADING-CANDIDATE**
+- `50. Fairness & Storm Control` — source lines 985–1000, SHA `4d39eec585b41bc6`; **NUMERICAL-HEADING-CANDIDATE**
+- `51. Missed Deadlines` — source lines 1001–1018, SHA `5ceec4c170772ba7`; **NUMERICAL-HEADING-CANDIDATE**
+- `52. RDMS-01 Integration` — source lines 1019–1024, SHA `4e6c4cd5c116109b`; **NUMERICAL-HEADING-CANDIDATE**
+- `53. RDMS-02 Integration` — source lines 1025–1028, SHA `4289f3472fa54b23`; **NUMERICAL-HEADING-CANDIDATE**
+- `54. RDMS-03 Integration` — source lines 1029–1034, SHA `feade45b1d6906e2`; **NUMERICAL-HEADING-CANDIDATE**
+- `55. RDMS-04 Integration` — source lines 1035–1040, SHA `341b6924260d3cdf`; **NUMERICAL-HEADING-CANDIDATE**
+- `56. RDMS-06 Integration` — source lines 1041–1326, SHA `48331ce4c5735e8c`; **NUMERICAL-HEADING-CANDIDATE**
+
+**C01** — `77caba5f-8e8e-4b8e-a9fe-027c4801efad`
+- `C01-01 — Canonical Ownership` — source lines 10–52, SHA `b1991100c289fef0`; **C-NUMBERED**
+- `C01-02 — SourceContract` — source lines 53–95, SHA `e2b44b61a91d35c2`; **C-NUMBERED**
+- `C01-03 — DurableEventInbox` — source lines 96–123, SHA `8b8c34dc8fd2af57`; **C-NUMBERED**
+- `C01-04 — Acknowledgement Fence` — source lines 124–145, SHA `62ac74c9f6c6e478`; **C-NUMBERED**
+- `C01-05 — Two Different Cursor Concepts` — source lines 146–161, SHA `9ac6a788999eb6d9`; **C-NUMBERED**
+- `C01-06 — Atomic Trigger Processing` — source lines 162–181, SHA `34fc40528baa8cbf`; **C-NUMBERED**
+- `C01-07 — Sources Without Stable Event Identity` — source lines 182–196, SHA `4c1a781420981f9f`; **C-NUMBERED**
+- `C01-08 — EventCoverage` — source lines 197–221, SHA `772d4cc6db6d907c`; **C-NUMBERED**
+- `C01-09 — EdgeWitness` — source lines 222–251, SHA `d653b42d7301443c`; **C-NUMBERED**
+- `C01-10 — Absence-Based Predicate` — source lines 252–273, SHA `91bd6654438cf54b`; **C-NUMBERED**
+- `C01-11 — Late Evidence After Completion` — source lines 274–290, SHA `2d76fd63b317881f`; **C-NUMBERED**
+- `C01-12 — TriggerDefinitionSnapshot` — source lines 291–322, SHA `10ca4a5c6d93e08f`; **C-NUMBERED**
+- `C01-13 — QualifiedOccurrenceIdentity` — source lines 323–343, SHA `4622db5b676a540f`; **C-NUMBERED**
+- `C01-14 — Stable TriggerFire` — source lines 344–368, SHA `31a8e7e6a017ec73`; **C-NUMBERED**
+- `C01-15 — Reaction Identity` — source lines 369–380, SHA `542f00bc2ed1135d`; **C-NUMBERED**
+- `C01-16 — RearmPolicy` — source lines 381–398, SHA `52da475f88b642a8`; **C-NUMBERED**
+- `C01-17 — Level Trigger Cycle` — source lines 399–415, SHA `987ef8c58922de26`; **C-NUMBERED**
+- `C01-18 — Edge Trigger Cycle` — source lines 416–421, SHA `16f94b0c1e9e6d9b`; **C-NUMBERED**
+- `C01-19 — Feedback-Loop Control` — source lines 422–444, SHA `4658946d6a9cd6aa`; **C-NUMBERED**
+- `C01-20 — EvaluationContext` — source lines 445–465, SHA `b9a2ddfbce88ca6f`; **C-NUMBERED**
+- `C01-21 — CompositeCoherenceAssessment` — source lines 466–494, SHA `8c9a50eb73e853db`; **C-NUMBERED**
+- `C01-22 — Logical Evaluation Order` — source lines 495–510, SHA `9f5e84fd01e0ca4c`; **C-NUMBERED**
+- `C01-23 — Dependency Engine Boundary` — source lines 511–531, SHA `fb0ef8e532fd93c1`; **C-NUMBERED**
+- `C01-24 — Schedule Definition` — source lines 532–553, SHA `10a4f0153f417f26`; **C-NUMBERED**
+- `C01-25 — ScheduleOccurrence` — source lines 554–574, SHA `6bea835ca5013cb1`; **C-NUMBERED**
+- `C01-26 — DST Policy` — source lines 575–594, SHA `5a0c9ecaf73ad093`; **C-NUMBERED**
+- `C01-27 — Clock Discontinuity` — source lines 595–608, SHA `6f3169ff058fc33a`; **C-NUMBERED**
+- `C01-28 — Missed Occurrence Handling` — source lines 609–620, SHA `e5b99bd535f231d9`; **C-NUMBERED**
+- `C01-29 — Target-Bound Reaction` — source lines 621–645, SHA `6edd799816413333`; **C-NUMBERED**
+- `C01-30 — Atomic Reaction Application` — source lines 646–664, SHA `4375dc0c9e2c5eec`; **C-NUMBERED**
+- `C01-31 — ReactionExecutionClaim` — source lines 665–683, SHA `514ae7f5d15b6a38`; **C-NUMBERED**
+- `C01-32 — No Duplicate Canonical Effect` — source lines 684–699, SHA `d4794edd201c5cd6`; **C-NUMBERED**
+- `C01-33 — Orphaned Reactivation` — source lines 700–718, SHA `08e659ebe3a31fa8`; **C-NUMBERED**
+- `C01-34 — Durable Capsule Content` — source lines 719–744, SHA `3bf68824ac7536fe`; **C-NUMBERED**
+- `C01-35 — Atomic Suspension` — source lines 745–759, SHA `d96322c0dd8f7b10`; **C-NUMBERED**
+- `C01-36 — Missing or Corrupted Capsule` — source lines 760–772, SHA `bb4597b59b9b6b34`; **C-NUMBERED**
+- `C01-37 — Safe Resume Protocol` — source lines 773–799, SHA `d2b2875ebc95ed51`; **C-NUMBERED**
+- `C01-38 — ResumeAssessment` — source lines 800–824, SHA `ecbea8825246caec`; **C-NUMBERED**
+- `C01-39 — Relevant Change, Not Global Change` — source lines 825–840, SHA `e0c37db1f5adbc0d`; **C-NUMBERED**
+- `C01-40 — Time-of-Check / Time-of-Use` — source lines 841–852, SHA `e31d8d06959b2cc4`; **C-NUMBERED**
+- `C01-41 — Unresolved Action Barrier` — source lines 853–863, SHA `6172e022f29a473a`; **C-NUMBERED**
+- `C01-42 — TrustedEventBinding` — source lines 864–888, SHA `1cbfcec9367b99a9`; **C-NUMBERED**
+- `C01-43 — Semantic Review Boundary` — source lines 889–900, SHA `4ea2d3ed9ec998a6`; **C-NUMBERED**
+- `C01-44 — Monitoring Cannot Bypass ActionGate` — source lines 901–911, SHA `83b041bf2a926cbd`; **C-NUMBERED**
+- `C01-45 — Fairness and Durable Backlog` — source lines 912–926, SHA `873cd7e8dfd878a4`; **C-NUMBERED**
+- `C01-46 — Late and Out-of-Order Events` — source lines 927–934, SHA `8e9435479210a8e5`; **C-NUMBERED**
+- `C01-47 — Recurring Backlog` — source lines 935–947, SHA `c01e360fc73209da`; **C-NUMBERED**
+- `C01-48 — Threshold Stability` — source lines 948–960, SHA `abdc0edded50098c`; **C-NUMBERED**
+- `C01-49 — End-to-End Audit Lineage` — source lines 961–982, SHA `1381e8f032526078`; **C-NUMBERED**
+- `C01-50 — Reaction Causal Chain Bound` — source lines 983–1069, SHA `575c8e6b47deda0c`; **C-NUMBERED**
+
+**Adversarial Freeze Review 02 and freeze decision** — `87d8aced-dfbc-477b-80dc-e6d90997fe59`
+- `1. Freeze Criteria` — source lines 8–27, SHA `e9ba6de1920021b3`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Final Freeze Clarifications` — source lines 28–65, SHA `65e95d9ab6f454bc`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Adversarial Test Results` — source lines 66–366, SHA `eed48c3c93afa0de`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Freeze Review Matrix` — source lines 367–388, SHA `430948f7e3724032`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Residual Implementation Gates` — source lines 389–408, SHA `64b8944fbe00bd41`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. Final Governance Decision` — source lines 409–430, SHA `2839475c0e86da96`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. Next Authorized Phase` — source lines 431–481, SHA `6740b3d1b63d441b`; **NUMERICAL-HEADING-CANDIDATE**
+
+### RDMS-06
+
+**Original draft** — `4bcbb2bf-86d9-4b93-9b1c-9f9529916667`
+- `1. Purpose` — source lines 30–58, SHA `11bd5f090be3339e`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Architecture` — source lines 59–101, SHA `93dfbd054e43ccd0`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Specialist Philosophy` — source lines 102–133, SHA `dd024cf87064dd01`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Recruitment Eligibility` — source lines 134–145, SHA `3f5c8b1628a80c04`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. RecruitmentDecision` — source lines 146–169, SHA `778fe0caeee5ed30`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. No Recursive Specialist Creation` — source lines 170–184, SHA `9bcb38b3958d8599`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. SpecialistWorkContract` — source lines 185–241, SHA `87d15ed99176b4ce`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. Contract Immutability` — source lines 242–258, SHA `d9e8db81e7af3977`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Specialist State` — source lines 259–273, SHA `1e2d624a548128ce`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. Lifecycle Rules` — source lines 274–296, SHA `6cf97da9d26d93c4`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. Specialist Persistence` — source lines 297–323, SHA `39ebfde055cc8505`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. SpecialistWorkspace` — source lines 324–350, SHA `bcba9c1c51c40d32`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. No Direct Canonical Mutation` — source lines 351–371, SHA `e72135298a17104c`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. Physical vs Logical Isolation` — source lines 372–389, SHA `78c2152ccab0f34a`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. WorkPartition` — source lines 390–407, SHA `5cefb6d2e4457bde`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. Parallelism Safety` — source lines 408–425, SHA `1ee96905a4b9f0fa`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. Parallel Conflict Classification` — source lines 426–446, SHA `4f897fa7da87f590`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. Shared Resource Budgets` — source lines 447–467, SHA `84688f12cc8d721f`; **NUMERICAL-HEADING-CANDIDATE**
+- `19. SpecialistResult` — source lines 468–503, SHA `222815219cfef66a`; **NUMERICAL-HEADING-CANDIDATE**
+- `20. Result Is Not Authority` — source lines 504–521, SHA `594dd7d22fca56d0`; **NUMERICAL-HEADING-CANDIDATE**
+- `21. Observation Provenance` — source lines 522–535, SHA `cdfeeb7bdaeb461c`; **NUMERICAL-HEADING-CANDIDATE**
+- `22. IndependentReviewer` — source lines 536–557, SHA `3d4b74d4f1aaa981`; **NUMERICAL-HEADING-CANDIDATE**
+- `23. Reviewer Independence` — source lines 558–569, SHA `89543a16be9b289e`; **NUMERICAL-HEADING-CANDIDATE**
+- `24. Evidence Over Consensus` — source lines 570–583, SHA `31810ad956553a02`; **NUMERICAL-HEADING-CANDIDATE**
+- `25. Shared Evidence Roots` — source lines 584–590, SHA `30862a03531b0de8`; **NUMERICAL-HEADING-CANDIDATE**
+- `26. Dependency Engine Ownership` — source lines 591–613, SHA `71080766ca6bdd48`; **NUMERICAL-HEADING-CANDIDATE**
+- `27. Why Global Version Is Insufficient` — source lines 614–642, SHA `9d1ac23c41370517`; **NUMERICAL-HEADING-CANDIDATE**
+- `28. DependencyStamp` — source lines 643–674, SHA `bd83067938134390`; **NUMERICAL-HEADING-CANDIDATE**
+- `29. DependencySet` — source lines 675–693, SHA `2259db3b53f85e5f`; **NUMERICAL-HEADING-CANDIDATE**
+- `30. Automatic Dependency Capture` — source lines 694–719, SHA `d9462ab860ad7190`; **NUMERICAL-HEADING-CANDIDATE**
+- `31. Hidden Dependencies` — source lines 720–734, SHA `f5beb2fe5e9963bb`; **NUMERICAL-HEADING-CANDIDATE**
+- `32. Per-Dependency Evaluation` — source lines 735–749, SHA `09f4b5190df8237c`; **NUMERICAL-HEADING-CANDIDATE**
+- `33. Aggregate Evaluation` — source lines 750–788, SHA `173db594349010b9`; **NUMERICAL-HEADING-CANDIDATE**
+- `34. EXACT Dependency` — source lines 789–798, SHA `a24639af2937c451`; **NUMERICAL-HEADING-CANDIDATE**
+- `35. COMPATIBLE Dependency` — source lines 799–808, SHA `7a958e5ed70400c5`; **NUMERICAL-HEADING-CANDIDATE**
+- `36. ADVISORY Dependency` — source lines 809–817, SHA `d7eab748968d4864`; **NUMERICAL-HEADING-CANDIDATE**
+- `37. Salvaging Valid Results` — source lines 818–838, SHA `869613e46b22f86d`; **NUMERICAL-HEADING-CANDIDATE**
+- `38. Result Component Dependencies` — source lines 839–856, SHA `c733a4ca725c2c9f`; **NUMERICAL-HEADING-CANDIDATE**
+- `39. PARTIALLY_STALE Does Not Mean Safe To Integrate` — source lines 857–864, SHA `465478a50ebfcbfc`; **NUMERICAL-HEADING-CANDIDATE**
+- `40. Problem of Negative Conclusions` — source lines 865–883, SHA `c532ff326124c0ff`; **NUMERICAL-HEADING-CANDIDATE**
+- `41. QueryDependencyStamp` — source lines 884–910, SHA `60d5920add6d73d1`; **NUMERICAL-HEADING-CANDIDATE**
+- `42. Negative Knowledge Proof` — source lines 911–936, SHA `2b2f591c17a43e06`; **NUMERICAL-HEADING-CANDIDATE**
+- `43. Fine-Grained Invalidation` — source lines 937–960, SHA `26f5d8d9e4e326ac`; **NUMERICAL-HEADING-CANDIDATE**
+- `44. Conservative Frontier Expansion` — source lines 961–971, SHA `57e95f57b57d4895`; **NUMERICAL-HEADING-CANDIDATE**
+- `45. Evaluation Flow` — source lines 972–996, SHA `e2f847806dbfc974`; **NUMERICAL-HEADING-CANDIDATE**
+- `46. Evaluation Is Read-Oriented` — source lines 997–1009, SHA `25dee85e67795649`; **NUMERICAL-HEADING-CANDIDATE**
+- `47. Unknown Is Not Valid` — source lines 1010–1022, SHA `1d5d404781676f7e`; **NUMERICAL-HEADING-CANDIDATE**
+- `48. IntegrationCandidate` — source lines 1023–1047, SHA `0a0f830c0d52c9f1`; **NUMERICAL-HEADING-CANDIDATE**
+- `49. IntegrationReview` — source lines 1048–1081, SHA `2f3421d477ff5d5f`; **NUMERICAL-HEADING-CANDIDATE**
+- `50. Integration Order` — source lines 1082–1099, SHA `c54fbfcce3351883`; **NUMERICAL-HEADING-CANDIDATE**
+- `51. Cognitive vs Repository Integration` — source lines 1100–1115, SHA `e2a428981d157b4d`; **NUMERICAL-HEADING-CANDIDATE**
+- `52. Integration Freshness Recheck` — source lines 1116–1126, SHA `f44e76c24bf37857`; **NUMERICAL-HEADING-CANDIDATE**
+- `53. Partial Integration` — source lines 1127–1140, SHA `d1c8f9d32ad7ba07`; **NUMERICAL-HEADING-CANDIDATE**
+- `54. Conflicting Hypotheses` — source lines 1141–1163, SHA `eddc0c0c2ac755a1`; **NUMERICAL-HEADING-CANDIDATE**
+- `55. Conflicting Code Patches` — source lines 1164–1173, SHA `f91129e93f14a434`; **NUMERICAL-HEADING-CANDIDATE**
+- `56. Authority Conflict` — source lines 1174–1180, SHA `e17c833cae055537`; **NUMERICAL-HEADING-CANDIDATE**
+- `57. Specialist Experience` — source lines 1181–1192, SHA `ab278d0aea00ee50`; **NUMERICAL-HEADING-CANDIDATE**
+- `58. Learning Gate` — source lines 1193–1211, SHA `f000e85c95ec157b`; **NUMERICAL-HEADING-CANDIDATE**
+- `59. Specialist Failure` — source lines 1212–1225, SHA `0165c476b0a66359`; **NUMERICAL-HEADING-CANDIDATE**
+- `60. Budget Exhaustion` — source lines 1226–1236, SHA `92d28273ecd28f7b`; **NUMERICAL-HEADING-CANDIDATE**
+- `61. Executive Crash` — source lines 1237–1258, SHA `24247097262418f5`; **NUMERICAL-HEADING-CANDIDATE**
+- `62. Specialist Result After Expiry` — source lines 1259–1269, SHA `7000ba30cc4f1b07`; **NUMERICAL-HEADING-CANDIDATE**
+- `63. Concurrency Limits` — source lines 1270–1280, SHA `7065694b08e6fe3b`; **NUMERICAL-HEADING-CANDIDATE**
+- `64. Specialist Creation Idempotency` — source lines 1281–1292, SHA `ce8afc652d1b532b`; **NUMERICAL-HEADING-CANDIDATE**
+- `65. Context Efficiency` — source lines 1293–1307, SHA `e8833d5f56baf630`; **NUMERICAL-HEADING-CANDIDATE**
+- `66. RDMS-01` — source lines 1308–1311, SHA `e57bcf6cab9df9aa`; **NUMERICAL-HEADING-CANDIDATE**
+- `67. RDMS-02` — source lines 1312–1315, SHA `749b2fd3d23f23b9`; **NUMERICAL-HEADING-CANDIDATE**
+- `68. RDMS-03` — source lines 1316–1321, SHA `d06798c5b2c95406`; **NUMERICAL-HEADING-CANDIDATE**
+- `69. RDMS-04` — source lines 1322–1325, SHA `fff3ff671086afda`; **NUMERICAL-HEADING-CANDIDATE**
+- `70. RDMS-05` — source lines 1326–1329, SHA `d82913f5b3cdd712`; **NUMERICAL-HEADING-CANDIDATE**
+- `71. RDMS-07` — source lines 1330–1333, SHA `c1b49484c9c0e06e`; **NUMERICAL-HEADING-CANDIDATE**
+- `72. RDMS-08` — source lines 1334–1653, SHA `098fd586ee7a8c02`; **NUMERICAL-HEADING-CANDIDATE**
+
+**C01 and Adversarial Freeze Review 02 with freeze decision** — `1ed5a815-4917-47b8-9e00-0b450a0581e2`
+- `1. Non-Negotiable Architecture` — source lines 20–58, SHA `26bc2648d703ce01`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. SpecialistCapabilityGrant` — source lines 59–95, SHA `0d9fc328a6b32ae4`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Capability Enforcement Protocol` — source lines 96–123, SHA `41155acbe757bdb2`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Resource Identity Binding` — source lines 124–147, SHA `b715a38b228df51b`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Grant Expiration and Revocation` — source lines 148–170, SHA `a3bd5527580ddbf1`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. Delegation Control` — source lines 171–207, SHA `28fb9b40ddd7a047`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. SpecialistIsolationProfile` — source lines 208–240, SHA `77424ff96a5d6af2`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. Isolation Admission Rule` — source lines 241–261, SHA `d763a2ad83716c10`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Specialist Evidence Validation` — source lines 262–302, SHA `d9d78f19ee5f2a75`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. Evidence Origin Conservation` — source lines 303–321, SHA `2f54a8bb3dfb14ee`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. Transitive Content Trust` — source lines 322–342, SHA `1449952602de88fb`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. No Authority Laundering` — source lines 343–364, SHA `f77bec4fe9a26240`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. ReviewerContextManifest` — source lines 365–381, SHA `d3e3864b91af98f9`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. Independence Semantics` — source lines 382–398, SHA `1feafb0ba9abb6b6`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. Review Orientation` — source lines 399–412, SHA `63be57bc278cc1d6`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. ResourceBudget Enforcement` — source lines 413–438, SHA `b3207dab9c083145`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. Resource Accounting` — source lines 439–454, SHA `13586b22aec7f105`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. IntegrationOperation` — source lines 455–493, SHA `995ac0fe45b42899`; **NUMERICAL-HEADING-CANDIDATE**
+- `19. Integration Protocol` — source lines 494–532, SHA `d67097102e4c7c88`; **NUMERICAL-HEADING-CANDIDATE**
+- `20. Crash During Integration` — source lines 533–564, SHA `7bfa1c4dcb569473`; **NUMERICAL-HEADING-CANDIDATE**
+- `21. Conflict Analysis` — source lines 565–593, SHA `4b5d578f05f2725a`; **NUMERICAL-HEADING-CANDIDATE**
+- `22. Core Principle` — source lines 594–607, SHA `4a07a9a8fc3f6558`; **NUMERICAL-HEADING-CANDIDATE**
+- `23. DependencyCaptureReceipt` — source lines 608–639, SHA `a12c20a2c8bb3697`; **NUMERICAL-HEADING-CANDIDATE**
+- `24. Dependency Completeness Boundary` — source lines 640–653, SHA `f0f407d3ec8710dc`; **NUMERICAL-HEADING-CANDIDATE**
+- `25. Trusted Dependency Attestation` — source lines 654–671, SHA `c26eade860633009`; **NUMERICAL-HEADING-CANDIDATE**
+- `26. FreshnessRequirement Ownership` — source lines 672–691, SHA `40094ac002c26d1d`; **NUMERICAL-HEADING-CANDIDATE**
+- `27. Compatibility Proof` — source lines 692–715, SHA `44cdaecdc70ef412`; **NUMERICAL-HEADING-CANDIDATE**
+- `28. QueryUniverseContract` — source lines 716–739, SHA `1f2eea45c36481d0`; **NUMERICAL-HEADING-CANDIDATE**
+- `29. Existing Members vs New Entrants` — source lines 740–757, SHA `400ea7f75d44139c`; **NUMERICAL-HEADING-CANDIDATE**
+- `30. NegativeQueryProof` — source lines 758–793, SHA `fde4a7123594d660`; **NUMERICAL-HEADING-CANDIDATE**
+- `31. DependencyEvaluationUniverse` — source lines 794–825, SHA `148a98321fdf2352`; **NUMERICAL-HEADING-CANDIDATE**
+- `32. Index Consistency` — source lines 826–843, SHA `dd71d7c17809e0ca`; **NUMERICAL-HEADING-CANDIDATE**
+- `33. DependencyLineageGraph` — source lines 844–868, SHA `16f0cb8d094b6b46`; **NUMERICAL-HEADING-CANDIDATE**
+- `34. Evaluation Rules` — source lines 869–881, SHA `446bcf4dbc92fd0c`; **NUMERICAL-HEADING-CANDIDATE**
+- `35. Partial Staleness` — source lines 882–893, SHA `6db9560020dea5f6`; **NUMERICAL-HEADING-CANDIDATE**
+- `36. No Universal Invalidation` — source lines 894–900, SHA `fe001170fda43012`; **NUMERICAL-HEADING-CANDIDATE**
+- `37. Stable Recruitment Identity` — source lines 901–927, SHA `45f1118aa3319465`; **NUMERICAL-HEADING-CANDIDATE**
+- `38. SpecialistRunIdentity` — source lines 928–946, SHA `d71727449682ab84`; **NUMERICAL-HEADING-CANDIDATE**
+- `39. Integration Application Idempotency` — source lines 947–965, SHA `26743496441eeb05`; **NUMERICAL-HEADING-CANDIDATE**
+- `40. Late Specialist Results` — source lines 966–984, SHA `d3f63255ac45f5bd`; **NUMERICAL-HEADING-CANDIDATE**
+- `41. Unresolved World Actions` — source lines 985–999, SHA `7bd609305576ffcf`; **NUMERICAL-HEADING-CANDIDATE**
+- `42. H01 — Intentional Independent Specialists` — source lines 1000–1005, SHA `0260a56d751213fb`; **NUMERICAL-HEADING-CANDIDATE**
+- `43. H02 — Context Disclosure` — source lines 1006–1022, SHA `f4f28c6da99c8b44`; **NUMERICAL-HEADING-CANDIDATE**
+- `44. H03 — Scheduler Fairness` — source lines 1023–1033, SHA `744789579290f770`; **NUMERICAL-HEADING-CANDIDATE**
+- `45. H04 — Provider Cost Attribution` — source lines 1034–1045, SHA `40f8ef6062312b01`; **NUMERICAL-HEADING-CANDIDATE**
+- `46. H05 — Integration Auditability` — source lines 1046–1062, SHA `0572433e01448712`; **NUMERICAL-HEADING-CANDIDATE**
+- `47. H06 — Revalidation Storm Control` — source lines 1063–1707, SHA `e109c52b4c7a0672`; **NUMERICAL-HEADING-CANDIDATE**
+
+### RDMS-07
+
+**Original draft** — `938c1bc7-97a0-46ad-be19-cd3ba3ca125f`
+- `1. Purpose` — source lines 32–62, SHA `469722715481b784`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Experience Is Not Knowledge` — source lines 63–100, SHA `77da4f93aa561650`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Memory Does Not Own Authority` — source lines 101–126, SHA `1dc4ddb81b4ce38f`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Memory Categories` — source lines 127–143, SHA `d08c7e1b1a7d91ba`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Memory Architecture` — source lines 144–181, SHA `ec7a2e9700893724`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. Working Memory` — source lines 182–194, SHA `fb0c880d3b2bc7f4`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. Working Memory Is Not Automatically Persistent Knowledge` — source lines 195–207, SHA `33f468959ba3a97a`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. Working Memory Recovery` — source lines 208–220, SHA `7520932b4bbe8a66`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Engineering Episode` — source lines 221–250, SHA `ebed5faf46071a2d`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. What an Episode Records` — source lines 251–276, SHA `e56dde21e85a6595`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. Automatic Episode Capture` — source lines 277–291, SHA `c9b7257eda3a5a64`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. Episode Immutability` — source lines 292–308, SHA `168c38d64f07039a`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. Reflection Capability` — source lines 309–329, SHA `7f4addd01317bbec`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. ReflectionRecord` — source lines 330–355, SHA `c0e6626a4b5c78c7`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. Reflection Is an Interpretation` — source lines 356–371, SHA `faa4f195b73f6c2c`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. Reflection Cannot Manufacture Causality` — source lines 372–386, SHA `28a7ea037e1a726b`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. Memory Maturity Levels` — source lines 387–404, SHA `c732728641ee468c`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. EPISODE` — source lines 405–410, SHA `27a058958f84f3cd`; **NUMERICAL-HEADING-CANDIDATE**
+- `19. TASK_LESSON` — source lines 411–418, SHA `9b4e37248380f2b0`; **NUMERICAL-HEADING-CANDIDATE**
+- `20. PROJECT_LESSON` — source lines 419–426, SHA `e85b308439357830`; **NUMERICAL-HEADING-CANDIDATE**
+- `21. CANDIDATE_GENERALIZATION` — source lines 427–432, SHA `63e861ca343759e2`; **NUMERICAL-HEADING-CANDIDATE**
+- `22. CORROBORATED_SCHEMA` — source lines 433–448, SHA `f34269644493e5f7`; **NUMERICAL-HEADING-CANDIDATE**
+- `23. Maturity Promotion` — source lines 449–469, SHA `cae0d409c1690f4b`; **NUMERICAL-HEADING-CANDIDATE**
+- `24. MemoryProposal` — source lines 470–500, SHA `fa160726c6e29805`; **NUMERICAL-HEADING-CANDIDATE**
+- `25. Proposal Requirements` — source lines 501–521, SHA `43a95e4742a4ec6e`; **NUMERICAL-HEADING-CANDIDATE**
+- `26. LearningGate` — source lines 522–554, SHA `a0b434c72b38140b`; **NUMERICAL-HEADING-CANDIDATE**
+- `27. Gate Authority` — source lines 555–570, SHA `dcddced03fbad9dd`; **NUMERICAL-HEADING-CANDIDATE**
+- `28. Canonical Memory Commit` — source lines 571–586, SHA `bcf3853ed6b0c5f5`; **NUMERICAL-HEADING-CANDIDATE**
+- `29. MemoryRecord` — source lines 587–621, SHA `2bf510c0fd5be018`; **NUMERICAL-HEADING-CANDIDATE**
+- `30. Memory Lifecycle` — source lines 622–649, SHA `77b67a165394fbe6`; **NUMERICAL-HEADING-CANDIDATE**
+- `31. Memory Versioning` — source lines 650–667, SHA `6f00c82a0cd9ee69`; **NUMERICAL-HEADING-CANDIDATE**
+- `32. Historical Memory vs Current Guidance` — source lines 668–684, SHA `11e147fa61a908c2`; **NUMERICAL-HEADING-CANDIDATE**
+- `33. Project Memory` — source lines 685–696, SHA `f03a783e6d3961e5`; **NUMERICAL-HEADING-CANDIDATE**
+- `34. Project Scope` — source lines 697–713, SHA `146e011cd0b2c8f1`; **NUMERICAL-HEADING-CANDIDATE**
+- `35. Repository Is Not Replaced by Memory` — source lines 714–724, SHA `113e2c4b544b5fda`; **NUMERICAL-HEADING-CANDIDATE**
+- `36. General Memory` — source lines 725–739, SHA `aab3bcaf46691492`; **NUMERICAL-HEADING-CANDIDATE**
+- `37. GeneralizationProposal` — source lines 740–761, SHA `164fd4c93e4d60ab`; **NUMERICAL-HEADING-CANDIDATE**
+- `38. Generalization Limits` — source lines 762–768, SHA `cf6c5f878f6fc9c8`; **NUMERICAL-HEADING-CANDIDATE**
+- `39. Procedural Knowledge` — source lines 769–776, SHA `e473b97413df303c`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. Identify shared mutable state.` — source lines 777–777, SHA `d95776cc6a07b57a`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Reproduce the failure under controlled conditions.` — source lines 778–778, SHA `faa408ca17f9518a`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Examine interleavings.` — source lines 779–779, SHA `a3beaa93b1c92bc9`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Form competing causal hypotheses.` — source lines 780–780, SHA `87a942c6af0bf09e`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Test targeted interventions.` — source lines 781–784, SHA `7ff0ee3a4457f1d6`; **NUMERICAL-HEADING-CANDIDATE**
+- `40. ProcedureMemory` — source lines 785–814, SHA `05fed2ae08f58f56`; **NUMERICAL-HEADING-CANDIDATE**
+- `41. Procedures Are Suggestions` — source lines 815–830, SHA `8ae16a07d64c3836`; **NUMERICAL-HEADING-CANDIDATE**
+- `42. Procedure Adaptation` — source lines 831–845, SHA `013fc8d739d7edf8`; **NUMERICAL-HEADING-CANDIDATE**
+- `43. Decision Memory` — source lines 846–857, SHA `b563e76fd1b069e6`; **NUMERICAL-HEADING-CANDIDATE**
+- `44. DecisionMemory` — source lines 858–881, SHA `a0cca59504692518`; **NUMERICAL-HEADING-CANDIDATE**
+- `45. Decision History` — source lines 882–888, SHA `2da8749a487b57c7`; **NUMERICAL-HEADING-CANDIDATE**
+- `46. Failure Memory` — source lines 889–899, SHA `299507caf84f6626`; **NUMERICAL-HEADING-CANDIDATE**
+- `47. FailurePattern` — source lines 900–923, SHA `959dbe5857e896a1`; **NUMERICAL-HEADING-CANDIDATE**
+- `48. Avoid Overgeneralizing Failure` — source lines 924–936, SHA `c9d017d4e04ecf3e`; **NUMERICAL-HEADING-CANDIDATE**
+- `49. Project Lexicon` — source lines 937–946, SHA `74484610c45c0ca2`; **NUMERICAL-HEADING-CANDIDATE**
+- `50. LexiconEntry` — source lines 947–962, SHA `c6b62035b8f3129d`; **NUMERICAL-HEADING-CANDIDATE**
+- `51. Lexicon Does Not Redefine Architecture` — source lines 963–971, SHA `6d1d601129f2ab15`; **NUMERICAL-HEADING-CANDIDATE**
+- `52. Commitment Memory Boundary` — source lines 972–990, SHA `5004ad024a419426`; **NUMERICAL-HEADING-CANDIDATE**
+- `53. Retrieval Philosophy` — source lines 991–1006, SHA `331458154bd7419f`; **NUMERICAL-HEADING-CANDIDATE**
+- `54. MemoryQuery` — source lines 1007–1028, SHA `a328044864d92c26`; **NUMERICAL-HEADING-CANDIDATE**
+- `55. RetrievalCandidate` — source lines 1029–1052, SHA `7b4404b756b8a4c0`; **NUMERICAL-HEADING-CANDIDATE**
+- `56. Retrieval Is Not Truth Promotion` — source lines 1053–1066, SHA `d7b62d814b81c1d6`; **NUMERICAL-HEADING-CANDIDATE**
+- `57. RetrievalResult` — source lines 1067–1088, SHA `95b73341cacd8868`; **NUMERICAL-HEADING-CANDIDATE**
+- `58. Knowledge Transfer` — source lines 1089–1103, SHA `3ea599eb949a15d8`; **NUMERICAL-HEADING-CANDIDATE**
+- `59. TransferAssessment` — source lines 1104–1128, SHA `b4adc7baaafcaf87`; **NUMERICAL-HEADING-CANDIDATE**
+- `60. Scope and Confidentiality` — source lines 1129–1154, SHA `c8db723018f88a2d`; **NUMERICAL-HEADING-CANDIDATE**
+- `61. Memory Contradiction` — source lines 1155–1178, SHA `6f630332b8ca0a96`; **NUMERICAL-HEADING-CANDIDATE**
+- `62. MemoryConflictRecord` — source lines 1179–1197, SHA `a8a4d1def892e5d7`; **NUMERICAL-HEADING-CANDIDATE**
+- `63. Contradiction Does Not Mean Automatic Deletion` — source lines 1198–1205, SHA `43240c78fbb60685`; **NUMERICAL-HEADING-CANDIDATE**
+- `64. Memory Revision` — source lines 1206–1220, SHA `c3c6a65e337d77f9`; **NUMERICAL-HEADING-CANDIDATE**
+- `65. Memory Dependency Evaluation` — source lines 1221–1232, SHA `c7e1b78bbf691a46`; **NUMERICAL-HEADING-CANDIDATE**
+- `66. Validity Dimensions` — source lines 1233–1249, SHA `a953ef68b24778a3`; **NUMERICAL-HEADING-CANDIDATE**
+- `67. No Global Forgetting` — source lines 1250–1258, SHA `f552d87d88a7c2ff`; **NUMERICAL-HEADING-CANDIDATE**
+- `68. Epistemic Retirement` — source lines 1259–1271, SHA `237d3bf430618c1e`; **NUMERICAL-HEADING-CANDIDATE**
+- `69. Physical Data Retention` — source lines 1272–1298, SHA `49d34edffb7883ab`; **NUMERICAL-HEADING-CANDIDATE**
+- `70. Memory Poisoning` — source lines 1299–1308, SHA `42c44051e88ea4d5`; **NUMERICAL-HEADING-CANDIDATE**
+- `71. Trust Boundary` — source lines 1309–1327, SHA `693e132e08a352a6`; **NUMERICAL-HEADING-CANDIDATE**
+- `72. Stored Procedure Injection` — source lines 1328–1340, SHA `25915d69fdd577a7`; **NUMERICAL-HEADING-CANDIDATE**
+- `73. Avoid Storing Everything as Learned Knowledge` — source lines 1341–1356, SHA `f1b56b3190d3c670`; **NUMERICAL-HEADING-CANDIDATE**
+- `74. Retrieval Budget` — source lines 1357–1369, SHA `dd1f1d9dbe98ab2c`; **NUMERICAL-HEADING-CANDIDATE**
+- `75. Memory Consolidation` — source lines 1370–1387, SHA `711ac67a0d0fbc4c`; **NUMERICAL-HEADING-CANDIDATE**
+- `76. No Uncontrolled Self-Reinforcement` — source lines 1388–1398, SHA `7564d5a41a0d52ab`; **NUMERICAL-HEADING-CANDIDATE**
+- `77. Memory Is Not Bound to One LLM` — source lines 1399–1409, SHA `5bed4301f5276d52`; **NUMERICAL-HEADING-CANDIDATE**
+- `78. Model Independence` — source lines 1410–1423, SHA `459513ff07ea76f2`; **NUMERICAL-HEADING-CANDIDATE**
+- `79. Retrieval Adapter` — source lines 1424–1443, SHA `7c6518d634eea01f`; **NUMERICAL-HEADING-CANDIDATE**
+- `80. Crash During Memory Promotion` — source lines 1444–1457, SHA `49ae9ae9daf0c5ca`; **NUMERICAL-HEADING-CANDIDATE**
+- `81. Promotion Idempotency` — source lines 1458–1472, SHA `2c85e7319407ab00`; **NUMERICAL-HEADING-CANDIDATE**
+- `82. Recovery` — source lines 1473–1490, SHA `55e549ca070f9e4b`; **NUMERICAL-HEADING-CANDIDATE**
+- `83. RDMS-01` — source lines 1491–1494, SHA `901488f76522760f`; **NUMERICAL-HEADING-CANDIDATE**
+- `84. RDMS-02` — source lines 1495–1498, SHA `bccd098974498d2e`; **NUMERICAL-HEADING-CANDIDATE**
+- `85. RDMS-03` — source lines 1499–1502, SHA `b83186ef7cc86ea5`; **NUMERICAL-HEADING-CANDIDATE**
+- `86. RDMS-04` — source lines 1503–1508, SHA `a4718323edc406d7`; **NUMERICAL-HEADING-CANDIDATE**
+- `87. RDMS-05` — source lines 1509–1512, SHA `ae1cba91f72821a2`; **NUMERICAL-HEADING-CANDIDATE**
+- `88. RDMS-06` — source lines 1513–1841, SHA `25d49bc9f93ab902`; **NUMERICAL-HEADING-CANDIDATE**
+
+**C01 and Adversarial Freeze Review 02 with freeze decision** — `5ee62ad7-b67d-4382-be9d-cd85f6331a8c`
+- `1. Canonical Learning Architecture` — source lines 26–74, SHA `662981efd2cb5e05`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Verified Episode Source Binding` — source lines 75–110, SHA `9d60ad4ebd109564`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Episode Completeness` — source lines 111–143, SHA `8ff79d53c0519b78`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Historical Event vs Interpretation` — source lines 144–160, SHA `d76e824ac0a74241`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. MemoryEvidenceLineage` — source lines 161–183, SHA `5366dbba6424656c`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. No Evidence Multiplication` — source lines 184–207, SHA `1e20ebaba479c6e8`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. Circular Support Detection` — source lines 208–230, SHA `5bfac215c23ccb66`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. Memory Claim Semantics` — source lines 231–265, SHA `58bcbc5b86e46913`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Causal Memory Promotion` — source lines 266–283, SHA `747e0dc88b630e90`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. MaturityPromotionAssessment` — source lines 284–321, SHA `fe2dd502d81eb120`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. Scope Expansion Rule` — source lines 322–337, SHA `f12bdd10068bfab3`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. Evidence Diversity` — source lines 338–358, SHA `f4dbc37957c57dd9`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. MemoryProposalSnapshot` — source lines 359–390, SHA `5b402fa5f266166b`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. Authorization Binding` — source lines 391–408, SHA `5524099b835964ae`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. Commit-Time Revalidation` — source lines 409–434, SHA `425321d5511787b8`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. Observation Frontier` — source lines 435–445, SHA `db4a26a783450c00`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. MemoryUseAssessment` — source lines 446–478, SHA `4939fdb1d85ff0d7`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. Historical Knowledge Is Not Current Fact` — source lines 479–498, SHA `ea062a3b651a57a3`; **NUMERICAL-HEADING-CANDIDATE**
+- `19. Retrieval Eligibility` — source lines 499–514, SHA `174630638d8dcd5b`; **NUMERICAL-HEADING-CANDIDATE**
+- `20. Retrieval Coverage` — source lines 515–540, SHA `115c9a6f89d7cf04`; **NUMERICAL-HEADING-CANDIDATE**
+- `21. Procedure Invocation Boundary` — source lines 541–564, SHA `5ec18a9c9e225f15`; **NUMERICAL-HEADING-CANDIDATE**
+- `22. Procedure Applicability` — source lines 565–588, SHA `e40471d570d2e513`; **NUMERICAL-HEADING-CANDIDATE**
+- `23. Transitive Memory Trust` — source lines 589–610, SHA `340140dc42b0514c`; **NUMERICAL-HEADING-CANDIDATE**
+- `24. Instruction Authority Conservation` — source lines 611–632, SHA `b857c4999773c332`; **NUMERICAL-HEADING-CANDIDATE**
+- `25. Canonical Memory Head` — source lines 633–656, SHA `0b142317ddb24021`; **NUMERICAL-HEADING-CANDIDATE**
+- `26. Memory Status Separation` — source lines 657–685, SHA `15376d715da78129`; **NUMERICAL-HEADING-CANDIDATE**
+- `27. Scope-Aware Contradiction` — source lines 686–709, SHA `35a4e44e5ae02160`; **NUMERICAL-HEADING-CANDIDATE**
+- `28. Contradiction Governance` — source lines 710–728, SHA `2c664f9c82cbf1fa`; **NUMERICAL-HEADING-CANDIDATE**
+- `29. MemoryDerivationGraph` — source lines 729–750, SHA `22e7a728a492156c`; **NUMERICAL-HEADING-CANDIDATE**
+- `30. Transitive Invalidation` — source lines 751–776, SHA `74cd245b3f458421`; **NUMERICAL-HEADING-CANDIDATE**
+- `31. Support Graph Cycles` — source lines 777–786, SHA `89833e5ed40c1c12`; **NUMERICAL-HEADING-CANDIDATE**
+- `32. MemoryConsolidationAssessment` — source lines 787–809, SHA `5bde1e40de6ff098`; **NUMERICAL-HEADING-CANDIDATE**
+- `33. Consolidation Rules` — source lines 810–830, SHA `626c24ae69f6a395`; **NUMERICAL-HEADING-CANDIDATE**
+- `34. Memory Access Policy` — source lines 831–854, SHA `222de8c8d0414fc3`; **NUMERICAL-HEADING-CANDIDATE**
+- `35. Derived Information Restrictions` — source lines 855–871, SHA `c7ae5c24df26b27d`; **NUMERICAL-HEADING-CANDIDATE**
+- `36. Epistemic Retirement vs Physical Erasure` — source lines 872–887, SHA `026a467c05e41a4c`; **NUMERICAL-HEADING-CANDIDATE**
+- `37. Erasure Architecture Contract` — source lines 888–913, SHA `0fc4d091131f3a15`; **NUMERICAL-HEADING-CANDIDATE**
+- `38. Append-Only Compatibility` — source lines 914–931, SHA `5220e07aadb340b0`; **NUMERICAL-HEADING-CANDIDATE**
+- `39. RDMS-09 Boundary` — source lines 932–948, SHA `5bb7341de6754c6d`; **NUMERICAL-HEADING-CANDIDATE**
+- `40. Canonical Memory Schema` — source lines 949–980, SHA `b1ce2b054b36887e`; **NUMERICAL-HEADING-CANDIDATE**
+- `41. Provider Migration` — source lines 981–997, SHA `6d8420a97971177b`; **NUMERICAL-HEADING-CANDIDATE**
+- `42. MemoryRevisionTransaction` — source lines 998–1023, SHA `58fad35fe34ea3a0`; **NUMERICAL-HEADING-CANDIDATE**
+- `43. Concurrent Revision Conflict` — source lines 1024–1035, SHA `8cd5f190c3b85556`; **NUMERICAL-HEADING-CANDIDATE**
+- `44. Promotion Replay` — source lines 1036–1046, SHA `ef1f89810136d86f`; **NUMERICAL-HEADING-CANDIDATE**
+- `45. H01 — Confidence Calibration` — source lines 1047–1052, SHA `fd41a78408eb4415`; **NUMERICAL-HEADING-CANDIDATE**
+- `46. H02 — Memory Growth Governance` — source lines 1053–1064, SHA `bc31307cc8226038`; **NUMERICAL-HEADING-CANDIDATE**
+- `47. H03 — Retrieval Diversity` — source lines 1065–1075, SHA `7637722faad7a3bd`; **NUMERICAL-HEADING-CANDIDATE**
+- `48. H04 — Knowledge Identity` — source lines 1076–1086, SHA `0458499b839d6d3f`; **NUMERICAL-HEADING-CANDIDATE**
+- `49. H05 — Derived Index Recovery` — source lines 1087–1097, SHA `e2bac08dd4150c28`; **NUMERICAL-HEADING-CANDIDATE**
+- `50. H06 — Learning Budget` — source lines 1098–1108, SHA `f272f7e72ce40d02`; **NUMERICAL-HEADING-CANDIDATE**
+- `51. H07 — Memory Quality Monitoring` — source lines 1109–1220, SHA `082123de1b04203b`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. Freeze Acceptance Criteria` — source lines 1221–1244, SHA `eadc07d821617d85`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. EXPERIENCE AND EVIDENCE ATTACKS` — source lines 1245–1295, SHA `73608443b513a47c`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. MATURITY AND LEARNING AUTHORITY` — source lines 1296–1344, SHA `7e44926ebef515f6`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. RETRIEVAL AND PROCEDURAL SAFETY` — source lines 1345–1385, SHA `056447139f78a9df`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. MEMORY EVOLUTION` — source lines 1386–1438, SHA `ad354ce7cfedbb25`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. PRIVACY AND PORTABILITY` — source lines 1439–1485, SHA `2ac6afc55df9abe4`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. CONCURRENCY AND RECOVERY` — source lines 1486–1526, SHA `905b4312ab1a1421`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. SECOND-ROUND EDGE CASES` — source lines 1527–1591, SHA `50dd3e3bdafb4fde`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. FREEZE REVIEW MATRIX` — source lines 1592–1616, SHA `1b575bd39a77021d`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. RESIDUAL IMPLEMENTATION GATES` — source lines 1617–1654, SHA `6268290875afc1c9`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. FINAL FREEZE DECISION` — source lines 1655–1681, SHA `d94b224b064a0777`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. NEXT AUTHORIZED PHASE` — source lines 1682–1748, SHA `c4355630a1c9ff08`; **NUMERICAL-HEADING-CANDIDATE**
+
+### RDMS-08
+
+**Original draft** — `c955b372-e904-441b-8a0f-c8d9ae56c2f7`
+- `1. Purpose` — source lines 22–80, SHA `79a8a3549a2bed62`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Central Principle` — source lines 81–108, SHA `72b88d73591f83c0`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. One Executive, Not Multiple Minds` — source lines 109–131, SHA `72c54875075004b3`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Authority Boundaries` — source lines 132–153, SHA `28e11d0af20f0e09`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Ownership Matrix` — source lines 154–170, SHA `f348fb3a7a760f6a`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. No Direct LLM Authority` — source lines 171–191, SHA `4fde5ba7c3af7b7f`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. Cognitive Control Cycle` — source lines 192–229, SHA `b993dd008a3aedbd`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. CognitiveControlCycle` — source lines 230–265, SHA `af9367a3537d86c3`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Cycle Preconditions` — source lines 266–278, SHA `9af231ab91ca5f16`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. No Fixed Cognitive Pipeline` — source lines 279–327, SHA `0d3fe4c4f66262ca`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. CognitiveAssessment` — source lines 328–366, SHA `8dd6ac3be0a5bf51`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. Epistemic Separation` — source lines 367–380, SHA `925f897a51d1fece`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. Assessment Completeness` — source lines 381–393, SHA `68f3a10cc16e19c7`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. Cognitive Attention` — source lines 394–406, SHA `d90b6064fb57bb58`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. AttentionAllocation` — source lines 407–423, SHA `0c29fbb8fe06a62b`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. Attention Selection Rules` — source lines 424–439, SHA `5a4634c2861bf9ae`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. Context Compression` — source lines 440–454, SHA `74bb9b0e80b9c211`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. Attention Switching` — source lines 455–463, SHA `e33cd7ebefbe086b`; **NUMERICAL-HEADING-CANDIDATE**
+- `19. CognitiveOperationProposal` — source lines 464–500, SHA `308c95915de3b2df`; **NUMERICAL-HEADING-CANDIDATE**
+- `20. Operation Kinds` — source lines 501–527, SHA `f8a8a3133a416bfa`; **NUMERICAL-HEADING-CANDIDATE**
+- `21. Operation Admissibility` — source lines 528–547, SHA `0dcb3dc3673b27f7`; **NUMERICAL-HEADING-CANDIDATE**
+- `22. CognitiveControlDecision` — source lines 548–584, SHA `f5f07309bf621610`; **NUMERICAL-HEADING-CANDIDATE**
+- `23. Decision Objectives` — source lines 585–597, SHA `47880fcfddb4c593`; **NUMERICAL-HEADING-CANDIDATE**
+- `24. Non-Compensatory Constraints` — source lines 598–609, SHA `934b1f4160306adf`; **NUMERICAL-HEADING-CANDIDATE**
+- `25. Operation Comparison` — source lines 610–626, SHA `8ff3e9d87f1b2db3`; **NUMERICAL-HEADING-CANDIDATE**
+- `26. Decision Policy Ordering` — source lines 627–630, SHA `7d59e12a3c07420a`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. Satisfy mandatory safety and authority conditions.` — source lines 631–632, SHA `51a194f5938be88a`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Identify goal-critical unmet prerequisites.` — source lines 633–634, SHA `856ca4df86835a04`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Remove dominated or unjustified operations.` — source lines 635–636, SHA `270689a6fde4bcdf`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Compare remaining operations by expected` — source lines 637–639, SHA `9682f51f1bcf359c`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Choose an admissible operation.` — source lines 640–641, SHA `91391404fac40a36`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. Record why it was selected and when to revisit.` — source lines 642–645, SHA `98320013e89aa3e6`; **NUMERICAL-HEADING-CANDIDATE**
+- `27. Low-Cost Fast Path` — source lines 646–657, SHA `7e3f59d6bdbbf564`; **NUMERICAL-HEADING-CANDIDATE**
+- `28. Deep Deliberation Path` — source lines 658–671, SHA `5c77730971f5d7b7`; **NUMERICAL-HEADING-CANDIDATE**
+- `29. Gravity Assessment` — source lines 672–698, SHA `cfd1c4a6fd71b643`; **NUMERICAL-HEADING-CANDIDATE**
+- `30. Gravity Cannot Be Self-Downgraded` — source lines 699–704, SHA `a7a2b3e1da3ee647`; **NUMERICAL-HEADING-CANDIDATE**
+- `31. Gravity-Dependent Obligations` — source lines 705–720, SHA `0eff6c20a6ec31c4`; **NUMERICAL-HEADING-CANDIDATE**
+- `32. Reversibility Assessment` — source lines 721–735, SHA `feaea4b6a2cc8ea0`; **NUMERICAL-HEADING-CANDIDATE**
+- `33. InformationNeed Resolution` — source lines 736–748, SHA `02df2250811e9e42`; **NUMERICAL-HEADING-CANDIDATE**
+- `34. InformationAcquisitionAssessment` — source lines 749–768, SHA `5442567109d68123`; **NUMERICAL-HEADING-CANDIDATE**
+- `35. Value of Information` — source lines 769–782, SHA `1c8fa6545b92004b`; **NUMERICAL-HEADING-CANDIDATE**
+- `36. When to Ask the User` — source lines 783–798, SHA `29c52e7159169cdd`; **NUMERICAL-HEADING-CANDIDATE**
+- `37. When Not to Ask` — source lines 799–804, SHA `79fc03c89e15f874`; **NUMERICAL-HEADING-CANDIDATE**
+- `38. Bounded Assumption` — source lines 805–825, SHA `bb59d327ca75009f`; **NUMERICAL-HEADING-CANDIDATE**
+- `39. Mental Simulation as an Advisory Capability` — source lines 826–838, SHA `c9630cd02427f562`; **NUMERICAL-HEADING-CANDIDATE**
+- `40. MentalSimulationProposal` — source lines 839–863, SHA `c7167c302bf4ea40`; **NUMERICAL-HEADING-CANDIDATE**
+- `41. Simulation Admission` — source lines 864–879, SHA `0bb7eb6248b4f32e`; **NUMERICAL-HEADING-CANDIDATE**
+- `42. Prediction vs Observation` — source lines 880–892, SHA `61153796311cef90`; **NUMERICAL-HEADING-CANDIDATE**
+- `43. Future-State Reasoning` — source lines 893–906, SHA `54f6557f8ca52d26`; **NUMERICAL-HEADING-CANDIDATE**
+- `44. Division of Responsibility` — source lines 907–912, SHA `f25e5eed78f9e918`; **NUMERICAL-HEADING-CANDIDATE**
+- `45. DelegationAssessment` — source lines 913–940, SHA `60a9d24e1405ae0f`; **NUMERICAL-HEADING-CANDIDATE**
+- `46. Legitimate Delegation Reasons` — source lines 941–952, SHA `6f9ee4658dcb86b9`; **NUMERICAL-HEADING-CANDIDATE**
+- `47. Context Transfer Cost` — source lines 953–960, SHA `122a8951eddd5a78`; **NUMERICAL-HEADING-CANDIDATE**
+- `48. Delegation Boundaries` — source lines 961–968, SHA `10fb990f5f555260`; **NUMERICAL-HEADING-CANDIDATE**
+- `49. Integration Feedback` — source lines 969–985, SHA `344bec80ca474534`; **NUMERICAL-HEADING-CANDIDATE**
+- `50. Planning Policy` — source lines 986–991, SHA `28029f9c7ac28bf5`; **NUMERICAL-HEADING-CANDIDATE**
+- `51. ImplementationReadinessAssessment` — source lines 992–1020, SHA `4e73464853572c2f`; **NUMERICAL-HEADING-CANDIDATE**
+- `52. Readiness Is Not Execution Authorization` — source lines 1021–1029, SHA `5907f0b91868721c`; **NUMERICAL-HEADING-CANDIDATE**
+- `53. Production Readiness Conditions` — source lines 1030–1046, SHA `2b308252e4e37fd8`; **NUMERICAL-HEADING-CANDIDATE**
+- `54. Exploratory Spike` — source lines 1047–1069, SHA `fe9f10f29f21464e`; **NUMERICAL-HEADING-CANDIDATE**
+- `55. Spike Outcome` — source lines 1070–1084, SHA `e5a5448e1f6fa2be`; **NUMERICAL-HEADING-CANDIDATE**
+- `56. Execution Selection` — source lines 1085–1104, SHA `dcd666835f245b51`; **NUMERICAL-HEADING-CANDIDATE**
+- `57. Incremental Execution` — source lines 1105–1120, SHA `1689215509491e22`; **NUMERICAL-HEADING-CANDIDATE**
+- `58. Expected vs Actual Effects` — source lines 1121–1145, SHA `81ab08a2631f116a`; **NUMERICAL-HEADING-CANDIDATE**
+- `59. Verification Failure` — source lines 1146–1160, SHA `81a618e3cbf7aef2`; **NUMERICAL-HEADING-CANDIDATE**
+- `60. MMRT Policy` — source lines 1161–1171, SHA `938b3f9443717b79`; **NUMERICAL-HEADING-CANDIDATE**
+- `61. Metacognition` — source lines 1172–1188, SHA `5cb7a33c49f1c234`; **NUMERICAL-HEADING-CANDIDATE**
+- `62. EpistemicProgressAssessment` — source lines 1189–1216, SHA `92e6c4b75b0e0a6b`; **NUMERICAL-HEADING-CANDIDATE**
+- `63. EngineeringProgressAssessment` — source lines 1217–1236, SHA `259beded93666f8f`; **NUMERICAL-HEADING-CANDIDATE**
+- `64. Independent Progress Dimensions` — source lines 1237–1255, SHA `757d1b5df32824e6`; **NUMERICAL-HEADING-CANDIDATE**
+- `65. Circuit Breaker Philosophy` — source lines 1256–1263, SHA `eae21f2c17b82655`; **NUMERICAL-HEADING-CANDIDATE**
+- `66. CognitiveCircuitBreakerSignal` — source lines 1264–1284, SHA `df2559a7a9ea6a64`; **NUMERICAL-HEADING-CANDIDATE**
+- `67. Supported Detectors` — source lines 1285–1303, SHA `a6e8fe2f3c143a0d`; **NUMERICAL-HEADING-CANDIDATE**
+- `68. Stagnation Response` — source lines 1304–1316, SHA `39524e3d7558ff77`; **NUMERICAL-HEADING-CANDIDATE**
+- `69. Patch Cascade Response` — source lines 1317–1330, SHA `8ca7d5981579ab78`; **NUMERICAL-HEADING-CANDIDATE**
+- `70. Blast Radius Response` — source lines 1331–1350, SHA `b7321d1d322b2850`; **NUMERICAL-HEADING-CANDIDATE**
+- `71. Invalidated Assumption` — source lines 1351–1367, SHA `9527616c114e5510`; **NUMERICAL-HEADING-CANDIDATE**
+- `72. Interrupt Sources` — source lines 1368–1382, SHA `4c8dfbacadbc8b20`; **NUMERICAL-HEADING-CANDIDATE**
+- `73. CognitiveInterruptAssessment` — source lines 1383–1404, SHA `8cca76c11cc49349`; **NUMERICAL-HEADING-CANDIDATE**
+- `74. Interrupt Priority` — source lines 1405–1417, SHA `3f6590c6dd9e2337`; **NUMERICAL-HEADING-CANDIDATE**
+- `75. Mandatory Safety Interrupts` — source lines 1418–1431, SHA `27321084c8be8623`; **NUMERICAL-HEADING-CANDIDATE**
+- `76. Preemption Rules` — source lines 1432–1447, SHA `61857d1e749681cb`; **NUMERICAL-HEADING-CANDIDATE**
+- `77. Interrupt Resume` — source lines 1448–1460, SHA `112677dd380c2213`; **NUMERICAL-HEADING-CANDIDATE**
+- `78. Deliberation Budget` — source lines 1461–1482, SHA `804cd53c56c27c4a`; **NUMERICAL-HEADING-CANDIDATE**
+- `79. Bounded Reasoning` — source lines 1483–1499, SHA `441bb5ee6dda6faa`; **NUMERICAL-HEADING-CANDIDATE**
+- `80. Overthinking Prevention` — source lines 1500–1505, SHA `c152e80845a54c2f`; **NUMERICAL-HEADING-CANDIDATE**
+- `81. Budget Exhaustion` — source lines 1506–1519, SHA `c0c4d02f1c7639dc`; **NUMERICAL-HEADING-CANDIDATE**
+- `82. Engineering Decision` — source lines 1520–1540, SHA `7f769a26514516fc`; **NUMERICAL-HEADING-CANDIDATE**
+- `83. Decision Preparation` — source lines 1541–1563, SHA `e3228708108f98f1`; **NUMERICAL-HEADING-CANDIDATE**
+- `84. Decision Acceptance` — source lines 1564–1574, SHA `2df306cb26c1754d`; **NUMERICAL-HEADING-CANDIDATE**
+- `85. Decision Reopening` — source lines 1575–1590, SHA `2559f91463034752`; **NUMERICAL-HEADING-CANDIDATE**
+- `86. Decision Traceability` — source lines 1591–1604, SHA `94809c1284f155cc`; **NUMERICAL-HEADING-CANDIDATE**
+- `87. FCA State Conservation` — source lines 1605–1630, SHA `6f9936f361d47567`; **NUMERICAL-HEADING-CANDIDATE**
+- `88. TransitionProposal` — source lines 1631–1655, SHA `98c227fa87168181`; **NUMERICAL-HEADING-CANDIDATE**
+- `89. Transition Commit` — source lines 1656–1670, SHA `a5ed22777a78df3a`; **NUMERICAL-HEADING-CANDIDATE**
+- `90. Concurrent Transition Conflict` — source lines 1671–1682, SHA `4d84faaa768b1bc6`; **NUMERICAL-HEADING-CANDIDATE**
+- `91. Transition Replay` — source lines 1683–1691, SHA `18acd27fbd5f9d8e`; **NUMERICAL-HEADING-CANDIDATE**
+- `92. Current Executive Authority` — source lines 1692–1701, SHA `24f00f5288066098`; **NUMERICAL-HEADING-CANDIDATE**
+- `93. Epoch Fencing` — source lines 1702–1712, SHA `eb0fc2d15df5d0f6`; **NUMERICAL-HEADING-CANDIDATE**
+- `94. Leadership Handoff` — source lines 1713–1725, SHA `e9c3f03ff33ce55e`; **NUMERICAL-HEADING-CANDIDATE**
+- `95. No Dual Executive Interpretation` — source lines 1726–1732, SHA `07f1ef1a77d109c4`; **NUMERICAL-HEADING-CANDIDATE**
+- `96. Recovery Ownership` — source lines 1733–1738, SHA `7a9bc36ec721f10e`; **NUMERICAL-HEADING-CANDIDATE**
+- `97. ExecutiveRecoveryContext` — source lines 1739–1760, SHA `002ca08ae721b38a`; **NUMERICAL-HEADING-CANDIDATE**
+- `98. Resume Requires Reassessment` — source lines 1761–1773, SHA `a5a3b882ebe0636f`; **NUMERICAL-HEADING-CANDIDATE**
+- `99. Interrupted Reasoning` — source lines 1774–1779, SHA `86487ed7d44e1a54`; **NUMERICAL-HEADING-CANDIDATE**
+- `100. Unresolved World Mutation` — source lines 1780–1786, SHA `ea2430671550a632`; **NUMERICAL-HEADING-CANDIDATE**
+- `101. Finalization Criteria` — source lines 1787–1800, SHA `17d5c9368da8b56d`; **NUMERICAL-HEADING-CANDIDATE**
+- `102. CompletionAssessment` — source lines 1801–1818, SHA `9f0c1b55c06fb881`; **NUMERICAL-HEADING-CANDIDATE**
+- `103. Verified Completion` — source lines 1819–1824, SHA `6012106c9dfec0a2`; **NUMERICAL-HEADING-CANDIDATE**
+- `104. Partial Delivery` — source lines 1825–1836, SHA `872f7df7a437f48f`; **NUMERICAL-HEADING-CANDIDATE**
+- `105. No Fabricated Closure` — source lines 1837–1854, SHA `67bc57ea7f256af5`; **NUMERICAL-HEADING-CANDIDATE**
+- `106. Reasoning Provider Independence` — source lines 1855–1865, SHA `fc73152a86392e8b`; **NUMERICAL-HEADING-CANDIDATE**
+- `107. ReasoningGatewayResult` — source lines 1866–1887, SHA `435f8b2c2d87b5f8`; **NUMERICAL-HEADING-CANDIDATE**
+- `108. Structured Output Validation` — source lines 1888–1900, SHA `adf5ee7ae633bb4f`; **NUMERICAL-HEADING-CANDIDATE**
+- `109. Provider Failure` — source lines 1901–1915, SHA `b7b21b89f2ca76ad`; **NUMERICAL-HEADING-CANDIDATE**
+- `110. Provider Disagreement` — source lines 1916–1924, SHA `37bf7f788f42dff9`; **NUMERICAL-HEADING-CANDIDATE**
+- `111. No Reward Hacking` — source lines 1925–1938, SHA `65233345a489f32a`; **NUMERICAL-HEADING-CANDIDATE**
+- `112. No Risk Laundering` — source lines 1939–1954, SHA `7159daa88d965639`; **NUMERICAL-HEADING-CANDIDATE**
+- `113. No Simulation Laundering` — source lines 1955–1958, SHA `46413dffae77131b`; **NUMERICAL-HEADING-CANDIDATE**
+- `114. No Delegation Laundering` — source lines 1959–1962, SHA `b22212c664116aed`; **NUMERICAL-HEADING-CANDIDATE**
+- `115. No Context Authority Laundering` — source lines 1963–1966, SHA `f4f44b851b2d4c58`; **NUMERICAL-HEADING-CANDIDATE**
+- `116. Safety Over Budget` — source lines 1967–2055, SHA `7da7d0d2ef4121a0`; **NUMERICAL-HEADING-CANDIDATE**
+- `117. RDMS-01 — Durable Control` — source lines 2056–2064, SHA `f50ac5c2336a84aa`; **NUMERICAL-HEADING-CANDIDATE**
+- `118. RDMS-02 — Canonical Goals and Decisions` — source lines 2065–2070, SHA `01c4d9251a7ec22b`; **NUMERICAL-HEADING-CANDIDATE**
+- `119. RDMS-03 — Evidence and Causal Reasoning` — source lines 2071–2076, SHA `271a4831fedca365`; **NUMERICAL-HEADING-CANDIDATE**
+- `120. RDMS-04 — External Execution` — source lines 2077–2082, SHA `ee2c7ae5d1cdc732`; **NUMERICAL-HEADING-CANDIDATE**
+- `121. RDMS-05 — Temporal Control` — source lines 2083–2088, SHA `eec15b36f8e28dbe`; **NUMERICAL-HEADING-CANDIDATE**
+- `122. RDMS-06 — Specialists and Freshness` — source lines 2089–2092, SHA `3923e8d4adfbbd3a`; **NUMERICAL-HEADING-CANDIDATE**
+- `123. RDMS-07 — Memory` — source lines 2093–2099, SHA `027dd0b295217c15`; **NUMERICAL-HEADING-CANDIDATE**
+- `124. Evaluation Philosophy` — source lines 2100–2114, SHA `09da7d6b2bbc2f1c`; **NUMERICAL-HEADING-CANDIDATE**
+- `125. Baseline` — source lines 2115–2125, SHA `5b103f3749ef847c`; **NUMERICAL-HEADING-CANDIDATE**
+- `126. Core Measurements` — source lines 2126–2139, SHA `8b9d0d7489c1c144`; **NUMERICAL-HEADING-CANDIDATE**
+- `127. Evaluation Limitations` — source lines 2140–2445, SHA `999866b227de9599`; **NUMERICAL-HEADING-CANDIDATE**
+
+**C01 and Adversarial Freeze Review 02 with freeze decision** — `a0f04ffe-181e-409d-9f94-d7d5c426502b`
+- `1. The Central Executive Law` — source lines 22–67, SHA `21916afaf74acaf0`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Fundamental Separation` — source lines 68–88, SHA `50d2334a1813b928`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. ExecutiveAuthorizationBinding` — source lines 89–119, SHA `050d7f3ba028b747`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Authorization Issuance` — source lines 120–152, SHA `3a7707597dbc682e`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Semantic Authority Preservation` — source lines 153–169, SHA `76213ce2c939ef37`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. Legal Operation Mapping` — source lines 170–199, SHA `c33dfd213d04c57a`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. Transition Eligibility` — source lines 200–233, SHA `7190eff089c915ac`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. No Implicit State Creation` — source lines 234–246, SHA `47231339bc30ca7d`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. ControlDecisionTransaction` — source lines 247–270, SHA `8d64f8735c490e2b`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. Atomic Control Boundary` — source lines 271–284, SHA `08055593dbff32e8`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. Separate World Effects` — source lines 285–299, SHA `879a3ed0afbf37d5`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. ReadinessSnapshot` — source lines 300–327, SHA `d735eeae6128f892`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. Readiness Revalidation` — source lines 328–347, SHA `c241df9239b56068`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. Readiness Is Not Permission` — source lines 348–355, SHA `51d924e63f3c9505`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. MandatoryContextManifest` — source lines 356–384, SHA `6e057305c26cfe2f`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. Context Safety Rule` — source lines 385–396, SHA `367ca69aba152b1b`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. Context Is Operation-Specific` — source lines 397–405, SHA `f9e0cb7d5b330a22`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. DecisionEstimate` — source lines 406–431, SHA `3bfcae0e485ca9e9`; **NUMERICAL-HEADING-CANDIDATE**
+- `19. Estimate Rules` — source lines 432–451, SHA `8a2e9376ab80e7bc`; **NUMERICAL-HEADING-CANDIDATE**
+- `20. Unknown Estimates` — source lines 452–462, SHA `9e022e99ca936dad`; **NUMERICAL-HEADING-CANDIDATE**
+- `21. AggregateDecisionRisk` — source lines 463–484, SHA `e953b25b9483f8d9`; **NUMERICAL-HEADING-CANDIDATE**
+- `22. Gravity Inheritance` — source lines 485–498, SHA `c8fab2421fe121d9`; **NUMERICAL-HEADING-CANDIDATE**
+- `23. Risk Reclassification` — source lines 499–507, SHA `d925c3a5f3378a99`; **NUMERICAL-HEADING-CANDIDATE**
+- `24. Conservative Selection Policy` — source lines 508–513, SHA `0fa9b7fa62470850`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. Determine mandatory obligations.` — source lines 514–515, SHA `a94bafac0f6cf889`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Remove operations that violate hard constraints.` — source lines 516–517, SHA `16af314ee2a5b0df`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Identify critical unknowns.` — source lines 518–519, SHA `49bc995bc7281be2`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Determine whether information acquisition is required.` — source lines 520–521, SHA `462f3b417c5acabd`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Eliminate clearly dominated operations.` — source lines 522–523, SHA `5faca12980dcbe23`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. Compare admissible operations.` — source lines 524–525, SHA `42bc45a37198f1a4`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. Select a justified operation.` — source lines 526–527, SHA `b10a50bf600985d1`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. Record stopping and revisit conditions.` — source lines 528–528, SHA `58c1a839cb076749`; **NUMERICAL-HEADING-CANDIDATE**
+- `25. No Artificial Utility Score` — source lines 529–542, SHA `8534aa131cea9dfd`; **NUMERICAL-HEADING-CANDIDATE**
+- `26. Incomparable Operations` — source lines 543–557, SHA `65bddc0227e4cadb`; **NUMERICAL-HEADING-CANDIDATE**
+- `27. CognitiveLoopStabilityAssessment` — source lines 558–582, SHA `807f45df04001fc0`; **NUMERICAL-HEADING-CANDIDATE**
+- `28. Repetition Detection` — source lines 583–596, SHA `b2c1a486fa62bce8`; **NUMERICAL-HEADING-CANDIDATE**
+- `29. Bounded Deliberation` — source lines 597–617, SHA `997f6a789c45327f`; **NUMERICAL-HEADING-CANDIDATE**
+- `30. Avoid False Stagnation` — source lines 618–626, SHA `818cd4014c71130d`; **NUMERICAL-HEADING-CANDIDATE**
+- `31. NoAdmissibleOperationResolution` — source lines 627–650, SHA `5cd875d58d9b1f82`; **NUMERICAL-HEADING-CANDIDATE**
+- `32. Safe Fallback` — source lines 651–670, SHA `a07ffed89b39d346`; **NUMERICAL-HEADING-CANDIDATE**
+- `33. Safety Obligation Exception` — source lines 671–677, SHA `9e40a4002e70fb0d`; **NUMERICAL-HEADING-CANDIDATE**
+- `34. HumanDecisionBinding` — source lines 678–700, SHA `a2cb9ab81b422702`; **NUMERICAL-HEADING-CANDIDATE**
+- `35. Human Response Semantics` — source lines 701–711, SHA `daa3f240c91e8c77`; **NUMERICAL-HEADING-CANDIDATE**
+- `36. Late Human Answers` — source lines 712–726, SHA `55331dea1e8f7ba4`; **NUMERICAL-HEADING-CANDIDATE**
+- `37. SimulationUseContract` — source lines 727–749, SHA `b8f5db1371bd5afc`; **NUMERICAL-HEADING-CANDIDATE**
+- `38. Simulation Cannot Prove Reality` — source lines 750–759, SHA `28ccb36c7f7183b5`; **NUMERICAL-HEADING-CANDIDATE**
+- `39. Simulation-to-Readiness Rule` — source lines 760–768, SHA `ae39926a29b6683c`; **NUMERICAL-HEADING-CANDIDATE**
+- `40. SpikeExecutionContract` — source lines 769–793, SHA `22edb44193741333`; **NUMERICAL-HEADING-CANDIDATE**
+- `41. Effect Classification` — source lines 794–805, SHA `e03191e7681364b4`; **NUMERICAL-HEADING-CANDIDATE**
+- `42. Spike Artifact Promotion` — source lines 806–814, SHA `ae2eb4877621c26f`; **NUMERICAL-HEADING-CANDIDATE**
+- `43. ImplementationReadinessProof` — source lines 815–841, SHA `db6a645e3d611a28`; **NUMERICAL-HEADING-CANDIDATE**
+- `44. Readiness Conditions` — source lines 842–863, SHA `d4f9959001afa3fe`; **NUMERICAL-HEADING-CANDIDATE**
+- `45. Gravity-Dependent Depth` — source lines 864–872, SHA `48cb4488b41f041b`; **NUMERICAL-HEADING-CANDIDATE**
+- `46. Intent vs Actual Effects` — source lines 873–888, SHA `cbb00dee5c36fd02`; **NUMERICAL-HEADING-CANDIDATE**
+- `47. ToolInvocationEffectAssessment` — source lines 889–906, SHA `ba90fbbeb26f71ae`; **NUMERICAL-HEADING-CANDIDATE**
+- `48. No Cognitive Label Bypass` — source lines 907–919, SHA `227ceb6f64a947b5`; **NUMERICAL-HEADING-CANDIDATE**
+- `49. DelegationPortfolioAssessment` — source lines 920–942, SHA `66630a0ff2b92f3f`; **NUMERICAL-HEADING-CANDIDATE**
+- `50. Marginal Delegation Rule` — source lines 943–951, SHA `e8702c0d7b1f8b06`; **NUMERICAL-HEADING-CANDIDATE**
+- `51. Delegation Does Not Evade Budget` — source lines 952–958, SHA `3b0e6198d9a12b28`; **NUMERICAL-HEADING-CANDIDATE**
+- `52. ReplanningImpactAssessment` — source lines 959–977, SHA `47a7620dbe22e123`; **NUMERICAL-HEADING-CANDIDATE**
+- `53. Transitive Impact` — source lines 978–993, SHA `cb47432dd8e67da3`; **NUMERICAL-HEADING-CANDIDATE**
+- `54. In-Flight Effects` — source lines 994–1002, SHA `2b5933067e2779ac`; **NUMERICAL-HEADING-CANDIDATE**
+- `55. ProgressEvidenceAssessment` — source lines 1003–1027, SHA `4206a8c22918804f`; **NUMERICAL-HEADING-CANDIDATE**
+- `56. Two Progress Dimensions` — source lines 1028–1041, SHA `7f3ddb5758200577`; **NUMERICAL-HEADING-CANDIDATE**
+- `57. Progress Integrity` — source lines 1042–1057, SHA `40377dcb91876033`; **NUMERICAL-HEADING-CANDIDATE**
+- `58. Independent Verification` — source lines 1058–1064, SHA `b820e0c9b1e54597`; **NUMERICAL-HEADING-CANDIDATE**
+- `59. CognitiveInterruptAdmission` — source lines 1065–1087, SHA `116f90d48c2e77fa`; **NUMERICAL-HEADING-CANDIDATE**
+- `60. Interrupt Authority` — source lines 1088–1098, SHA `b1b13e857ebcbf29`; **NUMERICAL-HEADING-CANDIDATE**
+- `61. Duplicate Events` — source lines 1099–1105, SHA `ca8e660a30dc29e2`; **NUMERICAL-HEADING-CANDIDATE**
+- `62. DispatchInterruptOrdering` — source lines 1106–1131, SHA `bff69f1b0d2c0e97`; **NUMERICAL-HEADING-CANDIDATE**
+- `63. Serialization Boundary` — source lines 1132–1137, SHA `4a534d04e7034060`; **NUMERICAL-HEADING-CANDIDATE**
+- `64. Long-Running Operations` — source lines 1138–1144, SHA `59cd6abf2ca0124b`; **NUMERICAL-HEADING-CANDIDATE**
+- `65. ExecutiveAttentionScheduling` — source lines 1145–1163, SHA `84073a17b3716885`; **NUMERICAL-HEADING-CANDIDATE**
+- `66. Fairness Policy` — source lines 1164–1175, SHA `0733df1d9f8b388a`; **NUMERICAL-HEADING-CANDIDATE**
+- `67. Safety Precedence` — source lines 1176–1181, SHA `ae9c7b1ae5b2518e`; **NUMERICAL-HEADING-CANDIDATE**
+- `68. WIP Limit` — source lines 1182–1188, SHA `eca8e7f2fc3c810b`; **NUMERICAL-HEADING-CANDIDATE**
+- `69. ReasoningResultAdoption` — source lines 1189–1207, SHA `225a1bf2bc29c1b2`; **NUMERICAL-HEADING-CANDIDATE**
+- `70. Old Epoch Results` — source lines 1208–1221, SHA `43fbd2806ee37474`; **NUMERICAL-HEADING-CANDIDATE**
+- `71. No Automatic Adoption` — source lines 1222–1228, SHA `1fcb08ff351f4eb3`; **NUMERICAL-HEADING-CANDIDATE**
+- `72. FinalizationEvidenceContract` — source lines 1229–1253, SHA `6446696354c56841`; **NUMERICAL-HEADING-CANDIDATE**
+- `73. Finalization Dispositions` — source lines 1254–1269, SHA `08fa456a015bd131`; **NUMERICAL-HEADING-CANDIDATE**
+- `74. Verified Completion Rule` — source lines 1270–1279, SHA `e8ced589b58a213a`; **NUMERICAL-HEADING-CANDIDATE**
+- `75. Finalization Freshness` — source lines 1280–1288, SHA `af896588954c1d20`; **NUMERICAL-HEADING-CANDIDATE**
+- `76. ExecutivePolicyBinding` — source lines 1289–1309, SHA `eb2eb51af39689f6`; **NUMERICAL-HEADING-CANDIDATE**
+- `77. Policy Change` — source lines 1310–1324, SHA `e5175c32e59f48bb`; **NUMERICAL-HEADING-CANDIDATE**
+- `78. No Silent Policy Drift` — source lines 1325–1330, SHA `55035f02492540d4`; **NUMERICAL-HEADING-CANDIDATE**
+- `79. In-Flight Effects` — source lines 1331–1339, SHA `f5b2d231451c23df`; **NUMERICAL-HEADING-CANDIDATE**
+- `80. H01 — Decision Audit Cost` — source lines 1340–1352, SHA `0e3dc7d2813509f4`; **NUMERICAL-HEADING-CANDIDATE**
+- `81. H02 — Clarification Efficiency` — source lines 1353–1366, SHA `ed1eaa385095cf2f`; **NUMERICAL-HEADING-CANDIDATE**
+- `82. H03 — Provider Fallback` — source lines 1367–1378, SHA `87788f0c35f243bf`; **NUMERICAL-HEADING-CANDIDATE**
+- `83. H04 — Cognitive Observability` — source lines 1379–1387, SHA `6288473e308d086c`; **NUMERICAL-HEADING-CANDIDATE**
+- `84. H05 — Decision Reproducibility` — source lines 1388–1395, SHA `a3cdee68b13eb52c`; **NUMERICAL-HEADING-CANDIDATE**
+- `85. H06 — Context Disclosure` — source lines 1396–1401, SHA `001c66568e08773a`; **NUMERICAL-HEADING-CANDIDATE**
+- `86. H07 — Evaluation Integrity` — source lines 1402–1531, SHA `727403f1781966b8`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. Acceptance Criteria` — source lines 1532–1555, SHA `3970fca3a8805a65`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Review Scope` — source lines 1556–2153, SHA `84b933cab9cf2ea8`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. يعرف ماذا يفعل` — source lines 2154–2157, SHA `717658604ce4f39a`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. يعرف متى يغيّر استراتيجيته` — source lines 2158–2161, SHA `e55cca1db3fb3ab8`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. يعرف حدود معرفته وسلطته` — source lines 2162–2186, SHA `09f231d68d57f501`; **NUMERICAL-HEADING-CANDIDATE**
+
+### RDMS-09
+
+**Original draft** — `6ee1a6d1-3dfe-4de8-8c44-54ac4b07f8d4`
+- `1. Objective` — source lines 26–67, SHA `cb3451d38b15be5a`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Fundamental Principle` — source lines 68–95, SHA `76b43653de5df468`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Recovery Architecture` — source lines 96–140, SHA `55baeef10d088eb0`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Recovery Ownership` — source lines 141–151, SHA `f35fe73212e566f9`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. No Second Executive` — source lines 152–160, SHA `7210535b5546d978`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. Failure Domains` — source lines 161–184, SHA `528a00b50540eecb`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. FailureRecord` — source lines 185–228, SHA `cae7a1e5a1585215`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. Failure Severity` — source lines 229–245, SHA `a88aa2decd03a25b`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. OperationalRecoveryMode` — source lines 246–260, SHA `97d4048ec1030495`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. Mode Semantics` — source lines 261–286, SHA `b12a7f2c2d1f7a89`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. Mode Transition` — source lines 287–309, SHA `d4aac6a630aff2fa`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. RecoveryCase` — source lines 310–344, SHA `3b1461d7d9bab2d4`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. Recovery Identity` — source lines 345–366, SHA `2a96f66ae2bd2b15`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. Recovery Authority` — source lines 367–380, SHA `e0ca4c8341880408`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. Canonical Recovery Sequence` — source lines 381–384, SHA `cda494fff33a858f`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. Restore canonical snapshot.` — source lines 385–385, SHA `75dc1dc5bce5ca1a`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Replay Control Ledger.` — source lines 386–386, SHA `b4e6dabc1edf6d78`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Obtain valid Executive epoch.` — source lines 387–387, SHA `6e29f64005b65cc8`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Inspect unresolved ActionRecords.` — source lines 388–388, SHA `33092c026c3422bc`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Reconcile possibly dispatched effects.` — source lines 389–389, SHA `3cdcc6c5c034fe14`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. Replay/evaluate durable triggers.` — source lines 390–390, SHA `9ffe94c987949e5a`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. Inspect Specialist workspaces.` — source lines 391–391, SHA `fa605c27512b1106`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. Validate dependency freshness.` — source lines 392–392, SHA `1b87bc3146b4f210`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Restore active/suspended/blocked work.` — source lines 393–393, SHA `c8af5ac55fc972e3`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. Resume normal Executive control.` — source lines 394–397, SHA `730fa4f49709aba2`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. StartupRecoveryAssessment` — source lines 398–421, SHA `c7f4f5e16f001844`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. Startup Admission` — source lines 422–436, SHA `3b0ec955a1a0d1d7`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. Control State Integrity` — source lines 437–453, SHA `6d80c0381906a188`; **NUMERICAL-HEADING-CANDIDATE**
+- `19. Snapshot Validation` — source lines 454–474, SHA `33369a44c1787a23`; **NUMERICAL-HEADING-CANDIDATE**
+- `20. Ledger Replay Integrity` — source lines 475–487, SHA `63fdf4a02ba1c8e6`; **NUMERICAL-HEADING-CANDIDATE**
+- `21. Incomplete Control History` — source lines 488–502, SHA `160eec7e67331198`; **NUMERICAL-HEADING-CANDIDATE**
+- `22. Backup Architecture` — source lines 503–519, SHA `82b43adb4d785b7b`; **NUMERICAL-HEADING-CANDIDATE**
+- `23. BackupManifest` — source lines 520–545, SHA `546bc36a37179048`; **NUMERICAL-HEADING-CANDIDATE**
+- `24. Backup Consistency` — source lines 546–556, SHA `561443c271a0a9a9`; **NUMERICAL-HEADING-CANDIDATE**
+- `25. Disaster Restore` — source lines 557–572, SHA `f65e3e84c9acea38`; **NUMERICAL-HEADING-CANDIDATE**
+- `26. Recovery Objectives` — source lines 573–584, SHA `712653c5dc01740b`; **NUMERICAL-HEADING-CANDIDATE**
+- `27. Action Recovery Boundary` — source lines 585–601, SHA `d32a8d7a882ecebd`; **NUMERICAL-HEADING-CANDIDATE**
+- `28. Reconciliation Priority` — source lines 602–613, SHA `d5e222a365e5d669`; **NUMERICAL-HEADING-CANDIDATE**
+- `29. ActionRecoveryAssessment` — source lines 614–635, SHA `eb4a4a1e73c27ff7`; **NUMERICAL-HEADING-CANDIDATE**
+- `30. No Blind Retry` — source lines 636–646, SHA `f9adc37642f0203f`; **NUMERICAL-HEADING-CANDIDATE**
+- `31. Partial World Effects` — source lines 647–662, SHA `97cee4d546885377`; **NUMERICAL-HEADING-CANDIDATE**
+- `32. Reconciliation Failure` — source lines 663–677, SHA `6a4ba77fd5c2d1f4`; **NUMERICAL-HEADING-CANDIDATE**
+- `33. Leadership Recovery` — source lines 678–690, SHA `736c1fc1e9b15831`; **NUMERICAL-HEADING-CANDIDATE**
+- `34. Split-Brain Protection` — source lines 691–706, SHA `430e2e4400ce886a`; **NUMERICAL-HEADING-CANDIDATE**
+- `35. Leadership Uncertainty` — source lines 707–714, SHA `fcb8980741f9f009`; **NUMERICAL-HEADING-CANDIDATE**
+- `36. Late Results` — source lines 715–730, SHA `4eccb6188834d373`; **NUMERICAL-HEADING-CANDIDATE**
+- `37. Reasoning Provider Failure` — source lines 731–743, SHA `5495c8b7f0130ea7`; **NUMERICAL-HEADING-CANDIDATE**
+- `38. ProviderRecoveryPolicy` — source lines 744–761, SHA `dc2c240c1bed57cc`; **NUMERICAL-HEADING-CANDIDATE**
+- `39. Provider Substitution` — source lines 762–778, SHA `de4f8d955c261c8a`; **NUMERICAL-HEADING-CANDIDATE**
+- `40. Late Provider Responses` — source lines 779–784, SHA `5c54bf27607b6a28`; **NUMERICAL-HEADING-CANDIDATE**
+- `41. Provider Recovery Limit` — source lines 785–791, SHA `6ae39a95e4eeb21e`; **NUMERICAL-HEADING-CANDIDATE**
+- `42. Tool Execution Failures` — source lines 792–804, SHA `8a121feee429a8bc`; **NUMERICAL-HEADING-CANDIDATE**
+- `43. ProcessRecoveryRecord` — source lines 805–824, SHA `8f3945f4148c3026`; **NUMERICAL-HEADING-CANDIDATE**
+- `44. Process Termination` — source lines 825–839, SHA `05b6b9c26dafadf9`; **NUMERICAL-HEADING-CANDIDATE**
+- `45. Orphan Processes` — source lines 840–848, SHA `72ab7302fadba11b`; **NUMERICAL-HEADING-CANDIDATE**
+- `46. Specialist Continuity` — source lines 849–864, SHA `acffacbe784f5491`; **NUMERICAL-HEADING-CANDIDATE**
+- `47. SpecialistRecoveryAssessment` — source lines 865–886, SHA `3827282d9dbd77bf`; **NUMERICAL-HEADING-CANDIDATE**
+- `48. Resume or Replace` — source lines 887–900, SHA `9a83090ceac9807f`; **NUMERICAL-HEADING-CANDIDATE**
+- `49. Specialist Result Integrity` — source lines 901–907, SHA `50363541273e1bbf`; **NUMERICAL-HEADING-CANDIDATE**
+- `50. Trigger Recovery` — source lines 908–919, SHA `2caee0b11df09a88`; **NUMERICAL-HEADING-CANDIDATE**
+- `51. Trigger Replay` — source lines 920–927, SHA `ca10ffbbdc3e0a8a`; **NUMERICAL-HEADING-CANDIDATE**
+- `52. Edge Trigger Limitation` — source lines 928–933, SHA `69dcbe07b718a731`; **NUMERICAL-HEADING-CANDIDATE**
+- `53. Temporal Recovery and Clock Changes` — source lines 934–947, SHA `4a21e95d6ff54c48`; **NUMERICAL-HEADING-CANDIDATE**
+- `54. Dependency Evaluation After Restart` — source lines 948–959, SHA `e91344397d16c625`; **NUMERICAL-HEADING-CANDIDATE**
+- `55. DependencyRecoveryAssessment` — source lines 960–977, SHA `80b48884f18e7da4`; **NUMERICAL-HEADING-CANDIDATE**
+- `56. No Global Invalidation By Default` — source lines 978–985, SHA `b84e3da9b5e70417`; **NUMERICAL-HEADING-CANDIDATE**
+- `57. Derived State Recovery` — source lines 986–1000, SHA `5f668953f927f5fb`; **NUMERICAL-HEADING-CANDIDATE**
+- `58. Memory Integrity` — source lines 1001–1006, SHA `f0c5b262f7991e5f`; **NUMERICAL-HEADING-CANDIDATE**
+- `59. MemoryRecoveryAssessment` — source lines 1007–1024, SHA `9a62b7f9c772308b`; **NUMERICAL-HEADING-CANDIDATE**
+- `60. Derived Index Rebuild` — source lines 1025–1036, SHA `0d1e8aaf4fa5c72f`; **NUMERICAL-HEADING-CANDIDATE**
+- `61. Memory Promotion Recovery` — source lines 1037–1051, SHA `95108c3c0d163350`; **NUMERICAL-HEADING-CANDIDATE**
+- `62. Security Incident` — source lines 1052–1065, SHA `308b690b75ee85e2`; **NUMERICAL-HEADING-CANDIDATE**
+- `63. SecurityRecoveryAssessment` — source lines 1066–1085, SHA `f193bbadeb2231ad`; **NUMERICAL-HEADING-CANDIDATE**
+- `64. Quarantine` — source lines 1086–1099, SHA `3e67a6d64358e175`; **NUMERICAL-HEADING-CANDIDATE**
+- `65. Credential Rotation` — source lines 1100–1107, SHA `65d6068a21ce35a7`; **NUMERICAL-HEADING-CANDIDATE**
+- `66. Recovery From Compromise` — source lines 1108–1116, SHA `ffc268cef4acd1b5`; **NUMERICAL-HEADING-CANDIDATE**
+- `67. System Lifecycle` — source lines 1117–1132, SHA `b0eb6fa2cdc35e57`; **NUMERICAL-HEADING-CANDIDATE**
+- `68. Graceful Shutdown` — source lines 1133–1149, SHA `fdc1bababfcbce62`; **NUMERICAL-HEADING-CANDIDATE**
+- `69. Forced Shutdown` — source lines 1150–1157, SHA `5088b3255c496dad`; **NUMERICAL-HEADING-CANDIDATE**
+- `70. Maintenance Mode` — source lines 1158–1166, SHA `b354e3a5a79aef11`; **NUMERICAL-HEADING-CANDIDATE**
+- `71. Runtime Upgrade` — source lines 1167–1179, SHA `ea9ebdb4fd15396a`; **NUMERICAL-HEADING-CANDIDATE**
+- `72. UpgradePlan` — source lines 1180–1201, SHA `af2801f44d608ca9`; **NUMERICAL-HEADING-CANDIDATE**
+- `73. Schema Migration` — source lines 1202–1217, SHA `284b125716837b37`; **NUMERICAL-HEADING-CANDIDATE**
+- `74. Upgrade Failure` — source lines 1218–1229, SHA `84dac71d8b7a5b0d`; **NUMERICAL-HEADING-CANDIDATE**
+- `75. Three Distinct Operations` — source lines 1230–1247, SHA `0810b9ed588d79ec`; **NUMERICAL-HEADING-CANDIDATE**
+- `76. DataLifecyclePolicy` — source lines 1248–1269, SHA `75c18f9160f574bf`; **NUMERICAL-HEADING-CANDIDATE**
+- `77. ArtifactLineageManifest` — source lines 1270–1290, SHA `7fec3a72c7fbb237`; **NUMERICAL-HEADING-CANDIDATE**
+- `78. ErasureOperation` — source lines 1291–1314, SHA `64961beb94537db1`; **NUMERICAL-HEADING-CANDIDATE**
+- `79. Erasure Ordering` — source lines 1315–1334, SHA `dd263b182aa3543a`; **NUMERICAL-HEADING-CANDIDATE**
+- `80. Append-Only Ledger Compatibility` — source lines 1335–1350, SHA `db1f7312ff6c7131`; **NUMERICAL-HEADING-CANDIDATE**
+- `81. Backup Erasure` — source lines 1351–1363, SHA `3fead96f9bdee0fe`; **NUMERICAL-HEADING-CANDIDATE**
+- `82. Erasure Verification` — source lines 1364–1373, SHA `ffe33106c3f05229`; **NUMERICAL-HEADING-CANDIDATE**
+- `83. Evidence Impact` — source lines 1374–1382, SHA `6b457b5531ab1209`; **NUMERICAL-HEADING-CANDIDATE**
+- `84. Safety Reserve` — source lines 1383–1392, SHA `6ef7f35083bdac7d`; **NUMERICAL-HEADING-CANDIDATE**
+- `85. RecoveryBudgetPolicy` — source lines 1393–1408, SHA `cdfbedd9e935f619`; **NUMERICAL-HEADING-CANDIDATE**
+- `86. Reserve Exhaustion` — source lines 1409–1422, SHA `8e2526f9b07883e5`; **NUMERICAL-HEADING-CANDIDATE**
+- `87. Health Monitoring` — source lines 1423–1435, SHA `573c6ed1200bac01`; **NUMERICAL-HEADING-CANDIDATE**
+- `88. HealthStatus` — source lines 1436–1451, SHA `2356a21578e99fe0`; **NUMERICAL-HEADING-CANDIDATE**
+- `89. Health Is Not Authority` — source lines 1452–1464, SHA `772f1f5d77032ccb`; **NUMERICAL-HEADING-CANDIDATE**
+- `90. RecoveryReadinessAssessment` — source lines 1465–1491, SHA `9f7f5c9be7d40815`; **NUMERICAL-HEADING-CANDIDATE**
+- `91. Scoped Recovery` — source lines 1492–1504, SHA `288a29311d016fd4`; **NUMERICAL-HEADING-CANDIDATE**
+- `92. Recovery Completion` — source lines 1505–1519, SHA `436cd80ccddec941`; **NUMERICAL-HEADING-CANDIDATE**
+- `93. Recovery Performance` — source lines 1520–1532, SHA `8ec7a8047257d72a`; **NUMERICAL-HEADING-CANDIDATE**
+- `94. Scalability` — source lines 1533–1542, SHA `412ecc76311ae5b2`; **NUMERICAL-HEADING-CANDIDATE**
+- `95. Observability` — source lines 1543–1563, SHA `dc976d3fd413937f`; **NUMERICAL-HEADING-CANDIDATE**
+- `96. RDMS-01` — source lines 1564–1571, SHA `c578784c24e1a6be`; **NUMERICAL-HEADING-CANDIDATE**
+- `97. RDMS-02` — source lines 1572–1575, SHA `d26b2f2bd3412306`; **NUMERICAL-HEADING-CANDIDATE**
+- `98. RDMS-03` — source lines 1576–1579, SHA `c458f1a5cf65930a`; **NUMERICAL-HEADING-CANDIDATE**
+- `99. RDMS-04` — source lines 1580–1583, SHA `357c784ea8df7f9a`; **NUMERICAL-HEADING-CANDIDATE**
+- `100. RDMS-05` — source lines 1584–1587, SHA `0829022f15402f5e`; **NUMERICAL-HEADING-CANDIDATE**
+- `101. RDMS-06` — source lines 1588–1591, SHA `0b036cdf54324086`; **NUMERICAL-HEADING-CANDIDATE**
+- `102. RDMS-07` — source lines 1592–1595, SHA `2beacf8a3732266f`; **NUMERICAL-HEADING-CANDIDATE**
+- `103. RDMS-08` — source lines 1596–1914, SHA `78cc09ee6820b358`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. التعافي ليس مجرد إعادة تشغيل البرنامج` — source lines 1915–1924, SHA `c434b66f0c7bcd02`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. لا يمكن التضحية بسلامة النظام من أجل الاستمرارية` — source lines 1925–1932, SHA `876daeac2e17f303`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. نحتاج إلى اختبار التعافي عن طريق إحداث الأعطال عمدًا` — source lines 1933–1954, SHA `112d839a65b0e1be`; **NUMERICAL-HEADING-CANDIDATE**
+
+**C01** — `74cf7fd3-01ca-4f35-abed-fbbc8716eb5c`
+- `1. Recovery Is Not a Second Authority` — source lines 23–65, SHA `c9ffbad740557c97`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Conserved Authorities` — source lines 66–80, SHA `5192309779346925`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Fundamental Recovery Separation` — source lines 81–103, SHA `3c89043865db3a63`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. RecoveryModeAuthorityContract` — source lines 104–126, SHA `308428ecb46605b9`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Operational Modes` — source lines 127–163, SHA `35696154d892253c`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. Emergency Containment` — source lines 164–189, SHA `342565e4204a27c6`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. RecoveryOwnershipLease` — source lines 190–212, SHA `7af1b3b56cdd0181`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. Single Recovery Owner Per Conflicting Scope` — source lines 213–230, SHA `b347453b95fe3778`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Recovery Generation` — source lines 231–243, SHA `e2cabfc8f1a3c2db`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. Lease Expiry Is Not World-Effect Cancellation` — source lines 244–252, SHA `edd87a4fed6d55e0`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. RecoveryConsistencyManifest` — source lines 253–281, SHA `123a9f983b99ae7c`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. Three Levels of Integrity` — source lines 282–304, SHA `e55db89592de601d`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. Missing Recovery-Critical Artifact` — source lines 305–319, SHA `c343d87ab0375812`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. Incomplete Ledger` — source lines 320–334, SHA `7698e7d421ec9ceb`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. DurabilityCapabilityAssessment` — source lines 335–357, SHA `d11e1dfc06513233`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. Durable Means Recoverably Durable` — source lines 358–371, SHA `43e5f0c817f3912b`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. Replication and Failover` — source lines 372–385, SHA `b22e735e77d817e5`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. Fail-Closed Dispatch` — source lines 386–393, SHA `f31a5217abddf584`; **NUMERICAL-HEADING-CANDIDATE**
+- `19. AuthorityAntiRollbackAssessment` — source lines 394–414, SHA `8c3fc63600dc29ea`; **NUMERICAL-HEADING-CANDIDATE**
+- `20. Backup Is Not Authority` — source lines 415–428, SHA `9be1a8feb81df5e2`; **NUMERICAL-HEADING-CANDIDATE**
+- `21. Monotonic Authority Recovery` — source lines 429–436, SHA `587dad2b4ce71209`; **NUMERICAL-HEADING-CANDIDATE**
+- `22. Lost Authority Frontier` — source lines 437–450, SHA `77f69b8f4d44379e`; **NUMERICAL-HEADING-CANDIDATE**
+- `23. ExternalEffectRecoveryCoverage` — source lines 451–473, SHA `5c10f4bca32de519`; **NUMERICAL-HEADING-CANDIDATE**
+- `24. Recovery Point vs External Reality` — source lines 474–485, SHA `12038b57491d91d0`; **NUMERICAL-HEADING-CANDIDATE**
+- `25. Required Recovery Search` — source lines 486–499, SHA `1cdd6991dc836c51`; **NUMERICAL-HEADING-CANDIDATE**
+- `26. Irrecoverable History Gap` — source lines 500–510, SHA `6306cd37ae15715f`; **NUMERICAL-HEADING-CANDIDATE**
+- `27. RecoveryProbeEvidence` — source lines 511–535, SHA `ebd1336912eb5b72`; **NUMERICAL-HEADING-CANDIDATE**
+- `28. Probe Result Semantics` — source lines 536–548, SHA `053f6faf1c0dd6be`; **NUMERICAL-HEADING-CANDIDATE**
+- `29. Stale Probe Protection` — source lines 549–561, SHA `eebbe0839fcc53e5`; **NUMERICAL-HEADING-CANDIDATE**
+- `30. Probe Cannot Resolve Ambiguity` — source lines 562–574, SHA `a12e540b0d8b5356`; **NUMERICAL-HEADING-CANDIDATE**
+- `31. ActionRecoveryOwnership` — source lines 575–595, SHA `1bb1022e3c44ad4a`; **NUMERICAL-HEADING-CANDIDATE**
+- `32. Single Conflicting-Effect Authority` — source lines 596–601, SHA `e6924c5114582cbc`; **NUMERICAL-HEADING-CANDIDATE**
+- `33. Reconciliation Is Not Compensation Authorization` — source lines 602–607, SHA `13acda72a3e00ea6`; **NUMERICAL-HEADING-CANDIDATE**
+- `34. Ownership Transfer` — source lines 608–622, SHA `fe81c5624b619cc0`; **NUMERICAL-HEADING-CANDIDATE**
+- `35. CompensationEffectLineage` — source lines 623–643, SHA `a1898c0202c62536`; **NUMERICAL-HEADING-CANDIDATE**
+- `36. Compensation Is Another World Action` — source lines 644–655, SHA `f6338add08b75f51`; **NUMERICAL-HEADING-CANDIDATE**
+- `37. No Automatic Compensation Chain` — source lines 656–671, SHA `3982b81b2ae64a28`; **NUMERICAL-HEADING-CANDIDATE**
+- `38. Residual World State` — source lines 672–684, SHA `a6de4cc299f2a7b0`; **NUMERICAL-HEADING-CANDIDATE**
+- `39. RecoverableProcessIdentity` — source lines 685–705, SHA `248505514ffea552`; **NUMERICAL-HEADING-CANDIDATE**
+- `40. PID Is Not Sufficient` — source lines 706–718, SHA `b8629f4bc1489f13`; **NUMERICAL-HEADING-CANDIDATE**
+- `41. Safe Termination` — source lines 719–729, SHA `3e6edcdabe4ff203`; **NUMERICAL-HEADING-CANDIDATE**
+- `42. Termination Does Not Prove Effect Reversal` — source lines 730–739, SHA `be6a9e6b8e0f213c`; **NUMERICAL-HEADING-CANDIDATE**
+- `43. DownstreamFencingAssessment` — source lines 740–762, SHA `2046d1a980db9cdb`; **NUMERICAL-HEADING-CANDIDATE**
+- `44. Fencing Boundaries` — source lines 763–776, SHA `b9ebab27019e8dcd`; **NUMERICAL-HEADING-CANDIDATE**
+- `45. Unfenceable External Sessions` — source lines 777–789, SHA `663b7e4f7f1a7dc0`; **NUMERICAL-HEADING-CANDIDATE**
+- `46. RecoveredInvocationBinding` — source lines 790–812, SHA `929f4a887bcd45dc`; **NUMERICAL-HEADING-CANDIDATE**
+- `47. Delayed Response Rule` — source lines 813–818, SHA `a0b7aa5ee4e56d44`; **NUMERICAL-HEADING-CANDIDATE**
+- `48. Result Adoption` — source lines 819–833, SHA `db9256dee9c3e702`; **NUMERICAL-HEADING-CANDIDATE**
+- `49. TriggerRecoveryFrontier` — source lines 834–854, SHA `53acb2e57e2c3b9f`; **NUMERICAL-HEADING-CANDIDATE**
+- `50. Source Cursor and Reaction Cursor` — source lines 855–868, SHA `777f17e079ac27c9`; **NUMERICAL-HEADING-CANDIDATE**
+- `51. Replay Safety` — source lines 869–874, SHA `e6c3067a6e112c4c`; **NUMERICAL-HEADING-CANDIDATE**
+- `52. Edge Trigger Limitation` — source lines 875–883, SHA `6d45194a84c7235c`; **NUMERICAL-HEADING-CANDIDATE**
+- `53. SpecialistRecoveryOwnership` — source lines 884–906, SHA `10ed68c0e1205891`; **NUMERICAL-HEADING-CANDIDATE**
+- `54. No Duplicate Recruitment` — source lines 907–920, SHA `4b8b87437a9cffbe`; **NUMERICAL-HEADING-CANDIDATE**
+- `55. Replacement Semantics` — source lines 921–928, SHA `699ae6da5c29f86a`; **NUMERICAL-HEADING-CANDIDATE**
+- `56. Workspace Ownership` — source lines 929–935, SHA `ab09c32106ddf942`; **NUMERICAL-HEADING-CANDIDATE**
+- `57. RecoveryDependencyCoverage` — source lines 936–954, SHA `a521e0c21a1862e6`; **NUMERICAL-HEADING-CANDIDATE**
+- `58. Incomplete Index Rule` — source lines 955–966, SHA `54a1c740172025ea`; **NUMERICAL-HEADING-CANDIDATE**
+- `59. Conservative Fallback` — source lines 967–972, SHA `c8c94dfc4707a977`; **NUMERICAL-HEADING-CANDIDATE**
+- `60. Derived Index Rebuild` — source lines 973–979, SHA `edbabdcd4e2cfc61`; **NUMERICAL-HEADING-CANDIDATE**
+- `61. ObservationRecoveryCoverage` — source lines 980–1000, SHA `1c5323f2cd184d6c`; **NUMERICAL-HEADING-CANDIDATE**
+- `62. Missing Observation Is Not Success` — source lines 1001–1012, SHA `61d65378328db9af`; **NUMERICAL-HEADING-CANDIDATE**
+- `63. Delayed Observation Ingress` — source lines 1013–1023, SHA `8db5308fa212a7e3`; **NUMERICAL-HEADING-CANDIDATE**
+- `64. Incomplete Observation History` — source lines 1024–1030, SHA `6dd3292591715f7c`; **NUMERICAL-HEADING-CANDIDATE**
+- `65. ScopedRecoveryAdmission` — source lines 1031–1055, SHA `7072429ac17906a2`; **NUMERICAL-HEADING-CANDIDATE**
+- `66. Partial Recovery` — source lines 1056–1069, SHA `584bd90d649aa25b`; **NUMERICAL-HEADING-CANDIDATE**
+- `67. Shared Dependency Rule` — source lines 1070–1075, SHA `d96ec38345562b30`; **NUMERICAL-HEADING-CANDIDATE**
+- `68. Unknown Isolation` — source lines 1076–1082, SHA `7b7911fa68fa3408`; **NUMERICAL-HEADING-CANDIDATE**
+- `69. RecoveryTrustAnchorAssessment` — source lines 1083–1103, SHA `b78d7278bdb699bf`; **NUMERICAL-HEADING-CANDIDATE**
+- `70. Checksum vs Trusted Integrity` — source lines 1104–1116, SHA `aea9c406e93611a8`; **NUMERICAL-HEADING-CANDIDATE**
+- `71. Independent Trust Boundary` — source lines 1117–1124, SHA `3de45f67ea4dcd43`; **NUMERICAL-HEADING-CANDIDATE**
+- `72. All Trust Anchors Compromised` — source lines 1125–1136, SHA `1fea4da5d5dc2261`; **NUMERICAL-HEADING-CANDIDATE**
+- `73. CredentialSessionRecoveryAssessment` — source lines 1137–1157, SHA `742e9fde45158428`; **NUMERICAL-HEADING-CANDIDATE**
+- `74. Four Distinct Claims` — source lines 1158–1168, SHA `c0e7c070562a5e27`; **NUMERICAL-HEADING-CANDIDATE**
+- `75. Revocation Limits` — source lines 1169–1174, SHA `14dd87d38eaf8d5f`; **NUMERICAL-HEADING-CANDIDATE**
+- `76. Security Incident Continuity` — source lines 1175–1179, SHA `ba5290e8503993c2`; **NUMERICAL-HEADING-CANDIDATE**
+- `77. RecoveryContentTrustPreservation` — source lines 1180–1198, SHA `08e6b7747472a66c`; **NUMERICAL-HEADING-CANDIDATE**
+- `78. Recovery Logs Are Data` — source lines 1199–1210, SHA `59f271fd7fac6c1e`; **NUMERICAL-HEADING-CANDIDATE**
+- `79. Trusted Recovery Instructions` — source lines 1211–1217, SHA `34f625bd8ed82cf9`; **NUMERICAL-HEADING-CANDIDATE**
+- `80. MigrationRecoveryManifest` — source lines 1218–1241, SHA `673c517c8f7d32e0`; **NUMERICAL-HEADING-CANDIDATE**
+- `81. Partial Migration` — source lines 1242–1254, SHA `805b37dafcdbb059`; **NUMERICAL-HEADING-CANDIDATE**
+- `82. Migration Commit Boundaries` — source lines 1255–1266, SHA `145b1e5beba23e01`; **NUMERICAL-HEADING-CANDIDATE**
+- `83. Unknown Migration State` — source lines 1267–1277, SHA `dff738f516efa30b`; **NUMERICAL-HEADING-CANDIDATE**
+- `84. UpgradeRollbackAssessment` — source lines 1278–1300, SHA `20d3514b3541b554`; **NUMERICAL-HEADING-CANDIDATE**
+- `85. Rollback Is Not Time Travel` — source lines 1301–1304, SHA `71fff2e5db4fccb5`; **NUMERICAL-HEADING-CANDIDATE**
+- `86. Rollback Eligibility` — source lines 1305–1319, SHA `75880d966d6bf156`; **NUMERICAL-HEADING-CANDIDATE**
+- `87. DurableDataPlacementPolicy` — source lines 1320–1340, SHA `28dfaf2882b47ce2`; **NUMERICAL-HEADING-CANDIDATE**
+- `88. Immutable Metadata Boundary` — source lines 1341–1352, SHA `8bd58f1c65584a96`; **NUMERICAL-HEADING-CANDIDATE**
+- `89. Opaque References` — source lines 1353–1367, SHA `9f203800967a2f9f`; **NUMERICAL-HEADING-CANDIDATE**
+- `90. Already Contaminated Ledger` — source lines 1368–1374, SHA `2b83e0b9303983f0`; **NUMERICAL-HEADING-CANDIDATE**
+- `91. ErasureCoverageAssessment` — source lines 1375–1399, SHA `0878a86e4bf51527`; **NUMERICAL-HEADING-CANDIDATE**
+- `92. Transitive Data Lineage` — source lines 1400–1421, SHA `24f1049f195cffe3`; **NUMERICAL-HEADING-CANDIDATE**
+- `93. External Copies` — source lines 1422–1433, SHA `5098b83ba04178c0`; **NUMERICAL-HEADING-CANDIDATE**
+- `94. Physical Erasure Verification` — source lines 1434–1444, SHA `90203c8609615dcb`; **NUMERICAL-HEADING-CANDIDATE**
+- `95. ErasureAntiRollbackFrontier` — source lines 1445–1463, SHA `d86da0c538e3d9d3`; **NUMERICAL-HEADING-CANDIDATE**
+- `96. Restore-Time Suppression` — source lines 1464–1477, SHA `0b52cf59e707dd89`; **NUMERICAL-HEADING-CANDIDATE**
+- `97. Anti-Rollback Authority` — source lines 1478–1487, SHA `eadfc7ad73017a57`; **NUMERICAL-HEADING-CANDIDATE**
+- `98. Restoration Does Not Reverse Erasure Legality` — source lines 1488–1501, SHA `c73e4a3d41257cd5`; **NUMERICAL-HEADING-CANDIDATE**
+- `99. DataLifecycleConflictAssessment` — source lines 1502–1522, SHA `f4c6fda765ec3ea1`; **NUMERICAL-HEADING-CANDIDATE**
+- `100. Conflict Semantics` — source lines 1523–1534, SHA `386ee9ab8e88cb1b`; **NUMERICAL-HEADING-CANDIDATE**
+- `101. Interim Protection` — source lines 1535–1540, SHA `d014a1af18d7174b`; **NUMERICAL-HEADING-CANDIDATE**
+- `102. Resolution Binding` — source lines 1541–1553, SHA `3ed9be075783c7ff`; **NUMERICAL-HEADING-CANDIDATE**
+- `103. RecoveryActionAuthorizationAssessment` — source lines 1554–1576, SHA `b67b58dd53b610aa`; **NUMERICAL-HEADING-CANDIDATE**
+- `104. Destructive Recovery Is a World Action` — source lines 1577–1586, SHA `664c4bac35139c92`; **NUMERICAL-HEADING-CANDIDATE**
+- `105. Preconditions` — source lines 1587–1597, SHA `76b192e747eae53c`; **NUMERICAL-HEADING-CANDIDATE**
+- `106. Unknown Destructive Impact` — source lines 1598–1611, SHA `51c3d56a764684b6`; **NUMERICAL-HEADING-CANDIDATE**
+- `107. RecoveryProgressControl` — source lines 1612–1636, SHA `cf7153a20d7c0b5f`; **NUMERICAL-HEADING-CANDIDATE**
+- `108. Recovery Must Not Loop Indefinitely` — source lines 1637–1646, SHA `69a0a2719a8d1882`; **NUMERICAL-HEADING-CANDIDATE**
+- `109. Failed Recovery Can Still Gain Evidence` — source lines 1647–1658, SHA `79b31d1c4911028f`; **NUMERICAL-HEADING-CANDIDATE**
+- `110. Safe Recovery Stopping` — source lines 1659–1674, SHA `fa9f33a1188278c4`; **NUMERICAL-HEADING-CANDIDATE**
+- `111. RecoveryCase Continuity` — source lines 1675–1681, SHA `949bd7c8a76e89ae`; **NUMERICAL-HEADING-CANDIDATE**
+- `112. H01 — Measurable Recovery Objectives` — source lines 1682–1694, SHA `894e11968a314531`; **NUMERICAL-HEADING-CANDIDATE**
+- `113. H02 — Recovery Observability` — source lines 1695–1707, SHA `2cc5084cabc5d328`; **NUMERICAL-HEADING-CANDIDATE**
+- `114. H03 — Backup Failure-Domain Independence` — source lines 1708–1720, SHA `d45bbd82f6ef2687`; **NUMERICAL-HEADING-CANDIDATE**
+- `115. H04 — Recovery Drills` — source lines 1721–1733, SHA `b719f18d8156d5dd`; **NUMERICAL-HEADING-CANDIDATE**
+- `116. H05 — Recovery Backpressure` — source lines 1734–1745, SHA `cb5ef75cd8c5a900`; **NUMERICAL-HEADING-CANDIDATE**
+- `117. H06 — Recovery Artifact Retention` — source lines 1746–1757, SHA `7bbe4edddcdfa33e`; **NUMERICAL-HEADING-CANDIDATE**
+- `118. H07 — Human Escalation` — source lines 1758–1770, SHA `21c9b82e0be6b450`; **NUMERICAL-HEADING-CANDIDATE**
+- `119. H08 — Recovery Scalability` — source lines 1771–1784, SHA `0b120ad7a08cfae2`; **NUMERICAL-HEADING-CANDIDATE**
+- `120. Recovery Evidence Conservation` — source lines 1785–1792, SHA `4bfcb224cd972c0f`; **NUMERICAL-HEADING-CANDIDATE**
+- `121. Trust Before Execution` — source lines 1793–1806, SHA `0227fd6643818a79`; **NUMERICAL-HEADING-CANDIDATE**
+- `122. Cross-Domain Recovery Barrier` — source lines 1807–1820, SHA `0b6918ac9e2ff571`; **NUMERICAL-HEADING-CANDIDATE**
+- `123. Recovery Admission Must Be Scope-Aware` — source lines 1821–1829, SHA `ccaeadcb14191242`; **NUMERICAL-HEADING-CANDIDATE**
+- `124. Recovery Cannot Upgrade Evidence` — source lines 1830–1835, SHA `8d85f6fa2c2c2524`; **NUMERICAL-HEADING-CANDIDATE**
+- `125. Reconciliation Before Conflicting Continuation` — source lines 1836–2044, SHA `508bc2bebf5baf51`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. هل استعدنا البيانات الصحيحة؟` — source lines 2045–2047, SHA `3ce75bff130cf571`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. هل استعدنا السلطة الصحيحة؟` — source lines 2048–2050, SHA `e2d2a7cd2376d1ff`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. هل نعرف ما حدث في العالم الخارجي؟` — source lines 2051–2053, SHA `5546a5ecb857ac2c`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. هل من القانوني والآمن استئناف العمل؟` — source lines 2054–2072, SHA `a5d5debfc5d23b7c`; **NUMERICAL-HEADING-CANDIDATE**
+
+**C02** — `d59160dd-fa7a-4058-8892-69794f57e9b8`
+- `1. Purpose` — source lines 28–53, SHA `758454742fd5bf01`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Fundamental Recovery Principle` — source lines 54–69, SHA `cd02935619ca45e2`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Three Independent Recovery Questions` — source lines 70–88, SHA `c97ccd7d32a06e34`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Recovery Cannot Create Truth` — source lines 89–115, SHA `f622a751b0864071`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Finding` — source lines 116–127, SHA `4ba16e408b6dc000`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. Architectural Decision` — source lines 128–145, SHA `7d9512cfaba6d1fb`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. RecoveryBootstrapContract` — source lines 146–175, SHA `5fce8eccf8882cad`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. Bootstrap Principal` — source lines 176–197, SHA `c83a4a7e3c6c503d`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Bootstrap Scope` — source lines 198–226, SHA `698cf3cfd62b522d`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. Important Authority Boundary` — source lines 227–234, SHA `eb8b462f4c1e71dd`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. Bootstrap Procedure` — source lines 235–257, SHA `73148120888f323d`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. Bootstrap Failure` — source lines 258–268, SHA `83ccb6169529c47e`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. Bootstrap Idempotency` — source lines 269–277, SHA `c043500fb501ca1b`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. Finding` — source lines 278–287, SHA `6df0d24f5fb9816d`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. RecoveryAuthorityFrontier` — source lines 288–316, SHA `79fbab6e9e883eae`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. Authority Frontier Rules` — source lines 317–332, SHA `2784eeff18dc46a3`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. Compatibility Requirement` — source lines 333–356, SHA `4bf2051919c2bf11`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. Anti-Rollback Decision` — source lines 357–368, SHA `6bf91cf3dff56678`; **NUMERICAL-HEADING-CANDIDATE**
+- `19. Unknown Frontier` — source lines 369–376, SHA `69e0695ad5cf5484`; **NUMERICAL-HEADING-CANDIDATE**
+- `20. No Global Atomicity Assumption` — source lines 377–387, SHA `252525d4ce40e083`; **NUMERICAL-HEADING-CANDIDATE**
+- `21. Finding` — source lines 388–397, SHA `5fd7799446ddd14e`; **NUMERICAL-HEADING-CANDIDATE**
+- `22. DurabilityFailureModel` — source lines 398–423, SHA `628e494d4aedc17d`; **NUMERICAL-HEADING-CANDIDATE**
+- `23. Durability Classes` — source lines 424–445, SHA `c15ee99e9e0c1e87`; **NUMERICAL-HEADING-CANDIDATE**
+- `24. Write-Ahead Enforcement` — source lines 446–465, SHA `7abd72d7362db28b`; **NUMERICAL-HEADING-CANDIDATE**
+- `25. Storage Failover` — source lines 466–481, SHA `0095f202a45055f5`; **NUMERICAL-HEADING-CANDIDATE**
+- `26. Out-of-Model Disaster` — source lines 482–491, SHA `42f9e071e19213a9`; **NUMERICAL-HEADING-CANDIDATE**
+- `27. Verification Requirement` — source lines 492–498, SHA `f73e671b7badca28`; **NUMERICAL-HEADING-CANDIDATE**
+- `28. Finding` — source lines 499–508, SHA `7df6d3264c40add1`; **NUMERICAL-HEADING-CANDIDATE**
+- `29. ExternalHistoryCoverageProof` — source lines 509–535, SHA `40b5269be0fdb199`; **NUMERICAL-HEADING-CANDIDATE**
+- `30. Completeness Is a Positive Claim` — source lines 536–551, SHA `eb49e040e7fab59d`; **NUMERICAL-HEADING-CANDIDATE**
+- `31. Recovery Coverage Dimensions` — source lines 552–571, SHA `a8e15d05a3c88bd6`; **NUMERICAL-HEADING-CANDIDATE**
+- `32. Lost Identity Problem` — source lines 572–577, SHA `be0bb6dc6f3480cb`; **NUMERICAL-HEADING-CANDIDATE**
+- `33. Conflicting Continuation Rule` — source lines 578–589, SHA `62347cfdada2e811`; **NUMERICAL-HEADING-CANDIDATE**
+- `34. Independent Dispatch Evidence` — source lines 590–605, SHA `578a07ddf9c79e5d`; **NUMERICAL-HEADING-CANDIDATE**
+- `35. No Exactly-Once Promise` — source lines 606–614, SHA `6c0a949afd17d9c2`; **NUMERICAL-HEADING-CANDIDATE**
+- `36. Finding` — source lines 615–624, SHA `d589b1fd5591af25`; **NUMERICAL-HEADING-CANDIDATE**
+- `37. DispatchQuiescenceAssessment` — source lines 625–651, SHA `958bb21026c66b25`; **NUMERICAL-HEADING-CANDIDATE**
+- `38. Dispatch Cutover Principle` — source lines 652–667, SHA `38055d8c7a9bcb32`; **NUMERICAL-HEADING-CANDIDATE**
+- `39. Pre-Dispatch Guard` — source lines 668–673, SHA `e62aeebdbfea93ca`; **NUMERICAL-HEADING-CANDIDATE**
+- `40. Previously Committed Dispatch` — source lines 674–691, SHA `8eeaf22dd8a32d9e`; **NUMERICAL-HEADING-CANDIDATE**
+- `41. Quiescence Requirement` — source lines 692–711, SHA `5884851a227cd148`; **NUMERICAL-HEADING-CANDIDATE**
+- `42. Late Dispatch Problem` — source lines 712–719, SHA `7554450826579493`; **NUMERICAL-HEADING-CANDIDATE**
+- `43. Compensation Interaction` — source lines 720–725, SHA `17ee2c176bd0ea40`; **NUMERICAL-HEADING-CANDIDATE**
+- `44. Irreducible Uncertainty` — source lines 726–734, SHA `0e589c476c8a16c7`; **NUMERICAL-HEADING-CANDIDATE**
+- `45. Finding` — source lines 735–744, SHA `1a6e45d4f5dccdd5`; **NUMERICAL-HEADING-CANDIDATE**
+- `46. RecoveryArtifactQuarantine` — source lines 745–768, SHA `a99786fa0f2e89e6`; **NUMERICAL-HEADING-CANDIDATE**
+- `47. Quarantine Must Precede Activation` — source lines 769–784, SHA `d984e519576c39da`; **NUMERICAL-HEADING-CANDIDATE**
+- `48. Restore-Time Forbidden Operations` — source lines 785–802, SHA `3773c9534c66b6b0`; **NUMERICAL-HEADING-CANDIDATE**
+- `49. Data That Becomes Executable` — source lines 803–822, SHA `c0cf1e8022bd1c89`; **NUMERICAL-HEADING-CANDIDATE**
+- `50. Trusted Inspection` — source lines 823–828, SHA `3153059a11d05d21`; **NUMERICAL-HEADING-CANDIDATE**
+- `51. Failed Quarantine` — source lines 829–837, SHA `6c2b8ee6a7d5c58c`; **NUMERICAL-HEADING-CANDIDATE**
+- `52. Finding` — source lines 838–847, SHA `079681e904867e0f`; **NUMERICAL-HEADING-CANDIDATE**
+- `53. RecoveryDisclosureBarrier` — source lines 848–875, SHA `e64949bd6b235ecf`; **NUMERICAL-HEADING-CANDIDATE**
+- `54. Suppression Before Disclosure` — source lines 876–893, SHA `14291ca43f080423`; **NUMERICAL-HEADING-CANDIDATE**
+- `55. Covered Exposure Paths` — source lines 894–916, SHA `6a03b70c7efdbb0c`; **NUMERICAL-HEADING-CANDIDATE**
+- `56. Necessary Internal Processing` — source lines 917–932, SHA `27beaf4a995a4654`; **NUMERICAL-HEADING-CANDIDATE**
+- `57. Missing Suppression Frontier` — source lines 933–942, SHA `45b8f08173bd090f`; **NUMERICAL-HEADING-CANDIDATE**
+- `58. Derived Data` — source lines 943–950, SHA `835d6ae11f35dd6b`; **NUMERICAL-HEADING-CANDIDATE**
+- `59. External Provider Boundary` — source lines 951–957, SHA `3983c278830ef6b8`; **NUMERICAL-HEADING-CANDIDATE**
+- `60. Finding` — source lines 958–967, SHA `4525d91194067755`; **NUMERICAL-HEADING-CANDIDATE**
+- `61. CanonicalSchemaVisibilityContract` — source lines 968–993, SHA `fe8b033de6db54fd`; **NUMERICAL-HEADING-CANDIDATE**
+- `62. Single Authoritative Meaning` — source lines 994–1001, SHA `76ec933b825bfe8c`; **NUMERICAL-HEADING-CANDIDATE**
+- `63. Migration Visibility Phases` — source lines 1002–1024, SHA `813d240727189791`; **NUMERICAL-HEADING-CANDIDATE**
+- `64. Atomic Cutover Requirement` — source lines 1025–1030, SHA `f7c0cd6584f62846`; **NUMERICAL-HEADING-CANDIDATE**
+- `65. Mixed-Version Readers` — source lines 1031–1034, SHA `90a08fb739a61714`; **NUMERICAL-HEADING-CANDIDATE**
+- `66. Writer Compatibility` — source lines 1035–1046, SHA `90b5f1272d4c6037`; **NUMERICAL-HEADING-CANDIDATE**
+- `67. Crash Before Cutover` — source lines 1047–1057, SHA `4a9b34ba73e03575`; **NUMERICAL-HEADING-CANDIDATE**
+- `68. Crash After Cutover` — source lines 1058–1066, SHA `dec4905a0e6720c4`; **NUMERICAL-HEADING-CANDIDATE**
+- `69. Unknown Visibility State` — source lines 1067–1075, SHA `e15fb0e33a02246e`; **NUMERICAL-HEADING-CANDIDATE**
+- `70. Finding` — source lines 1076–1083, SHA `6d57ed9cdc3686ac`; **NUMERICAL-HEADING-CANDIDATE**
+- `71. RecoveryAdmissionBinding` — source lines 1084–1113, SHA `84f40641dc170753`; **NUMERICAL-HEADING-CANDIDATE**
+- `72. Admission Is Scoped` — source lines 1114–1123, SHA `340d4b5ceb305c9f`; **NUMERICAL-HEADING-CANDIDATE**
+- `73. Admission Revalidation` — source lines 1124–1143, SHA `c5d690a6be9b0027`; **NUMERICAL-HEADING-CANDIDATE**
+- `74. Admission Invalidation` — source lines 1144–1165, SHA `e9e950512a80db2f`; **NUMERICAL-HEADING-CANDIDATE**
+- `75. Concurrent Admission and Revocation` — source lines 1166–1173, SHA `f274c61c0f9683cb`; **NUMERICAL-HEADING-CANDIDATE**
+- `76. Degraded Admission` — source lines 1174–1191, SHA `0ce8c0740b459f5c`; **NUMERICAL-HEADING-CANDIDATE**
+- `77. Finding` — source lines 1192–1201, SHA `dc12596833c5c4ea`; **NUMERICAL-HEADING-CANDIDATE**
+- `78. RecoverySuspensionCommitment` — source lines 1202–1225, SHA `99ffa26b76b5136e`; **NUMERICAL-HEADING-CANDIDATE**
+- `79. Suspension Is Not Obligation Removal` — source lines 1226–1239, SHA `64faf0836ffc157d`; **NUMERICAL-HEADING-CANDIDATE**
+- `80. Durable Reactivation` — source lines 1240–1253, SHA `7af20bc95961865d`; **NUMERICAL-HEADING-CANDIDATE**
+- `81. Atomic Suspension Requirements` — source lines 1254–1267, SHA `f664b9f249f42175`; **NUMERICAL-HEADING-CANDIDATE**
+- `82. Recovery Trigger Ordering` — source lines 1268–1290, SHA `baee7f028c5df0b2`; **NUMERICAL-HEADING-CANDIDATE**
+- `83. Source Cursor vs Reaction Commit` — source lines 1291–1302, SHA `fe99851714906506`; **NUMERICAL-HEADING-CANDIDATE**
+- `84. At-Least-Once Detection` — source lines 1303–1308, SHA `3ba41d922751c6e0`; **NUMERICAL-HEADING-CANDIDATE**
+- `85. Non-Replayable Sources` — source lines 1309–1324, SHA `5d8d249ee83d5a2e`; **NUMERICAL-HEADING-CANDIDATE**
+- `86. Recovery Reactivation Failure` — source lines 1325–1331, SHA `7d682e57cf5e7574`; **NUMERICAL-HEADING-CANDIDATE**
+- `87. Recovery Safety Barrier` — source lines 1332–1353, SHA `f4c63c8b1311f3ff`; **NUMERICAL-HEADING-CANDIDATE**
+- `88. No Shadow Authority` — source lines 1354–1369, SHA `aa0ae14e96490f0c`; **NUMERICAL-HEADING-CANDIDATE**
+- `89. Fail-Closed Scope` — source lines 1370–1389, SHA `f84b6047add362b0`; **NUMERICAL-HEADING-CANDIDATE**
+- `90. Recovery Uncertainty Is Persistent` — source lines 1390–1406, SHA `f9c2a60bc4141c99`; **NUMERICAL-HEADING-CANDIDATE**
+- `91. R2-H01 — Recovery Priority and Backpressure` — source lines 1407–1426, SHA `3db942e8f0047d59`; **NUMERICAL-HEADING-CANDIDATE**
+- `92. R2-H02 — Recovery Test Dimensions` — source lines 1427–1450, SHA `bb27a97dc4ff13ab`; **NUMERICAL-HEADING-CANDIDATE**
+- `93. R2-H03 — Configuration Drift` — source lines 1451–1470, SHA `103e55ee265482db`; **NUMERICAL-HEADING-CANDIDATE**
+- `94. R2-H04 — Sensitive Recovery Receipts` — source lines 1471–1488, SHA `855fb107a627696d`; **NUMERICAL-HEADING-CANDIDATE**
+- `95. R2-H05 — Human Escalation` — source lines 1489–1809, SHA `4e0cab5fcba756a2`; **NUMERICAL-HEADING-CANDIDATE**
+
+**C03** — `89e41ed5-ac4e-4b95-9680-b9bec79f278a`
+- `1. Scope` — source lines 37–52, SHA `ef3677468dc91682`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Central Recovery Rule` — source lines 53–66, SHA `b419e8629d73292c`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Architectural Conservation` — source lines 67–98, SHA `38800da0e3f17379`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Finding` — source lines 99–110, SHA `b4a5e43bc8a6578d`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Design Decision` — source lines 111–118, SHA `5348de9a7f732266`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. BootstrapHandoffProof` — source lines 119–147, SHA `a5c1eed0ef96d5cc`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. Mandatory Enforcement` — source lines 148–171, SHA `9a777da2af8668c2`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. Unknown Bootstrap Effects` — source lines 172–183, SHA `6b58eb5053656229`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Bootstrap Authority Boundary` — source lines 184–205, SHA `d8b7f37cbef7f8bb`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. Handoff Failure` — source lines 206–222, SHA `85fdd6e3328730e9`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. Finding` — source lines 223–236, SHA `e0f53e67049a1ad7`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. Design Decision` — source lines 237–244, SHA `4c970c2746c11f1d`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. AcknowledgedHistoryContinuity` — source lines 245–273, SHA `739933acc91dfef8`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. Two Distinct Frontiers` — source lines 274–297, SHA `e7a0320a6624cd11`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. Missing Acknowledgement Evidence` — source lines 298–311, SHA `47b99c50ee1bf8b3`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. Effect-Domain Restriction` — source lines 312–329, SHA `027c4fc530c4d72c`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. Durability Limits` — source lines 330–345, SHA `be2ac9f44a06b87a`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. No Historical Fabrication` — source lines 346–356, SHA `5d4fb3d4f37a3cba`; **NUMERICAL-HEADING-CANDIDATE**
+- `19. Finding` — source lines 357–370, SHA `c21b14202979574c`; **NUMERICAL-HEADING-CANDIDATE**
+- `20. Design Decision` — source lines 371–376, SHA `d1f7eca787a22a91`; **NUMERICAL-HEADING-CANDIDATE**
+- `21. CrossFrontierAdmissionProof` — source lines 377–406, SHA `3938e0a9f7d6a7a0`; **NUMERICAL-HEADING-CANDIDATE**
+- `22. Enforcement Sequence` — source lines 407–424, SHA `ce9f61f851c43ae4`; **NUMERICAL-HEADING-CANDIDATE**
+- `23. Current-State Requirement` — source lines 425–441, SHA `bd54397762a71734`; **NUMERICAL-HEADING-CANDIDATE**
+- `24. No Universal Global Transaction` — source lines 442–459, SHA `b3fcca6f78d3ae8f`; **NUMERICAL-HEADING-CANDIDATE**
+- `25. Authority Changes During Dispatch` — source lines 460–467, SHA `4328114e2cd4a704`; **NUMERICAL-HEADING-CANDIDATE**
+- `26. Scoped Admission` — source lines 468–489, SHA `37aa1bc74e432d89`; **NUMERICAL-HEADING-CANDIDATE**
+- `27. Finding` — source lines 490–499, SHA `96048a3a3fdbc620`; **NUMERICAL-HEADING-CANDIDATE**
+- `28. Design Decision` — source lines 500–507, SHA `5de6c69fbf0e5c41`; **NUMERICAL-HEADING-CANDIDATE**
+- `29. PossibleExternalEffectAssessment` — source lines 508–537, SHA `e6e988c122f4e3ed`; **NUMERICAL-HEADING-CANDIDATE**
+- `30. Conservative Effect Set` — source lines 538–559, SHA `65db9906de2b9b30`; **NUMERICAL-HEADING-CANDIDATE**
+- `31. Safe Follow-Up Rule` — source lines 560–581, SHA `d50a525edfca8370`; **NUMERICAL-HEADING-CANDIDATE**
+- `32. Unknown Effect Space` — source lines 582–589, SHA `cf450e0a1992cf73`; **NUMERICAL-HEADING-CANDIDATE**
+- `33. Compensation` — source lines 590–597, SHA `04fd13a9a4a7a371`; **NUMERICAL-HEADING-CANDIDATE**
+- `34. No Global Exactly-Once` — source lines 598–608, SHA `3488994e086c86a2`; **NUMERICAL-HEADING-CANDIDATE**
+- `35. Finding` — source lines 609–618, SHA `ba30ed014415f025`; **NUMERICAL-HEADING-CANDIDATE**
+- `36. Design Decision` — source lines 619–626, SHA `f547d7b2f3aa9663`; **NUMERICAL-HEADING-CANDIDATE**
+- `37. SchemaCutoverEnforcement` — source lines 627–653, SHA `34ab3c0753651061`; **NUMERICAL-HEADING-CANDIDATE**
+- `38. Cutover Preconditions` — source lines 654–668, SHA `14c8b36ba965abf7`; **NUMERICAL-HEADING-CANDIDATE**
+- `39. Writer Fencing` — source lines 669–680, SHA `63cbd3db3711adad`; **NUMERICAL-HEADING-CANDIDATE**
+- `40. In-Flight Writes` — source lines 681–688, SHA `27d9253a7942a670`; **NUMERICAL-HEADING-CANDIDATE**
+- `41. Crash Before Cutover` — source lines 689–699, SHA `d6d9fb1b70f133e0`; **NUMERICAL-HEADING-CANDIDATE**
+- `42. Crash After Cutover` — source lines 700–710, SHA `e708a4a2c6f20d0d`; **NUMERICAL-HEADING-CANDIDATE**
+- `43. Mixed-Version Compatibility` — source lines 711–721, SHA `b02e08f9b2cde81b`; **NUMERICAL-HEADING-CANDIDATE**
+- `44. Finding` — source lines 722–731, SHA `4f2ca66744227260`; **NUMERICAL-HEADING-CANDIDATE**
+- `45. Design Decision` — source lines 732–737, SHA `e0edccded7664fcc`; **NUMERICAL-HEADING-CANDIDATE**
+- `46. RestoreContainmentProof` — source lines 738–766, SHA `8222723fe1bd03ca`; **NUMERICAL-HEADING-CANDIDATE**
+- `47. Restore Procedure` — source lines 767–783, SHA `2e16df372fb8c20b`; **NUMERICAL-HEADING-CANDIDATE**
+- `48. Active Destination Risk` — source lines 784–795, SHA `f0e663e2571993f3`; **NUMERICAL-HEADING-CANDIDATE**
+- `49. Indirect Execution` — source lines 796–815, SHA `e775e40c4c6e91d3`; **NUMERICAL-HEADING-CANDIDATE**
+- `50. Quarantine Release` — source lines 816–832, SHA `a0c97e0c7468259d`; **NUMERICAL-HEADING-CANDIDATE**
+- `51. Finding` — source lines 833–842, SHA `822d3818884682cb`; **NUMERICAL-HEADING-CANDIDATE**
+- `52. Design Decision` — source lines 843–848, SHA `af09b1e217d4262a`; **NUMERICAL-HEADING-CANDIDATE**
+- `53. RestoredDataProcessingAdmission` — source lines 849–874, SHA `08d0d789546f9386`; **NUMERICAL-HEADING-CANDIDATE**
+- `54. Processing Gate` — source lines 875–889, SHA `4e7e90e8b8b96425`; **NUMERICAL-HEADING-CANDIDATE**
+- `55. Restricted Restore Procedure` — source lines 890–901, SHA `49007c7f1c306adc`; **NUMERICAL-HEADING-CANDIDATE**
+- `56. External Provider Protection` — source lines 902–918, SHA `5d32b1dd1559c506`; **NUMERICAL-HEADING-CANDIDATE**
+- `57. Necessary Internal Processing` — source lines 919–926, SHA `48e797049f2bb3a4`; **NUMERICAL-HEADING-CANDIDATE**
+- `58. Derived Artifacts` — source lines 927–944, SHA `c121845a7c703ea6`; **NUMERICAL-HEADING-CANDIDATE**
+- `59. Missing Current Policy` — source lines 945–958, SHA `855952e553880e88`; **NUMERICAL-HEADING-CANDIDATE**
+- `60. Finding` — source lines 959–970, SHA `8b977b49194b5ee0`; **NUMERICAL-HEADING-CANDIDATE**
+- `61. Design Decision` — source lines 971–976, SHA `efb6f90800ba23ae`; **NUMERICAL-HEADING-CANDIDATE**
+- `62. RecoveryContinuationDurability` — source lines 977–1002, SHA `364f50391a9b02bf`; **NUMERICAL-HEADING-CANDIDATE**
+- `63. Atomic Suspension` — source lines 1003–1016, SHA `985ae633967a70c6`; **NUMERICAL-HEADING-CANDIDATE**
+- `64. Trigger Cursor Ordering` — source lines 1017–1030, SHA `2438e0418ee812b7`; **NUMERICAL-HEADING-CANDIDATE**
+- `65. Legal Replay Options` — source lines 1031–1048, SHA `1d7eaaefe1a5cdb5`; **NUMERICAL-HEADING-CANDIDATE**
+- `66. Crash Before Reaction Commit` — source lines 1049–1056, SHA `bbb03071749f5a72`; **NUMERICAL-HEADING-CANDIDATE**
+- `67. Crash After Reaction Commit` — source lines 1057–1068, SHA `2d774526fcb71ab8`; **NUMERICAL-HEADING-CANDIDATE**
+- `68. Non-Replayable Sources` — source lines 1069–1083, SHA `1a3bd8a01ce05610`; **NUMERICAL-HEADING-CANDIDATE**
+- `69. Persistence Failure During Suspension` — source lines 1084–1096, SHA `290a2ac1898b97a1`; **NUMERICAL-HEADING-CANDIDATE**
+- `70. Recovery After Repeated Crash` — source lines 1097–1119, SHA `6d6d1d3ce0db387a`; **NUMERICAL-HEADING-CANDIDATE**
+- `71. Recovery Admission Principle` — source lines 1120–1157, SHA `34b653dc4acdb820`; **NUMERICAL-HEADING-CANDIDATE**
+- `72. Unknown Does Not Always Mean Global Shutdown` — source lines 1158–1174, SHA `daf80dddaa5b3a22`; **NUMERICAL-HEADING-CANDIDATE**
+- `73. Safety Under Partial Recovery` — source lines 1175–1188, SHA `d3abdd734663e14e`; **NUMERICAL-HEADING-CANDIDATE**
+- `74. No Inferred Completion` — source lines 1189–1204, SHA `13339cebc8b69164`; **NUMERICAL-HEADING-CANDIDATE**
+- `75. Authority and Reality Remain Separate` — source lines 1205–1284, SHA `1880d8668ef392ec`; **NUMERICAL-HEADING-CANDIDATE**
+- `76. Freeze Review Criteria` — source lines 1285–1304, SHA `d77fdf00c313eb45`; **NUMERICAL-HEADING-CANDIDATE**
+- `77. Implementation Boundary` — source lines 1305–1402, SHA `57f5c6a3f68f157a`; **NUMERICAL-HEADING-CANDIDATE**
+- `78. Specification vs Implementation` — source lines 1403–1418, SHA `c014c496e9c6d33e`; **NUMERICAL-HEADING-CANDIDATE**
+- `79. No Endless Review Rule` — source lines 1419–1436, SHA `6273d916a6ff9078`; **NUMERICAL-HEADING-CANDIDATE**
+- `80. Freeze Decision Authority` — source lines 1437–1514, SHA `1bdae4f0a9faa46b`; **NUMERICAL-HEADING-CANDIDATE**
+
+**Adversarial Freeze Review 04 and final freeze decision** — `79d37199-2fe2-4973-bbe9-ac99b4bb5b34`
+- `1. Objective` — source lines 37–62, SHA `26dfba9200d16076`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Acceptance Standard` — source lines 63–106, SHA `b99dee16fb369db6`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. Control Ledger becomes unavailable.` — source lines 107–108, SHA `cae42aa8c42d6317`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. External infrastructure operator restores it.` — source lines 109–110, SHA `69746d66f1254421`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Operator changes a repository mount.` — source lines 111–112, SHA `dec684f322c4ba3d`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Cognitive Executive becomes available.` — source lines 113–114, SHA `1e71f601a649872b`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Executive attempts to resume an old plan.` — source lines 115–748, SHA `ead1517d8b710535`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. Authority Model` — source lines 749–764, SHA `2e8b973f57c9a066`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Canonical State Model` — source lines 765–780, SHA `3386233b2c659bd0`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. World Action Model` — source lines 781–808, SHA `2ac07bdfb3220234`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Temporal Model` — source lines 809–816, SHA `22ff04df4dabf549`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Dependency Model` — source lines 817–826, SHA `4a5534afb4069cb7`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. Memory and Data Governance` — source lines 827–909, SHA `1e578280cec16217`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. Previous Findings` — source lines 910–919, SHA `b7cf5161150fe276`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Review Summary` — source lines 920–948, SHA `d7f7f619da9d6e09`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Scope of PASS` — source lines 949–971, SHA `7c3327a682ddcb7f`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. Freeze Decision` — source lines 972–1005, SHA `7bdcc0c44b47b92c`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Final Verdict` — source lines 1006–1027, SHA `c930506d457d1259`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Frozen Architectural Identity` — source lines 1028–1031, SHA `d65f2d269ecb27aa`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Implementation Status` — source lines 1032–1049, SHA `1a796c245eb17d71`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Next Authorized Step` — source lines 1050–1099, SHA `0d124570ea61f74e`; **NUMERICAL-HEADING-CANDIDATE**
+
+### RDMS-10
+
+**Original draft** — `99533762-bba8-407a-b27b-952a236c00a4`
+- `1. Purpose` — source lines 34–71, SHA `48e794a6f587b515`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Fundamental Architecture Rule` — source lines 72–85, SHA `7588d055a098d058`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. What RDMS-10 Must Not Do` — source lines 86–112, SHA `920d6cd1bcfdf1a1`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Integrated Runtime Architecture` — source lines 113–196, SHA `80852a35ce681071`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Architectural Interpretation` — source lines 197–209, SHA `b87129728ae247d1`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. Component Categories` — source lines 210–224, SHA `00236a67d6260c56`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. Cognitive Executive` — source lines 225–278, SHA `d3e2bab572f2887f`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. Canonical Cognitive Workspace` — source lines 279–329, SHA `328eebe536102c30`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Capability Runtime` — source lines 330–408, SHA `4746ee41ac7108b1`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. Reasoning Gateway` — source lines 409–432, SHA `c727b14e90858741`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. Provider-Neutral Contract` — source lines 433–475, SHA `d8dd3584c914412a`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. Provider Authority` — source lines 476–507, SHA `5761a5f1baa6561c`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. Provider Switching` — source lines 508–520, SHA `afeb8d7bed697dd9`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. Context Assembly` — source lines 521–556, SHA `3266ddb055769597`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. CommitGate` — source lines 557–617, SHA `353512d1747105b5`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. Control Ledger` — source lines 618–654, SHA `b29a021b801c5ea4`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. ActionGate` — source lines 655–701, SHA `3da28b84c4eba4ae`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. Dependency Evaluation Engine` — source lines 702–758, SHA `d7c2d9f5f369a315`; **NUMERICAL-HEADING-CANDIDATE**
+- `19. Action Journal` — source lines 759–783, SHA `9c7bf45ccb90d78c`; **NUMERICAL-HEADING-CANDIDATE**
+- `20. Durable Dispatch Protocol` — source lines 784–807, SHA `22d966d8ea7a5995`; **NUMERICAL-HEADING-CANDIDATE**
+- `21. Execution Adapter Interface` — source lines 808–847, SHA `aa1b3f663174f206`; **NUMERICAL-HEADING-CANDIDATE**
+- `22. Tool Adapter Categories` — source lines 848–873, SHA `4b60f9b147a87463`; **NUMERICAL-HEADING-CANDIDATE**
+- `23. Actual Effect Classification` — source lines 874–887, SHA `6e808f0ede21f742`; **NUMERICAL-HEADING-CANDIDATE**
+- `24. Ephemeral Sandbox Path` — source lines 888–903, SHA `56b0f0e53781a3d3`; **NUMERICAL-HEADING-CANDIDATE**
+- `25. Recovery and Retry` — source lines 904–924, SHA `c6bb4c6bba07ec1f`; **NUMERICAL-HEADING-CANDIDATE**
+- `26. Observation Ingress` — source lines 925–959, SHA `cd319307423b4eb4`; **NUMERICAL-HEADING-CANDIDATE**
+- `27. Observation Authority` — source lines 960–965, SHA `e0470cf9bcc7d663`; **NUMERICAL-HEADING-CANDIDATE**
+- `28. Observation vs Interpretation` — source lines 966–979, SHA `8dc60025afc2608c`; **NUMERICAL-HEADING-CANDIDATE**
+- `29. Evidence Integration` — source lines 980–993, SHA `dada54d51f2e8744`; **NUMERICAL-HEADING-CANDIDATE**
+- `30. Specialist Manager` — source lines 994–1018, SHA `467ecf20107268f9`; **NUMERICAL-HEADING-CANDIDATE**
+- `31. Specialist Recruitment Interface` — source lines 1019–1047, SHA `85d329ddb704ec27`; **NUMERICAL-HEADING-CANDIDATE**
+- `32. Specialist Authority` — source lines 1048–1067, SHA `6c025e97e7ef0ff9`; **NUMERICAL-HEADING-CANDIDATE**
+- `33. Specialist Workspace` — source lines 1068–1084, SHA `230963c76c6d433e`; **NUMERICAL-HEADING-CANDIDATE**
+- `34. Specialist Integration` — source lines 1085–1104, SHA `9548caef0845b459`; **NUMERICAL-HEADING-CANDIDATE**
+- `35. No Implicit Majority Authority` — source lines 1105–1113, SHA `55ae22610e444f0a`; **NUMERICAL-HEADING-CANDIDATE**
+- `36. Memory Services` — source lines 1114–1121, SHA `152f1821c96e9f26`; **NUMERICAL-HEADING-CANDIDATE**
+- `37. Memory Retrieval` — source lines 1122–1146, SHA `1a657d69c455d9f9`; **NUMERICAL-HEADING-CANDIDATE**
+- `38. Retrieved Memory Is Not Current Truth` — source lines 1147–1158, SHA `0dd8c3d736154224`; **NUMERICAL-HEADING-CANDIDATE**
+- `39. Memory Promotion` — source lines 1159–1173, SHA `466eee9f335104fc`; **NUMERICAL-HEADING-CANDIDATE**
+- `40. Derived Memory Indexes` — source lines 1174–1182, SHA `c4154bc494af04c5`; **NUMERICAL-HEADING-CANDIDATE**
+- `41. Durable Temporal Scheduler` — source lines 1183–1203, SHA `13e3ea855ebc4a82`; **NUMERICAL-HEADING-CANDIDATE**
+- `42. Trigger Interface` — source lines 1204–1226, SHA `5fb94d6ec9077ff1`; **NUMERICAL-HEADING-CANDIDATE**
+- `43. Trigger Authority` — source lines 1227–1234, SHA `bdd3f820a8405a9c`; **NUMERICAL-HEADING-CANDIDATE**
+- `44. Suspended Tasks` — source lines 1235–1255, SHA `0048330d521b50b6`; **NUMERICAL-HEADING-CANDIDATE**
+- `45. Recovery Coordinator` — source lines 1256–1265, SHA `99f155931cbb9599`; **NUMERICAL-HEADING-CANDIDATE**
+- `46. Recovery Assessment Interface` — source lines 1266–1296, SHA `4c3749934d0eeeca`; **NUMERICAL-HEADING-CANDIDATE**
+- `47. Canonical Startup Order` — source lines 1297–1300, SHA `c8e2bf3cd27e9faa`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. Restore canonical snapshot.` — source lines 1301–1302, SHA `75dc1dc5bce5ca1a`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Replay Control Ledger.` — source lines 1303–1304, SHA `b4e6dabc1edf6d78`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Obtain valid Executive epoch.` — source lines 1305–1306, SHA `6e29f64005b65cc8`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Inspect unresolved ActionRecords.` — source lines 1307–1308, SHA `33092c026c3422bc`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Reconcile possibly dispatched effects.` — source lines 1309–1310, SHA `3cdcc6c5c034fe14`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. Replay/evaluate durable triggers.` — source lines 1311–1312, SHA `9ffe94c987949e5a`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. Inspect Specialist workspaces.` — source lines 1313–1314, SHA `fa605c27512b1106`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. Validate dependency freshness.` — source lines 1315–1316, SHA `1b87bc3146b4f210`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Restore active/suspended/blocked work.` — source lines 1317–1318, SHA `c8af5ac55fc972e3`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. Resume normal Executive control.` — source lines 1319–1319, SHA `1b004b49a2ce1f89`; **NUMERICAL-HEADING-CANDIDATE**
+- `48. Operational Dependency` — source lines 1320–1327, SHA `229931e4afdbd225`; **NUMERICAL-HEADING-CANDIDATE**
+- `49. Recovery Admission` — source lines 1328–1348, SHA `0ebfdd685184fc19`; **NUMERICAL-HEADING-CANDIDATE**
+- `50. Trust Classification` — source lines 1349–1369, SHA `087f587c30819bdd`; **NUMERICAL-HEADING-CANDIDATE**
+- `51. Trusted Envelope` — source lines 1370–1401, SHA `7e8bdf656811c291`; **NUMERICAL-HEADING-CANDIDATE**
+- `52. Trust Boundary Matrix` — source lines 1402–1412, SHA `8a8491287a7a9a64`; **NUMERICAL-HEADING-CANDIDATE**
+- `53. Credentials` — source lines 1413–1419, SHA `14ed7b09a940605b`; **NUMERICAL-HEADING-CANDIDATE**
+- `54. Canonical Ownership Matrix` — source lines 1420–1442, SHA `be2073b7671d7a75`; **NUMERICAL-HEADING-CANDIDATE**
+- `55. One Owner, Multiple Readers` — source lines 1443–1459, SHA `c1492cc951cebecb`; **NUMERICAL-HEADING-CANDIDATE**
+- `56. Derived Data` — source lines 1460–1476, SHA `f2f51954007f836c`; **NUMERICAL-HEADING-CANDIDATE**
+- `57. Interface Design Rule` — source lines 1477–1498, SHA `c7ef50fc9fdbe678`; **NUMERICAL-HEADING-CANDIDATE**
+- `58. Request Identity` — source lines 1499–1524, SHA `cb55a2b72b571d9a`; **NUMERICAL-HEADING-CANDIDATE**
+- `59. Idempotency Scope` — source lines 1525–1539, SHA `1bd39d27ca81ff43`; **NUMERICAL-HEADING-CANDIDATE**
+- `60. Versioning` — source lines 1540–1553, SHA `fc025d7937fbf2d6`; **NUMERICAL-HEADING-CANDIDATE**
+- `61. Error Semantics` — source lines 1554–1575, SHA `cb1e315cca8222c7`; **NUMERICAL-HEADING-CANDIDATE**
+- `62. Timeouts` — source lines 1576–1590, SHA `af8db111ab4f3eaa`; **NUMERICAL-HEADING-CANDIDATE**
+- `63. Physical Deployment Philosophy` — source lines 1591–1602, SHA `1b35b422284d91b4`; **NUMERICAL-HEADING-CANDIDATE**
+- `64. Proposed Runtime Processes` — source lines 1603–1629, SHA `4d92726b2d1e0c92`; **NUMERICAL-HEADING-CANDIDATE**
+- `65. Why Not Microservices Everywhere?` — source lines 1630–1658, SHA `81d25fd68f1e8f6a`; **NUMERICAL-HEADING-CANDIDATE**
+- `66. Process Isolation` — source lines 1659–1681, SHA `4bee049c6040c788`; **NUMERICAL-HEADING-CANDIDATE**
+- `67. End-to-End Task Example` — source lines 1682–1742, SHA `523c5406dad3dee6`; **NUMERICAL-HEADING-CANDIDATE**
+- `68. Low-Gravity Task` — source lines 1743–1768, SHA `3ec3dadc4073f8d3`; **NUMERICAL-HEADING-CANDIDATE**
+- `69. Fast Path Is Not a Safety Bypass` — source lines 1769–1784, SHA `79fb34e68268fea8`; **NUMERICAL-HEADING-CANDIDATE**
+- `70. Architectural Change` — source lines 1785–1817, SHA `2e098ee3f1b8e726`; **NUMERICAL-HEADING-CANDIDATE**
+- `71. Adaptive Depth` — source lines 1818–1828, SHA `a46104c4941bd0cc`; **NUMERICAL-HEADING-CANDIDATE**
+- `72. Parallel Cognitive Work` — source lines 1829–1844, SHA `44f220369863f705`; **NUMERICAL-HEADING-CANDIDATE**
+- `73. Parallel Results Are Proposals` — source lines 1845–1850, SHA `0c624ae025118710`; **NUMERICAL-HEADING-CANDIDATE**
+- `74. Integration Concurrency` — source lines 1851–1860, SHA `93a2b01c6e583811`; **NUMERICAL-HEADING-CANDIDATE**
+- `75. World Actions` — source lines 1861–1879, SHA `d886af08e0594650`; **NUMERICAL-HEADING-CANDIDATE**
+- `76. Logical Storage Domains` — source lines 1880–1901, SHA `c220496c115a3f33`; **NUMERICAL-HEADING-CANDIDATE**
+- `77. Storage Ownership` — source lines 1902–1918, SHA `3747498fc3fa7db9`; **NUMERICAL-HEADING-CANDIDATE**
+- `78. Atomicity Boundaries` — source lines 1919–1942, SHA `808823e910d63310`; **NUMERICAL-HEADING-CANDIDATE**
+- `79. Large Artifacts` — source lines 1943–1960, SHA `0049af78ea9869ab`; **NUMERICAL-HEADING-CANDIDATE**
+- `80. Index Rebuild` — source lines 1961–1967, SHA `5792a3210cc9217f`; **NUMERICAL-HEADING-CANDIDATE**
+- `81. Legal Effect Matrix` — source lines 1968–1983, SHA `a95d6549b845cd77`; **NUMERICAL-HEADING-CANDIDATE**
+- `82. Cross-Store Consistency` — source lines 1984–1997, SHA `678ffcd3a96ad811`; **NUMERICAL-HEADING-CANDIDATE**
+- `83. Dispatch Atomicity` — source lines 1998–2004, SHA `e79afb50cecfc9cc`; **NUMERICAL-HEADING-CANDIDATE**
+- `84. Failure Domains` — source lines 2005–2027, SHA `be8d194ea6df0a17`; **NUMERICAL-HEADING-CANDIDATE**
+- `85. Recovery Source of Truth` — source lines 2028–2047, SHA `5045f7d4bb89246c`; **NUMERICAL-HEADING-CANDIDATE**
+- `86. Unknown External Effects` — source lines 2048–2057, SHA `1e4bab0f4420d3de`; **NUMERICAL-HEADING-CANDIDATE**
+- `87. Repeated Failures` — source lines 2058–2064, SHA `92b087e47f2a8dca`; **NUMERICAL-HEADING-CANDIDATE**
+- `88. Runtime Telemetry` — source lines 2065–2090, SHA `3746eefa483581bb`; **NUMERICAL-HEADING-CANDIDATE**
+- `89. Audit vs Diagnostics` — source lines 2091–2106, SHA `8ca11b37b590341b`; **NUMERICAL-HEADING-CANDIDATE**
+- `90. Progress Metrics` — source lines 2107–2121, SHA `a3bda7e7bb780fbe`; **NUMERICAL-HEADING-CANDIDATE**
+- `91. Package Philosophy` — source lines 2122–2150, SHA `21db8b26ac3ddd3e`; **NUMERICAL-HEADING-CANDIDATE**
+- `92. Avoid Circular Dependencies` — source lines 2151–2166, SHA `02820d30f886ad0b`; **NUMERICAL-HEADING-CANDIDATE**
+- `93. Dependency Direction` — source lines 2167–2182, SHA `90cfd96572665374`; **NUMERICAL-HEADING-CANDIDATE**
+- `94. No Framework-Driven Architecture` — source lines 2183–2191, SHA `56d0cdb2aad7dc50`; **NUMERICAL-HEADING-CANDIDATE**
+- `95. Implementation Strategy` — source lines 2192–2310, SHA `308cf35358841621`; **NUMERICAL-HEADING-CANDIDATE**
+- `96. Implementation Ordering Constraint` — source lines 2311–2617, SHA `2f2225023f4c36e5`; **NUMERICAL-HEADING-CANDIDATE**
+- `97. Control Plane Physical Boundary` — source lines 2618–2625, SHA `e7a60e5885a808a5`; **NUMERICAL-HEADING-CANDIDATE**
+- `98. Storage Technology` — source lines 2626–2631, SHA `137e5c0874dd1ed2`; **NUMERICAL-HEADING-CANDIDATE**
+- `99. Tool Worker Isolation` — source lines 2632–2639, SHA `7227025197981fcb`; **NUMERICAL-HEADING-CANDIDATE**
+- `100. Provider Interface Capability Differences` — source lines 2640–2657, SHA `1174be06e4cad4af`; **NUMERICAL-HEADING-CANDIDATE**
+- `101. Cross-Component Backpressure` — source lines 2658–2673, SHA `e119f1fb2956ae1f`; **NUMERICAL-HEADING-CANDIDATE**
+- `102. Contract Compatibility Audit` — source lines 2674–2698, SHA `3da5be666371b530`; **NUMERICAL-HEADING-CANDIDATE**
+- `103. Required Freeze Conditions` — source lines 2699–2726, SHA `93219d1c7338867c`; **NUMERICAL-HEADING-CANDIDATE**
+- `104. Specification Freeze vs Code Verification` — source lines 2727–2852, SHA `954199c579ff2a6d`; **NUMERICAL-HEADING-CANDIDATE**
+
+**C01** — `e4828797-8ddb-48ae-a3e4-3e9ec47b70c3`
+- `1. Objective` — source lines 36–75, SHA `ba81473ed3e92e44`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Fundamental Integration Principle` — source lines 76–103, SHA `7801c79303951af4`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Legal Ownership Conservation` — source lines 104–121, SHA `881c901071e99a15`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Integration-Level Rule` — source lines 122–142, SHA `a397b60e6c64d55c`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Finding` — source lines 143–162, SHA `1350b82d1e6bdd1a`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. Architectural Decision` — source lines 163–174, SHA `e15f999b3712e112`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. CanonicalContractRegistry` — source lines 175–198, SHA `756a49a85a51c12d`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. Registry Authority` — source lines 199–216, SHA `2b464ef7a4b77c76`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Contract Categories` — source lines 217–246, SHA `0e2296a902893502`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. Contract Compatibility Rule` — source lines 247–263, SHA `78a641a9e4784b3c`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. Finding` — source lines 264–279, SHA `90ebecb572ec5894`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. Architectural Decision` — source lines 280–287, SHA `a87039d0b4ce7232`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. TrustedEnvelopeAdmission` — source lines 288–315, SHA `631d25a04619ab44`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. Trusted Field Ownership` — source lines 316–335, SHA `d299c65df7d5a71b`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. Receiving Boundary Enforcement` — source lines 336–355, SHA `f7d1a754ede5ad39`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. Replay Protection` — source lines 356–373, SHA `744fcf61b9242998`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. Trusted Transport Is Not Trusted Content` — source lines 374–386, SHA `4dd89a20fe5f2445`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. Finding` — source lines 387–396, SHA `85476cdb3ce1a4cc`; **NUMERICAL-HEADING-CANDIDATE**
+- `19. HumanIngressAuthorityBinding` — source lines 397–420, SHA `325b96475ddccd0a`; **NUMERICAL-HEADING-CANDIDATE**
+- `20. Domain-Specific Authority` — source lines 421–428, SHA `259baa84c273a033`; **NUMERICAL-HEADING-CANDIDATE**
+- `21. User Content vs Authoritative Request` — source lines 429–439, SHA `ebc3220e6097286a`; **NUMERICAL-HEADING-CANDIDATE**
+- `22. Human Response Adoption` — source lines 440–450, SHA `82fef7b85ebfdb32`; **NUMERICAL-HEADING-CANDIDATE**
+- `23. Finding` — source lines 451–462, SHA `6699b6ae43292913`; **NUMERICAL-HEADING-CANDIDATE**
+- `24. Architectural Decision` — source lines 463–478, SHA `c53d8132447dd7c1`; **NUMERICAL-HEADING-CANDIDATE**
+- `25. RepositoryMutationIntegrationContract` — source lines 479–508, SHA `036081c2accd131b`; **NUMERICAL-HEADING-CANDIDATE**
+- `26. Legal Mutation Path` — source lines 509–526, SHA `20d371751b30592e`; **NUMERICAL-HEADING-CANDIDATE**
+- `27. Candidate Is Not Canonical` — source lines 527–532, SHA `577b22c58ce151ed`; **NUMERICAL-HEADING-CANDIDATE**
+- `28. Repository Base Validation` — source lines 533–538, SHA `caafba3811095e3f`; **NUMERICAL-HEADING-CANDIDATE**
+- `29. Mutation and Acceptance Separation` — source lines 539–559, SHA `5e913f1ac56dd932`; **NUMERICAL-HEADING-CANDIDATE**
+- `30. Finding` — source lines 560–567, SHA `1c6d3834ffaf61cf`; **NUMERICAL-HEADING-CANDIDATE**
+- `31. ExecutiveTransitionIntegrationBinding` — source lines 568–593, SHA `b50ccc44a7710431`; **NUMERICAL-HEADING-CANDIDATE**
+- `32. Decision Adoption Rule` — source lines 594–597, SHA `e5b65ed42050fa9a`; **NUMERICAL-HEADING-CANDIDATE**
+- `33. Transition Commit` — source lines 598–615, SHA `62a72d84c501d5b8`; **NUMERICAL-HEADING-CANDIDATE**
+- `34. Concurrent State Changes` — source lines 616–630, SHA `72d5633a9ab5faa5`; **NUMERICAL-HEADING-CANDIDATE**
+- `35. Finding` — source lines 631–640, SHA `bff26f48d69f73ff`; **NUMERICAL-HEADING-CANDIDATE**
+- `36. Architectural Decision` — source lines 641–650, SHA `f2e2283d49ed07ed`; **NUMERICAL-HEADING-CANDIDATE**
+- `37. ControlActionDurabilityContract` — source lines 651–674, SHA `616e63b0c6884235`; **NUMERICAL-HEADING-CANDIDATE**
+- `38. No Dual Lifecycle Authority` — source lines 675–680, SHA `dbc4689cd15bce14`; **NUMERICAL-HEADING-CANDIDATE**
+- `39. Required Dispatch Ordering` — source lines 681–697, SHA `3b2b60a45b37f733`; **NUMERICAL-HEADING-CANDIDATE**
+- `40. Physical Storage Alternatives` — source lines 698–713, SHA `47836c6fb47c5b34`; **NUMERICAL-HEADING-CANDIDATE**
+- `41. Crash Between Stores` — source lines 714–727, SHA `7c6e7d6fc31105ff`; **NUMERICAL-HEADING-CANDIDATE**
+- `42. Recovery Consistency` — source lines 728–738, SHA `37b25d8a8e958589`; **NUMERICAL-HEADING-CANDIDATE**
+- `43. Finding` — source lines 739–746, SHA `b46cdd8fadf3c7d7`; **NUMERICAL-HEADING-CANDIDATE**
+- `44. SealedExecutionIntent` — source lines 747–774, SHA `82bccbec81a83e5c`; **NUMERICAL-HEADING-CANDIDATE**
+- `45. Sealing Rule` — source lines 775–798, SHA `2fd0c1c7856e1d22`; **NUMERICAL-HEADING-CANDIDATE**
+- `46. Effective Arguments` — source lines 799–812, SHA `54d597fa365178dd`; **NUMERICAL-HEADING-CANDIDATE**
+- `47. TOCTOU Protection` — source lines 813–828, SHA `6b7bb7f3eb28a321`; **NUMERICAL-HEADING-CANDIDATE**
+- `48. Executor Rule` — source lines 829–844, SHA `af89521dece7492b`; **NUMERICAL-HEADING-CANDIDATE**
+- `49. Intent Integrity vs Outcome` — source lines 845–857, SHA `fed7a84438cc24c3`; **NUMERICAL-HEADING-CANDIDATE**
+- `50. Finding` — source lines 858–865, SHA `e35a79e80534c86d`; **NUMERICAL-HEADING-CANDIDATE**
+- `51. ActionDeliveryContract` — source lines 866–891, SHA `a27a9936b1084c09`; **NUMERICAL-HEADING-CANDIDATE**
+- `52. Critical Distinction` — source lines 892–905, SHA `a0183c38f3d369b7`; **NUMERICAL-HEADING-CANDIDATE**
+- `53. Redelivery Rule` — source lines 906–911, SHA `54cca7120e5d1568`; **NUMERICAL-HEADING-CANDIDATE**
+- `54. IN_DOUBT Behavior` — source lines 912–921, SHA `12e238644cdd52db`; **NUMERICAL-HEADING-CANDIDATE**
+- `55. Retry Eligibility` — source lines 922–939, SHA `8a5eb9baae29850d`; **NUMERICAL-HEADING-CANDIDATE**
+- `56. Worker Generation` — source lines 940–952, SHA `67be2b793ee106e2`; **NUMERICAL-HEADING-CANDIDATE**
+- `57. Finding` — source lines 953–960, SHA `bd1979d6c9193288`; **NUMERICAL-HEADING-CANDIDATE**
+- `58. ArtifactPublicationContract` — source lines 961–984, SHA `87b4ed2bc40dbb1f`; **NUMERICAL-HEADING-CANDIDATE**
+- `59. Publication Ordering` — source lines 985–1000, SHA `fc8fe474dab36d3b`; **NUMERICAL-HEADING-CANDIDATE**
+- `60. Artifact Classes` — source lines 1001–1014, SHA `a2995fdf5197e57f`; **NUMERICAL-HEADING-CANDIDATE**
+- `61. Garbage Collection Safety` — source lines 1015–1020, SHA `845e7b584eab9aa6`; **NUMERICAL-HEADING-CANDIDATE**
+- `62. Integrity After Recovery` — source lines 1021–1031, SHA `3fc67504b9aff6bc`; **NUMERICAL-HEADING-CANDIDATE**
+- `63. Finding` — source lines 1032–1039, SHA `81cb193a20a2192f`; **NUMERICAL-HEADING-CANDIDATE**
+- `64. CrossComponentEventContract` — source lines 1040–1067, SHA `86f69937951edff4`; **NUMERICAL-HEADING-CANDIDATE**
+- `65. Causal Ordering vs Arrival Ordering` — source lines 1068–1083, SHA `e16342fe25401a4a`; **NUMERICAL-HEADING-CANDIDATE**
+- `66. No Universal Total Order Requirement` — source lines 1084–1091, SHA `75ef06379be16e72`; **NUMERICAL-HEADING-CANDIDATE**
+- `67. Duplicate Events` — source lines 1092–1097, SHA `fa1575db9a7e05e4`; **NUMERICAL-HEADING-CANDIDATE**
+- `68. Unknown Parent Event` — source lines 1098–1108, SHA `ff77448fbf8085d2`; **NUMERICAL-HEADING-CANDIDATE**
+- `69. Finding` — source lines 1109–1120, SHA `37c5ff50975c3323`; **NUMERICAL-HEADING-CANDIDATE**
+- `70. ObservationSourceBinding` — source lines 1121–1148, SHA `0628273bbb4f4c16`; **NUMERICAL-HEADING-CANDIDATE**
+- `71. Report vs Observation` — source lines 1149–1162, SHA `83c861bac066db9c`; **NUMERICAL-HEADING-CANDIDATE**
+- `72. Source Authority` — source lines 1163–1183, SHA `7f03431937878b1f`; **NUMERICAL-HEADING-CANDIDATE**
+- `73. Observation Ingress Rule` — source lines 1184–1189, SHA `41cd1b189e5bf263`; **NUMERICAL-HEADING-CANDIDATE**
+- `74. Evidence Promotion` — source lines 1190–1200, SHA `a15cd8b5b7186987`; **NUMERICAL-HEADING-CANDIDATE**
+- `75. Finding` — source lines 1201–1210, SHA `7a09dcea532d36cb`; **NUMERICAL-HEADING-CANDIDATE**
+- `76. IntegratedCompletionEvidence` — source lines 1211–1240, SHA `e3f73ce425330054`; **NUMERICAL-HEADING-CANDIDATE**
+- `77. Completion Semantics` — source lines 1241–1256, SHA `e9e1b437a4cfa5f0`; **NUMERICAL-HEADING-CANDIDATE**
+- `78. Finalization Gate` — source lines 1257–1270, SHA `12b5aad4fb175aac`; **NUMERICAL-HEADING-CANDIDATE**
+- `79. Partial Completion` — source lines 1271–1276, SHA `ae3fd39b9e20cf59`; **NUMERICAL-HEADING-CANDIDATE**
+- `80. No Completion From Fluency` — source lines 1277–1289, SHA `1bca85f9f704819e`; **NUMERICAL-HEADING-CANDIDATE**
+- `81. Finding` — source lines 1290–1297, SHA `7a3700ae11d0ca29`; **NUMERICAL-HEADING-CANDIDATE**
+- `82. ActiveWorkInvalidationContract` — source lines 1298–1325, SHA `793bfce195ec548c`; **NUMERICAL-HEADING-CANDIDATE**
+- `83. Invalidation Propagation` — source lines 1326–1339, SHA `205e45a49a7eaa0c`; **NUMERICAL-HEADING-CANDIDATE**
+- `84. Pending vs Dispatched` — source lines 1340–1355, SHA `7ff8bee96cbcf856`; **NUMERICAL-HEADING-CANDIDATE**
+- `85. Scoped Invalidation` — source lines 1356–1363, SHA `d9dada5907018b3c`; **NUMERICAL-HEADING-CANDIDATE**
+- `86. Race With Dispatch` — source lines 1364–1374, SHA `9e8af67193b3df43`; **NUMERICAL-HEADING-CANDIDATE**
+- `87. Finding` — source lines 1375–1382, SHA `1c3d47432ecf61d9`; **NUMERICAL-HEADING-CANDIDATE**
+- `88. ReasoningProviderCapabilityContract` — source lines 1383–1408, SHA `7fb1a639e9219590`; **NUMERICAL-HEADING-CANDIDATE**
+- `89. Capability Negotiation` — source lines 1409–1414, SHA `f3ebf905a8736158`; **NUMERICAL-HEADING-CANDIDATE**
+- `90. Output Validation` — source lines 1415–1424, SHA `8947ce994a182ad1`; **NUMERICAL-HEADING-CANDIDATE**
+- `91. Provider Fallback` — source lines 1425–1439, SHA `9086523c26fab8fb`; **NUMERICAL-HEADING-CANDIDATE**
+- `92. Provider Failure` — source lines 1440–1450, SHA `fadfe112947f82b3`; **NUMERICAL-HEADING-CANDIDATE**
+- `93. Finding` — source lines 1451–1458, SHA `bec945bcc68b1717`; **NUMERICAL-HEADING-CANDIDATE**
+- `94. ContextDisclosureAdmission` — source lines 1459–1482, SHA `a77555c4316ef402`; **NUMERICAL-HEADING-CANDIDATE**
+- `95. Disclosure Boundary` — source lines 1483–1488, SHA `4522dc881187ee26`; **NUMERICAL-HEADING-CANDIDATE**
+- `96. Multi-Project Memory` — source lines 1489–1494, SHA `8003ca82a503e57d`; **NUMERICAL-HEADING-CANDIDATE**
+- `97. Context Minimization` — source lines 1495–1500, SHA `575d07362e5e08f9`; **NUMERICAL-HEADING-CANDIDATE**
+- `98. Provider Switching` — source lines 1501–1511, SHA `09b75f303cb97388`; **NUMERICAL-HEADING-CANDIDATE**
+- `99. Finding` — source lines 1512–1519, SHA `d51bf3ef3d860c65`; **NUMERICAL-HEADING-CANDIDATE**
+- `100. SpecialistExecutionAuthorityBinding` — source lines 1520–1543, SHA `ee9fd29375e86a41`; **NUMERICAL-HEADING-CANDIDATE**
+- `101. End-to-End Specialist Authority` — source lines 1544–1559, SHA `3725e2489b52d69c`; **NUMERICAL-HEADING-CANDIDATE**
+- `102. Tool Authority Intersection` — source lines 1560–1575, SHA `ba0269b0b80c3a27`; **NUMERICAL-HEADING-CANDIDATE**
+- `103. Specialist Scope Changes` — source lines 1576–1581, SHA `b2d1e61b31b7f078`; **NUMERICAL-HEADING-CANDIDATE**
+- `104. Nested Specialists` — source lines 1582–1594, SHA `fb07415c58f917ac`; **NUMERICAL-HEADING-CANDIDATE**
+- `105. Finding` — source lines 1595–1602, SHA `a718acbe0bfbb46e`; **NUMERICAL-HEADING-CANDIDATE**
+- `106. SpecialistIntegrationTransaction` — source lines 1603–1630, SHA `80041339b3c2e665`; **NUMERICAL-HEADING-CANDIDATE**
+- `107. Integration Preconditions` — source lines 1631–1647, SHA `cdc1c435058fc898`; **NUMERICAL-HEADING-CANDIDATE**
+- `108. Parallel Result Handling` — source lines 1648–1653, SHA `cc97b397f849e31b`; **NUMERICAL-HEADING-CANDIDATE**
+- `109. Physical Merge vs Cognitive Acceptance` — source lines 1654–1669, SHA `e9d18a6706081a82`; **NUMERICAL-HEADING-CANDIDATE**
+- `110. Verification After Combination` — source lines 1670–1680, SHA `955cbb747259debf`; **NUMERICAL-HEADING-CANDIDATE**
+- `111. Finding` — source lines 1681–1688, SHA `202630ecc819a4ef`; **NUMERICAL-HEADING-CANDIDATE**
+- `112. TriggerActionCausalityBinding` — source lines 1689–1712, SHA `dfd879b43d2d41c5`; **NUMERICAL-HEADING-CANDIDATE**
+- `113. Trigger Reaction vs Action` — source lines 1713–1728, SHA `935bd21aef093ab4`; **NUMERICAL-HEADING-CANDIDATE**
+- `114. Stable Causality` — source lines 1729–1734, SHA `683b30529432a9df`; **NUMERICAL-HEADING-CANDIDATE**
+- `115. External Effect Limitation` — source lines 1735–1740, SHA `9655427788f100e2`; **NUMERICAL-HEADING-CANDIDATE**
+- `116. Crash Recovery` — source lines 1741–1751, SHA `33ee6c1db2c64a79`; **NUMERICAL-HEADING-CANDIDATE**
+- `117. Finding` — source lines 1752–1759, SHA `4353634396145bc8`; **NUMERICAL-HEADING-CANDIDATE**
+- `118. RuntimeActivationContract` — source lines 1760–1783, SHA `bde828d77fee4959`; **NUMERICAL-HEADING-CANDIDATE**
+- `119. Component Running vs Operationally Admitted` — source lines 1784–1795, SHA `53c8e1cece3fa412`; **NUMERICAL-HEADING-CANDIDATE**
+- `120. Activation Scope` — source lines 1796–1809, SHA `a1dcb8db6b5ac89d`; **NUMERICAL-HEADING-CANDIDATE**
+- `121. Recovery Ordering` — source lines 1810–1815, SHA `94e14184e7bb77a4`; **NUMERICAL-HEADING-CANDIDATE**
+- `122. Admission Invalidation` — source lines 1816–1836, SHA `4b30ddba619b352b`; **NUMERICAL-HEADING-CANDIDATE**
+- `123. Finding` — source lines 1837–1846, SHA `d7b4177b9b36f1be`; **NUMERICAL-HEADING-CANDIDATE**
+- `124. ProjectExecutionBoundary` — source lines 1847–1870, SHA `210a2bcae0e691e7`; **NUMERICAL-HEADING-CANDIDATE**
+- `125. Project Identity Binding` — source lines 1871–1878, SHA `1e4d0d52c47886b7`; **NUMERICAL-HEADING-CANDIDATE**
+- `126. Cross-Project Access` — source lines 1879–1884, SHA `9e1639f85d3df2fe`; **NUMERICAL-HEADING-CANDIDATE**
+- `127. Shared Provider` — source lines 1885–1902, SHA `57e5de18fdf32eb0`; **NUMERICAL-HEADING-CANDIDATE**
+- `128. Shared Storage` — source lines 1903–1913, SHA `27b9a8ca7ffc0933`; **NUMERICAL-HEADING-CANDIDATE**
+- `129. Finding` — source lines 1914–1921, SHA `bba2c76a10141f21`; **NUMERICAL-HEADING-CANDIDATE**
+- `130. ExecutionContainmentContract` — source lines 1922–1945, SHA `9d4f5ecb97530736`; **NUMERICAL-HEADING-CANDIDATE**
+- `131. Classification by Reachable Effects` — source lines 1946–1961, SHA `6cd909d013e269b7`; **NUMERICAL-HEADING-CANDIDATE**
+- `132. Sandbox Requirements` — source lines 1962–1976, SHA `589b401ac8c4421d`; **NUMERICAL-HEADING-CANDIDATE**
+- `133. Unknown Containment` — source lines 1977–1985, SHA `3b5015abd7f81bbd`; **NUMERICAL-HEADING-CANDIDATE**
+- `134. Containment Across Workers` — source lines 1986–1996, SHA `810179f103f1b9fe`; **NUMERICAL-HEADING-CANDIDATE**
+- `135. Finding` — source lines 1997–2008, SHA `8f107d3afe5de5a8`; **NUMERICAL-HEADING-CANDIDATE**
+- `136. ImplementationDependencyGraph` — source lines 2009–2028, SHA `e7fdd28a310e66b0`; **NUMERICAL-HEADING-CANDIDATE**
+- `137. Implementation vs Activation` — source lines 2029–2050, SHA `6df2668f92fea0f1`; **NUMERICAL-HEADING-CANDIDATE**
+- `138. Capability Activation Contract` — source lines 2051–2068, SHA `c415b20878b0dfa4`; **NUMERICAL-HEADING-CANDIDATE**
+- `139. No Safety Stub Bypass` — source lines 2069–2088, SHA `a4a73384155bf446`; **NUMERICAL-HEADING-CANDIDATE**
+- `140. Initial Walking Skeleton` — source lines 2089–2114, SHA `bf3ec469654dce73`; **NUMERICAL-HEADING-CANDIDATE**
+- `141. Safe Growth` — source lines 2115–2139, SHA `55f7bacab45d9042`; **NUMERICAL-HEADING-CANDIDATE**
+- `142. H01 — Interface Duplication Control` — source lines 2140–2147, SHA `cfb903339b825a10`; **NUMERICAL-HEADING-CANDIDATE**
+- `143. H02 — Runtime Performance` — source lines 2148–2163, SHA `ea1abf741e644209`; **NUMERICAL-HEADING-CANDIDATE**
+- `144. H03 — Diagnostic Data Governance` — source lines 2164–2171, SHA `1fc93f4b2b7510b7`; **NUMERICAL-HEADING-CANDIDATE**
+- `145. H04 — Provider Quality Evaluation` — source lines 2172–2189, SHA `939a78d1da296938`; **NUMERICAL-HEADING-CANDIDATE**
+- `146. H05 — Resource Backpressure` — source lines 2190–2207, SHA `1cca2b4d981757d7`; **NUMERICAL-HEADING-CANDIDATE**
+- `147. H06 — Package Dependency Direction` — source lines 2208–2225, SHA `a5728d4164716c73`; **NUMERICAL-HEADING-CANDIDATE**
+- `148. H07 — Engineering Quality Benchmarking` — source lines 2226–2250, SHA `0af039aeaf049f13`; **NUMERICAL-HEADING-CANDIDATE**
+- `149. No Second Executive` — source lines 2251–2254, SHA `75ec7b57d2475595`; **NUMERICAL-HEADING-CANDIDATE**
+- `150. No Second CommitGate` — source lines 2255–2258, SHA `77f1e9950453013f`; **NUMERICAL-HEADING-CANDIDATE**
+- `151. No Second ActionGate` — source lines 2259–2262, SHA `1925f7e3faa9972b`; **NUMERICAL-HEADING-CANDIDATE**
+- `152. No Second Dependency Engine` — source lines 2263–2266, SHA `7574f8a5058e078e`; **NUMERICAL-HEADING-CANDIDATE**
+- `153. No Second Scheduler` — source lines 2267–2270, SHA `9975bd45daa393a5`; **NUMERICAL-HEADING-CANDIDATE**
+- `154. No Direct Provider Authority` — source lines 2271–2274, SHA `ec8d7fa1a66fe867`; **NUMERICAL-HEADING-CANDIDATE**
+- `155. No Implicit Specialist Authority` — source lines 2275–2278, SHA `f393dcaca14c5fe3`; **NUMERICAL-HEADING-CANDIDATE**
+- `156. No Reinterpretation of External Effects` — source lines 2279–2282, SHA `81b7accacef3bbe1`; **NUMERICAL-HEADING-CANDIDATE**
+- `157. No Recovery-Based Authority Escalation` — source lines 2283–2491, SHA `6275de5aa2e81c02`; **NUMERICAL-HEADING-CANDIDATE**
+- `158. C01 Acceptance Conditions` — source lines 2492–2527, SHA `5436e724d6e54186`; **NUMERICAL-HEADING-CANDIDATE**
+- `159. Technical Details Deferred` — source lines 2528–2551, SHA `ccbeaa1ffc3ef8a4`; **NUMERICAL-HEADING-CANDIDATE**
+- `160. No Automatic Freeze` — source lines 2552–2627, SHA `d97b572ee1e86b17`; **NUMERICAL-HEADING-CANDIDATE**
+- `1. التفويض يجب أن يرتبط بالعملية الفعلية` — source lines 2628–2635, SHA `7793ddee2665705c`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. لا نحتاج إلى معاملات ذرية عالمية لكل الأنظمة` — source lines 2636–2643, SHA `089d581fa72d96da`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. تنفيذ المكونات لا يعني السماح بتشغيلها` — source lines 2644–2673, SHA `669927735b929cf0`; **NUMERICAL-HEADING-CANDIDATE**
+
+**C02** — `5f33fe0d-af3e-4f37-aeac-8979e64d941f`
+- `1. Purpose` — source lines 28–36, SHA `f70f0a8635a42e7f`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Architectural Conservation` — source lines 37–81, SHA `502deb1c59874a9a`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Central Integration Principle` — source lines 82–104, SHA `3cd20beb9ad5c291`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Finding` — source lines 105–118, SHA `4f18fa008bbb3029`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Architectural Decision` — source lines 119–128, SHA `83b9022b2626e906`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. RecoverableActionDeliveryObligation` — source lines 129–157, SHA `b8cfdc9547aeffa5`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. Durable Enumeration` — source lines 158–179, SHA `071cf90a138aaabe`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. Recovery Decision` — source lines 180–202, SHA `2047ce24bf87faf0`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Old Executive Epoch` — source lines 203–210, SHA `1b87b9ad162a761d`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. Queue Authority` — source lines 211–232, SHA `88d3e469c7b04a0e`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. Enforcement Point` — source lines 233–238, SHA `bbab84f4d725d04a`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. Crash Cases` — source lines 239–246, SHA `096931f949f25cb4`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. Closure Requirement` — source lines 247–253, SHA `f8c5a66cc1dd4c6b`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. Finding` — source lines 254–263, SHA `d82bff986286be01`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. Architectural Decision` — source lines 264–271, SHA `deef86e25b65291f`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. TriggerDerivedWorkCommitment` — source lines 272–297, SHA `8202cf44065ffe57`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. Atomicity Rule` — source lines 298–315, SHA `3b42e77db494ce87`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. Action Proposal Creation` — source lines 316–331, SHA `01f4145b3f9fae06`; **NUMERICAL-HEADING-CANDIDATE**
+- `19. Replay Rule` — source lines 332–345, SHA `6f66e447d9c320c4`; **NUMERICAL-HEADING-CANDIDATE**
+- `20. Example` — source lines 346–371, SHA `4485e3f6d8d7c2cc`; **NUMERICAL-HEADING-CANDIDATE**
+- `21. Ownership Boundary` — source lines 372–383, SHA `2999af3bb22639b0`; **NUMERICAL-HEADING-CANDIDATE**
+- `22. Required Compatibility` — source lines 384–392, SHA `2467cca513aac7c3`; **NUMERICAL-HEADING-CANDIDATE**
+- `23. Finding` — source lines 393–413, SHA `db78c7bfac310b1e`; **NUMERICAL-HEADING-CANDIDATE**
+- `24. Architectural Decision` — source lines 414–421, SHA `e223191f7453750d`; **NUMERICAL-HEADING-CANDIDATE**
+- `25. EffectiveExecutionBinding` — source lines 422–449, SHA `cf1460ef3d1aa5e0`; **NUMERICAL-HEADING-CANDIDATE**
+- `26. Three Execution Representations` — source lines 450–470, SHA `22a277b1bc92ebba`; **NUMERICAL-HEADING-CANDIDATE**
+- `27. Last Enforceable Boundary` — source lines 471–476, SHA `50bb76b289b70eda`; **NUMERICAL-HEADING-CANDIDATE**
+- `28. Resource Identity` — source lines 477–490, SHA `5e787067c39ad785`; **NUMERICAL-HEADING-CANDIDATE**
+- `29. Tool Version` — source lines 491–494, SHA `b50203b36bee6d5d`; **NUMERICAL-HEADING-CANDIDATE**
+- `30. Failure Behavior` — source lines 495–505, SHA `0a9e1a646b92b476`; **NUMERICAL-HEADING-CANDIDATE**
+- `31. No Hidden Tool Effects` — source lines 506–514, SHA `53b42400f41dc927`; **NUMERICAL-HEADING-CANDIDATE**
+- `32. Finding` — source lines 515–522, SHA `1d0533dd16f0871f`; **NUMERICAL-HEADING-CANDIDATE**
+- `33. Architectural Decision` — source lines 523–534, SHA `37bff10f3347f2ba`; **NUMERICAL-HEADING-CANDIDATE**
+- `34. DispatchAdmissionCutover` — source lines 535–562, SHA `0079f235a4c2cfec`; **NUMERICAL-HEADING-CANDIDATE**
+- `35. Legal Ordering` — source lines 563–574, SHA `708b1d743c42d162`; **NUMERICAL-HEADING-CANDIDATE**
+- `36. Pre-Dispatch Protection` — source lines 575–594, SHA `0949a5c5585a8ba5`; **NUMERICAL-HEADING-CANDIDATE**
+- `37. Race After Admission` — source lines 595–610, SHA `e685604203d54761`; **NUMERICAL-HEADING-CANDIDATE**
+- `38. Revocation Rule` — source lines 611–618, SHA `4f34c4cc534d3b6e`; **NUMERICAL-HEADING-CANDIDATE**
+- `39. No Unbounded Global Lock` — source lines 619–626, SHA `715f00feeeda57fc`; **NUMERICAL-HEADING-CANDIDATE**
+- `40. Required Enforcement` — source lines 627–635, SHA `3a76493b05916f03`; **NUMERICAL-HEADING-CANDIDATE**
+- `41. Finding` — source lines 636–645, SHA `ecf8ff81f75e7f82`; **NUMERICAL-HEADING-CANDIDATE**
+- `42. Architectural Decision` — source lines 646–653, SHA `0c5b7a5bd010bd6b`; **NUMERICAL-HEADING-CANDIDATE**
+- `43. EffectiveExecutionAuthorityScope` — source lines 654–679, SHA `cd3e88675509b589`; **NUMERICAL-HEADING-CANDIDATE**
+- `44. Authority Intersection` — source lines 680–699, SHA `ee90d82a21bddabf`; **NUMERICAL-HEADING-CANDIDATE**
+- `45. Shared Worker Rule` — source lines 700–713, SHA `7130d553b674ffe3`; **NUMERICAL-HEADING-CANDIDATE**
+- `46. Credential Binding` — source lines 714–721, SHA `80264159f83ffb10`; **NUMERICAL-HEADING-CANDIDATE**
+- `47. Resource Resolution` — source lines 722–727, SHA `38427a6a46d78762`; **NUMERICAL-HEADING-CANDIDATE**
+- `48. Enforcement Limits` — source lines 728–736, SHA `1e39da795cb68c28`; **NUMERICAL-HEADING-CANDIDATE**
+- `49. Finding` — source lines 737–746, SHA `6c2c7de0cbfd5217`; **NUMERICAL-HEADING-CANDIDATE**
+- `50. Architectural Decision` — source lines 747–752, SHA `fc54518eabfe0844`; **NUMERICAL-HEADING-CANDIDATE**
+- `51. ObservationCausalAttachmentContract` — source lines 753–776, SHA `5a2068a7ab445108`; **NUMERICAL-HEADING-CANDIDATE**
+- `52. Raw Observation Admission` — source lines 777–782, SHA `24c79679a52fcd68`; **NUMERICAL-HEADING-CANDIDATE**
+- `53. Example` — source lines 783–800, SHA `5281ab1d35f4518e`; **NUMERICAL-HEADING-CANDIDATE**
+- `54. Deferred Causal Attachment` — source lines 801–816, SHA `6d8fdd254ec80d10`; **NUMERICAL-HEADING-CANDIDATE**
+- `55. Duplicate Delivery` — source lines 817–822, SHA `d9af33b95617f2e4`; **NUMERICAL-HEADING-CANDIDATE**
+- `56. Unsupported Causality` — source lines 823–831, SHA `1820b7c32770cb4e`; **NUMERICAL-HEADING-CANDIDATE**
+- `57. Owner` — source lines 832–842, SHA `178d455ce1433fab`; **NUMERICAL-HEADING-CANDIDATE**
+- `58. Finding` — source lines 843–852, SHA `e76ca2bdf4c3deb6`; **NUMERICAL-HEADING-CANDIDATE**
+- `59. Architectural Decision` — source lines 853–856, SHA `7a7089c560c7cd1f`; **NUMERICAL-HEADING-CANDIDATE**
+- `60. SealedOutboundContext` — source lines 857–882, SHA `029f8848c7f121f8`; **NUMERICAL-HEADING-CANDIDATE**
+- `61. Outbound Sequence` — source lines 883–896, SHA `6e530922cf96a0c2`; **NUMERICAL-HEADING-CANDIDATE**
+- `62. Content Modification` — source lines 897–905, SHA `a2146515c4e1843d`; **NUMERICAL-HEADING-CANDIDATE**
+- `63. Provider Switching` — source lines 906–915, SHA `59c7b7395fad750a`; **NUMERICAL-HEADING-CANDIDATE**
+- `64. Streaming` — source lines 916–921, SHA `8e1b7c450f43e4db`; **NUMERICAL-HEADING-CANDIDATE**
+- `65. Post-Seal Transformations` — source lines 922–943, SHA `0283c2c2ad54ff7a`; **NUMERICAL-HEADING-CANDIDATE**
+- `66. Trusted Egress Enforcement` — source lines 944–949, SHA `04aa67cadc36a87c`; **NUMERICAL-HEADING-CANDIDATE**
+- `67. No Independent Disclosure Authority` — source lines 950–958, SHA `52ed70a40bb819c0`; **NUMERICAL-HEADING-CANDIDATE**
+- `68. Finding` — source lines 959–966, SHA `9e6c364e0fac2be6`; **NUMERICAL-HEADING-CANDIDATE**
+- `69. Architectural Decision` — source lines 967–970, SHA `41183f23b74be89d`; **NUMERICAL-HEADING-CANDIDATE**
+- `70. CompletionStateBinding` — source lines 971–994, SHA `e51e1812b9345d6d`; **NUMERICAL-HEADING-CANDIDATE**
+- `71. Evidence Scope` — source lines 995–1006, SHA `afc99e834585488d`; **NUMERICAL-HEADING-CANDIDATE**
+- `72. Scoped Freshness` — source lines 1007–1012, SHA `a96f9f2d8b0a6128`; **NUMERICAL-HEADING-CANDIDATE**
+- `73. Finalization Commit` — source lines 1013–1025, SHA `8b73e565855dabc2`; **NUMERICAL-HEADING-CANDIDATE**
+- `74. External State Limitation` — source lines 1026–1035, SHA `69f19ec7759b906b`; **NUMERICAL-HEADING-CANDIDATE**
+- `75. Example` — source lines 1036–1048, SHA `ae626d59123859cb`; **NUMERICAL-HEADING-CANDIDATE**
+- `76. Historical Completion` — source lines 1049–1057, SHA `ae3ddd1c26fde08f`; **NUMERICAL-HEADING-CANDIDATE**
+- `77. Required Failure Behavior` — source lines 1058–1071, SHA `546bd76592bfe110`; **NUMERICAL-HEADING-CANDIDATE**
+- `78. Important Conservation` — source lines 1072–1090, SHA `61077bf567636661`; **NUMERICAL-HEADING-CANDIDATE**
+- `79. H01 — Projection Conformance` — source lines 1091–1120, SHA `5f4cbcaddf0c119a`; **NUMERICAL-HEADING-CANDIDATE**
+- `80. H02 — Cancellation Semantics` — source lines 1121–1134, SHA `fb0e028d7db6f7b9`; **NUMERICAL-HEADING-CANDIDATE**
+- `81. H03 — Backpressure` — source lines 1135–1150, SHA `5eff00127a8f3356`; **NUMERICAL-HEADING-CANDIDATE**
+- `82. H04 — Interface Complexity` — source lines 1151–1216, SHA `925e8377110b4f00`; **NUMERICAL-HEADING-CANDIDATE**
+- `83. Targeted Adversarial Scenarios` — source lines 1217–1317, SHA `867d09927cdf0282`; **NUMERICAL-HEADING-CANDIDATE**
+- `84. Contract-Level Requirements` — source lines 1318–1345, SHA `b72a9ad695e7c4fb`; **NUMERICAL-HEADING-CANDIDATE**
+- `85. Implementation-Level Obligations` — source lines 1346–1369, SHA `32be0851cfdc8f4f`; **NUMERICAL-HEADING-CANDIDATE**
+- `86. No Endless Review Principle` — source lines 1370–1570, SHA `c13dd8a40cacc812`; **NUMERICAL-HEADING-CANDIDATE**
+
+**Final Freeze Review 03 and final decisions** — `2c677ac2-0588-4d02-8149-fabfe690afd8`
+- `1. Objective` — source lines 20–31, SHA `b9218f484b79bc01`; **NUMERICAL-HEADING-CANDIDATE**
+- `2. Acceptance Standard` — source lines 32–53, SHA `c527450d6c234781`; **NUMERICAL-HEADING-CANDIDATE**
+- `3. Conservation Requirements` — source lines 54–395, SHA `aeb0ccaa5bfabb4e`; **NUMERICAL-HEADING-CANDIDATE**
+- `4. Combined Failure Scenarios` — source lines 396–417, SHA `bc78cce9c2ecaa8e`; **NUMERICAL-HEADING-CANDIDATE**
+- `5. Canonical Authority` — source lines 418–423, SHA `d1abf1ca5346ff0a`; **NUMERICAL-HEADING-CANDIDATE**
+- `6. World Mutation Authority` — source lines 424–431, SHA `57f410304aeeda8d`; **NUMERICAL-HEADING-CANDIDATE**
+- `7. Action Lifecycle` — source lines 432–457, SHA `149223c80ea413f1`; **NUMERICAL-HEADING-CANDIDATE**
+- `8. Observation Authority` — source lines 458–463, SHA `353686617b32f3f3`; **NUMERICAL-HEADING-CANDIDATE**
+- `9. Temporal Authority` — source lines 464–469, SHA `4affa471c3a136ee`; **NUMERICAL-HEADING-CANDIDATE**
+- `10. Dependency Authority` — source lines 470–477, SHA `0df5425d277b3f46`; **NUMERICAL-HEADING-CANDIDATE**
+- `11. Recovery Authority` — source lines 478–530, SHA `e7cb84f4dbb57072`; **NUMERICAL-HEADING-CANDIDATE**
+- `12. What This Review Accepts` — source lines 531–550, SHA `e4ec319714d20b9e`; **NUMERICAL-HEADING-CANDIDATE**
+- `13. What This Review Does Not Prove` — source lines 551–585, SHA `b47eaaca2ee6050a`; **NUMERICAL-HEADING-CANDIDATE**
+- `14. Contract Registry Limitation` — source lines 586–611, SHA `fb4c553d1ffae18d`; **NUMERICAL-HEADING-CANDIDATE**
+- `15. No New Runtime Authorities` — source lines 612–648, SHA `a09c88dc318a0659`; **NUMERICAL-HEADING-CANDIDATE**
+- `16. Review Summary` — source lines 649–678, SHA `8b315cb6cf4a9fe1`; **NUMERICAL-HEADING-CANDIDATE**
+- `17. Freeze Verdict` — source lines 679–699, SHA `106234510ffff5c3`; **NUMERICAL-HEADING-CANDIDATE**
+- `18. Frozen Architectural Identity` — source lines 700–703, SHA `66701680891a28bc`; **NUMERICAL-HEADING-CANDIDATE**
+- `19. Next Authorized Step` — source lines 704–758, SHA `c780671778878e73`; **NUMERICAL-HEADING-CANDIDATE**

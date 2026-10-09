@@ -1,0 +1,449 @@
+{
+  "status": "CANDIDATE_NONLOSS_RULES",
+  "cases": {
+    "CapabilityResult": {
+      "owner": "L2",
+      "chosen_source": {
+        "source": "FCA v1.0.1",
+        "source_part": "FCA v1.0.1 baseline",
+        "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "start_line": 1012,
+        "extracted_declaration_sha256": "b60b418b16f38240fec6c0be2929b5701ef1cbb2d8c59cf0014fb6bf2fb26e4a"
+      },
+      "occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 1012,
+          "extracted_declaration_sha256": "b60b418b16f38240fec6c0be2929b5701ef1cbb2d8c59cf0014fb6bf2fb26e4a",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-10",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+          "start_line": 384,
+          "extracted_declaration_sha256": "e8ae9d35f870fc3efb84694641074038fd2961677393b2a5f5ee6d6f0cb717b5",
+          "partial_overlay": false
+        }
+      ],
+      "source_field_inventory": {
+        "FCA v1.0.1:FCA v1.0.1 baseline:1012": [
+          "patch_proposal",
+          "proposed_claims",
+          "proposed_hypotheses",
+          "proposed_information_needs",
+          "evidence_refs",
+          "tool_requests",
+          "experiment_requests",
+          "confidence_assessment",
+          "specialist_request",
+          "needs",
+          "rationale_summary"
+        ],
+        "RDMS-10:Original draft:384": [
+          "invocation_id",
+          "proposal_refs",
+          "information_need_refs",
+          "tool_request_refs",
+          "experiment_request_refs",
+          "assessment_refs",
+          "dependency_set_ref",
+          "provenance_refs",
+          "result_status"
+        ]
+      },
+      "decision": {
+        "canonical": "FCA v1.0.1 §23 CapabilityResult (L2)",
+        "integration_alias": "CapabilityTransportResult (L7 candidate)",
+        "full_recovery": "Required integrity-checked canonical_capability_result_ref; resolve original FCA fields by the reference, never assume proposal_refs lists are complete.",
+        "may_approve_at": "EDITORIAL_ALIAS_AFTER_CHANGE_CONTROL_ONLY",
+        "hard_reject": [
+          "unresolvable original reference",
+          "mismatched source version/hash or project",
+          "transport SUCCESS treated as Executive acceptance",
+          "lost specialist_request or rationale_summary"
+        ],
+        "field_preservation": {
+          "patch_proposal": "canonical_capability_result_ref -> verified immutable FCA record",
+          "proposed_claims": "canonical_capability_result_ref -> verified immutable FCA record",
+          "proposed_hypotheses": "canonical_capability_result_ref -> verified immutable FCA record",
+          "proposed_information_needs": "canonical_capability_result_ref -> verified immutable FCA record",
+          "evidence_refs": "canonical_capability_result_ref -> verified immutable FCA record",
+          "tool_requests": "canonical_capability_result_ref -> verified immutable FCA record",
+          "experiment_requests": "canonical_capability_result_ref -> verified immutable FCA record",
+          "confidence_assessment": "canonical_capability_result_ref -> verified immutable FCA record",
+          "specialist_request": "canonical_capability_result_ref -> verified immutable FCA record",
+          "needs": "canonical_capability_result_ref -> verified immutable FCA record",
+          "rationale_summary": "canonical_capability_result_ref -> verified immutable FCA record"
+        }
+      }
+    },
+    "Commitment": {
+      "owner": "L2",
+      "chosen_source": {
+        "source": "RDMS-02",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "start_line": 1380,
+        "extracted_declaration_sha256": "da8ac753225c695d17105d549b2d3eca57f648d2343a84a0a8daefc58e46fce9"
+      },
+      "occurrences": [
+        {
+          "source": "RDMS-02",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "start_line": 1380,
+          "extracted_declaration_sha256": "da8ac753225c695d17105d549b2d3eca57f648d2343a84a0a8daefc58e46fce9",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-02",
+          "source_part": "C01, second review corrections and final freeze decision",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "start_line": 2842,
+          "extracted_declaration_sha256": "bbf875e7b0cbf30ca4d9017a16388b676e74ef8ce1bc2e0840b520c777a78836",
+          "partial_overlay": true
+        },
+        {
+          "source": "RDMS-05",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+          "start_line": 526,
+          "extracted_declaration_sha256": "b9f1955870bd84b03c06400dc25992a54d5c6e25ae2af05d74764502e180ae3e",
+          "partial_overlay": false
+        }
+      ],
+      "source_field_inventory": {
+        "RDMS-02:Original draft:1380": [
+          "commitment_id",
+          "statement",
+          "why_temporary",
+          "scope",
+          "owner_ref",
+          "linked_entity_refs",
+          "created_at",
+          "due_at",
+          "removal_trigger_id",
+          "revisit_trigger_id",
+          "status",
+          "resolution_ref"
+        ],
+        "RDMS-02:C01, second review corrections and final freeze decision:2842": [
+          "reactivation_condition_ref",
+          "status",
+          "resolution_ref"
+        ],
+        "RDMS-05:Original draft:526": [
+          "commitment_id",
+          "owner_ref",
+          "subject_ref",
+          "reason",
+          "required_followup",
+          "reactivation_condition_ref",
+          "lifecycle",
+          "created_commit_seq",
+          "updated_commit_seq"
+        ]
+      },
+      "decision": {
+        "canonical": "RDMS-02 post-C01 semantic Commitment (L2); L4 owns evaluation only",
+        "integration_alias": "TemporalCommitmentView (L4 suggested; not another persistent Commitment)",
+        "full_recovery": "Identity ref to RDMS-02 semantic record + separate RDMS-05 temporal metadata. Preserve original statement, why_temporary, structured scope, all linked entities, timestamp, resolution, and reactivation root.",
+        "may_approve_at": "BLOCKED_UNTIL_NONLOSS_PROOF",
+        "correction_priority": "RDMS-02 C01 replaces due_at/removal_trigger_id/revisit_trigger_id with reactivation_condition_ref for ACTIVE cases; partial ... is an overlay, not full schema.",
+        "hard_reject": [
+          "statement automatically equated to required_followup",
+          "why_temporary replaced by reason",
+          "linked_entity_refs[] reduced to subject_ref",
+          "created_at substituted by created_commit_seq",
+          "missing owner on ACTIVE",
+          "ACTIVE without valid reactivation root",
+          "DUE auto promotes SATISFIED"
+        ],
+        "preservation_map": {
+          "commitment_id": "same identity and project/version scope",
+          "statement": "semantic canonical ref; no automatic mapping to required_followup",
+          "why_temporary": "semantic canonical ref; no automatic mapping to reason",
+          "scope": "canonical ScopeSpec; subject_ref only subview",
+          "owner_ref": "retain; ACTIVE requires authorized owner",
+          "linked_entity_refs": "canonical relation set; no collapse to subject_ref",
+          "created_at": "preserve separately from legal created_commit_seq",
+          "reactivation_condition_ref": "active legal root after adopted C01; RDMS-05 evaluator resolves",
+          "status": "one canonical lifecycle, no DUE=>SATISFIED",
+          "resolution_ref": "preserve canonical resolution history"
+        }
+      }
+    },
+    "MemoryRetrievalResult": {
+      "owner": "L5",
+      "chosen_source": {
+        "source": "RDMS-07",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+        "start_line": 1080,
+        "extracted_declaration_sha256": "e4ae715a27b230289f343447d8b7723501f62538065a5e61fa5dc5009c17c67d"
+      },
+      "occurrences": [
+        {
+          "source": "RDMS-07",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+          "start_line": 1080,
+          "extracted_declaration_sha256": "e4ae715a27b230289f343447d8b7723501f62538065a5e61fa5dc5009c17c67d",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-10",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+          "start_line": 1148,
+          "extracted_declaration_sha256": "a70de6ab479231f1c2f991196c6406715513f940d0af266e1e05b22ce533c35a",
+          "partial_overlay": false
+        }
+      ],
+      "source_field_inventory": {
+        "RDMS-07:Original draft:1080": [
+          "retrieval_id",
+          "query_ref",
+          "candidate_refs",
+          "omitted_or_filtered_scope",
+          "ranking_policy_ref",
+          "retrieval_coverage",
+          "freshness_summary",
+          "created_at"
+        ],
+        "RDMS-10:Original draft:1148": [
+          "memory_refs",
+          "relevance_assessments",
+          "provenance_refs",
+          "applicability_assessments",
+          "trust_metadata_refs"
+        ]
+      },
+      "decision": {
+        "canonical": "RDMS-07 MemoryRetrievalResult (L5)",
+        "integration_alias": "MemoryRetrievalTransportResult (L7 candidate)",
+        "full_recovery": "Required canonical_memory_retrieval_result_ref; retrieve omission/filtered scope, coverage and ranking metadata; transport shortlist is not exhaustive.",
+        "may_approve_at": "EDITORIAL_ALIAS_AFTER_CHANGE_CONTROL_ONLY",
+        "hard_reject": [
+          "missing result identity",
+          "missing omitted/filtered scope for partial retrieval",
+          "empty shortlist interpreted as no stored knowledge",
+          "unapproved cross-project disclosure"
+        ],
+        "field_preservation": {
+          "retrieval_id": "canonical_memory_retrieval_result_ref -> verified immutable RDMS-07 record",
+          "query_ref": "canonical_memory_retrieval_result_ref -> verified immutable RDMS-07 record",
+          "candidate_refs": "canonical_memory_retrieval_result_ref -> verified immutable RDMS-07 record",
+          "omitted_or_filtered_scope": "canonical_memory_retrieval_result_ref -> verified immutable RDMS-07 record",
+          "ranking_policy_ref": "canonical_memory_retrieval_result_ref -> verified immutable RDMS-07 record",
+          "retrieval_coverage": "canonical_memory_retrieval_result_ref -> verified immutable RDMS-07 record",
+          "freshness_summary": "canonical_memory_retrieval_result_ref -> verified immutable RDMS-07 record",
+          "created_at": "canonical_memory_retrieval_result_ref -> verified immutable RDMS-07 record"
+        }
+      }
+    },
+    "ResumptionCapsule": {
+      "owner": "L4",
+      "chosen_source": {
+        "source": "RDMS-05",
+        "source_part": "C01",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "start_line": 2067,
+        "extracted_declaration_sha256": "1c38a08ce60f890ed64f69cfd6cb8d2928d75d5b6637be31299a5b209e420409"
+      },
+      "occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 2037,
+          "extracted_declaration_sha256": "3b1813aa4640f6305cb0a84a6b157dc3758c2083b212ceb26c088397c247117a",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-05",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+          "start_line": 654,
+          "extracted_declaration_sha256": "c1d22ca4a7ddbf38aa27abd8caa3fbbf1587f636463b3d7827b840bc809528b1",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-05",
+          "source_part": "C01",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+          "start_line": 2067,
+          "extracted_declaration_sha256": "1c38a08ce60f890ed64f69cfd6cb8d2928d75d5b6637be31299a5b209e420409",
+          "partial_overlay": false
+        }
+      ],
+      "source_field_inventory": {
+        "FCA v1.0.1:FCA v1.0.1 baseline:2037": [
+          "task_id",
+          "suspended_from_state",
+          "base_state_version",
+          "repo_ref",
+          "goal",
+          "subgoal",
+          "current_focus",
+          "current_hypotheses",
+          "relevant_evidence",
+          "rejected_paths",
+          "temporary_changes",
+          "open_information_needs",
+          "next_concrete_action",
+          "created_at"
+        ],
+        "RDMS-05:Original draft:654": [
+          "capsule_id",
+          "project_id",
+          "task_or_goal_ref",
+          "suspended_from_state",
+          "base_canonical_commit_seq",
+          "repo_ref",
+          "world_ref",
+          "environment_ref",
+          "dependency_set_ref",
+          "current_focus_ref",
+          "relevant_claim_refs",
+          "relevant_hypothesis_refs",
+          "relevant_evidence_refs",
+          "decision_refs",
+          "rejected_path_refs",
+          "active_slice_refs",
+          "unresolved_action_refs",
+          "open_information_need_refs",
+          "commitment_refs",
+          "temporary_change_refs",
+          "next_action_proposal_ref",
+          "created_commit_seq"
+        ],
+        "RDMS-05:C01:2067": [
+          "capsule_id",
+          "task_or_goal_ref",
+          "suspended_from_state",
+          "canonical_snapshot_ref",
+          "relevant_entity_refs",
+          "dependency_set_ref",
+          "unresolved_action_refs",
+          "next_action_proposal_ref",
+          "durable_payload_artifact_ref",
+          "content_integrity_ref",
+          "created_commit_seq"
+        ]
+      },
+      "decision": {
+        "canonical": "RDMS-05 adopted C01 compact capsule header (L4); FCA §53 contextual semantics recoverable in immutable durable payload; RDMS-09 governs recovery",
+        "integration_alias": "None; original name retained",
+        "full_recovery": "Durable payload artifact and digest verified BEFORE atomic SUSPENDED transition; dereference all FCA fields, and maintain RDMS-05 expanded references, world/dependency history and unresolved effects.",
+        "may_approve_at": "BLOCKED_UNTIL_DURABLE_PAYLOAD_AND_RECOVERY_PROOF",
+        "hard_reject": [
+          "durable_payload_artifact_ref missing",
+          "content_integrity_ref mismatch",
+          "relevant_entity_refs alone assumed sufficient",
+          "next_action_proposal_ref auto-dispatched",
+          "work marked SUSPENDED before durable payload acknowledged"
+        ],
+        "preservation_map": {
+          "task_id": "verified durable payload artifact (or fully defined immutable ref and lineage), NOT guaranteed by compact header alone",
+          "suspended_from_state": "verified durable payload artifact (or fully defined immutable ref and lineage), NOT guaranteed by compact header alone",
+          "base_state_version": "verified durable payload artifact (or fully defined immutable ref and lineage), NOT guaranteed by compact header alone",
+          "repo_ref": "verified durable payload artifact (or fully defined immutable ref and lineage), NOT guaranteed by compact header alone",
+          "goal": "verified durable payload artifact (or fully defined immutable ref and lineage), NOT guaranteed by compact header alone",
+          "subgoal": "verified durable payload artifact (or fully defined immutable ref and lineage), NOT guaranteed by compact header alone",
+          "current_focus": "verified durable payload artifact (or fully defined immutable ref and lineage), NOT guaranteed by compact header alone",
+          "current_hypotheses": "verified durable payload artifact (or fully defined immutable ref and lineage), NOT guaranteed by compact header alone",
+          "relevant_evidence": "verified durable payload artifact (or fully defined immutable ref and lineage), NOT guaranteed by compact header alone",
+          "rejected_paths": "verified durable payload artifact (or fully defined immutable ref and lineage), NOT guaranteed by compact header alone",
+          "temporary_changes": "verified durable payload artifact (or fully defined immutable ref and lineage), NOT guaranteed by compact header alone",
+          "open_information_needs": "verified durable payload artifact (or fully defined immutable ref and lineage), NOT guaranteed by compact header alone",
+          "next_concrete_action": "verified durable payload artifact (or fully defined immutable ref and lineage), NOT guaranteed by compact header alone",
+          "created_at": "verified durable payload artifact (or fully defined immutable ref and lineage), NOT guaranteed by compact header alone"
+        }
+      }
+    },
+    "TriggerCondition": {
+      "owner": "L4",
+      "chosen_source": {
+        "source": "RDMS-05",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "start_line": 191,
+        "extracted_declaration_sha256": "c3092a02ce0b441049cfe58978e5eaa1bbee23f7b4fd879240b58e666822bdbd"
+      },
+      "occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 2126,
+          "extracted_declaration_sha256": "cc1d38d3e27b521df8628445f93a5a887b2473472cfa55e83de47002c9ffb8ee",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-05",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+          "start_line": 191,
+          "extracted_declaration_sha256": "c3092a02ce0b441049cfe58978e5eaa1bbee23f7b4fd879240b58e666822bdbd",
+          "partial_overlay": false
+        }
+      ],
+      "source_field_inventory": {
+        "FCA v1.0.1:FCA v1.0.1 baseline:2126": [
+          "id",
+          "generation",
+          "semantics",
+          "kind",
+          "watches",
+          "predicate",
+          "source_cursor",
+          "reaction_key",
+          "linked_object",
+          "on_fire",
+          "status",
+          "last_evaluated_at",
+          "last_fire_id"
+        ],
+        "RDMS-05:Original draft:191": [
+          "condition_id",
+          "kind",
+          "predicate_spec",
+          "dependency_set_ref",
+          "required_evidence_policy_ref"
+        ]
+      },
+      "decision": {
+        "canonical": "FCA §56 full-trigger conceptual contract; RDMS-05 TriggerDefinition is full current runtime record; RDMS-05 TriggerCondition is a predicate subrecord",
+        "integration_alias": "TriggerPredicateCondition (L4 for the local predicate only; candidate)",
+        "full_recovery": "Resolve trigger_id + generation to complete TriggerDefinition, separate fire_policy and detection_policy, predicate tree, source cursors, reaction identity and lifecycle history.",
+        "may_approve_at": "BLOCKED_UNTIL_AGGREGATE_PROOF",
+        "hard_reject": [
+          "predicate alone promoted to full trigger",
+          "ONE_SHOT merged with EDGE_TRIGGERED as one axis",
+          "missing detection/fire axis invented",
+          "unreplayable EDGE becomes FALSE",
+          "replay creates second reaction/effect"
+        ],
+        "preservation_map": {
+          "id": "TriggerDefinition.trigger_id",
+          "generation": "TriggerDefinition.generation",
+          "semantics": "fire_policy AND detection_policy, distinct axes",
+          "kind": "TriggerPredicateCondition.kind and definition source refs",
+          "watches": "source refs, cursor generation and condition graph",
+          "predicate": "condition_ref -> predicate definition",
+          "source_cursor": "TriggerSourceCursor + replay frontier",
+          "reaction_key": "generation-scoped reaction identity, not mere string",
+          "linked_object": "linked_object_ref",
+          "on_fire": "reaction_spec_ref with legal action path",
+          "status": "trigger lifecycle distinct from action delivery",
+          "last_evaluated_at": "evaluation history with original clock",
+          "last_fire_id": "TriggerFire identity"
+        }
+      }
+    }
+  }
+}

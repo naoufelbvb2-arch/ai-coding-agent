@@ -1,0 +1,12 @@
+test_all_twelve_have_legal_gates (__main__.EffectiveCloseout.test_all_twelve_have_legal_gates) ... ok
+test_canonical_commitment_patch_applied (__main__.EffectiveCloseout.test_canonical_commitment_patch_applied) ... ok
+test_freeze_gate_is_truthful (__main__.EffectiveCloseout.test_freeze_gate_is_truthful) ... ok
+test_literal_67_witness_hashes (__main__.EffectiveCloseout.test_literal_67_witness_hashes) ... ok
+test_record_inventory_and_field_surfaces (__main__.EffectiveCloseout.test_record_inventory_and_field_surfaces) ... ok
+test_source_archive_original_hashes (__main__.EffectiveCloseout.test_source_archive_original_hashes) ... ok
+test_two_contract_name_collisions_not_conflated (__main__.EffectiveCloseout.test_two_contract_name_collisions_not_conflated) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.011s
+
+OK

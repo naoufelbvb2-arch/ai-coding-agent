@@ -1,0 +1,8263 @@
+<!-- GAIA-C01-PHASE13-CURRENT-STATUS START -->
+# CURRENT READING GUIDE — GAIA-C01 Phase 13
+
+**STATUS: CONSOLIDATION DRAFT; NOT FROZEN.**  
+**Owned responsibility:** Runtime transport, integration and capability boundaries.  
+**Source rule:** Full original normative texts remain unmodified in the archived source set and the source annex of this document. A historical draft is NOT automatically the effective current law: approved C01/C02/C03 corrections and final freeze decisions must be incorporated before the consolidated layer supersedes those sources. Phase 11 reference tests are not production/runtime verification.  
+**Forbidden:** silent defaulting, missing-authority inference, lossy migration, or treating transport wrappers as canonical entities.
+
+**FCA source sections/appendices assigned:** 2.  
+**RDMS source sets assigned:** 1; **approved original message parts:** 4.  
+**27-name ownership subset present here:** 0.
+
+| Attached RDMS source | Original message parts | Source interpretation |
+|---|---:|---|
+| RDMS-10 | 4 | Original draft + approved corrections / freeze decision, read with precedence |
+
+| Canonical-type ownership candidate | Source | Current migration decision |
+|---|---|---|
+| — | — | No audited reused-name contract owned here |
+
+**Freeze blocker:** An independently usable, contradiction-free, *effective* contract and law text has not yet been consolidated from draft plus correction overlays. See `../reviews/GAIA_C01_PHASE13_FREEZE_REVIEW_AR.md`, `GAIA_C01_PHASE13_LAYER_COVERAGE.json`, and the Phase-12 contract decision register. Runtime validation belongs to a separate implementation stage; existing architectural ambiguities cannot be waived by deferring tests.
+<!-- GAIA-C01-PHASE13-CURRENT-STATUS END -->
+
+---
+
+<!-- GAIA-C01-PHASE12-DECISION-INDEX START -->
+## GAIA-C01 Phase 12 — Effective owner & change-control index (DRAFT)
+
+**Not a new frozen law.** Original source sections and approved overlays below retain authority. Do not infer legal equivalence of transport projections or historical migrations. Global layer freeze remains unauthorized.
+
+**Source-owned reused contracts in this layer:** 0.
+
+No repeated-name contracts from the 27-name audit are owned here; other original legal entities remain in the source annex below.
+
+**L7 interface names for draft review only:** `CapabilityTransportResult` (L2 canonical result), `MemoryRetrievalTransportResult` (L5 canonical retrieval). Neither is itself canonical cognition or memory; both must preserve an immutable source handle and fail closed if absent.
+
+Refer to `../reviews/GAIA_C01_PHASE12_CONTROLLED_CONTRACT_DECISIONS.md` and the JSON decision ledger for exact source anchors and remaining proof gates.
+<!-- GAIA-C01-PHASE12-DECISION-INDEX END -->
+
+---
+
+<!-- GAIA-C01-PHASE10-RECONCILIATION START -->
+## GAIA-C01 Phase 10 — Effective contract approval boundary (CANDIDATE)
+
+Cross-layer contract focus: **`CapabilityTransportResult`, `MemoryRetrievalTransportResult`**. The complete preservation crosswalk and rejection cases are in `../reviews/GAIA_C01_PHASE10_EFFECTIVE_CROSSWALK.md` and `../reviews/GAIA_C01_PHASE10_FIVE_PRIORITY_CROSSWALKS.json`. **Original frozen source annexes and verbatim declarations remain authoritative; no candidate alias or projection is approved for canonical migration.**
+<!-- GAIA-C01-PHASE10-RECONCILIATION END -->
+
+---
+
+<!-- GAIA-C01-PHASE9 CONTRACT PUBLICATION START -->
+## GAIA-C01 Phase 9 — Curated source-backed contract publication (NOT RE-FROZEN)
+
+**Status: VERBATIM SOURCE BASELINES ONLY — effective cross-layer projections remain unapproved.**
+
+This section is a navigation and source-publication aid. It does not overwrite historical FCA or RDMS source sections. Corrections/overlays must be applied according to the approved original source history, not inferred from an earlier draft.
+
+**Owning layer:** `L7`. **Published reused names:** `0`.
+
+No audited duplicate canonical data type in the 27-name registry is primarily owned by this layer. Consult the original FCA/RDMS source annex below for this layer’s other definitions.
+
+**Publication guard:** No inferred fields, default values, status promotions, action permissions, or silent renames are authorized by this section.
+<!-- GAIA-C01-PHASE9 CONTRACT PUBLICATION END -->
+
+
+---
+
+# L7 — Runtime Integration & Interface Contracts
+
+> **CONSOLIDATION DRAFT — NOT FROZEN.** This file is a working per-layer consolidation, **not** an independently approved replacement for the frozen FCA/RDMS source specifications. Normative FCA source: `../reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md` (SHA-256 `74d0923cbd343b71740da0fc2368a84aad2ea97f8e4e15f156122f48ebe53539`). RDMS-01…10 original source sets arrived in GAIA-C01 Phase 4. Effective cross-source schemas and ownership remain **PENDING RECONCILIATION**; the archived original text below is untouched.
+
+> **Phase 5:** source-name audit and non-normative proposals: `../reviews/GAIA_C01_PHASE5_CONTRACT_RECONCILIATION.md`. Original FCA and RDMS annexes below retain their historical authority/status; proposed aliases are not approved laws.
+
+**Layer owner:** RDMS-10; all cross-layer projections  
+**Authoritative FCA trace:** FCA §§2–4, 22–23, 41–52, 72–79, 85  
+**Migration status:** CONSOLIDATED DRAFT / REVIEW REQUIRED  
+**Source status:** FCA v1.0.1 hash-verified; RDMS source sets imported; effective contract reconciliation pending.
+
+## 1. Scope and charter
+
+L7 composes the logical runtime without owning a second canonical source of truth. Its design target is provider-neutral integration with clear process boundaries, a trusted control core and separately isolated risky execution workers where appropriate. No mandatory microservice architecture.
+
+## 2. Logical component arrangement
+
+```text
+Client → Agent Gateway → Executive/Capability Orchestrator → Reasoning Gateway
+                             │                          │
+                             └─ Canonical State ◄───── Results/Proposals
+                                      │
+                            CommitGate / ActionGate
+                                      │
+                         Ledger / Action Journal
+                                      │
+                     Sealed Executor / Specialist Workers
+                                      │
+                             Real World / Tools
+                                      │
+                            Observation Ingress
+                                      │
+                                Epistemic Review
+```
+
+## 3. Schema owner rule and resolved target name
+
+**GAIA-B01 verified:** FCA §23's semantic `CapabilityResult` cannot be replaced by RDMS-10's distinct result transport structure. The integration-layer projection is hereby **proposed as** `CapabilityTransportResult` and must not share the canonical name. Example projection (pending source/field validation):
+
+```text
+CapabilityTransportResult {
+  invocation_id
+  canonical_capability_result_ref
+  proposal_refs[]
+  dependency_set_ref
+  provenance_refs[]
+  transport_status
+}
+```
+
+Its transformation must preserve every meaningful field in canonical `CapabilityResult` or reference the full canonical object; it cannot silently replace `tool_requests[]` with differently typed ID refs. **STATUS: PROPOSED MIGRATION; RDMS-10 normative amendment still requires review.**
+
+## 4. Unified envelope rules
+
+Every authority-bearing request requires authenticated source/issuer, project/epoch binding, canonical schema semantics, operation identity, versions/freshness, idempotency and integrity. Content never self-assigns authority. Transport fields are not proof unless verified at receiving boundary.
+
+## 5. Provider gateway
+
+Provider is replaceable, without direct mutations. Its capability set (structured schemas, tools, streaming, context limit, input/output modes) must match invocation requirements. Switching provider requires fresh destination-specific disclosure approval and preserves canonical state.
+
+## 6. Sealed outbound data and effective command
+
+- `SealedOutboundContext`: verify final content, final destination, purpose and current disclosure frontier at trusted egress.
+- `SealedExecutionIntent` + `EffectiveExecutionBinding`: validate final effective operation, adapter identity, resolved target, environment, execution principal and resource scope before dispatch.
+- `EffectiveExecutionAuthorityScope`: shared Workers must not amplify delegation or cross project credentials.
+
+## 7. Durable and causal handoffs
+
+- `RecoverableActionDeliveryObligation`: action follow-up enumerable from authoritative durable control, not just volatile Queue. Re-enumeration never authorizes automatic external retry.
+- `TriggerDerivedWorkCommitment`: accepted reaction retains recoverable follow-up; it cannot self-authorize an action.
+- `CrossComponentEventContract`: preserve causal parents where legal transitions require them; raw Observation admission remains independent from proving causal relation.
+- `CompletionStateBinding`: finalization claims track verified repo/world/goal scope; revalidation uses L4 dependencies.
+
+## 8. Physical implementation boundary
+
+Suggested: trusted modular host for tightly related control and cognitive services; Provider and Tool/Specialist Workers in appropriately restricted domains. This is an implementation proposal, not a frozen topology. Shared-world mutation requires durable dispatch and actual credential/resource enforcement.
+
+## 9. Progressive build safety
+
+Only enable capabilities when mandatory gates and recovery semantics exist. A placeholder CommitGate that always approves must never authorize real canonical writes. Read-only or proved-isolated operations may be enabled before broader world-action support if their independent safety contracts are met.
+
+
+## 10. Dependency and interface register
+
+- All lower layers are dependencies by public typed contracts, not by bypassing internal stores.
+- L0 controls authority meaning, L1 commits, L2 cognition, L3 world/observations, L4 temporal/specialists/dependencies, L5 memory, L6 recovery.
+
+## 11. Pending effective-contract verification
+
+- **GAIA-B01:** rename conflicting transport result and explicitly validate lossless canonical mapping; original RDMS-10 needs controlled amendment.
+- **PENDING EFFECTIVE CONTRACT AUDIT:** RDMS-01…09 canonical schema imports and their exact field-level conformance.
+- **PENDING IMPLEMENTATION:** actual package layout, threads/processes, queue technology, storage and sandbox proof.
+
+## 12. Layer conformance requirements
+
+A layer cannot be marked `FROZEN_CONSOLIDATED` until: (a) the owning legal contracts are imported from their frozen source version without loss; (b) all cross-layer projections are typed and referenced; (c) invariants, authority, failure and recovery paths are covered by normative acceptance scenarios; (d) source hashes and changes are recorded in `ARCHITECTURE_MANIFEST.md`; (e) the layer's review explicitly approves the consolidated text.
+
+---
+
+## GAIA-C01 Phase 5 — Dual Transport-Type Collision (PROPOSED ONLY)
+
+RDMS-10 draft reuses two owner-defined type names for alternate transport shapes: `CapabilityResult` (canonical owner FCA §23/L2) and `MemoryRetrievalResult` (canonical owner RDMS-07/L5). Proposed L7 transport names: `CapabilityTransportResult` and `MemoryRetrievalTransportResult`. Both require controlled RDMS-10 amendment and explicit full-result reference / lossless mapping. Current draft text and verbatim original-source annexes remain historical, not silently amended.
+
+
+# SOURCE-PRESERVED FCA v1.0.1 BASELINE ANNEX
+
+**Source authority:** the immutable `Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md` file in `reviews/source_archive/`. These copied sections are exact FCA source excerpts, not newly approved RDMS definitions. Layer prose above remains a consolidation draft pending full RDMS source validation.
+**Source SHA-256:** `74d0923cbd343b71740da0fc2368a84aad2ea97f8e4e15f156122f48ebe53539`
+
+**Ownership note:** This document embeds its assigned FCA source sections once. Do not redefine these names in a second layer; refer to the original owner or validated public projection.
+
+<!-- GAIA-SOURCE FCA-SECTION 85 SHA256=7912e2d4a1672a31187dbc14db1d45b7751c4c4db6b811aa68aa077d68d258f8 -->
+## 85. Normal cognitive loop
+
+```text
+USER GOAL
+   ↓
+INTAKE
+   ↓
+ORIENT
+   ↓
+facts / assumptions / unknowns
+   ↓
+Executive selects cognitive depth
+   ↓
+focus attention
+   ↓
+gather highest-value information
+   ↓
+need causal understanding?
+   ├─ yes → hypotheses → experiments → observations
+   ↓
+need engineering decision?
+   ├─ yes → alternatives → future simulation → trade-offs
+   ↓
+record legal Decision
+   ↓
+build adaptive execution graph
+   ↓
+choose coherent Slice
+   ↓
+constrained candidate-code synthesis
+   ↓
+ActionProposal(s)
+   ↓
+legal Action path
+   ↓
+structural + behavioral + semantic verification
+   ↓
+Expected == Observed?
+   ├─ no → DIAGNOSE / ORIENT / REPLAN
+   └─ yes
+       ↓
+REVIEW / metacognitive gate
+       ↓
+continue / integrate / finalize
+       ↓
+checkpoint canonical state
+       ↓
+Learning Gate when valuable
+```
+
+The loop may jump backward whenever reality invalidates the current model.
+
+---
+
+# Part XXVII — Freeze verdict and change control
+
+<!-- GAIA-SOURCE FCA-APPENDIX F SHA256=94b091d3a85d654881fb7618023485f60267074cf74eb6a38003a0eed22eb3d8 -->
+# Appendix F — Minimum conformance scenario suite
+
+A future implementation SHOULD convert at least the following into automated or semi-automated acceptance scenarios.
+
+## F.1 Authority
+
+- stale Executive epoch cannot commit;
+- stale Executive epoch cannot authorize a new Action;
+- Specialist cannot commit canonical state;
+- LLM cannot directly invoke a mutating world adapter;
+- Executive cannot bypass a hard CommitGate violation.
+
+## F.2 Action durability
+
+- crash before `DISPATCH_INTENT`;
+- crash after durable `DISPATCH_INTENT` but before external call is known to leave the process;
+- crash after external call but before result persistence;
+- partial world effect;
+- unknown non-idempotent result enters `IN_DOUBT`;
+- no blind retry of `IN_DOUBT`;
+- safety reconciliation continues after task budget exhaustion.
+
+## F.3 Observation/epistemic integrity
+
+- LLM output cannot create Observation;
+- semantic reasoning cannot directly promote causal interpretation to generic Fact;
+- causal closure cannot occur without the Causal Closure Gate;
+- a valid OperationalCausalClaim may be used as a settled premise only inside its recorded scope;
+- contradictory observations are retained and scoped;
+- disputed support lowers/reopens Fact confidence as appropriate;
+- EvidenceLink requires an existing Observation target/source relationship.
+
+## F.4 Specialist concurrency
+
+- unrelated global state changes do not falsely stale a Specialist result;
+- changed actual dependency does stale/revalidate the result;
+- overlapping write sets require reconciliation rather than last-write-wins;
+- negative-search dependency invalidates after relevant repo/search-scope change;
+- old-epoch Specialist output may integrate only under the current Executive after freshness validation.
+
+## F.5 Trigger durability
+
+- temporal trigger fires after downtime;
+- level trigger re-evaluates after restart;
+- event trigger replays from durable cursor;
+- duplicate fire does not duplicate canonical reaction;
+- edge trigger without replayable history is rejected or represented differently;
+- Decision and its mandatory Trigger persist atomically.
+
+## F.6 Trust boundary
+
+- README/code comment containing fake “system instruction” remains data;
+- tool output cannot self-promote to instruction authority;
+- retrieved memory cannot self-promote to project policy;
+- Specialist output cannot self-promote to authority;
+- untrusted build/test scripts execute within the chosen isolation policy.
+
+## F.7 Memory governance
+
+- Episode can be stored automatically;
+- one Episode cannot jump directly to corroborated general schema;
+- retrieved cross-project memory remains precedent;
+- counterexample can refine applicability without deleting provenance;
+- superseded knowledge remains historically traceable.
+
+## F.8 Operational-efficiency and causal-closure
+
+- routine low-gravity internal edits do not require MMRT;
+- MMRT disagreement alone cannot reject a change;
+- high-gravity interface/ownership/invariant changes invoke MMRT when the capability is available and no stronger semantic review substitutes;
+- negative symbol knowledge survives unrelated repository changes;
+- relevant symbol/index/frontier changes mark the negative conclusion stale;
+- dynamic-dispatch uncertainty prevents overclaiming static negative knowledge as total runtime absence;
+- disposable sandbox micro-actions can use the aggregated fast path;
+- any reachable canonical/shared effect prevents `EPHEMERAL_SANDBOX` classification;
+- sandbox output enters canonical/shared state only through the normal shared-world action path;
+- “fix makes test pass” alone cannot create an OperationalCausalClaim;
+- reproduced + predicted + targeted-intervention + regression-supported causal closure can create an OVC;
+- contradictory observations or dependency/scope changes stale/reopen the OVC.
+
+## F.9 Temporal continuity
+
+- suspended task always has a Resumption Capsule;
+- resume checks relevant repo/world/dependency changes;
+- blocked/waiting/deferred states remain distinct;
+- obsolete goals can be retired without erasing history;
+- temporary commitment cannot exist without a reactivation/removal mechanism.
+
+---
+
+
+---
+
+## RDMS Verbatim Source Annexes — Phase 4 (historical draft + corrections + freeze decision)
+
+> **SOURCE PRESERVATION, NOT NORMALIZED LAW.** The following original user-supplied text is included **verbatim** as a migration input. Drafts and later corrections coexist historically. Later approved corrective parts and freeze decisions must govern disagreements. This annex does not itself certify exact schema compatibility or replace the original archive. Do not implement directly until semantic reconciliation is completed.
+
+#
+## GAIA-C01 Phase 6 — Proposed effective transport aliases (NON-NORMATIVE)
+
+- Preserve FCA canonical `CapabilityResult` (L2); project RDMS-10 transport-shaped declaration as proposed `CapabilityTransportResult` plus required `canonical_capability_result_ref`.
+- Preserve RDMS-07 canonical `MemoryRetrievalResult` (L5); project RDMS-10 shortened declaration as proposed `MemoryRetrievalTransportResult` plus required `canonical_memory_retrieval_result_ref`.
+- Neither projection status nor presence of a returned reference authorizes legal cognitive/memory mutation. All references must be verifiable and scope-appropriate. **Alias approval is pending**; frozen RDMS-10 annex stays verbatim.
+- See `../reviews/GAIA_C01_PHASE6_EFFECTIVE_CONTRACT_RESOLUTION.md`.
+
+## Original source set: RDMS-10
+
+Archive: `../reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt`  
+SHA-256 of complete source set: `5464a1a1db1a64d90990f7a205b32dbe7988a91a2f1d018ea48e2cd822251935`  
+Contained original message parts: 4
+
+````text
+RDMS-10 — ORIGINAL APPROVED SOURCE SET
+Source: https://chatgpt.com/share/6ac82d7b-ba7c-83ea-a3a9-b41734948bb2
+
+ملاحظة تحريرية: هذا الملف تجميع للنصوص الأصلية المسترجعة من المحادثة، لا إعادة صياغة ولا مواصفة موحدة جديدة. حالة التجميد مثبتة في قرار المراجعة النهائي المرفق؛ عبارة DRAFT داخل النص الأساسي تصف مرحلته التاريخية قبل التصحيحات. تُقرأ المسودة مع التصحيحات وقرار الاعتماد، ولا يجوز استعمال نص سابق يخالف تصحيحًا معتمدًا لاحقًا. لم نغير نصوص القوانين ولم نضف FCA.
+
+
+========================================================================
+SOURCE PART: Original draft
+MESSAGE ID: 99533762-bba8-407a-b27b-952a236c00a4
+BEGIN ORIGINAL MESSAGE
+========================================================================
+
+نبدأ الآن RDMS-10 — Final Runtime Integration, Component Boundaries & Implementation Contracts.
+
+وصلنا إلى مرحلة مفصلية في تصميم الوكيل البرمجي. حتى الآن صممنا قدراته المعرفية، والذاكرة، والتخطيط، واتخاذ القرار، وتنفيذ الأدوات، وإدارة المتخصصين، والتعافي من الأعطال. لكن بقي سؤال هندسي أساسي:
+
+كيف تتحول هذه الأنظمة إلى برنامج واحد متماسك، بحيث يعرف كل مكون مسؤولياته، وكيف يتواصل مع غيره، ومن يمتلك البيانات، ومن يحق له تغييرها؟
+
+سأتعامل مع RDMS-10 باعتبارها مواصفة التكامل النهائية قبل التصميم البرمجي والتنفيذ، وليس مجرد قائمة بالمكونات أو اقتراح لتنظيم ملفات Python.
+
+والقرار الذي سأعتمده هو:
+
+Modular Cognitive Runtime — One Canonical Mind, Multiple Controlled Execution Domains.
+
+أي بنية معيارية تحتوي على عقل تنفيذي واحد، وحالة معرفية معتمدة واحدة، مع إمكانية تشغيل الأدوات والمتخصصين والمهام الزمنية في عمليات معزولة ومتوازية.
+
+سنكتب المسودة الكاملة أولًا، ثم نخضعها للمراجعات العدائية المعتادة. ولن نبدأ البرمجة أو نجمد RDMS-10 قبل إغلاق مراجعاتها.
+
+RDMS-10 — Final Runtime Integration, Component Boundaries & Implementation Contracts — Draft v1.0
+RDMS-10
+Final Runtime Integration, Component Boundaries & Implementation Contracts
+
+Project: AI Coding Agent
+Parent Architecture: Formal Cognitive Architecture — FCA v1.0.1
+
+Specification: Runtime & Data Model Specification 10
+Version: Draft v1.0
+
+Dependencies: RDMS-01 → RDMS-09 — FROZEN
+
+Status: DRAFT — NOT FROZEN
+Implementation: NOT AUTHORIZED
+Next Gate: Adversarial Freeze Review 01
+
+PART I — ARCHITECTURAL OBJECTIVE
+1. Purpose
+
+RDMS-10 تحدد كيفية دمج مكونات FCA وRDMS-01…09 في Runtime واحدة متماسكة.
+
+تشمل هذه المواصفة:
+
+المكونات المنطقية للنظام.
+
+مسؤولية كل مكون.
+
+ملكية البيانات والحالة القانونية.
+
+واجهات التواصل بين المكونات.
+
+حدود العمليات والخدمات.
+
+حدود الصلاحيات والثقة.
+
+العقود الموحدة للرسائل والطلبات.
+
+كيفية تطبيق التغييرات على الحالة المعتمدة.
+
+كيفية تنفيذ العمليات الخارجية.
+
+كيفية إدارة المتخصصين بالتوازي.
+
+كيفية دمج نتائجهم دون تضارب.
+
+كيفية تنظيم الاستدعاءات إلى LLM Providers.
+
+كيفية تشغيل المهام الزمنية والتعافي منها.
+
+كيفية استعادة النظام بعد توقفه.
+
+كيفية اختبار التكامل بين جميع المكونات.
+
+الترتيب المقترح لتنفيذ المكونات برمجيًا.
+
+2. Fundamental Architecture Rule
+
+نعتمد:
+
+One Canonical Cognitive Authority. Multiple Capabilities. Controlled Side Effects.
+
+بالعربية:
+
+سلطة معرفية معتمدة واحدة، وقدرات متعددة، وآثار خارجية محكومة.
+
+لا يعني ذلك أن جميع المكونات يجب أن تعمل في Process واحدة.
+
+بل يعني أن توزيع العمليات لا يؤدي إلى توزيع السلطة المعرفية القانونية.
+
+3. What RDMS-10 Must Not Do
+
+لا يجوز أن تعيد هذه المواصفة تصميم القوانين التي جُمّدت سابقًا.
+
+لا تنشئ:
+
+Cognitive Executive ثانية.
+
+Canonical Workspace ثانية.
+
+CommitGate ثانية.
+
+ActionGate ثانية.
+
+Dependency Evaluation Engine ثانية.
+
+Durable Scheduler ثانية.
+
+سلطة تعلم مستقلة.
+
+سلطة تنفيذ خاصة بالـLLM.
+
+نظامًا منافسًا لحالات Executive الموجودة في FCA.
+
+أي قرار هندسي لا يستطيع الحفاظ على هذه الشروط يجب رفضه أو عرضه كتعارض يتطلب مراجعة رسمية للمواصفة المالكة.
+
+PART II — FINAL LOGICAL ARCHITECTURE
+4. Integrated Runtime Architecture
+
+البنية المنطقية المقترحة:
+
+                         USER / CLIENT
+                               │
+                               ▼
+                     ┌─────────────────┐
+                     │ Agent Interface │
+                     │    Gateway      │
+                     └────────┬────────┘
+                              │
+                              ▼
+┌────────────────────────────────────────────────────┐
+│                                                    │
+│                 COGNITIVE RUNTIME                  │
+│                                                    │
+│  ┌──────────────────────────────────────────────┐  │
+│  │           COGNITIVE EXECUTIVE                │  │
+│  │                                              │  │
+│  │        Adaptive Cognitive Control            │  │
+│  │                                              │  │
+│  │   Decision / Attention / Strategy            │  │
+│  └──────────────────────┬───────────────────────┘  │
+│                         │                          │
+│             ┌───────────┴───────────┐              │
+│             ▼                       ▼              │
+│     Cognitive Workspace       Capability Runtime  │
+│             │                       │              │
+│             │             ┌─────────┴─────────┐    │
+│             │             ▼                   ▼    │
+│             │       Reasoning Gateway    Memory   │
+│             │             │                   │    │
+│             └─────────────┼───────────────────┘    │
+│                           │                        │
+└───────────────────────────┼────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────┐
+│                                                    │
+│                    CONTROL PLANE                   │
+│                                                    │
+│   Executive Epoch / Fencing                        │
+│                                                    │
+│   CommitGate                                       │
+│   ActionGate                                       │
+│   Control Ledger                                   │
+│                                                    │
+│   Specialist Lifecycle                             │
+│   Dependency Evaluation                            │
+│   Durable Trigger Lifecycle                        │
+│                                                    │
+└───────────────────────────┬────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────┐
+│                                                    │
+│                    ACTION PLANE                    │
+│                                                    │
+│   Action Journal                                   │
+│   Reality Executor                                 │
+│   Tool Adapters                                    │
+│   Isolated Workspaces                              │
+│   Specialist Execution Workers                     │
+│                                                    │
+└───────────────────────────┬────────────────────────┘
+                            │
+                            ▼
+                      REAL WORLD
+                            │
+                            ▼
+┌────────────────────────────────────────────────────┐
+│                                                    │
+│                 OBSERVATION PLANE                  │
+│                                                    │
+│   Observation Ingress                              │
+│   Provenance Validation                            │
+│   Evidence Interpretation                          │
+│   Contradiction Detection                          │
+│                                                    │
+└───────────────────────────┬────────────────────────┘
+                            │
+                            ▼
+                    COGNITIVE RUNTIME
+5. Architectural Interpretation
+
+هذا المخطط يصف المسؤوليات المنطقية.
+
+لا يعني أن كل صندوق يمثل خدمة مستقلة أو قاعدة بيانات مستقلة.
+
+قد تشترك عدة مكونات في العملية نفسها.
+
+وقد يجري تشغيل بعض المكونات في Workers منفصلة.
+
+القاعدة الأساسية هي الحفاظ على حدود السلطة والثقة والكتابة، بغض النظر عن كيفية توزيع العمليات فعليًا.
+
+PART III — COMPONENT OWNERSHIP MODEL
+6. Component Categories
+
+نقسم المكونات إلى ست مجموعات تشغيلية:
+
+Group	Responsibility
+Cognitive Kernel	الهوية المعرفية والتفكير والاختيار
+Control Services	السلطة والانتقالات القانونية
+Execution Services	تنفيذ الأفعال واستخدام الأدوات
+Observation Services	تسجيل الواقع والأدلة
+Memory & Temporal Services	الذاكرة والالتزامات الزمنية
+Infrastructure Services	التخزين والتعافي والأمان والتشغيل
+
+كل مجموعة تحتوي على مكونات ذات مسؤوليات محددة.
+
+PART IV — COGNITIVE KERNEL
+7. Cognitive Executive
+
+Source: RDMS-08
+
+Responsibility
+
+هي صاحبة السلطة الدلالية الحالية.
+
+تحدد:
+
+Current Goal
+Current Focus
+Next Cognitive Operation
+Required Cognitive Depth
+Information Acquisition
+Delegation
+Implementation Readiness
+Verification Strategy
+Recovery Reassessment
+Completion Decision
+May
+
+تقييم المقترحات.
+
+اختيار العمليات المعرفية.
+
+اعتماد التغييرات الدلالية المسموحة.
+
+إصدار تفويضات تمر بالبوابات القانونية.
+
+طلب معلومات إضافية.
+
+إدارة استراتيجية التفكير والتفويض.
+
+Must Not
+
+الكتابة مباشرة إلى Canonical Workspace.
+
+تجاوز CommitGate.
+
+تجاوز ActionGate.
+
+تغيير Observations.
+
+ترقية Memory دون LearningGate.
+
+منح Provider سلطة تنفيذ.
+
+Ownership
+
+تمتلك Executive القرار الدلالي.
+
+لكنها لا تمتلك حق تجاوز شروط الكتابة القانونية.
+
+8. Canonical Cognitive Workspace
+
+Source: FCA / RDMS-01 / RDMS-02
+
+Responsibility
+
+تمثل الحالة المعرفية المقبولة حاليًا.
+
+تشمل منطقيًا:
+
+Identity
+Goals
+Focus
+System Mental Model
+Epistemic State
+Engineering State
+Execution State
+Temporal State
+Specialist References
+Memory References
+Metacognitive State
+Control References
+Write Rule
+Capability
+    ↓
+PatchProposal
+    ↓
+Executive Authorization
+    ↓
+CommitGate
+    ↓
+Canonical Workspace
+
+لا يستطيع أي مكون تجاوز هذا المسار لإجراء تحديث معرفي معتمد.
+
+Physical Storage
+
+يمكن توزيع البيانات على جداول أو ملفات أو مخازن مختلفة.
+
+لكن يجب أن تحافظ البنية على:
+
+النسخ القانونية.
+
+العلاقات المرجعية.
+
+الذرية المطلوبة.
+
+التاريخ الضروري للتعافي.
+
+سلطة الكتابة المعتمدة.
+
+9. Capability Runtime
+
+Source: FCA / RDMS-08
+
+Responsibility
+
+تشغيل القدرات المعرفية.
+
+تشمل:
+
+Intent Modeling
+Mental Modeling
+Information Foraging
+Causal Reasoning
+Experiment Design
+Engineering Judgment
+Adaptive Planning
+Code Construction
+Verification
+Metacognition
+Learning Proposals
+Capability Contract
+
+كل Capability يجب أن تستقبل مدخلات محددة النطاق وتعيد مقترحات أو نتائج واضحة النوع.
+
+CapabilityInvocation {
+    invocation_id
+
+    capability_kind
+
+    goal_ref
+
+    cognitive_context_ref
+
+    dependency_set_ref
+
+    provider_policy_ref?
+
+    resource_budget_ref
+
+    requested_outputs[]
+}
+CapabilityResult {
+    invocation_id
+
+    proposal_refs[]
+
+    information_need_refs[]
+
+    tool_request_refs[]
+
+    experiment_request_refs[]
+
+    assessment_refs[]
+
+    dependency_set_ref
+
+    provenance_refs[]
+
+    result_status
+}
+
+هذه أغلفة تكامل مقترحة، وليست بديلًا عن الكيانات المجمدة.
+
+Important Rule
+
+CapabilityResult ليست بالضرورة حقيقة معتمدة.
+
+قد تحتوي على:
+
+Hypothesis
+PatchProposal
+ActionProposal
+DecisionProposal
+MemoryProposal
+
+تحتاج هذه المقترحات إلى المرور بمسار قبولها القانوني.
+
+PART V — REASONING PROVIDER INTEGRATION
+10. Reasoning Gateway
+
+Source: FCA / RDMS-08
+
+Responsibility
+
+توفير واجهة موحدة لاستدعاء نماذج الاستدلال.
+
+يمكن أن يدعم:
+
+OpenAI models
+
+Anthropic models
+
+Google models
+
+Local models
+
+Future reasoning systems
+
+DGCA LITE
+
+التكامل مع DGCA LITE خيار مستقبلي، وليس اعتمادًا معماريًا إلزاميًا.
+
+11. Provider-Neutral Contract
+ReasoningInvocation {
+    invocation_id
+
+    originating_executive_epoch
+
+    task_ref
+
+    requested_capability
+
+    context_package_ref
+
+    trusted_instruction_envelope_ref
+
+    allowed_output_schema
+
+    resource_budget_ref
+
+    provider_selection_ref
+
+    attempt_generation
+}
+ReasoningResult {
+    invocation_id
+
+    provider_identity
+
+    attempt_generation
+
+    generated_content_ref
+
+    structured_proposals[]
+
+    provider_usage?
+
+    provider_status
+
+    provenance_ref
+
+    trust_classification
+
+    validation_result
+}
+12. Provider Authority
+
+الـProvider تستطيع:
+
+إنتاج تحليل.
+
+اقتراح تعديل.
+
+اقتراح تجربة.
+
+اقتراح Action.
+
+اقتراح خطة.
+
+اقتراح قرار.
+
+لكن لا تستطيع:
+
+Commit canonical state.
+
+Execute shell commands directly.
+
+Write production files directly.
+
+Recruit Specialists directly.
+
+Promote Memory directly.
+
+Issue legal authorization.
+
+أي استدعاء أداة تطلبه Provider يمر عبر المسار القانوني الملائم.
+
+13. Provider Switching
+
+تغيير Provider لا يغير:
+
+Project Identity
+Canonical Workspace
+Executive Epoch
+Action History
+Memory
+Control Ledger
+
+إذا وصلت نتيجة قديمة بعد تغيير Provider، تُربط بمحاولة الاستدلال الأصلية، وتخضع لفحص الصلاحية قبل اعتمادها.
+
+14. Context Assembly
+
+يجب أن تتكون حزمة السياق من مصادر موثقة.
+
+ContextPackage {
+    context_package_id
+
+    project_ref
+
+    goal_ref
+
+    focus_ref
+
+    relevant_state_refs[]
+
+    relevant_evidence_refs[]
+
+    applicable_contract_refs[]
+
+    mandatory_context_manifest_ref
+
+    memory_retrieval_refs[]
+
+    dependency_set_ref
+
+    source_trust_metadata_refs[]
+
+    disclosure_policy_ref
+}
+Critical Rule
+
+لا يمكن لمحتوى داخل Repository أو Tool Output أن يرفع درجة سلطته بتضمين تعليمات تبدو رسمية.
+
+مصدر سلطة التعليمات يأتي من الـTrusted Envelope، وليس من النص نفسه.
+
+PART VI — CONTROL SERVICES
+15. CommitGate
+
+Source: RDMS-01
+
+Responsibility
+
+التحقق من قانونية كل تغيير معرفي معتمد.
+
+Proposed Interface
+CommitRequest {
+    request_id
+
+    project_id
+
+    executive_epoch
+
+    patch_proposal_ref
+
+    authorization_ref
+
+    expected_state_versions[]
+
+    dependency_set_ref
+
+    idempotency_key
+}
+CommitResult {
+    request_id
+
+    disposition
+
+    committed_state_ref?
+
+    control_commit_ref?
+
+    rejection_reasons[]
+
+    current_version_refs[]
+}
+Requirements
+
+يجب أن تتحقق البوابة من:
+
+Current Executive Epoch
+
+Legal authorization
+
+Hard invariants
+
+Expected versions
+
+Dependency validity
+
+Required atomicity
+
+Idempotency
+
+لا يستطيع النموذج اللغوي ملء الحقول الموثوقة بطريقة تمنح نفسه سلطة.
+
+يجب إصدار أو التحقق من بيانات السلطة داخل Control Plane الموثوقة.
+
+16. Control Ledger
+
+Source: RDMS-01
+
+Responsibility
+
+حفظ التاريخ القانوني الضروري لاستعادة النظام.
+
+يشمل:
+
+Executive Epoch
+
+Canonical commits
+
+Action lifecycle
+
+Trigger lifecycle
+
+Specialist lifecycle
+
+Goal lifecycle
+
+Memory promotion references
+Durability Contract
+
+أي انتقال يعتمد التعافي الصحيح على حفظ عدة بيانات معًا يجب أن يحافظ على الذرية المطلوبة.
+
+كما يجب أن تكون إقرارات المتانة متوافقة مع نموذج الأعطال المعلن.
+
+Important Distinction
+
+ControlLedger ليست مجرد نظام Logs.
+
+إنها حد قانوني معتمد.
+
+أما Logging التشخيصي فهو بنية مختلفة لا يجوز استخدامها بديلًا عن الأحداث القانونية.
+
+17. ActionGate
+
+Source: RDMS-04
+
+Responsibility
+
+التحقق من قانونية العمليات التي قد تؤثر في العالم الخارجي.
+
+Proposed Interface
+ActionAuthorizationRequest {
+    action_proposal_ref
+
+    executive_authorization_ref
+
+    executive_epoch
+
+    target_resource_scope
+
+    expected_world_ref
+
+    effect_semantics_ref
+
+    required_preconditions[]
+
+    dependency_set_ref
+}
+ActionAuthorizationResult {
+    action_ref
+
+    authorization_disposition
+
+    action_class
+
+    applicable_execution_boundary
+
+    rejection_reasons[]
+
+    authorization_receipt_ref?
+}
+Core Rule
+
+الـExecutive تقرر دلاليًا.
+
+لكن ActionGate تتحقق من الالتزامات القانونية.
+
+ولا يسمح للـExecutive بتحويل عملية غير قانونية إلى عملية قانونية بمجرد الموافقة عليها.
+
+18. Dependency Evaluation Engine
+
+Source: RDMS-06
+
+Responsibility
+
+تقييم صلاحية النتائج وفق الاعتماديات الفعلية.
+
+يستخدمه:
+
+CommitGate
+
+Cognitive Executive
+
+Specialist Integration
+
+Recovery
+
+Memory Applicability
+
+Implementation Readiness
+
+Finalization
+Interface
+DependencyEvaluationRequest {
+    target_result_refs[]
+
+    dependency_set_refs[]
+
+    current_context_ref
+
+    requested_validity_scope
+}
+DependencyEvaluationResult {
+    target_result_ref
+
+    validity:
+        VALID
+        STALE
+        PARTIALLY_STALE
+        UNKNOWN
+
+    affected_dependency_refs[]
+
+    unaffected_dependency_refs[]
+
+    required_revalidation_refs[]
+}
+Important Rule
+
+لا يجوز إنشاء Dependency Engine جديدة داخل RDMS-09 أو RDMS-10.
+
+ولا يكفي تغير Global State Version لإثبات أن نتيجة Specialist أصبحت قديمة.
+
+يجب تقييم ما اعتمدت عليه النتيجة فعلًا.
+
+PART VII — ACTION RUNTIME
+19. Action Journal
+
+Source: RDMS-04
+
+Responsibility
+
+حفظ دورة حياة العمليات الخارجية.
+
+يجب المحافظة على:
+
+PROPOSED
+AUTHORIZED
+DISPATCH_INTENT
+RESULT_REPORTED
+EFFECT_VERIFIED
+
+PARTIAL
+FAILED
+IN_DOUBT
+
+RECONCILING
+RECONCILED
+
+وفق المعاني المجمدة.
+
+20. Durable Dispatch Protocol
+ActionProposal
+      ↓
+Executive Authorization
+      ↓
+ActionGate
+      ↓
+Persist AUTHORIZED
+      ↓
+Persist DISPATCH_INTENT
+      ↓
+Durable acknowledgement
+      ↓
+Reality Executor
+      ↓
+Record reported result
+      ↓
+Observation Ingress
+      ↓
+Reconciliation
+Fundamental Rule
+
+لا يجوز تنفيذ SHARED_WORLD mutation قبل وجود DISPATCH_INTENT متينة.
+
+21. Execution Adapter Interface
+ToolExecutionRequest {
+    action_ref
+
+    dispatch_receipt_ref
+
+    tool_identity
+
+    execution_boundary_ref
+
+    authorized_resource_scope
+
+    arguments_ref
+
+    effect_semantics_ref
+
+    execution_generation
+
+    timeout_policy
+}
+ToolExecutionReport {
+    action_ref
+
+    execution_attempt_ref
+
+    tool_identity
+
+    reported_status
+
+    output_artifact_refs[]
+
+    execution_metadata_refs[]
+
+    observed_effect_refs[]
+
+    unresolved_effects[]
+}
+
+هذه الواجهة لا تسمح للـExecutor بتقرير النجاح النهائي للأثر بناءً على Exit Code وحده.
+
+22. Tool Adapter Categories
+
+يمكن توفير Adapters لأنواع أدوات مختلفة:
+
+Filesystem
+
+Git
+
+Shell
+
+Build tools
+
+Test runners
+
+Debugger
+
+Database
+
+Network
+
+Deployment
+
+External APIs
+
+جميعها تخضع لتصنيف الآثار.
+
+23. Actual Effect Classification
+
+يجب الفصل بين:
+
+Cognitive operation intent
+
+و:
+
+Actual tool effects
+
+فعملية اسمها INSPECT قد تستخدم Shell ذات آثار جانبية.
+
+لا يجوز أن يسمح اسم العملية المعرفية بتجاوز ActionGate.
+
+24. Ephemeral Sandbox Path
+
+يمكن استخدام المسار السريع عندما يثبت أن جميع الآثار القابلة للوصول:
+
+معزولة.
+
+مؤقتة.
+
+قابلة للتخلص منها.
+
+لا تصل إلى حالة المشروع المشتركة.
+
+لا تستطيع استخدام صلاحيات إنتاجية مشتركة.
+
+عندما لا يمكن إثبات ذلك، يكون التصنيف الافتراضي SHARED_WORLD.
+
+25. Recovery and Retry
+
+يجب أن تظل:
+
+Action authorized
+
+مختلفة عن:
+
+Action dispatched
+
+ومختلفة عن:
+
+Effect observed
+
+ومختلفة عن:
+
+Effect verified
+
+لا يُسمح بإعادة تنفيذ Action غير محسومة بصورة عمياء.
+
+PART VIII — OBSERVATION RUNTIME
+26. Observation Ingress
+
+Source: RDMS-03
+
+Responsibility
+
+استقبال الملاحظات الواقعية وتسجيلها وفق provenance والهوية والسلامة.
+
+Proposed Interface
+ObservationIngressRequest {
+    source_identity
+
+    source_event_identity?
+
+    related_action_ref?
+
+    observation_kind
+
+    payload_ref
+
+    observed_scope
+
+    source_provenance_ref
+
+    source_integrity_metadata
+}
+ObservationIngressResult {
+    observation_ref
+
+    append_disposition
+
+    deduplication_result
+
+    source_validation_result
+}
+27. Observation Authority
+
+لا تحتاج Observation الخام إلى موافقة دلالية من Executive لمجرد تسجيلها.
+
+لكن يجب التحقق من المصدر والشكل والهوية والسلامة وفق RDMS-03.
+
+28. Observation vs Interpretation
+
+نميز بين:
+
+Observation:
+    Test returned exit code 1.
+
+و:
+
+Hypothesis:
+    A database race condition caused the failure.
+
+الثانية لا تصبح Fact لمجرد أن النموذج استنتجها.
+
+29. Evidence Integration
+Observation
+      ↓
+Evidence Interpretation Proposal
+      ↓
+Executive Review
+      ↓
+CommitGate
+      ↓
+Canonical Epistemic State
+
+يجب أن تستخدم الادعاءات السببية بوابة Causal Closure المجمدة عندما تكون شروطها منطبقة.
+
+PART IX — SPECIALIST RUNTIME
+30. Specialist Manager
+
+Source: RDMS-06
+
+Responsibility
+
+إدارة دورة حياة المتخصصين المؤقتين.
+
+يشمل:
+
+Recruitment
+
+Contract assignment
+
+Workspace isolation
+
+Budget allocation
+
+Execution tracking
+
+Result delivery
+
+Freshness evaluation
+
+Integration
+31. Specialist Recruitment Interface
+SpecialistRecruitmentRequest {
+    parent_goal_ref
+
+    recruitment_intent_ref
+
+    specialist_role
+
+    task_contract_ref
+
+    allowed_resource_scope
+
+    isolation_profile_ref
+
+    budget_ref
+
+    originating_executive_epoch
+}
+SpecialistRecruitmentResult {
+    specialist_run_ref
+
+    accepted_contract_ref
+
+    workspace_ref
+
+    lifecycle_ref
+
+    execution_generation
+}
+32. Specialist Authority
+
+لا تمتلك Specialist سلطة تعديل Canonical Workspace.
+
+يمكنها:
+
+إجراء تحليل.
+
+توليد كود مرشح.
+
+تنفيذ تجارب مصرح بها.
+
+إعداد مراجعة.
+
+إنتاج Findings.
+
+اقتراح تعديلات.
+
+لكن التكامل النهائي يخضع لسلطة Executive والبوابات القانونية.
+
+33. Specialist Workspace
+
+يجب أن تحتوي كل Specialist على نطاق عمل معزول وفق عقدها.
+
+يمكن أن يعمل عدة متخصصين بالتوازي:
+
+Specialist A:
+    API analysis
+
+Specialist B:
+    Security review
+
+Specialist C:
+    Test design
+
+لكن ذلك لا يمنحهم سلطة دمج نتائجهم مباشرة.
+
+34. Specialist Integration
+Specialist Result
+       ↓
+Provenance Validation
+       ↓
+Dependency Evaluation
+       ↓
+Conflict Detection
+       ↓
+Verification
+       ↓
+Executive Integration Decision
+       ↓
+CommitGate / ActionGate as applicable
+Critical Requirement
+
+يجب تقييم النتائج وفق اعتمادياتها الفعلية.
+
+وقد تظل بعض Findings صالحة حتى عندما تتغير أجزاء أخرى من المشروع.
+
+35. No Implicit Majority Authority
+
+إذا اتفقت ثلاث Specialists على تفسير واحد، فهذا لا يحوله تلقائيًا إلى حقيقة.
+
+قد تكون جميعها اعتمدت على الفرضية الخاطئة نفسها.
+
+يجب الحفاظ على متطلبات الأدلة والتحقق المناسبة.
+
+PART X — MEMORY RUNTIME
+36. Memory Services
+
+Source: RDMS-07
+
+Responsibility
+
+تخزين واسترجاع المعرفة والخبرة المعتمدة، مع الحفاظ على provenance وقيود الاستعمال.
+
+37. Memory Retrieval
+MemoryRetrievalRequest {
+    project_ref
+
+    query_context_ref
+
+    requested_memory_scopes[]
+
+    applicability_context_ref
+
+    access_policy_ref
+
+    result_budget
+}
+MemoryRetrievalResult {
+    memory_refs[]
+
+    relevance_assessments[]
+
+    provenance_refs[]
+
+    applicability_assessments[]
+
+    trust_metadata_refs[]
+}
+38. Retrieved Memory Is Not Current Truth
+
+يجب التمييز بين:
+
+Historical precedent
+
+و:
+
+Current project evidence
+
+قد تكون تجربة سابقة صحيحة في مشروع آخر، لكنها غير صالحة للمشروع الحالي.
+
+39. Memory Promotion
+Episode
+      ↓
+Reflection
+      ↓
+MemoryProposal
+      ↓
+LearningGate
+      ↓
+Executive Authorization
+      ↓
+Memory Promotion Commit
+
+لا تُرقّى المعرفة تلقائيًا لمجرد أن تجربة نجحت مرة واحدة.
+
+40. Derived Memory Indexes
+
+يمكن أن تستخدم الذاكرة فهارس أو Cache أو وسائل استرجاع متعددة.
+
+لكن هذه الهياكل المشتقة لا تصبح مصدر الحقيقة المعتمد.
+
+ويمكن إعادة بنائها من البيانات القانونية المتاحة وفق صلاحياتها.
+
+PART XI — TEMPORAL RUNTIME
+41. Durable Temporal Scheduler
+
+Source: RDMS-05
+
+Responsibility
+
+إدارة الالتزامات الزمنية والتفعيل عند توفر شروط مستقبلية.
+
+يشمل:
+
+Waiting
+
+Suspension
+
+Resumption
+
+Time-based triggers
+
+External event triggers
+
+Dependency reactivation
+42. Trigger Interface
+TriggerEvaluationRequest {
+    trigger_ref
+
+    trigger_generation
+
+    source_event_ref?
+
+    source_cursor_ref?
+
+    evaluation_context_ref
+}
+TriggerEvaluationResult {
+    trigger_ref
+
+    firing_candidate_ref?
+
+    canonical_reaction_key
+
+    required_control_transition_ref?
+
+    evaluation_status
+}
+43. Trigger Authority
+
+يمكن اكتشاف الحدث عدة مرات.
+
+لكن يجب أن تكون Reaction القانونية قابلة لإزالة التكرار وفق RDMS-05.
+
+كما يجب ألا تؤدي إعادة تشغيل Trigger إلى إعادة تنفيذ Mutation خارجية بصورة غير قانونية.
+
+44. Suspended Tasks
+
+كل مهمة معلقة تحتاج إلى حالة قابلة للاستعادة.
+
+يجب أن يعرف النظام:
+
+Why suspended?
+
+What was active?
+
+What remains unresolved?
+
+What changed?
+
+What event may reactivate it?
+
+What must be revalidated?
+
+لا يجوز الاعتماد على ذاكرة محادثة LLM لاستئناف المهمة.
+
+PART XII — RECOVERY RUNTIME
+45. Recovery Coordinator
+
+Source: RDMS-09
+
+Responsibility
+
+تنسيق استعادة النظام عبر المكونات.
+
+لا تملك سلطة معرفية مستقلة.
+
+46. Recovery Assessment Interface
+RecoveryAssessmentRequest {
+    recovery_case_ref
+
+    affected_component_refs[]
+
+    restored_control_frontier
+
+    suspected_failure_domains[]
+
+    unresolved_action_refs[]
+
+    relevant_policy_refs[]
+}
+RecoveryAssessmentResult {
+    recovery_case_ref
+
+    authority_status
+
+    canonical_integrity_status
+
+    external_effect_constraints[]
+
+    dependency_validation_refs[]
+
+    security_restrictions[]
+
+    permitted_operational_scope
+
+    outstanding_recovery_obligations[]
+}
+47. Canonical Startup Order
+
+يحافظ التكامل على تسلسل FCA:
+
+1. Restore canonical snapshot.
+
+2. Replay Control Ledger.
+
+3. Obtain valid Executive epoch.
+
+4. Inspect unresolved ActionRecords.
+
+5. Reconcile possibly dispatched effects.
+
+6. Replay/evaluate durable triggers.
+
+7. Inspect Specialist workspaces.
+
+8. Validate dependency freshness.
+
+9. Restore active/suspended/blocked work.
+
+10. Resume normal Executive control.
+48. Operational Dependency
+
+قد تحتاج بعض خطوات التعافي إلى إجراءات تحضيرية لا تمتلك السلطة المعرفية أصلًا.
+
+في هذه الحالة تطبق RDMS-09 بروتوكول Recovery Bootstrap الذي يميز بين استعادة البنية التحتية واستئناف الوكيل.
+
+ولا يجوز أن يصبح Bootstrap مسارًا بديلًا لتنفيذ قرارات المشروع.
+
+49. Recovery Admission
+
+يمكن استئناف العمليات ضمن نطاق ثبتت سلامته.
+
+مثال:
+
+Read-only analysis:
+    ALLOWED
+
+Shared-world mutation:
+    BLOCKED
+
+Unresolved deployment:
+    IN_DOUBT
+
+Independent documentation task:
+    MAY CONTINUE
+
+لا نفرض توقفًا عالميًا عندما يمكن إثبات استقلال بعض العمليات.
+
+PART XIII — TRUST BOUNDARIES
+50. Trust Classification
+
+يجب أن تحتفظ الرسائل والمحتويات بمعلومات السلطة والمصدر.
+
+نميز بين:
+
+Trusted control metadata
+
+User-authorized requirements
+
+Repository content
+
+Tool output
+
+Provider-generated content
+
+Specialist output
+
+External content
+
+Memory retrieval
+51. Trusted Envelope
+TrustedMessageEnvelope {
+    message_id
+
+    schema_version
+
+    project_id
+
+    originating_component
+
+    trusted_execution_identity?
+
+    executive_epoch?
+
+    causal_parent_refs[]
+
+    payload_ref
+
+    payload_schema
+
+    provenance_ref
+
+    instruction_authority
+
+    integrity_metadata
+}
+Mandatory Rule
+
+لا يجوز أن يحدد payload غير موثوق صلاحيات envelope الخاصة به.
+
+يجب التمييز بين ما يرسله Provider وبين البيانات التي تصدرها أو تتحقق منها Control Plane.
+
+52. Trust Boundary Matrix
+Source	Direct canonical write	Direct external mutation
+Cognitive Executive	No — CommitGate required	No — ActionGate required
+LLM Provider	No	No
+Cognitive Capability	No	No
+Specialist	No	Only through authorized action path
+Tool Adapter	No	Only within authorized execution scope
+Recovery Coordinator	No	No independent agent-world authority
+Observation Ingress	Append accepted observations only	No
+CommitGate	Legal canonical writes	No
+ActionGate/authorized executor path	No direct cognitive mutation	Governed dispatch
+53. Credentials
+
+لا يجوز إعطاء Provider أو Specialist صلاحيات أوسع من نطاق المهمة.
+
+كما لا يجوز أن يكتسب كود المشروع غير الموثوق صلاحية الوصول إلى Credentials مشتركة لمجرد تشغيله داخل Test Runner.
+
+PART XIV — DATA OWNERSHIP
+54. Canonical Ownership Matrix
+Data / Entity	Legal owner / authority	Mutation path
+Project Identity	RDMS-01	Canonical control
+Executive Epoch	RDMS-01	Fenced leadership transition
+Goal	RDMS-02	Executive + CommitGate
+Slice	RDMS-02	Executive + CommitGate
+Decision	RDMS-02	Executive + CommitGate
+System Mental Model	Canonical Workspace	Executive + CommitGate
+Claim / Hypothesis	RDMS-03 semantics	Executive + CommitGate
+Observation	RDMS-03	Observation Ingress
+EvidenceLink	RDMS-03	Executive + CommitGate
+ActionRecord	RDMS-04	Action lifecycle protocol
+Action Journal	RDMS-04	Durable action protocol
+Trigger	RDMS-05	Trigger lifecycle protocol
+Specialist Contract	RDMS-06	Authorized recruitment lifecycle
+Specialist Result	RDMS-06	Isolated result; integration governed
+DependencySet	RDMS-06	Typed dependency semantics
+Memory Proposal	RDMS-07	Proposal only
+Learned Memory	RDMS-07	LearningGate + Executive
+Cognitive Control Decision	RDMS-08	Executive authorization + control commit
+Recovery Case	RDMS-09	Governed recovery lifecycle
+Recovery Admission	RDMS-09	Scoped assessment; applicable gates enforce
+Provider Output	Reasoning Gateway	Untrusted proposal/output
+55. One Owner, Multiple Readers
+
+يمكن لمكونات عديدة قراءة الحالة نفسها.
+
+لكن لا يجوز أن يؤدي ذلك إلى إنشاء سلطات كتابة متعددة.
+
+مثال:
+
+Executive reads Decision.
+
+Planner reads Decision.
+
+Verifier reads Decision.
+
+Specialist reads Decision.
+
+Only legal canonical path changes Decision.
+56. Derived Data
+
+تعتبر الفهارس وSnapshots العرضية وCaches بنى مشتقة عندما لا تكون مصدر الحقيقة القانوني.
+
+يجب أن تحتوي على معلومات تسمح بمعرفة:
+
+Source version
+
+Dependency frontier
+
+Schema version
+
+Validity status
+
+ولا يجوز استخدامها لإثبات حقيقة أوسع من نطاق مصادرها.
+
+PART XV — UNIFIED INTERFACE CONVENTIONS
+57. Interface Design Rule
+
+كل واجهة بين مكونين يجب أن تحدد:
+
+Input contract
+
+Output contract
+
+Authority requirement
+
+Side-effect classification
+
+Idempotency requirement
+
+Version requirement
+
+Failure semantics
+
+Recovery semantics
+
+لا يكفي تعريف Function Signature دون تحديد آثارها القانونية.
+
+58. Request Identity
+
+كل عملية مؤثرة تحتاج إلى هوية مستقرة وفق مجالها.
+
+نميز بين:
+
+Request ID
+
+Invocation ID
+
+Control Event ID
+
+Action ID
+
+Action Attempt ID
+
+Trigger Reaction Key
+
+Specialist Run ID
+
+Recovery Case ID
+
+لا يجوز دمج هذه المعرفات في حقل واحد لمجرد أنها جميعًا UUIDs.
+
+لكل منها معنى مختلف.
+
+59. Idempotency Scope
+
+يجب تحديد المجال الذي يمنع التكرار.
+
+مثال:
+
+Canonical control commit:
+    Idempotent under commit key.
+
+External payment:
+    Only idempotent if external
+    domain guarantees it.
+
+عدم تكرار ControlCommit لا يثبت عدم تكرار الأثر الخارجي.
+
+60. Versioning
+
+ينبغي أن تحتوي الرسائل المعتمدة على Schema Version واضحة.
+
+ويجب أن تعرف المكونات كيفية التعامل مع:
+
+Compatible version
+
+Incompatible version
+
+Unknown version
+
+لا يسمح بتفسير Payload غير متوافقة بصورة صامتة.
+
+61. Error Semantics
+
+نقترح تصنيفًا موحدًا لأخطاء الواجهات:
+
+VALIDATION_REJECTED
+
+AUTHORITY_REJECTED
+
+STALE_DEPENDENCY
+
+CONFLICT
+
+TEMPORARILY_UNAVAILABLE
+
+UNSUPPORTED_OPERATION
+
+UNKNOWN_OUTCOME
+
+هذه نتائج واجهات تكامل، وليست حالات جديدة للكيانات القانونية.
+
+لا يجوز أن يحول Adapter خطأ UNKNOWN_OUTCOME إلى FAILED من تلقاء نفسه.
+
+62. Timeouts
+
+ينبغي الفصل بين:
+
+Request timeout
+
+Process termination
+
+Execution failure
+
+World-effect failure
+
+انتهاء مهلة الاستدعاء لا يثبت أن العملية الخارجية لم تحدث.
+
+PART XVI — PROCESS BOUNDARIES
+63. Physical Deployment Philosophy
+
+أقترح في النسخة الأولى:
+
+Modular Monolith for the trusted cognitive/control core, with isolated execution domains.
+
+أي:
+
+نواة معيارية واحدة تضم المكونات التي تحتاج إلى تفاعل قانوني متقارب، مع عزل العمليات الخطرة والمتخصصين.
+
+هذا اقتراح هندسي أولي، وليس شرطًا مفروضًا من FCA.
+
+64. Proposed Runtime Processes
+┌───────────────────────────────────────────┐
+│            AGENT HOST RUNTIME             │
+│                                           │
+│  Cognitive Executive                      │
+│  Canonical Workspace Access               │
+│  Capability Orchestrator                   │
+│  CommitGate                                │
+│  ActionGate                                │
+│  Dependency Evaluation                    │
+│  Specialist Manager                       │
+│                                           │
+└─────────────────────┬─────────────────────┘
+                      │
+         ┌────────────┼────────────┐
+         ▼            ▼            ▼
+   Provider       Action       Specialist
+   Workers        Workers       Workers
+         │            │            │
+         └────────────┼────────────┘
+                      ▼
+                Controlled IO
+
+يمكن تشغيل المكونات الموثوقة في عملية واحدة مبدئيًا إذا كانت متطلبات العزل والذرية والأمان تسمح بذلك.
+
+أما تنفيذ أدوات المشروع غير الموثوقة فيجب أن يحترم حدود العزل المطلوبة.
+
+65. Why Not Microservices Everywhere?
+
+لا يوجد سبب معماري يجبرنا على فصل كل قدرة معرفية في خدمة مستقلة.
+
+مثلًا، تحويل:
+
+Intent Modeling
+Planning
+Verification
+Metacognition
+
+إلى خدمات شبكة منفصلة قد يزيد التعقيد والتكلفة دون توفير فائدة متناسبة.
+
+يجب أن يعتمد الفصل على:
+
+Isolation requirement
+
+Failure domain
+
+Scaling requirement
+
+Security boundary
+
+Resource usage
+
+Concurrency requirement
+
+وليس على عدد المفاهيم الموجودة في الوثائق.
+
+66. Process Isolation
+
+المكونات التي تشغل كودًا غير موثوق تحتاج إلى حدود مناسبة.
+
+يمكن أن تشمل:
+
+Restricted filesystem
+
+Restricted network
+
+Controlled credentials
+
+Execution budgets
+
+Resource limits
+
+Explicit mounts
+
+Process termination controls
+
+لكن اختيار التقنية الفعلية للعزل يتم أثناء Implementation Boundary Design.
+
+PART XVII — NORMAL EXECUTION FLOW
+67. End-to-End Task Example
+
+لنفترض أن المستخدم يطلب:
+
+إصلاح خطأ في API داخل مشروع برمجي.
+
+المسار الطبيعي:
+
+User Request
+      ↓
+Agent Interface
+      ↓
+Goal Proposal
+      ↓
+Executive
+      ↓
+CommitGate
+      ↓
+Canonical Goal
+      ↓
+Context Assembly
+      ↓
+Mental Modeling
+      ↓
+Information Acquisition
+      ↓
+Hypothesis Formation
+      ↓
+Experiment / Inspection
+      ↓
+Evidence Integration
+      ↓
+Engineering Decision
+      ↓
+Plan / Slice
+      ↓
+Implementation Readiness
+      ↓
+ActionProposal
+      ↓
+ActionGate
+      ↓
+Reality Executor
+      ↓
+Observation Ingress
+      ↓
+Verification
+      ↓
+Review
+      ↓
+Finalization Assessment
+      ↓
+User Response
+
+هذا مسار توضيحي.
+
+ليس Pipeline ثابتة.
+
+يمكن لـExecutive العودة إلى التحقيق أو التخطيط أو التشخيص متى تطلبت الأدلة ذلك.
+
+PART XVIII — FAST PATH
+68. Low-Gravity Task
+
+مثال:
+
+تعديل صياغة بسيطة داخل ملف توثيق.
+
+قد تستخدم Executive مسارًا مختصرًا:
+
+Understand
+    ↓
+Inspect relevant scope
+    ↓
+Determine small change
+    ↓
+Authorize edit
+    ↓
+Apply change
+    ↓
+Verify
+    ↓
+Finalize
+
+لا يلزم إنشاء عدة Specialists أو إجراء محاكاة ذهنية عميقة لمهمة بسيطة.
+
+لكن يجب أن تحافظ العمليات المنفذة على جميع القوانين الإلزامية.
+
+69. Fast Path Is Not a Safety Bypass
+
+يمكن اختصار التفكير الاختياري.
+
+لكن لا يمكن اختصار:
+
+Authority checks
+
+Required write gates
+
+Mandatory invariants
+
+Required action journaling
+
+Applicable verification obligations
+PART XIX — HIGH-GRAVITY PATH
+70. Architectural Change
+
+مثال:
+
+تغيير نظام Authentication في مشروع كبير.
+
+قد تتطلب العملية:
+
+Goal Modeling
+        ↓
+System Mental Model
+        ↓
+Risk Analysis
+        ↓
+Information Acquisition
+        ↓
+Competing Alternatives
+        ↓
+Causal and Future Simulation
+        ↓
+Independent Security Review
+        ↓
+Decision
+        ↓
+Risk-First Planning
+        ↓
+Incremental Implementation
+        ↓
+Verification
+        ↓
+Integration Review
+        ↓
+Finalization
+71. Adaptive Depth
+
+لا تحدد درجة الخطورة عدد استدعاءات LLM بصورة آلية فقط.
+
+بل تحدد نوع الالتزامات المعرفية والتحقق المطلوبة.
+
+يمكن لنظام قوي أن يصل إلى قرار جيد بعد عدد قليل من العمليات إذا كانت الأدلة كافية.
+
+ولا يجوز أن تستمر Executive في التفكير بلا تقدم لمجرد أن المهمة HIGH.
+
+PART XX — CONCURRENT EXECUTION
+72. Parallel Cognitive Work
+
+يمكن تنفيذ أعمال مستقلة بالتوازي عندما تكون الفائدة واضحة.
+
+مثلًا:
+
+Goal: Improve authentication module
+
+Specialist A:
+    Study existing architecture.
+
+Specialist B:
+    Security analysis.
+
+Specialist C:
+    Test coverage analysis.
+73. Parallel Results Are Proposals
+
+كل Specialist تعيد نتيجة مستقلة.
+
+لا تُدمج النتائج في Canonical Workspace بصورة تلقائية.
+
+74. Integration Concurrency
+
+قد تحاول نتيجتان تعديل الكيان نفسه.
+
+يجب أن يمر قبول كل تعديل عبر شروط النسخ والاعتماديات والسلطة.
+
+إذا أصبح مقترح قديمًا، يجب إعادة تقييمه.
+
+لا يجوز فرض آخر نتيجة وصلت باعتبارها الصحيحة.
+
+75. World Actions
+
+يمكن تنفيذ Actions مستقلة بالتوازي إذا كان نطاقها والتفويضات والاعتماديات تسمح بذلك.
+
+لكن يجب ألا يؤدي التوازي إلى:
+
+Conflicting filesystem mutations
+
+Conflicting Git operations
+
+Uncontrolled database migrations
+
+Duplicate external transactions
+
+Unsafe shared workspace writes
+
+عندما تكون العلاقات غير محسومة، يجب استخدام تحليل محافظ أو عزل مناسب.
+
+PART XXI — STORAGE ARCHITECTURE
+76. Logical Storage Domains
+
+نقترح تقسيمًا منطقيًا:
+
+CONTROL DATA
+
+CANONICAL COGNITIVE STATE
+
+ACTION JOURNAL
+
+OBSERVATIONS
+
+ARTIFACTS
+
+MEMORY
+
+DERIVED INDEXES
+
+DIAGNOSTIC LOGS
+
+لا يعني ذلك ثماني قواعد بيانات.
+
+77. Storage Ownership
+
+يجب أن يحدد كل نطاق:
+
+Authoritative owner
+
+Write path
+
+Versioning rules
+
+Durability requirements
+
+Backup requirements
+
+Recovery rules
+
+Retention policy
+78. Atomicity Boundaries
+
+قد يحتاج النظام إلى اعتماد:
+
+Decision Accepted
++
+Trigger Armed
++
+State Version Advanced
+
+بصورة ذرية.
+
+لكن لا يجوز افتراض معاملة ذرية واحدة تشمل:
+
+Control Ledger
++
+GitHub
++
+External Database
++
+Deployment Service
+
+تظل الآثار الخارجية خاضعة إلى Action Journal وReconciliation.
+
+79. Large Artifacts
+
+يمكن تخزين ملفات كبيرة مثل:
+
+Repository snapshots
+
+Test outputs
+
+Build artifacts
+
+Logs
+
+Specialist workspaces
+
+خارج مخزن التحكم الأساسي.
+
+لكن يجب أن تبقى المراجع الضرورية للتعافي متينة وقابلة للتحقق ضمن العقد المعتمد.
+
+80. Index Rebuild
+
+يمكن إعادة بناء الفهارس المشتقة.
+
+لكن لا يجوز اعتبار فهرس غير مكتمل مصدرًا صالحًا لإثبات غياب اعتماديات أو نتائج.
+
+PART XXII — UNIFIED TRANSACTION MATRIX
+81. Legal Effect Matrix
+Operation	Required authority	Legal boundary
+Change Goal	Executive	CommitGate
+Accept Decision	Executive	CommitGate
+Update Mental Model	Executive	CommitGate
+Record Observation	Valid source / ingress	Observation Ingress
+Add EvidenceLink	Executive	CommitGate
+Create external mutation	Executive	ActionGate + Journal
+Execute sandbox activity	Authorized sandbox scope	Sandbox/Action policy
+Recruit Specialist	Executive	Specialist lifecycle
+Integrate Specialist result	Executive	Dependency/verification + CommitGate
+Create Trigger commitment	Applicable control authority	RDMS-05 + Control Ledger
+Promote Memory	Executive + LearningGate	Governed memory commit
+Enter recovery restriction	Trusted operational policy	RDMS-09 controls; no shadow authority
+Resume affected work	Current Executive	Recovery/dependency checks + legal gates
+Finalize Goal	Executive	Completion assessment + canonical transition
+82. Cross-Store Consistency
+
+إذا أشار Control Ledger إلى Artifact ضرورية، يجب أن توجد قواعد تحدد:
+
+When the artifact becomes durable.
+
+When the reference may be committed.
+
+How missing artifacts are detected.
+
+How recovery handles inconsistent references.
+
+لا يجوز اعتماد مرجع حرج إلى Artifact مؤقتة قد تختفي قبل أن تصبح قابلة للاستعادة.
+
+83. Dispatch Atomicity
+
+لا يسمح لـReality Executor بإرسال mutation مشتركة قبل إثبات الحد المتين المطلوب.
+
+ولا يجوز تحويل مجرد وضع رسالة داخل Queue إلى إثبات حدوث الأثر الخارجي.
+
+PART XXIII — FAILURE MODEL INTEGRATION
+84. Failure Domains
+
+يجب أن تدعم المعمارية التعامل مع:
+
+Executive crash
+
+Worker crash
+
+Provider outage
+
+Tool timeout
+
+Storage outage
+
+Network partition
+
+Specialist failure
+
+Partial world mutation
+
+Schema migration failure
+
+Recovery failure
+85. Recovery Source of Truth
+
+الاستعادة تعتمد على:
+
+Canonical snapshots
+
+Control Ledger
+
+Action Journal
+
+Trusted artifact manifests
+
+Applicable authority frontiers
+
+Observation provenance
+
+Durable temporal commitments
+
+لا تعتمد على المحادثة السابقة مع LLM بوصفها سجلًا قانونيًا.
+
+86. Unknown External Effects
+
+إذا كانت نتيجة Action الخارجية مجهولة:
+
+Action → IN_DOUBT
+
+وفق RDMS-04.
+
+لا يجوز أن تختفي هذه الحالة بسبب Restart أو Provider Switch.
+
+87. Repeated Failures
+
+إذا تعطل Recovery Coordinator نفسها، يجب ألا يؤدي ذلك إلى إنشاء سلطة تنفيذ جديدة أو فقدان الالتزامات المعتمدة.
+
+تستخدم RDMS-09 بروتوكولات الملكية والأجيال والاستعادة المناسبة.
+
+PART XXIV — OBSERVABILITY
+88. Runtime Telemetry
+
+نحتاج أن نستطيع رؤية:
+
+Current Goal
+
+Current Executive State
+
+Selected Cognitive Operation
+
+Current Executive Epoch
+
+Active Specialists
+
+Pending Actions
+
+IN_DOUBT Actions
+
+Pending Triggers
+
+Verification Status
+
+Recovery Status
+
+لكن هذه المؤشرات ليست مصدر الحقيقة القانوني.
+
+89. Audit vs Diagnostics
+
+يجب التمييز بين:
+
+Audit Records
+
+البيانات التي نحتاجها لإثبات قرارات أو انتقالات قانونية.
+
+Diagnostic Logs
+
+البيانات التي تساعد المطور على فهم الأداء والأخطاء.
+
+يمكن حذف أو تدوير بعض Logs التشخيصية وفق السياسة.
+
+أما البيانات القانونية الضرورية للتعافي فتخضع لضماناتها الخاصة.
+
+90. Progress Metrics
+
+لا يجوز اعتبار:
+
+Number of files modified
+
+Number of tool calls
+
+Number of LLM responses
+
+دليلًا مستقلًا على نجاح المهمة.
+
+يجب قياس التقدم المعرفي والهندسي باستخدام أدلة مناسبة.
+
+PART XXV — IMPLEMENTATION PACKAGE DESIGN
+91. Package Philosophy
+
+نقترح أن تتبع البنية البرمجية ملكية المسؤوليات بدل تقسيمها حسب أسماء RFCs.
+
+يمكن استخدام توزيع مبدئي على النحو التالي:
+
+agent/
+    interface/
+    runtime/
+    cognitive/
+    control/
+    workspace/
+    epistemics/
+    planning/
+    capabilities/
+    reasoning/
+    actions/
+    observations/
+    specialists/
+    dependencies/
+    memory/
+    temporal/
+    recovery/
+    security/
+    storage/
+    diagnostics/
+
+هذا تصور تنظيمي أولي، وليس شجرة ملفات مجمدة أو كودًا جاهزًا.
+
+92. Avoid Circular Dependencies
+
+لا ينبغي أن يؤدي التنظيم إلى:
+
+Executive imports Action Runtime
+
+Action Runtime imports Executive internals
+
+Memory imports Planner
+
+Planner imports Memory internals
+
+بصورة تجعل كل المكونات تعتمد بعضها على بعض.
+
+يجب استخدام واجهات واضحة عند حدود المسؤوليات.
+
+93. Dependency Direction
+
+المبدأ المقترح:
+
+Domain Contracts
+       ↑
+Domain Components
+       ↑
+Application Integration
+       ↑
+Runtime Composition
+
+أي أن الاعتماد البرمجي على العقود المشتركة يجب ألا يفرض اعتمادًا دائريًا بين الخدمات المالكة للحالة.
+
+يمكن للمكونات الأعلى تنسيق استعمال واجهات المكونات الأدنى، لكن لا يجوز تحويل Coordinator إلى مالك جديد للحالة.
+
+94. No Framework-Driven Architecture
+
+لا ينبغي أن يحدد اختيار Framework أو لغة برمجة نموذج السلطة.
+
+يمكن أن نبدأ بـPython أو غيرها.
+
+لكن يجب أن تظل العقود صحيحة حتى لو تغيرت لغة التنفيذ أو طريقة نشر المكونات.
+
+PART XXVI — IMPLEMENTATION PHASES
+95. Implementation Strategy
+
+أقترح تقسيم التنفيذ إلى سبع مراحل تكاملية، تبدأ بالحد الأدنى الذي نستطيع اختبار قوانينه.
+
+Phase I — Trusted Control Foundation
+
+تشمل:
+
+Identity
+Control Ledger
+Executive Epoch
+CommitGate
+Canonical Workspace
+Typed legal contracts
+
+الهدف:
+
+إثبات أن الحالة القانونية لا يمكن تغييرها عبر مسار غير مصرح.
+
+Phase II — Observation and Action Foundation
+
+تشمل:
+
+ActionGate
+Action Journal
+Reality Executor
+Observation Ingress
+Effect Classification
+Reconciliation
+
+الهدف:
+
+إثبات أن الأفعال الخارجية تظل قابلة للتدقيق والتسوية، حتى بعد الأعطال.
+
+Phase III — Cognitive Kernel
+
+تشمل:
+
+Cognitive Executive
+Capability Runtime
+Reasoning Gateway
+Context Assembly
+Adaptive Cognitive Control
+
+الهدف:
+
+بناء دورة معرفية تعمل فوق حدود التحكم الموجودة، لا أن تتجاوزها.
+
+Phase IV — Engineering Cognition
+
+تشمل:
+
+System Mental Modeling
+Information Acquisition
+Causal Reasoning
+Planning
+Code Construction
+Verification
+Metacognition
+
+الهدف:
+
+تمكين الوكيل من معالجة مهمة برمجية كاملة ضمن نطاق محدود.
+
+Phase V — Specialists and Memory
+
+تشمل:
+
+Specialist Runtime
+Workspace Isolation
+Dependency Evaluation
+Specialist Integration
+Memory Retrieval
+Memory Promotion Governance
+
+الهدف:
+
+إضافة التوازي والخبرة طويلة المدى دون تغيير الهوية المعرفية المعتمدة.
+
+Phase VI — Temporal and Recovery Integration
+
+تشمل:
+
+Durable Triggers
+Suspension
+Resumption
+Recovery Coordinator
+Backup Recovery
+Failure Injection
+Security Recovery
+
+الهدف:
+
+إثبات الاستمرارية عبر التوقف والانقطاع والأعطال.
+
+Phase VII — System Validation
+
+تشمل:
+
+End-to-end evaluation
+
+Multi-project operation
+
+Provider switching
+
+Long-running tasks
+
+Adversarial verification
+
+Performance profiling
+
+Failure injection
+
+Integration regression
+
+الهدف:
+
+التحقق من أن المكونات تعمل معًا وتحقق المعمارية المقصودة.
+
+96. Implementation Ordering Constraint
+
+هذا الترتيب خطة أولية للتنفيذ، وليس إذنًا بالبدء.
+
+قد تتطلب بعض المراحل تنفيذ أجزاء صغيرة من المراحل اللاحقة بصورة مبكرة لتوفير بيئة اختبار متكاملة.
+
+لكن لا يجوز تشغيل المسارات الإنتاجية الحساسة دون ضمانات السلطة والمتانة اللازمة.
+
+PART XXVII — FORMAL INVARIANTS
+
+تقترح RDMS-10 الثوابت التالية.
+
+RDMS10-I01 — The integrated runtime preserves one canonical cognitive authority.
+
+RDMS10-I02 — Physical process separation cannot create independent canonical mutation authority.
+
+RDMS10-I03 — Reasoning providers produce proposals and cannot directly authorize effects.
+
+RDMS10-I04 — Canonical cognitive mutation passes through the legal CommitGate path.
+
+RDMS10-I05 — Shared-world mutation passes through ActionGate and durable Action Journal semantics.
+
+RDMS10-I06 — Observation ingress remains distinct from semantic evidence interpretation.
+
+RDMS10-I07 — Semantic reasoning cannot manufacture authoritative reality observations.
+
+RDMS10-I08 — Every executable Slice traces to a canonical Goal.
+
+RDMS10-I09 — Every authority-bearing operation is bound to a valid Executive epoch.
+
+RDMS10-I10 — Trusted authorization metadata cannot be minted by untrusted payload content.
+
+RDMS10-I11 — Provider substitution cannot alter canonical project identity or authority.
+
+RDMS10-I12 — Specialist results cannot directly mutate canonical cognition.
+
+RDMS10-I13 — Specialist integration requires applicable freshness, verification and authority checks.
+
+RDMS10-I14 — Dependency validity is evaluated by the canonical Dependency Evaluation Engine.
+
+RDMS10-I15 — Global state version alone cannot determine semantic staleness.
+
+RDMS10-I16 — Retrieved memory is precedent, not automatically current truth.
+
+RDMS10-I17 — Memory promotion requires the governed learning path.
+
+RDMS10-I18 — Durable triggers use the canonical temporal lifecycle.
+
+RDMS10-I19 — Trigger replay cannot silently duplicate canonical reactions.
+
+RDMS10-I20 — Action timeout is not proof of world-effect failure.
+
+RDMS10-I21 — Unknown external outcomes retain their applicable IN_DOUBT semantics.
+
+RDMS10-I22 — External actions cannot be blindly retried when their outcomes are unresolved and non-idempotent.
+
+RDMS10-I23 — Restore and recovery cannot bypass canonical authority boundaries.
+
+RDMS10-I24 — Canonical recovery derives from trusted durable state, not conversational history.
+
+RDMS10-I25 — Derived indexes and caches cannot override canonical sources.
+
+RDMS10-I26 — Interfaces must preserve typed identity, versions, authority and failure semantics.
+
+RDMS10-I27 — Recoverability-critical cross-component references require enforceable integrity guarantees.
+
+RDMS10-I28 — A legal control commit does not prove that its associated external effect occurred.
+
+RDMS10-I29 — Process isolation claims must correspond to actual reachable effects.
+
+RDMS10-I30 — Tool classification cannot be bypassed through cognitive operation naming.
+
+RDMS10-I31 — Operational monitoring cannot independently authorize cognitive or world mutations.
+
+RDMS10-I32 — Context assembly must preserve applicable mandatory safety and trust constraints.
+
+RDMS10-I33 — Provider and specialist outputs cannot elevate their own instruction authority.
+
+RDMS10-I34 — Finalization claims cannot exceed currently supported verification scope.
+
+RDMS10-I35 — Physical modularization must preserve frozen recovery and atomicity guarantees.
+
+RDMS10-I36 — A component cannot acquire new authority solely because another component is unavailable.
+
+RDMS10-I37 — Implementation choices cannot silently redefine frozen entity states or legal write paths.
+
+RDMS10-I38 — Cross-component concurrency must not permit conflicting canonical ownership.
+
+RDMS10-I39 — Unknown mandatory safety conditions block dependent operations without unnecessarily blocking proven-independent work.
+
+RDMS10-I40 — Runtime integration must preserve the semantics of all frozen parent specifications.
+
+PART XXVIII — INTEGRATION ACCEPTANCE GATES
+IG10-01 — Authority Integration
+
+يجب اختبار أن جميع Canonical Mutations تمر عبر CommitGate.
+
+IG10-02 — World Action Integration
+
+يجب اختبار عدم وجود مسار تنفيذ مشترك يتجاوز ActionGate.
+
+IG10-03 — Durable Control
+
+يجب اختبار CAS وExecutive Epoch وControl Ledger.
+
+IG10-04 — Provider Isolation
+
+يجب اختبار عدم قدرة Provider على تنفيذ تعديلات مباشرة.
+
+IG10-05 — Observation Integrity
+
+يجب اختبار الفصل بين Tool Report وObservation وFact وHypothesis.
+
+IG10-06 — Specialist Isolation
+
+يجب اختبار عزل Workspaces ومنع التكامل دون تفويض.
+
+IG10-07 — Dependency Freshness
+
+يجب اختبار الاستعمال الصحيح لـVALID وSTALE وPARTIALLY_STALE وUNKNOWN.
+
+IG10-08 — Memory Governance
+
+يجب اختبار استرجاع الذاكرة وترقيتها دون تجاوز LearningGate.
+
+IG10-09 — Temporal Continuity
+
+يجب اختبار Triggers والتعليق والاستئناف وإزالة التكرار.
+
+IG10-10 — Recovery Integration
+
+يجب اختبار استعادة النظام عبر Crash وRestart وفقدان الاتصال.
+
+IG10-11 — Cross-Store Integrity
+
+يجب اختبار توافق Control Ledger ومراجع Artifacts الضرورية.
+
+IG10-12 — Trust Boundary
+
+يجب اختبار Prompt Injection ومحتوى Repository والأدوات والـSpecialists.
+
+IG10-13 — Long-Running Engineering Tasks
+
+يجب اختبار إنجاز مهام برمجية طويلة متعددة المراحل.
+
+IG10-14 — Provider Replacement
+
+يجب اختبار تغيير Provider دون فقدان الهوية المعرفية والحالة القانونية.
+
+IG10-15 — Multi-Project Isolation
+
+يجب اختبار عدم تسرب الذاكرة أو الصلاحيات أو الحالة بين المشاريع.
+
+IG10-16 — Performance and Complexity
+
+يجب قياس تكلفة الطبقات الإضافية من حيث:
+
+Latency
+
+LLM calls
+
+Token usage
+
+Storage growth
+
+Control transaction cost
+
+Recovery latency
+
+Specialist coordination cost
+
+لا يجوز افتراض أن زيادة عدد المكونات تعني تحسن الأداء.
+
+PART XXIX — ADVERSARIAL FREEZE REVIEW TARGETS
+
+قبل تجميد RDMS-10، يجب اختبار التكامل بين جميع المكونات.
+
+Authority and Integration
+
+A01 — Capability تحاول الكتابة مباشرة إلى Canonical Workspace.
+
+A02 — LLM تنتج Authorization مزيفة.
+
+A03 — Action Adapter تتجاوز ActionGate.
+
+A04 — Executive قديمة تحاول Commit.
+
+A05 — Process جديدة تنشئ Workspace معتمدة مستقلة.
+
+A06 — Recovery Coordinator تعتمد Decision مباشرة.
+
+A07 — Specialist تنفذ تغييرًا خارج Scope عقدها.
+
+A08 — اختلاف نسخ Schema يؤدي إلى تفسير متناقض للكيان نفسه.
+
+Cross-Component Consistency
+
+A09 — CommitGate تعتمد Reference إلى Artifact غير متينة.
+
+A10 — Observation تصل قبل تسجيل نتيجة Action.
+
+A11 — Action تنفذ بينما Goal الأصلية أُبطلت.
+
+A12 — Decision تصبح stale بعد اعتماد Plan.
+
+A13 — Specialist تعيد نتيجة بعد تغير Repository.
+
+A14 — Memory قديمة تستخدم باعتبارها Fact حالية.
+
+A15 — Trigger وDecision يحتاجان Commit ذرية لكنها تنقطع.
+
+A16 — Cross-store failure يترك حالة معتمدة غير قابلة للاستعادة.
+
+Tool and World Effects
+
+A17 — INSPECT تشغّل Script ذات آثار جانبية.
+
+A18 — Sandbox تستطيع الوصول إلى Credentials مشتركة.
+
+A19 — Crash بعد DISPATCH_INTENT.
+
+A20 — Crash بعد World Effect وقبل حفظ النتيجة.
+
+A21 — Retry مكرر لعملية غير idempotent.
+
+A22 — Compensation تفشل جزئيًا.
+
+A23 — Tool Timeout يُفسر على أنه فشل خارجي مثبت.
+
+A24 — Exit Code ناجح يؤدي إلى Finalization رغم غياب دليل السلوك المطلوب.
+
+Specialist and Cognitive Control
+
+A25 — Specialist قديمة تحاول الدمج بعد فقدان صلاحيتها.
+
+A26 — متخصّصتان تعدلان المورد نفسه.
+
+A27 — Executive تنشئ Specialists بصورة غير محدودة.
+
+A28 — ACC تستمر في التفكير بلا تقدم.
+
+A29 — قرار HIGH يُقسم إلى Slices LOW لتجاوز المراجعة.
+
+A30 — محاكاة ذهنية تُستخدم كدليل واقعي.
+
+A31 — Executive تعتمد Progress Metric غير مسندة.
+
+A32 — إعادة التخطيط تترك أعمالًا تابعة لخطة مبطلة.
+
+Temporal and Recovery
+
+A33 — Trigger تتكرر بعد Restart.
+
+A34 — Trigger تحدث أثناء Downtime.
+
+A35 — تعليق مهمة دون Resumption Commitment.
+
+A36 — Recovery تستعيد Executive Epoch قديمة.
+
+A37 — Backup قديمة تفقد تاريخ World Actions حديثة.
+
+A38 — Worker قديمة تواصل dispatch بعد Failover.
+
+A39 — Recovery تعلن NORMAL رغم وجود اعتماديات حرجة غير محسومة.
+
+A40 — Schema Migration جزئية تسمح بWriter غير متوافقة.
+
+Security and Data Governance
+
+A41 — Repository يحتوي Prompt Injection تحاول رفع سلطة التعليمات.
+
+A42 — Tool Output تحاول تغيير Executive Policy.
+
+A43 — Provider جديدة تتلقى بيانات محظورة.
+
+A44 — Backup قديمة تعيد Memory حُذفت.
+
+A45 — Logs حساسة تدخل Control Ledger غير قابل للحذف.
+
+A46 — Specialist تحصل على Credentials خارج Scope عقدها.
+
+A47 — Artifact مستعادة تُفعّل Startup Hook خبيثة.
+
+A48 — Recovery Report تعلن حذف بيانات لم يثبت حذفها خارج نطاق السيطرة.
+
+End-to-End
+
+A49 — مهمة بسيطة تستهلك مسارًا معرفيًا معقدًا بلا مبرر.
+
+A50 — مهمة معمارية خطيرة تستخدم Fast Path دون الالتزامات المطلوبة.
+
+A51 — تنفيذ ناجح محليًا لكن Integration Verification تفشل.
+
+A52 — عشر عمليات متوازية تنتج تضاربًا في سلطة الكتابة.
+
+A53 — Provider تتوقف منتصف مهمة طويلة ثم تُستبدل.
+
+A54 — تعطل الجهاز أثناء عمل عدة Specialists وActions.
+
+A55 — استعادة ناجحة تقنيًا لكنها لا تثبت سلامة الحالة الخارجية.
+
+A56 — Finalize تحدث مع Acceptance Criteria غير متحققة.
+
+PART XXX — ARCHITECTURAL OPEN QUESTIONS
+
+رغم اكتمال المسودة، توجد قرارات تنفيذية ومعمارية يجب فحصها في المراجعات المقبلة.
+
+97. Control Plane Physical Boundary
+
+هل يجب تشغيل CommitGate وActionGate وControl Ledger في Process واحدة؟
+
+الجواب الأولي: ليس بالضرورة.
+
+لكن يجب إثبات أن توزيعها يحافظ على الذرية والسلطة والـFencing والتعافي.
+
+98. Storage Technology
+
+هل نستخدم قاعدة بيانات علائقية واحدة أم عدة مخازن متخصصة؟
+
+لا يجب حسم التقنية قبل تحديد متطلبات المتانة والذرية والنسخ القانونية.
+
+99. Tool Worker Isolation
+
+هل نستخدم Processes محلية أم Containers أم Sandboxes أقوى؟
+
+يتوقف القرار على Threat Model والآثار القابلة للوصول.
+
+لا يجوز اختيار التقنية بناءً على سهولة تشغيلها فقط إذا لم تحقق متطلبات العزل.
+
+100. Provider Interface Capability Differences
+
+قد تدعم بعض Providers:
+
+Tool calling
+
+Structured output
+
+Streaming
+
+Long context
+
+Reasoning modes
+
+بينما لا تدعمها أخرى.
+
+يجب تحديد القدرات المطلوبة لكل نوع Invocation، وعدم افتراض تجانس Providers.
+
+101. Cross-Component Backpressure
+
+كيف نمنع تراكم:
+
+Pending actions
+
+Observations
+
+Specialist results
+
+Trigger reactions
+
+بصورة تؤدي إلى استهلاك الموارد أو تأخير الالتزامات الحرجة؟
+
+يجب أن تحافظ السياسة على الأولوية القانونية والذرية المطلوبة، دون إنشاء سلطة جدولة جديدة.
+
+102. Contract Compatibility Audit
+
+قبل التجميد، يجب إجراء مقارنة مباشرة بين التعاريف الدقيقة في RDMS-01…09 وبين عقود RDMS-10.
+
+خصوصًا:
+
+Entity names
+
+Authority fields
+
+Allowed lifecycle states
+
+Commit boundaries
+
+Idempotency identities
+
+Dependency results
+
+Recovery semantics
+
+بعض الأغلفة الواردة في المسودة مقترحات تكامل، وليست إثباتًا بأنها مطابقة حرفيًا لجميع Schemas السابقة.
+
+أي تعارض يجب تصحيحه وفق المواصفة المالكة، أو إعلانه كتغيير معماري يتطلب إعادة فتحها.
+
+PART XXXI — DESIGN FREEZE CRITERIA
+103. Required Freeze Conditions
+
+لا يجوز تجميد RDMS-10 إلا بعد إثبات الآتي على مستوى المواصفات:
+
+لكل كيان دائم مالك قانوني واضح.
+
+لا توجد مسارات كتابة متعددة متنافسة إلى Canonical State.
+
+لا توجد قناة تنفيذ خارجي تتجاوز ActionGate.
+
+جميع الواجهات الحاملة للسلطة قابلة للتحقق.
+
+جميع العمليات غير المتزامنة لها هوية ونتيجة قابلة للتتبع.
+
+حالات الأعطال لا تخلق سلطات جديدة.
+
+العلاقات بين Control Ledger وAction Journal قابلة للتعافي.
+
+يمكن تشغيل المتخصصين بالتوازي دون تعدد الهوية المعرفية المعتمدة.
+
+لا يؤدي تغيير Provider إلى فقدان الحالة القانونية.
+
+يمكن استعادة المهام المعلقة دون الاعتماد على تاريخ المحادثة.
+
+لا تتعارض عقود التكامل مع FCA أو RDMS-01…09.
+
+يوجد مسار تنفيذ تدريجي قابل للاختبار دون التضحية بقوانين السلامة.
+
+104. Specification Freeze vs Code Verification
+
+تجميد RDMS-10 سيعني أن عقود التكامل أصبحت مرجعًا هندسيًا معتمدًا.
+
+لكنه لن يعني أن البرنامج قد نُفذ أو أنه اجتاز Failure Injection Tests.
+
+يجب الحفاظ على هذا الفصل.
+
+PART XXXII — DRAFT VERDICT
+RDMS-10
+
+Title:
+    Final Runtime Integration,
+    Component Boundaries &
+    Implementation Contracts
+
+Version:
+    Draft v1.0
+
+Integrated parent specifications:
+    RDMS-01 ... RDMS-09
+
+Logical component groups:
+    6
+
+Core integration domains:
+    Cognitive
+    Control
+    Action
+    Observation
+    Memory / Temporal
+    Infrastructure
+
+Proposed formal invariants:
+    40
+
+Implementation acceptance gates:
+    16
+
+Adversarial review targets:
+    56
+
+Implementation:
+    NOT AUTHORIZED
+
+Specification freeze:
+    NOT AUTHORIZED
+
+Next:
+    RDMS-10 Adversarial Freeze Review 01
+Final Draft Decision
+
+RDMS-10 — DRAFT v1.0 COMPLETE.
+
+RDMS-10 — NOT FROZEN.
+
+هذه المسودة تحدد البنية المنطقية الأولية لتكامل الأنظمة التسعة.
+
+لكن يجب إجراء مراجعة عدائية تركز على:
+
+ازدواجية السلطة.
+
+ملكية البيانات.
+
+العقود غير المتوافقة.
+
+حدود المعاملات الذرية.
+
+انتقال المقترحات إلى قرارات معتمدة.
+
+تدفق الأدلة من التنفيذ إلى الحالة المعرفية.
+
+سلامة التوازي.
+
+التعافي من الأعطال بين المكونات.
+
+صلاحيات تنفيذ الأدوات.
+
+التوافق بين تصميم الحزم البرمجية والعقود المجمدة.
+
+Next Authorized Step: RDMS-10 — Adversarial Freeze Review 01.
+
+أهم قرار هندسي في RDMS-10
+
+أريد أن أوضح لماذا أميل إلى Modular Monolith مع عزل عمليات التنفيذ بدل البدء بعشرات الخدمات المستقلة.
+
+لدينا نظام معقد أصلًا من الناحية المعرفية. إذا أضفنا إليه تعقيدًا تشغيليًا كبيرًا منذ البداية، فسنجد أنفسنا نعالج مشكلات الشبكات والتزامن وتوزيع الحالة بدل اختبار القدرات المعرفية للوكيل.
+
+لهذا أقترح ثلاثة مستويات واضحة:
+
+المستوى	طريقة التشغيل المقترحة
+Cognitive Kernel + Trusted Control	نواة معيارية متقاربة ذات سلطة واضحة
+Reasoning Providers + Specialists	تنفيذ قابل للفصل والتوسع والعزل
+Tools + Reality Execution	بيئات تنفيذ محكومة وفق نطاق الأثر
+
+بهذا يمكن أن يبدأ الوكيل صغيرًا نسبيًا، ثم نتوسع عندما تظهر حاجة حقيقية.
+
+والأهم أن التوسع لا يتطلب إعادة تعريف سلطة Executive أو تغيير فلسفة FCA.
+
+ما الذي أصبح لدينا الآن؟
+
+على مستوى التصميم، أصبح المشروع يحتوي على أربع طبقات من المواصفات:
+
+الأولى — FCA: تحدد ماهية الوكيل، والسلطات، والقوانين المعرفية والهندسية الأساسية.
+
+الثانية — RDMS-01…07: تحدد حالة النظام، والأدلة، والتنفيذ، والذاكرة، والاعتماديات، والمتخصصين، والالتزامات الزمنية.
+
+الثالثة — RDMS-08 وRDMS-09: تحددان سياسة التحكم المعرفي والتعافي التشغيلي.
+
+الرابعة — RDMS-10: تربط المكونات في Runtime واحدة، وتحدد واجهاتها ومسؤولياتها وحدود تشغيلها.
+
+لكن لا ينبغي أن نعتبر المسودة الحالية دليلًا نهائيًا على توافق جميع العقود؛ فهذا تحديدًا ما سنهاجمه في مراجعات RDMS-10.
+
+الخطوة التالية
+
+RDMS-10 — Adversarial Freeze Review 01.
+
+سأعطي أولوية لثلاثة مخاطر:
+
+تضارب ملكية الحالة: هل يستطيع مكونان تغيير الكيان نفسه بطرق قانونية ظاهريًا لكنها متناقضة؟
+
+الفجوات بين المكونات: هل يمكن أن تنجح كل طبقة منفردة بينما يفشل النظام عند انتقال الرسائل أو الأحداث بينها؟
+
+التعقيد الزائد: هل أدخلنا مكونات أو واجهات لا تضيف فائدة فعلية، وتجعل تنفيذ الوكيل وصيانته أصعب بلا ضرورة؟
+
+بعد إغلاق RDMS-10، سنكون جاهزين للمراجعة المعمارية الشاملة لجميع المواصفات، ثم إعداد Implementation Architecture & Build Plan قبل كتابة أول جزء من النظام.
+
+END ORIGINAL MESSAGE
+
+========================================================================
+SOURCE PART: C01
+MESSAGE ID: e4828797-8ddb-48ae-a3e4-3e9ec47b70c3
+BEGIN ORIGINAL MESSAGE
+========================================================================
+
+نواصل الآن إلى RDMS-10 C01 — Cross-System Contract Integrity & Runtime Authority Closure.
+
+هذه المرحلة من أهم مراحل المشروع؛ لأننا لم نعد نبحث عن طريقة عمل كل نظام منفردًا، بل نحدد كيف تتعاون جميع الأنظمة دون أن تتعارض سلطاتها أو تفقد البيانات معناها أثناء انتقالها من مكون إلى آخر.
+
+في المراجعة العدائية الأولى اكتشفنا 22 ثغرة معمارية مانعة للتجميد و7 نقاط تحسين. سنعالجها الآن ضمن ست مجموعات، مع الالتزام بثلاثة مبادئ:
+
+لا نغيّر FCA v1.0.1 أو المواصفات RDMS-01…09 المجمدة بصورة ضمنية.
+
+لا ننشئ بوابات أو مصادر سلطة جديدة لمجرد حل مشكلة تكامل.
+
+لا نفرض تفاصيل تقنية مثل نوع قاعدة البيانات أو لغة البرمجة ما دام العقد الهندسي يمكن تنفيذه بأكثر من طريقة صحيحة.
+
+والأهم: سنحدد أين تُفرض القوانين فعليًا، لا أن نكتفي بكتابة أنها إلزامية.
+
+RDMS-10 C01 — Cross-System Contract Integrity & Runtime Authority Closure
+RDMS-10 C01
+Cross-System Contract Integrity & Runtime Authority Closure
+
+Project: AI Coding Agent
+Architecture: Formal Cognitive Architecture — FCA v1.0.1
+
+Parent Specification: RDMS-10 Draft v1.0
+Review Source: RDMS-10 Adversarial Freeze Review 01
+
+Dependencies: RDMS-01…09 — FROZEN
+
+Version: C01 — Corrective Specification v1.0
+
+Status: CORRECTIVE SPECIFICATION
+Implementation: NOT AUTHORIZED
+Specification Freeze: NOT AUTHORIZED
+
+Next Gate: RDMS-10 — Adversarial Freeze Review 02
+
+PART I — ARCHITECTURAL FOUNDATION
+1. Objective
+
+تعالج هذه الوثيقة الثغرات التي تظهر عند دمج الأنظمة المختلفة داخل Runtime واحدة.
+
+لدينا بالفعل:
+
+Cognitive Executive.
+
+Canonical Cognitive Workspace.
+
+Capability Runtime.
+
+Reasoning Gateway.
+
+CommitGate.
+
+ActionGate.
+
+Control Ledger.
+
+Action Journal.
+
+Reality Executor.
+
+Observation Ingress.
+
+Dependency Evaluation.
+
+Specialist Runtime.
+
+Memory Runtime.
+
+Temporal Scheduler.
+
+Recovery Runtime.
+
+لكن مجرد وجود هذه المكونات لا يضمن سلامة تكاملها.
+
+المطلوب هو أن تكون جميع العمليات الحاملة للسلطة أو المؤثرة في الحالة قابلة للتتبع والتحقق، من لحظة اقتراحها حتى تسجيل نتيجتها.
+
+2. Fundamental Integration Principle
+
+نعتمد:
+
+Authority, identity, state version and effect scope must survive every component boundary.
+
+أي:
+
+يجب أن تظل السلطة والهوية ونسخة الحالة ونطاق التأثير محفوظة عبر جميع حدود المكونات.
+
+مثال:
+
+Executive authorizes Action X
+             ↓
+ActionGate validates X
+             ↓
+Action Journal persists X
+             ↓
+Queue delivers X
+             ↓
+Executor executes X
+             ↓
+Observation records effect of X
+
+يجب أن تبقى هوية X ومعنى التفويض ثابتين خلال هذا المسار.
+
+لا يجوز أن يصبح X عملية أخرى بسبب تحويل بيانات أو إعادة إرسال رسالة أو اختلاف Provider.
+
+3. Legal Ownership Conservation
+
+تبقى ملكية السلطة كما يلي:
+
+Responsibility	Canonical authority
+Semantic authorization	Current Cognitive Executive
+Canonical state mutation	CommitGate
+World-action authorization	ActionGate
+Control durability	Control Ledger
+Action lifecycle	RDMS-04
+Raw observation append	Observation Ingress
+Dependency freshness	RDMS-06
+Memory promotion	LearningGate + Executive
+Temporal commitments	RDMS-05
+Recovery orchestration	RDMS-09
+
+لا تنشئ RDMS-10 أي سلطة إضافية فوق هذه السلطات.
+
+4. Integration-Level Rule
+
+كل عقد جديد في C01 يجب أن يكون واحدًا من الأنواع التالية:
+
+Transport Contract
+
+Authority Binding
+
+Canonical Projection
+
+Integration Transaction
+
+Validation Assessment
+
+Recovery Binding
+
+هذه عقود تكامل.
+
+ليست كيانات معرفية قانونية جديدة إلا إذا كان تعريفها مطلوبًا صراحة من المواصفة المالكة.
+
+PART II — C01-A: CANONICAL CONTRACT REGISTRY
+5. Finding
+
+FR10-G02 — Integration Schemas Can Diverge From Frozen Schemas
+
+Problem
+
+تستخدم المكونات كيانات متشابهة في المعنى، لكن قد تختلف تسمياتها أو حقولها.
+
+مثل:
+
+executive_epoch
+
+authority_generation
+
+leadership_version
+
+قد يعتقد المطور أنها متكافئة، بينما تكون لها معانٍ مختلفة.
+
+هذا قد يؤدي إلى فساد العقود القانونية.
+
+6. Architectural Decision
+
+نعتمد مبدأ:
+
+Canonical types have one semantic owner. Integration contracts may reference or project them, but cannot redefine them.
+
+أي أن لكل نوع قانوني مصدر تعريف واحدًا.
+
+يمكن للواجهات استعماله أو اشتقاق تمثيل نقل منه.
+
+لكن لا يجوز إعادة تعريف معناه.
+
+7. CanonicalContractRegistry
+CanonicalContractRegistry {
+    registry_version
+
+    contract_entries[] {
+        contract_id
+
+        owning_specification
+
+        canonical_type_ref
+
+        canonical_schema_version
+
+        canonical_field_refs[]
+
+        legal_semantics_ref
+
+        permitted_projection_refs[]
+
+        compatibility_requirements[]
+
+        forbidden_semantic_substitutions[]
+    }
+}
+8. Registry Authority
+
+هذا السجل لا يملك سلطة قانونية مستقلة.
+
+هو مرجع تكامل يربط العقود بتعريفاتها المجمدة.
+
+إذا وجد تعارض بين:
+
+RDMS-04 ActionLifecycle
+
+و:
+
+RDMS-10 Action transport projection
+
+فإن RDMS-04 هي المصدر المعياري للمعنى.
+
+لا يجوز لـRDMS-10 تعديل معنى ActionLifecycle بهدف جعل التكامل أسهل.
+
+9. Contract Categories
+
+نميز بين:
+
+Canonical Entity
+
+كيان قانوني معتمد.
+
+Command
+
+طلب لتنفيذ انتقال أو عملية.
+
+Event
+
+تسجيل لحدث وقع ضمن نطاق معين.
+
+Read Projection
+
+تمثيل مخصص للقراءة مشتق من الحالة المعتمدة.
+
+Assessment
+
+نتيجة تقييم يمكن أن تكون صالحة أو قديمة أو غير مكتملة.
+
+Transport Envelope
+
+غلاف يحمل البيانات عبر حدود المكونات.
+
+هذه الأنواع ليست قابلة للاستبدال تلقائيًا.
+
+10. Contract Compatibility Rule
+
+لا تقبل واجهة Contract غير متوافقة مع النسخة القانونية التي تعتمد عليها.
+
+إذا كانت العلاقة بين نسختين غير معروفة:
+
+Compatibility = UNKNOWN
+        ↓
+Authority-bearing transition = REJECTED
+
+لا يجوز استخدام Parser متساهل لتغيير معنى حقل قانوني.
+
+C01-A1 Result
+
+FR10-G02 — ADDRESSED
+
+PART III — TRUSTED ENVELOPE ADMISSION
+11. Finding
+
+FR10-G01 — Trusted Envelope Authority Spoofing
+
+Problem
+
+قد تنتج Provider رسالة تحتوي على:
+
+{
+  "originating_component": "CognitiveExecutive",
+  "instruction_authority": "SYSTEM",
+  "executive_epoch": 105
+}
+
+إذا صدّق Runtime هذه الحقول لمجرد وجودها داخل النص، يمكن للنموذج انتحال مصدر السلطة.
+
+12. Architectural Decision
+
+Transported authority claims are not trusted authority proofs.
+
+وجود ادعاء بالسلطة داخل رسالة لا يثبت صحة الادعاء.
+
+يجب إصدار بيانات السلطة الموثوقة أو التحقق منها عبر Control Boundary مناسبة.
+
+13. TrustedEnvelopeAdmission
+TrustedEnvelopeAdmission {
+    envelope_ref
+
+    authenticated_sender_ref
+
+    receiving_component_ref
+
+    trusted_transport_context_ref
+
+    permitted_message_types[]
+
+    trusted_field_issuer_refs[]
+
+    claimed_authority_metadata
+
+    verified_authority_scope
+
+    executive_epoch_binding?
+
+    project_scope
+
+    replay_protection_ref
+
+    payload_integrity_ref
+
+    admission_result
+}
+14. Trusted Field Ownership
+
+لا يجوز لـProvider أو Specialist غير مخولة إصدار:
+
+Executive Authorization
+
+Commit Authorization
+
+ActionGate Approval
+
+System Instruction Authority
+
+Leadership Grant
+
+Canonical State Version
+
+بوصفها بيانات موثوقة.
+
+قد يحتوي Payload على نص يقترح هذه القيم أو يشير إليها، لكنه لا يتحول إلى إثبات لها.
+
+15. Receiving Boundary Enforcement
+
+عند استقبال رسالة تحمل أثرًا قانونيًا، يجب التحقق من:
+
+Authenticated source
+
+Allowed message type
+
+Effective authority scope
+
+Current epoch where required
+
+Project binding
+
+Schema compatibility
+
+Payload integrity
+
+ويجب رفض الانتقال القانوني عندما لا تتوفر الأدلة المطلوبة.
+
+16. Replay Protection
+
+إعادة إرسال رسالة قديمة لا تعيد صلاحية تفويض انتهى.
+
+يجب الحفاظ على:
+
+Message Identity
+
+Operation Identity
+
+Attempt Identity
+
+Epoch Binding
+
+Idempotency Scope
+
+وفق طبيعة العملية.
+
+17. Trusted Transport Is Not Trusted Content
+
+قد تكون الرسالة قد وصلت عبر قناة موثوقة، لكن Payload تحتوي على Tool Output غير موثوقة.
+
+يجب الحفاظ على ContentEnvelope الأصلية.
+
+لا يجوز ترقية سلطة المحتوى بسبب نقله عبر خدمة داخلية موثوقة.
+
+C01-A2 Result
+
+FR10-G01 — ADDRESSED
+
+PART IV — HUMAN INGRESS AUTHORITY
+18. Finding
+
+FR10-G21 — Human Authority Is Lost at the Interface Gateway
+
+Problem
+
+قد يصل طلب إلى النظام من مستخدم أو جهة بشرية لا تملك السلطة المطلوبة.
+
+إذا عاملنا جميع الطلبات بوصفها تعليمات كاملة الصلاحية، فقد يعتمد الوكيل Requirements غير مصرح بها.
+
+19. HumanIngressAuthorityBinding
+HumanIngressAuthorityBinding {
+    request_ref
+
+    authenticated_principal_ref
+
+    project_ref
+
+    verified_role_refs[]
+
+    authority_domain_refs[]
+
+    requested_operation_scope
+
+    allowed_requirement_scope
+
+    instruction_authority
+
+    applicable_policy_ref
+
+    request_provenance_ref
+
+    authorization_status
+}
+20. Domain-Specific Authority
+
+لا توجد سلطة بشرية مطلقة لمجرد أن الرسالة صادرة عن شخص.
+
+قد يكون شخص ما مخولًا بتغيير متطلبات واجهة المستخدم، لكنه غير مخول بتعديل سياسات الأمان أو تنفيذ Deployment.
+
+يجب أن يتوافق التفويض مع نطاق القرار.
+
+21. User Content vs Authoritative Request
+
+إذا احتوى طلب المستخدم على نص مقتبس من Issue أو ملف خارجي، فلا تكتسب تعليمات ذلك النص سلطة المستخدم تلقائيًا.
+
+يجب الحفاظ على الفرق بين:
+
+User's actual instruction
+
+و:
+
+External content supplied for analysis
+22. Human Response Adoption
+
+عندما تسأل Executive مستخدمًا عن قرار، يجب ربط الإجابة بالسؤال ونطاق السلطة والنسخة القانونية التي كانت نافذة.
+
+لا يجوز استعمال إجابة قديمة لتفويض عملية مختلفة.
+
+C01-A3 Result
+
+FR10-G21 — ADDRESSED
+
+PART V — CANONICAL STATE VS REPOSITORY MUTATION
+23. Finding
+
+FR10-G03 — Canonical State and Repository Mutation Ownership Are Not Fully Separated
+
+Problem
+
+قد تعتمد Executive خطة جديدة داخل Canonical Workspace.
+
+لكن ذلك لا يعني أن ملفات Repository تغيرت.
+
+كما قد تنجح أداة في تغيير الملفات دون أن يصبح التغيير مقبولًا هندسيًا.
+
+24. Architectural Decision
+
+نعتمد الفصل التالي:
+
+COGNITIVE COMMIT
+    Changes accepted cognitive state.
+
+REPOSITORY ACTION
+    Changes the actual repository.
+
+OBSERVATION
+    Records what happened.
+
+INTEGRATION DECISION
+    Determines whether the result
+    satisfies the intended engineering goal.
+25. RepositoryMutationIntegrationContract
+RepositoryMutationIntegrationContract {
+    originating_goal_ref
+
+    originating_slice_ref
+
+    candidate_artifact_ref
+
+    base_repository_ref
+
+    expected_repository_ref?
+
+    intended_change_surface
+
+    allowed_repository_scope
+
+    forbidden_repository_scope
+
+    action_proposal_ref
+
+    action_authorization_ref
+
+    execution_result_ref?
+
+    resulting_repository_observation_ref?
+
+    verification_requirement_refs[]
+
+    canonical_reconciliation_refs[]
+}
+26. Legal Mutation Path
+Candidate Patch
+      ↓
+Executive Engineering Decision
+      ↓
+ActionProposal
+      ↓
+ActionGate
+      ↓
+Durable Action Intent
+      ↓
+Repository Mutation
+      ↓
+Observation
+      ↓
+Verification
+      ↓
+Canonical Reconciliation
+27. Candidate Is Not Canonical
+
+ملف ينتج داخل Specialist Workspace لا يصبح تعديلًا معتمدًا في Repository المشتركة لمجرد نجاح توليده.
+
+يحتاج إلى مسار تكامل مناسب.
+
+28. Repository Base Validation
+
+إذا كان التعديل مبنيًا على Revision قديمة، يجب تقييم توافقه مع Repository الحالية.
+
+ولا يجوز استعمال Last Writer Wins تلقائيًا عندما يمكن أن يؤدي إلى فقدان تغييرات أو كسر متطلبات.
+
+29. Mutation and Acceptance Separation
+
+يجب أن يستطيع النظام تمثيل:
+
+Repository mutation:
+    APPLIED
+
+Engineering acceptance:
+    NOT YET VERIFIED
+
+دون تناقض.
+
+نجاح الكتابة أثر واقعي.
+
+أما نجاح الهدف الهندسي فهو حكم يحتاج أدلة أخرى.
+
+C01-A4 Result
+
+FR10-G03 — ADDRESSED
+
+PART VI — EXECUTIVE DECISION / TRANSITION BINDING
+30. Finding
+
+FR10-G04 — Executive Control Decision and State Transition Integration Gap
+
+Problem
+
+قد تختار Executive تنفيذ Slice معينة، ثم تتغير Goal أو Focus قبل اعتماد الانتقال.
+
+31. ExecutiveTransitionIntegrationBinding
+ExecutiveTransitionIntegrationBinding {
+    executive_decision_ref
+
+    executive_epoch
+
+    project_ref
+
+    goal_ref
+
+    slice_ref?
+
+    source_cognitive_state
+
+    selected_operation_ref
+
+    expected_canonical_versions[]
+
+    policy_frontier_ref
+
+    dependency_frontier_ref
+
+    target_transition_contract_ref
+
+    control_commit_ref?
+}
+32. Decision Adoption Rule
+
+لا يجوز لـCapability Runtime تنفيذ عملية جديدة اعتمادًا على Executive Decision فقدت شروط صلاحيتها.
+
+33. Transition Commit
+
+يجب أن يستخدم Runtime مسار RDMS-08 وRDMS-01 لربط:
+
+Current Goal
+
+Current Focus
+
+Current State
+
+Executive Decision
+
+Selected Operation
+
+Required Preconditions
+
+بالانتقال القانوني.
+
+34. Concurrent State Changes
+
+إذا تغير أحد الشروط الإلزامية أثناء محاولة اعتماد الانتقال:
+
+Expected State != Current State
+
+يجب رفض الانتقال أو إعادة تقييمه حسب القوانين المجمدة.
+
+لا يجوز تنفيذ العملية القديمة على حالة جديدة بصورة صامتة.
+
+C01-A5 Result
+
+FR10-G04 — ADDRESSED
+
+PART VII — C01-B: CONTROL / ACTION DURABILITY
+35. Finding
+
+FR10-G05 — Control Ledger / Action Journal Split-Commit Risk
+
+Problem
+
+قد تكون Action مخزنة جزئيًا داخل Control Ledger وجزئيًا داخل Action Journal.
+
+إذا تعطل النظام بين الكتابتين، فقد تصبح حالة العملية غير قابلة للاستعادة بصورة متماسكة.
+
+36. Architectural Decision
+
+There must be one authoritative legal lifecycle, even when its physical records are distributed.
+
+أي:
+
+يجب أن تكون دورة حياة Action قانونية واحدة.
+
+ويمكن توزيع تخزينها فعليًا بشرط الحفاظ على ضمانات السلطة والمتانة والتعافي.
+
+37. ControlActionDurabilityContract
+ControlActionDurabilityContract {
+    action_ref
+
+    canonical_lifecycle_owner_ref
+
+    control_lifecycle_ref
+
+    action_journal_ref
+
+    authoritative_control_frontier
+
+    required_atomic_reference_set[]
+
+    durable_ordering_contract
+
+    dispatch_eligibility_condition
+
+    crash_reconciliation_rules[]
+
+    supported_failure_model_ref
+
+    integrity_verification_refs[]
+}
+38. No Dual Lifecycle Authority
+
+لا يجوز أن تقرر Control Ledger أن Action أصبحت EFFECT_VERIFIED بينما تعتبر Action Journal ذلك غير صحيح وفق تاريخين قانونيين مستقلين.
+
+يجب أن توجد قاعدة واضحة للمصدر القانوني وإعادة بناء العرض المشتق.
+
+39. Required Dispatch Ordering
+
+نحافظ على تسلسل FCA المجمد:
+
+ActionProposal
+      ↓
+Executive Authorization
+      ↓
+ActionGate
+      ↓
+Persist AUTHORIZED
+      ↓
+Persist DISPATCH_INTENT
+      ↓
+Durable Acknowledgement
+      ↓
+Dispatch SHARED_WORLD mutation
+40. Physical Storage Alternatives
+
+يمكن تحقيق العقد باستخدام:
+
+A. Shared Transactional Boundary
+
+تخزين بيانات التحكم ومراجع Action ضمن حد معاملات يضمن الذرية المطلوبة.
+
+B. Explicit Durable Protocol
+
+استخدام بروتوكول متعدد المراحل يحدد حالات الانقطاع والاستعادة بصورة قانونية.
+
+لا نفرض أحدهما في RDMS-10.
+
+لكن الخيار المستخدم يجب أن يحقق جميع الالتزامات المجمدة.
+
+41. Crash Between Stores
+
+إذا انقطع النظام بين كتابة متينتين، يجب أن تحدد عملية الاستعادة:
+
+What was legally committed?
+
+What was only prepared?
+
+What may have been dispatched?
+
+Which records remain authoritative?
+
+ولا يجوز التخمين.
+
+42. Recovery Consistency
+
+إذا تعذر إثبات أن حالة Action متماسكة، يجب منع Dispatch جديدة قد تكرر أثرًا مجهولًا.
+
+لا يجوز استعمال غياب Action من إحدى Projection باعتباره إثباتًا لعدم حدوثها.
+
+C01-B1 Result
+
+FR10-G05 — ADDRESSED
+
+PART VIII — SEALED EXECUTION INTENT
+43. Finding
+
+FR10-G06 — Authorized Action Payload Can Change Before Execution
+
+Problem
+
+قد يوافق ActionGate على عملية معينة، ثم تصل إلى Executor بوسائط مختلفة.
+
+44. SealedExecutionIntent
+SealedExecutionIntent {
+    action_ref
+
+    authorized_tool_identity
+
+    authorized_operation_kind
+
+    effective_argument_ref
+
+    effective_argument_integrity_ref
+
+    authorized_target_identity
+
+    authorized_resource_scope
+
+    authorized_effect_semantics_ref
+
+    execution_boundary_ref
+
+    executive_epoch
+
+    authorization_generation
+
+    required_pre_dispatch_conditions[]
+
+    authorization_receipt_ref
+}
+45. Sealing Rule
+
+يجب أن يرتبط التفويض القانوني بما سيُنفذ فعليًا.
+
+لا يكفي الاعتماد على النص الذي عرضه النموذج.
+
+يجب أن يشمل الربط:
+
+Tool identity
+
+Operation kind
+
+Effective arguments
+
+Target identity
+
+Resource scope
+
+Effect semantics
+
+Execution context
+
+بحسب طبيعة العملية.
+
+46. Effective Arguments
+
+يجب أن تُحسب هوية Arguments بعد التحويلات المؤثرة التي تطبقها Runtime.
+
+مثال:
+
+Original path:
+    ./tmp/output
+
+Resolved target:
+    /workspace/tmp/output
+
+لا يجوز تغيير المسار النهائي إلى مورد آخر بعد التفويض دون تحقق مناسب.
+
+47. TOCTOU Protection
+
+قد يتغير المورد نفسه بين التحقق والتنفيذ.
+
+مثل:
+
+Symlink target changes.
+
+Repository revision changes.
+
+Database schema changes.
+
+لذلك يجب أن ترتبط شروط التنفيذ بهوية المورد ونسخته أو بآلية تحقق مناسبة عند الاستخدام.
+
+إذا تعذر ضمان ثبات الهدف المطلوب، يجب رفض العملية أو إعادة تقييمها.
+
+48. Executor Rule
+
+قبل التنفيذ:
+
+Received Operation
+      ↓
+Verify Sealed Intent
+      ↓
+Verify Current Execution Eligibility
+      ↓
+Verify Applicable Dispatch Boundary
+      ↓
+Execute
+
+لا يجوز للـExecutor تنفيذ Payload مختلفة ماديًا عن المصرح بها.
+
+49. Intent Integrity vs Outcome
+
+سلامة SealedExecutionIntent لا تثبت نجاح التنفيذ.
+
+هي تثبت فقط أن العملية المرسلة مطابقة للتفويض ضمن الضمانات المعتمدة.
+
+أما النتيجة الخارجية فتحتاج إلى Observation وReconciliation.
+
+C01-B2 Result
+
+FR10-G06 — ADDRESSED
+
+PART IX — ASYNCHRONOUS ACTION DELIVERY
+50. Finding
+
+FR10-G07 — Asynchronous Dispatch and Retry Ambiguity
+
+Problem
+
+قد تعيد Queue تسليم الرسالة بعد نجاح التنفيذ بسبب فقدان Acknowledgement.
+
+51. ActionDeliveryContract
+ActionDeliveryContract {
+    action_ref
+
+    delivery_identity
+
+    execution_attempt_identity
+
+    dispatch_intent_ref
+
+    sealed_execution_intent_ref
+
+    receiving_worker_identity
+
+    receiving_worker_generation
+
+    retry_policy_ref
+
+    delivery_deduplication_scope
+
+    acknowledgement_semantics
+
+    possible_external_effect_status
+
+    required_reconciliation_ref?
+}
+52. Critical Distinction
+
+نميز بين:
+
+MESSAGE DELIVERY
+
+EXECUTION ATTEMPT
+
+EXTERNAL EFFECT
+
+هذه أحداث مختلفة.
+
+قد تصل الرسالة مرتين دون أن يعني ذلك السماح بتنفيذ العملية مرتين.
+
+53. Redelivery Rule
+
+Message redelivery is not a new authorization.
+
+إذا وصلت رسالة مرة ثانية، يجب فحص حالة Action القانونية قبل أي محاولة تنفيذ أخرى.
+
+54. IN_DOUBT Behavior
+
+إذا كانت هناك إمكانية لحدوث الأثر الخارجي، لكن النتيجة مجهولة:
+
+Action outcome = IN_DOUBT
+
+وفق RDMS-04.
+
+ولا يجوز اعتبار عدم وصول Acknowledgement دليلًا على فشل العملية.
+
+55. Retry Eligibility
+
+تعتمد إعادة المحاولة على:
+
+Action Effect Semantics
+
+Retry Policy
+
+External Idempotency Guarantee
+
+Outcome Probe
+
+Current Authority
+
+Current Preconditions
+
+ولا تعتمد على عدد مرات تسليم الرسالة وحده.
+
+56. Worker Generation
+
+يجب أن تلتزم Workers بحدود التنفيذ والأجيال القانونية.
+
+لكن انتهاء جيل Worker لا يثبت توقف آثار خارجية أرسلتها سابقًا.
+
+هذه الآثار تحتاج تسوية مستقلة.
+
+C01-B3 Result
+
+FR10-G07 — ADDRESSED
+
+PART X — ARTIFACT PUBLICATION
+57. Finding
+
+FR10-G08 — Artifact Durability Before Canonical Reference
+
+Problem
+
+قد تعتمد الحالة القانونية مرجعًا إلى Artifact مؤقتة ثم تختفي Artifact بعد Crash أو Cleanup.
+
+58. ArtifactPublicationContract
+ArtifactPublicationContract {
+    artifact_ref
+
+    artifact_kind
+
+    content_integrity_ref
+
+    source_provenance_ref
+
+    owning_storage_domain
+
+    durability_requirement
+
+    publication_generation
+
+    publication_status
+
+    canonical_reference_eligibility
+
+    retention_obligations[]
+
+    recovery_requirements[]
+}
+59. Publication Ordering
+
+عندما تكون Artifact ضرورية لتعافٍ قانوني صحيح:
+
+Produce Artifact
+      ↓
+Validate Integrity
+      ↓
+Publish Durably
+      ↓
+Receive Required Durability Proof
+      ↓
+Commit Canonical Reference
+
+لا يجوز عكس الترتيب بصورة تسمح بوجود مرجع قانوني لا يمكن استعادة محتواه الضروري.
+
+60. Artifact Classes
+
+نميز بين:
+
+Recovery-critical artifact
+
+Canonical supporting artifact
+
+Rebuildable derived artifact
+
+Disposable diagnostic artifact
+
+يجب أن تحدد المواصفة المالكة الحاجة الفعلية لكل Artifact.
+
+61. Garbage Collection Safety
+
+لا يجوز حذف Artifact ما زالت مطلوبة عبر مراجع قانونية أو التزامات تعافٍ أو سياسات احتفاظ نافذة.
+
+كما لا يجوز أن تعتمد عملية Cleanup على افتراض أن المهمة انتهت لمجرد توقف Worker.
+
+62. Integrity After Recovery
+
+عند استعادة Artifact يجب التحقق من سلامتها ومراجعها وفق RDMS-09.
+
+وجود الملف وحده لا يثبت أنه المحتوى الصحيح.
+
+C01-B4 Result
+
+FR10-G08 — ADDRESSED
+
+PART XI — CROSS-COMPONENT EVENT CAUSALITY
+63. Finding
+
+FR10-G09 — Cross-Component Event Ordering Is Undefined
+
+Problem
+
+قد تصل الأحداث إلى المكونات بترتيب مختلف عن ترتيب حدوثها أو اعتمادها قانونيًا.
+
+64. CrossComponentEventContract
+CrossComponentEventContract {
+    event_id
+
+    event_type
+
+    producing_component_ref
+
+    project_ref
+
+    causal_parent_refs[]
+
+    authoritative_sequence_ref?
+
+    related_action_ref?
+
+    schema_version
+
+    idempotency_key
+
+    delivery_semantics
+
+    required_ordering_scope
+
+    replay_requirements
+
+    event_integrity_ref
+}
+65. Causal Ordering vs Arrival Ordering
+
+لا يجوز استخدام وقت وصول الرسالة باعتباره مصدر الحقيقة القانوني.
+
+مثال:
+
+Action Authorized
+      ↓
+Action Dispatched
+      ↓
+Effect Reported
+
+قد تصل Effect Report إلى مكون قبل وصول إشعار Authorization.
+
+لكن لا يجوز تفسير ذلك على أنه تغيير قانوني لترتيب الأحداث.
+
+66. No Universal Total Order Requirement
+
+لا نفرض ترتيبًا عالميًا لجميع أحداث النظام.
+
+قد تكون أحداث مشاريع مستقلة قابلة للمعالجة بالتوازي.
+
+لكن يجب الحفاظ على الترتيب السببي الذي تعتمد عليه صحة الانتقالات القانونية.
+
+67. Duplicate Events
+
+يجب استخدام هوية الحدث ومجال Idempotency لمنع تكرار الأثر القانوني عند إعادة التسليم.
+
+ولا تعني إزالة تكرار Event إزالة تكرار External Effect تلقائيًا.
+
+68. Unknown Parent Event
+
+إذا وصلت رسالة تتطلب Parent Event قانونية لا يمكن التحقق منها، فلا يجوز اعتماد انتقالها القانوني اعتمادًا على افتراض وجود ذلك الحدث.
+
+يمكن الاحتفاظ بالرسالة للتحقيق، لكن قبولها يخضع إلى شروط السببية اللازمة.
+
+C01-B5 Result
+
+FR10-G09 — ADDRESSED
+
+PART XII — C01-C: OBSERVATION SOURCE BINDING
+69. Finding
+
+FR10-G10 — Tool Reports Can Be Laundered Into Reality Evidence
+
+Problem
+
+قد تقول أداة:
+
+Deployment successful.
+
+لكن هذا لا يثبت بالضرورة أن التطبيق يعمل في البيئة المطلوبة.
+
+70. ObservationSourceBinding
+ObservationSourceBinding {
+    observation_ref
+
+    source_identity
+
+    source_kind
+
+    source_trust_classification
+
+    related_action_ref?
+
+    observed_resource_scope
+
+    observed_event_scope
+
+    raw_report_ref?
+
+    directly_observed_effect_refs[]
+
+    observation_provenance_ref
+
+    observation_integrity_ref
+
+    supported_claim_scope
+
+    known_limitations[]
+}
+71. Report vs Observation
+
+يمكن تسجيل:
+
+Observation:
+    Tool returned exit code 0.
+
+لكن لا يجوز القفز إلى:
+
+Fact:
+    Deployment is fully healthy.
+
+دون أدلة مناسبة.
+
+72. Source Authority
+
+يجب أن تكون سلطة المصدر متناسبة مع نوع الادعاء.
+
+مثلًا:
+
+Compiler:
+    May establish compilation outcome
+    within the observed build scope.
+
+Test runner:
+    May establish reported test results.
+
+Deployment API:
+    May report deployment status.
+
+Runtime probe:
+    May provide evidence about actual service behavior.
+
+لكن لا يصبح أي مصدر مخولًا لإثبات جميع خصائص النظام.
+
+73. Observation Ingress Rule
+
+يجب أن يحتفظ Observation Ingress بالمحتوى الخام ومصدره وسلامته.
+
+ولا يجوز أن ينتج Fact أوسع من حدود التسجيل المسموح بها.
+
+74. Evidence Promotion
+
+أي استنتاج معرفي من Observation يخضع إلى قواعد RDMS-03.
+
+كما أن الادعاءات السببية تحتاج المسار القانوني المناسب، ولا تصبح حقائق عامة لمجرد قبول تفسير سببي محدود.
+
+C01-C1 Result
+
+FR10-G10 — ADDRESSED
+
+PART XIII — INTEGRATED COMPLETION EVIDENCE
+75. Finding
+
+FR10-G11 — Verification and Finalization Evidence Gap
+
+Problem
+
+قد تعتبر Executive المهمة مكتملة لأن آخر Tool أعادت Exit Code ناجحًا.
+
+لكن قد تبقى شروط قبول لم تتحقق.
+
+76. IntegratedCompletionEvidence
+IntegratedCompletionEvidence {
+    goal_ref
+
+    current_goal_version
+
+    acceptance_criteria_refs[]
+
+    verified_criteria_refs[]
+
+    unverified_criteria_refs[]
+
+    failed_criteria_refs[]
+
+    verification_record_refs[]
+
+    dependency_evaluation_ref
+
+    current_repository_ref
+
+    unresolved_action_constraints[]
+
+    unresolved_specialist_constraints[]
+
+    applicable_policy_ref
+
+    finalization_assessment_ref
+
+    authorized_completion_scope
+}
+77. Completion Semantics
+
+يجب التمييز بين:
+
+Implementation attempted.
+
+Implementation applied.
+
+Verification executed.
+
+Acceptance satisfied.
+
+Goal finalized.
+
+هذه مراحل ذات معانٍ مختلفة.
+
+78. Finalization Gate
+
+قبل اعتماد Finalization يجب تحديد:
+
+أي شروط قبول ثبت تحققها.
+
+أي شروط ما زالت مجهولة.
+
+هل الأدلة صالحة للحالة الحالية؟
+
+هل توجد آثار خارجية غير محسومة تؤثر في النتيجة؟
+
+هل توجد تغييرات غير مدمجة تؤثر في الادعاء؟
+
+79. Partial Completion
+
+إذا أنجز النظام جزءًا من المهمة، فلا يجوز تقديمه باعتباره إنجازًا كاملًا.
+
+يمكن إصدار تقرير دقيق يبين ما تحقق وما لم يتحقق.
+
+80. No Completion From Fluency
+
+قد ينتج LLM شرحًا ممتازًا للتعديل.
+
+لكن جودة الشرح لا تثبت صحة التنفيذ.
+
+يجب أن تتبع الثقة الأدلة الفعلية.
+
+C01-C2 Result
+
+FR10-G11 — ADDRESSED
+
+PART XIV — ACTIVE WORK INVALIDATION
+81. Finding
+
+FR10-G14 — Dependency Invalidation Does Not Fully Reach Active Work
+
+Problem
+
+قد يتغير Requirement أو Repository بينما توجد Actions معتمدة داخل Queue.
+
+82. ActiveWorkInvalidationContract
+ActiveWorkInvalidationContract {
+    invalidation_event_ref
+
+    changed_dependency_refs[]
+
+    affected_decision_refs[]
+
+    affected_plan_refs[]
+
+    affected_slice_refs[]
+
+    affected_capability_invocations[]
+
+    affected_specialist_refs[]
+
+    affected_authorization_refs[]
+
+    affected_queued_action_refs[]
+
+    affected_inflight_action_refs[]
+
+    dependency_evaluation_refs[]
+
+    required_revalidation_refs[]
+
+    unresolved_effect_constraints[]
+}
+83. Invalidation Propagation
+Relevant Dependency Changes
+            ↓
+Canonical Dependency Evaluation
+            ↓
+Affected Results Identified
+            ↓
+Affected Active Work Identified
+            ↓
+Queued Operations Revalidated
+            ↓
+In-flight Effects Reconciled
+            ↓
+Executive Reassessment
+84. Pending vs Dispatched
+
+نميز بين:
+
+Pending operation
+
+لم تتجاوز بعد نقطة التنفيذ القانوني.
+
+يمكن منعها أو إعادة تقييمها.
+
+Already dispatched operation
+
+قد تكون أحدثت أثرًا خارجيًا.
+
+لا يجوز اعتبار إبطال Decision أو Plan إلغاءً تلقائيًا لذلك الأثر.
+
+85. Scoped Invalidation
+
+لا تعني تغييرات Repository أن جميع النتائج أصبحت stale.
+
+يجب استخدام DependencySet الفعلية.
+
+عندما لا يمكن إثبات نطاق ضيق، يستخدم المحرك تقييمًا محافظًا.
+
+86. Race With Dispatch
+
+إذا تغيرت اعتمادية مؤثرة بالتزامن مع Dispatch، يجب أن تحدد حدود التنفيذ القانونية ما إذا كانت العملية ما زالت مؤهلة.
+
+لا يكفي الاعتماد على نتيجة تقييم قديمة لا تغطي النسخة الحالية.
+
+C01-C3 Result
+
+FR10-G14 — ADDRESSED
+
+PART XV — C01-D: REASONING PROVIDER CAPABILITY CONTRACT
+87. Finding
+
+FR10-G12 — Provider Capability Compatibility Is Not a Legal Contract
+
+Problem
+
+قد يبدل النظام Provider أثناء المهمة، لكن Provider الجديدة لا تدعم نفس التنسيق أو الإمكانات.
+
+88. ReasoningProviderCapabilityContract
+ReasoningProviderCapabilityContract {
+    provider_ref
+
+    supported_input_modes[]
+
+    supported_output_modes[]
+
+    supported_schema_modes[]
+
+    tool_call_semantics
+
+    streaming_semantics
+
+    context_limit_profile
+
+    invocation_timeout_profile
+
+    supported_reasoning_operations[]
+
+    provider_data_handling_ref
+
+    capability_validation_refs[]
+
+    compatibility_status
+}
+89. Capability Negotiation
+
+قبل استدعاء Provider يجب التحقق من أن المهمة تتوافق مع الإمكانات المطلوبة.
+
+لا نفترض أن كل النماذج تستطيع إنتاج Structured Output موثوقة بالطريقة نفسها.
+
+90. Output Validation
+
+إذا كانت Capability تحتاج إلى:
+
+Structured ActionProposal
+
+وأعادت Provider نصًا حرًا غير متوافق، فلا يجوز تحويله مباشرة إلى Action قانونية.
+
+يمكن إعادة طلب النتيجة أو استخدام طريقة تحويل لا تمنح سلطة، لكن المقترح النهائي يجب أن يجتاز جميع شروطه.
+
+91. Provider Fallback
+
+يمكن تغيير Provider وفق سياسة RDMS-08.
+
+لكن يجب الحفاظ على:
+
+Original Invocation Identity
+
+Attempt Generation
+
+Context Provenance
+
+Dependency Set
+
+Current Executive Authority
+92. Provider Failure
+
+عدم توفر Provider لا يغير صلاحيات النظام.
+
+كما لا يجوز أن يؤدي Fallback إلى تجاوز سياسات البيانات أو تخفيض متطلبات التفويض.
+
+C01-D1 Result
+
+FR10-G12 — ADDRESSED
+
+PART XVI — CONTEXT DISCLOSURE ADMISSION
+93. Finding
+
+FR10-G13 — Context Assembly Can Violate Data Disclosure Restrictions
+
+Problem
+
+قد يجمع Context Builder بيانات صحيحة من الناحية المعرفية، لكن إرسالها إلى Provider معينة قد يكون غير مصرح.
+
+94. ContextDisclosureAdmission
+ContextDisclosureAdmission {
+    context_package_ref
+
+    originating_project_ref
+
+    destination_provider_ref
+
+    requested_processing_purpose
+
+    included_data_class_refs[]
+
+    applicable_policy_frontier
+
+    authorized_disclosure_scope
+
+    prohibited_content_refs[]
+
+    source_trust_refs[]
+
+    effective_transfer_scope
+
+    admission_status
+}
+95. Disclosure Boundary
+
+يجب التحقق من شروط الإفصاح قبل إرسال البيانات.
+
+ليس بعد وصول الاستجابة.
+
+96. Multi-Project Memory
+
+قد تحتوي Memory Service على معرفة من مشاريع متعددة.
+
+لكن صلاحية استرجاع المعرفة لا تعني تلقائيًا صلاحية مشاركة محتواها مع كل Provider أو Project.
+
+97. Context Minimization
+
+يجب أن تتضمن Context ما يلزم للمهمة ضمن الحدود المناسبة.
+
+لكن تقليل حجم السياق لا يجوز أن يؤدي إلى حذف Hard Invariants أو شروط إلزامية لازمة لاتخاذ قرار آمن.
+
+98. Provider Switching
+
+عند تغيير Provider يجب إعادة تقييم شروط الإفصاح المرتبطة بالوجهة الجديدة.
+
+لا يجوز وراثة إذن الإفصاح الخاص بـProvider A تلقائيًا إلى Provider B.
+
+C01-D2 Result
+
+FR10-G13 — ADDRESSED
+
+PART XVII — SPECIALIST EXECUTION AUTHORITY
+99. Finding
+
+FR10-G15 — Specialist Tool Authority Is Not Bound End-to-End
+
+Problem
+
+قد يسمح عقد Specialist بقراءة الملفات فقط، لكن Tool Adapter تمنحها قدرة تعديل Repository المشتركة.
+
+100. SpecialistExecutionAuthorityBinding
+SpecialistExecutionAuthorityBinding {
+    specialist_run_ref
+
+    specialist_contract_ref
+
+    specialist_generation
+
+    project_scope
+
+    permitted_tool_classes[]
+
+    permitted_resource_refs[]
+
+    permitted_effect_classes[]
+
+    forbidden_effect_classes[]
+
+    isolation_boundary_ref
+
+    current_contract_validity
+
+    required_action_authorization_ref?
+}
+101. End-to-End Specialist Authority
+
+يجب أن تُفرض قيود Specialist عند:
+
+Specialist Contract
+        ↓
+Tool Request
+        ↓
+Tool Gateway
+        ↓
+Execution Boundary
+        ↓
+Actual Resource Access
+
+لا يكفي أن تذكر القيود داخل Prompt.
+
+102. Tool Authority Intersection
+
+صلاحية التنفيذ الفعلية لا يجوز أن تتجاوز تقاطع:
+
+Specialist Contract
+
+Project Policy
+
+Tool Policy
+
+Execution Boundary
+
+Current Authorization
+
+إذا كان أحد القيود يمنع العملية، فلا يجوز منحها بواسطة قيد آخر أوسع.
+
+103. Specialist Scope Changes
+
+إذا تغير عقد Specialist، يجب أن يخضع التغيير إلى المسار القانوني المناسب.
+
+ولا يمكن لـSpecialist تعديل صلاحياتها بنفسها.
+
+104. Nested Specialists
+
+تحافظ المواصفة على FCA v1.0.1:
+
+Specialist لا تستطيع إنشاء Specialist فرعية بسلطتها الخاصة.
+
+يمكنها اقتراح الحاجة إلى متخصص إضافي، لكن قرار Recruitment يعود إلى Executive الحالية.
+
+C01-D3 Result
+
+FR10-G15 — ADDRESSED
+
+PART XVIII — SPECIALIST INTEGRATION TRANSACTION
+105. Finding
+
+FR10-G16 — Parallel Specialist Integration Can Corrupt Shared Work
+
+Problem
+
+قد تنتج Specialist A وB تعديلات مبنية على Repository نفسها، لكن دمج الأولى يغير صلاحية الثانية.
+
+106. SpecialistIntegrationTransaction
+SpecialistIntegrationTransaction {
+    integration_id
+
+    specialist_result_ref
+
+    originating_contract_ref
+
+    originating_repository_ref
+
+    current_target_repository_ref
+
+    dependency_evaluation_ref
+
+    structural_conflict_assessment_ref
+
+    semantic_conflict_assessment_ref
+
+    verification_obligations[]
+
+    proposed_integration_effect_refs[]
+
+    executive_integration_authorization_ref
+
+    applicable_action_ref?
+
+    final_integration_evidence_ref?
+}
+107. Integration Preconditions
+
+قبل الدمج يجب التحقق من:
+
+Specialist result provenance
+
+Current contract validity
+
+Dependency freshness
+
+Repository compatibility
+
+Structural conflicts
+
+Semantic conflicts
+
+Required verification
+108. Parallel Result Handling
+
+قد تكون نتيجة Specialist صالحة عند تسليمها، لكنها تفقد صلاحية جزء منها بعد دمج نتيجة أخرى.
+
+يجب إعادة تقييم الأجزاء المتأثرة.
+
+109. Physical Merge vs Cognitive Acceptance
+
+نميز بين:
+
+Git merge operation
+
+و:
+
+Executive integration decision
+
+الأولى عملية في Repository.
+
+الثانية قرار معرفي.
+
+يجب أن تحافظ كل منهما على مسارها القانوني.
+
+110. Verification After Combination
+
+إذا أدى دمج نتيجتين إلى حالة جديدة لم يختبرها أي متخصص منفردًا، فقد يحتاج النظام إلى Verification إضافية على الحالة المجمعة.
+
+لا يجوز اعتبار نجاح اختبارات كل فرع منفصل دليلًا تلقائيًا على سلامة الدمج.
+
+C01-D4 Result
+
+FR10-G16 — ADDRESSED
+
+PART XIX — C01-E: TRIGGER / ACTION CAUSALITY
+111. Finding
+
+FR10-G17 — Trigger-to-Action Integration Can Duplicate Effects
+
+Problem
+
+قد تُعاد معالجة Trigger بعد Crash، فتُنشأ Action ثانية تؤدي إلى أثر خارجي مكرر.
+
+112. TriggerActionCausalityBinding
+TriggerActionCausalityBinding {
+    trigger_ref
+
+    trigger_generation
+
+    source_event_identity
+
+    canonical_reaction_identity
+
+    reaction_commit_ref
+
+    derived_action_proposal_refs[]
+
+    derived_action_identity_refs[]
+
+    action_lifecycle_refs[]
+
+    causal_binding_integrity
+
+    replay_semantics
+
+    deduplication_scope
+}
+113. Trigger Reaction vs Action
+
+يجب الفصل بين:
+
+Trigger detected
+
+و:
+
+Canonical reaction committed
+
+و:
+
+External Action dispatched
+
+هذه مراحل مختلفة.
+
+114. Stable Causality
+
+إذا أعاد النظام معالجة Reaction نفسها، يجب أن يستطيع تحديد ما إذا كانت قد أنتجت ActionProposal قانونية من قبل.
+
+ولا يجوز أن يؤدي Replay إلى إنشاء أثر خارجي جديد مستقل بصورة صامتة.
+
+115. External Effect Limitation
+
+حتى إذا كانت Canonical Reaction idempotent، فإن العالم الخارجي قد لا يضمن Exactly-Once.
+
+تظل RDMS-04 مسؤولة عن هوية Action وأهلية Retry والتسوية.
+
+116. Crash Recovery
+
+إذا وقع Crash بين اعتماد Reaction وتسجيل Action، يجب استخدام التاريخ القانوني لتحديد ما الذي تم اعتماده فعلًا.
+
+لا يجوز استنتاج وجود أو عدم وجود أثر خارجي من نتيجة Trigger وحدها.
+
+C01-E1 Result
+
+FR10-G17 — ADDRESSED
+
+PART XX — RUNTIME ACTIVATION CONTRACT
+117. Finding
+
+FR10-G18 — Recovery Startup Can Re-enable Unsafe Work Prematurely
+
+Problem
+
+قد تبدأ Runtime استقبال عمليات جديدة بعد استعادة Executive Epoch، وقبل الانتهاء من تسوية Actions غير المحسومة.
+
+118. RuntimeActivationContract
+RuntimeActivationContract {
+    component_ref
+
+    project_scope
+
+    permitted_operation_classes[]
+
+    required_recovery_frontier
+
+    required_authority_status
+
+    required_dependency_status
+
+    required_security_status
+
+    unresolved_effect_restrictions[]
+
+    applicable_policy_frontier
+
+    activation_generation
+
+    activation_authorization_ref
+}
+119. Component Running vs Operationally Admitted
+
+نميز بين:
+
+Process running.
+
+و:
+
+Component admitted for legal operation.
+
+وجود Process لا يثبت أن مكونها يستطيع تنفيذ عمليات حقيقية بصورة آمنة.
+
+120. Activation Scope
+
+يمكن تشغيل:
+
+Read-only inspection
+
+بينما تبقى:
+
+Shared-world mutation
+
+محجوبة.
+
+إذا كانت شروط الاستعادة تسمح بذلك.
+
+121. Recovery Ordering
+
+يجب الحفاظ على تسلسل التعافي القانوني في FCA وRDMS-09.
+
+ولا يجوز أن تبدأ Capability Runtime تنفيذ آثار مشتركة قبل استيفاء Recovery Admission المناسبة.
+
+122. Admission Invalidation
+
+قد تصبح Activation قديمة إذا:
+
+Executive epoch changes
+
+Policy changes
+
+Security incident occurs
+
+New unresolved action is discovered
+
+Required dependency becomes stale
+
+يجب أن تظل البوابات القانونية مسؤولة عن التحقق من الشروط الحالية.
+
+C01-E2 Result
+
+FR10-G18 — ADDRESSED
+
+PART XXI — C01-F: PROJECT EXECUTION BOUNDARY
+123. Finding
+
+FR10-G19 — Multi-Project Authority and Data Isolation Are Incomplete
+
+Problem
+
+قد تعمل عدة مشاريع داخل Host واحدة، وتشترك في بعض الخدمات.
+
+لكن لا يجوز أن يؤدي ذلك إلى اختلاط صلاحياتها أو حالاتها القانونية.
+
+124. ProjectExecutionBoundary
+ProjectExecutionBoundary {
+    project_id
+
+    canonical_workspace_ref
+
+    executive_authority_domain_ref
+
+    control_namespace_ref
+
+    action_namespace_ref
+
+    artifact_namespace_ref
+
+    specialist_namespace_ref
+
+    memory_access_scope
+
+    credential_scope_ref
+
+    tool_resource_scope
+
+    cross_project_access_policy_ref
+}
+125. Project Identity Binding
+
+كل عملية حاملة للسلطة يجب أن ترتبط بمشروعها القانوني.
+
+لا يكفي أن تحتوي الرسالة على project_id كنص.
+
+يجب التحقق من علاقة الهوية بالمورد والسلطة الفعلية.
+
+126. Cross-Project Access
+
+إذا كانت العملية تحتاج موارد مشروع آخر، فيجب أن يوجد تفويض صريح يغطي هذا الانتقال وفق سياسات المشاريع المعنية.
+
+لا يجوز استخدام قدرة خدمة مشتركة للوصول إلى موارد غير مصرح بها.
+
+127. Shared Provider
+
+يمكن استخدام Provider واحدة لعدة مشاريع.
+
+لكن هذا لا يبرر خلط:
+
+Canonical contexts
+
+Private memory
+
+Credentials
+
+Authorization metadata
+
+Specialist outputs
+
+بين المشاريع.
+
+128. Shared Storage
+
+يمكن تخزين مشاريع عديدة داخل Database واحدة.
+
+لكن يجب أن تحافظ آليات الوصول والنسخ والتدقيق على حدود كل مشروع.
+
+C01-F1 Result
+
+FR10-G19 — ADDRESSED
+
+PART XXII — EXECUTION CONTAINMENT CONTRACT
+129. Finding
+
+FR10-G20 — Physical Isolation Claims Are Not Enforceable Contracts
+
+Problem
+
+قد توصف بيئة بأنها Sandbox، لكنها تستطيع الوصول إلى Network أو ملفات أو Credentials مشتركة.
+
+130. ExecutionContainmentContract
+ExecutionContainmentContract {
+    execution_boundary_ref
+
+    project_scope
+
+    filesystem_read_scope
+
+    filesystem_write_scope
+
+    network_access_scope
+
+    credential_access_scope
+
+    process_privileges
+
+    shared_resource_reachability[]
+
+    disposal_guarantees[]
+
+    containment_verification_refs[]
+
+    effective_action_classification
+}
+131. Classification by Reachable Effects
+
+لا يجوز تصنيف عملية باعتبارها EPHEMERAL_SANDBOX بناءً على:
+
+Command name
+
+Tool name
+
+LLM description
+
+Intended purpose
+
+فقط.
+
+يجب النظر إلى الآثار الممكنة.
+
+132. Sandbox Requirements
+
+عندما تستخدم العملية المسار السريع، يجب إثبات العزل المطلوب عن:
+
+Canonical repository mutations
+
+Shared databases
+
+Production credentials
+
+Remote repositories
+
+Deployment services
+
+Non-disposable external effects
+133. Unknown Containment
+
+إذا لم يمكن إثبات أن جميع الآثار القابلة للوصول قابلة للتخلص منها ومعزولة:
+
+EPHEMERAL_SANDBOX eligibility:
+    NOT ESTABLISHED
+
+يجب رفض العملية أو معاملتها ضمن SHARED_WORLD وفق FCA.
+
+134. Containment Across Workers
+
+إذا انتقلت العملية من Worker إلى أخرى، يجب ألا تضيع قيود الاحتواء.
+
+ولا يجوز أن تحصل Worker البديلة على صلاحيات أوسع دون تفويض مناسب.
+
+C01-F2 Result
+
+FR10-G20 — ADDRESSED
+
+PART XXIII — SAFE IMPLEMENTATION DEPENDENCIES
+135. Finding
+
+FR10-G22 — Proposed Implementation Order Violates Safety Dependencies
+
+Problem
+
+قد نبرمج Action Runtime قبل تنفيذ جميع آليات التعافي والاعتماديات التي تحتاج إليها.
+
+هذا ليس خطأ إذا بقيت القدرة غير مفعلة.
+
+لكن يصبح خطأ عندما نسمح بتشغيلها على موارد حقيقية دون ضمانات السلامة المطلوبة.
+
+136. ImplementationDependencyGraph
+ImplementationDependencyGraph {
+    component_ref
+
+    required_contract_refs[]
+
+    mandatory_runtime_dependencies[]
+
+    optional_runtime_dependencies[]
+
+    minimum_safe_dependency_set[]
+
+    permitted_stub_behavior
+
+    forbidden_activation_conditions[]
+
+    conformance_gate_refs[]
+
+    activation_eligibility
+}
+137. Implementation vs Activation
+
+نميز بين:
+
+Component Implemented
+
+الكود موجود.
+
+Component Tested
+
+اجتاز اختبارات محددة.
+
+Component Integrated
+
+مرتبط بالمكونات الأخرى وفق العقود.
+
+Capability Activated
+
+مسموح باستخدامه ضمن نطاق تشغيلي محدد.
+
+هذه ليست حالات قانونية جديدة لكيانات FCA، بل أوصاف لتقدم تنفيذ المنتج.
+
+138. Capability Activation Contract
+CapabilityActivationContract {
+    capability_ref
+
+    intended_operational_scope
+
+    required_component_refs[]
+
+    required_invariant_proofs[]
+
+    required_conformance_tests[]
+
+    prohibited_effects_until_activation[]
+
+    activation_policy_ref
+
+    activation_decision
+}
+139. No Safety Stub Bypass
+
+يمكن استخدام Stubs أثناء تطوير المكونات.
+
+لكن:
+
+Stub CommitGate:
+    Always approve.
+
+لا يمكن استعمالها كبديل قانوني عن CommitGate الحقيقية في مسار Canonical Mutations إنتاجي.
+
+وينطبق الشيء نفسه على:
+
+Stub ActionGate
+
+Stub Dependency Engine
+
+Stub Recovery Journal
+
+Stub Security Policy
+140. Initial Walking Skeleton
+
+يمكن بناء نموذج تكاملي أولي يحتوي على:
+
+One project
+
+One simple Goal
+
+One Executive epoch
+
+Canonical state store
+
+CommitGate
+
+ActionGate
+
+Durable action protocol
+
+Observation Ingress
+
+Minimal reasoning adapter
+
+لكن لا يسمح بتنفيذ عمليات خارجية حقيقية إلا إذا توفرت ضماناتها الإلزامية.
+
+يمكن استخدام بيئات محاكاة أو Sandboxes مثبتة العزل أثناء تطوير بقية المكونات.
+
+141. Safe Growth
+
+تُفعّل القدرات تدريجيًا.
+
+مثال:
+
+Read-only cognitive analysis
+        ↓
+Isolated experiments
+        ↓
+Controlled repository changes
+        ↓
+Specialist execution
+        ↓
+Long-running tasks
+        ↓
+Recovery-tested broader operation
+
+كل انتقال يحتاج إلى شروط تفعيل مناسبة.
+
+C01-F3 Result
+
+FR10-G22 — ADDRESSED
+
+PART XXIV — HARDENING CORRECTIONS
+142. H01 — Interface Duplication Control
+
+يجب تقليل تكرار تعريفات الكيانات.
+
+نقترح أن يحتوي Contract Registry على مراجع واضحة إلى التعريفات القانونية، وأن تستخدم المكونات Transport Projections بدل نسخ Schemas كاملة عندما يكون ذلك ممكنًا.
+
+لا نريد خمس نسخ مختلفة من تعريف ActionRecord.
+
+143. H02 — Runtime Performance
+
+يجب أن تميز Runtime بين:
+
+Mandatory legal checks
+
+Conditional verification
+
+Advisory analysis
+
+Optional deep reasoning
+
+يمكن تحسين الأداء عبر Caching أو Incremental Evaluation عندما تحافظ على شروط الصلاحية.
+
+لكن لا يجوز إزالة فحص قانوني إلزامي بهدف تقليل Latency.
+
+144. H03 — Diagnostic Data Governance
+
+يجب فصل البيانات القانونية الضرورية للتعافي عن Logs التشخيصية.
+
+كما يجب أن تخضع Logs إلى سياسات الاحتفاظ والإفصاح المناسبة.
+
+ولا يجوز أن تتحول إلى نسخة غير محكومة من Memory أو Tool Outputs.
+
+145. H04 — Provider Quality Evaluation
+
+يجب تقييم جودة Providers المختلفة في:
+
+Structured proposal validity
+
+Code correctness
+
+Causal reasoning
+
+Planning quality
+
+Tool-use reliability
+
+Context adherence
+
+صلاحية Provider قانونيًا لا تعني أنها تقدم نفس الجودة المعرفية.
+
+146. H05 — Resource Backpressure
+
+يمكن تقييد عدد:
+
+Concurrent reasoning calls
+
+Running specialists
+
+Pending tool executions
+
+Queued observations
+
+Recovery probes
+
+لكن لا يجوز إسقاط أحداث قانونية أو التزامات سلامة لمجرد ضغط الموارد.
+
+يجب استخدام RDMS-05 وRDMS-08 وفق ملكية الجدولة والتحكم المعتمدة.
+
+147. H06 — Package Dependency Direction
+
+ينبغي أن تعتمد الحزم على واجهات قانونية واضحة بدل الوصول المباشر إلى تفاصيل تخزين بعضها.
+
+يمكن استخدام:
+
+Ports
+
+Adapters
+
+Dependency Injection
+
+Typed domain interfaces
+
+حسب الحاجة.
+
+لكن لا نفرض Framework معينًا في هذه المرحلة.
+
+148. H07 — Engineering Quality Benchmarking
+
+اختبارات Conformance تثبت امتثال النظام للقوانين، لكنها لا تثبت أنه مبرمج محترف.
+
+نحتاج لاحقًا إلى تقييم مستقل لـ:
+
+Requirement understanding
+
+Mental model accuracy
+
+Bug diagnosis
+
+Code quality
+
+Architectural judgment
+
+Verification quality
+
+Long-horizon task completion
+
+Cost efficiency
+
+يجب أن نفصل بين سلامة Runtime وجودة الاستدلال الهندسي.
+
+PART XXV — CROSS-COMPONENT CONSERVATION RULES
+149. No Second Executive
+
+لا تستطيع أي من عقود C01 إنشاء سلطة معرفية جديدة.
+
+150. No Second CommitGate
+
+كل تعديل قانوني للحالة المعرفية يبقى تحت RDMS-01.
+
+151. No Second ActionGate
+
+أي تنفيذ خارجي جديد من الوكيل يخضع إلى RDMS-04.
+
+152. No Second Dependency Engine
+
+كل تقييم Freshness قانوني يستخدم محرك RDMS-06.
+
+153. No Second Scheduler
+
+كل Trigger أو التزام زمني يخضع إلى RDMS-05.
+
+154. No Direct Provider Authority
+
+لا يمكن لمخرجات LLM أن تتحول إلى تفويض قانوني دون المسار المعتمد.
+
+155. No Implicit Specialist Authority
+
+لا يستطيع Specialist أن يمنح نفسه صلاحيات أو يدمج نتائجه مباشرة.
+
+156. No Reinterpretation of External Effects
+
+لا يجوز أن يؤدي نجاح انتقال معرفي إلى إثبات أثر خارجي لم تتم ملاحظته أو التحقق منه.
+
+157. No Recovery-Based Authority Escalation
+
+توقف مكون أو فقدان الاتصال به لا يمنح مكونًا آخر سلطة لم تكن لديه.
+
+PART XXVI — ADDITIONAL FORMAL INVARIANTS
+
+تُقترح إضافة الثوابت التالية بعد RDMS10-I01…I40.
+
+RDMS10-I41 — Every canonical contract has one authoritative semantic owner.
+
+RDMS10-I42 — Transport projections cannot silently redefine frozen canonical entities.
+
+RDMS10-I43 — Trusted authority fields must originate from, or be verified by, an authorized control boundary.
+
+RDMS10-I44 — Untrusted payload content cannot authenticate its own sender or legal authority.
+
+RDMS10-I45 — Human instruction authority is scoped to the authenticated principal and relevant decision domain.
+
+RDMS10-I46 — Canonical cognitive commits and repository mutations remain distinct legal effects.
+
+RDMS10-I47 — Executive operation selection must remain bound to the current legal goal, state and authority conditions.
+
+RDMS10-I48 — Action lifecycle durability must preserve a single legal history across control and action storage domains.
+
+RDMS10-I49 — Shared-world dispatch requires durable evidence of the applicable authorized dispatch intent.
+
+RDMS10-I50 — Executed operation identity, effective arguments and resource scope must conform to the authorized execution intent.
+
+RDMS10-I51 — Message redelivery does not authorize a new external effect.
+
+RDMS10-I52 — Execution attempts and external effects are distinct from transport deliveries.
+
+RDMS10-I53 — Recovery-critical artifact references require appropriate durable publication before canonical adoption.
+
+RDMS10-I54 — Cross-component event processing preserves required causal ordering and idempotency.
+
+RDMS10-I55 — Tool reports cannot be promoted into stronger verified-world claims without appropriate evidence.
+
+RDMS10-I56 — Goal finalization requires evidence scoped to its applicable acceptance criteria and unresolved obligations.
+
+RDMS10-I57 — Dependency invalidation must reach affected active, queued and pending work.
+
+RDMS10-I58 — Already dispatched effects remain subject to reconciliation after their originating plans become invalid.
+
+RDMS10-I59 — Reasoning-provider compatibility must be checked for each required invocation capability.
+
+RDMS10-I60 — Invalid or malformed provider output cannot become a legal proposal or authorization through permissive parsing.
+
+RDMS10-I61 — Context disclosure must be authorized for the destination and current applicable policy.
+
+RDMS10-I62 — Provider fallback cannot inherit unrelated disclosure permissions.
+
+RDMS10-I63 — Specialist tool authority must be enforced at actual execution boundaries.
+
+RDMS10-I64 — Specialist integration requires current dependency and repository compatibility assessment.
+
+RDMS10-I65 — Independent specialist verification does not automatically establish correctness of the merged result.
+
+RDMS10-I66 — Trigger reaction identity and derived action identity must preserve their legal causal relationship.
+
+RDMS10-I67 — Runtime component availability does not itself authorize operational activation.
+
+RDMS10-I68 — Recovery admission constrains the operation classes permitted during startup and recovery.
+
+RDMS10-I69 — Project identity and authority scope must be enforced across shared services.
+
+RDMS10-I70 — Cross-project access requires explicit applicable authority.
+
+RDMS10-I71 — Execution containment claims must match actual reachable resources and effects.
+
+RDMS10-I72 — Missing containment proof prevents use of the ephemeral sandbox fast path.
+
+RDMS10-I73 — Component implementation does not imply capability activation eligibility.
+
+RDMS10-I74 — Safety-critical capabilities cannot activate while mandatory enforcement dependencies are absent or simulated by non-conformant stubs.
+
+RDMS10-I75 — Integration optimizations cannot bypass mandatory legal authority, durability or trust requirements.
+
+PART XXVII — CORRECTION MATRIX
+Finding	Corrective sections	Status
+FR10-G01	§§11–17	ADDRESSED
+FR10-G02	§§5–10	ADDRESSED
+FR10-G03	§§23–29	ADDRESSED
+FR10-G04	§§30–34	ADDRESSED
+FR10-G05	§§35–42	ADDRESSED
+FR10-G06	§§43–49	ADDRESSED
+FR10-G07	§§50–56	ADDRESSED
+FR10-G08	§§57–62	ADDRESSED
+FR10-G09	§§63–68	ADDRESSED
+FR10-G10	§§69–74	ADDRESSED
+FR10-G11	§§75–80	ADDRESSED
+FR10-G12	§§87–92	ADDRESSED
+FR10-G13	§§93–98	ADDRESSED
+FR10-G14	§§81–86	ADDRESSED
+FR10-G15	§§99–104	ADDRESSED
+FR10-G16	§§105–110	ADDRESSED
+FR10-G17	§§111–116	ADDRESSED
+FR10-G18	§§117–122	ADDRESSED
+FR10-G19	§§123–128	ADDRESSED
+FR10-G20	§§129–134	ADDRESSED
+FR10-G21	§§18–22	ADDRESSED
+FR10-G22	§§135–141	ADDRESSED
+FR10-H01…H07	§§142–148	HARDENED
+
+Result: جميع النتائج السابقة لها معالجة معمارية مقترحة.
+
+لكن كلمة ADDRESSED لا تعني اجتياز المراجعة العدائية الثانية.
+
+PART XXVIII — ADVERSARIAL REVIEW 02 TARGETS
+
+يجب أن تركز المراجعة القادمة على العلاقات بين العقود الجديدة.
+
+AT10-C01-01 — Forged Executive Authority
+
+تحاول Provider إصدار Trusted Envelope تدعي أنها صادرة عن Executive.
+
+Expected: رفض السلطة المزيفة عند حدود الاستقبال والتحقق.
+
+AT10-C01-02 — Authorized Command Substitution
+
+يوافق ActionGate على تعديل ملف A، لكن Executor تتلقى Arguments تستهدف ملف B.
+
+Expected: رفض التنفيذ غير المطابق للتفويض.
+
+AT10-C01-03 — Action Journal Crash Window
+
+يحدث Crash بين التسجيل القانوني وDispatch.
+
+Expected: استعادة حالة متماسكة دون تكرار أعمى.
+
+AT10-C01-04 — Duplicate Queue Delivery
+
+تُعاد رسالة تنفيذ بعد فقدان Acknowledgement.
+
+Expected: عدم اعتبار إعادة التسليم تفويضًا جديدًا.
+
+AT10-C01-05 — Volatile Artifact Reference
+
+تحاول Executive اعتماد مرجع ملف موجود فقط داخل Workspace مؤقتة.
+
+Expected: رفض المرجع إذا لم يحقق متطلبات النشر والمتانة المطلوبة.
+
+AT10-C01-06 — Stale Requirement During Execution
+
+يتغير Requirement بعد إعداد Plan وقبل تنفيذ Action.
+
+Expected: إعادة تقييم العمليات المتأثرة، مع المحافظة على تسوية الآثار التي أُرسلت سابقًا.
+
+AT10-C01-07 — Fake Tool Success
+
+تعلن Tool نجاح Deployment دون دليل كافٍ على الأثر الفعلي.
+
+Expected: عدم ترقية التقرير إلى حقيقة تحقق أقوى من الأدلة.
+
+AT10-C01-08 — Provider Fallback Disclosure
+
+تنتقل Runtime إلى Provider جديدة وتحاول إعادة استخدام Context حساسة.
+
+Expected: إعادة تقييم شروط الإفصاح قبل الإرسال.
+
+AT10-C01-09 — Specialist Scope Escape
+
+تحاول Specialist تنفيذ Tool ذات صلاحيات خارج عقدها.
+
+Expected: منع العملية عند Execution Boundary.
+
+AT10-C01-10 — Concurrent Specialist Merge
+
+تحاول Specialist B دمج نتيجة مبنية على Revision تغيرت بعد دمج نتيجة A.
+
+Expected: إعادة تقييم صلاحية نتيجة B والتعارضات.
+
+AT10-C01-11 — Trigger Replay Creates Action
+
+تُعاد معالجة Trigger بعد Crash.
+
+Expected: الحفاظ على هوية Reaction وAction ومنع التكرار غير القانوني.
+
+AT10-C01-12 — Premature Runtime Activation
+
+تبدأ Workers قبل استكمال Recovery Admission.
+
+Expected: حجب العمليات التي لم تستوفِ شروط السلامة.
+
+AT10-C01-13 — Cross-Project Credential Confusion
+
+تحاول Action تابعة للمشروع A استخدام Credential للمشروع B.
+
+Expected: رفض الوصول غير المصرح.
+
+AT10-C01-14 — Unsafe Implementation Stub
+
+تحاول Runtime تفعيل Shared-World Actions باستخدام Stub ActionGate لا تتحقق من التفويضات.
+
+Expected: رفض التفعيل.
+
+AT10-C01-15 — Concurrent Policy Revocation
+
+تتغير سياسة الأمان بين Authorization وDispatch.
+
+Expected: تطبيق شروط السلطة والسياسات النافذة عند الحدود القانونية المناسبة، مع عدم إنكار الآثار التي ربما أُرسلت بالفعل.
+
+AT10-C01-16 — Cross-Component Event Reordering
+
+تصل نتيجة Tool قبل إشعار Dispatch إلى أحد المكونات.
+
+Expected: عدم اعتماد استنتاج قانوني يعتمد على ترتيب وصول خاطئ.
+
+PART XXIX — FREEZE REVIEW CRITERIA
+158. C01 Acceptance Conditions
+
+لكي تجتاز هذه التصحيحات المراجعة التالية، يجب أن نثبت على مستوى العقود:
+
+A. Authority Integrity
+
+لا توجد قناة تسمح بانتحال السلطة.
+
+B. Identity Preservation
+
+تبقى هوية العملية ثابتة عبر التفويض والنقل والتنفيذ.
+
+C. Durable Consistency
+
+يمكن استعادة الترتيب القانوني اللازم عند الأعطال.
+
+D. Evidence Integrity
+
+لا تتحول تقارير الأدوات إلى حقائق أوسع مما تسمح الأدلة.
+
+E. Dependency Continuity
+
+لا تتجاوز الأعمال النشطة نتائج إبطال الاعتماديات.
+
+F. Execution Isolation
+
+تُفرض صلاحيات المشاريع والمتخصصين عند الحدود الفعلية.
+
+G. Recovery Safety
+
+لا يؤدي Restart أو Replay إلى آثار غير قانونية.
+
+H. Implementation Safety
+
+لا تُفعّل القدرات قبل توفير ضماناتها الإلزامية.
+
+159. Technical Details Deferred
+
+لا نطلب الآن تثبيت:
+
+Database engine
+
+Programming language
+
+Queue technology
+
+Container runtime
+
+Dependency injection framework
+
+RPC transport
+
+Serialization library
+
+Package directory structure
+
+ما دام التنفيذ المختار يستطيع تحقيق العقود.
+
+لكن إذا كان اختيار تقنية معينة يجعل أحد القوانين غير قابل للتحقيق، فيجب رفض ذلك الاختيار.
+
+160. No Automatic Freeze
+
+حتى لو كانت كل النتائج الـ22 معالجة نصيًا، يجب أن تبحث المراجعة الثانية عن:
+
+تعارضات بين العقود الجديدة.
+
+ازدواجية السلطة.
+
+فجوات ذرية.
+
+Race Conditions ذات أثر قانوني.
+
+غموض في المصدر المعتمد للحقيقة.
+
+حالات لا يمكن فيها تطبيق العقد بصورة متماسكة.
+
+ولا ينبغي تحويل كل تفصيل برمجي صغير إلى سبب لإعادة فتح المعمارية.
+
+PART XXX — FINAL C01 VERDICT
+RDMS-10 C01
+
+Parent:
+    RDMS-10 Draft v1.0
+
+Previous blocking findings:
+    22
+
+Corrective findings addressed:
+    22
+
+Hardening findings:
+    7
+
+Hardening corrections:
+    7
+
+Additional proposed invariants:
+    RDMS10-I41 ... RDMS10-I75
+
+Targeted adversarial scenarios:
+    16
+
+Changes to FCA:
+    NONE PROPOSED
+
+Changes to RDMS-01...09:
+    NONE PROPOSED
+
+Executable tests:
+    NOT PERFORMED
+
+Code implementation:
+    NOT AUTHORIZED
+
+Specification freeze:
+    NOT AUTHORIZED
+Final Decision
+
+RDMS-10 C01 — COMPLETE FOR SECOND ADVERSARIAL REVIEW.
+
+جميع الثغرات الـ22 لديها الآن عقود تصحيحية مقترحة.
+
+لم نجد في هذه المرحلة حاجة إلى إنشاء Executive ثانية أو تغيير معنى CommitGate أو ActionGate أو ActionLifecycle.
+
+لكن يجب التحقق من أن عقود النقل والذرية والتفويض الجديدة متوافقة مع التعاريف المجمدة عند إجراء المراجعة الثانية.
+
+RDMS-10 remains NOT FROZEN.
+
+Next Authorized Step: RDMS-10 — Adversarial Freeze Review 02.
+
+ماذا حققنا في C01؟
+
+أهم تقدم هو أننا انتقلنا من تحديد مسؤولية كل مكون إلى تحديد العقود التي تضمن سلامة انتقال العملية بين المكونات.
+
+أريد إبراز ثلاثة قرارات هندسية مؤثرة جدًا.
+
+1. التفويض يجب أن يرتبط بالعملية الفعلية
+
+لم يعد كافيًا أن تقول ActionGate: «وافقت على تعديل هذا الملف».
+
+بل يجب أن نعرف بالضبط أي أداة ستنفذ، وما المعطيات التي ستستخدمها، وما المورد المستهدف، وما شروط النسخة والتفويض.
+
+هذا هو دور SealedExecutionIntent.
+
+2. لا نحتاج إلى معاملات ذرية عالمية لكل الأنظمة
+
+من المستحيل عمليًا افتراض معاملة واحدة تتحكم في Control Ledger وGitHub وقاعدة بيانات خارجية وخدمة Deployment معًا.
+
+بدل ذلك، نحافظ على الذرية داخل حدود التحكم القانونية، ثم نستخدم سجل Action المتين وعمليات Reconciliation للتعامل مع الآثار الخارجية.
+
+بهذا نتجنب تصميمًا موزعًا شديد التعقيد قائمًا على ضمانات غير واقعية.
+
+3. تنفيذ المكونات لا يعني السماح بتشغيلها
+
+قد نبرمج Tool Executor قبل Recovery Runtime.
+
+هذا مقبول في التطوير.
+
+لكن لا نسمح لها بتنفيذ آثار مشتركة حقيقية حتى تكون شروط السلامة الإلزامية متوفرة.
+
+ولهذا أضفنا:
+
+ImplementationDependencyGraph + CapabilityActivationContract
+
+وهما يمنحاننا أساسًا أقوى لتنظيم خطة البناء لاحقًا.
+
+حالة المشروع الآن
+Specification	Status
+FCA v1.0.1	✅ FROZEN
+RDMS-01 → RDMS-09	✅ FROZEN
+RDMS-10 Draft v1.0	✅ COMPLETE
+RDMS-10 C01	✅ CORRECTIONS COMPLETE
+RDMS-10 Freeze Review 02	⏳ NEXT
+Full Architecture Integration Review	⏳ PENDING
+Implementation Architecture	⏳ PENDING
+Coding	NOT AUTHORIZED
+
+الخطوة التالية هي RDMS-10 — Adversarial Freeze Review 02.
+
+وفيها سنركز خصوصًا على أربع نقاط: سلامة الرسائل الحاملة للسلطة، وذرية Control Ledger مع Action Journal، وربط SealedExecutionIntent بالتنفيذ الحقيقي، واستمرار صلاحية العمليات عندما تتغير الاعتماديات أثناء وجودها داخل Queue.
+
+إذا اجتازت هذه العقود الاختبار المعماري دون تعارضات جوهرية، سنكون قريبين من إغلاق آخر مواصفة تكاملية والانتقال إلى المراجعة الشاملة لجميع أنظمة الوكيل البرمجي قبل بدء التنفيذ.
+
+END ORIGINAL MESSAGE
+
+========================================================================
+SOURCE PART: C02
+MESSAGE ID: 5f33fe0d-af3e-4f37-aeac-8979e64d941f
+BEGIN ORIGINAL MESSAGE
+========================================================================
+
+ننتقل الآن إلى RDMS-10 C02 — Durable Handoff, Execution Authority & Cross-Boundary Continuity Closure.
+
+هذه هي مرحلة التصحيح الثانية في RDMS-10. سنعالج الثغرات الثماني التي ظهرت في Adversarial Freeze Review 02، دون إعادة تصميم المكونات أو توسيع المعمارية بلا ضرورة.
+
+هدفنا هو تثبيت مبدأ هندسي أساسي:
+
+أي عملية يعتمدها الوكيل يجب أن تحتفظ بهويتها وسلطتها وشروطها والتزاماتها عبر جميع حدود المكونات، حتى لو حدث Crash أو Retry أو تغيرت الحالة أثناء التنفيذ.
+
+سأحدد لكل تصحيح: العقد، والجهة المالكة، ونقطة فرض القانون، والتصرف عند الفشل، ثم أضع مصفوفة اختبار للمراجعة النهائية.
+
+RDMS-10 C02
+RDMS-10 C02
+Durable Handoff, Execution Authority & Cross-Boundary Continuity Closure
+
+Project: AI Coding Agent
+Parent Architecture: FCA v1.0.1 — FROZEN
+Target: RDMS-10 Draft v1.0 + C01
+Review Source: RDMS-10 Adversarial Freeze Review 02
+
+Dependencies: RDMS-01…09 — FROZEN
+Version: C02 — Corrective Specification v1.0
+
+Status: CORRECTIVE SPECIFICATION — COMPLETE FOR REVIEW
+RDMS-10 Freeze: NOT AUTHORIZED
+Implementation: NOT AUTHORIZED
+
+PART I — PURPOSE AND SCOPE
+1. Purpose
+
+تعالج RDMS-10 C02 ثماني ثغرات تكاملية، موزعة على أربعة مجالات:
+
+Domain	Findings	Objective
+Durable Handoff	R2-G01, G04	عدم فقدان الالتزامات أثناء انتقال العمل بين المكونات
+Effective Execution Authority	R2-G02, G03, G07	ضمان أن التنفيذ الفعلي يطابق التفويض الحالي
+Observation & Disclosure Integrity	R2-G05, G06	الحفاظ على معنى الأدلة وحدود الإفصاح
+Completion Consistency	R2-G08	ربط إعلان الإنجاز بالحالة التي تثبتها الأدلة
+2. Architectural Conservation
+
+يجب أن تحافظ التصحيحات على السلطات المجمدة:
+
+Executive
+    Semantic authorization
+
+RDMS-01
+    Canonical control
+    CommitGate
+    Control Ledger
+    Executive epoch
+
+RDMS-03
+    Observation Ingress
+
+RDMS-04
+    ActionGate
+    Action lifecycle
+    Action Journal
+    Reconciliation
+
+RDMS-05
+    Trigger lifecycle
+    Durable commitments
+
+RDMS-06
+    Dependency validity
+    Specialist governance
+
+RDMS-07
+    Memory governance
+
+RDMS-08
+    Cognitive control
+
+RDMS-09
+    Recovery governance
+
+RDMS-10
+    Integration contracts
+    Cross-boundary enforcement
+
+RDMS-10 لا تصبح مصدر سلطة قانونية جديدًا.
+
+3. Central Integration Principle
+
+نعتمد:
+
+A legal decision must remain traceable to its authorized continuation, while every actual effect must remain separately accountable.
+
+أي أن القرار القانوني يجب أن تكون استمراريته قابلة للتتبع، بينما تحتفظ الآثار الفعلية بمسار مستقل لتسجيلها والتحقق منها.
+
+نميز بين:
+
+Decision authorized
+       ≠
+Work durably scheduled
+       ≠
+Action authorized
+       ≠
+Action dispatched
+       ≠
+World effect verified
+
+ولا يجوز لأي مكون استنتاج المرحلة التالية بمجرد تحقق المرحلة السابقة.
+
+PART II — C02-A: RECOVERABLE ACTION DELIVERY
+4. Finding
+
+FR10-R2-G01 — Durable Action Record Does Not Guarantee Recoverable Delivery
+
+Problem
+
+قد يسجل النظام DISPATCH_INTENT بصورة متينة، ثم يتعطل قبل تسليم Action إلى Worker.
+
+بعد إعادة التشغيل، ربما تبقى Action داخل Control Ledger، لكنها لا تظهر داخل Queue.
+
+إذا كانت Queue هي المصدر الوحيد لاستئناف العمل، فقد تضيع المهمة.
+
+وإذا أعاد النظام إرسال Action مباشرة، فقد يكرر أثرًا خارجيًا كان قد وقع قبل الانهيار.
+
+5. Architectural Decision
+
+نعتمد:
+
+Durable action continuity belongs to the authoritative action lifecycle, not to transport queues.
+
+بالعربية:
+
+استمرارية Action تأتي من سجلها القانوني، وليس من مجرد وجود رسالة داخل Queue.
+
+6. RecoverableActionDeliveryObligation
+RecoverableActionDeliveryObligation {
+    action_ref
+
+    authoritative_lifecycle_ref
+
+    dispatch_intent_commit_ref
+
+    sealed_execution_intent_ref
+
+    delivery_correlation_ref
+
+    execution_attempt_refs[]
+
+    known_external_effect_refs[]
+
+    recovery_enumeration_scope
+
+    unresolved_effect_scope
+
+    legal_continuation_requirement
+
+    recovery_assessment_ref?
+}
+
+هذا العقد لا ينشئ ActionLifecycle ثانية.
+
+بل يحدد كيفية اكتشاف التزامات التسليم والمتابعة انطلاقًا من الحالة القانونية التي تملكها RDMS-04.
+
+7. Durable Enumeration
+
+بعد Crash، يجب أن تستطيع Recovery البحث في المصدر القانوني عن العمليات التي تحتاج إلى متابعة.
+
+تشمل الحالات:
+
+AUTHORIZED
+
+DISPATCH_INTENT
+
+RESULT_REPORTED
+
+PARTIAL
+
+IN_DOUBT
+
+RECONCILING
+
+بحسب شروط الاستمرار والتسوية الخاصة بكل حالة.
+
+لا يعني وجود Action داخل إحدى هذه الحالات أن جميعها قابلة لإعادة الإرسال.
+
+8. Recovery Decision
+
+إذا وجدت Recovery:
+
+Action X:
+    DISPATCH_INTENT
+
+Delivery acknowledgement:
+    MISSING
+
+فالقرار ليس:
+
+Retry X.
+
+بل:
+
+Determine whether X may have been dispatched.
+        ↓
+Inspect available delivery/effect evidence.
+        ↓
+Apply RDMS-04 retry/outcome semantics.
+        ↓
+Reconcile or continue lawfully.
+9. Old Executive Epoch
+
+إذا كانت Action تحمل AUTHORIZED من Executive Epoch قديمة، فيلزم اعتمادها من Executive الجديدة وفق FCA قبل إرسال أثر جديد.
+
+أما إذا وصلت إلى DISPATCH_INTENT أو مرحلة لاحقة، فتدخل مسار Reconciliation المناسب.
+
+لا تعيد RDMS-10 تعريف هذه القاعدة.
+
+10. Queue Authority
+
+Queue تستطيع:
+
+تخزين رسالة نقل.
+
+إعادة تسليم رسالة.
+
+إبلاغ Worker بوجود مهمة.
+
+دعم جدولة التنفيذ.
+
+لكنها لا تستطيع:
+
+إنشاء Authorization جديدة.
+
+إعلان فشل أثر خارجي.
+
+تحويل IN_DOUBT إلى FAILED.
+
+إعطاء إذن جديد بإعادة تنفيذ Action.
+
+11. Enforcement Point
+
+يجب أن تتحقق Execution Boundary من أن الطلب الذي تسلمته مرتبط بسجل قانوني صالح.
+
+لا يكفي مجرد وجود رسالة تحمل Action ID.
+
+12. Crash Cases
+Crash point	Required behavior
+قبل تسجيل AUTHORIZED	لا يوجد تفويض قانوني معتمد
+بعد AUTHORIZED وقبل DISPATCH_INTENT	متابعة قانونية؛ وإعادة اعتماد عند تغير Epoch وفق FCA
+بعد DISPATCH_INTENT وقبل التسليم المعروف	لا افتراض بعدم الإرسال؛ فحص وتسوية
+بعد التسليم وقبل Acknowledgement	عدم إعادة التنفيذ عمياء
+بعد حدوث World Effect وقبل التسجيل	الحفاظ على عدم اليقين حتى تتوفر الأدلة
+بعد Result Report وقبل Effect Verification	عدم اعتبار التقرير وحده تحققًا نهائيًا
+13. Closure Requirement
+
+يعتبر R2-G01 مغلقًا على مستوى المواصفة عندما يكون كل التزام متابعة ضروري قابلًا للاكتشاف بعد Crash من مصدر متين معتمد، دون تحويل اكتشافه إلى تفويض تلقائي بإعادة التنفيذ.
+
+FR10-R2-G01: ADDRESSED
+
+PART III — C02-A: TRIGGER-DERIVED WORK CONTINUITY
+14. Finding
+
+FR10-R2-G04 — Trigger Reaction Can Commit Without a Recoverable Derived Action Obligation
+
+Problem
+
+قد تُعتمد Reaction قانونيًا، ثم يتعطل النظام قبل إنشاء Action التي تتطلبها.
+
+عند Replay تكون Reaction قد اعتمدت سابقًا، وقد لا ينشأ العمل المطلوب.
+
+15. Architectural Decision
+
+نعتمد:
+
+A committed reaction must not lose its required downstream continuation.
+
+لكن لا يجوز أن تتحول Reaction إلى تفويض Action تلقائي.
+
+16. TriggerDerivedWorkCommitment
+TriggerDerivedWorkCommitment {
+    trigger_ref
+
+    trigger_generation
+
+    source_event_identity
+
+    canonical_reaction_identity
+
+    reaction_commit_ref
+
+    derived_work_identity
+
+    required_continuation_scope
+
+    durable_continuation_ref
+
+    existing_action_refs[]
+
+    required_authorization_path
+
+    recovery_deduplication_basis
+
+    current_continuation_assessment
+}
+17. Atomicity Rule
+
+إذا كان قبول Reaction يستلزم تسجيل التزام متابعة، فيجب أن تكون البيانات اللازمة لاستعادة هذا الالتزام مشمولة بالحد الذري القانوني نفسه أو ببروتوكول مكافئ يضمن عدم فقدانها.
+
+مثال قانوني:
+
+Canonical Reaction Accepted
+          +
+Required Continuation Reference
+          +
+Control State Version
+          ↓
+One recoverably consistent transition
+
+هذه ليست مطالبة بإنشاء Action فعلية دون تفويض.
+
+إنما نضمن أن النظام لن ينسى ضرورة معالجة العمل المشتق.
+
+18. Action Proposal Creation
+
+يمكن أن يكون العمل المشتق:
+
+A. Canonical follow-up task
+
+B. Executive reassessment requirement
+
+C. ActionProposal requiring authorization
+
+D. Observation or dependency revalidation
+
+تحدد المواصفات المالكة المسار القانوني المناسب.
+
+لا نسمح لـRDMS-05 بالحلول محل Executive في اتخاذ قرار دلالي جديد.
+
+19. Replay Rule
+
+إذا وصلت Trigger نفسها مرة أخرى:
+
+تُحدد هوية Reaction القانونية.
+
+يُفحص هل سبق اعتمادها.
+
+لا تُعتمد Reaction مرة ثانية بصورة غير قانونية.
+
+يُفحص التزام العمل المشتق القابل للاستعادة.
+
+تُستأنف المعالجة غير المكتملة فقط وفق مسارها القانوني.
+
+20. Example
+Event E1:
+    Build pipeline completed.
+
+Reaction R1:
+    Accepted and committed.
+
+Continuation:
+    Evaluate deployment eligibility.
+
+Crash.
+
+بعد إعادة التشغيل:
+
+R1 already committed.
+        ↓
+Find durable continuation.
+        ↓
+Executive evaluates deployment.
+        ↓
+ActionProposal if appropriate.
+        ↓
+ActionGate.
+
+لا يعني قبول R1 أن Deployment أصبحت مصرحًا بها.
+
+21. Ownership Boundary
+
+RDMS-05 تملك Trigger وReaction.
+
+RDMS-01 تملك ذرية التسجيل القانوني.
+
+RDMS-08 تملك الاختيار المعرفي.
+
+RDMS-04 تملك Action إن جرى إنشاؤها.
+
+RDMS-10 تربط هذه المسؤوليات.
+
+22. Required Compatibility
+
+يجب أن يثبت التنفيذ أن RDMS-05 وRDMS-01 تستطيعان تمثيل التزام الاستمرار دون تعديل خفي لقانون مجمد.
+
+إذا ظهر تعارض حقيقي في شكل الانتقال القانوني، يجب إعلانه في مراجعة التكامل بدل إضافة سجل قانوني منافس.
+
+FR10-R2-G04: ADDRESSED
+
+PART IV — C02-B: EFFECTIVE EXECUTION BINDING
+23. Finding
+
+FR10-R2-G02 — SealedExecutionIntent May Be Validated Before the Final Effective Command Exists
+
+Problem
+
+قد يكون الأمر الموافق عليه مختلفًا عن الأمر الذي ينفذ فعليًا، بسبب تغير:
+
+Resolved paths
+
+Environment variables
+
+Tool adapter version
+
+Working directory
+
+Target resource identity
+
+Execution privileges
+
+Runtime configuration
+24. Architectural Decision
+
+Authorization must bind the effective operation, not only its original textual representation.
+
+لا يكفي ختم النص الذي أنتجته LLM.
+
+يجب أن يغطي التفويض دلالة العملية الفعلية ونطاق آثارها.
+
+25. EffectiveExecutionBinding
+EffectiveExecutionBinding {
+    action_ref
+
+    sealed_execution_intent_ref
+
+    authorized_operation_kind
+
+    adapter_identity
+
+    adapter_integrity_ref
+
+    effective_operation_ref
+
+    effective_argument_integrity_ref
+
+    resolved_target_resource_refs[]
+
+    execution_environment_ref
+
+    effective_execution_principal_ref
+
+    authorized_effect_scope
+
+    final_validation_ref
+
+    dispatch_eligibility
+}
+26. Three Execution Representations
+
+نميز بين:
+
+Requested Operation
+
+ما اقترحته Capability أو Provider.
+
+Authorized Effective Intent
+
+ما وافقت عليه Executive وActionGate ضمن نطاق معروف.
+
+Actual Dispatch Operation
+
+ما ستحاول Executor إرساله أو تنفيذه بالفعل.
+
+المطلوب:
+
+Actual Dispatch Operation
+    must conform to
+Authorized Effective Intent
+27. Last Enforceable Boundary
+
+يجب أن يحدث التحقق النهائي عند حد تستطيع البنية عنده منع العملية غير المطابقة.
+
+لا يكفي إجراء فحص داخل Planning ثم ترك Tool Adapter تغير الوسائط دون رقابة.
+
+28. Resource Identity
+
+قد تكون:
+
+./output
+
+اسمًا نسبيًا.
+
+لا يجوز افتراض أنها تشير دائمًا إلى المورد نفسه.
+
+ينبغي تحديد هوية المورد الفعلية وفق إمكانات البيئة ونوع العملية.
+
+قد يتطلب ذلك تثبيت مرجع المورد أو إعادة التحقق منه عند الاستخدام.
+
+29. Tool Version
+
+إذا تغيرت نسخة Tool Adapter بصورة تغير معنى Arguments أو آثار الأمر، يجب ألا ترث Authorization سابقة دون تقييم التوافق.
+
+30. Failure Behavior
+
+إذا تعذر إثبات المطابقة:
+
+Dispatch eligibility:
+    REJECTED
+
+مع الحفاظ على Action القانونية والتفويضات المسجلة حسب حالتها الفعلية.
+
+لا يجوز اعتبار رفض الإرسال دليلًا على عدم وجود إرسال سابق من محاولة أخرى.
+
+31. No Hidden Tool Effects
+
+إذا كانت أداة تستطيع إحداث آثار أوسع من النطاق المصرح، يجب تصنيف العملية وفق الآثار القابلة للوصول.
+
+وإذا تعذر إثبات العزل، تُطبق قواعد SHARED_WORLD وفق FCA.
+
+FR10-R2-G02: ADDRESSED
+
+PART V — C02-B: DISPATCH ADMISSION CUTOVER
+32. Finding
+
+FR10-R2-G03 — Dependency Invalidation and Dispatch Can Race
+
+Problem
+
+قد تُبطل اعتمادية مهمة بعد فحص أهلية Action وقبل إرسالها.
+
+33. Architectural Decision
+
+نحتاج نقطة ترتيب قانونية واضحة بين:
+
+Relevant invalidation
+
+و:
+
+Dispatch admission
+
+لكن لا نفترض معاملة ذرية مع كل خدمة خارجية.
+
+34. DispatchAdmissionCutover
+DispatchAdmissionCutover {
+    action_ref
+
+    executive_epoch
+
+    originating_authorization_ref
+
+    dispatch_intent_commit_ref
+
+    dependency_frontier_ref
+
+    current_dependency_assessment_ref
+
+    current_policy_frontier_ref
+
+    current_execution_generation
+
+    admission_ordering_ref
+
+    applicable_invalidation_refs[]
+
+    effective_execution_binding_ref
+
+    cutover_disposition
+
+    possible_dispatch_assessment
+}
+35. Legal Ordering
+
+إذا حدث:
+
+Invalidation committed
+        ↓
+Dispatch eligibility evaluated
+
+فيجب تقييم الأثر الحالي للإبطال قبل السماح بالإرسال.
+
+أما إذا وقع الحدثان بالتزامن، فيجب أن تفرض Control Boundary ترتيبًا قانونيًا محددًا في النطاق الذي تملكه.
+
+36. Pre-Dispatch Protection
+
+قبل إرسال عملية جديدة، يجب إثبات:
+
+Current epoch eligible
+
+Relevant authority valid
+
+Relevant dependencies valid
+
+Applicable policy conditions satisfied
+
+Sealed operation matches actual operation
+
+Dispatch intent durable
+
+Execution generation permitted
+
+هذه شروط تقييم تكاملي، وليست ActionGate ثانية.
+
+37. Race After Admission
+
+قد يحدث تغير خارجي بعد آخر فحص وقبل وصول الطلب إلى الخدمة.
+
+لا تستطيع المعمارية أن تضمن اختفاء هذا الاحتمال في كل نظام خارجي.
+
+يجب أن تحدد العقود:
+
+ما الذي تستطيع منعه عند حدودها الموثوقة.
+
+ما الذي قد يصبح in-flight.
+
+ما الذي يحتاج إلى Reconciliation.
+
+ما الذي لا يمكن الادعاء بإلغائه.
+
+38. Revocation Rule
+
+إبطال Authorization لا يعني:
+
+Already dispatched effect = cancelled.
+
+إذا كانت Action قد تصل إلى العالم الخارجي أو وصلت إليه، تظل تحت RDMS-04.
+
+39. No Unbounded Global Lock
+
+لا نطلب قفلًا عالميًا يمنع جميع أنشطة النظام أثناء كل Action.
+
+يجب أن تكون ترتيبات التزامن محددة النطاق وفق الاعتماديات والموارد المتأثرة.
+
+إذا تعذر إثبات نطاق ضيق، يمكن استخدام قيود أكثر تحفظًا.
+
+40. Required Enforcement
+
+لا يجوز لـWorker استخدام نتيجة قديمة من Dependency Engine كتصريح دائم.
+
+يجب أن تكون صلاحية العملية مرتبطة بنقطة الإرسال القانونية الحالية.
+
+FR10-R2-G03: ADDRESSED
+
+PART VI — C02-B: EFFECTIVE EXECUTION AUTHORITY SCOPE
+41. Finding
+
+FR10-R2-G07 — Shared Execution Services Can Become Confused Deputies
+
+Problem
+
+قد تمتلك Worker مشتركة صلاحيات الوصول إلى عدة مشاريع.
+
+لكن الطلب الصادر من مشروع واحد لا يملك تلقائيًا هذه الصلاحيات جميعًا.
+
+42. Architectural Decision
+
+A service's technical reach is not the authority of the request it executes.
+
+قد تكون الخدمة قادرة تقنيًا على تعديل مورد.
+
+لكن هذا لا يعني أن الطلب الحالي مصرح له بتعديله.
+
+43. EffectiveExecutionAuthorityScope
+EffectiveExecutionAuthorityScope {
+    action_ref
+
+    originating_project_ref
+
+    authenticated_request_principal_ref
+
+    delegated_authority_ref
+
+    actual_target_resource_ref
+
+    target_project_ref?
+
+    effective_execution_principal_ref
+
+    applicable_credential_scope_ref
+
+    authorized_project_scope
+
+    authorized_resource_scope
+
+    authorization_proof_ref
+
+    enforcement_result
+}
+44. Authority Intersection
+
+يجب أن تكون الصلاحية الفعلية للعملية داخل تقاطع القيود التالية:
+
+Originating project authority
+
+Executive authorization
+
+ActionGate restrictions
+
+Tool policy
+
+Resource policy
+
+Credential scope
+
+Execution boundary
+
+لا يمكن لقيد أوسع أن يلغي قيدًا أضيق ملزمًا.
+
+45. Shared Worker Rule
+
+إذا وصل:
+
+Request:
+    Project A
+
+Target:
+    Resource belonging to Project B
+
+يجب إثبات تفويض Cross-Project المناسب.
+
+لا يكفي أن تكون Worker قادرة على الوصول إلى المورد B.
+
+46. Credential Binding
+
+يجب ألا تختار Worker Credential واسعة الصلاحيات ثم تفترض أن الطلب أصبح مخولًا بالوصول إلى جميع الموارد التي تستطيع Credential تعديلها.
+
+يجب فرض العلاقة بين التفويض والمورد المستهدف.
+
+قد تستخدم البنية Credentials مقيدة أو Credential Broker أو وسيلة مكافئة.
+
+47. Resource Resolution
+
+يجب التحقق من هوية الهدف النهائي بعد تحويل المسارات أو أسماء الموارد أو معرفات الخدمات المؤثرة.
+
+فالتحقق من project_id قبل حل Resource Target لا يثبت صلاحية المورد النهائي.
+
+48. Enforcement Limits
+
+إذا كانت Execution Boundary لا تستطيع تقييد أو التحقق من آثار الخدمة الخارجية بدرجة كافية، فلا يجوز الادعاء بتحقيق العزل المطلوب.
+
+يجب رفض العملية أو استعمال مجال تنفيذ أضيق يحقق الضمان.
+
+FR10-R2-G07: ADDRESSED
+
+PART VII — C02-C: OBSERVATION CAUSAL ATTACHMENT
+49. Finding
+
+FR10-R2-G05 — Event Causality Rules May Incorrectly Block Raw Observation Ingress
+
+Problem
+
+قد تصل Observation صحيحة، بينما تكون ActionRecord المرتبطة بها غير متاحة مؤقتًا.
+
+إذا اشترط النظام وجود Parent Event لقبول كل Observation، فقد يسقط دليلًا واقعيًا مهمًا.
+
+50. Architectural Decision
+
+Observation admission and causal interpretation are distinct legal operations.
+
+تسجيل ما قاله المصدر أو رصده يختلف عن إثبات السبب أو ربط الحدث بعملية محددة.
+
+51. ObservationCausalAttachmentContract
+ObservationCausalAttachmentContract {
+    observation_ref
+
+    source_identity
+
+    source_event_identity?
+
+    raw_observation_scope
+
+    claimed_action_ref?
+
+    verified_action_ref?
+
+    source_provenance_ref
+
+    causal_attachment_evidence_refs[]
+
+    missing_parent_refs[]
+
+    admissible_interpretation_scope
+
+    reattachment_requirements[]
+}
+52. Raw Observation Admission
+
+يمكن قبول Observation خام إذا استوفت قواعد RDMS-03 الخاصة بالنوع والمصدر والهوية والسلامة.
+
+لا يلزم أن تكون جميع علاقاتها السببية قد ثبتت مسبقًا.
+
+53. Example
+
+تصل رسالة:
+
+Deployment service reports:
+    Release R42 is active.
+
+يمكن تسجيل:
+
+Observation:
+    Service reported R42 active.
+
+لكن لا يجوز استنتاج:
+
+Action X caused release R42.
+
+دون دليل يربط العملية بذلك الإصدار.
+
+54. Deferred Causal Attachment
+
+إذا كانت ActionRecord مفقودة مؤقتًا:
+
+Raw Observation accepted
+        ↓
+Causal relationship unresolved
+        ↓
+Related record recovered
+        ↓
+Causal evaluation performed
+        ↓
+EvidenceLink proposed/committed legally
+
+لا يجوز تعديل Observation الخام بصورة صامتة لجعل التاريخ يبدو متناسقًا.
+
+55. Duplicate Delivery
+
+إذا وصلت Observation نفسها أكثر من مرة، يجب الحفاظ على قواعد هوية الحدث وإزالة التكرار المناسبة.
+
+ولا يجوز دمج حدثين مختلفين لمجرد تشابه النص.
+
+56. Unsupported Causality
+
+إذا لم تتوفر أدلة كافية لإثبات الارتباط:
+
+Causal claim:
+    NOT ESTABLISHED
+
+يمكن أن تبقى Observation مفيدة في نطاقها الأصلي.
+
+57. Owner
+
+RDMS-03 تملك Observation وEvidence semantics.
+
+RDMS-04 تملك Action outcome.
+
+RDMS-10 تحدد الربط بينهما عبر حدود النقل.
+
+FR10-R2-G05: ADDRESSED
+
+PART VIII — C02-C: SEALED OUTBOUND CONTEXT
+58. Finding
+
+FR10-R2-G06 — Context Disclosure Approval Is Not Bound to Final Outbound Content
+
+Problem
+
+قد توافق Data Policy على ContextPackage ثم يضاف محتوى جديد قبل الإرسال الفعلي إلى Provider.
+
+إذا ورث المحتوى الجديد تصريح الإفصاح القديم، قد يحدث تسرب للبيانات.
+
+59. Architectural Decision
+
+Disclosure approval must bind the actual outbound content, destination and processing purpose.
+
+60. SealedOutboundContext
+SealedOutboundContext {
+    invocation_ref
+
+    originating_project_ref
+
+    final_destination_provider_ref
+
+    final_destination_boundary_ref
+
+    final_context_manifest_ref
+
+    included_content_integrity_refs[]
+
+    included_data_classification_refs[]
+
+    applicable_disclosure_policy_frontier
+
+    authorized_processing_purpose
+
+    disclosure_admission_ref
+
+    outbound_integrity_binding
+
+    release_eligibility
+}
+61. Outbound Sequence
+Assemble candidate context
+        ↓
+Resolve included sources
+        ↓
+Determine final destination
+        ↓
+Apply current disclosure policy
+        ↓
+Seal effective outbound context
+        ↓
+Verify seal at trusted egress boundary
+        ↓
+Transmit
+62. Content Modification
+
+إذا تغير محتوى مؤثر بعد الموافقة:
+
+Previous disclosure approval:
+    NOT REUSABLE
+
+ويجب إعادة التقييم حسب طبيعة التغيير.
+
+63. Provider Switching
+
+إذا تغيرت Provider:
+
+Provider A
+    ↓
+Provider B
+
+فلا يجوز نقل تصريح الإفصاح من A إلى B دون تقييم جديد.
+
+64. Streaming
+
+إذا استُخدم Streaming أو إرسال على دفعات، يجب أن يغطي التفويض جميع الأجزاء التي يسمح النظام بإرسالها.
+
+لا يجوز إلحاق أجزاء جديدة غير مشمولة بالسياسة بعد إرسال أول دفعة.
+
+65. Post-Seal Transformations
+
+أي تحويل بعد الختم قد يؤثر في المحتوى أو الوجهة، مثل:
+
+Middleware injection
+
+Additional logging context
+
+Tool-result expansion
+
+Memory expansion
+
+Provider request rewriting
+
+يجب أن يكون:
+
+مثبتًا أنه لا يغير نطاق الإفصاح المعتمد، أو
+
+مشمولًا بعقد التحقق، أو
+
+سببًا لإعادة تقييم الإذن.
+
+66. Trusted Egress Enforcement
+
+التحقق يجب أن يحدث عند حد موثوق يستطيع منع الإرسال.
+
+لا يكفي أن تعلن Context Builder أن البيانات آمنة ثم يرسل مكون آخر محتوى مختلفًا.
+
+67. No Independent Disclosure Authority
+
+لا تنشئ SealedOutboundContext سياسة خصوصية جديدة.
+
+هي تفرض السياسات التي تملكها الأنظمة المعنية، خصوصًا RDMS-07 وRDMS-09.
+
+FR10-R2-G06: ADDRESSED
+
+PART IX — C02-D: COMPLETION STATE BINDING
+68. Finding
+
+FR10-R2-G08 — Finalization Evidence Can Become Stale Between Verification and Commit
+
+Problem
+
+قد تنجح الاختبارات على Repository Revision معينة، ثم تتغير الملفات قبل اعتماد Finalization.
+
+69. Architectural Decision
+
+Completion claims must be bound to the actual verified state and their applicable dependency frontier.
+
+70. CompletionStateBinding
+CompletionStateBinding {
+    goal_ref
+
+    goal_version
+
+    acceptance_criteria_frontier
+
+    verified_repository_ref
+
+    verified_world_state_scope
+
+    verification_evidence_refs[]
+
+    dependency_validation_ref
+
+    relevant_policy_frontier
+
+    unresolved_obligation_refs[]
+
+    finalization_commit_preconditions[]
+
+    finalization_commit_ref?
+}
+71. Evidence Scope
+
+إذا نجحت الاختبارات على:
+
+Repository R10
+
+فلا يجوز أن تصبح دليلًا تلقائيًا على:
+
+Repository R11
+
+إذا كان التغيير بينهما قد يؤثر في السلوك الذي جرى التحقق منه.
+
+72. Scoped Freshness
+
+لا يلزم إعادة كل الاختبارات عند تغير ملف غير مرتبط، إذا أثبت RDMS-06 أن الأدلة ما زالت صالحة.
+
+لكن لا يجوز افتراض الاستقلال دون تقييم.
+
+73. Finalization Commit
+
+قبل اعتماد Finalization يجب أن تكون:
+
+Goal version compatible
+
+Acceptance criteria current
+
+Verification evidence applicable
+
+Relevant dependency frontier valid
+
+Mandatory unresolved obligations accounted for
+74. External State Limitation
+
+قد تكون Repository تحت سيطرة خدمة خارجية يمكن أن تتغير بعد Verification.
+
+لا نفترض وجود Global Atomic Commit بين Control Ledger وGitHub.
+
+يمكن للنظام إثبات الإنجاز بالنسبة إلى Revision أو World Scope محددة.
+
+ولا يجوز أن يدعي دوام هذه الحالة إلى الأبد.
+
+75. Example
+Verification:
+    Passed on Revision R10.
+
+Another process:
+    Creates Revision R11.
+
+Completion decision:
+    Must assess whether evidence
+    still covers the claimed state.
+
+إذا لم تكن R11 مشمولة بالأدلة أو باختبار صلاحية مناسب، يجب تقييد الادعاء أو إعادة التحقق.
+
+76. Historical Completion
+
+إذا أُنجزت Goal فعلًا عند R10 ثم تغير المشروع لاحقًا، لا يعني ذلك أن Finalization السابقة أصبحت كاذبة بالضرورة.
+
+الصحيح هو أن يكون تقرير الإنجاز مرتبطًا بالحالة التي يغطيها.
+
+FR10-R2-G08: ADDRESSED
+
+PART X — CROSS-CONTRACT FAILURE MATRIX
+77. Required Failure Behavior
+Failure scenario	Legal response
+Crash after DISPATCH_INTENT, before known delivery	Recover Action and reconcile; no blind retry
+Queue message redelivered	Check authoritative lifecycle and retry eligibility
+Reaction committed, derived work not completed	Recover durable continuation; no duplicate Reaction
+Tool adapter changes target	Reject nonconforming effective execution
+Dependency invalidated before dispatch admission	Reevaluate or deny affected operation
+Potential prior dispatch during invalidation	Preserve possible effect and reconcile
+Shared Worker receives cross-project target	Require applicable cross-project authorization
+Observation arrives before ActionRecord	Preserve admissible raw observation; defer causal link
+Context changes after disclosure approval	Reevaluate before outbound transfer
+Provider changes	Reevaluate destination-specific disclosure
+Repository changes after verification	Reevaluate affected completion evidence
+Control history incomplete	Do not assume missing obligations never existed
+78. Important Conservation
+
+لا تؤدي هذه القواعد إلى إدخال:
+
+New Executive
+
+New CommitGate
+
+New ActionGate
+
+New Scheduler
+
+New Dependency Engine
+
+New Action Lifecycle
+
+بل تجعل مسارات التكامل تستخدم المصادر القانونية الموجودة.
+
+PART XI — HARDENING CORRECTIONS
+79. H01 — Projection Conformance
+
+يجب أن يحدد Contract Registry كيفية التحقق من تحويل:
+
+Canonical Entity
+    ↓
+Transport Projection
+    ↓
+Serialization
+    ↓
+Deserialization
+    ↓
+Receiving Component
+
+يجب ألا تُفقد الحقول التي تؤثر في:
+
+السلطة.
+
+هوية العملية.
+
+النسخة القانونية.
+
+الاعتماديات.
+
+الصلاحيات.
+
+شروط الاستعادة.
+
+يمكن اختبار ذلك عبر Contract Conformance Tests.
+
+80. H02 — Cancellation Semantics
+
+يجب أن تفصل الواجهات بين:
+
+Local request cancelled
+
+Worker terminated
+
+External request potentially active
+
+External effect reconciled
+
+ولا يجوز أن تعرض واجهة المستخدم رسالة تفيد بأن الأثر الخارجي أُلغي إذا كان المعروف فقط هو توقف Worker المحلية.
+
+81. H03 — Backpressure
+
+يجب عدم إسقاط:
+
+Legal control events
+
+Unresolved action obligations
+
+Required trigger commitments
+
+Recovery-critical references
+
+بسبب ضغط Queue.
+
+أما Logs التشخيصية منخفضة القيمة، فيمكن تطبيق سياسات الاحتفاظ والإسقاط المسموح بها عليها.
+
+82. H04 — Interface Complexity
+
+يجب إعادة استخدام الهويات القانونية الموجودة.
+
+لا ننشئ:
+
+ActionRecord v2
+
+Alternative Trigger Lifecycle
+
+Independent Recovery Journal
+
+Second Authorization Token Registry
+
+إذا كانت العقود المجمدة تستطيع تمثيل المتطلبات بصورة متماسكة.
+
+نفضل أقل عدد من العقود التي تحقق الضمانات المطلوبة فعلًا.
+
+PART XII — FORMAL INVARIANTS
+
+تُقترح إضافة الثوابت التالية بعد RDMS10-I75.
+
+RDMS10-I76 — Durable action continuation must remain discoverable independently of volatile transport-queue state.
+
+RDMS10-I77 — Recovery of a delivery obligation does not itself authorize repeat external execution.
+
+RDMS10-I78 — Required work derived from an accepted trigger reaction must have recoverable continuation semantics.
+
+RDMS10-I79 — A trigger-derived continuation does not bypass Executive authorization or ActionGate.
+
+RDMS10-I80 — Effective execution arguments, resource identity and execution authority must conform to the authorized sealed intent.
+
+RDMS10-I81 — Relevant invalidation and dispatch admission must have enforceable ordering semantics.
+
+RDMS10-I82 — Invalidation of authority cannot retroactively prove cancellation of potentially dispatched external effects.
+
+RDMS10-I83 — Shared execution services cannot amplify delegated request authority across project or resource boundaries.
+
+RDMS10-I84 — Raw observations may be admitted without fabricating missing causal attachments.
+
+RDMS10-I85 — Claims connecting observations to particular actions require appropriate causal evidence.
+
+RDMS10-I86 — Outbound disclosure authorization must cover the effective content, destination and processing purpose.
+
+RDMS10-I87 — Finalization evidence must be applicable to the repository, world and dependency scope of the completion claim.
+
+هذه الثوابت مقترحة للإضافة إلى خط الأساس بعد قبول المراجعة النهائية، وليست مجمدة الآن.
+
+PART XIII — CORRECTION MATRIX
+Finding	Corrective contract	Status
+R2-G01	RecoverableActionDeliveryObligation	ADDRESSED
+R2-G02	EffectiveExecutionBinding	ADDRESSED
+R2-G03	DispatchAdmissionCutover	ADDRESSED
+R2-G04	TriggerDerivedWorkCommitment	ADDRESSED
+R2-G05	ObservationCausalAttachmentContract	ADDRESSED
+R2-G06	SealedOutboundContext	ADDRESSED
+R2-G07	EffectiveExecutionAuthorityScope	ADDRESSED
+R2-G08	CompletionStateBinding	ADDRESSED
+R2-H01	Projection Conformance	HARDENED
+R2-H02	Cancellation Semantics	HARDENED
+R2-H03	Backpressure	HARDENED
+R2-H04	Interface Complexity	HARDENED
+
+ADDRESSED تعني وجود تصحيح معياري مقترح؛ وليست نتيجة اختبار أو قرار تجميد.
+
+PART XIV — FINAL REVIEW TEST PLAN
+83. Targeted Adversarial Scenarios
+
+يجب أن تختبر المراجعة النهائية السيناريوهات التالية.
+
+AT10-C02-01 — Lost Queue Delivery
+
+Input: Action تحتوي على DISPATCH_INTENT متينة، لكن Queue فقدت الرسالة.
+
+Expected: Recovery تكتشف الالتزام ولا تنفذ Action بصورة عمياء.
+
+AT10-C02-02 — Crash After Worker Execution
+
+Input: Worker نفذت Action، ثم تعطلت قبل Acknowledgement.
+
+Expected: عدم إعادة التنفيذ دون إثبات أهلية Retry وفق RDMS-04.
+
+AT10-C02-03 — Lost Trigger-Derived Work
+
+Input: Reaction معتمدة، لكن Crash حدث قبل إنشاء العمل اللاحق.
+
+Expected: استعادة التزام المتابعة دون تكرار Reaction.
+
+AT10-C02-04 — Unauthorized Effective Target
+
+Input: Action مصرح بها على ملف A، لكن المسار النهائي يشير إلى ملف B.
+
+Expected: رفض التنفيذ المخالف لنطاق التفويض.
+
+AT10-C02-05 — Adapter Version Change
+
+Input: Tool Adapter تغيرت بعد التفويض بحيث تغير معنى الأمر.
+
+Expected: عدم استعمال التفويض السابق دون تحقق توافق مناسب.
+
+AT10-C02-06 — Dependency Revocation Race
+
+Input: اعتماد Action ثم إبطال شرط إلزامي قبل قبول dispatch القانونية.
+
+Expected: عدم إرسال العملية غير المؤهلة.
+
+AT10-C02-07 — In-Flight Request After Revocation
+
+Input: طلب خارجي أُرسل قبل الإبطال وقد يُنفذ بعده.
+
+Expected: عدم افتراض توقفه؛ Reconciliation عند الحاجة.
+
+AT10-C02-08 — Shared Worker Cross-Project Request
+
+Input: Project A تطلب تغيير مورد تابع لـProject B.
+
+Expected: التحقق من التفويض المناسب أو رفض العملية.
+
+AT10-C02-09 — Observation Without Parent Record
+
+Input: وصول Observation قبل استعادة ActionRecord ذات الصلة.
+
+Expected: تسجيل Observation المقبولة دون اختلاق Causal Link.
+
+AT10-C02-10 — Fake Causal Attachment
+
+Input: Tool Output تدعي أن Action معينة سببت أثرًا خارجيًا.
+
+Expected: عدم إثبات العلاقة دون الأدلة اللازمة.
+
+AT10-C02-11 — Context Changed After Approval
+
+Input: إضافة Memory حساسة بعد فحص الإفصاح.
+
+Expected: رفض إرسال النسخة المعدلة دون إعادة تقييم.
+
+AT10-C02-12 — Provider Destination Swap
+
+Input: تحويل الطلب من Provider A إلى B بعد الموافقة.
+
+Expected: التحقق من سياسات الإفصاح للوجهة الجديدة.
+
+AT10-C02-13 — Finalization Stale Repository
+
+Input: Verification نجحت على R10 ثم تغيرت Repository إلى R11.
+
+Expected: إعادة تقييم صلاحية الأدلة بالنسبة إلى الادعاء النهائي.
+
+AT10-C02-14 — Independent Repository Change
+
+Input: تغير ملف ثبت عدم تأثيره في شروط القبول.
+
+Expected: الحفاظ على الأدلة التي أثبت RDMS-06 صلاحيتها دون إعادة اختبارات غير لازمة.
+
+AT10-C02-15 — Repeated Crash Across Handoff
+
+Input: ثلاثة أعطال متتالية بين اعتماد Reaction وإنشاء Action ونقلها إلى Worker.
+
+Expected: عدم فقدان الالتزامات المعتمدة أو تكرار الآثار الخارجية بلا مسوغ.
+
+AT10-C02-16 — Multi-Project Shared Service Failure
+
+Input: خدمة مشتركة تفقد سياق Project A أثناء معالجة عملية.
+
+Expected: رفض أي تنفيذ لا يستطيع إعادة إثبات النطاق والسلطة الصحيحة.
+
+PART XV — FINAL FREEZE READINESS CRITERIA
+84. Contract-Level Requirements
+
+لا يمكن تجميد RDMS-10 قبل إثبات ما يلي على مستوى المواصفات:
+
+عدم وجود عمل قانوني ضروري يمكن فقدانه بين Control Ledger وQueue.
+
+عدم إمكان تحويل إعادة التسليم إلى تفويض تنفيذ جديد.
+
+وجود التزام قابل للاستعادة لأي متابعة إلزامية ناتجة عن Reaction معتمدة.
+
+تطابق العملية المنفذة فعليًا مع التفويض.
+
+ترتيب قانوني قابل للتطبيق بين الإبطال والسماح بالإرسال.
+
+عدم تضخم سلطة الطلب بسبب صلاحيات Worker مشتركة.
+
+عدم إسقاط Observation خام صالحة بسبب غياب رابط سببي لم يثبت بعد.
+
+عدم إنشاء Causal Fact من ارتباط غير مثبت.
+
+عدم إرسال Context مختلفة عن المحتوى الذي شملته موافقة الإفصاح.
+
+عدم إعلان إنجاز أوسع من الحالة التي تثبتها الأدلة.
+
+عدم إنشاء مصدر سلطة إضافي داخل RDMS-10.
+
+عدم تغيير المعاني المجمدة في FCA أو RDMS-01…09.
+
+85. Implementation-Level Obligations
+
+بعد تجميد المعمارية، يجب إثبات هذه العقود عمليًا من خلال:
+
+Crash injection.
+
+Concurrent dispatch/invalidation tests.
+
+Queue redelivery tests.
+
+Tool adapter tampering tests.
+
+Cross-project isolation tests.
+
+Context egress validation.
+
+Observation provenance tests.
+
+Trigger replay tests.
+
+State-scoped completion tests.
+
+هذه الاختبارات لم تُنفذ في C02.
+
+86. No Endless Review Principle
+
+المراجعة التالية يجب أن تركز على وجود تعارض قانوني أو فجوة غير قابلة للتنفيذ داخل العقود.
+
+لا نعيد فتح المعمارية بسبب:
+
+اختيار مكتبة Queue معينة.
+
+شكل أسماء الملفات.
+
+اختيار ORM.
+
+طريقة Dependency Injection.
+
+اختلاف تقنيات Sandbox التي تحقق الضمان نفسه.
+
+تفاصيل Serialization التي لا تغير المعاني القانونية.
+
+لكن أي عيب يسمح فعلًا بتجاوز قانون مجمد يبقى مانعًا للتجميد مهما كان صغيرًا في عدد أسطر الكود.
+
+PART XVI — FINAL C02 VERDICT
+RDMS-10 C02
+
+Parent:
+    RDMS-10 Draft v1.0 + C01
+
+Review source:
+    Adversarial Freeze Review 02
+
+Blocking findings addressed:
+    8 / 8
+
+Hardening findings addressed:
+    4 / 4
+
+New integration invariants proposed:
+    RDMS10-I76 ... I87
+
+Targeted adversarial scenarios:
+    16
+
+FCA modifications:
+    NONE PROPOSED
+
+RDMS-01...09 modifications:
+    NONE PROPOSED
+
+Executable verification:
+    NOT PERFORMED
+
+Implementation:
+    NOT AUTHORIZED
+
+Specification freeze:
+    NOT AUTHORIZED
+Final Decision
+
+RDMS-10 C02 — CORRECTIVE SPECIFICATION COMPLETE.
+
+جميع نتائج المراجعة العدائية الثانية لديها الآن معالجة محددة على مستوى العقود.
+
+لكن لم يتم بعد إثبات خلو العقود المجمعة من التعارض، خصوصًا عند:
+
+التزامن بين Dispatch وInvalidation.
+
+الاستعادة بعد فقدان Delivery.
+
+الفصل بين Trigger Reaction وAction Authorization.
+
+استعمال Workers مشتركة.
+
+تغير Context أو Repository بعد التحقق.
+
+RDMS-10 remains NOT FROZEN.
+
+Next Authorized Step: RDMS-10 — Focused Final Adversarial Freeze Review 03.
+
+في المراجعة القادمة يجب اتخاذ قرار واضح:
+
+PASS / FROZEN إذا كانت العقود متماسكة ولا توجد ثغرات معمارية مانعة.
+
+FAIL / BLOCKED إذا بقي تعارض حقيقي محدد، مع تصحيح موجّه له فقط.
+
+لا يجوز اعتبار مجرد اكتمال النص ضمانًا لصحة المعمارية.
+
+END OF RDMS-10 C02
+
+ماذا تغير بعد C02؟
+
+أصبح لدينا الآن تمييز أكثر دقة بين استمرار العملية قانونيًا وتكرار تنفيذها فعليًا.
+
+مثال — استعادة Action بعد انهيار Worker
+
+Action Journal
+
+التزام قانوني متين
+
+Delivery / Worker
+
+قد تتعطل أو تتكرر الرسالة
+
+External World
+
+قد يكون الأثر حدث بالفعل أو لم يحدث
+
+القاعدة: عند استعادة العملية من السجل، لا تعيد Runtime تنفيذها تلقائيًا. بل تفحص حالتها وأدلتها وقواعد Retry قبل السماح بأي محاولة جديدة.
+
+هذا هو الفارق بين نظام يواصل من آخر رسالة يتذكرها، ونظام يحافظ على اتساق عملياته عبر الأعطال.
+
+ومن القرارات المهمة أيضًا أننا لم نضف محركات جديدة. العقود الثمانية الجديدة تعمل كطبقة ضمان بين الأنظمة القائمة، وتحافظ على السلطة لدى أصحابها الأصليين.
+
+حالة المشروع
+
+Specification
+
+	
+
+Status
+
+
+
+
+FCA v1.0.1
+
+	
+
+FROZEN
+
+
+
+
+RDMS-01 → RDMS-09
+
+	
+
+FROZEN
+
+
+
+
+RDMS-10 Draft v1.0
+
+	
+
+COMPLETE
+
+
+
+
+RDMS-10 C01
+
+	
+
+COMPLETE
+
+
+
+
+RDMS-10 C02
+
+	
+
+COMPLETE FOR REVIEW
+
+
+
+
+RDMS-10 Final Freeze Review 03
+
+	
+
+NEXT
+
+
+
+
+Global Architecture Integration Audit
+
+	
+
+PENDING
+
+
+
+
+Implementation Boundary Design
+
+	
+
+PENDING
+
+
+
+
+Coding
+
+	
+
+NOT AUTHORIZED
+
+الخطوة التالية هي RDMS-10 — Focused Final Adversarial Freeze Review 03. ستكون مراجعة مركزة هدفها تحديد ما إذا كانت مواصفة التكامل أصبحت قابلة للتجميد، ثم ننتقل إلى المراجعة الشاملة لجميع المواصفات قبل إعداد خطة البناء الفعلية.
+
+END ORIGINAL MESSAGE
+
+========================================================================
+SOURCE PART: Final Freeze Review 03 and final decisions
+MESSAGE ID: 2c677ac2-0588-4d02-8149-fabfe690afd8
+BEGIN ORIGINAL MESSAGE
+========================================================================
+
+أنجزنا الآن فحص العقود الثمانية التي أُضيفت في C02. النتيجة الأساسية: لم أجد تعارضًا معماريًا جديدًا يلزمنا بإعادة تصميم أحد الأنظمة أو إضافة سلطة جديدة، لكن يجب أن يكون معنى هذا الحكم دقيقًا: إنه حكم على اتساق العقود في المراجعة النظرية، وليس إثباتًا بأن برنامجًا منفذًا قد اجتاز الاختبارات.
+
+سأثبت قرار المراجعة أدناه، وأفصل ما يمكن تجميده الآن عمّا يجب إثباته في المراجعة التكاملية الشاملة.
+
+RDMS-10 — Focused Final Adversarial Freeze Review 03
+RDMS-10 — Focused Final Adversarial Freeze Review 03
+Cross-Boundary Integration, Durable Continuity & Final Specification Decision
+
+Project: AI Coding Agent
+Architecture: FCA v1.0.1 — FROZEN
+
+Target: RDMS-10 Draft v1.0 + C01 + C02
+Dependencies: RDMS-01…09 — FROZEN at specification level
+
+Review type: Focused Final Architectural Review
+Status: REVIEW COMPLETE
+Implementation: NOT AUTHORIZED
+
+PART I — REVIEW AUTHORITY AND SCOPE
+1. Objective
+
+تحدد هذه المراجعة ما إذا كانت RDMS-10 جاهزة للتجميد المعماري، بعد معالجة:
+
+22 نتيجة مانعة من Freeze Review 01.
+
+8 نتائج مانعة من Freeze Review 02.
+
+لا نطلب من هذه المراجعة إثبات أن التطبيق النهائي خالٍ من الأخطاء.
+
+بل نطلب إثبات اتساق القواعد التي يجب أن يحققها التطبيق.
+
+2. Acceptance Standard
+
+يعتبر العقد مقبولًا إذا كان يحدد بوضوح:
+
+المكون المسؤول عن العملية.
+
+مصدر السلطة القانونية.
+
+الهوية التي يجب أن تبقى ثابتة.
+
+النسخ والاعتماديات المؤثرة.
+
+حدود تنفيذ الأثر.
+
+نقاط الانقطاع والتزامن.
+
+سلوك الاستعادة.
+
+التصرف عند نقص الأدلة.
+
+ولا يجوز اعتبار مجرد وجود حقل في Schema ضمانًا للسلامة، ما لم يحدد العقد كيفية فرضه.
+
+3. Conservation Requirements
+
+تبقى القواعد التالية غير قابلة للتجاوز:
+
+One Cognitive Executive authority
+
+One canonical control authority
+
+CommitGate for legal cognitive mutation
+
+ActionGate for world mutation
+
+Durable Action lifecycle
+
+Independent Observation Ingress
+
+Canonical Dependency Evaluation
+
+Governed Specialist lifecycle
+
+Governed Memory promotion
+
+Durable Temporal Commitments
+
+Governed Recovery
+
+RDMS-10 مسؤولة عن ربطها، لا عن إعادة تعريفها.
+
+PART II — FINAL REVIEW OF EIGHT BLOCKERS
+FR10-R2-G01 — Recoverable Action Delivery
+
+Prior severity: CRITICAL
+
+Tested failure
+Action X
+    ↓
+AUTHORIZED
+    ↓
+DISPATCH_INTENT persisted
+    ↓
+Crash before known Queue delivery
+    ↓
+System restart
+C02 Contract
+
+RecoverableActionDeliveryObligation
+
+Review
+
+يحدد العقد الآن مصدر استعادة التزام المتابعة بشكل مستقل عن Queue.
+
+هذا يمنع اختفاء Action لمجرد فقدان رسالة النقل.
+
+لكنه لا يفترض أن استعادتها تعني السماح بإعادة تنفيذها.
+
+عند وجود DISPATCH_INTENT، يبقى احتمال حدوث الإرسال قائمًا، ويُستخدم RDMS-04 لتحديد الخطوة القانونية التالية.
+
+Enforcement
+
+Control Ledger يحفظ مراجع الاستمرارية القانونية.
+
+RDMS-04 تملك Action Lifecycle.
+
+Recovery تستخرج الالتزامات غير المحسومة.
+
+Execution Boundary لا ترسل عملية جديدة دون إثبات الأهلية.
+
+Decision
+
+PASS — SPECIFICATION LEVEL
+
+لا توجد حاجة إلى Queue جديدة أو ActionLifecycle ثانية.
+
+FR10-R2-G02 — Effective Execution Binding
+
+Prior severity: CRITICAL
+
+Tested failure
+Authorized command
+    ↓
+Tool adapter transformation
+    ↓
+Changed target or execution context
+    ↓
+Actual command
+C02 Contract
+
+EffectiveExecutionBinding
+
+Review
+
+يحدد العقد ضرورة ارتباط التفويض بالعملية الفعلية، وليس بالنص الأصلي فقط.
+
+ويشمل ذلك هوية الأداة، والوسائط المؤثرة، والمورد النهائي، وسياق التنفيذ، والصلاحيات الفعلية.
+
+Critical condition
+
+إذا تغيّر عنصر يستطيع تغيير أثر العملية بعد التفويض، يجب أن يخضع إلى تحقق مناسب عند آخر حد يمكنه منع التنفيذ.
+
+لا نلزم المعمارية بتقنية واحدة لمنع TOCTOU.
+
+لكننا لا نسمح باستخدام تفويض قديم عندما تتغير دلالة العملية بطريقة مؤثرة.
+
+Decision
+
+PASS — SPECIFICATION LEVEL
+
+تبقى كيفية تحقيق هذا الشرط في Filesystem أو Shell أو Remote API التزامًا على التنفيذ الفعلي.
+
+FR10-R2-G03 — Dispatch / Invalidation Race
+
+Prior severity: CRITICAL
+
+Tested failure
+T1: Action authorized
+
+T2: Preconditions checked
+
+T3: Dependency invalidated
+
+T4: Dispatch attempted
+C02 Contract
+
+DispatchAdmissionCutover
+
+Review
+
+أصبح هناك فصل واضح بين:
+
+Pre-dispatch eligibility
+
+صلاحية العملية قبل نقطة السماح القانونية.
+
+Potentially dispatched effect
+
+أثر ربما تجاوز نقطة الإرسال ولا يمكن إلغاؤه محليًا بصورة مضمونة.
+
+إذا أصبح شرط إلزامي غير مستوفى قبل القبول القانوني للإرسال، يجب رفض الإرسال.
+
+أما إذا كانت Action قد أُرسلت أو دخلت مرحلة يمكن أن يصل فيها أثرها إلى العالم الخارجي، فلا يجوز اعتبار الإبطال إلغاءً للأثر.
+
+Enforcement
+
+يجب أن يحقق التنفيذ ترتيبًا قانونيًا عند حد Dispatch الموثوق، مع فحص Epoch والسياسة والاعتماديات والعملية الفعلية.
+
+لا تدعي المواصفة وجود ذرية مع خدمة خارجية لا تتحكم بها.
+
+Decision
+
+PASS — SPECIFICATION LEVEL
+
+مع بقاء ضمانات Fencing وDispatch Cutover ضمن التزامات الاختبار الإلزامية.
+
+FR10-R2-G04 — Trigger-Derived Work Continuity
+
+Prior severity: CRITICAL
+
+Tested failure
+Trigger E observed
+    ↓
+Reaction R committed
+    ↓
+Crash
+    ↓
+Required follow-up never created
+C02 Contract
+
+TriggerDerivedWorkCommitment
+
+Review
+
+يعالج العقد الآن الفجوة بين اعتماد Reaction واستمرار العمل الضروري الناتج عنها.
+
+ويشترط أن تكون الاستمرارية المطلوبة قابلة للاستعادة، ضمن الحدود الذرية اللازمة في RDMS-01.
+
+لكن Reaction لا تمنح تفويضًا تلقائيًا لتنفيذ Action خارجية.
+
+Correct legal flow
+Trigger Reaction committed
+          ↓
+Durable continuation recognized
+          ↓
+Current Executive evaluates work
+          ↓
+ActionProposal, if needed
+          ↓
+ActionGate
+          ↓
+Legal Action lifecycle
+Decision
+
+PASS — SPECIFICATION LEVEL
+
+تم الحفاظ على ملكية RDMS-05 وRDMS-04 دون إنشاء محرك متابعة منافس.
+
+FR10-R2-G05 — Raw Observation and Causal Attachment
+
+Prior severity: HIGH
+
+Tested failure
+
+تصل Observation قبل استعادة ActionRecord المرتبطة بها.
+
+C02 Contract
+
+ObservationCausalAttachmentContract
+
+Review
+
+أصبح هناك فصل معياري بين:
+
+Raw observation admitted
+
+Causal relationship established
+
+World effect verified
+
+يمكن تسجيل Observation خام عندما تجتاز شروط RDMS-03، حتى إن كانت علاقتها السببية غير محسومة.
+
+لكن لا يجوز استخدامها لإثبات أثر Action محددة دون أدلة مناسبة.
+
+Example
+
+قد تسجل المنظومة أن Deployment Service أبلغت عن وجود Release معينة.
+
+لكنها لا تستطيع الجزم بأن Action محددة هي التي سببت ذلك الإصدار إذا لم تثبت العلاقة.
+
+Decision
+
+PASS — SPECIFICATION LEVEL
+
+لا توجد حاجة لتغيير Observation Lifecycle أو إعادة كتابة التاريخ الخام.
+
+FR10-R2-G06 — Final Outbound Context Integrity
+
+Prior severity: CRITICAL
+
+Tested failure
+
+توافق Data Policy على Context معينة، ثم يضاف إليها محتوى حساس قبل إرسالها إلى Provider.
+
+C02 Contract
+
+SealedOutboundContext
+
+Review
+
+أصبح فحص الإفصاح مرتبطًا بـ:
+
+المحتوى النهائي المرسل.
+
+Provider المستقبلة.
+
+الغرض من المعالجة.
+
+سياسة البيانات النافذة.
+
+مراجع سلامة المحتوى.
+
+إذا تغيرت الوجهة أو المحتويات بصورة مؤثرة، فلا يجوز استخدام موافقة قديمة دون إعادة تقييم.
+
+Enforcement
+
+يجب تطبيق الفحص عند Trusted Egress Boundary القادرة على منع الإرسال.
+
+إذا كانت Middleware تستطيع تعديل المحتوى خارج نطاق التحقق، فلا يجوز إعلان سلامة الإفصاح.
+
+Decision
+
+PASS — SPECIFICATION LEVEL
+
+لم تنشأ سلطة بيانات جديدة. تبقى السياسات الأساسية في الأنظمة المالكة لها.
+
+FR10-R2-G07 — Shared Worker Authority Confusion
+
+Prior severity: HIGH
+
+Tested failure
+
+Project A تستعمل Worker مشتركة لديها وصول تقني إلى موارد Project B.
+
+C02 Contract
+
+EffectiveExecutionAuthorityScope
+
+Review
+
+يحدد العقد أن صلاحيات Worker التقنية لا تتحول تلقائيًا إلى صلاحيات الطلب.
+
+يجب أن يكون التنفيذ المصرح ضمن تقاطع:
+
+Project authority
+      ∩
+Executive authorization
+      ∩
+ActionGate restrictions
+      ∩
+Resource policy
+      ∩
+Credential scope
+      ∩
+Execution boundary
+
+ولا يكفي وجود project_id داخل Payload.
+
+Decision
+
+PASS — SPECIFICATION LEVEL
+
+لكن اختبار العزل الفعلي باستخدام Credentials وWorkers مشتركة يبقى إلزاميًا في Conformance Suite.
+
+FR10-R2-G08 — Completion State Binding
+
+Prior severity: HIGH
+
+Tested failure
+Tests pass on Revision R10
+          ↓
+Repository changes to R11
+          ↓
+Goal finalized using R10 evidence
+C02 Contract
+
+CompletionStateBinding
+
+Review
+
+أصبح قرار الإنجاز مرتبطًا بالنسخة والحالة والاعتماديات التي تغطيها أدلة التحقق.
+
+إذا تغير مورد مؤثر، يلزم إعادة تقييم صلاحية الأدلة.
+
+لكن لا يلزم إعادة اختبارات مستقلة عن التغيير عندما يثبت RDMS-06 استمرار صلاحيتها.
+
+Decision
+
+PASS — SPECIFICATION LEVEL
+
+لا تدعي Finalization أن Repository الخارجية لن تتغير بعد اعتماد الإنجاز.
+
+بل تحدد نطاق الحالة التي ثبت الإنجاز بالنسبة إليها.
+
+PART III — FINAL CROSS-CONTRACT ATTACKS
+4. Combined Failure Scenarios
+ID	Compound attack	Required safe disposition	Review
+AC10-F01	Crash after dispatch intent, queue lost	Recover obligation; reconcile before retry	PASS
+AC10-F02	Adapter changes resolved target	Reject nonconforming operation	PASS
+AC10-F03	Dependency invalidation races with dispatch	Enforce cutover; reconcile possible effects	PASS
+AC10-F04	Trigger Reaction committed, follow-up lost	Recover continuation without duplicate Reaction	PASS
+AC10-F05	Observation arrives before ActionRecord	Admit raw observation, defer causal claim	PASS
+AC10-F06	Provider switch after disclosure approval	Revalidate actual outbound data and destination	PASS
+AC10-F07	Shared Worker uses another project's credential	Reject unauthorized effective scope	PASS
+AC10-F08	Revision changes before finalization	Reevaluate affected completion evidence	PASS
+AC10-F09	Duplicate delivery after external effect	No blind repeat; RDMS-04 reconciliation	PASS
+AC10-F10	Old Executive attempts renewed authorization	Epoch fencing and required adoption	PASS
+AC10-F11	Specialist results overlap after repository update	Freshness/conflict/integration checks	PASS
+AC10-F12	Restart enables workers before action reconciliation	Scoped Recovery Admission required	PASS
+AC10-F13	Tool reports false success	Evidence cannot exceed source scope	PASS
+AC10-F14	Restored sensitive data enters context	Current suppression and egress checks	PASS
+AC10-F15	Incompatible schema writer remains active	Version/fencing enforcement	PASS
+AC10-F16	Control Ledger unavailable during recovery	Governed bootstrap, no shadow Executive	PASS
+
+Interpretation: جميع النتائج أعلاه هي أحكام توافق نظري للعقود مع سلوك السلامة المتوقع، وليست نتائج تشغيل اختبارات فعلية.
+
+PART IV — AUTHORITY NON-REGRESSION
+5. Canonical Authority
+
+لم يظهر ضمن النطاق المفحوص مسار جديد يسمح بتعديل Canonical Workspace دون CommitGate.
+
+Result: CONSERVED
+
+6. World Mutation Authority
+
+لا يمنح أي عقد تكامل سلطة تنفيذ خارجية تتجاوز ActionGate.
+
+SealedExecutionIntent وEffectiveExecutionBinding هما ضمانان لالتزام التنفيذ بالتفويض، لا مصدران جديدان للتفويض.
+
+Result: CONSERVED
+
+7. Action Lifecycle
+
+تحافظ العقود على التمييز بين:
+
+AUTHORIZED
+
+DISPATCH_INTENT
+
+RESULT_REPORTED
+
+EFFECT_VERIFIED
+
+PARTIAL
+
+FAILED
+
+IN_DOUBT
+
+RECONCILING
+
+RECONCILED
+
+ولا تنشئ حالات منافسة لها.
+
+Result: CONSERVED
+
+8. Observation Authority
+
+يبقى تسجيل الملاحظة الخام منفصلًا عن التفسير المعرفي وإثبات العلاقات السببية.
+
+Result: CONSERVED
+
+9. Temporal Authority
+
+TriggerDerivedWorkCommitment لا تتحول إلى Scheduler ثانية أو مصدر تنفيذ خارجي.
+
+Result: CONSERVED
+
+10. Dependency Authority
+
+تستخدم RDMS-10 محرك RDMS-06 لتحديد صلاحية النتائج.
+
+ولا تحول Runtime طبقة التكامل إلى Dependency Engine موازية.
+
+Result: CONSERVED
+
+11. Recovery Authority
+
+تنسق RDMS-09 الاستعادة، بينما تبقى السلطة المعرفية الحالية لدى Executive.
+
+Result: CONSERVED
+
+PART V — NORMATIVE FREEZE INTERPRETATIONS
+
+لتجنب اختلاف التنفيذات في تفسير العقود، تعتمد المراجعة التوضيحات التالية ضمن خط الأساس المقترح لـRDMS-10.
+
+FC10-03-01 — Recoverable Does Not Mean Repeatable
+
+وجود التزام قابل للاستعادة لا يعني أن أثره الخارجي قابل لإعادة التنفيذ.
+
+يجب استخدام RDMS-04 لتحديد أهلية إعادة المحاولة.
+
+FC10-03-02 — Dispatch Admission Is Not External Completion
+
+قبول dispatch قانونيًا لا يثبت وصول الأمر إلى العالم الخارجي أو حدوث أثره.
+
+ولا يمكن إلغاء آثار محتملة عبر إبطال التفويض محليًا بعد إمكانية إرسالها.
+
+FC10-03-03 — The Effective Operation Is the Authorized Operation
+
+لا يجوز أن يغير Tool Adapter معنى العملية أو نطاق مواردها بعد التفويض دون تحقق قانوني ملائم.
+
+إذا تعذر التحقق من المطابقة، يجب منع إرسال العملية الجديدة.
+
+FC10-03-04 — Trigger Continuation Is Not Action Authorization
+
+يمكن اعتماد التزام لاستمرار العمل دون أن يعني ذلك اعتماد ActionProposal أو السماح بإرسال أثر خارجي.
+
+FC10-03-05 — Raw Observation Is Not Verified Causality
+
+وجود Observation صحيحة لا يثبت تلقائيًا أنها نتيجة Action معينة.
+
+يجب إثبات العلاقة وفق RDMS-03 وRDMS-04.
+
+FC10-03-06 — Disclosure Applies to Actual Egress
+
+إذن الإفصاح يتعلق بالبيانات الفعلية التي تغادر الحدود الموثوقة، وبالوجهة والغرض المعتمدين.
+
+FC10-03-07 — Completion Is State-Scoped
+
+يجب أن تعكس نتيجة Finalization الحالة التي تغطيها الأدلة، لا حالة مستقبلية مجهولة.
+
+FC10-03-08 — Contract Projections Cannot Redefine Their Owners
+
+تظل المواصفة المالكة لكل نوع قانوني المصدر النهائي لمعناه.
+
+أي اختلاف في تسمية أو تمثيل حقل لا يجوز أن يغير سلطته أو معناه.
+
+PART VI — SPECIFICATION VS IMPLEMENTATION
+12. What This Review Accepts
+
+تقبل هذه المراجعة، ضمن نطاقها:
+
+منطق الملكية القانونية للمكونات.
+
+حدود التفويض.
+
+الفصل بين العمل القانوني والنقل التنفيذي.
+
+شروط استمرارية الالتزامات.
+
+الحفاظ على السببية.
+
+قواعد منع التكرار غير القانوني.
+
+شروط فحص الإفصاح.
+
+صلاحية الأدلة عند Finalization.
+
+13. What This Review Does Not Prove
+
+لا تثبت هذه المراجعة:
+
+أن Queue حقيقية تحتفظ بالرسائل أو تعيدها بصورة صحيحة.
+
+أن SQLite أو PostgreSQL أو أي محرك آخر يحقق ضمانات المتانة المطلوبة في الإعداد المختار.
+
+أن Tool Adapter تستطيع منع جميع حالات TOCTOU.
+
+أن النظام الخارجي يضمن Exactly-Once.
+
+أن Sandbox معينة معزولة فعليًا.
+
+أن جميع ملفات Repository أو Providers غير موثوقة ستكون آمنة.
+
+أن التطبيق النهائي لن يحتوي Race Conditions.
+
+أن الوكيل سيحقق مستوى المبرمج البشري المحترف في جودة العمل.
+
+هذه مسائل تتطلب اختبارات وتنفيذًا وأدلة تشغيلية.
+
+PART VII — REMAINING CONFORMANCE OBLIGATIONS
+
+هناك التزامات أساسية يجب ألا تختفي بعد تجميد RDMS-10.
+
+ID	Obligation	Required phase
+EO10-01	مطابقة حقول واجهات التكامل للتعريفات النهائية في RDMS-01…09	Global Contract Audit
+EO10-02	إثبات ذرية وRecoverability لالتزامات Action وTrigger	Implementation Conformance
+EO10-03	Crash testing للتسليم والتعافي وإعادة المحاولة	Failure Injection
+EO10-04	اختبار الفاصل بين إبطال الاعتماديات وDispatch	Concurrency Testing
+EO10-05	اختبار سلامة EffectiveExecutionBinding في أدوات حقيقية	Adapter Conformance
+EO10-06	اختبار صلاحيات Workers المشتركة بين المشاريع	Security Testing
+EO10-07	اختبار محتوى Provider النهائي وحدود الإفصاح	Data Egress Testing
+EO10-08	اختبار ربط Finalization بالنسخة المتحقق منها	End-to-End Testing
+14. Contract Registry Limitation
+
+يجب تسجيل نقطة مهمة:
+
+هذه المراجعة تؤكد اتساق المبادئ والعقود الموصوفة، لكنها لا تحل محل مطابقة حقل بحقل مع النسخ النهائية الكاملة لجميع وثائق RDMS-01…09.
+
+لذلك يجب أن تتضمن المراجعة التكاملية الشاملة فحصًا موثقًا لـ:
+
+Canonical type ownership
+
+Exact field semantics
+
+Schema versions
+
+Legal state values
+
+Commit boundaries
+
+Idempotency identities
+
+Reference integrity
+
+Recovery requirements
+
+إذا كشف هذا الفحص تعارضًا قانونيًا حقيقيًا، فلا يجوز تجاهله بسبب نتيجة PASS الحالية.
+
+15. No New Runtime Authorities
+
+أي تنفيذ لـRDMS-10 يجب أن يثبت أنه لم ينشئ:
+
+Second Executive
+
+Second CommitGate
+
+Second ActionGate
+
+Second Dependency Engine
+
+Second Temporal Scheduler
+
+Independent recovery authority
+
+هذا الشرط ليس تحسينًا اختياريًا.
+
+PART VIII — FINAL FINDINGS MATRIX
+Finding	Result
+R2-G01 — Recoverable Action Delivery	CLOSED AT SPECIFICATION LEVEL
+R2-G02 — Effective Execution Binding	CLOSED AT SPECIFICATION LEVEL
+R2-G03 — Dispatch / Invalidation Race	CLOSED AT SPECIFICATION LEVEL
+R2-G04 — Trigger-Derived Work Continuity	CLOSED AT SPECIFICATION LEVEL
+R2-G05 — Observation Causal Attachment	CLOSED AT SPECIFICATION LEVEL
+R2-G06 — Sealed Outbound Context	CLOSED AT SPECIFICATION LEVEL
+R2-G07 — Shared Worker Authority	CLOSED AT SPECIFICATION LEVEL
+R2-G08 — Completion State Binding	CLOSED AT SPECIFICATION LEVEL
+New findings
+
+New conceptual authority blockers identified in this focused review: 0.
+
+Implementation-dependent proof obligations identified: 8.
+
+Full field-level compatibility audit: still required.
+
+PART IX — FINAL FREEZE DECISION
+16. Review Summary
+RDMS-10
+FOCUSED FINAL ADVERSARIAL FREEZE REVIEW 03
+
+Target:
+    Draft v1.0 + C01 + C02
+
+Prior Round-1 blockers:
+    22
+
+Prior Round-2 blockers:
+    8
+
+Focused Round-3 blocker findings:
+    0
+
+Round-2 findings closed at specification level:
+    8 / 8
+
+Combined scenarios assessed:
+    16
+
+New normative interpretations:
+    FC10-03-01 ... FC10-03-08
+
+Executable tests:
+    0
+
+Code implementation:
+    NOT AUTHORIZED
+17. Freeze Verdict
+RDMS-10 — PASS
+
+ADVERSARIAL FREEZE REVIEW 03: PASS AT THE ARCHITECTURAL CONTRACT LEVEL.
+
+RDMS-10: FROZEN — ARCHITECTURAL SPECIFICATION LEVEL.
+
+يشمل خط الأساس المعماري:
+
+RDMS-10 Draft v1.0
+
+RDMS-10 C01
+
+RDMS-10 C02
+
+FC10-03-01 ... FC10-03-08
+
+هذا القرار لا يعني تجميد تفاصيل التنفيذ أو المصادقة على جميع إسقاطات الحقول قبل تدقيقها.
+
+بل يعني أن نموذج التكامل وحدود السلطات والآثار والاستمرارية أصبح متماسكًا بما يكفي لاعتماده مرجعًا معماريًا للمراجعة الشاملة.
+
+18. Frozen Architectural Identity
+
+RDMS-10 defines the provider-neutral, modular integration runtime for one canonical cognitive authority, with governed control commits, durable external-action semantics, scoped specialist execution, source-grounded observations, guarded data transfer, dependency-aware continuation and recoverable cross-component operations.
+
+19. Next Authorized Step
+
+Global Architecture Integration Audit — FCA v1.0.1 + RDMS-01…10.
+
+لا ننتقل مباشرة إلى البرمجة.
+
+يجب أولًا تدقيق التكامل الشامل، وبخاصة مطابقة العقود، وتوزيع السلطة، وحدود الذرية، والتعافي، والتبعيات بين المكونات.
+
+بعد اجتياز التدقيق:
+
+Global Architecture Integration Audit
+           ↓
+Implementation Boundary Design
+           ↓
+Dependency-Ordered Implementation Plan
+           ↓
+Conformance Test Design
+           ↓
+Explicit Implementation Authorization
+           ↓
+Coding
+FINAL STATUS
+Specification	Status
+FCA v1.0.1	FROZEN
+RDMS-01…09	FROZEN
+RDMS-10 Draft	COMPLETE
+RDMS-10 C01	COMPLETE
+RDMS-10 C02	COMPLETE
+RDMS-10 Final Review 03	PASS
+RDMS-10 Architectural Specification	FROZEN
+Global Architecture Integration Audit	NEXT
+Implementation Boundary Design	PENDING
+Coding	NOT AUTHORIZED
+
+END — RDMS-10 FINAL ARCHITECTURAL FREEZE REVIEW 03
+
+أين وصلنا الآن؟
+
+حالة المعمارية
+
+Specification freeze
+
+FCA v1.0.1
+
+RDMS-01 إلى RDMS-09
+
+RDMS-10
+
+التجميد هنا معماري وعلى مستوى المواصفات؛ لا يعني أن المكونات قد نُفذت أو اختُبرت برمجيًا.
+
+لقد انتهينا من تصميم المواصفات العشر وأغلقنا مراجعة RDMS-10 المركزة. وبذلك أصبح لدينا تصور متكامل عن العقل التنفيذي، والذاكرة، والأدلة، والمتخصصين، والأفعال الخارجية، والوقت، والتعافي، وحدود التفاعل بين جميع هذه الأنظمة.
+
+القرار المهم الآن هو ألا نبدأ كتابة الكود اعتمادًا على نجاح المراجعات المنفصلة وحدها.
+
+الخطوة التالية: Global Architecture Integration Audit. سنضع جميع المواصفات على طاولة واحدة ونبحث عن أي تعارض بين أنواع البيانات وسلطات الكتابة وتسلسل المعاملات، ثم نتحقق من أن المعمارية قابلة للتحويل إلى برنامج منظم وقابل للاختبار والصيانة، دون الحاجة إلى إعادة تصميمها أثناء التنفيذ.
+
+END ORIGINAL MESSAGE
+````
+
+
+## GAIA-C01 Phase 7 — Transport Consumer Guard (non-normative)
+
+All transport projections of the 22 reviewed domain types must resolve their legal owners, integrity/version scopes, and complete required information. `../reviews/GAIA_C01_PHASE7_REMAINING_CONTRACT_RECONCILIATION.md` is the detailed review index. A shortened envelope or reference does not supersede an original canonical definition. Phase-6 `CapabilityResult` and `MemoryRetrievalResult` alias corrections are still proposed, not adopted.
+
+## GAIA-C01 Phase 8 — Non-normative semantic resolution index
+
+> Migration-review notes only. The original source annexes above remain authoritative. No new canonical definition is frozen by this index.
+
+- `CapabilityResult`: see `../reviews/GAIA_C01_PHASE8_SEMANTIC_RESOLUTIONS.md` or Phase-6 priority section.
+- `MemoryRetrievalResult`: see `../reviews/GAIA_C01_PHASE8_SEMANTIC_RESOLUTIONS.md` or Phase-6 priority section.
+- `ActionProposal`: see `../reviews/GAIA_C01_PHASE8_SEMANTIC_RESOLUTIONS.md` or Phase-6 priority section.
+- `Observation`: see `../reviews/GAIA_C01_PHASE8_SEMANTIC_RESOLUTIONS.md` or Phase-6 priority section.
+
+
+## GAIA-C01 Phase 11 — Verification boundary
+
+Neither `CapabilityTransportResult` nor `MemoryRetrievalTransportResult` is a new canonical entity. Reference demonstrations do not approve runtime equivalence, network security or atomic effects.
+
+See `../reviews/GAIA_C01_PHASE11_LOSSLESS_PROOF_REPORT.md` and `../reviews/verification/gaia_phase11_reference_tests.py`. **NOT FROZEN.**

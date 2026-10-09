@@ -1,0 +1,17 @@
+{
+  "phase": "GAIA-C01 Phase 10",
+  "source_archived_files_identical": 18,
+  "source_contract_blocks_checked": 27,
+  "all_source_occurrences_checked": 61,
+  "high_priority_field_preservation_docs": 5,
+  "remaining_contract_proof_gates_documented": 22,
+  "acceptance_vectors_specified_not_run": 18,
+  "cross_interface_paths_specified_not_run": 12,
+  "frozen_source_unchanged": true,
+  "new_production_code_files": 0,
+  "static_source_publication_checks": "PASS",
+  "effective_adapter_roundtrip_tests": "NOT_EXECUTED",
+  "atomic_crash_tests": "NOT_EXECUTED",
+  "effective_contract_freeze": false,
+  "coding_authorized": false
+}

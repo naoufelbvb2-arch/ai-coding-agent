@@ -1,0 +1,3525 @@
+RDMS-02 — ORIGINAL APPROVED SOURCE SET
+Source: https://chatgpt.com/share/6ac82d7b-ba7c-83ea-a3a9-b41734948bb2
+
+ملاحظة تحريرية: هذا الملف تجميع للنصوص الأصلية المسترجعة من المحادثة، لا إعادة صياغة ولا مواصفة موحدة جديدة. حالة التجميد مثبتة في قرار المراجعة النهائي المرفق؛ عبارة DRAFT داخل النص الأساسي تصف مرحلته التاريخية قبل التصحيحات. تُقرأ المسودة مع التصحيحات وقرار الاعتماد، ولا يجوز استعمال نص سابق يخالف تصحيحًا معتمدًا لاحقًا. لم نغير نصوص القوانين ولم نضف FCA.
+
+
+========================================================================
+SOURCE PART: Original draft
+MESSAGE ID: a62cc59d-b288-4be8-97c4-ac84d835a933
+BEGIN ORIGINAL MESSAGE
+========================================================================
+
+نبدأ إذن RDMS-02 — Canonical Entity Schemas. هذه النسخة ستحدد المعنى الدقيق للكيانات التي سيقرأها ويكتبها الـruntime، لكن لن نحولها بعد إلى SQL tables أو Python classes.
+
+Runtime & Data Model Specification v1.0 — RDMS-02 Canonical Entity Schemas
+Runtime & Data Model Specification v1.0
+RDMS-02 — Canonical Entity Schemas
+
+Parent: FCA v1.0.1 — FROZEN
+Depends on: RDMS-01 — Runtime Foundations — FROZEN
+Status: DRAFT / NOT FROZEN
+
+1. Purpose
+
+RDMS-02 يحول الـCanonical Cognitive State من تعريف معماري إلى كيانات runtime دقيقة.
+
+لكل entity نحدد:
+
+identity
+ownership
+mutability
+versioning
+required fields
+references
+lifecycle
+legal creator
+legal updater
+terminal states
+supersession semantics
+staleness semantics
+
+ولا نحدد بعد:
+
+SQL table names
+ORM
+Python classes
+database engine
+physical indexes
+2. Common Canonical Entity Envelope
+
+كل entity canonical mutable تستخدم envelope مشتركة:
+
+CanonicalEntity {
+    entity_id
+    project_id
+
+    entity_version
+
+    created_commit_seq
+    updated_commit_seq
+
+    payload_schema_version
+
+    lifecycle_status
+
+    created_from?
+}
+
+created_from هي typed provenance reference وليست free-form string.
+
+مثال:
+
+USER_REQUEST
+CAPABILITY_RESULT
+OBSERVATION
+EXPERIMENT
+DECISION
+SPECIALIST_RESULT
+RECOVERY
+Rule
+
+created_from لا تمنح authority.
+
+هي provenance فقط.
+
+3. Reference Model
+
+أي مرجع إلى entity أخرى يستخدم:
+
+EntityRef {
+    entity_kind
+    entity_id
+}
+
+وعندما نحتاج تثبيت نسخة معينة:
+
+VersionedEntityRef {
+    entity_kind
+    entity_id
+    entity_version
+}
+
+ولا نستخدم IDs عارية في العلاقات المهمة عندما قد يختلط نوعها.
+
+4. Scope Model
+
+كثير من المعرفة ليست صحيحة عالميًا.
+
+نستخدم:
+
+ScopeSpec {
+    project_id
+
+    goal_ids[]?
+    repo_ref?
+    environment_ref?
+
+    subsystem_refs[]?
+    file_refs[]?
+    symbol_refs[]?
+
+    validity_conditions[]?
+}
+
+لا يجب ملء كل field.
+
+المبدأ:
+
+Store the narrowest scope that makes the statement honest.
+
+5. Claim
+Claim {
+    claim_id
+
+    kind:
+        FACT
+        BELIEF
+        ASSUMPTION
+
+    statement
+
+    scope: ScopeSpec
+
+    support:
+        UNASSESSED
+        WEAK
+        MODERATE
+        STRONG
+        VERIFIED
+
+    support_assessed_at_commit?
+
+    grounding?
+    dependency_set_ref?
+
+    temporal_validity?
+
+    status:
+        ACTIVE
+        REFUTED
+        SUPERSEDED
+
+    superseded_by?
+}
+6. Fact Grounding
+
+إذا:
+
+kind = FACT
+
+يجب وجود:
+
+FactGrounding {
+    kind:
+        OBSERVED
+        DETERMINISTIC
+        AUTHORITATIVE
+
+    source_refs[]
+
+    authority_domain?
+}
+OBSERVED
+
+يجب أن تشير إلى Observation أو Observations مناسبة.
+
+DETERMINISTIC
+
+يجب أن تشير إلى:
+
+accepted source facts / observations
++
+deterministic derivation identity
+AUTHORITATIVE
+
+يجب أن تحدد:
+
+source
+authority_domain
+
+مثال:
+
+User says:
+"Refunds use the original exchange rate."
+
+authority_domain = PRODUCT_REQUIREMENT
+7. Claim Rules
+
+غير قانوني:
+
+Claim {
+    kind = FACT
+    grounding = null
+}
+
+غير قانوني:
+
+semantic LLM conclusion
+→ FACT
+
+قانوني:
+
+semantic conclusion
+→ BELIEF
+
+أو:
+
+ASSUMPTION
+
+حسب المعنى.
+
+8. Claim Support ≠ Claim Status
+
+مثال:
+
+status = ACTIVE
+support = WEAK
+
+قانوني.
+
+وكذلك:
+
+status = ACTIVE
+support = VERIFIED
+
+أما:
+
+status = REFUTED
+support = VERIFIED
+
+فغير متماسك إلا إذا كان VERIFIED يشير إلى إثبات الرفض، ولذلك لا نسمح بهذا التفسير.
+
+عند refutation:
+
+status = REFUTED
+
+والـsupport السابق يبقى في history، بينما current representation يضبط:
+
+support != VERIFIED
+
+إذا كان claim نفسها هي التي رُفضت.
+
+9. Claim Supersession
+
+لا نحذف Claim قديمة عند تغير صياغة المعرفة.
+
+مثال:
+
+C17:
+"Checkout owns retry."
+
+↓ architecture changed
+
+C31:
+"Delivery subsystem owns retry."
+
+يمكن:
+
+C17.status = SUPERSEDED
+C17.superseded_by = C31
+
+ويظل التاريخ محفوظًا.
+
+10. InformationNeed
+InformationNeed {
+    information_need_id
+
+    question
+
+    scope: ScopeSpec
+
+    importance:
+        LOW
+        MEDIUM
+        HIGH
+        CRITICAL
+
+    blocks[]:
+        EntityRef
+
+    source_candidates[]
+
+    resolution_routes[]:
+        INTERNAL_REASONING
+        REALITY
+        HUMAN
+        EXTERNAL_DEPENDENCY
+
+    status:
+        OPEN
+        INVESTIGATING
+        RESOLVED
+        OBSOLETE
+
+    resolution_ref?
+
+    opened_from?
+}
+
+استخدمنا resolution_routes[] بدل قيمة واحدة لأن السؤال نفسه قد يمكن حله بأكثر من طريق.
+
+11. InformationNeed Lifecycle
+OPEN
+  ↓
+INVESTIGATING
+  ↓
+RESOLVED
+
+مسموح:
+
+OPEN → OBSOLETE
+INVESTIGATING → OBSOLETE
+
+مثال:
+
+"Which API does old subsystem call?"
+
+ثم يُحذف subsystem من الخطة قبل الإجابة.
+
+السؤال أصبح:
+
+OBSOLETE
+
+وليس:
+
+RESOLVED
+12. Resolution
+
+لا نخزن فقط:
+
+resolution = "yes"
+
+بل:
+
+ResolutionRef {
+    resolution_kind:
+        CLAIM
+        OBSERVATION
+        DECISION
+        HUMAN_INPUT
+        EXTERNAL_RESULT
+        OTHER
+
+    ref
+}
+
+وبالتالي يمكن تتبع لماذا اعتُبر المجهول مغلقًا.
+
+13. Human Escalation
+
+resolution_routes التي تحتوي HUMAN لا تعني أننا نسأل المستخدم فورًا.
+
+يجب أن يكون:
+
+human authority actually required
+or
+technical discovery exhausted / unjustified
+
+حسب Executive policy.
+
+14. Hypothesis
+Hypothesis {
+    hypothesis_id
+
+    explanation
+
+    scope: ScopeSpec
+
+    explains_refs[]
+
+    assumption_refs[]
+
+    prediction_refs[]
+
+    competing_hypothesis_ids[]
+
+    experiment_refs[]
+
+    support:
+        UNTESTED
+        PLAUSIBLE
+        SUPPORTED
+        STRONG
+        CAUSALLY_VERIFIED
+        REFUTED
+
+    status:
+        ACTIVE
+        REJECTED
+        CONFIRMED
+        SUPERSEDED
+
+    dependency_set_ref?
+
+    superseded_by?
+}
+
+Evidence نفسها لا تُكرر كـarrays هنا.
+
+العلاقة بين Evidence وHypothesis ستدار في RDMS-03 عبر EvidenceLink.
+
+15. Hypothesis Legal Combinations
+ACTIVE
+
+يسمح:
+
+UNTESTED
+PLAUSIBLE
+SUPPORTED
+STRONG
+CAUSALLY_VERIFIED
+REJECTED
+
+يجب:
+
+support = REFUTED
+CONFIRMED
+
+يجب على الأقل:
+
+support = STRONG
+or
+CAUSALLY_VERIFIED
+SUPERSEDED
+
+تعني أن explanation لم تعد هي formulation الحالية، وليس بالضرورة أنها proved false.
+
+16. Confirmed Hypothesis ≠ OVC
+
+ليس كل Hypothesis confirmed تصبح OperationalCausalClaim.
+
+مثلاً:
+
+"The request is routed through Gateway A."
+
+قد تكون hypothesis confirmed لكنها ليست claim سببية تستحق causal closure.
+
+OVC مخصصة للعلاقة السببية التشغيلية.
+
+17. OperationalCausalClaim
+OperationalCausalClaim {
+    causal_claim_id
+
+    source_hypothesis_id
+
+    cause
+    effect
+    mechanism
+
+    scope: CausalScope
+
+    verification_ref
+
+    dependency_set_ref
+
+    validity_conditions[]
+
+    contradictory_observation_refs[]
+
+    status:
+        OPERATIONALLY_VERIFIED
+        STALE
+        CONTRADICTED
+        SUPERSEDED
+
+    promoted_commit_seq
+
+    superseded_by?
+}
+18. CausalScope
+CausalScope {
+    project_id
+
+    repo_ref?
+    environment_ref?
+
+    input_conditions[]
+    runtime_conditions[]
+
+    subsystem_refs[]?
+}
+
+OVC لا تكون:
+
+universally true
+
+بل:
+
+true enough to use operationally
+inside this recorded scope
+19. Causal Verification Record
+
+بدل تخزين عشرات booleans داخل OVC نفسها:
+
+CausalVerificationRecord {
+    reproduced_failure_ref
+
+    pre_intervention_prediction_ref
+
+    intervention_experiment_ref
+
+    observed_effect_refs[]
+
+    regression_verification_ref?
+
+    alternatives_weakened[]
+
+    counterfactual_or_ablation_ref?
+}
+
+هذا يسمح للـOVC بالبقاء compact.
+
+20. OVC Promotion
+
+الترقية:
+
+Hypothesis
+support = CAUSALLY_VERIFIED
+        ↓
+Causal Closure Gate
+        ↓
+OperationalCausalClaim
+
+وفي نفس ControlCommit:
+
+OVC created
++
+source Hypothesis status = CONFIRMED
+
+لا نجعلها SUPERSEDED تلقائيًا.
+
+لأن Hypothesis تبقى السجل التاريخي الذي أنتج OVC.
+
+21. OVC Invalidation
+
+إذا dependency لم تعد صالحة:
+
+OPERATIONALLY_VERIFIED
+→ STALE
+
+إذا Observation تناقض causal claim داخل scope نفسها:
+
+→ CONTRADICTED
+
+إذا causal model جديد حل محلها:
+
+→ SUPERSEDED
+Important
+
+STALE لا تعني false.
+
+تعني:
+
+we may no longer rely on it without revalidation
+22. Goal
+Goal {
+    goal_id
+
+    parent_goal_id?
+
+    goal_kind:
+        MISSION
+        MILESTONE
+        TASK
+        SUBGOAL
+
+    intent
+
+    acceptance_criteria[]
+
+    priority:
+        LOW
+        NORMAL
+        HIGH
+        CRITICAL
+
+    status:
+        BACKLOG
+        READY
+        ACTIVE
+        SUSPENDED
+        BLOCKED
+        WAITING
+        DEFERRED
+        VERIFIED
+        CLOSED
+        OBSOLETE
+
+    created_from
+
+    blocker_refs[]?
+    waiting_on_refs[]?
+
+    terminal_reason?
+}
+23. AcceptanceCriterion
+
+داخل Goal:
+
+AcceptanceCriterion {
+    criterion_id
+
+    statement
+
+    verification_kind:
+        DETERMINISTIC
+        BEHAVIORAL
+        SEMANTIC
+        HUMAN_ACCEPTANCE
+        COMPOSITE
+
+    required:
+        true | false
+
+    status:
+        PENDING
+        SATISFIED
+        FAILED
+        WAIVED
+
+    verification_ref?
+}
+
+WAIVED لا يجوز بلا rationale/authority.
+
+24. Goal Hierarchy
+
+القوانين:
+
+MISSION
+→ parent = null
+
+MILESTONE
+→ parent must be MISSION
+
+TASK
+→ parent must be MILESTONE or MISSION
+
+SUBGOAL
+→ parent must be TASK or SUBGOAL
+
+نتجنب شجرة arbitrary يصعب تفسيرها.
+
+25. Goal Lifecycle
+
+المسار الشائع:
+
+BACKLOG
+→ READY
+→ ACTIVE
+→ VERIFIED
+→ CLOSED
+
+حالات مؤقتة:
+
+ACTIVE ↔ SUSPENDED
+ACTIVE ↔ BLOCKED
+ACTIVE ↔ WAITING
+READY/ACTIVE → DEFERRED
+DEFERRED → READY
+
+ويمكن:
+
+non-closed state → OBSOLETE
+26. VERIFIED vs CLOSED
+
+نفرق بينهما عمدًا.
+
+VERIFIED
+
+تعني:
+
+معايير القبول المطلوبة أصبحت مثبتة.
+
+أما:
+
+CLOSED
+
+تعني:
+
+العمل bookkeeping/reconciliation/learning/cleanup المطلوب لهذه Goal اكتمل أيضًا.
+
+هذا يمنع اعتبار النجاح الفني وحده نهاية كل lifecycle.
+
+27. Goal Constraints
+SUSPENDED
+
+يتطلب Resumption Capsule في RDMS-05.
+
+BLOCKED
+
+يتطلب:
+
+blocker_refs non-empty
+WAITING
+
+يتطلب dependency/event يمكن مراقبته.
+
+VERIFIED
+
+كل AcceptanceCriterion required يجب أن تكون:
+
+SATISFIED
+or legally WAIVED
+CLOSED
+
+يجب أن تمر من VERIFIED إلا إذا:
+
+OBSOLETE
+28. GoalStack
+
+GoalStack ليست شجرة الأهداف نفسها.
+
+هي pointer إلى سلسلة التركيز الحالية.
+
+GoalStack {
+    project_id
+
+    mission_goal_id?
+
+    milestone_goal_id?
+
+    task_goal_id?
+
+    subgoal_goal_id?
+
+    current_operation_ref?
+
+    entity_version
+}
+
+يوجد واحدة canonical لكل ProjectRuntime.
+
+29. GoalStack Invariants
+
+الـIDs يجب أن تشكل ancestry chain صحيحة.
+
+غير قانوني:
+
+mission = M1
+milestone = milestone under M2
+
+إذا GoalStack تشير إلى Goal terminal مثل:
+
+CLOSED
+OBSOLETE
+
+يجب تحديث stack.
+
+30. Current Operation
+
+current_operation_ref ليست Goal جديدة.
+
+قد تشير إلى:
+
+Capability invocation
+Experiment
+Slice
+Review
+Investigation
+Reconciliation
+
+وهذا يمنع تضخيم Goal tree بعمليات صغيرة جدًا.
+
+31. FocusState
+
+نقسم attention إلى مستويين:
+
+CanonicalFocusState
+EphemeralAttentionFrame
+
+فقط الأول durable.
+
+32. CanonicalFocusState
+CanonicalFocusState {
+    project_id
+
+    current_goal_id?
+    current_subgoal_id?
+
+    active_entity_refs[]
+    active_file_refs[]
+    active_symbol_refs[]
+    active_concept_refs[]
+
+    active_hypothesis_ids[]
+    information_need_ids[]
+
+    current_information_patch_ref?
+
+    ignored_context_refs[]
+
+    reason_for_focus
+
+    updated_at_checkpoint
+}
+
+واحدة فقط لكل مشروع.
+
+33. EphemeralAttentionFrame
+
+ليست canonical entity.
+
+تعيش داخل Capability invocation:
+
+EphemeralAttentionFrame {
+    temporary_context
+    intermediate_searches
+    short-lived candidates
+    transient ranking
+}
+
+لا نكتب كل انتقال انتباه إلى Control Ledger.
+
+34. Focus Persistence Rule
+
+CanonicalFocusState تحدث فقط عند:
+
+meaningful focus shift
+checkpoint
+suspend
+resume
+strategy change
+task/subgoal switch
+
+وليس عند كل:
+
+file read
+search result
+LLM token
+
+هذا يمنع write amplification.
+
+35. Decision
+Decision {
+    decision_id
+
+    question
+    context
+
+    scope: ScopeSpec
+
+    gravity:
+        LOW
+        MEDIUM
+        HIGH
+
+    quality_drivers[]
+    constraints[]
+
+    alternatives[]
+
+    chosen_option_id?
+
+    rejected_options[]
+
+    assumption_refs[]
+
+    accepted_tradeoffs[]
+
+    expected_consequences[]
+
+    risk_refs[]
+
+    revisit_trigger_ids[]
+
+    status:
+        PROPOSED
+        ACCEPTED
+        SUPERSEDED
+        INVALIDATED
+
+    superseded_by?
+}
+36. DecisionOption
+DecisionOption {
+    option_id
+    description
+
+    advantages[]
+    disadvantages[]
+
+    risks[]
+    reversibility
+
+    estimated_change_surface?
+}
+
+هذه value object داخل Decision، وليست canonical entity مستقلة في v1.
+
+37. Decision Rules
+PROPOSED
+
+قد لا تملك chosen_option_id.
+
+ACCEPTED
+
+يجب:
+
+chosen_option_id != null
+
+ويجب أن يشير إلى أحد alternatives.
+
+SUPERSEDED
+
+قرار جديد حل محل القديم.
+
+INVALIDATED
+
+الافتراضات/الظروف التي بني عليها القرار لم تعد صحيحة، ولا يوجد بالضرورة بديل بعد.
+
+38. Decision Revisit
+
+إذا Accepted Decision لها شرط مراجعة مستقبلي:
+
+revisit_trigger_ids[]
+
+يجب أن تشير إلى durable Triggers في RDMS-05.
+
+لا نخزن:
+
+"revisit later"
+
+كنص غير operational.
+
+39. Invariant
+Invariant {
+    invariant_id
+
+    statement
+
+    scope: ScopeSpec
+
+    kind:
+        STATE
+        ARCHITECTURAL
+        BEHAVIORAL
+        BUSINESS
+        SECURITY
+        SEMANTIC
+
+    severity:
+        HARD
+        CRITICAL
+        ADVISORY
+
+    enforcement_modes[]:
+        COMMIT_GATE
+        PRE_ACTION_GATE
+        POST_ACTION_VERIFY
+        RUNTIME_MONITOR
+        SEMANTIC_REVIEW
+
+    predicate_ref?
+    verification_spec_ref?
+
+    source_authority_ref
+
+    status:
+        ACTIVE
+        SUPERSEDED
+        RETIRED
+
+    superseded_by?
+}
+
+لاحظ أننا استخدمنا:
+
+enforcement_modes[]
+
+وليس قيمة واحدة.
+
+لأن Invariant واحدة قد تحتاج:
+
+PRE_ACTION_GATE
++
+POST_ACTION_VERIFY
+
+معًا.
+
+40. Invariant Enforcement Rule
+
+كل Invariant يجب أن تحتوي:
+
+enforcement_modes non-empty
+
+إذا كانت:
+
+severity = HARD
+
+فيجب أن يوجد على الأقل enforcement mode غير advisory قادر على منع أو إثبات الخرق.
+
+لا يجوز:
+
+HARD
++
+SEMANTIC_REVIEW only
+
+إلا إذا architecture تقر صراحة أن hard semantic constraint لا يمكن machine-enforceها وتحدد gate بشري/Executive مناسب.
+
+في v1 الافتراضي:
+
+machine-unenforceable semantic rules
+→ ADVISORY or CRITICAL
+
+وليس HARD.
+
+41. Hard Invariant Change
+
+لا نعدل نفس Invariant في مكانها من:
+
+"X is forbidden"
+
+إلى:
+
+"X is allowed"
+
+بصمت.
+
+المسار:
+
+old invariant
+→ SUPERSEDED
+
+new invariant
+→ ACTIVE
+
+مع Decision/authority المناسب.
+
+42. Contract
+
+العقد يصبح canonical entity مستقلة.
+
+Contract {
+    contract_id
+
+    name
+
+    scope: ScopeSpec
+
+    owner_ref
+
+    kinds[]:
+        DATA
+        BEHAVIOR
+        OWNERSHIP
+        STATE_TRANSITION
+        ERROR
+        COMPATIBILITY
+        EXTERNAL
+
+    clauses[]
+
+    compatibility_policy?
+
+    authority_ref?
+
+    status:
+        ACTIVE
+        SUPERSEDED
+        RETIRED
+
+    superseded_by?
+}
+43. ContractClause
+ContractClause {
+    clause_id
+
+    kind
+
+    statement
+
+    requirement:
+        MUST
+        MUST_NOT
+        SHOULD
+        MAY
+
+    verification_ref?
+
+    severity:
+        HARD
+        CRITICAL
+        ADVISORY
+}
+44. Contract Ownership
+
+owner_ref يعني:
+
+المكوّن/الحد الذي يملك حق تعريف العقد.
+
+لا يعني أن ذلك المكوّن يستطيع تعديله دون Executive authorization.
+
+Specialist يمكنها:
+
+propose contract change
+
+ولا يمكنها:
+
+silently commit contract change
+45. Contract Supersession
+
+تغيير semantic contract مهم ينتج:
+
+old Contract → SUPERSEDED
+new Contract → ACTIVE
+
+بدل إعادة كتابة التاريخ.
+
+أما التعديلات غير الدلالية الصغيرة في representation فيمكن أن تكون entity version جديدة لنفس Contract.
+
+الحد الفاصل:
+
+Does consumer meaning/obligation change?
+
+إذا نعم:
+
+new Contract identity
+46. Risk
+
+حتى لا تبقى risks[] مجرد نصوص مبعثرة:
+
+Risk {
+    risk_id
+
+    statement
+
+    scope: ScopeSpec
+
+    category:
+        CORRECTNESS
+        ARCHITECTURE
+        SECURITY
+        DATA
+        PERFORMANCE
+        OPERABILITY
+        COMPATIBILITY
+        DELIVERY
+        KNOWLEDGE
+        OTHER
+
+    likelihood:
+        UNKNOWN
+        LOW
+        MEDIUM
+        HIGH
+
+    impact:
+        LOW
+        MEDIUM
+        HIGH
+        CRITICAL
+
+    affected_refs[]
+
+    mitigation_refs[]
+
+    evidence_basis_refs[]
+
+    owner_ref?
+
+    status:
+        OPEN
+        MONITORING
+        MITIGATED
+        ACCEPTED
+        REALIZED
+        OBSOLETE
+
+    accepted_by_decision_id?
+}
+47. Risk Semantics
+
+لا نحسب:
+
+risk_score = 73.4
+
+بدون calibration.
+
+الـExecutive يمكن أن يستخدم likelihood/impact كإشارات ordinal.
+
+ACCEPTED
+
+يتطلب:
+
+accepted_by_decision_id
+
+لأن قبول المخاطرة قرار هندسي.
+
+REALIZED
+
+المخاطرة تحولت إلى حدث فعلي.
+
+لا تعني أنها لم تعد تحتاج معالجة.
+
+48. Slice
+Slice {
+    slice_id
+
+    goal_id
+    parent_slice_id?
+
+    intent
+
+    dependency_refs[]
+
+    allowed_scope[]
+    forbidden_scope[]
+
+    preconditions[]
+
+    invariant_refs[]
+    contract_refs[]
+
+    expected_effects[]
+
+    expected_change_surface
+
+    risk_refs[]
+
+    proof_obligations[]
+
+    verification_specs[]
+
+    rollback_spec?
+
+    base_state_version
+    base_repo_ref
+
+    status:
+        PLANNED
+        READY
+        EXECUTING
+        IMPLEMENTED
+        VERIFYING
+        VERIFIED
+        INTEGRATED
+        CLOSED
+        BLOCKED
+        SUSPENDED
+        FAILED
+        CANCELLED
+        OBSOLETE
+
+    actual_effects[]
+    actual_change_surface?
+}
+49. ExpectedChangeSurface
+ExpectedChangeSurface {
+    module_refs[]
+    file_refs[]?
+    contract_refs[]
+    state_owner_refs[]
+    public_api_refs[]
+    persistent_data_refs[]
+}
+
+المقارنة لاحقًا مع actual surface تغذي BlastRadiusDetector.
+
+50. ProofObligation
+ProofObligation {
+    proof_id
+
+    statement
+
+    verification_kind:
+        DETERMINISTIC
+        TEST
+        RUNTIME_OBSERVATION
+        ARCHITECTURAL
+        SEMANTIC_REVIEW
+        HUMAN
+
+    required:
+        true | false
+
+    status:
+        PENDING
+        SATISFIED
+        FAILED
+        WAIVED
+
+    verification_ref?
+}
+51. Slice Lifecycle
+
+المسار الطبيعي:
+
+PLANNED
+→ READY
+→ EXECUTING
+→ IMPLEMENTED
+→ VERIFYING
+→ VERIFIED
+→ INTEGRATED
+→ CLOSED
+
+لكن ليس كل Slice تكتب كودًا.
+
+لذلك:
+
+IMPLEMENTED
+
+تعني:
+
+intended local change/action result exists.
+
+وقد يكون:
+
+code
+configuration
+design artifact
+experiment preparation
+52. Slice READY Gate
+
+Slice لا تصبح READY إلا إذا:
+
+parent Goal valid
+required preconditions satisfied
+required dependencies usable
+forbidden scope known
+required invariants/contracts resolved
+base references known
+53. Slice VERIFIED Gate
+
+لا تصبح VERIFIED إلا إذا:
+
+all required proof obligations satisfied or legally waived
+AND
+no unresolved hard invariant violation
+AND
+required verification completed
+
+Passing tests وحده لا يكفي.
+
+54. Slice INTEGRATED
+
+INTEGRATED تعني أن أثر Slice أصبح جزءًا من الـshared/canonical project world المطلوب.
+
+بالنسبة لـsandbox-only investigation:
+
+قد لا تحتاج INTEGRATED كـcode merge، لكن نتائجها المعرفية canonical تصبح integrated.
+
+55. Slice Failure
+
+FAILED لا تعني دائمًا rollback.
+
+قد تنتج:
+
+Observation
+Hypothesis update
+Plan revision
+
+أي أن التنفيذ فشل، لكن cognition تقدمت.
+
+56. Commitment
+
+نحول مفهوم الالتزام المؤقت إلى entity صريحة:
+
+Commitment {
+    commitment_id
+
+    statement
+
+    why_temporary
+
+    scope: ScopeSpec
+
+    owner_ref?
+
+    linked_entity_refs[]
+
+    created_at
+
+    due_at?
+
+    removal_trigger_id?
+    revisit_trigger_id?
+
+    status:
+        ACTIVE
+        DUE
+        SATISFIED
+        CANCELLED
+        SUPERSEDED
+
+    resolution_ref?
+}
+57. Commitment Validity Rule
+
+لا يجوز إنشاء Commitment بلا أحد:
+
+due_at
+removal_trigger_id
+revisit_trigger_id
+
+وقد تحتوي أكثر من واحد.
+
+هذا يطبق مباشرة:
+
+future commitment without reactivation mechanism is invalid.
+
+58. DUE ≠ Failure
+
+مثال:
+
+"Remove compatibility adapter after migration reaches 100%."
+
+عند fire trigger:
+
+ACTIVE → DUE
+
+ولا نحذف adapter تلقائيًا بالضرورة.
+
+بل يعود الأمر إلى cognition:
+
+create/reawaken Goal
+59. VocabularyTerm
+
+لأن canonical vocabulary جزء من الهندسة المشتركة:
+
+VocabularyTerm {
+    term_id
+
+    canonical_term
+
+    definition
+
+    scope: ScopeSpec
+
+    aliases[]
+
+    prohibited_ambiguous_aliases[]?
+
+    related_term_ids[]
+
+    status:
+        ACTIVE
+        SUPERSEDED
+        RETIRED
+
+    superseded_by?
+}
+
+هذه ليست dictionary لغوية عامة.
+
+بل project lexicon.
+
+مثال:
+
+"Action"
+
+قد يكون له معنى محدد جدًا داخل المشروع لا نريد استبداله مرة بـ:
+
+Command
+Operation
+Task
+Effect
+
+عشوائيًا.
+
+60. MentalModelElement
+
+بدل تخزين System Mental Model كوثيقة JSON ضخمة واحدة:
+
+MentalModelElement {
+    model_element_id
+
+    model_kind:
+        DOMAIN
+        STRUCTURE
+        RUNTIME
+        CAUSAL
+        RISK_MODEL
+
+    title
+    content
+
+    scope: ScopeSpec
+
+    related_entity_refs[]
+
+    dependency_set_ref?
+
+    confidence_assessment?
+
+    status:
+        ACTIVE
+        STALE
+        SUPERSEDED
+
+    superseded_by?
+}
+61. لماذا ModelElement؟
+
+إذا حدث تغير صغير في runtime flow:
+
+لا نريد version جديدة لكل:
+
+entire SystemMentalModel
+
+بل:
+
+one affected model element
+
+وهذا أيضًا يجعل DependencySet أدق.
+
+62. Risk Model vs Risk Entity
+
+لا يوجد تعارض.
+
+Risk
+
+هي مخاطرة محددة:
+
+"Migration can duplicate events."
+
+أما:
+
+MentalModelElement.model_kind = RISK_MODEL
+
+فقد يمثل:
+
+how risks propagate through subsystem X
+
+أي model أوسع.
+
+63. Entity Mutability Matrix
+Entity	Mutable?	Terminal/history-preserving behavior
+Claim	نعم	refuted/superseded، لا delete
+InformationNeed	نعم	resolved/obsolete
+Hypothesis	نعم	rejected/confirmed/superseded
+OperationalCausalClaim	نعم	stale/contradicted/superseded
+Goal	نعم	closed/obsolete
+GoalStack	نعم، singleton	current pointer only
+CanonicalFocusState	نعم، singleton	checkpoint state
+Decision	نعم	superseded/invalidated
+Invariant	نعم	superseded/retired
+Contract	نعم	superseded/retired
+Risk	نعم	accepted/realized/obsolete
+Slice	نعم	closed/cancelled/obsolete
+Commitment	نعم	satisfied/cancelled/superseded
+VocabularyTerm	نعم	superseded/retired
+MentalModelElement	نعم	stale/superseded
+64. No Hard Delete Rule
+
+Canonical cognitive entities لا تحذف في التشغيل الطبيعي.
+
+نستخدم:
+
+terminal status
+supersession
+tombstone only for exceptional governance/privacy reasons
+
+TOMBSTONE من RDMS-01 ليس lifecycle عادية.
+
+هو mechanism منخفض المستوى لحالات مثل:
+
+legally required deletion
+corrupted accidental entity
+explicit administrative purge
+
+وسيحتاج governance منفصلة.
+
+65. Cross-Entity Referential Integrity
+
+CommitGate يجب أن يمنع:
+
+Goal.parent_goal_id → missing Goal
+Hypothesis.competing_hypothesis_ids → missing Hypothesis
+Slice.goal_id → missing Goal
+Decision.risk_refs → missing Risk
+Invariant.superseded_by → wrong entity kind
+Commitment.trigger_id → missing Trigger
+
+إلا إذا كانت الـentities المطلوبة تُنشأ داخل نفس ControlCommit.
+
+66. Same-Commit References
+
+مسموح:
+
+Commit:
+  create Goal G8
+  create Slice S9 referencing G8
+
+لأن commit ذرية.
+
+Validation ترى:
+
+pre-state
++
+all proposed mutations
+
+كوحدة واحدة.
+
+67. Cross-Project References
+
+الافتراضي:
+
+FORBIDDEN
+
+للكيانات canonical.
+
+لا يمكن Claim في Project A أن تشير مباشرة إلى mutable Claim في Project B كأنها جزء من cognition نفسها.
+
+المشاركة بين المشاريع تمر عبر:
+
+Memory / precedent
+external artifact
+explicit import/reference mechanism
+
+سيأتي في RDMS-07.
+
+68. Status Transitions Are Validated
+
+لا نعتمد على caller كي يكتب أي status.
+
+لكل entity:
+
+TransitionPolicy
+
+حتمية.
+
+مثال غير قانوني:
+
+Goal BACKLOG → CLOSED
+
+إلا عبر special governance operation واضحة.
+
+ومثال غير قانوني:
+
+OVC CONTRADICTED → OPERATIONALLY_VERIFIED
+
+دون revalidation protocol.
+
+69. Free Text vs Structured State
+
+نسمح free text في:
+
+statement
+explanation
+intent
+rationale-like content
+
+لكن لا نخزن state machine semantics في النص.
+
+سيئ:
+
+status = ACTIVE
+statement = "actually obsolete now"
+
+الصحيح:
+
+status = OBSOLETE
+
+الحقائق التشغيلية التي يعتمد عليها الـruntime يجب أن تكون structured.
+
+70. Large Content Rule
+
+إذا content كبير جدًا:
+
+long design analysis
+massive reconstructed model
+large proof report
+
+لا يوضع كله داخل entity row.
+
+نستخدم:
+
+summary
++
+ArtifactRef
+
+لكن summary الأساسية اللازمة لاتخاذ القرار تبقى canonical.
+
+71. Canonical Entity Write Authority
+Entity	من يقترح	من يعتمد
+Claim	Capability	Executive + CommitGate
+InformationNeed	Capability/Executive policy	Executive + CommitGate
+Hypothesis	Causal capability	Executive + CommitGate
+OVC	Causal Closure Gate	Executive + CommitGate
+Goal	Intent/Planning capability	Executive + CommitGate
+GoalStack	Executive	CommitGate
+FocusState	Executive/Runtime checkpoint	Executive semantics + CommitGate
+Decision	Engineering Judgment	Executive + CommitGate
+Invariant	Engineering Judgment	proper authority + Executive + CommitGate
+Contract	Engineering capability	Executive + CommitGate
+Risk	Engineering/Metacognition	Executive + CommitGate
+Slice	Planning	Executive + CommitGate
+Commitment	Planning/Decision/Execution	Executive + CommitGate
+VocabularyTerm	Mental Model/Engineering	Executive + CommitGate
+MentalModelElement	Mental Model capability	Executive + CommitGate
+
+لا يوجد:
+
+LLM → direct canonical entity write
+72. Derived Summaries
+
+يمكن بناء:
+
+active goals
+open information needs
+active hypotheses
+current high risks
+active commitments
+
+كـindexes/read models.
+
+لا نحتاج نسخ arrays داخل ProjectState record ضخمة.
+
+State في FCA تصبح logical composite view فوق هذه entities.
+
+73. Composite State Reconstruction
+CanonicalStateView {
+    identity
+    current GoalStack
+    current FocusState
+
+    active Goals
+
+    MentalModelElements
+
+    active Claims
+    open InformationNeeds
+    active Hypotheses
+    valid OVCs
+
+    active Decisions
+    Invariants
+    Contracts
+    Risks
+
+    active Execution Slices
+    active Commitments
+
+    ...
+}
+
+وهذا View، لا row عملاقة.
+
+74. RDMS-02 Invariants
+RDMS-I23
+Canonical epistemic categories remain physically and semantically distinct;
+Claim, InformationNeed, Hypothesis and OperationalCausalClaim are never
+collapsed into one generic record type.
+
+RDMS-I24
+Every FACT Claim carries an explicit legal grounding path.
+
+RDMS-I25
+Evidence relationships are not duplicated as authoritative embedded arrays
+inside epistemic entities; their lifecycle is owned by EvidenceLink.
+
+RDMS-I26
+Hypothesis support and Hypothesis lifecycle status are distinct and their
+legal combinations are validated.
+
+RDMS-I27
+OperationalCausalClaims remain explicitly scope- and dependency-bound.
+
+RDMS-I28
+A stale OperationalCausalClaim is not treated as false, but cannot be used
+as a settled current premise without revalidation.
+
+RDMS-I29
+Goal hierarchy uses explicit goal kinds and valid parent-child relationships.
+
+RDMS-I30
+VERIFIED Goal and CLOSED Goal have distinct meanings.
+
+RDMS-I31
+SUSPENDED, BLOCKED, WAITING and DEFERRED Goal states remain distinct and
+carry the metadata required by their semantics.
+
+RDMS-I32
+GoalStack is a canonical current-focus chain, not a duplicate Goal hierarchy.
+
+RDMS-I33
+Transient attention operations do not require canonical persistence;
+only resumable CanonicalFocusState is durable.
+
+RDMS-I34
+Accepted Decisions record choice, alternatives, assumptions, trade-offs,
+risks and operational revisit mechanisms.
+
+RDMS-I35
+Every Invariant declares one or more enforcement modes.
+
+RDMS-I36
+Semantic replacement of a Hard Invariant preserves lineage instead of
+silently rewriting the old rule.
+
+RDMS-I37
+Shared Contracts are first-class canonical entities and cannot be silently
+rewritten by Specialists.
+
+RDMS-I38
+Risk acceptance requires an explicit Decision reference.
+
+RDMS-I39
+Every Slice traces to a valid Goal.
+
+RDMS-I40
+A Slice cannot become VERIFIED while required proof obligations remain
+unsatisfied or a Hard Invariant violation remains unresolved.
+
+RDMS-I41
+A temporary Commitment cannot exist without a durable reactivation,
+revisit or due mechanism.
+
+RDMS-I42
+Canonical vocabulary and mental-model state are versioned project cognition,
+not prompt-only context.
+
+RDMS-I43
+Canonical entities are not normally hard-deleted; history is preserved
+through status and supersession.
+
+RDMS-I44
+Entity references are type-checked and project-scoped unless an explicit
+cross-project import mechanism authorizes otherwise.
+
+RDMS-I45
+Lifecycle transitions are deterministic validation rules, not free-form
+LLM choices.
+
+RDMS-I46
+Canonical state is a composite view over normalized entities, not a single
+mutable state blob.
+75. What RDMS-02 Deliberately Defers
+
+لم نحدد بعد:
+
+Observation schema details
+EvidenceLink physical relationship
+ContradictionRecord
+Experiment
+VerificationRecord
+Trigger
+ResumptionCapsule
+ActionProposal
+ActionRecord
+Specialist
+DependencySet implementation
+Memory entities
+
+لأن لها lifecycle خاصة وستأتي في RDMS-03…07.
+
+76. Questions for Adversarial Review
+
+RDMS-02 لا تُجمّد قبل مهاجمة النقاط التالية:
+
+1. هل Claim.support قابل لأن يصبح stale مستقلًا عن Claim نفسها؟
+
+2. هل CONFIRMED Hypothesis وOVC يخلقان duplicate truth؟
+
+3. هل Goal hierarchy المحددة MISSION→MILESTONE→TASK→SUBGOAL
+   صارمة أكثر مما يلزم؟
+
+4. هل CanonicalFocusState ستظل كثيرة الكتابة رغم checkpoint policy؟
+
+5. هل Contract identity الجديدة عند semantic change
+   ستخلق supersession chains ضخمة؟
+
+6. هل Hard Invariant لا يمكن machine-enforceها يجب فعلًا منعها
+   من severity HARD؟
+
+7. هل Slice lifecycle تحتوي حالات أكثر مما يحتاج runtime الفعلي؟
+
+8. هل Commitment وGoal WAITING/DEFERRED يتداخلان دلاليًا؟
+
+9. هل MentalModelElement generic أكثر من اللازم؟
+
+10. هل Risk يجب أن يكون canonical entity أصلًا أم projection
+    من Decisions/Hypotheses؟
+
+هذه ستكون أهداف RDMS-02 Freeze Review 01.
+
+77. Current Status
+RDMS-02 — Canonical Entity Schemas
+DRAFT COMPLETE — NOT FROZEN
+
+الخطوة التالية المصرح بها:
+
+Adversarial Review
+        ↓
+RDMS-02 Corrections
+        ↓
+Freeze Decision
+
+ولا ننتقل إلى RDMS-03 قبل حسم هذه النقاط.
+
+القرار الأهم هنا هو أننا لم نبنِ State ككائن عملاق يحوي عشرات arrays؛ أصبح Composite View فوق كيانات مستقلة versioned. هذا سيجعل التوازي، CAS، dependency tracking، وإعادة البناء أبسط بكثير.
+
+كما فصلت CanonicalFocusState عن الانتباه اللحظي؛ وإلا كان الوكيل سيكتب إلى قاعدة البيانات مع كل بحث أو قراءة ملف، وهو بالضبط نوع الثقل التشغيلي الذي نريد منعه. الخطوة التالية الآن هي الهجوم العدائي على هذه الـschemas قبل تجميد RDMS-02.
+
+END ORIGINAL MESSAGE
+
+========================================================================
+SOURCE PART: C01, second review corrections and final freeze decision
+MESSAGE ID: 266bb347-d2a5-41ea-872a-32e140c803eb
+BEGIN ORIGINAL MESSAGE
+========================================================================
+
+أغلقت C01 ثم أجريت عليه الهجوم الثاني الضيق. النتيجة جيدة جدًا: احتجنا بعض التصحيحات الإضافية في الـruntime semantics، لكن بعد دمجها لم يبقَ blocker يمنع تجميد RDMS-02.
+
+RDMS-02 C01 — Lifecycle, Validity & Relation Corrections
+Runtime & Data Model Specification v1.0
+RDMS-02 C01 — Lifecycle, Validity & Relation Corrections
+
+Parent: RDMS-02 Draft + Adversarial Freeze Review 01
+Scope: G01–G13 + H01–H04، مع إغلاق اتساق القرارات والـversion-pinned dependencies.
+Status: CORRECTION SET
+
+C01-01 — Common Entity Metadata
+
+نلغي تمامًا:
+
+CanonicalEntity.lifecycle_status
+
+كل Entity تملك lifecycle واحدة فقط داخل schema الخاصة بها.
+
+الـcommon metadata:
+
+CanonicalEntityMeta {
+    entity_id
+    project_id
+
+    entity_version
+
+    created_commit_seq
+    updated_commit_seq
+
+    payload_schema_version
+
+    creation_provenance_ref?
+}
+
+لا توجد حالة domain عامة هنا.
+
+C01-02 — SupportAssessment
+
+Claim.support وHypothesis.support لا ينبغي أن يكونا مجرد قيمة قديمة لا تعرف هل ما زال أساسها صالحًا.
+
+ننشئ:
+
+SupportAssessment {
+    assessment_id
+
+    target_ref
+
+    level:
+        UNASSESSED
+        WEAK
+        MODERATE
+        STRONG
+        VERIFIED
+        REFUTED
+
+    basis_refs[]
+
+    dependency_set_ref?
+
+    assessed_at_commit_seq
+
+    supersedes_assessment_id?
+}
+
+الـassessment نفسها immutable بعد commit.
+
+الكيان المستهدف يحمل:
+
+current_support_assessment_ref?
+
+إذا Dependencies الخاصة بالـassessment أصبحت stale:
+
+assessment validity = STALE
+
+بصورة مشتقة.
+
+لا نحتاج كتابة Claim جديدة فقط لأن Repo تغير.
+
+C01-03 — Assessment Validity
+
+لا نخزن:
+
+assessment.status = STALE
+
+في كل مرة يتغير dependency.
+
+بل نحسب:
+
+AssessmentValidity =
+    CURRENT
+    STALE
+    UNKNOWN
+
+من DependencySet الحالية.
+
+وبالتالي نفصل:
+
+what assessment concluded
+
+عن:
+
+whether its basis is still fresh
+C01-04 — Claim Epistemic Promotion
+
+Claim تمثل proposition مستقرة.
+
+إذا لم تتغير دلالة proposition نفسها يمكن نفس ClaimId أن تنتقل:
+
+ASSUMPTION → BELIEF
+ASSUMPTION → FACT
+BELIEF     → FACT
+
+لكن → FACT يتطلب FactGrounding قانونية.
+
+مثال:
+
+Claim C7:
+"WebhookHandler writes payment.status"
+
+BELIEF
+↓ repository analysis
+FACT / DETERMINISTIC
+
+لا نحتاج Claim جديدة.
+
+C01-05 — Claim Meaning Change
+
+إذا تغير المعنى نفسه:
+
+old:
+"OrderService owns retries"
+
+new:
+"DeliveryService owns retries"
+
+ليست version جديدة لنفس proposition.
+
+بل:
+
+new ClaimId
++
+EntityLineage relation
+
+إذن:
+
+same proposition, stronger epistemic grounding
+→ same ClaimId / new entity version
+
+different proposition
+→ new ClaimId
+C01-06 — Fact Freshness
+
+Fact لا تفقد kind=FACT لمجرد أن dependency أصبحت stale.
+
+نحسب:
+
+EpistemicUsability {
+    VALID
+    STALE
+    UNKNOWN
+    CONTRADICTED
+}
+
+مثال:
+
+"No static caller of X exists at repo R1."
+
+بعد تغير relevant symbol frontier:
+
+kind = FACT
+usability = STALE
+
+لا:
+
+kind = BELIEF
+
+ولا:
+
+status = REFUTED
+
+حتى يظهر دليل ضد proposition نفسها.
+
+Critical consumption rule
+
+FACT does not mean “safe to use without freshness validation.”
+
+أي Capability تعتمد على Fact dependency-bound يجب أن تتحقق من usability.
+
+C01-07 — Hypothesis Closure
+
+Hypothesis تصبح:
+
+Hypothesis {
+    ...
+
+    current_support_assessment_ref?
+
+    lifecycle:
+        ACTIVE
+        REJECTED
+        CONFIRMED
+        SUPERSEDED
+
+    closure_ref?
+}
+
+بعد OVC:
+
+Hypothesis.lifecycle = CONFIRMED
+Hypothesis.closure_ref = OVC-ID
+
+وعند query:
+
+active investigation hypotheses
+=
+lifecycle == ACTIVE
+
+أما Hypothesis المغلقة فتبقى historical precursor.
+
+لا تُحتسب معرفة سببية مستقلة فوق OVC.
+
+C01-08 — OVC Freshness
+
+OVC:
+
+status:
+    OPERATIONALLY_VERIFIED
+    CONTRADICTED
+    SUPERSEDED
+
+نزيل STALE من lifecycle.
+
+Freshness حالة مشتقة:
+
+OVCUsability:
+    VALID
+    STALE
+    UNKNOWN
+
+لأن:
+
+STALE
+
+ليست حدثًا معرفيًا تاريخيًا؛ هي نتيجة مقارنة dependencies بالحاضر.
+
+إذا ظهر contradiction حقيقي:
+
+status = CONTRADICTED
+
+هذا transition canonical.
+
+C01-09 — Goal Tree يصبح Goal Graph شجري مرن
+
+نحتفظ:
+
+GoalKind:
+    MISSION
+    MILESTONE
+    TASK
+    SUBGOAL
+
+لكن لا نربط النوع بمستوى depth ثابت.
+
+Hard rules فقط:
+
+MISSION.parent = null
+
+non-MISSION.parent != null
+
+same project
+
+no cycles
+
+ويمكن:
+
+MISSION
+  → MILESTONE
+    → MILESTONE
+      → TASK
+        → SUBGOAL
+          → SUBGOAL
+
+Project policy تستطيع فرض convention أكثر صرامة، لكن runtime لا يفرض depth مصطنعة.
+
+C01-10 — GoalPath
+
+نستبدل GoalStack الثابت:
+
+mission
+milestone
+task
+subgoal
+
+بـ:
+
+GoalPath {
+    project_id
+
+    path[] {
+        goal_id
+        goal_kind
+    }
+
+    current_operation_ref?
+
+    entity_version
+}
+
+الشروط:
+
+path[0] must be MISSION
+
+each next Goal.parent_goal_id
+must equal previous goal_id
+
+no terminal Goal except possibly the last one
+during transition cleanup
+C01-11 — Goal Lifecycle
+
+نضيف:
+
+CANCELLED
+
+الحالات النهائية:
+
+CLOSED
+OBSOLETE
+CANCELLED
+
+المعاني:
+
+CLOSED
+→ successfully completed lifecycle
+
+OBSOLETE
+→ no longer applicable
+
+CANCELLED
+→ intentionally terminated by authority
+
+CANCELLED تتطلب:
+
+cancellation_reason
+cancellation_authority_ref
+C01-12 — Acceptance Criteria Governance
+
+WAIVED ليست flag مجانية.
+
+AcceptanceCriterion {
+    ...
+
+    status:
+        PENDING
+        SATISFIED
+        FAILED
+        WAIVED
+
+    verification_ref?
+
+    waiver_ref?
+}
+WaiverRecord {
+    reason
+    authority_ref
+    decision_ref?
+}
+C01-13 — Goal Requirement Mutation
+
+إذا Goal ما زالت غير CLOSED:
+
+يمكن تعديل acceptance semantics فقط عبر authority مناسبة.
+
+أي criterion affected تعود:
+
+PENDING
+
+وإذا Goal كانت:
+
+VERIFIED
+
+ثم تغير requirement جوهري:
+
+VERIFIED → READY
+or ACTIVE
+
+حسب Executive plan.
+
+أما Goal:
+
+CLOSED
+
+فلا يعاد كتابة تاريخ نجاحها.
+
+Requirement جديدة:
+
+→ successor Goal
+C01-14 — Declared Priority
+
+نعيد تسمية:
+
+priority
+
+إلى:
+
+declared_priority
+
+للتوضيح أنها signal فقط.
+
+LOW
+NORMAL
+HIGH
+CRITICAL
+
+ولا يجوز استعمالها منفردة كمحرك scheduler.
+
+C01-15 — Decision Immutability After Acceptance
+
+هذا تصحيح مهم.
+
+Decision في:
+
+PROPOSED
+
+يمكن تعديل:
+
+alternatives
+analysis
+chosen candidate
+
+لكن بمجرد:
+
+status = ACCEPTED
+
+تصبح محتويات القرار التاريخية immutable:
+
+question
+context
+alternatives
+chosen
+assumptions
+tradeoffs
+evidence basis
+expected consequences
+
+لا يعاد كتابتها لاحقًا لتبدو أذكى مما كانت عليه وقت القرار.
+
+يسمح فقط بتغيير lifecycle:
+
+ACCEPTED → SUPERSEDED
+ACCEPTED → INVALIDATED
+
+إذا أردنا قرارًا جديدًا:
+
+new DecisionId
++
+lineage relation
+
+هذا يمنع hindsight rewriting.
+
+C01-16 — Decision Freshness
+
+Decision accepted تحصل على:
+
+dependency_set_ref?
+validity_conditions[]
+
+لكن لا نضيف REVIEW_REQUIRED إلى lifecycle.
+
+نحسب:
+
+DecisionUsability:
+    CURRENT
+    REVIEW_REQUIRED
+    INVALID
+    UNKNOWN
+CURRENT
+
+dependencies/conditions ما زالت صالحة.
+
+REVIEW_REQUIRED
+
+أساس القرار تغير، لكن لا نعرف أنه خاطئ.
+
+INVALID
+
+condition صريحة تبطل القرار أو status canonical = INVALIDATED.
+
+وهكذا لا نحتاج mass writes عندما تتغير dependencies.
+
+C01-17 — Contract / Invariant Identity
+
+نستخدم entity version قبل إنشاء identity جديدة.
+
+نفس المفهوم
+same ContractId / InvariantId
+entity_version += 1
+
+حتى إذا تغيرت بعض clauses أو التفاصيل.
+
+Governance ما زالت مطلوبة.
+
+مفهوم جديد
+
+New EntityId فقط عند:
+
+split
+merge
+replacement by different conceptual boundary
+ownership identity replacement
+conceptually different invariant
+C01-18 — Version-Pinned Engineering References
+
+عندما تخطط Slice على Contract/Invariant معيّنة، لا يكفي ID.
+
+تستخدم:
+
+VersionedEntityRef {
+    entity_kind
+    entity_id
+    entity_version
+}
+
+لـ:
+
+Slice.invariant_refs
+Slice.contract_refs
+Decision foundational contract/invariant refs
+
+وبالتالي:
+
+Contract C7 v4 → v5
+
+يمكن أن يجعل Slice المخططة على:
+
+C7 v4
+
+stale بدل أن تعمل بصمت تحت contract جديدة.
+
+C01-19 — Generic Entity Lineage
+
+نلغي authoritative scalar:
+
+superseded_by
+
+وننشئ:
+
+EntityLineageEdge {
+    lineage_edge_id
+
+    predecessor_ref
+    successor_ref
+
+    relation:
+        REPLACES
+        SPLITS_INTO
+        MERGES_INTO
+        REFINES
+
+    decision_ref?
+    created_commit_seq
+}
+
+القواعد:
+
+no self-edge
+
+same project
+
+directed lineage graph acyclic
+
+relation type must be legal
+for involved entity kinds
+C01-20 — Hypothesis Relations
+
+competing_hypothesis_ids[] لا تكون authoritative.
+
+نستخدم:
+
+HypothesisRelation {
+    relation_id
+
+    left_hypothesis_id
+    right_hypothesis_id
+
+    relation:
+        COMPETES_WITH
+        ALTERNATIVE_TO
+        REFINES
+}
+Symmetric
+COMPETES_WITH
+ALTERNATIVE_TO
+
+تخزن كزوج normalized واحد.
+
+Directed
+REFINES
+
+يحترم الاتجاه.
+
+لا توجد self-relations.
+
+C01-21 — Slice State Decomposition
+
+نلغي giant status enum.
+
+SliceState {
+    stage:
+        PLANNED
+        READY
+        EXECUTING
+        VERIFYING
+        VERIFIED
+        INTEGRATING
+        INTEGRATED
+
+    condition:
+        NORMAL
+        BLOCKED
+        SUSPENDED
+
+    terminal:
+        NONE
+        CLOSED
+        FAILED
+        CANCELLED
+        OBSOLETE
+}
+C01-22 — Slice State Meaning
+
+stage تجيب:
+
+أين وصلنا في دورة العمل؟
+
+condition:
+
+هل يمكن متابعة تلك المرحلة الآن؟
+
+terminal:
+
+هل انتهت حياة Slice؟
+
+مثال:
+
+stage = VERIFYING
+condition = BLOCKED
+terminal = NONE
+
+عند زوال blocker:
+
+condition = NORMAL
+
+ونعود إلى:
+
+VERIFYING
+
+بدون فقدان المرحلة.
+
+C01-23 — Slice Failure
+
+Failure لمحاولة واحدة لا تجعل Slice terminal تلقائيًا.
+
+مثال:
+
+test failed
+
+قد يؤدي إلى:
+
+DIAGNOSE
+
+بينما Slice تبقى:
+
+stage = VERIFYING
+terminal = NONE
+
+terminal = FAILED يعني:
+
+Slice نفسها تخلينا عنها كمسار فاشل ولن نواصلها.
+
+C01-24 — Slice Closure Rules
+terminal = CLOSED
+
+يتطلب:
+
+stage = INTEGRATED
+all required proof obligations satisfied or waived legally
+no unresolved hard invariant violation
+
+حتى Slice diagnostic تنتهي بـINTEGRATED عندما تُدمج نتائجها المطلوبة في canonical cognition.
+
+C01-25 — Slice Freshness
+
+نزيل:
+
+base_state_version
+
+ونستخدم:
+
+planned_from_commit_seq
+dependency_set_ref
+base_repo_ref
+
+planned_from_commit_seq provenance فقط.
+
+لا تستخدم كـstaleness gate.
+
+C01-26 — Canonical Focus Compression
+
+نخفض Durable Focus إلى anchors قابلة للاستئناف:
+
+CanonicalFocusState {
+    project_id
+
+    goal_path_ref
+
+    current_slice_ref?
+    current_operation_ref?
+
+    active_hypothesis_ids[]
+    information_need_ids[]
+
+    landmark_refs[]
+
+    reason_for_focus
+}
+
+أما:
+
+active files
+active symbols
+ignored context
+search candidates
+
+فتبقى في:
+
+EphemeralAttentionFrame
+
+إلا إذا أُدرجت صراحة في Resumption Capsule عند suspension.
+
+C01-27 — Mental Model Is Not Shadow Truth
+MentalModelElement {
+    model_element_id
+
+    model_kind
+
+    title
+    summary
+
+    scope
+
+    assertion_refs[]
+    decision_refs[]
+    contract_refs[]
+    invariant_refs[]
+    relation_refs[]
+
+    dependency_set_ref?
+
+    confidence_assessment_ref?
+
+    status:
+        ACTIVE
+        SUPERSEDED
+
+    entity_version
+}
+
+نزيل authoritative:
+
+STALE
+
+كـstatus ونحسب usability من dependencies.
+
+Mental Model Reliance Rule
+
+summary ليست epistemic authority.
+
+أي proposition تشغيلية سيبني عليها النظام قرارًا يجب أن ترتبط بـ:
+
+Claim
+Hypothesis
+OVC
+Decision
+Contract
+Invariant
+
+عند غياب backing:
+
+يجب إنشاء entity مناسبة أولًا.
+
+MentalModelElement تستطيع ضغط العلاقات وشرحها، لكنها لا تستطيع اختراع Fact مخفية داخل paragraph.
+
+C01-28 — Invariant Severity ≠ Detectability
+
+نبقي:
+
+HARD
+CRITICAL
+ADVISORY
+
+كمعنى خطر/قبول الخرق.
+
+ونفصل:
+
+EnforcementSpec {
+    mode:
+        COMMIT_GATE
+        PRE_ACTION_GATE
+        POST_ACTION_VERIFY
+        RUNTIME_MONITOR
+        SEMANTIC_REVIEW
+
+    verifier_ref?
+
+    coverage_scope
+
+    fail_behavior:
+        BLOCK
+        ESCALATE
+        WARN
+}
+
+Invariant تحمل:
+
+enforcement_specs[]
+C01-29 — Hard Invariant Rule
+
+HARD يعني:
+
+violation is unacceptable.
+
+ولا يعني:
+
+easy Boolean predicate exists.
+
+Hard Invariant يجب أن تملك Enforcement Plan يحدد كيف يُمنع أو يُكتشف الخرق.
+
+عند نقطة mutation relevant، إذا لا يستطيع runtime إثبات enforcement المطلوبة:
+
+FAIL CLOSED / ESCALATE
+
+حسب الـplan.
+
+لا نهبط severity لمجرد أن الحكم semantic.
+
+C01-30 — Risk Lifecycle vs Treatment
+
+نصحح Risk:
+
+Risk {
+    ...
+
+    lifecycle:
+        OPEN
+        MITIGATED
+        REALIZED
+        OBSOLETE
+
+    treatment:
+        UNASSESSED
+        MONITOR
+        MITIGATE
+        ACCEPT
+        AVOID
+
+    current_assessment_ref?
+
+    accepted_by_decision_id?
+}
+
+Risk accepted يمكن أن تبقى:
+
+lifecycle = OPEN
+treatment = ACCEPT
+
+وهذا أدق من status واحد ACCEPTED.
+
+C01-31 — RiskAssessment
+RiskAssessment {
+    assessment_id
+
+    risk_id
+
+    likelihood:
+        UNKNOWN
+        LOW
+        MEDIUM
+        HIGH
+
+    impact:
+        LOW
+        MEDIUM
+        HIGH
+        CRITICAL
+
+    basis_refs[]
+
+    dependency_set_ref?
+
+    assessed_at_commit_seq
+
+    supersedes_assessment_id?
+}
+
+Freshness مشتقة مثل SupportAssessment.
+
+C01-32 — Commitment Reactivation
+
+نستبدل:
+
+due_at
+removal_trigger_id
+revisit_trigger_id
+
+كآليات متوازية غير واضحة بـ:
+
+reactivation_condition_ref
+Commitment {
+    ...
+
+    reactivation_condition_ref
+
+    status:
+        ACTIVE
+        DUE
+        SATISFIED
+        CANCELLED
+        SUPERSEDED
+
+    resolution_ref?
+}
+
+معنى:
+
+ANY_OF
+ALL_OF
+time + triggers
+
+سيُجمد داخل RDMS-05.
+
+لكن RDMS-02 تفرض فقط:
+
+Every ACTIVE Commitment must have one valid reactivation-condition root.
+
+C01-33 — Relation Ownership Rule
+
+العلاقات التي تملك lifecycle أو symmetry أو lineage مستقلة لا تخزن authoritative كـembedded arrays.
+
+أمثلة:
+
+EvidenceLink
+EntityLineageEdge
+HypothesisRelation
+Trigger relationships
+Dependency relationships
+
+يمكن للكيان أن يحتوي cached summary/ref projection.
+
+لكن الحقيقة authoritative للعلاقة لها owner واحد فقط.
+
+C01-34 — Referential Version Policy
+
+نحدد متى نستخدم أي نوع Ref.
+
+EntityRef
+
+عندما نريد logical identity الحالية:
+
+Goal parent
+Risk identity
+Decision lineage
+VersionedEntityRef
+
+عندما correctness تعتمد على semantics تلك النسخة تحديدًا:
+
+Slice → Contract
+Slice → Invariant
+Experiment → prediction definition
+Decision → foundational contract version
+DependencyStamp
+
+عندما نحتاج freshness لا مجرد identity.
+
+C01-35 — Updated RDMS-02 Core Invariants
+RDMS-I23
+Each entity has one and only one authoritative lifecycle field.
+
+RDMS-I24
+FACT Claims always retain legal grounding.
+
+RDMS-I25
+Epistemic kind, lifecycle, support assessment and dependency freshness
+are distinct dimensions.
+
+RDMS-I26
+Support/Risk assessments are versioned evidence-based records whose
+current usability depends on their dependencies.
+
+RDMS-I27
+Claim epistemic promotion may preserve identity only when the proposition
+meaning itself remains unchanged.
+
+RDMS-I28
+Dependency staleness never silently means refutation.
+
+RDMS-I29
+Closed Hypotheses with closure_ref are historical precursors and are
+not double-counted alongside their OVC.
+
+RDMS-I30
+Goal hierarchy is acyclic and traceable but is not constrained to a
+fixed four-level depth.
+
+RDMS-I31
+CANCELLED and OBSOLETE are semantically distinct Goal outcomes.
+
+RDMS-I32
+Accepted Decision content is historically immutable; a changed decision
+is a new Decision linked through lineage.
+
+RDMS-I33
+Decision usability is dependency-sensitive without requiring mass
+canonical status rewrites.
+
+RDMS-I34
+Contract and Invariant versions preserve logical identity unless the
+underlying concept itself is replaced, split or merged.
+
+RDMS-I35
+Semantically important planning references to Contracts/Invariants pin
+the exact entity version relied upon.
+
+RDMS-I36
+Supersession and refinement lineage are owned by an acyclic relation
+graph rather than single embedded successor pointers.
+
+RDMS-I37
+Slice stage, temporary execution condition and terminal outcome are
+orthogonal state dimensions.
+
+RDMS-I38
+Slice freshness is governed by actual dependencies and repository
+references, not global commit equality.
+
+RDMS-I39
+Durable Focus stores resumable landmarks rather than continuous
+navigation churn.
+
+RDMS-I40
+MentalModelElement cannot become an independent hidden truth authority.
+
+RDMS-I41
+Invariant severity expresses acceptability of violation, independently
+from ease of enforcement.
+
+RDMS-I42
+Risk lifecycle, treatment and current assessment are distinct.
+
+RDMS-I43
+Active Commitment requires an operational reactivation-condition root.
+
+RDMS-I44
+Relations with independent lifecycle/symmetry/lineage have exactly one
+authoritative owner.
+
+RDMS-I45
+Accepted/closed historical reasoning is never rewritten merely to match
+later knowledge.
+Resolution
+G01 duplicate lifecycle authority           RESOLVED
+G02 stale Claim support                     RESOLVED
+G03 epistemic promotion/freshness           RESOLVED
+G04 Hypothesis/OVC duplicate truth          RESOLVED
+G05 rigid Goal hierarchy                    RESOLVED
+G06 missing Goal cancellation               RESOLVED
+G07 stale Decision basis                    RESOLVED
+G08 identity churn                          RESOLVED
+G09 inadequate lineage pointer              RESOLVED
+G10 Slice blocked/resume ambiguity          RESOLVED
+G11 global base-state leakage               RESOLVED
+G12 mental-model shadow truth               RESOLVED
+G13 severity/enforcement coupling           RESOLVED
+
+H01 Focus write amplification               RESOLVED
+H02 Commitment multi-trigger ambiguity      RESOLVED
+H03 stale Risk assessment                   RESOLVED
+H04 priority/scheduling conflation          RESOLVED
+
+إضافة إلى:
+
+Accepted Decision hindsight rewriting       CLOSED
+Version-pinned Contract/Invariant deps       CLOSED
+Risk lifecycle/treatment conflation         CLOSED
+
+RDMS-02 C01: CLOSED
+
+ثم أجريت الهجوم الضيق الثاني على النسخة المصححة.
+
+RDMS-02 — Freeze Review 02 Final
+RDMS-02 — Freeze Review 02
+Review Scope
+
+هذه الجولة لا تضيف features.
+
+تفشل فقط إذا استطعنا إثبات أحد:
+
+illegal lifecycle transition
+
+stale assessment used as current
+
+duplicate truth authority
+
+lineage cycle
+
+goal-path inconsistency
+
+lost Slice resume phase
+
+silent contract/invariant semantic drift
+
+decision hindsight rewrite
+
+shadow mental-model truth
+
+focus write amplification
+
+risk semantic contradiction
+Test 01 — Claim becomes Fact
+C1 = BELIEF
+repository observation arrives
+deterministic grounding verified
+
+Transition:
+
+same ClaimId
+new entity_version
+kind = FACT
+FactGrounding attached
+
+History preserved by Control Ledger.
+
+PASS
+
+Test 02 — Fact Dependency Becomes Stale
+C1.kind = FACT
+dependency frontier changed
+
+Result:
+
+C1 remains FACT
+EpistemicUsability = STALE
+
+No false refutation and no blind reliance.
+
+PASS
+
+Test 03 — Evidence Basis Changes
+
+SupportAssessment A7 depended on evidence that is no longer valid.
+
+A7 validity = STALE
+
+Claim itself need not receive meaningless version churn.
+
+A new assessment can later supersede A7.
+
+PASS
+
+Test 04 — Closed Hypothesis + OVC
+H1.lifecycle = CONFIRMED
+H1.closure_ref = OVC1
+
+OVC1 = valid
+
+Active hypothesis query excludes H1.
+
+Causal current-premise query uses OVC1.
+
+No double counting.
+
+PASS
+
+Test 05 — OVC Dependency Changes
+
+OVC remains historical causal claim.
+
+OVCUsability = STALE
+
+It is no longer usable as settled current premise.
+
+No need to falsely mark it CONTRADICTED.
+
+PASS
+
+Test 06 — Deep Goal Decomposition
+MISSION
+→ MILESTONE
+→ MILESTONE
+→ TASK
+→ SUBGOAL
+→ SUBGOAL
+
+Acyclic parent chain valid.
+
+GoalPath represents arbitrary depth.
+
+PASS
+
+Test 07 — Goal Cycle
+
+Attempt:
+
+G1.parent = G3
+G2.parent = G1
+G3.parent = G2
+
+Acyclicity validation rejects ControlCommit.
+
+PASS
+
+Test 08 — Explicit Cancellation
+
+User cancels valid active Goal.
+
+ACTIVE → CANCELLED
+
+with authority/reason.
+
+Not mislabeled obsolete.
+
+PASS
+
+Test 09 — Accepted Decision Rewriting
+
+D10 accepted yesterday.
+
+Today new evidence arrives and agent tries to modify:
+
+D10.chosen_option
+D10.rationale
+
+CommitGate rejects semantic rewrite of accepted content.
+
+Agent must create D11 and lineage relation.
+
+PASS
+
+Test 10 — Accepted Decision Foundation Changes
+
+D10 dependency becomes stale.
+
+D10 historical status remains ACCEPTED.
+
+Derived:
+
+DecisionUsability = REVIEW_REQUIRED
+
+It cannot be blindly used as current architectural authority.
+
+PASS
+
+Test 11 — Contract Evolves
+Contract C7 v4
+→ C7 v5
+
+Logical identity preserved.
+
+A Slice pinned to:
+
+C7 v4
+
+detects dependency change before integration.
+
+PASS
+
+Test 12 — Contract Splits
+C7
+→ C12
+→ C13
+
+represented by two SPLITS_INTO lineage edges.
+
+No impossible single superseded_by field.
+
+PASS
+
+Test 13 — Lineage Cycle
+
+Attempt:
+
+A REPLACES B
+B REPLACES A
+
+graph validation rejects.
+
+PASS
+
+Test 14 — Symmetric Hypothesis Relation
+H1 COMPETES_WITH H2
+
+Stored once as normalized unordered pair.
+
+No disagreement between two embedded arrays.
+
+PASS
+
+Test 15 — Slice Blocked During Verification
+
+Before block:
+
+stage = VERIFYING
+condition = NORMAL
+
+During block:
+
+stage = VERIFYING
+condition = BLOCKED
+
+After resolution:
+
+stage = VERIFYING
+condition = NORMAL
+
+Resume phase preserved exactly.
+
+PASS
+
+Test 16 — Failed Test but Retry Is Valid
+
+A verification attempt fails.
+
+Slice does not become terminal FAILED automatically.
+
+The failure becomes evidence/diagnostic input.
+
+Slice can remain:
+
+VERIFYING / NORMAL / NONE
+
+or become:
+
+VERIFYING / BLOCKED / NONE
+
+during diagnosis dependency.
+
+PASS
+
+Test 17 — Unrelated Global Commit
+
+Slice planned at commit 300.
+
+Observation unrelated arrives at 301.
+
+Its DependencySet remains valid.
+
+Slice does not become stale merely because:
+
+current_commit_seq != planned_from_commit_seq
+
+PASS
+
+Test 18 — Mental Model Contains Unsupported Assertion
+
+Generated summary says:
+
+"PaymentService owns retries."
+
+but there is no assertion_ref.
+
+Runtime cannot treat that sentence as authoritative premise.
+
+Capability must establish:
+
+Claim / Hypothesis / Assumption
+
+before relying on it.
+
+PASS
+
+Test 19 — Hard Semantic Security Rule
+
+Invariant:
+
+"Sensitive customer secrets must never
+be sent to an external model."
+
+Can remain:
+
+severity = HARD
+
+despite semantic detection needs.
+
+Its EnforcementSpecs can combine:
+
+PRE_ACTION_GATE
+RUNTIME_MONITOR
+SEMANTIC_REVIEW
+fail_behavior = BLOCK
+
+No forced severity downgrade.
+
+PASS
+
+Test 20 — Focus Churn
+
+Agent reads:
+
+100 files
+400 symbols
+50 search results
+
+These live in EphemeralAttentionFrame.
+
+CanonicalFocusState changes only if resumable anchors change.
+
+No 550 canonical writes.
+
+PASS
+
+Test 21 — Risk Accepted But Still Exists
+lifecycle = OPEN
+treatment = ACCEPT
+
+is legal.
+
+Later risk occurs:
+
+lifecycle = REALIZED
+treatment = ACCEPT
+
+Historical decision preserved.
+
+PASS
+
+Test 22 — Risk Assessment Stales
+
+Assessment R-A3 becomes stale due changed environment.
+
+Risk itself stays canonical.
+
+Scheduler/Executive cannot use old LOW likelihood as current without freshness validation.
+
+PASS
+
+Test 23 — Commitment With Two Future Conditions
+
+RDMS-02 no longer encodes ambiguous multiple trigger fields.
+
+It stores:
+
+reactivation_condition_ref
+
+RDMS-05 will define:
+
+ANY_OF
+ALL_OF
+
+No ambiguity leaks into Commitment schema.
+
+PASS
+
+Additional Attack — Version-Pinned References
+
+Attempt:
+
+Slice expects Contract C1 v3
+Contract current = v4
+
+Runtime cannot silently substitute v4.
+
+Dependency validation produces:
+
+STALE / needs reconciliation
+
+PASS
+
+Additional Attack — Closed Goal Requirement Rewrite
+
+Closed Goal G1 satisfied old requirements.
+
+New requirement arrives.
+
+Runtime cannot mutate history and claim G1 always required it.
+
+Creates:
+
+new Goal G2
+
+linked by appropriate provenance/lineage.
+
+PASS
+
+One Remaining Implementation Warning
+
+No blocker remains, but one implementation trap deserves an explicit note:
+
+Derived usability
+
+appears in several places:
+
+EpistemicUsability
+AssessmentValidity
+OVCUsability
+DecisionUsability
+Dependency freshness
+
+These must not each be implemented by independent bespoke logic.
+
+RDMS-06 should define one canonical:
+
+Dependency Evaluation Engine
+
+that consumes DependencySet and returns normalized freshness/validity signals.
+
+Otherwise five slightly different notions of “stale” could emerge.
+
+This is not a blocker for RDMS-02 because the actual DependencySet runtime is intentionally deferred to RDMS-06.
+
+Final Verdict
+Epistemic entity consistency        PASS
+Lifecycle consistency               PASS
+Freshness separation                PASS
+Goal hierarchy/path                 PASS
+Decision historical integrity       PASS
+Contract/Invariant identity         PASS
+Lineage integrity                   PASS
+Slice block/resume semantics        PASS
+Mental-model authority boundary     PASS
+Focus persistence efficiency        PASS
+Risk semantics                      PASS
+Commitment interface boundary       PASS
+RDMS-02 — Canonical Entity Schemas: FROZEN
+
+Frozen semantic entities:
+
+Claim
+InformationNeed
+Hypothesis
+OperationalCausalClaim
+
+SupportAssessment
+RiskAssessment
+
+Goal
+GoalPath
+AcceptanceCriterion
+
+CanonicalFocusState
+
+Decision
+Invariant
+Contract
+Risk
+
+Slice
+
+Commitment
+VocabularyTerm
+MentalModelElement
+
+EntityLineageEdge
+HypothesisRelation
+
+Physical representation remains open.
+
+Next Authorized Section
+RDMS-03 — Observation, Evidence & Experiment Model
+
+سنحسم فيه:
+
+Observation
+Observation provenance
+source authority
+
+EvidenceLink
+
+ContradictionRecord
+
+Prediction
+
+Experiment
+
+Experiment lifecycle
+
+VerificationRecord
+
+human/tool/repo observations
+
+observation correction/supersession
+
+evidence conflicts
+
+causal experiment result linkage
+
+وهو مهم جدًا لأن RDMS-02 أصبح الآن يعتمد على EvidenceLink وSupportAssessment وCausalVerificationRecord كعلاقات لم نحدد physical/runtime semantics الخاصة بها بعد.
+
+إذن RDMS-02 أصبح مجمدًا بعد جولتي الهجوم. وأهم ما كسبناه ليس فقط schemas أنظف، بل منعنا ثلاث مشاكل كانت ستظهر لاحقًا بصعوبة: إعادة كتابة القرارات بعد ظهور النتيجة، فقدان مرحلة Slice عند block/resume، وتحول الـMental Model إلى مصدر حقيقة موازٍ للـEpistemic State.
+
+المرحلة التالية المصرح بها الآن هي RDMS-03 — Observation, Evidence & Experiment Model.
+
+END ORIGINAL MESSAGE

@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-09",
+  "title": "Source-owned type and interface closure",
+  "architecture_status": "CANDIDATE__FREEZE_HOLD",
+  "source_archive_files_byte_identical": 28,
+  "distinct_source_type_surfaces": 54,
+  "effective_type_surfaces_including_transports": 56,
+  "canonical_alias_collisions_removed": 2,
+  "interfaces_with_nonempty_inputs_outputs_admission_rejection_recovery": 12,
+  "source_record_owners": {
+    "L2_COGNITION.md": 4,
+    "L3_ACTIONS.md": 20,
+    "L4_TEMPORAL_SPECIALISTS.md": 10,
+    "L5_MEMORY.md": 4,
+    "L6_RECOVERY.md": 9,
+    "L7_RUNTIME_INTEGRATION.md": 9
+  },
+  "remaining_freeze_gate": [
+    "Unverified clause-level application of all corrections (17 correction/freeze messages) to all inherited baseline draft paragraphs",
+    "Interface state-transition and atomicity proof beyond field surfaces and admission prose (12 interfaces)",
+    "No production adapters or fault-injection test (post-architecture implementation gate)"
+  ],
+  "superseded_legacy_layer_passages_edited": 11,
+  "automated_current_acceptance_tests": "9/9 PASS",
+  "phase11_reference_tests": "26/26 PASS — reference only",
+  "legacy_phase12_audit": "8/9 on rebuilt layers; the 1 failure asserts archived Phase12 index remains in current documents, intentionally false after consolidation"
+}

@@ -1,0 +1,150 @@
+{
+  "count": 12,
+  "gates": [
+    {
+      "id": "X8-01",
+      "route": "L2 → L7 → L2",
+      "threat": "Missing specialist_request or rationale; transport SUCCESS treated as accepted decision",
+      "required_protection": "Canonical ref required, semantically reversible, no direct commit",
+      "legal_path": "FCA CapabilityResult → L7 CapabilityTransportResult → Executive Decision",
+      "source_related_contracts": "P6-01; GAIA-B01",
+      "structural_coverage": "SOURCE_PATH_DOCUMENTED",
+      "effective_roundtrip": "PENDING",
+      "atomicity_or_runtime_failure_proof": "PENDING",
+      "certification": "BLOCKED"
+    },
+    {
+      "id": "X8-02",
+      "route": "L5 → L7 → L2",
+      "threat": "Partial retrieval presented as exhaustive/no-memory evidence",
+      "required_protection": "Preserve omitted scope/ranking/coverage/freshness by legal ref",
+      "legal_path": "RDMS-07 MemoryRetrievalResult → L7 bounded projection → cognition",
+      "source_related_contracts": "P6-02",
+      "structural_coverage": "SOURCE_PATH_DOCUMENTED",
+      "effective_roundtrip": "PENDING",
+      "atomicity_or_runtime_failure_proof": "PENDING",
+      "certification": "BLOCKED"
+    },
+    {
+      "id": "X8-03",
+      "route": "L2 → L4 → L1",
+      "threat": "Missing owner/root; statement collapsed to required_followup; due falsely SATISFIED",
+      "required_protection": "One legal Commitment, explicit reactivation root, atomic continuation",
+      "legal_path": "RDMS-02 Commitment → RDMS-05 temporal condition → ControlCommit",
+      "source_related_contracts": "P6-03",
+      "structural_coverage": "SOURCE_PATH_DOCUMENTED",
+      "effective_roundtrip": "PENDING",
+      "atomicity_or_runtime_failure_proof": "PENDING",
+      "certification": "BLOCKED"
+    },
+    {
+      "id": "X8-04",
+      "route": "L4 → L1 → L3",
+      "threat": "EDGE event replay duplicates world effect or loses derived follow-up",
+      "required_protection": "Stable trigger generation/reaction identity + ActionGate",
+      "legal_path": "TriggerDefinition → committed Reaction → durable continuation → ActionProposal",
+      "source_related_contracts": "P6-04; R2-G04",
+      "structural_coverage": "SOURCE_PATH_DOCUMENTED",
+      "effective_roundtrip": "PENDING",
+      "atomicity_or_runtime_failure_proof": "PENDING",
+      "certification": "BLOCKED"
+    },
+    {
+      "id": "X8-05",
+      "route": "L4 → L6 → L1",
+      "threat": "Compact capsule drops hypotheses, evidence or next cognitive step",
+      "required_protection": "Pinned durable payload; corrupt means recovery quarantine",
+      "legal_path": "ResumptionCapsule payload verified → atomic SUSPENDED → Recovery → Executive",
+      "source_related_contracts": "P6-05",
+      "structural_coverage": "SOURCE_PATH_DOCUMENTED",
+      "effective_roundtrip": "PENDING",
+      "atomicity_or_runtime_failure_proof": "PENDING",
+      "certification": "BLOCKED"
+    },
+    {
+      "id": "X8-06",
+      "route": "L2 → L3 → L1",
+      "threat": "FILESYSTEM category hides file_delete; latest_attempt_ref hides uncertain prior effect",
+      "required_protection": "Sealed exact operation + recoverable attempt history + journal",
+      "legal_path": "ActionProposal → ActionGate → ActionRecord → Reality Executor",
+      "source_related_contracts": "P7-02; P7-03",
+      "structural_coverage": "SOURCE_PATH_DOCUMENTED",
+      "effective_roundtrip": "PENDING",
+      "atomicity_or_runtime_failure_proof": "PENDING",
+      "certification": "BLOCKED"
+    },
+    {
+      "id": "X8-07",
+      "route": "L3 → L2 → L1",
+      "threat": "Two observations double-counted; forged success becomes verified FACT",
+      "required_protection": "Accepted evidence with source cardinality and FactGrounding; no raw report authority",
+      "legal_path": "Observation → EvidenceLink → Claim/ConfidenceAssessment → CommitGate",
+      "source_related_contracts": "P7-04; P7-09; P7-17",
+      "structural_coverage": "SOURCE_PATH_DOCUMENTED",
+      "effective_roundtrip": "PENDING",
+      "atomicity_or_runtime_failure_proof": "PENDING",
+      "certification": "BLOCKED"
+    },
+    {
+      "id": "X8-08",
+      "route": "L2 → L3 → L2",
+      "threat": "RUNNING conflated with DESIGNED or hypothesis strength treated as causal closure",
+      "required_protection": "Persisted preintervention prediction; verification matrix + separate design/run states",
+      "legal_path": "Hypothesis → predictions → Experiment design → ExperimentRun → OVC",
+      "source_related_contracts": "P7-10; P7-13; P7-18",
+      "structural_coverage": "SOURCE_PATH_DOCUMENTED",
+      "effective_roundtrip": "PENDING",
+      "atomicity_or_runtime_failure_proof": "PENDING",
+      "certification": "BLOCKED"
+    },
+    {
+      "id": "X8-09",
+      "route": "L3 → L2",
+      "threat": "UNRESOLVED silently maps to RESOLVED; causal explanation invented",
+      "required_protection": "Nonterminal unresolved remains, explanation separate from comparison",
+      "legal_path": "Raw observation pair → comparability → ContradictionRecord → InformationNeed",
+      "source_related_contracts": "P7-06; P7-14",
+      "structural_coverage": "SOURCE_PATH_DOCUMENTED",
+      "effective_roundtrip": "PENDING",
+      "atomicity_or_runtime_failure_proof": "PENDING",
+      "certification": "BLOCKED"
+    },
+    {
+      "id": "X8-10",
+      "route": "L4 → L2 → L1",
+      "threat": "Stale dependencies masked or rejected rationale lost",
+      "required_protection": "RDMS-06 single freshness owner; preserve scope and finalization evidence",
+      "legal_path": "DependencyStamp → current checks → Decision/Slice → finalization",
+      "source_related_contracts": "P7-07; P7-08; P7-21",
+      "structural_coverage": "SOURCE_PATH_DOCUMENTED",
+      "effective_roundtrip": "PENDING",
+      "atomicity_or_runtime_failure_proof": "PENDING",
+      "certification": "BLOCKED"
+    },
+    {
+      "id": "X8-11",
+      "route": "L3 → L5 → L7",
+      "threat": "Proposal silently promoted; sensitive derivative disclosed on fallback",
+      "required_protection": "No auto learning; sealed outbound context and lineage",
+      "legal_path": "Observation/Evidence → MemoryProposal → LearningGate → Provider Context",
+      "source_related_contracts": "P7-16",
+      "structural_coverage": "SOURCE_PATH_DOCUMENTED",
+      "effective_roundtrip": "PENDING",
+      "atomicity_or_runtime_failure_proof": "PENDING",
+      "certification": "BLOCKED"
+    },
+    {
+      "id": "X8-12",
+      "route": "L3 → L6 → L1",
+      "threat": "Unproven isolation mistaken for ephemeral; result state lost",
+      "required_protection": "Containment proof; world effects default SHARED_WORLD if uncertain",
+      "legal_path": "SandboxActivityRecord → artifact publication → legal recovery",
+      "source_related_contracts": "P7-20",
+      "structural_coverage": "SOURCE_PATH_DOCUMENTED",
+      "effective_roundtrip": "PENDING",
+      "atomicity_or_runtime_failure_proof": "PENDING",
+      "certification": "BLOCKED"
+    }
+  ],
+  "status": "GATES_DEFINED_NOT_PASSED"
+}

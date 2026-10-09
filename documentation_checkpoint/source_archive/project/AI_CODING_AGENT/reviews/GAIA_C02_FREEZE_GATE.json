@@ -1,0 +1,135 @@
+{
+  "project": "AI Coding Agent",
+  "phase": "GAIA-C02",
+  "candidate_only": true,
+  "consolidated_freeze_approved": false,
+  "fca_source_frozen": true,
+  "rdms_source_sets": 10,
+  "rdms_original_messages": 27,
+  "published_type_declarations": 27,
+  "interface_witnesses": 12,
+  "candidates": {
+    "L0": {
+      "document": "L0_FOUNDATION.md",
+      "reviewed_reused_names": [],
+      "source_sets": []
+    },
+    "L1": {
+      "document": "L1_CONTROL.md",
+      "reviewed_reused_names": [],
+      "source_sets": [
+        "RDMS-01"
+      ]
+    },
+    "L2": {
+      "document": "L2_COGNITION.md",
+      "reviewed_reused_names": [
+        "CapabilityResult",
+        "Claim",
+        "Commitment",
+        "Decision",
+        "Goal",
+        "GoalStack",
+        "Hypothesis",
+        "InformationNeed",
+        "Invariant",
+        "OperationalCausalClaim",
+        "Slice"
+      ],
+      "source_sets": [
+        "RDMS-02",
+        "RDMS-08"
+      ]
+    },
+    "L3": {
+      "document": "L3_ACTIONS.md",
+      "reviewed_reused_names": [
+        "ActionEffectSemantics",
+        "ActionProposal",
+        "ActionRecord",
+        "ConfidenceAssessment",
+        "ContradictionRecord",
+        "EvidenceLink",
+        "Experiment",
+        "Observation",
+        "SandboxActivityRecord"
+      ],
+      "source_sets": [
+        "RDMS-03",
+        "RDMS-04"
+      ]
+    },
+    "L4": {
+      "document": "L4_TEMPORAL_SPECIALISTS.md",
+      "reviewed_reused_names": [
+        "DependencyStamp",
+        "QueryDependencyStamp",
+        "ResumptionCapsule",
+        "TemporalValidity",
+        "TriggerCondition"
+      ],
+      "source_sets": [
+        "RDMS-05",
+        "RDMS-06"
+      ]
+    },
+    "L5": {
+      "document": "L5_MEMORY.md",
+      "reviewed_reused_names": [
+        "MemoryProposal",
+        "MemoryRetrievalResult"
+      ],
+      "source_sets": [
+        "RDMS-07"
+      ]
+    },
+    "L6": {
+      "document": "L6_RECOVERY.md",
+      "reviewed_reused_names": [],
+      "source_sets": [
+        "RDMS-09"
+      ]
+    },
+    "L7": {
+      "document": "L7_RUNTIME_INTEGRATION.md",
+      "reviewed_reused_names": [],
+      "source_sets": [
+        "RDMS-10"
+      ]
+    }
+  },
+  "blocking": [
+    {
+      "id": "C02-B01",
+      "title": "Full effective-law reconstruction",
+      "reason": "Unindexed corrections and source-level implicit supersession not proven composed without contradicting baseline; front section is partial (27 types plus invariants) and older text remains historical."
+    },
+    {
+      "id": "C02-B02",
+      "title": "Transport aliases controlled approval",
+      "reason": "Proposed CapabilityTransportResult and MemoryRetrievalTransportResult do not yet have ratified cross-interface schema and references."
+    },
+    {
+      "id": "C02-B03",
+      "title": "Legacy conversion restrictions",
+      "reason": "Source-native and rejection semantics stated, but full Commitment/TriggerCondition/ResumptionCapsule end-to-end field contracts still require signoff."
+    },
+    {
+      "id": "C02-B04",
+      "title": "Interface catalogue signature closure",
+      "reason": "12 routes identified with gates; exact typed command/event signatures, durability boundaries and repair/exception fields remain to be formally reconciled."
+    }
+  ],
+  "runtime_tests_executed": false,
+  "production_code_changed": false,
+  "source_hashes_before": {
+    "L0_FOUNDATION.md": "4e0cf3d0303aff482e75d140993135aaa3288c557f04a9dce4a2e198a0425893",
+    "L1_CONTROL.md": "20e1ca47ad9cb35d56d47410e0e706037210a724d72af975a675ae86dc4f6166",
+    "L2_COGNITION.md": "e41eff1f10d81b428fcdfddd4bf63e1b68782ad6a39571b3e14ed17ad75df076",
+    "L3_ACTIONS.md": "f848fdf0ea08a411086a8b1922bc0f8b94da726c06630772f09cd11fd680b190",
+    "L4_TEMPORAL_SPECIALISTS.md": "c5d70ae192338e767427cbdb1c300a86e08635ca69a6db571cba9b7dd3cc213d",
+    "L5_MEMORY.md": "6f5f951596e58fb36b70bf9ad22cbdfa1fdc54b33c5de489af7982a41fa6d002",
+    "L6_RECOVERY.md": "dd57773308db548037643aaabbb1a4412cd3719f5903693466e14522d905b823",
+    "L7_RUNTIME_INTEGRATION.md": "2eef5aa00962d04c0d50fdcc1a3cd0e23ae191b7afb746ea93027c6a27d2ab3a"
+  }
+}

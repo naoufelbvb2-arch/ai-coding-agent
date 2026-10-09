@@ -1,0 +1,901 @@
+[
+  {
+    "id": "C04-W01",
+    "spec": "RDMS-01",
+    "owner": "L1_CONTROL.md",
+    "kind": "SOURCE_BACKED_EXPLICIT_SUPERSESSION",
+    "rule": "Event-sourcing projection-only assertion replaced by one authoritative ControlCommit atomic mutation+ledger model",
+    "new_source": {
+      "message_id": "e3a45231-ddae-4ed4-9bd1-35202ecdfcf7",
+      "lines": [
+        13,
+        41
+      ],
+      "sha256": "d29448b2272dfda4a3b27e753fc2cd52c2bf8616d4d2ed78d7c6d2993aad4bff"
+    },
+    "old_source": {
+      "message_id": "2aacdc73-38d8-4456-9a73-9900fe14f900",
+      "lines": [
+        75,
+        112
+      ],
+      "sha256": "3fb096dce2ed66c36ac18f60877241f59889b9ce5b8fd116c135c8247525aa67"
+    },
+    "old_sha256": "3fb096dce2ed66c36ac18f60877241f59889b9ce5b8fd116c135c8247525aa67",
+    "verified": true
+  },
+  {
+    "id": "C04-W02",
+    "spec": "RDMS-01",
+    "owner": "L1_CONTROL.md",
+    "kind": "SOURCE_BACKED_EXPLICIT_SUPERSESSION",
+    "rule": "ControlCommit fields and authority-context distinction are replaced in R1",
+    "new_source": {
+      "message_id": "e3a45231-ddae-4ed4-9bd1-35202ecdfcf7",
+      "lines": [
+        137,
+        181
+      ],
+      "sha256": "c83de9a9553b65c3a139916affdce723eea7d38ed47e55069ab4d5cfbac61080"
+    },
+    "old_source": {
+      "message_id": "2aacdc73-38d8-4456-9a73-9900fe14f900",
+      "lines": [
+        122,
+        146
+      ],
+      "sha256": "b988f1f5f4b5cd7852255008f531e805d9f5a93ccd2b44ef7db9bcde4c10fe7f"
+    },
+    "old_sha256": "b988f1f5f4b5cd7852255008f531e805d9f5a93ccd2b44ef7db9bcde4c10fe7f",
+    "verified": true
+  },
+  {
+    "id": "C04-W03",
+    "spec": "RDMS-01",
+    "owner": "L1_CONTROL.md",
+    "kind": "SOURCE_BACKED_CLARIFICATION",
+    "rule": "commit_seq strictly increasing, not necessarily gapless",
+    "new_source": {
+      "message_id": "e3a45231-ddae-4ed4-9bd1-35202ecdfcf7",
+      "lines": [
+        110,
+        137
+      ],
+      "sha256": "53c8d06b7bf541df061035e7d171577463fb4f467507494577f8f17a747c9e7e"
+    },
+    "old_source": {
+      "message_id": "2aacdc73-38d8-4456-9a73-9900fe14f900",
+      "lines": [
+        147,
+        161
+      ],
+      "sha256": "5875839fa10dd7aa57f5e2848bbd142cedde9b5b0c0c0223078c668e29818223"
+    },
+    "old_sha256": "5875839fa10dd7aa57f5e2848bbd142cedde9b5b0c0c0223078c668e29818223",
+    "verified": true
+  },
+  {
+    "id": "C04-W04",
+    "spec": "RDMS-01",
+    "owner": "L1_CONTROL.md",
+    "kind": "SOURCE_BACKED_CLARIFICATION",
+    "rule": "Physical UUID choice made implementation boundary; typed IDs still required",
+    "new_source": {
+      "message_id": "e3a45231-ddae-4ed4-9bd1-35202ecdfcf7",
+      "lines": [
+        366,
+        384
+      ],
+      "sha256": "5f84daf6df802c2f997f8818b725e3e745af4b831d0c53bdad2a391f89fa95c5"
+    },
+    "old_source": {
+      "message_id": "2aacdc73-38d8-4456-9a73-9900fe14f900",
+      "lines": [
+        199,
+        234
+      ],
+      "sha256": "8adee46c5612390d3e03d7f710332fb8aef263561bbc3902c931e653ea041a90"
+    },
+    "old_sha256": "8adee46c5612390d3e03d7f710332fb8aef263561bbc3902c931e653ea041a90",
+    "verified": true
+  },
+  {
+    "id": "C04-W05",
+    "spec": "RDMS-02",
+    "owner": "L2_COGNITION.md",
+    "kind": "SOURCE_BACKED_EXPLICIT_SUPERSESSION",
+    "rule": "Remove shared CanonicalEntity.lifecycle_status and use CanonicalEntityMeta + own domain lifecycle",
+    "new_source": {
+      "message_id": "266bb347-d2a5-41ea-872a-32e140c803eb",
+      "lines": [
+        11,
+        35
+      ],
+      "sha256": "c583a79b5249aed56a2b769034e179202d0bdc16c7c5af45431ad261faa58f21"
+    },
+    "old_source": {
+      "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+      "lines": [
+        35,
+        75
+      ],
+      "sha256": "220801b2870ecfe5d9295be3c90b7545daf3edd90a04daa5959ef371a2f6954b"
+    },
+    "old_sha256": "220801b2870ecfe5d9295be3c90b7545daf3edd90a04daa5959ef371a2f6954b",
+    "verified": true
+  },
+  {
+    "id": "C04-W06",
+    "spec": "RDMS-02",
+    "owner": "L2_COGNITION.md",
+    "kind": "SOURCE_BACKED_EXPLICIT_SUPERSESSION",
+    "rule": "Commitment use one reactivation-condition root instead of three competing mechanisms",
+    "new_source": {
+      "message_id": "266bb347-d2a5-41ea-872a-32e140c803eb",
+      "lines": [
+        907,
+        943
+      ],
+      "sha256": "81683d007bde77b05fbdf650d6711cc17a28e70786afbbdc704ebb356f20448c"
+    },
+    "old_source": null,
+    "old_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "verified": true
+  },
+  {
+    "id": "C05-W01",
+    "spec": "RDMS-03",
+    "owner": "L3_ACTIONS.md",
+    "kind": "SOURCE_BACKED_CONSTRAINT_OR_REFINEMENT",
+    "rule": "Observation raw text must retain a trust context; no wording-based promotion of authority.",
+    "new_source": {
+      "spec": "RDMS-03",
+      "source_part": "C01 and Freeze Review 02 Final",
+      "message_id": "a1ca0249-b287-4c4b-8254-773c8f6edbda",
+      "line_start": 11,
+      "line_end": 58,
+      "text_sha256": "c826880def32c3b735258daac8ed86a35266357a2b33bcffb13df3ed898570c2",
+      "verbatim": "C01-01 — Content Trust Must Travel With Content\n\nكل Observation تحمل:\n\ntrust_context_ref\n\nويشير إلى immutable:\n\nContentTrustContext {\n    trust_context_id\n\n    content_role:\n        DATA\n        CODE\n        DOCUMENTATION\n        TOOL_OUTPUT\n        HUMAN_REQUIREMENT\n        SYSTEM_POLICY\n        OTHER\n\n    instruction_authority:\n        NONE\n        USER_TASK\n        PROJECT\n        SYSTEM\n\n    source_trust_class\n\n    domain_authority_binding_ref?\n\n    created_commit_seq\n}\n\nالقاعدة:\n\nContent and trust metadata are inseparable at every reasoning boundary.\n\nأي Retrieval يرسل Observation إلى Reasoning Provider يجب أن يرسل معها Trust Context.\n\nغير قانوني:\n\nretrieve normalized_content\n↓\ndrop trust metadata\n↓\nsend text to LLM\n\nهذا يمنع prompt injection من العودة أثناء retrieval."
+    },
+    "old_source": {
+      "spec": "RDMS-03",
+      "source_part": "Original draft",
+      "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+      "line_start": 69,
+      "line_end": 98,
+      "text_sha256": "09d0a3e293271505e1a861dcf1b35b6bd1972e8859ee8551b77c65fb63e6ae49",
+      "verbatim": "3. Observation\nObservation {\n    observation_id\n    project_id\n\n    observation_kind\n\n    source_ref\n\n    subject_ref?\n\n    observed_at\n    ingested_commit_seq\n\n    repo_ref?\n    world_ref?\n    environment_ref?\n\n    normalized_content\n\n    raw_artifact_ref?\n\n    provenance\n\n    capture_integrity\n\n    origin_ref?\n}\n\nObservations are immutable after canonical append."
+    },
+    "old_sha256": "09d0a3e293271505e1a861dcf1b35b6bd1972e8859ee8551b77c65fb63e6ae49",
+    "verified": true,
+    "route": "X8-07"
+  },
+  {
+    "id": "C05-W02",
+    "spec": "RDMS-03",
+    "owner": "L3_ACTIONS.md",
+    "kind": "SOURCE_BACKED_CONSTRAINT_OR_REFINEMENT",
+    "rule": "Observation immutability retained; corrections concern capture/provenance, not semantic disagreement.",
+    "new_source": {
+      "spec": "RDMS-03",
+      "source_part": "C01 and Freeze Review 02 Final",
+      "message_id": "a1ca0249-b287-4c4b-8254-773c8f6edbda",
+      "line_start": 185,
+      "line_end": 251,
+      "text_sha256": "6eda08648abe96f2dd8a8ae0ecbed0697c72e6599a600491af15cf928fe52a0c",
+      "verbatim": "C01-07 — Observation Amendment Governance\n\nObservationAmendment تصبح:\n\nObservationAmendment {\n    amendment_id\n\n    target_observation_id\n\n    kind:\n        CAPTURE_INVALID\n        NORMALIZATION_REPLACED\n        METADATA_CORRECTED\n        DUPLICATE_OF\n\n    basis_refs[]\n\n    replacement_observation_id?\n    duplicate_of_observation_id?\n\n    capture_governance_authority_ref\n\n    rationale\n\n    created_commit_seq\n}\nC01-08 — Semantic Disagreement Cannot Amend Observation\n\nقانون صارم:\n\nObservationAmendment may correct capture/provenance defects; it may never erase inconvenient meaning.\n\nغير قانوني:\n\nObservation contradicts my hypothesis\n↓\nCAPTURE_INVALID\n\nقانوني:\n\nparser truncated half the HTTP body\n↓\nCAPTURE_INVALID / replacement\n\nأو:\n\nsame source event accidentally ingested twice\n↓\nDUPLICATE_OF\nC01-09 — Observation Usability\n\nتظل Observation immutable.\n\nويُشتق:\n\nObservationUsability:\n    USABLE\n    DEGRADED\n    INVALID_CAPTURE\n    SUPERSEDED_CAPTURE\n    DUPLICATE\n\nمن:\n\ncapture_integrity\n+\nObservationAmendments"
+    },
+    "old_source": {
+      "spec": "RDMS-03",
+      "source_part": "Original draft",
+      "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+      "line_start": 385,
+      "line_end": 423,
+      "text_sha256": "dcc476fd9ef111d3a966b8a9ad80ee165a703955b4e6a86df4e74d1d75349f78",
+      "verbatim": "ObservationAmendment {\n    amendment_id\n\n    target_observation_id\n\n    kind:\n        CAPTURE_INVALID\n        NORMALIZATION_REPLACED\n        METADATA_CORRECTED\n        DUPLICATE_OF\n\n    replacement_observation_id?\n    duplicate_of_observation_id?\n\n    rationale\n    authority_ref\n\n    created_commit_seq\n}\n18. Observation Usability\n\nDerived:\n\nObservationUsability:\n    USABLE\n    DEGRADED\n    INVALID_CAPTURE\n    SUPERSEDED_CAPTURE\n    DUPLICATE\n\nThis is computed from:\n\ncapture_integrity\n+\nObservationAmendments\n\nIt is not another mutable status copied into Observation.\n\n19. Source Being Wrong Is Not a Capture Correction"
+    },
+    "old_sha256": "dcc476fd9ef111d3a966b8a9ad80ee165a703955b4e6a86df4e74d1d75349f78",
+    "verified": true,
+    "route": "X8-07"
+  },
+  {
+    "id": "C05-W03",
+    "spec": "RDMS-03",
+    "owner": "L2_COGNITION.md",
+    "kind": "SOURCE_BACKED_CONSTRAINT_OR_REFINEMENT",
+    "rule": "Multiple observations have roles and combination rules; historical acceptance is not current usability.",
+    "new_source": {
+      "spec": "RDMS-03",
+      "source_part": "C01 and Freeze Review 02 Final",
+      "message_id": "a1ca0249-b287-4c4b-8254-773c8f6edbda",
+      "line_start": 252,
+      "line_end": 329,
+      "text_sha256": "301cd6b3a855a356ebae172f062c56fe284f5f18a25f6aee8d2894fd47b747c2",
+      "verbatim": "C01-10 — Evidence Basis Semantics\n\nEvidenceLink لم تعد تحمل observation_refs[] غامضة فقط.\n\nنضيف:\n\nEvidenceBasis {\n    items[] {\n        observation_id\n\n        role:\n            REQUIRED\n            CORROBORATING\n            CONTEXT\n    }\n\n    combination:\n        ALL_REQUIRED\n        STRUCTURED\n}\nC01-11 — ALL_REQUIRED\n\nإذا:\n\ncombination = ALL_REQUIRED\n\nفكل REQUIRED Observation يجب أن تكون usable.\n\nإذا واحدة تصبح:\n\nINVALID_CAPTURE\n\nفـEvidenceLink لا تبقى usable كأن شيئًا لم يحدث.\n\nC01-12 — STRUCTURED\n\nيستخدم عندما العلاقة ليست مجرد conjunction.\n\nمثال causal sequence:\n\nO1 = failure before intervention\nO2 = intervention actually occurred\nO3 = failure absent afterward\n\nويجب أن يحدد:\n\nderivation_ref\n\nالمنطق الذي يربط الأدوار.\n\nلا يسمح بـfree-form ambiguity.\n\nC01-13 — EvidenceLink Usability\n\nEvidenceLink accepted لا يعاد كتابتها.\n\nنحسب:\n\nEvidenceLinkUsability:\n    CURRENT\n    STALE\n    INVALID_BASIS\n    UNKNOWN\n\nمن:\n\nObservation usability\nAuthorityBinding validity\nDependencySet freshness\nderivation validity\n\nوبذلك نحافظ على التاريخ:\n\n\"This interpretation was accepted at commit N\"\n\nمع القدرة على القول:\n\n\"Do not rely on it now.\""
+    },
+    "old_source": {
+      "spec": "RDMS-03",
+      "source_part": "Original draft",
+      "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+      "line_start": 449,
+      "line_end": 480,
+      "text_sha256": "b56d24206ab7628d92c266e4a6d8c3e3a63aa29a627ede82c373819a56071e26",
+      "verbatim": "EvidenceLink {\n    evidence_link_id\n\n    observation_refs[]\n\n    target_ref\n\n    relation:\n        SUPPORTS\n        WEAKENS\n        CONTRADICTS\n        RELEVANT\n\n    derivation:\n        DETERMINISTIC\n        SEMANTIC\n        AUTHORITATIVE\n\n    rationale\n\n    derivation_ref?\n\n    dependency_set_ref?\n\n    lifecycle:\n        PROPOSED\n        ACCEPTED\n        REJECTED\n        SUPERSEDED\n\n    accepted_commit_seq?\n}"
+    },
+    "old_sha256": "b56d24206ab7628d92c266e4a6d8c3e3a63aa29a627ede82c373819a56071e26",
+    "verified": true,
+    "route": "X8-07"
+  },
+  {
+    "id": "C05-W04",
+    "spec": "RDMS-04",
+    "owner": "L3_ACTIONS.md",
+    "kind": "SOURCE_BACKED_CONSTRAINT_OR_REFINEMENT",
+    "rule": "ActionProposalId / ActionId / AttemptId / DispatchId are separate identifiers.",
+    "new_source": {
+      "spec": "RDMS-04",
+      "source_part": "C01",
+      "message_id": "4f585132-49b6-448d-8506-4b502aee6311",
+      "line_start": 39,
+      "line_end": 56,
+      "text_sha256": "68ae8c4e36f7f61a79771b5875b5396dc72ec24d6fe38208a53b67ab20b9fef5",
+      "verbatim": "C01-02 — Action Execution Identity\n\nنفصل أربع هويات:\n\nActionProposalId\n  └── ActionId\n        └── AttemptId\n              └── DispatchId\n\nActionProposalId: طلب ذو معنى هندسي محدد.\n\nActionId: العملية المعتمدة داخل المشروع.\n\nAttemptId: محاولة واحدة لتنفيذ العملية.\n\nDispatchId: هوية عملية الإرسال الواحدة إلى Executor أو العالم الخارجي.\n\nلا تعتبر إعادة إرسال رسالة إلى Executor محاولة جديدة تلقائيًا؛ يجب التحقق من DispatchId الحالية أولًا."
+    },
+    "old_source": {
+      "spec": "RDMS-04",
+      "source_part": "Original draft",
+      "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+      "line_start": 254,
+      "line_end": 285,
+      "text_sha256": "d6672e9ce719da28c832b6f8214d24452b72d723fa449f36fa14315c8cfba81e",
+      "verbatim": "8. ActionAttempt\n\nنفصل Action عن كل محاولة إرسال.\n\nActionAttempt {\n    attempt_id\n    action_id\n\n    attempt_number\n\n    authorization_ref\n\n    dispatch_intent_commit_seq\n\n    executor_ref\n    execution_context_ref\n\n    dispatch_ack_ref?\n\n    execution_started_at?\n    execution_ended_at?\n\n    reported_result_ref?\n\n    outcome_probe_refs[]\n\n    attempt_outcome:\n        UNKNOWN\n        REPORTED_SUCCESS\n        REPORTED_FAILURE\n        OBSERVED_PARTIAL_EFFECT\n        EFFECT_CONFIRMED"
+    },
+    "old_sha256": "d6672e9ce719da28c832b6f8214d24452b72d723fa449f36fa14315c8cfba81e",
+    "verified": true,
+    "route": "X8-06"
+  },
+  {
+    "id": "C05-W05",
+    "spec": "RDMS-04",
+    "owner": "L3_ACTIONS.md",
+    "kind": "SOURCE_BACKED_CONSTRAINT_OR_REFINEMENT",
+    "rule": "Ownership and durable intent precede external dispatch; DISPATCH_INTENT is not evidence that effects occurred.",
+    "new_source": {
+      "spec": "RDMS-04",
+      "source_part": "C01",
+      "message_id": "4f585132-49b6-448d-8506-4b502aee6311",
+      "line_start": 58,
+      "line_end": 106,
+      "text_sha256": "023cecb0d53bb8405f7d592048b9dc929515941d04e6a5dada921141154770d8",
+      "verbatim": "C01-03 — Durable Dispatch Ownership\nDispatchOwnership {\n    action_id\n    attempt_id\n    dispatch_id\n\n    executor_id\n    executor_generation\n\n    executive_epoch\n    fencing_token\n\n    ownership_state:\n        CLAIMED\n        DISPATCH_POSSIBLE\n        RELEASED\n        UNCERTAIN\n\n    claimed_at_commit_seq\n}\n\nإنشاء CLAIMED يتم بمعاملة atomic compare-and-set مقابل النسخة المتوقعة من ActionRecord.\n\nلا يُسمح لمحاولتين متنافستين بحيازة حق dispatch جديد لنفس الأثر عندما لا تسمح retry policy بذلك.\n\nC01-04 — Dispatch Protocol\nAUTHORIZED\n    ↓\nValidate current authority and preconditions\n    ↓\nAtomic DispatchOwnership CLAIMED\n    ↓\nPersist DISPATCH_INTENT\n    ↓\nDurability acknowledged\n    ↓\nExecutor validates claim and fencing\n    ↓\nExternal dispatch boundary\n    ↓\nResult / Unknown\n    ↓\nObservation / Reconciliation\n\nالقاعدة المهمة:\n\nلا يجوز إرسال shared-world mutation قبل إقرار durable dispatch intent.\n\nلكن وصول العملية إلى DISPATCH_INTENT لا يثبت أنها أُرسلت فعلًا."
+    },
+    "old_source": {
+      "spec": "RDMS-04",
+      "source_part": "Original draft",
+      "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+      "line_start": 225,
+      "line_end": 252,
+      "text_sha256": "356212119249e0d9539f397a04cb38cb2253a2b2908bac8802844f17de7a8cfb",
+      "verbatim": "7. Action Lifecycle\n\nنحافظ على حالات FCA:\n\nPROPOSED\n    ↓\nAUTHORIZED\n    ↓\nDISPATCH_INTENT\n    ↓\nRESULT_REPORTED\n    ↓\nEFFECT_VERIFIED\n    ↓\nRECONCILED\n\nلكن التنفيذ ليس دائمًا نجاحًا خطيًا.\n\nالمسارات البديلة تشمل:\n\nPARTIAL\nFAILED\nIN_DOUBT\nRECONCILING\n\nهذه الحالات لها معانٍ مختلفة.\n\nFAILED لا تستخدم لمجرد أن الأمر انتهى برمز خروج غير صفري؛ يجب أن نحدد هل الفشل متعلق بمحاولة العملية، أو بالمهمة المطلوبة، أو بالتأثير الخارجي."
+    },
+    "old_sha256": "356212119249e0d9539f397a04cb38cb2253a2b2908bac8802844f17de7a8cfb",
+    "verified": true,
+    "route": "X8-06"
+  },
+  {
+    "id": "C05-W06",
+    "spec": "RDMS-04",
+    "owner": "L3_ACTIONS.md",
+    "kind": "SOURCE_BACKED_CONSTRAINT_OR_REFINEMENT",
+    "rule": "Epoch cutover cannot retroactively undo external effects; never claim exactly-once without external guarantees.",
+    "new_source": {
+      "spec": "RDMS-04",
+      "source_part": "C01",
+      "message_id": "4f585132-49b6-448d-8506-4b502aee6311",
+      "line_start": 108,
+      "line_end": 142,
+      "text_sha256": "c390974a765aa0e57a93c3da2259a4b67aa76d518a91b99447158e1c37490f52",
+      "verbatim": "C01-05 — Executive Epoch Change\n\nنحدد ثلاثة سيناريوهات.\n\nA — Authorization قديمة لم تصل إلى dispatch:\n\nتحتاج adoption أو إعادة تفويض وفق سلطة Executive الجديدة.\n\nB — DispatchIntent معتمدة لكن لا يوجد دليل كافٍ على الإرسال أو عدمه:\n\nلا نعيد التنفيذ تلقائيًا. ندخل recovery/reconciliation أو IN_DOUBT.\n\nC — External dispatch بدأت بالفعل:\n\nالـepoch الجديدة لا تستطيع إلغاء التاريخ. تتولى reconciliation وتمنع العمليات المتعارضة.\n\nالـfencing يجب أن يُفرض عند trusted executor boundary، وعند النظام الخارجي إن كان يدعمه.\n\nإذا لم يستطع النظام الخارجي احترام fencing، فلا نزعم منع كل أثر صادر بالفعل عن محاولة قديمة.\n\nC01-06 — The External Exactly-Once Limit\n\nيمكن للـRuntime أن تضمن، ضمن شروط تنفيذها:\n\nعدم اعتماد DispatchOwnership متنافسة لنفس الأثر.\n\nعدم إنشاء retry غير قانونية.\n\nحفظ كل dispatch محتملة.\n\nوقف العمليات المتعارضة عند عدم اليقين.\n\nلكنها لا تضمن exactly-once external effect دون دعم كافٍ من النظام الخارجي.\n\nهذا حد معماري صريح."
+    },
+    "old_source": {
+      "spec": "RDMS-04",
+      "source_part": "Original draft",
+      "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+      "line_start": 343,
+      "line_end": 353,
+      "text_sha256": "27faab5303c5e0824ee7f58bfd66b3abe818d73eb54dea11fc17d45659cc0dae",
+      "verbatim": "    verification_mode:\n        DIRECT_EFFECT\n        ACKNOWLEDGEMENT_ONLY\n        BEST_EFFORT\n\n    timeout_policy_ref\n}\n\nIdempotent لا تعني exactly-once.\n\nيجب أن تدعم الخدمة أو الأداة المعنية semantics اللازمة، وإلا لا يجوز الادعاء أن إعادة الإرسال آمنة."
+    },
+    "old_sha256": "27faab5303c5e0824ee7f58bfd66b3abe818d73eb54dea11fc17d45659cc0dae",
+    "verified": true,
+    "route": "X8-06"
+  },
+  {
+    "id": "C05-W07",
+    "spec": "RDMS-05",
+    "owner": "L4_TEMPORAL_SPECIALISTS.md",
+    "kind": "SOURCE_BACKED_CONSTRAINT_OR_REFINEMENT",
+    "rule": "Trigger change produces new generation with frozen snapshot, not retroactive reinterpretation.",
+    "new_source": {
+      "spec": "RDMS-05",
+      "source_part": "C01",
+      "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+      "line_start": 291,
+      "line_end": 322,
+      "text_sha256": "5eafdafd656f0767464fa5975e24f65e38631068ff1c64c907510f71286bdcff",
+      "verbatim": "C01-12 — TriggerDefinitionSnapshot\nTriggerDefinitionSnapshot {\n    trigger_id\n    generation\n\n    condition_snapshot_ref\n    reaction_spec_snapshot_ref\n\n    source_contract_refs[]\n    evaluation_policy_ref\n\n    fire_policy\n    detection_policy\n    rearm_policy_ref?\n\n    definition_fingerprint\n\n    activated_commit_seq\n}\n\nأي تغيير مادي في:\n\ncondition\nreaction\nsource assumptions\ndetection semantics\nrearm rules\n\nيتطلب generation جديدة.\n\nلا يُعاد تفسير Fire سابقة بناءً على تعريف لاحق.\n"
+    },
+    "old_source": {
+      "spec": "RDMS-05",
+      "source_part": "Original draft",
+      "message_id": "6276f296-457b-462d-b674-933a15194429",
+      "line_start": 143,
+      "line_end": 176,
+      "text_sha256": "0118b5c8a747a119455ef333f57c47c713c736c363073a2d56a5ab917602837b",
+      "verbatim": "6. TriggerDefinition\n\nنصحح نقطة غموض في التصور الأولي: ONE_SHOT / REARMABLE ليست بدائل منطقية لـLEVEL_TRIGGERED / EDGE_TRIGGERED.\n\nالأولى تصف التكرار، والثانية تصف كيفية اكتشاف الشرط.\n\nTriggerDefinition {\n    trigger_id\n    project_id\n\n    generation\n\n    condition_ref\n\n    fire_policy:\n        ONE_SHOT\n        REARMABLE\n\n    detection_policy:\n        LEVEL_TRIGGERED\n        EDGE_TRIGGERED\n\n    source_refs[]\n\n    reaction_spec_ref\n\n    owner_ref\n    linked_object_ref\n\n    created_commit_seq\n    entity_version\n}\n\nوهذا يحافظ على معاني FCA الأصلية مع تحويلها إلى بعدين مستقلين."
+    },
+    "old_sha256": "0118b5c8a747a119455ef333f57c47c713c736c363073a2d56a5ab917602837b",
+    "verified": true,
+    "route": "X8-04"
+  },
+  {
+    "id": "C05-W08",
+    "spec": "RDMS-05",
+    "owner": "L4_TEMPORAL_SPECIALISTS.md",
+    "kind": "SOURCE_BACKED_CONSTRAINT_OR_REFINEMENT",
+    "rule": "Stable occurrence identity and definition-snapshot binding disambiguate fire replay.",
+    "new_source": {
+      "spec": "RDMS-05",
+      "source_part": "C01",
+      "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+      "line_start": 323,
+      "line_end": 367,
+      "text_sha256": "ea7e8c2e7a77ea891ad80f0aad70ac38d6d61aeac31ed6a20e9706cd1c8026dd",
+      "verbatim": "C01-13 — QualifiedOccurrenceIdentity\n\nنضيف:\n\nQualifiedOccurrenceIdentity {\n    trigger_id\n    generation\n\n    occurrence_kind:\n        SOURCE_EVENT\n        EDGE_TRANSITION\n        LEVEL_CYCLE\n        SCHEDULE_OCCURRENCE\n\n    occurrence_key\n\n    identity_derivation_version\n}\n\nالهوية تُبنى من الحدث أو الدورة المؤهلة نفسها، لا من وقت معالجة worker.\n\nC01-14 — Stable TriggerFire\nTriggerFire {\n    fire_id\n\n    trigger_definition_snapshot_ref\n    qualified_occurrence_ref\n\n    evidence_basis_refs[]\n    source_frontier_ref\n\n    fire_identity_key\n\n    created_commit_seq\n}\n\nمع uniqueness constraint على:\n\ntrigger_id\ngeneration\noccurrence_key\n\nحيث تحدد سياسة trigger أي occurrences قانونية.\n\nأي إعادة معالجة لنفس occurrence تعيد Fire نفسها، لا كيانًا جديدًا."
+    },
+    "old_source": {
+      "spec": "RDMS-05",
+      "source_part": "Original draft",
+      "message_id": "6276f296-457b-462d-b674-933a15194429",
+      "line_start": 439,
+      "line_end": 468,
+      "text_sha256": "ddcc501dd024d5ad717513d8b847bf01d34968c034b8ab8067f9c497a078b300",
+      "verbatim": "TriggerFire {\n    fire_id\n\n    trigger_id\n    generation\n\n    condition_version_ref\n\n    triggering_basis_refs[]\n\n    source_frontier_ref\n\n    fire_identity_key\n\n    fired_at_commit_seq\n}\n22. Idempotent Fire Identity\n\nلا تُنشأ fire_id جديدة لمجرد إعادة تقييم نفس الحدث بعد restart.\n\nيُشتق مفتاح هوية fire بصورة مستقرة من:\n\ntrigger identity\ngeneration\nqualified occurrence identity\nreaction identity\n\nبحسب trigger semantics.\n\nأما periodic/recurring triggers فيجب أن تكون لها occurrence identity مميزة لكل موعد قانوني."
+    },
+    "old_sha256": "ddcc501dd024d5ad717513d8b847bf01d34968c034b8ab8067f9c497a078b300",
+    "verified": true,
+    "route": "X8-04"
+  },
+  {
+    "id": "C05-W09",
+    "spec": "RDMS-05",
+    "owner": "L4_TEMPORAL_SPECIALISTS.md",
+    "kind": "SOURCE_BACKED_CONSTRAINT_OR_REFINEMENT",
+    "rule": "Event persistence and trigger processing cursors differ; durable trigger outcome precedes processing cursor advance.",
+    "new_source": {
+      "spec": "RDMS-05",
+      "source_part": "C01",
+      "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+      "line_start": 124,
+      "line_end": 180,
+      "text_sha256": "6edfd718d7336ecbfd8114a2eec6a632e4b181e4789bec85c1f62040dc8c7055",
+      "verbatim": "C01-04 — Acknowledgement Fence\n\nالترتيب القانوني:\n\nReceive external event\n        ↓\nValidate ingress envelope\n        ↓\nDurably store event identity and content\n        ↓\nVerify durable persistence\n        ↓\nAcknowledge external delivery\n        ↓\nEvaluate relevant triggers\n\nلا يُرسل acknowledgement ناجح إلى المصدر قبل ضمان حفظ الحدث إذا كانت دلالات المصدر تسمح بهذا البروتوكول.\n\nإذا فشل الحفظ، لا يجوز الادعاء بأن الحدث تمت معالجته.\n\nوإذا كان المصدر لا يوفر إعادة تسليم موثوقة بعد فشل الإقرار، فيجب تسجيل حد الضمان ووجود احتمال لفجوة.\n\nC01-05 — Two Different Cursor Concepts\n\nنمنع الخلط بين حفظ الحدث ومعالجته:\n\nIngressCursor\n    Tracks durable capture from source\n\nTriggerProcessingCursor\n    Tracks durable trigger evaluation obligations\n\nقد تتقدم IngressCursor عندما تُحفظ الأحداث في Durable Inbox، حتى لو لم تقيّم جميع Triggers بعد.\n\nأما TriggerProcessingCursor فلا تتقدم متجاوزة حدثًا إلا بعد حفظ نتيجة تقييمه وما يلزم من Fire/Reaction أو التزام إعادة تقييم مؤجل.\n\nبهذا لا نحتاج إلى تعليق استلام كل الأحداث بسبب Trigger بطيئة، ولا نفقد أحداثًا بسبب التقدم المبكر للمؤشر.\n\nC01-06 — Atomic Trigger Processing\n\nبالنسبة إلى حدث مؤهل:\n\nRead durable event E\n        ↓\nEvaluate trigger T\n        ↓\nOne ControlCommit:\n    TriggerEvaluation\n    TriggerFire if qualified\n    TriggerReactionIntent if fired\n    TriggerProcessingCursor advancement\n\nإذا كانت النتيجة UNKNOWN وتحتاج إعادة تقييم مستقبلية، يُحفظ واجب إعادة التقييم قبل تقدم المؤشر.\n\nإذا وقع crash قبل ControlCommit، تعاد المعالجة.\n\nإذا وقع crash بعدها، تستخدم replay نفس الهويات ولا تنشئ reactions جديدة."
+    },
+    "old_source": {
+      "spec": "RDMS-05",
+      "source_part": "Original draft",
+      "message_id": "6276f296-457b-462d-b674-933a15194429",
+      "line_start": 437,
+      "line_end": 469,
+      "text_sha256": "1af303e417ce83c3284c2bbb17fac62c5138cfc1f4f119ff913ca3cd921abf1f",
+      "verbatim": "PART VII — TRIGGER FIRE & REACTION\n21. TriggerFire\nTriggerFire {\n    fire_id\n\n    trigger_id\n    generation\n\n    condition_version_ref\n\n    triggering_basis_refs[]\n\n    source_frontier_ref\n\n    fire_identity_key\n\n    fired_at_commit_seq\n}\n22. Idempotent Fire Identity\n\nلا تُنشأ fire_id جديدة لمجرد إعادة تقييم نفس الحدث بعد restart.\n\nيُشتق مفتاح هوية fire بصورة مستقرة من:\n\ntrigger identity\ngeneration\nqualified occurrence identity\nreaction identity\n\nبحسب trigger semantics.\n\nأما periodic/recurring triggers فيجب أن تكون لها occurrence identity مميزة لكل موعد قانوني.\n"
+    },
+    "old_sha256": "1af303e417ce83c3284c2bbb17fac62c5138cfc1f4f119ff913ca3cd921abf1f",
+    "verified": true,
+    "route": "X8-04"
+  },
+  {
+    "id": "C05-W10",
+    "spec": "RDMS-05",
+    "owner": "L4_TEMPORAL_SPECIALISTS.md",
+    "kind": "SOURCE_BACKED_CONSTRAINT_OR_REFINEMENT",
+    "rule": "Correction has smaller top-level capsule schema; must preserve old context in pinned durable payload before declaring a lossless mapping.",
+    "new_source": {
+      "spec": "RDMS-05",
+      "source_part": "C01",
+      "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+      "line_start": 719,
+      "line_end": 743,
+      "text_sha256": "3bf68824ac7536fef84c30d05f24ad2f2484f4d63ff423915af866a9c4835f51",
+      "verbatim": "C01-34 — Durable Capsule Content\nResumptionCapsule {\n    capsule_id\n\n    task_or_goal_ref\n\n    suspended_from_state\n\n    canonical_snapshot_ref\n\n    relevant_entity_refs[]\n\n    dependency_set_ref\n\n    unresolved_action_refs[]\n\n    next_action_proposal_ref?\n\n    durable_payload_artifact_ref\n    content_integrity_ref\n\n    created_commit_seq\n}\n\nتظل Capsule دليل استرجاع وسياق، وليست مصدرًا ثانيًا للمعرفة."
+    },
+    "old_source": {
+      "spec": "RDMS-05",
+      "source_part": "Original draft",
+      "message_id": "6276f296-457b-462d-b674-933a15194429",
+      "line_start": 642,
+      "line_end": 678,
+      "text_sha256": "c1d22ca4a7ddbf38aa27abd8caa3fbbf1587f636463b3d7827b840bc809528b1",
+      "verbatim": "ResumptionCapsule {\n    capsule_id\n\n    project_id\n    task_or_goal_ref\n\n    suspended_from_state\n\n    base_canonical_commit_seq\n\n    repo_ref?\n    world_ref?\n    environment_ref?\n\n    dependency_set_ref?\n\n    current_focus_ref?\n\n    relevant_claim_refs[]\n    relevant_hypothesis_refs[]\n    relevant_evidence_refs[]\n\n    decision_refs[]\n    rejected_path_refs[]\n\n    active_slice_refs[]\n    unresolved_action_refs[]\n\n    open_information_need_refs[]\n    commitment_refs[]\n\n    temporary_change_refs[]\n\n    next_action_proposal_ref?\n\n    created_commit_seq\n}"
+    },
+    "old_sha256": "c1d22ca4a7ddbf38aa27abd8caa3fbbf1587f636463b3d7827b840bc809528b1",
+    "verified": true,
+    "route": "X8-05"
+  },
+  {
+    "id": "C05-W11",
+    "spec": "RDMS-05",
+    "owner": "L4_TEMPORAL_SPECIALISTS.md",
+    "kind": "SOURCE_BACKED_CONSTRAINT_OR_REFINEMENT",
+    "rule": "Persist and verify capsule payload before one ControlCommit marks SUSPENDED and reactivation obligations.",
+    "new_source": {
+      "spec": "RDMS-05",
+      "source_part": "C01",
+      "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+      "line_start": 745,
+      "line_end": 769,
+      "text_sha256": "442fa060d510810ffbf15cd26173d3d6828c41abdd9d93011b0c70b634b757c8",
+      "verbatim": "C01-35 — Atomic Suspension\n\nالترتيب:\n\nPrepare capsule payload\n    ↓\nDurably store and verify payload\n    ↓\nOne ControlCommit:\n    attach capsule reference\n    change work lifecycle to SUSPENDED\n    establish reactivation obligations\n\nإذا لم يكتمل حفظ Capsule بصورة قابلة للاسترجاع، لا يجوز اعتماد انتقال SUSPENDED.\n\nC01-36 — Missing or Corrupted Capsule\n\nإذا اكتُشف تلف لاحق:\n\nCapsule usability = INVALID / UNKNOWN\n\nلا نعيد تشغيل next_action_proposal_ref تلقائيًا.\n\nيدخل العمل Recovery Path لإعادة البناء من الكيانات canonical الباقية، مع تسجيل نقص الأدلة.\n"
+    },
+    "old_source": {
+      "spec": "RDMS-05",
+      "source_part": "Original draft",
+      "message_id": "6276f296-457b-462d-b674-933a15194429",
+      "line_start": 694,
+      "line_end": 708,
+      "text_sha256": "0cf2f6bdb3eaec9598d04d3f774148924738fbdf7da3510f6d1648a128b20a04",
+      "verbatim": "33. Capsule Creation\n\nعند تعليق مهمة:\n\nValidate suspension transition\n↓\nPersist ResumptionCapsule\n↓\nPersist work status\n↓\nArm required triggers\n↓\nCommit atomically\n\nلا يجوز أن تكون المهمة SUSPENDED بصورة قانونية دون Capsule قابلة للاسترجاع."
+    },
+    "old_sha256": "0cf2f6bdb3eaec9598d04d3f774148924738fbdf7da3510f6d1648a128b20a04",
+    "verified": true,
+    "route": "X8-05"
+  },
+  {
+    "id": "C05-W12",
+    "spec": "RDMS-05",
+    "owner": "L6_RECOVERY.md",
+    "kind": "SOURCE_BACKED_CONSTRAINT_OR_REFINEMENT",
+    "rule": "Resume must validate context and unresolved actions and cannot replay shell commands solely because trigger fired.",
+    "new_source": {
+      "spec": "RDMS-05",
+      "source_part": "C01",
+      "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+      "line_start": 773,
+      "line_end": 798,
+      "text_sha256": "d2b2875ebc95ed51775ba907e359246882e6e92b907d05df71101e0537243cb0",
+      "verbatim": "C01-37 — Safe Resume Protocol\nTrigger fires\n    ↓\nReactivationRequest\n    ↓\nAcquire valid Executive epoch\n    ↓\nRestore canonical state\n    ↓\nValidate capsule integrity\n    ↓\nInspect unresolved ActionRecords\n    ↓\nReconcile relevant external effects\n    ↓\nEvaluate repo/world/environment changes\n    ↓\nDependency Evaluation Engine\n    ↓\nValidate Goal/Slice/Decision scope\n    ↓\nExecutive resumes cognition or replans\n    ↓\nNew Action authorization if needed\n\nالـTrigger لا تستأنف Shell command بنفسها."
+    },
+    "old_source": {
+      "spec": "RDMS-05",
+      "source_part": "Original draft",
+      "message_id": "6276f296-457b-462d-b674-933a15194429",
+      "line_start": 718,
+      "line_end": 749,
+      "text_sha256": "37822f842534ad75e8fe0878b050f33f9b896a095a84eaeb4b2bd1b9858fffaf",
+      "verbatim": "PART XI — RESUMPTION PROTOCOL\n35. Resume Sequence\n1. Detect eligible reactivation\n           ↓\n2. Acquire valid Executive epoch\n           ↓\n3. Restore canonical project state\n           ↓\n4. Load ResumptionCapsule\n           ↓\n5. Inspect unresolved ActionRecords\n           ↓\n6. Reconcile potentially dispatched effects\n           ↓\n7. Compare relevant repo/world/environment\n           ↓\n8. Evaluate dependency freshness\n           ↓\n9. Revalidate Goal, Slice, Decisions\n           ↓\n10. Rebuild current focus\n           ↓\n11. Replan if necessary\n           ↓\n12. Authorize next work\n\nهذه ليست مجرد إعادة إرسال آخر prompt إلى LLM.\n\n36. ResumeAssessment\nResumeAssessment {\n    assessment_id\n"
+    },
+    "old_sha256": "37822f842534ad75e8fe0878b050f33f9b896a095a84eaeb4b2bd1b9858fffaf",
+    "verified": true,
+    "route": "X8-05"
+  },
+  {
+    "id": "C06-W01",
+    "spec": "RDMS-06",
+    "owner": "L4_TEMPORAL_SPECIALISTS.md",
+    "kind": "ADDITIONAL_APPROVED_GUARD",
+    "rule": "Captured runtime reads must stay attributable to a scoped receipt; specialist cannot erase runtime-observed dependencies.",
+    "new_source": {
+      "specification": "RDMS-06",
+      "source_part": "C01 and Adversarial Freeze Review 02 with freeze decision",
+      "message_id": "1ed5a815-4917-47b8-9e00-0b450a0581e2",
+      "start_line": 609,
+      "end_line": 634,
+      "sha256": "d7ff97834f08dcd7e2556a12314b38b719619e9cec054f56018795a05827beba",
+      "verbatim": "DependencyCaptureReceipt {\n    receipt_id\n\n    subject_execution_or_reasoning_ref\n\n    trusted_observed_reads[]\n\n    trusted_index_queries[]\n\n    trusted_tool_context_refs[]\n\n    trusted_environment_refs[]\n\n    declared_additional_dependencies[]\n\n    capture_scope\n\n    capture_coverage:\n        COMPLETE_WITHIN_DEFINED_SCOPE\n        PARTIAL\n        UNKNOWN\n\n    enforcement_basis_refs[]\n\n    capture_fingerprint\n}"
+    },
+    "old_source": {
+      "specification": "RDMS-06",
+      "source_part": "Original draft",
+      "message_id": "4bcbb2bf-86d9-4b93-9b1c-9f9529916667",
+      "start_line": 647,
+      "end_line": 671,
+      "sha256": "eebe0f2d3f0cbd14f6cc9881d28b165d4410f5c08e645141c582ad48cb4d9588",
+      "verbatim": "DependencyStamp {\n    stamp_id\n\n    kind:\n        STATE_ENTITY\n        REPO_CONTENT\n        QUERY_SCOPE\n        OBSERVATION\n        MEMORY\n        TOOL\n        ENVIRONMENT\n        EXTERNAL_CONTRACT\n        HUMAN_REQUIREMENT\n\n    dependency_ref\n\n    version_or_hash?\n\n    validity_condition_ref?\n\n    freshness_requirement:\n        EXACT\n        COMPATIBLE\n        ADVISORY\n}"
+    },
+    "old_sha256": "eebe0f2d3f0cbd14f6cc9881d28b165d4410f5c08e645141c582ad48cb4d9588",
+    "verified": true,
+    "route": "X8-10"
+  },
+  {
+    "id": "C06-W02",
+    "spec": "RDMS-06",
+    "owner": "L4_TEMPORAL_SPECIALISTS.md",
+    "kind": "ADDITIONAL_APPROVED_GUARD",
+    "rule": "Negative query evidence is bounded by an explicitly identified universe, including new-entrant detection and coverage.",
+    "new_source": {
+      "specification": "RDMS-06",
+      "source_part": "C01 and Adversarial Freeze Review 02 with freeze decision",
+      "message_id": "1ed5a815-4917-47b8-9e00-0b450a0581e2",
+      "start_line": 721,
+      "end_line": 739,
+      "sha256": "89ddfd8c6cf1f6a7e79ca3df339c7e5f7faab36cb4c2ace818ce19e36e3f9653",
+      "verbatim": "QueryUniverseContract {\n    universe_id\n\n    query_kind\n\n    membership_rule\n\n    existing_member_frontier\n\n    new_member_detection_frontier\n\n    index_coverage_ref\n\n    enumeration_completeness_ref\n\n    dynamic_behavior_limitations[]\n\n    universe_fingerprint\n}"
+    },
+    "old_source": {
+      "specification": "RDMS-06",
+      "source_part": "Original draft",
+      "message_id": "4bcbb2bf-86d9-4b93-9b1c-9f9529916667",
+      "start_line": 885,
+      "end_line": 910,
+      "sha256": "1b3ae40841edc5f5853a4b5867cfaa3c76e2ed21564b77df463f92fe64b69e1f",
+      "verbatim": "QueryDependencyStamp {\n    query_id\n\n    query\n\n    query_kind:\n        SYMBOL_CALL\n        IMPORT\n        CONFIG_REFERENCE\n        TEXTUAL_PROTOCOL\n        RUNTIME_REGISTRY\n        GLOBAL_SEARCH\n        CUSTOM\n\n    proof_scope\n\n    dependency_frontier[]\n\n    index_kind?\n    index_generation?\n    frontier_hash?\n\n    invalidation_rule_ref\n\n    repo_ref\n}"
+    },
+    "old_sha256": "1b3ae40841edc5f5853a4b5867cfaa3c76e2ed21564b77df463f92fe64b69e1f",
+    "verified": true,
+    "route": "X8-10"
+  },
+  {
+    "id": "C06-W03",
+    "spec": "RDMS-07",
+    "owner": "L5_MEMORY.md",
+    "kind": "ADDITIONAL_APPROVED_GUARD",
+    "rule": "Retrieval results do not prove absence beyond the searched scope; coverage and exclusions remain explicit.",
+    "new_source": {
+      "specification": "RDMS-07",
+      "source_part": "C01 and Adversarial Freeze Review 02 with freeze decision",
+      "message_id": "5ee62ad7-b67d-4382-be9d-cd85f6331a8c",
+      "start_line": 519,
+      "end_line": 536,
+      "sha256": "141502db00751fe46e006bdf466aa1a1bfda4d18bec292c7a78aada5c4ac500f",
+      "verbatim": "MemoryRetrievalCoverage {\n    query_ref\n\n    searchable_universe_ref\n\n    index_snapshot_ref\n\n    searched_scope\n\n    retrieval_budget\n\n    completeness:\n        COMPLETE_WITHIN_SCOPE\n        PARTIAL\n        UNKNOWN\n\n    excluded_scope_refs[]\n}"
+    },
+    "old_source": {
+      "specification": "RDMS-07",
+      "source_part": "Original draft",
+      "message_id": "938c1bc7-97a0-46ad-be19-cd3ba3ca125f",
+      "start_line": 1068,
+      "end_line": 1084,
+      "sha256": "e4ae715a27b230289f343447d8b7723501f62538065a5e61fa5dc5009c17c67d",
+      "verbatim": "MemoryRetrievalResult {\n    retrieval_id\n\n    query_ref\n\n    candidate_refs[]\n\n    omitted_or_filtered_scope[]\n\n    ranking_policy_ref\n\n    retrieval_coverage\n\n    freshness_summary\n\n    created_at\n}"
+    },
+    "old_sha256": "e4ae715a27b230289f343447d8b7723501f62538065a5e61fa5dc5009c17c67d",
+    "verified": true,
+    "route": "X8-02"
+  },
+  {
+    "id": "C06-W04",
+    "spec": "RDMS-07",
+    "owner": "L5_MEMORY.md",
+    "kind": "ADDITIONAL_APPROVED_GUARD",
+    "rule": "Memory applicability does not confer unrestricted use or disclosure to a different security domain.",
+    "new_source": {
+      "specification": "RDMS-07",
+      "source_part": "C01 and Adversarial Freeze Review 02 with freeze decision",
+      "message_id": "5ee62ad7-b67d-4382-be9d-cd85f6331a8c",
+      "start_line": 835,
+      "end_line": 851,
+      "sha256": "f78b9f5b8f72738628c59f4a4d37094c9aa21266f40cec3f7ba8762ab518548d",
+      "verbatim": "MemoryAccessPolicy {\n    memory_ref\n\n    source_security_domain\n\n    permitted_use_scopes[]\n\n    permitted_recipient_domains[]\n\n    sensitivity_classification\n\n    disclosure_constraints[]\n\n    derived_data_restrictions[]\n\n    declassification_authority_ref?\n}"
+    },
+    "old_source": {
+      "specification": "RDMS-07",
+      "source_part": "Original draft",
+      "message_id": "938c1bc7-97a0-46ad-be19-cd3ba3ca125f",
+      "start_line": 588,
+      "end_line": 621,
+      "sha256": "4d4f24539c6c089eb406401aea694a4db5f2db2be5b2c817c88d7a455c75aa68",
+      "verbatim": "MemoryRecord {\n    memory_id\n\n    memory_category\n\n    claim_or_procedure_ref\n\n    scope\n\n    maturity\n\n    applicability_conditions[]\n    counter_conditions[]\n\n    evidence_basis_refs[]\n\n    provenance_refs[]\n\n    dependency_set_ref\n\n    confidence_assessment_ref\n\n    stability\n\n    version\n\n    lifecycle\n\n    derived_from[]\n    supersedes[]\n\n    created_commit_seq\n    updated_commit_seq\n}"
+    },
+    "old_sha256": "4d4f24539c6c089eb406401aea694a4db5f2db2be5b2c817c88d7a455c75aa68",
+    "verified": true,
+    "route": "X8-11"
+  },
+  {
+    "id": "C06-W05",
+    "spec": "RDMS-07",
+    "owner": "L5_MEMORY.md",
+    "kind": "ADDITIONAL_APPROVED_GUARD",
+    "rule": "Learning/promotion requires independent authorization binding; a proposal is not an authorized memory commit.",
+    "new_source": {
+      "specification": "RDMS-07",
+      "source_part": "C01 and Adversarial Freeze Review 02 with freeze decision",
+      "message_id": "5ee62ad7-b67d-4382-be9d-cd85f6331a8c",
+      "start_line": 392,
+      "end_line": 404,
+      "sha256": "b874b8422dc956055f19393b3ef64da2d1e7499648ef92e4920324f6b4bd87b4",
+      "verbatim": "LearningAuthorizationBinding {\n    proposal_snapshot_ref\n\n    learning_gate_evaluation_ref\n\n    executive_authorization_ref\n\n    expected_memory_head_ref?\n\n    dependency_evaluation_ref\n\n    authorized_commit_scope\n}"
+    },
+    "old_source": {
+      "specification": "RDMS-07",
+      "source_part": "Original draft",
+      "message_id": "938c1bc7-97a0-46ad-be19-cd3ba3ca125f",
+      "start_line": 474,
+      "end_line": 500,
+      "sha256": "954762e236b07d60a1c7480f60f9383a0f914a88043e9f541e6567ed0a6557af",
+      "verbatim": "MemoryProposal {\n    proposal_id\n\n    claim\n\n    proposed_scope\n\n    source_episode_refs[]\n\n    causal_basis_ref?\n\n    applicability_conditions[]\n    counter_conditions[]\n    counterexamples[]\n\n    evidence_refs[]\n\n    confidence_assessment_ref\n\n    proposed_maturity\n\n    dependency_set_ref\n\n    provenance_ref\n\n    proposed_memory_category\n}"
+    },
+    "old_sha256": "954762e236b07d60a1c7480f60f9383a0f914a88043e9f541e6567ed0a6557af",
+    "verified": true,
+    "route": "X8-11"
+  },
+  {
+    "id": "C06-W06",
+    "spec": "RDMS-08",
+    "owner": "L2_COGNITION.md",
+    "kind": "ADDITIONAL_APPROVED_GUARD",
+    "rule": "Where decision and resulting legal transition form one recoverable unit, use a bound ControlCommit with version checks.",
+    "new_source": {
+      "specification": "RDMS-08",
+      "source_part": "C01 and Adversarial Freeze Review 02 with freeze decision",
+      "message_id": "a0f04ffe-181e-409d-9f94-d7d5c426502b",
+      "start_line": 251,
+      "end_line": 270,
+      "sha256": "249663f07547d0aa77ad6b89e7d76b1dd2bfe9fba1f62d59d96615b6900764b9",
+      "verbatim": "ControlDecisionTransaction {\n    transaction_id\n\n    executive_epoch\n\n    current_goal_ref\n    current_slice_ref?\n\n    selected_operation_ref\n\n    expected_canonical_state_version\n\n    expected_focus_version\n\n    governing_policy_version\n\n    proposed_transition_ref\n\n    idempotency_key\n}"
+    },
+    "old_source": {
+      "specification": "RDMS-08",
+      "source_part": "Original draft",
+      "message_id": "c955b372-e904-441b-8a0f-c8d9ae56c2f7",
+      "start_line": 549,
+      "end_line": 563,
+      "sha256": "009388b00442f363ea9b80b43c1258033337b1d0dd498b440a0cd257b8ee767e",
+      "verbatim": "CognitiveControlDecision {\n    decision_id\n\n    cycle_ref\n\n    executive_epoch\n\n    candidate_operations[]\n\n    admissible_operations[]\n\n    rejected_operations[] {\n        operation_ref\n        rejection_reason\n    }"
+    },
+    "old_sha256": "009388b00442f363ea9b80b43c1258033337b1d0dd498b440a0cd257b8ee767e",
+    "verified": true,
+    "route": null
+  },
+  {
+    "id": "C06-W07",
+    "spec": "RDMS-08",
+    "owner": "L2_COGNITION.md",
+    "kind": "ADDITIONAL_APPROVED_GUARD",
+    "rule": "A completion claim needs scoped evidence of acceptance satisfaction and cannot hide unresolved obligations.",
+    "new_source": {
+      "specification": "RDMS-08",
+      "source_part": "C01 and Adversarial Freeze Review 02 with freeze decision",
+      "message_id": "a0f04ffe-181e-409d-9f94-d7d5c426502b",
+      "start_line": 1233,
+      "end_line": 1253,
+      "sha256": "250ab1ffc86da7bc5d9765c07c468e38982b3579849df390314035a7246bbb30",
+      "verbatim": "FinalizationEvidenceContract {\n    goal_ref\n\n    target_acceptance_refs[]\n\n    satisfied_acceptance_refs[]\n\n    unsatisfied_acceptance_refs[]\n\n    verification_coverage_ref\n\n    unresolved_required_actions[]\n\n    unresolved_critical_obligations[]\n\n    dependency_evaluation_ref\n\n    authorized_completion_scope\n\n    finalization_disposition\n}"
+    },
+    "old_source": {
+      "specification": "RDMS-08",
+      "source_part": "Original draft",
+      "message_id": "c955b372-e904-441b-8a0f-c8d9ae56c2f7",
+      "start_line": 1802,
+      "end_line": 1818,
+      "sha256": "424c2007da92a94d41d327bde94a3477de178dddafa3bfdc879f974702f79104",
+      "verbatim": "CompletionAssessment {\n    goal_ref\n\n    acceptance_criteria_refs[]\n\n    verification_coverage_ref\n\n    unresolved_critical_obligations[]\n\n    unresolved_action_refs[]\n\n    dependency_status\n\n    known_limitations[]\n\n    completion_claim\n}"
+    },
+    "old_sha256": "424c2007da92a94d41d327bde94a3477de178dddafa3bfdc879f974702f79104",
+    "verified": true,
+    "route": "X8-10"
+  },
+  {
+    "id": "C06-W08",
+    "spec": "RDMS-09",
+    "owner": "L6_RECOVERY.md",
+    "kind": "ADDITIONAL_APPROVED_GUARD",
+    "rule": "Bootstrap infrastructure authority is separate from restored canonical Executive authority.",
+    "new_source": {
+      "specification": "RDMS-09",
+      "source_part": "C02",
+      "message_id": "d59160dd-fa7a-4058-8892-69794f57e9b8",
+      "start_line": 147,
+      "end_line": 175,
+      "sha256": "3627f5109f1283c25e945cc14599a1d04c351156bf06ccf4b2be3c8b91339d72",
+      "verbatim": "RecoveryBootstrapContract {\n    bootstrap_case_id\n\n    affected_project_scope\n\n    unavailable_control_components[]\n\n    trusted_bootstrap_source_refs[]\n\n    recovery_principal_ref\n\n    principal_authority_proof_ref\n\n    permitted_infrastructure_operations[]\n\n    prohibited_project_operations[]\n\n    source_integrity_requirements[]\n\n    destination_integrity_requirements[]\n\n    bootstrap_generation\n\n    bootstrap_audit_receipts[]\n\n    canonical_handoff_requirements[]\n\n    bootstrap_disposition\n}"
+    },
+    "old_source": {
+      "specification": "RDMS-09",
+      "source_part": "Original draft",
+      "message_id": "6ee1a6d1-3dfe-4de8-8c44-54ac4b07f8d4",
+      "start_line": 399,
+      "end_line": 421,
+      "sha256": "d838b4864d766e28750c5f7c18430a14cf2e5460239b74d19c4479453dfa53e8",
+      "verbatim": "StartupRecoveryAssessment {\n    startup_id\n\n    canonical_snapshot_ref\n\n    ledger_replay_ref\n\n    executive_epoch_ref\n\n    action_reconciliation_ref\n\n    trigger_recovery_ref\n\n    specialist_recovery_ref\n\n    dependency_validation_ref\n\n    goal_restoration_ref\n\n    unresolved_blockers[]\n\n    readiness_for_normal_control\n}"
+    },
+    "old_sha256": "d838b4864d766e28750c5f7c18430a14cf2e5460239b74d19c4479453dfa53e8",
+    "verified": true,
+    "route": "X8-12"
+  },
+  {
+    "id": "C06-W09",
+    "spec": "RDMS-09",
+    "owner": "L6_RECOVERY.md",
+    "kind": "ADDITIONAL_APPROVED_GUARD",
+    "rule": "Possible unconfirmed external effects survive process failure and constrain follow-up safety.",
+    "new_source": {
+      "specification": "RDMS-09",
+      "source_part": "C03",
+      "message_id": "89e41ed5-ac4e-4b95-9680-b9bec79f278a",
+      "start_line": 509,
+      "end_line": 537,
+      "sha256": "cc9b1b7dbb8cdcf3c67ee0a2c9d5c15eb170d44f8ce70cf6a9f923b008eeb7e9",
+      "verbatim": "PossibleExternalEffectAssessment {\n    assessment_id\n\n    related_action_refs[]\n\n    confirmed_effect_refs[]\n\n    possible_unconfirmed_effects[]\n\n    unknown_effect_scope[]\n\n    external_execution_guarantees[]\n\n    outstanding_dispatch_paths[]\n\n    effect_identity_refs[]\n\n    proposed_followup_action_ref?\n\n    conflict_analysis\n\n    safety_evidence_refs[]\n\n    conclusion:\n        CONFLICT_IMPOSSIBLE\n        EFFECTS_RECONCILED\n        FOLLOWUP_SAFE_UNDER_UNCERTAINTY\n        NOT_PROVEN\n}"
+    },
+    "old_source": {
+      "specification": "RDMS-09",
+      "source_part": "Original draft",
+      "message_id": "6ee1a6d1-3dfe-4de8-8c44-54ac4b07f8d4",
+      "start_line": 615,
+      "end_line": 635,
+      "sha256": "b2d4b5c7aaa35e7cdc8efe54a998ee0b39dc58b498976475f277f75a26814a78",
+      "verbatim": "ActionRecoveryAssessment {\n    action_ref\n\n    pre_failure_lifecycle\n\n    effect_identity_ref?\n\n    retry_policy\n\n    outcome_probe_ref?\n\n    observed_world_status\n\n    reconciliation_evidence_refs[]\n\n    dependent_operation_refs[]\n\n    permitted_recovery_options[]\n\n    unresolved_uncertainty[]\n}"
+    },
+    "old_sha256": "b2d4b5c7aaa35e7cdc8efe54a998ee0b39dc58b498976475f277f75a26814a78",
+    "verified": true,
+    "route": "X8-12"
+  },
+  {
+    "id": "C06-W10",
+    "spec": "RDMS-09",
+    "owner": "L6_RECOVERY.md",
+    "kind": "ADDITIONAL_APPROVED_GUARD",
+    "rule": "Schema cutover must make one authoritative meaning visible and survive crash at the boundary.",
+    "new_source": {
+      "specification": "RDMS-09",
+      "source_part": "C02",
+      "message_id": "d59160dd-fa7a-4058-8892-69794f57e9b8",
+      "start_line": 969,
+      "end_line": 993,
+      "sha256": "677eefb64e756423623b112cdfa794ec4786e3ba322ac4766e023518cac9b31b",
+      "verbatim": "CanonicalSchemaVisibilityContract {\n    migration_ref\n\n    source_schema_version\n\n    target_schema_version\n\n    authoritative_schema_view\n\n    allowed_reader_versions[]\n\n    allowed_writer_versions[]\n\n    compatibility_proof_refs[]\n\n    migration_commit_boundary\n\n    canonical_visibility_generation\n\n    reference_consistency_requirements[]\n\n    rollback_conditions[]\n\n    forward_recovery_conditions[]\n}"
+    },
+    "old_source": {
+      "specification": "RDMS-09",
+      "source_part": "Original draft",
+      "message_id": "6ee1a6d1-3dfe-4de8-8c44-54ac4b07f8d4",
+      "start_line": 1181,
+      "end_line": 1201,
+      "sha256": "8798f4badd6d670ba8c26626ee59db3c7180223af898e9474f2a67330ea9d0f8",
+      "verbatim": "UpgradePlan {\n    upgrade_id\n\n    source_version\n\n    target_version\n\n    affected_components[]\n\n    migration_steps[]\n\n    compatibility_requirements[]\n\n    rollback_or_recovery_strategy\n\n    expected_downtime\n\n    required_verification[]\n\n    authority_refs[]\n}"
+    },
+    "old_sha256": "8798f4badd6d670ba8c26626ee59db3c7180223af898e9474f2a67330ea9d0f8",
+    "verified": true,
+    "route": "X8-12"
+  },
+  {
+    "id": "C06-W11",
+    "spec": "RDMS-09",
+    "owner": "L6_RECOVERY.md",
+    "kind": "ADDITIONAL_APPROVED_GUARD",
+    "rule": "Restored/derived records remain subject to suppression before they can be disclosed.",
+    "new_source": {
+      "specification": "RDMS-09",
+      "source_part": "C02",
+      "message_id": "d59160dd-fa7a-4058-8892-69794f57e9b8",
+      "start_line": 849,
+      "end_line": 875,
+      "sha256": "06be8ac3ba76b678e8b9b330ceac7ed27de139745310ad8eb202b6f54ebe4d93",
+      "verbatim": "RecoveryDisclosureBarrier {\n    barrier_id\n\n    restored_data_scope\n\n    applicable_suppression_frontier\n\n    authorized_processing_scope\n\n    prohibited_disclosure_scope[]\n\n    protected_processing_paths[]\n\n    protected_indexing_paths[]\n\n    protected_provider_paths[]\n\n    protected_specialist_paths[]\n\n    protected_export_paths[]\n\n    effective_policy_version\n\n    barrier_enforcement_status\n\n    release_authorization_ref?\n}"
+    },
+    "old_source": {
+      "specification": "RDMS-09",
+      "source_part": "Original draft",
+      "message_id": "6ee1a6d1-3dfe-4de8-8c44-54ac4b07f8d4",
+      "start_line": 1249,
+      "end_line": 1269,
+      "sha256": "d32c3e44ac71e46192d62f1da86276df05296f61c62c3e7e3a0e9e41952346ef",
+      "verbatim": "DataLifecyclePolicy {\n    policy_id\n\n    data_class\n\n    retention_scope\n\n    permitted_storage_domains[]\n\n    permitted_processing_domains[]\n\n    expiry_or_erasure_conditions[]\n\n    legal_hold_conditions[]\n\n    derived_data_rules[]\n\n    audit_requirements[]\n\n    authorized_policy_version\n}"
+    },
+    "old_sha256": "d32c3e44ac71e46192d62f1da86276df05296f61c62c3e7e3a0e9e41952346ef",
+    "verified": true,
+    "route": "X8-11"
+  },
+  {
+    "id": "C06-W12",
+    "spec": "RDMS-10",
+    "owner": "L7_RUNTIME_INTEGRATION.md",
+    "kind": "ADDITIONAL_APPROVED_GUARD",
+    "rule": "Dispatch authorization must bind resolved final operation, arguments, adapter and actual execution principal.",
+    "new_source": {
+      "specification": "RDMS-10",
+      "source_part": "C02",
+      "message_id": "5f33fe0d-af3e-4f37-aeac-8979e64d941f",
+      "start_line": 423,
+      "end_line": 449,
+      "sha256": "d5c98f9d9e69edf753fbdda12922a0df68c67cc556e02990bb963f0a93601da1",
+      "verbatim": "EffectiveExecutionBinding {\n    action_ref\n\n    sealed_execution_intent_ref\n\n    authorized_operation_kind\n\n    adapter_identity\n\n    adapter_integrity_ref\n\n    effective_operation_ref\n\n    effective_argument_integrity_ref\n\n    resolved_target_resource_refs[]\n\n    execution_environment_ref\n\n    effective_execution_principal_ref\n\n    authorized_effect_scope\n\n    final_validation_ref\n\n    dispatch_eligibility\n}"
+    },
+    "old_source": {
+      "specification": "RDMS-10",
+      "source_part": "Original draft",
+      "message_id": "99533762-bba8-407a-b27b-952a236c00a4",
+      "start_line": 809,
+      "end_line": 827,
+      "sha256": "2ddc26f5f4222dd18c790a6cfc6ae9f11cac691aebdfecd16020479346c18419",
+      "verbatim": "ToolExecutionRequest {\n    action_ref\n\n    dispatch_receipt_ref\n\n    tool_identity\n\n    execution_boundary_ref\n\n    authorized_resource_scope\n\n    arguments_ref\n\n    effect_semantics_ref\n\n    execution_generation\n\n    timeout_policy\n}"
+    },
+    "old_sha256": "2ddc26f5f4222dd18c790a6cfc6ae9f11cac691aebdfecd16020479346c18419",
+    "verified": true,
+    "route": "X8-06"
+  },
+  {
+    "id": "C06-W13",
+    "spec": "RDMS-10",
+    "owner": "L7_RUNTIME_INTEGRATION.md",
+    "kind": "ADDITIONAL_APPROVED_GUARD",
+    "rule": "Raw observation admissibility is distinct from later verified causal attachment to an action.",
+    "new_source": {
+      "specification": "RDMS-10",
+      "source_part": "C02",
+      "message_id": "5f33fe0d-af3e-4f37-aeac-8979e64d941f",
+      "start_line": 754,
+      "end_line": 776,
+      "sha256": "6dbabd3c921605671ac0cd84d1d22319559f537e42ec6eb9c930984bf3121851",
+      "verbatim": "ObservationCausalAttachmentContract {\n    observation_ref\n\n    source_identity\n\n    source_event_identity?\n\n    raw_observation_scope\n\n    claimed_action_ref?\n\n    verified_action_ref?\n\n    source_provenance_ref\n\n    causal_attachment_evidence_refs[]\n\n    missing_parent_refs[]\n\n    admissible_interpretation_scope\n\n    reattachment_requirements[]\n}"
+    },
+    "old_source": {
+      "specification": "RDMS-10",
+      "source_part": "Original draft",
+      "message_id": "99533762-bba8-407a-b27b-952a236c00a4",
+      "start_line": 951,
+      "end_line": 959,
+      "sha256": "c5f60baed7e577dadf9aef7a0d67d82589de02dce722ffbf012b6bfa6d16ad67",
+      "verbatim": "ObservationIngressResult {\n    observation_ref\n\n    append_disposition\n\n    deduplication_result\n\n    source_validation_result\n}"
+    },
+    "old_sha256": "c5f60baed7e577dadf9aef7a0d67d82589de02dce722ffbf012b6bfa6d16ad67",
+    "verified": true,
+    "route": "X8-07"
+  },
+  {
+    "id": "C06-W14",
+    "spec": "RDMS-10",
+    "owner": "L7_RUNTIME_INTEGRATION.md",
+    "kind": "ADDITIONAL_APPROVED_GUARD",
+    "rule": "Outbound provider disclosure must be sealed to the actual context payload, destination and scope.",
+    "new_source": {
+      "specification": "RDMS-10",
+      "source_part": "C02",
+      "message_id": "5f33fe0d-af3e-4f37-aeac-8979e64d941f",
+      "start_line": 858,
+      "end_line": 882,
+      "sha256": "9a32bf619d57ada734a71008191da386626d6d7fbd7d4c8da3bd4383e79674f6",
+      "verbatim": "SealedOutboundContext {\n    invocation_ref\n\n    originating_project_ref\n\n    final_destination_provider_ref\n\n    final_destination_boundary_ref\n\n    final_context_manifest_ref\n\n    included_content_integrity_refs[]\n\n    included_data_classification_refs[]\n\n    applicable_disclosure_policy_frontier\n\n    authorized_processing_purpose\n\n    disclosure_admission_ref\n\n    outbound_integrity_binding\n\n    release_eligibility\n}"
+    },
+    "old_source": {
+      "specification": "RDMS-10",
+      "source_part": "Original draft",
+      "message_id": "99533762-bba8-407a-b27b-952a236c00a4",
+      "start_line": 525,
+      "end_line": 549,
+      "sha256": "42af8074562cf987c00a5635c73aea5a3be37923f905cda77195a277d2830e0a",
+      "verbatim": "ContextPackage {\n    context_package_id\n\n    project_ref\n\n    goal_ref\n\n    focus_ref\n\n    relevant_state_refs[]\n\n    relevant_evidence_refs[]\n\n    applicable_contract_refs[]\n\n    mandatory_context_manifest_ref\n\n    memory_retrieval_refs[]\n\n    dependency_set_ref\n\n    source_trust_metadata_refs[]\n\n    disclosure_policy_ref\n}"
+    },
+    "old_sha256": "42af8074562cf987c00a5635c73aea5a3be37923f905cda77195a277d2830e0a",
+    "verified": true,
+    "route": "X8-11"
+  },
+  {
+    "id": "C06-W15",
+    "spec": "RDMS-10",
+    "owner": "L7_RUNTIME_INTEGRATION.md",
+    "kind": "ADDITIONAL_APPROVED_GUARD",
+    "rule": "Accepted trigger results generate durable derived-work obligations, not implicit permission for external mutations.",
+    "new_source": {
+      "specification": "RDMS-10",
+      "source_part": "C02",
+      "message_id": "5f33fe0d-af3e-4f37-aeac-8979e64d941f",
+      "start_line": 273,
+      "end_line": 297,
+      "sha256": "d9b47cadcb4d7322b954a69c91d8acb6c3e871b54bd31510b1e216f209714373",
+      "verbatim": "TriggerDerivedWorkCommitment {\n    trigger_ref\n\n    trigger_generation\n\n    source_event_identity\n\n    canonical_reaction_identity\n\n    reaction_commit_ref\n\n    derived_work_identity\n\n    required_continuation_scope\n\n    durable_continuation_ref\n\n    existing_action_refs[]\n\n    required_authorization_path\n\n    recovery_deduplication_basis\n\n    current_continuation_assessment\n}"
+    },
+    "old_source": {
+      "specification": "RDMS-10",
+      "source_part": "Original draft",
+      "message_id": "99533762-bba8-407a-b27b-952a236c00a4",
+      "start_line": 1216,
+      "end_line": 1226,
+      "sha256": "5d1bd536aba8106a068c38e5452dca175d8f4843393878118022e8e0057a0ade",
+      "verbatim": "TriggerEvaluationResult {\n    trigger_ref\n\n    firing_candidate_ref?\n\n    canonical_reaction_key\n\n    required_control_transition_ref?\n\n    evaluation_status\n}"
+    },
+    "old_sha256": "5d1bd536aba8106a068c38e5452dca175d8f4843393878118022e8e0057a0ade",
+    "verified": true,
+    "route": "X8-04"
+  }
+]

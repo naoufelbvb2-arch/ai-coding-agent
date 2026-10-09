@@ -1,0 +1,51 @@
+{
+  "stage": "A_SOURCE_CHECKPOINT_ONLY",
+  "inventory_records": 195,
+  "project_files": 190,
+  "text_documents_inspected": 179,
+  "json_parse_errors": [],
+  "fca_checksum_checks": [
+    {
+      "file": "Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+      "original_locator": "Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+      "locator_resolution": "Same archived directory, filename preserved; historical absolute path is not a live path",
+      "expected": "74d0923cbd343b71740da0fc2368a84aad2ea97f8e4e15f156122f48ebe53539",
+      "actual": "74d0923cbd343b71740da0fc2368a84aad2ea97f8e4e15f156122f48ebe53539",
+      "result": "PASS"
+    },
+    {
+      "file": "Formal_Cognitive_Architecture_v1.0_FROZEN_SPEC.md",
+      "original_locator": "/mnt/data/Formal_Cognitive_Architecture_v1.0_FROZEN_SPEC.md",
+      "locator_resolution": "Same archived directory, filename preserved; historical absolute path is not a live path",
+      "expected": "e38e98167c56dbe44215c7dd0a0c0eb25e1a6a9106f27b9d76f4b2e049008199",
+      "actual": "e38e98167c56dbe44215c7dd0a0c0eb25e1a6a9106f27b9d76f4b2e049008199",
+      "result": "PASS"
+    }
+  ],
+  "fca_base_numbered_sections": 88,
+  "fca_appendices": 7,
+  "rdms_source_bundles": 10,
+  "rdms_original_messages": 27,
+  "rdms_baselines": 10,
+  "rdms_correction_and_freeze_messages": 17,
+  "rdms_message_hashes_pass": true,
+  "rdms_final_freeze_evidence_present": {
+    "RDMS-01": true,
+    "RDMS-02": true,
+    "RDMS-03": true,
+    "RDMS-04": true,
+    "RDMS-05": true,
+    "RDMS-06": true,
+    "RDMS-07": true,
+    "RDMS-08": true,
+    "RDMS-09": true,
+    "RDMS-10": true
+  },
+  "external_approval_authenticated": false,
+  "source_roles": [
+    "assistant"
+  ],
+  "canonical_architecture_rewritten": false,
+  "full_effective_law_verified": false,
+  "freeze_status": "HOLD"
+}

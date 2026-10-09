@@ -1,0 +1,382 @@
+{
+  "phase": "GAIA-C01 Phase 8",
+  "decision_class": "RECONCILIATION_CANDIDATE",
+  "layer_freeze_authorized": false,
+  "production_code_authorized": false,
+  "runtime_tests_performed": 0,
+  "semantic_cases": [
+    {
+      "id": "S8-01",
+      "type": "ActionProposal",
+      "owner_layer": "L3",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:1663,RDMS-04:Original draft:97",
+      "rule": "Keep detailed operation kind as a mandatory, typed effective-operation discriminator separate from broad action_kind transport categories (FILESYSTEM, TERMINAL, etc.) and separate from action_class. A category alone never authorizes an effect.",
+      "mapping": "Legacy kind=file_write -> action_kind=FILESYSTEM AND operation=file_write; kind=file_delete -> FILESYSTEM AND operation=file_delete; kind=shell -> TERMINAL AND operation=shell, subject to authorized tool scope.",
+      "reject": "If the exact effect operation, target, reversibility, preconditions, or authorization scope is missing, no SHARED_WORLD dispatch and no automated canonical migration.",
+      "witness": "Two proposals with identical action_kind=FILESYSTEM but different delete/write semantics must remain distinguishable at ActionGate and sealed executor; include symlink-target switch.",
+      "proof": "Signed/effective operation specs with explicit discriminator; version/integrity-resolvable context; downstream use and reverse-projection proof.",
+      "status": "RESOLUTION_RULE_SPECIFIED_PROOF_PENDING"
+    },
+    {
+      "id": "S8-02",
+      "type": "Claim",
+      "owner_layer": "L2",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:387,RDMS-02:Original draft:132,RDMS-02:Original draft:211",
+      "rule": "RDMS-02 C01 support assessment governs current support; FCA evidence_for/evidence_against and provenance must remain recoverable via accepted RDMS-03 EvidenceLink relations and historical provenance. FactGrounding remains mandatory for FACT.",
+      "mapping": "Claim identity/kind/statement/scope/status/version -> RDMS-02 canonical record; support -> separately governed SupportAssessment; evidence arrays -> link relation queries constrained to claim and accepted status; provenance -> lineage refs.",
+      "reject": "Missing source provenance or grounding cannot be promoted into FACT/VERIFIED; a claim with untraceable contradictory evidence enters review, not verified status.",
+      "witness": "FACT, BELIEF, ASSUMPTION with positive and negative evidence; challenge a previously strong claim using late contradictory observation; no silent drop.",
+      "proof": "Source version lineage, evidence links, grounding, support-assessment provenance and temporal validity reconstruct FCA-level meaning.",
+      "status": "RESOLUTION_RULE_SPECIFIED_PROOF_PENDING"
+    },
+    {
+      "id": "S8-03",
+      "type": "ContradictionRecord",
+      "owner_layer": "L3",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:662,RDMS-03:Original draft:632,RDMS-03:C01 and Freeze Review 02 Final:2381",
+      "rule": "Use RDMS-03 lifecycle as current owner. FCA UNRESOLVED is an active unresolved epistemic condition, never map to RDMS-03 RESOLVED. For legacy migration preserve historical UNRESOLVED claim and derive unresolved as nonterminal/non-dismissed with no accepted resolution, only when demonstrably equivalent.",
+      "mapping": "candidate -> CANDIDATE; confirmed -> CONFIRMED; explained -> EXPLAINED only with admissible explanation; unresolved -> unresolved condition/history, not RDMS lifecycle RESOLVED. RDMS RESOLVED needs its own closing proof.",
+      "reject": "Without a valid lifecycle history, comparable observation sources and explanation/resolution evidence, do not auto-convert legacy unresolved to any terminal value.",
+      "witness": "Same observations but different times are NOT_COMPARABLE; later contradictory observation reopens question; UNRESOLVED must never disappear through RESOLVED alias.",
+      "proof": "State history with comparability assessment, observation references, interpretation/proof separation and unresolved-state query.",
+      "status": "RESOLUTION_RULE_SPECIFIED_PROOF_PENDING"
+    },
+    {
+      "id": "S8-04",
+      "type": "EvidenceLink",
+      "owner_layer": "L3",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:616,RDMS-03:Original draft:461,RDMS-03:Original draft:514",
+      "rule": "RDMS-03 may bind multiple canonical observation_refs to one EvidenceLink with individual provenance; a FCA single observation_id view can be emitted only when cardinality equals one or via explicit composite link reference preserving whole set, not by silently spawning several independent accepted links.",
+      "mapping": "FCA observation_id -> singleton observation_refs; RDMS multiple observation_refs -> collection-level evidence with full lineage. Target relation, derivation and acceptance remain distinct.",
+      "reject": "Zero observations cannot form accepted EvidenceLink; untrusted generated text, duplicated observation or missing source cannot gain accepted evidential authority through projection.",
+      "witness": "Two observations and one interpretation accepted as one link, vs two independent links; assert different evidence cardinality and identical canonical provenance on reconstruction.",
+      "proof": "Observation ID multiplicity, link IDs, acceptance history, signed source trace and exact target/relation preservation.",
+      "status": "RESOLUTION_RULE_SPECIFIED_PROOF_PENDING"
+    },
+    {
+      "id": "S8-05",
+      "type": "Experiment",
+      "owner_layer": "L3",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:1595,RDMS-03:Original draft:871",
+      "rule": "RDMS-03 Experiment is the authorized immutable design; ExperimentRun owns execution and outcome. FCA aggregate Experiment is a compatibility view over the design plus zero/multiple runs; design lifecycle does not inherit RUNNING or FAILED.",
+      "mapping": "FCA designed/authorized -> design-state translation; running/completed/failed/cancelled -> explicit run(s) and observation/conclusion provenance, never design-state substitution.",
+      "reject": "Legacy aggregate with RUNNING but no identifiable run, pre-committed prediction set or action authorization must be reviewed; do not infer design or retroactively freeze predictions.",
+      "witness": "One design -> two runs: first failed, second completed; same predictions predate both, and conclusion links back to correct runs.",
+      "proof": "ExperimentID/RunID mapping, immutable prediction hashes, risk/authorization, run timestamps, observations and status history.",
+      "status": "RESOLUTION_RULE_SPECIFIED_PROOF_PENDING"
+    },
+    {
+      "id": "S8-06",
+      "type": "Hypothesis",
+      "owner_layer": "L2",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:472,RDMS-02:Original draft:382,RDMS-02:C01, second review corrections and final freeze decision:2117",
+      "rule": "RDMS-02 C01 separates support assessment from lifecycle. Strongly supported or CONFIRMED hypotheses are not CAUSALLY_VERIFIED merely by ranking; only correctly evidenced causal-closure path to OVC can justify verified causal status.",
+      "mapping": "FCA predictions, positive/negative evidence, competitors and experiments -> typed references and RDMS-03 accepted links; support and hypothesis lifecycle kept separate; historical support source retained.",
+      "reject": "Cannot upgrade to CAUSALLY_VERIFIED if persisted prediction, intervention, regression or scope proof missing; no independent synthetic causal owner.",
+      "witness": "High support but no intervention; refuted competitor; confirmed but not operationally verified; intervention-based causal closure.",
+      "proof": "Typed reference resolution for each FCA cognitive relation and explicit authorized OVC verification record.",
+      "status": "RESOLUTION_RULE_SPECIFIED_PROOF_PENDING"
+    },
+    {
+      "id": "S8-07",
+      "type": "Observation",
+      "owner_layer": "L3",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:581,RDMS-03:Original draft:82",
+      "rule": "RDMS-03 stores normalized observation with immutable raw artifact provenance and source/capture/ingest time separation. The original reported content remains retrievable; a trusted envelope or checksum proves integrity/provenance, not truth of source claim.",
+      "mapping": "FCA observation content/observed_at/source -> RDMS-03 raw_artifact_ref, normalized report and TemporalProvenance (event/capture/ingest clocks) with original source identity.",
+      "reject": "Missing raw bytes, degraded source trust or unknown event timestamp cannot be silently repaired by ingestion timestamp or promoted to verified fact.",
+      "witness": "Late-arriving log with event_time < ingestion_time; duplicated message; spoofed tool success that must remain report, not verified world effect.",
+      "proof": "Raw byte hash, explicit source identity, clock trust, event order, capture integrity and interpretation provenance.",
+      "status": "RESOLUTION_RULE_SPECIFIED_PROOF_PENDING"
+    },
+    {
+      "id": "S8-08",
+      "type": "OperationalCausalClaim",
+      "owner_layer": "L2",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:514,RDMS-02:Original draft:461",
+      "rule": "RDMS-02 C01 verification_ref resolves complete FCA causal-closure checklist and its temporal order; canonical causal history and derived dependency freshness are distinct. Staleness is not evidence of causal refutation and later validity does not rewrite historical causal closure.",
+      "mapping": "FCA verification {reproduction, prior prediction, targeted intervention, expected effect, regression, weakened alternatives, optional ablation} -> versioned verification_ref and evidence/observation references; FCA operational status with RDMS canonical lifecycle + derived freshness view.",
+      "reject": "Any missing mandatory proof element, broken pre-intervention time ordering, unresolved contradiction or invalid scope blocks OPERATIONALLY_VERIFIED.",
+      "witness": "Proof missing prediction persistence; ablation present; dependency becomes stale and returns VALID; distinguish lifecycle history from current applicability.",
+      "proof": "Ref dereference yields full source checklist with chronological commits, authority, specific environment and dependency frontier.",
+      "status": "RESOLUTION_RULE_SPECIFIED_PROOF_PENDING"
+    }
+  ],
+  "conditional_cases": [
+    {
+      "id": "C8-01",
+      "type": "ActionEffectSemantics",
+      "owner_layer": "L3",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:1756,RDMS-04:Original draft:341",
+      "gate": "Retry policy and verification_mode not weakened",
+      "proof": "Probe/compensation/timeout_spec refs resolve to exact original semantics; unknown non-idempotent effect never blindly retried",
+      "status": "CONDITIONAL_PRESERVATION_PROOF_PENDING"
+    },
+    {
+      "id": "C8-02",
+      "type": "ActionRecord",
+      "owner_layer": "L3",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:1883,RDMS-04:Original draft:208",
+      "gate": "Action Journal legal history complete",
+      "proof": "Recover all attempts, reports, observations, compensation, timestamps; latest_attempt_ref alone insufficient",
+      "status": "CONDITIONAL_PRESERVATION_PROOF_PENDING"
+    },
+    {
+      "id": "C8-03",
+      "type": "ConfidenceAssessment",
+      "owner_layer": "L3",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:698,RDMS-03:Original draft:1412",
+      "gate": "Confidence independent of mere ranking",
+      "proof": "Evidence/verification refs resolve and wall-clock timestamps not silently mapped to commit sequence",
+      "status": "CONDITIONAL_PRESERVATION_PROOF_PENDING"
+    },
+    {
+      "id": "C8-04",
+      "type": "Decision",
+      "owner_layer": "L2",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:805,RDMS-02:Original draft:855",
+      "gate": "Choice/rejection rationale lossless",
+      "proof": "Preserve chosen option, rejected option reasons, evidence, alternatives, constraints, scope, version",
+      "status": "CONDITIONAL_PRESERVATION_PROOF_PENDING"
+    },
+    {
+      "id": "C8-05",
+      "type": "DependencyStamp",
+      "owner_layer": "L4",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:2486,RDMS-01:Original draft:794,RDMS-06:Original draft:659",
+      "gate": "Single RDMS-06 freshness semantics",
+      "proof": "Enumerate all nine FCA kinds; RDMS-01 projections cannot bypass currentness checks",
+      "status": "CONDITIONAL_PRESERVATION_PROOF_PENDING"
+    },
+    {
+      "id": "C8-06",
+      "type": "Invariant",
+      "owner_layer": "L2",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:887,RDMS-02:Original draft:947",
+      "gate": "Hard/critical guard cannot be softened",
+      "proof": "All enforcement modes, severity, scope and failure semantics survive",
+      "status": "CONDITIONAL_PRESERVATION_PROOF_PENDING"
+    },
+    {
+      "id": "C8-07",
+      "type": "MemoryProposal",
+      "owner_layer": "L5",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:2237,RDMS-07:Original draft:486",
+      "gate": "No automatic learning or disclosure",
+      "proof": "Evidence, counterexamples, applicability, consent/provenance and approval path preserved",
+      "status": "CONDITIONAL_PRESERVATION_PROOF_PENDING"
+    },
+    {
+      "id": "C8-08",
+      "type": "SandboxActivityRecord",
+      "owner_layer": "L3",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:1857,RDMS-04:Original draft:1124",
+      "gate": "Containment evidence and outcome preserved",
+      "proof": "Recover evidence of isolation, op counts, output/observation refs and result including partial failure",
+      "status": "CONDITIONAL_PRESERVATION_PROOF_PENDING"
+    },
+    {
+      "id": "C8-09",
+      "type": "Slice",
+      "owner_layer": "L2",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:1246,RDMS-02:Original draft:1217",
+      "gate": "Plan transition and proof obligations preserved",
+      "proof": "Actual-vs-expected change surface, rollback/proof obligations and all slice statuses remain separate",
+      "status": "CONDITIONAL_PRESERVATION_PROOF_PENDING"
+    }
+  ],
+  "lower_risk_cases": [
+    {
+      "id": "L8-01",
+      "type": "Goal",
+      "owner_layer": "L2",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:735,RDMS-02:Original draft:576",
+      "gate": "No fabricated priority class",
+      "proof": "Preserve hierarchy, status, acceptance criteria, blockers, provenance and priority as typed-or-unresolved",
+      "status": "LOW_RISK_ROUNDTRIP_PROOF_PENDING"
+    },
+    {
+      "id": "L8-02",
+      "type": "GoalStack",
+      "owner_layer": "L2",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:760,RDMS-02:Original draft:736",
+      "gate": "No fabricated optional hierarchy entities",
+      "proof": "Empty/populated stack yields same focus, project/version and ordering",
+      "status": "LOW_RISK_ROUNDTRIP_PROOF_PENDING"
+    },
+    {
+      "id": "L8-03",
+      "type": "InformationNeed",
+      "owner_layer": "L2",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:440,RDMS-02:Original draft:285",
+      "gate": "No fabricated answer provenance",
+      "proof": "Preserve route, blockers and resolution reference, else require review",
+      "status": "LOW_RISK_ROUNDTRIP_PROOF_PENDING"
+    },
+    {
+      "id": "L8-04",
+      "type": "QueryDependencyStamp",
+      "owner_layer": "L4",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:2544,RDMS-06:Original draft:897",
+      "gate": "No widened absence proof",
+      "proof": "Validate exact frontier, proof scope, revision, index generation/hash and freshness",
+      "status": "LOW_RISK_ROUNDTRIP_PROOF_PENDING"
+    },
+    {
+      "id": "L8-05",
+      "type": "TemporalValidity",
+      "owner_layer": "L4",
+      "source_declarations": "FCA v1.0.1:FCA v1.0.1 baseline:2088,RDMS-05:Original draft:803",
+      "gate": "Enum normalization only",
+      "proof": "CURRENT/STALE/UNKNOWN map case-insensitively but CURRENT requires validity reevaluation",
+      "status": "LOW_RISK_ROUNDTRIP_PROOF_PENDING"
+    }
+  ],
+  "phase6_high_priority": [
+    {
+      "id": "P6-01",
+      "type": "CapabilityResult",
+      "owner": "L2 canonical / L7 transport",
+      "status": "ALIAS_PROPOSED",
+      "rule": "FCA full semantic result remains canonical. L7 CapabilityTransportResult must resolve immutable original and preserve all fields, including needs, rationale and specialist_request."
+    },
+    {
+      "id": "P6-02",
+      "type": "MemoryRetrievalResult",
+      "owner": "L5 canonical / L7 transport",
+      "status": "ALIAS_PROPOSED",
+      "rule": "RDMS-07 retrieval coverage/ranking/filtering remains canonical. L7 MemoryRetrievalTransportResult is a bounded view with required canonical reference."
+    },
+    {
+      "id": "P6-03",
+      "type": "Commitment",
+      "owner": "L2 semantic / L4 temporal",
+      "status": "MAPPING_REVIEW_REQUIRED",
+      "rule": "No direct field union; purpose, owner, scope, links, statement, follow-up, timestamp and sequence remain distinct; RDMS-02 C01 reactivation root mandatory."
+    },
+    {
+      "id": "P6-04",
+      "type": "TriggerCondition",
+      "owner": "L4 temporal",
+      "status": "MAPPING_REVIEW_REQUIRED",
+      "rule": "FCA full trigger vs RDMS-05 predicate; use distinct effective names and reconstruct full trigger with both detection and fire axes and exact reaction identity."
+    },
+    {
+      "id": "P6-05",
+      "type": "ResumptionCapsule",
+      "owner": "L4 lifecycle / L6 recovery",
+      "status": "PAYLOAD_PROOF_REQUIRED",
+      "rule": "FCA complete recovery-context fields must remain in verified durable RDMS-05 C01 payload with integrity-pinned header, and resume never auto-dispatches next action."
+    }
+  ],
+  "integration_paths": [
+    {
+      "id": "X8-01",
+      "layer_path": "L2 → L7 → L2",
+      "scenario": "Capability invocations",
+      "legal_path": "FCA CapabilityResult → L7 CapabilityTransportResult → Executive Decision",
+      "threat": "Missing specialist_request or rationale; transport SUCCESS treated as accepted decision",
+      "required_protection": "Canonical ref required, semantically reversible, no direct commit",
+      "related_contracts": "P6-01; GAIA-B01"
+    },
+    {
+      "id": "X8-02",
+      "layer_path": "L5 → L7 → L2",
+      "scenario": "Memory retrieval",
+      "legal_path": "RDMS-07 MemoryRetrievalResult → L7 bounded projection → cognition",
+      "threat": "Partial retrieval presented as exhaustive/no-memory evidence",
+      "required_protection": "Preserve omitted scope/ranking/coverage/freshness by legal ref",
+      "related_contracts": "P6-02"
+    },
+    {
+      "id": "X8-03",
+      "layer_path": "L2 → L4 → L1",
+      "scenario": "Temporary obligations",
+      "legal_path": "RDMS-02 Commitment → RDMS-05 temporal condition → ControlCommit",
+      "threat": "Missing owner/root; statement collapsed to required_followup; due falsely SATISFIED",
+      "required_protection": "One legal Commitment, explicit reactivation root, atomic continuation",
+      "related_contracts": "P6-03"
+    },
+    {
+      "id": "X8-04",
+      "layer_path": "L4 → L1 → L3",
+      "scenario": "Trigger to action",
+      "legal_path": "TriggerDefinition → committed Reaction → durable continuation → ActionProposal",
+      "threat": "EDGE event replay duplicates world effect or loses derived follow-up",
+      "required_protection": "Stable trigger generation/reaction identity + ActionGate",
+      "related_contracts": "P6-04; R2-G04"
+    },
+    {
+      "id": "X8-05",
+      "layer_path": "L4 → L6 → L1",
+      "scenario": "Suspension/resumption",
+      "legal_path": "ResumptionCapsule payload verified → atomic SUSPENDED → Recovery → Executive",
+      "threat": "Compact capsule drops hypotheses, evidence or next cognitive step",
+      "required_protection": "Pinned durable payload; corrupt means recovery quarantine",
+      "related_contracts": "P6-05"
+    },
+    {
+      "id": "X8-06",
+      "layer_path": "L2 → L3 → L1",
+      "scenario": "Code/world change",
+      "legal_path": "ActionProposal → ActionGate → ActionRecord → Reality Executor",
+      "threat": "FILESYSTEM category hides file_delete; latest_attempt_ref hides uncertain prior effect",
+      "required_protection": "Sealed exact operation + recoverable attempt history + journal",
+      "related_contracts": "P7-02; P7-03"
+    },
+    {
+      "id": "X8-07",
+      "layer_path": "L3 → L2 → L1",
+      "scenario": "Observation to belief",
+      "legal_path": "Observation → EvidenceLink → Claim/ConfidenceAssessment → CommitGate",
+      "threat": "Two observations double-counted; forged success becomes verified FACT",
+      "required_protection": "Accepted evidence with source cardinality and FactGrounding; no raw report authority",
+      "related_contracts": "P7-04; P7-09; P7-17"
+    },
+    {
+      "id": "X8-08",
+      "layer_path": "L2 → L3 → L2",
+      "scenario": "Experiment and causality",
+      "legal_path": "Hypothesis → predictions → Experiment design → ExperimentRun → OVC",
+      "threat": "RUNNING conflated with DESIGNED or hypothesis strength treated as causal closure",
+      "required_protection": "Persisted preintervention prediction; verification matrix + separate design/run states",
+      "related_contracts": "P7-10; P7-13; P7-18"
+    },
+    {
+      "id": "X8-09",
+      "layer_path": "L3 → L2",
+      "scenario": "Contradictory reality",
+      "legal_path": "Raw observation pair → comparability → ContradictionRecord → InformationNeed",
+      "threat": "UNRESOLVED silently maps to RESOLVED; causal explanation invented",
+      "required_protection": "Nonterminal unresolved remains, explanation separate from comparison",
+      "related_contracts": "P7-06; P7-14"
+    },
+    {
+      "id": "X8-10",
+      "layer_path": "L4 → L2 → L1",
+      "scenario": "Freshness and finalization",
+      "legal_path": "DependencyStamp → current checks → Decision/Slice → finalization",
+      "threat": "Stale dependencies masked or rejected rationale lost",
+      "required_protection": "RDMS-06 single freshness owner; preserve scope and finalization evidence",
+      "related_contracts": "P7-07; P7-08; P7-21"
+    },
+    {
+      "id": "X8-11",
+      "layer_path": "L3 → L5 → L7",
+      "scenario": "Learning and egress",
+      "legal_path": "Observation/Evidence → MemoryProposal → LearningGate → Provider Context",
+      "threat": "Proposal silently promoted; sensitive derivative disclosed on fallback",
+      "required_protection": "No auto learning; sealed outbound context and lineage",
+      "related_contracts": "P7-16"
+    },
+    {
+      "id": "X8-12",
+      "layer_path": "L3 → L6 → L1",
+      "scenario": "Sandbox and recovery",
+      "legal_path": "SandboxActivityRecord → artifact publication → legal recovery",
+      "threat": "Unproven isolation mistaken for ephemeral; result state lost",
+      "required_protection": "Containment proof; world effects default SHARED_WORLD if uncertain",
+      "related_contracts": "P7-20"
+    }
+  ]
+}

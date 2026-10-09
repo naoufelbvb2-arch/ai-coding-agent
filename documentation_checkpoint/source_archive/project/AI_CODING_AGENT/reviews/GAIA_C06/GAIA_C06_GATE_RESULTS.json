@@ -1,0 +1,40 @@
+{
+  "phase": "GAIA-C06",
+  "date": "2026-10-09",
+  "source_hashes_sha256": {
+    "Formal Cognitive Architecture v1.0.md": "a9ca433645ac493bc0c483cd78ba0aebb2872272b1c182acee1591e8181e722c",
+    "Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md": "74d0923cbd343b71740da0fc2368a84aad2ea97f8e4e15f156122f48ebe53539",
+    "Formal_Cognitive_Architecture_v1.0_FROZEN_SPEC.sha256": "f85e00a94f59310b32e99fc718278af9f07f80cba9b271904ae6454b3aee326d",
+    "Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.sha256": "6418193fb39c620b36a4d03ba5c959a5f52fd4f6eeeac774b53d47b4d4c6fcf8",
+    "GAIA_C02_PHASE13_LAYER_SNAPSHOT_SHA256.json": "ce483765ff80210379d38e8c7db2d4b16da1b48a1d87c96e6d5722b4da397808",
+    "Formal_Cognitive_Architecture_v1.0_FROZEN_SPEC.md": "e38e98167c56dbe44215c7dd0a0c0eb25e1a6a9106f27b9d76f4b2e049008199",
+    "RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt": "5464a1a1db1a64d90990f7a205b32dbe7988a91a2f1d018ea48e2cd822251935",
+    "RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt": "97f836c691a373b9a2a9e6e98b33cb7e121545cfc68732f1bde25c21599e79ab",
+    "RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt": "b5b023dff0003f456d13e9d0492d674d36860427dda67874157467c19721038b",
+    "RDMS_ORIGINAL_SOURCES/README_AR.md": "e18cd6044c7e8b94112b91ecab06564d68550e55f4f7df9949579d0c46a42b82",
+    "RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt": "fe065cda37c20625ac4c42c64251f87d4daabb9d5d466d49a8c201784d948700",
+    "RDMS_ORIGINAL_SOURCES/SOURCE_MANIFEST.json": "28055b4adc03d9f6b32f068ca75d5e25b1a038b0361ffca75a1a7bcb457d19ea",
+    "RDMS_ORIGINAL_SOURCES/RDMS-08_APPROVED_SOURCE_SET.txt": "fff70116d3f26bd42cba1cde8c071659674d4028eee57b5c304e045993fc69c6",
+    "RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt": "c06407aad889cad4d0bd942ffade2636d32ebae454983b49b5c19afec2b27394",
+    "RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt": "a55748e558446497a4be82835bcf7590e3b5ec7235f03674c2e6fe925143f262",
+    "RDMS_ORIGINAL_SOURCES/RDMS-09_APPROVED_SOURCE_SET.txt": "84ed1246a86b6f5923b6bf3320c2830e10c8e3fddac14e778c8c503272062a4b",
+    "RDMS_ORIGINAL_SOURCES/original_message_dom.json": "738c22c893892b17584050449811c5fa8bc84c4a7fde87a446810c5563fa3b15",
+    "RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt": "54772a75a54baea03c51107152eb1fe19849479e8ec9341654cf0ba45573c446",
+    "RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt": "9152f6eb671ce1c95235fa49c960922f3166249d58076b61e00d958520fc6763"
+  },
+  "summary": {
+    "all_section_heading_candidates": 1927,
+    "later_source_heading_candidates": 1014,
+    "same_source_original_draft_heading_candidates": 913,
+    "new_verified_source_shape_guard_pairs": 15,
+    "new_unique_guard_routes": 7,
+    "interface_routes": 12,
+    "sources": 27
+  },
+  "coverage_kind": "machine-recognized-headings_not_legal_claims",
+  "source_cross_domain_guard_pairs_validated": true,
+  "all_source_corrections_semantically_applied": false,
+  "all_twelve_interface_signatures_ratified": false,
+  "full_normative_layer_freeze": "HOLD",
+  "production_implementation_authorized": false
+}

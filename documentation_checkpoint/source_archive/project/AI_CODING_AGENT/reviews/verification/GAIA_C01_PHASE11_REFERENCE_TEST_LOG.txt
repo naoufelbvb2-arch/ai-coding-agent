@@ -1,0 +1,32 @@
+RESULT_JSON={"tests_run": 26, "failures": 0, "errors": 0, "success": true, "scope": "REFERENCE_ONLY_NO_PRODUCTION_ADAPTERS_OR_DURABLE_STORAGE"}
+test_N01_wrong_project_rejected (__main__.Phase11ReferenceVectors.test_N01_wrong_project_rejected) ... ok
+test_N02_wrong_schema_rejected (__main__.Phase11ReferenceVectors.test_N02_wrong_schema_rejected) ... ok
+test_N03_capsule_not_suspended_before_ack (__main__.Phase11ReferenceVectors.test_N03_capsule_not_suspended_before_ack) ... ok
+test_N04_ref_mutation_does_not_mutate_canonical (__main__.Phase11ReferenceVectors.test_N04_ref_mutation_does_not_mutate_canonical) ... ok
+test_N05_trigger_other_generation_distinct (__main__.Phase11ReferenceVectors.test_N05_trigger_other_generation_distinct) ... ok
+test_N06_commitment_cannot_be_active_without_root (__main__.Phase11ReferenceVectors.test_N06_commitment_cannot_be_active_without_root) ... ok
+test_N07_unrepresentable_canonical_field_rejects (__main__.Phase11ReferenceVectors.test_N07_unrepresentable_canonical_field_rejects) ... ok
+test_N08_missing_capsule_payload_rejects (__main__.Phase11ReferenceVectors.test_N08_missing_capsule_payload_rejects) ... ok
+test_V01_capability_roundtrip (__main__.Phase11ReferenceVectors.test_V01_capability_roundtrip) ... ok
+test_V02_missing_capability_reference_rejects (__main__.Phase11ReferenceVectors.test_V02_missing_capability_reference_rejects) ... ok
+test_V03_transport_success_not_cognitive_commit (__main__.Phase11ReferenceVectors.test_V03_transport_success_not_cognitive_commit) ... ok
+test_V04_memory_partial_coverage_roundtrip (__main__.Phase11ReferenceVectors.test_V04_memory_partial_coverage_roundtrip) ... ok
+test_V05_empty_shortlist_not_no_knowledge (__main__.Phase11ReferenceVectors.test_V05_empty_shortlist_not_no_knowledge) ... ok
+test_V06_missing_memory_reference_rejects (__main__.Phase11ReferenceVectors.test_V06_missing_memory_reference_rejects) ... ok
+test_V07_commitment_semantics_by_ref (__main__.Phase11ReferenceVectors.test_V07_commitment_semantics_by_ref) ... ok
+test_V08_commitment_relation_cardinality (__main__.Phase11ReferenceVectors.test_V08_commitment_relation_cardinality) ... ok
+test_V09_legacy_due_migration_rejects_unsupported (__main__.Phase11ReferenceVectors.test_V09_legacy_due_migration_rejects_unsupported) ... ok
+test_V10_active_requires_owner (__main__.Phase11ReferenceVectors.test_V10_active_requires_owner) ... ok
+test_V11_trigger_full_definition_roundtrip (__main__.Phase11ReferenceVectors.test_V11_trigger_full_definition_roundtrip) ... ok
+test_V12_predicate_true_not_action_authorization (__main__.Phase11ReferenceVectors.test_V12_predicate_true_not_action_authorization) ... ok
+test_V13_missing_axis_rejects (__main__.Phase11ReferenceVectors.test_V13_missing_axis_rejects) ... ok
+test_V14_trigger_replay_dedup (__main__.Phase11ReferenceVectors.test_V14_trigger_replay_dedup) ... ok
+test_V15_capsule_full_FCA_payload_roundtrip (__main__.Phase11ReferenceVectors.test_V15_capsule_full_FCA_payload_roundtrip) ... ok
+test_V16_entity_refs_not_equivalent_to_payload (__main__.Phase11ReferenceVectors.test_V16_entity_refs_not_equivalent_to_payload) ... ok
+test_V17_capsule_corruption_quarantine (__main__.Phase11ReferenceVectors.test_V17_capsule_corruption_quarantine) ... ok
+test_V18_next_proposal_not_dispatched (__main__.Phase11ReferenceVectors.test_V18_next_proposal_not_dispatched) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.001s
+
+OK

@@ -1,0 +1,194 @@
+[
+  {
+    "name": "ResumptionCapsule",
+    "old": {
+      "source": {
+        "spec": "RDMS-05",
+        "source_part": "Original draft",
+        "message_id": "6276f296-457b-462d-b674-933a15194429",
+        "line_start": 642,
+        "line_end": 678,
+        "text_sha256": "c1d22ca4a7ddbf38aa27abd8caa3fbbf1587f636463b3d7827b840bc809528b1"
+      },
+      "direct_fields": [
+        "capsule_id",
+        "project_id",
+        "task_or_goal_ref",
+        "suspended_from_state",
+        "base_canonical_commit_seq",
+        "repo_ref?",
+        "world_ref?",
+        "environment_ref?",
+        "dependency_set_ref?",
+        "current_focus_ref?",
+        "relevant_claim_refs[]",
+        "relevant_hypothesis_refs[]",
+        "relevant_evidence_refs[]",
+        "decision_refs[]",
+        "rejected_path_refs[]",
+        "active_slice_refs[]",
+        "unresolved_action_refs[]",
+        "open_information_need_refs[]",
+        "commitment_refs[]",
+        "temporary_change_refs[]",
+        "next_action_proposal_ref?",
+        "created_commit_seq"
+      ]
+    },
+    "new": {
+      "source": {
+        "spec": "RDMS-05",
+        "source_part": "C01",
+        "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+        "line_start": 720,
+        "line_end": 741,
+        "text_sha256": "1c38a08ce60f890ed64f69cfd6cb8d2928d75d5b6637be31299a5b209e420409"
+      },
+      "direct_fields": [
+        "capsule_id",
+        "task_or_goal_ref",
+        "suspended_from_state",
+        "canonical_snapshot_ref",
+        "relevant_entity_refs[]",
+        "dependency_set_ref",
+        "unresolved_action_refs[]",
+        "next_action_proposal_ref?",
+        "durable_payload_artifact_ref",
+        "content_integrity_ref",
+        "created_commit_seq"
+      ]
+    },
+    "old_fields_not_in_new": [
+      "active_slice_refs[]",
+      "base_canonical_commit_seq",
+      "commitment_refs[]",
+      "current_focus_ref?",
+      "decision_refs[]",
+      "dependency_set_ref?",
+      "environment_ref?",
+      "open_information_need_refs[]",
+      "project_id",
+      "rejected_path_refs[]",
+      "relevant_claim_refs[]",
+      "relevant_evidence_refs[]",
+      "relevant_hypothesis_refs[]",
+      "repo_ref?",
+      "temporary_change_refs[]",
+      "world_ref?"
+    ],
+    "new_fields_not_in_old": [
+      "canonical_snapshot_ref",
+      "content_integrity_ref",
+      "dependency_set_ref",
+      "durable_payload_artifact_ref",
+      "relevant_entity_refs[]"
+    ],
+    "migration_status": "BLOCK_DIRECT_FIELD_DROPPING_UNTIL_PAYLOAD_REFERENCE_PROOF"
+  },
+  {
+    "name": "TriggerFire",
+    "old": {
+      "source": {
+        "spec": "RDMS-05",
+        "source_part": "Original draft",
+        "message_id": "6276f296-457b-462d-b674-933a15194429",
+        "line_start": 439,
+        "line_end": 454,
+        "text_sha256": "559e11a3e82f870ebb618aa1f4932f5a0c389404f52a5a7d17abf6f1e8a6c9ce"
+      },
+      "direct_fields": [
+        "fire_id",
+        "trigger_id",
+        "generation",
+        "condition_version_ref",
+        "triggering_basis_refs[]",
+        "source_frontier_ref",
+        "fire_identity_key",
+        "fired_at_commit_seq"
+      ]
+    },
+    "new": {
+      "source": {
+        "spec": "RDMS-05",
+        "source_part": "C01",
+        "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+        "line_start": 345,
+        "line_end": 357,
+        "text_sha256": "5bdd4a1ad86972d86c9fd8cb77adaec3e60236a88d76f37540b48f091096f69c"
+      },
+      "direct_fields": [
+        "fire_id",
+        "trigger_definition_snapshot_ref",
+        "qualified_occurrence_ref",
+        "evidence_basis_refs[]",
+        "source_frontier_ref",
+        "fire_identity_key",
+        "created_commit_seq"
+      ]
+    },
+    "old_fields_not_in_new": [
+      "condition_version_ref",
+      "fired_at_commit_seq",
+      "generation",
+      "trigger_id",
+      "triggering_basis_refs[]"
+    ],
+    "new_fields_not_in_old": [
+      "created_commit_seq",
+      "evidence_basis_refs[]",
+      "qualified_occurrence_ref",
+      "trigger_definition_snapshot_ref"
+    ],
+    "migration_status": "SCHEMA_DELTA_MUST_BE_MAPPED_NOT_NAME_ONLY"
+  },
+  {
+    "name": "ObservationAmendment",
+    "old": {
+      "source": {
+        "spec": "RDMS-03",
+        "source_part": "Original draft",
+        "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+        "line_start": 385,
+        "line_end": 403,
+        "text_sha256": "07be6066650f8764b5f7c7af700372b4d4ef863396e6e5f7fd583cf6ba386c97"
+      },
+      "direct_fields": [
+        "amendment_id",
+        "target_observation_id",
+        "replacement_observation_id?",
+        "duplicate_of_observation_id?",
+        "rationale",
+        "authority_ref",
+        "created_commit_seq"
+      ]
+    },
+    "new": {
+      "source": {
+        "spec": "RDMS-03",
+        "source_part": "C01 and Freeze Review 02 Final",
+        "message_id": "a1ca0249-b287-4c4b-8254-773c8f6edbda",
+        "line_start": 189,
+        "line_end": 210,
+        "text_sha256": "a3bb59b880c6f2561467aeffa64c96cd38b7100f74c9b922444dc2de434075c3"
+      },
+      "direct_fields": [
+        "amendment_id",
+        "target_observation_id",
+        "basis_refs[]",
+        "replacement_observation_id?",
+        "duplicate_of_observation_id?",
+        "capture_governance_authority_ref",
+        "rationale",
+        "created_commit_seq"
+      ]
+    },
+    "old_fields_not_in_new": [
+      "authority_ref"
+    ],
+    "new_fields_not_in_old": [
+      "basis_refs[]",
+      "capture_governance_authority_ref"
+    ],
+    "migration_status": "SCHEMA_DELTA_MUST_BE_MAPPED_NOT_NAME_ONLY"
+  }
+]

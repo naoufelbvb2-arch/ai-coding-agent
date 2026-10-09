@@ -1,0 +1,420 @@
+[
+  {
+    "route_id": "X8-01",
+    "name": "Capability invocation / result",
+    "owner_document": "L7_RUNTIME_INTEGRATION.md",
+    "cross_layer_path": "L2 → L7 → L2",
+    "input_records": [
+      "CapabilityInvocation"
+    ],
+    "output_records": [
+      "CapabilityResult"
+    ],
+    "related_source_record_types": [
+      "CapabilityActivationContract",
+      "ExecutiveTransitionIntegrationBinding"
+    ],
+    "authority_boundary": "L2 Cognitive Executive proposes; only authorized Control CommitGate can adopt legal state.",
+    "acceptance_preconditions": "invocation/context/dependency identity valid; capability activated and budget/scope accepted; transport provenance resolves to original cognitive result.",
+    "mandatory_rejection_conditions": "unactivated capability; unresolved provenance; identity or epoch mismatch; tool response pretending to be a canonical decision.",
+    "commit_and_effect_boundary": "No provider or transport result is itself a canonical commit.",
+    "retry_and_recovery": "Repeated or late invocation results must be fenced/deduplicated under canonical authority.",
+    "primary_source_governance": "FCA §23, §48–52; RDMS-10 capability activation and executive transition bindings.",
+    "schema_authority_statuses": {
+      "CapabilityInvocation": "ONE_ATTESTED_DECLARATION",
+      "CapabilityResult": "ONE_ATTESTED_DECLARATION",
+      "CapabilityActivationContract": "ONE_ATTESTED_DECLARATION",
+      "ExecutiveTransitionIntegrationBinding": "ONE_ATTESTED_DECLARATION"
+    },
+    "status": "SOURCE_BOUND_EFFECTIVE_CONTRACT_CANDIDATE__NOT_FROZEN",
+    "transport_records": [
+      "CapabilityTransportResult"
+    ],
+    "canonical_result_type": "CapabilityResult",
+    "legal_mapping_rule": "RDMS-10 transport list is not FCA §23 CapabilityResult; only source-bound dereference and executive/CommitGate admission can form canonical cognitive state.",
+    "architecture_admission": "SOURCE_BOUND_CANDIDATE__NO_RUNTIME_ADAPTER_PROOF"
+  },
+  {
+    "route_id": "X8-02",
+    "name": "Memory retrieval and re-use",
+    "owner_document": "L5_MEMORY.md",
+    "cross_layer_path": "L5 → L7 → L2",
+    "input_records": [
+      "MemoryRetrievalRequest"
+    ],
+    "output_records": [
+      "MemoryRetrievalResult"
+    ],
+    "related_source_record_types": [
+      "MemoryRetrievalCoverage",
+      "MemoryUseAssessment"
+    ],
+    "authority_boundary": "L5 owns retrieval evidence and use constraints; L2 owns cognitive incorporation; L7 conveys only.",
+    "acceptance_preconditions": "scope, coverage, provenance, applicability and freshness available from legal retrieval result; access policy respected.",
+    "mandatory_rejection_conditions": "short list falsely asserted exhaustive; missing coverage/freshness; access/scope mismatch; transport alias not dereferenceable.",
+    "commit_and_effect_boundary": "Retrieval or ranking does not mutate belief or authorize learning.",
+    "retry_and_recovery": "Replay keeps retrieval/query identity; stale results re-assessed before use.",
+    "primary_source_governance": "RDMS-07 retrieval coverage/use assessment; RDMS-10 memory transport.",
+    "schema_authority_statuses": {
+      "MemoryRetrievalRequest": "ONE_ATTESTED_DECLARATION",
+      "MemoryRetrievalResult": "CURATED_SOURCE_DECISION",
+      "MemoryRetrievalCoverage": "ONE_ATTESTED_DECLARATION",
+      "MemoryUseAssessment": "ONE_ATTESTED_DECLARATION"
+    },
+    "status": "SOURCE_BOUND_EFFECTIVE_CONTRACT_CANDIDATE__NOT_FROZEN",
+    "transport_records": [
+      "MemoryRetrievalTransportResult"
+    ],
+    "canonical_result_type": "MemoryRetrievalResult",
+    "legal_mapping_rule": "RDMS-07 result owns query, ranking, omissions, coverage, freshness; RDMS-10 return cannot overwrite this and must resolve to canonical evidence.",
+    "architecture_admission": "SOURCE_BOUND_CANDIDATE__NO_RUNTIME_ADAPTER_PROOF"
+  },
+  {
+    "route_id": "X8-03",
+    "name": "Commitment / reactivation",
+    "owner_document": "L2_COGNITION.md",
+    "cross_layer_path": "L2 → L4 → L1",
+    "input_records": [
+      "Commitment",
+      "TriggerCondition"
+    ],
+    "output_records": [
+      "TriggerDerivedWorkCommitment"
+    ],
+    "related_source_record_types": [
+      "ExecutiveTransitionIntegrationBinding"
+    ],
+    "authority_boundary": "L2 owns commitment semantics; L4 determines temporal eligibility; L1 owns legal mutation.",
+    "acceptance_preconditions": "single lawful reactivation condition root and valid target identity/lifecycle; derived work durably attributable to commitment.",
+    "mandatory_rejection_conditions": "legacy timestamp or trigger aliases fabricated; activation treated as satisfaction; stale or already retired commitment.",
+    "commit_and_effect_boundary": "Activation and accepted derived-work obligation require canonical durable transition before downstream work.",
+    "retry_and_recovery": "Idempotent processing keyed to durable source and target; no action authority from trigger.",
+    "primary_source_governance": "RDMS-02 C01-32; RDMS-05 trigger-derived work; RDMS-10 C02.",
+    "schema_authority_statuses": {
+      "Commitment": "CURATED_RDMS02_C01_SUPERSESSION_APPLIED",
+      "TriggerCondition": "ONE_ATTESTED_DECLARATION",
+      "TriggerDerivedWorkCommitment": "ONE_ATTESTED_DECLARATION",
+      "ExecutiveTransitionIntegrationBinding": "ONE_ATTESTED_DECLARATION"
+    },
+    "status": "SOURCE_BOUND_EFFECTIVE_CONTRACT_CANDIDATE__NOT_FROZEN",
+    "transport_records": [],
+    "canonical_result_type": null,
+    "legal_mapping_rule": "Use source-owned contract directly; no adapter or implicit schema migration.",
+    "architecture_admission": "SOURCE_BOUND_CANDIDATE__NO_RUNTIME_ADAPTER_PROOF"
+  },
+  {
+    "route_id": "X8-04",
+    "name": "Trigger firing and actions",
+    "owner_document": "L4_TEMPORAL_SPECIALISTS.md",
+    "cross_layer_path": "L4 → L1 → L3",
+    "input_records": [
+      "TriggerDefinition",
+      "TriggerFire"
+    ],
+    "output_records": [
+      "TriggerReaction"
+    ],
+    "related_source_record_types": [
+      "DispatchAdmissionCutover",
+      "TriggerActionCausalityBinding"
+    ],
+    "authority_boundary": "L4 evaluates conditions; L1 validates and commits durable reaction; L3 requires independent ActionGate.",
+    "acceptance_preconditions": "definition snapshot/generation/qualified occurrence verified; target version and reaction are current.",
+    "mandatory_rejection_conditions": "duplicate fire; obsolete target; invalid trigger generation; reaction directly dispatching an external mutation.",
+    "commit_and_effect_boundary": "Reaction/target transition obey ControlCommit atomicity and durable identity.",
+    "retry_and_recovery": "Reaction remains inspectable, replay-safe, and cannot be mistaken for an external effect.",
+    "primary_source_governance": "RDMS-05 C01 TriggerFire/TriggerReaction; RDMS-10 TriggerActionCausalityBinding.",
+    "schema_authority_statuses": {
+      "TriggerDefinition": "ONE_ATTESTED_DECLARATION",
+      "TriggerReaction": "CURATED_SOURCE_DECISION",
+      "TriggerFire": "CURATED_SOURCE_DECISION",
+      "TriggerActionCausalityBinding": "ONE_ATTESTED_DECLARATION",
+      "DispatchAdmissionCutover": "ONE_ATTESTED_DECLARATION"
+    },
+    "status": "SOURCE_BOUND_EFFECTIVE_CONTRACT_CANDIDATE__NOT_FROZEN",
+    "transport_records": [],
+    "canonical_result_type": null,
+    "legal_mapping_rule": "Use source-owned contract directly; no adapter or implicit schema migration.",
+    "architecture_admission": "SOURCE_BOUND_CANDIDATE__NO_RUNTIME_ADAPTER_PROOF"
+  },
+  {
+    "route_id": "X8-05",
+    "name": "Suspension / resumption",
+    "owner_document": "L6_RECOVERY.md",
+    "cross_layer_path": "L4 → L6 → L1",
+    "input_records": [
+      "ResumptionCapsule"
+    ],
+    "output_records": [
+      "RecoverySuspensionCommitment"
+    ],
+    "related_source_record_types": [
+      "BootstrapHandoffProof",
+      "RecoveryAdmissionBinding"
+    ],
+    "authority_boundary": "L6 validates restoration and containment; L1 owns admission and epoch fencing.",
+    "acceptance_preconditions": "full durable capsule payload is integrity-checked and consistent with pinned state, identity, authority, and epoch.",
+    "mandatory_rejection_conditions": "truncated historical conversion; absent payload verification; stale/missing handoff or authority; fabricated field defaults.",
+    "commit_and_effect_boundary": "Suspension/resumption creates no implied world rollback.",
+    "retry_and_recovery": "IN_DOUBT effects reconcile before further shared-world mutation.",
+    "primary_source_governance": "RDMS-09 recovery; RDMS-10 BootstrapHandoffProof/RecoveryAdmissionBinding.",
+    "schema_authority_statuses": {
+      "ResumptionCapsule": "CURATED_SOURCE_DECISION",
+      "RecoverySuspensionCommitment": "ONE_ATTESTED_DECLARATION",
+      "BootstrapHandoffProof": "ONE_ATTESTED_DECLARATION",
+      "RecoveryAdmissionBinding": "ONE_ATTESTED_DECLARATION"
+    },
+    "status": "SOURCE_BOUND_EFFECTIVE_CONTRACT_CANDIDATE__NOT_FROZEN",
+    "transport_records": [],
+    "canonical_result_type": null,
+    "legal_mapping_rule": "Use source-owned contract directly; no adapter or implicit schema migration.",
+    "architecture_admission": "SOURCE_BOUND_CANDIDATE__NO_RUNTIME_ADAPTER_PROOF"
+  },
+  {
+    "route_id": "X8-06",
+    "name": "External execution and journal",
+    "owner_document": "L3_ACTIONS.md",
+    "cross_layer_path": "L2 → L3 → L1",
+    "input_records": [
+      "ActionProposal",
+      "SealedExecutionIntent"
+    ],
+    "output_records": [
+      "ActionRecord",
+      "ActionDeliveryContract"
+    ],
+    "related_source_record_types": [
+      "DispatchAdmissionCutover",
+      "EffectiveExecutionBinding",
+      "RecoverableActionDeliveryObligation"
+    ],
+    "authority_boundary": "L3 ActionGate approves exact shared-world mutation; executor cannot change effective command or scope; L1 records legal transitions.",
+    "acceptance_preconditions": "authorization matches exact effective operation/arguments/target, resource versions and current policy/dependency/epoch frontier.",
+    "mandatory_rejection_conditions": "unsealed or modified command; stale authority; missing durable dispatch intent; blind retry of unknown non-idempotent effect.",
+    "commit_and_effect_boundary": "Persist DISPATCH_INTENT before effect. Ledger atomicity != atomic external side effect; durable Action Journal/reconciliation required.",
+    "retry_and_recovery": "Mark IN_DOUBT and probe/reconcile; do not assert exactly-once without external guarantee.",
+    "primary_source_governance": "FCA §42–47, §48–52; RDMS-04 C01; RDMS-10 C01/C02.",
+    "schema_authority_statuses": {
+      "ActionProposal": "ONE_ATTESTED_DECLARATION",
+      "ActionRecord": "ONE_ATTESTED_DECLARATION",
+      "SealedExecutionIntent": "ONE_ATTESTED_DECLARATION",
+      "EffectiveExecutionBinding": "ONE_ATTESTED_DECLARATION",
+      "ActionDeliveryContract": "ONE_ATTESTED_DECLARATION",
+      "DispatchAdmissionCutover": "ONE_ATTESTED_DECLARATION",
+      "RecoverableActionDeliveryObligation": "ONE_ATTESTED_DECLARATION"
+    },
+    "status": "SOURCE_BOUND_EFFECTIVE_CONTRACT_CANDIDATE__NOT_FROZEN",
+    "transport_records": [],
+    "canonical_result_type": null,
+    "legal_mapping_rule": "Use source-owned contract directly; no adapter or implicit schema migration.",
+    "architecture_admission": "SOURCE_BOUND_CANDIDATE__NO_RUNTIME_ADAPTER_PROOF"
+  },
+  {
+    "route_id": "X8-07",
+    "name": "Observation and evidence",
+    "owner_document": "L3_ACTIONS.md",
+    "cross_layer_path": "L3 → L2 → L1",
+    "input_records": [
+      "Observation",
+      "ContentTrustContext"
+    ],
+    "output_records": [
+      "EvidenceLink",
+      "ObservationCausalAttachmentContract"
+    ],
+    "related_source_record_types": [
+      "FactGrounding",
+      "ObservationSourceBinding"
+    ],
+    "authority_boundary": "L3 ingests provenance and trust; L2 decides epistemic use; L1 gates legal writes.",
+    "acceptance_preconditions": "source/trust context travels with observation; observed content preserved as immutable; causal attachment separately justified.",
+    "mandatory_rejection_conditions": "tool self-report promoted to certainty; untrusted content granting authority; disagreement mislabeled capture corruption.",
+    "commit_and_effect_boundary": "Append accepted observation and source binding; separate append from causal inference.",
+    "retry_and_recovery": "Amend only capture/provenance defects with traceable amendment; keep original observation.",
+    "primary_source_governance": "FCA §75–76; RDMS-03 C01 observation trust/amendment; RDMS-10 C01/C02.",
+    "schema_authority_statuses": {
+      "Observation": "ONE_ATTESTED_DECLARATION",
+      "EvidenceLink": "CURATED_SOURCE_DECISION",
+      "FactGrounding": "ONE_ATTESTED_DECLARATION",
+      "ContentTrustContext": "ONE_ATTESTED_DECLARATION",
+      "ObservationSourceBinding": "ONE_ATTESTED_DECLARATION",
+      "ObservationCausalAttachmentContract": "ONE_ATTESTED_DECLARATION"
+    },
+    "status": "SOURCE_BOUND_EFFECTIVE_CONTRACT_CANDIDATE__NOT_FROZEN",
+    "transport_records": [],
+    "canonical_result_type": null,
+    "legal_mapping_rule": "Use source-owned contract directly; no adapter or implicit schema migration.",
+    "architecture_admission": "SOURCE_BOUND_CANDIDATE__NO_RUNTIME_ADAPTER_PROOF"
+  },
+  {
+    "route_id": "X8-08",
+    "name": "Experiment and causal verification",
+    "owner_document": "L3_ACTIONS.md",
+    "cross_layer_path": "L2 → L3 → L2",
+    "input_records": [
+      "Experiment",
+      "Prediction"
+    ],
+    "output_records": [
+      "ExperimentRun",
+      "VerificationRecord"
+    ],
+    "related_source_record_types": [
+      "ExperimentDesignSnapshot"
+    ],
+    "authority_boundary": "L2 owns hypothesis/causal decision; L3 performs authorized experiment and independent observation.",
+    "acceptance_preconditions": "frozen design and prediction predate intervention; run/evidence attached to exact design and target.",
+    "mandatory_rejection_conditions": "post-hoc prediction substituted; experiment-design state conflated with run outcome; simulated result treated as verified reality.",
+    "commit_and_effect_boundary": "External experiments remain subject to ActionGate and Action Journal.",
+    "retry_and_recovery": "Unknown partial intervention remains unresolved until observation/probe.",
+    "primary_source_governance": "RDMS-03 experiment vs run; FCA causal hypothesis and evidence gates.",
+    "schema_authority_statuses": {
+      "Experiment": "ONE_ATTESTED_DECLARATION",
+      "ExperimentRun": "ONE_ATTESTED_DECLARATION",
+      "ExperimentDesignSnapshot": "ONE_ATTESTED_DECLARATION",
+      "Prediction": "ONE_ATTESTED_DECLARATION",
+      "VerificationRecord": "ONE_COMPLETE_DECLARATION_WITH_OPTIONAL_OVERLAYS"
+    },
+    "status": "SOURCE_BOUND_EFFECTIVE_CONTRACT_CANDIDATE__NOT_FROZEN",
+    "transport_records": [],
+    "canonical_result_type": null,
+    "legal_mapping_rule": "Use source-owned contract directly; no adapter or implicit schema migration.",
+    "architecture_admission": "SOURCE_BOUND_CANDIDATE__NO_RUNTIME_ADAPTER_PROOF"
+  },
+  {
+    "route_id": "X8-09",
+    "name": "Contradiction and reality mismatch",
+    "owner_document": "L3_ACTIONS.md",
+    "cross_layer_path": "L3 → L2",
+    "input_records": [
+      "Claim"
+    ],
+    "output_records": [
+      "ContradictionRecord"
+    ],
+    "related_source_record_types": [
+      "OperationalCausalClaim"
+    ],
+    "authority_boundary": "L2 controls epistemic assessment; L3 sources observations, not causal truth.",
+    "acceptance_preconditions": "observations comparable in explicit scope/dimensions with traceable evidence and unresolved/resolved proof.",
+    "mandatory_rejection_conditions": "UNRESOLVED silently mapped to RESOLVED; hypothesis dismissed solely due conflicting observation; causal explanation invented.",
+    "commit_and_effect_boundary": "Contradiction transition needs legal state/sequence and supporting references.",
+    "retry_and_recovery": "Keep prior inconsistent evidence and lifecycle history; correction must be attributable.",
+    "primary_source_governance": "RDMS-03 C01 contradiction and observation rules; FCA epistemic distinctions.",
+    "schema_authority_statuses": {
+      "ContradictionRecord": "ONE_COMPLETE_DECLARATION_WITH_OPTIONAL_OVERLAYS",
+      "Claim": "CURATED_SOURCE_DECISION",
+      "OperationalCausalClaim": "ONE_ATTESTED_DECLARATION"
+    },
+    "status": "SOURCE_BOUND_EFFECTIVE_CONTRACT_CANDIDATE__NOT_FROZEN",
+    "transport_records": [],
+    "canonical_result_type": null,
+    "legal_mapping_rule": "Use source-owned contract directly; no adapter or implicit schema migration.",
+    "architecture_admission": "SOURCE_BOUND_CANDIDATE__NO_RUNTIME_ADAPTER_PROOF"
+  },
+  {
+    "route_id": "X8-10",
+    "name": "Freshness and completion",
+    "owner_document": "L4_TEMPORAL_SPECIALISTS.md",
+    "cross_layer_path": "L4 → L2 → L1",
+    "input_records": [
+      "DependencySet",
+      "DependencyCaptureReceipt"
+    ],
+    "output_records": [
+      "DependencyAttestation",
+      "IntegratedCompletionEvidence"
+    ],
+    "related_source_record_types": [
+      "CompletionStateBinding"
+    ],
+    "authority_boundary": "L4 specialist/dependency layer attests freshness; L2 judges completion; L1 adopts legal goal state.",
+    "acceptance_preconditions": "dependency coverage and policy/versions attested for exact operation; completion proof matches goal acceptance contract.",
+    "mandatory_rejection_conditions": "PARTIALLY_STALE treated as VALID; generic success text treated as task completion; missing dependency frontier.",
+    "commit_and_effect_boundary": "Completion or focus change requires epoch/version-fenced canonical commit.",
+    "retry_and_recovery": "Invalidate derived work on changed dependencies; re-evaluate at admission.",
+    "primary_source_governance": "FCA §71; RDMS-06 freshness; RDMS-08 completion proof.",
+    "schema_authority_statuses": {
+      "DependencySet": "ONE_ATTESTED_DECLARATION",
+      "DependencyCaptureReceipt": "ONE_ATTESTED_DECLARATION",
+      "DependencyAttestation": "ONE_ATTESTED_DECLARATION",
+      "CompletionStateBinding": "ONE_ATTESTED_DECLARATION",
+      "IntegratedCompletionEvidence": "ONE_ATTESTED_DECLARATION"
+    },
+    "status": "SOURCE_BOUND_EFFECTIVE_CONTRACT_CANDIDATE__NOT_FROZEN",
+    "transport_records": [],
+    "canonical_result_type": null,
+    "legal_mapping_rule": "Use source-owned contract directly; no adapter or implicit schema migration.",
+    "architecture_admission": "SOURCE_BOUND_CANDIDATE__NO_RUNTIME_ADAPTER_PROOF"
+  },
+  {
+    "route_id": "X8-11",
+    "name": "Learning and context egress",
+    "owner_document": "L7_RUNTIME_INTEGRATION.md",
+    "cross_layer_path": "L3 → L5 → L7",
+    "input_records": [
+      "MemoryProposal",
+      "SealedOutboundContext"
+    ],
+    "output_records": [
+      "LearningAuthorizationBinding",
+      "ContextDisclosureAdmission"
+    ],
+    "related_source_record_types": [
+      "MemoryRetrievalCoverage"
+    ],
+    "authority_boundary": "L5 learning policy and L1/CommitGate own durable memory acceptance; L7 only transports sealed outbound content.",
+    "acceptance_preconditions": "memory promotion separately authorized; outbound effective bytes/destination/context scope sealed and policy-approved.",
+    "mandatory_rejection_conditions": "automatic learning from agent suggestion; sending unapproved private context; destination/payload changed after authorization.",
+    "commit_and_effect_boundary": "No memory state change without canonical commit; no egress without policy admission.",
+    "retry_and_recovery": "After restart, replay only scoped authorization; reject stale outbound binding.",
+    "primary_source_governance": "RDMS-07 learning; RDMS-10 C01/C02 context disclosure.",
+    "schema_authority_statuses": {
+      "MemoryProposal": "ONE_ATTESTED_DECLARATION",
+      "LearningAuthorizationBinding": "ONE_ATTESTED_DECLARATION",
+      "SealedOutboundContext": "ONE_ATTESTED_DECLARATION",
+      "ContextDisclosureAdmission": "ONE_ATTESTED_DECLARATION",
+      "MemoryRetrievalCoverage": "ONE_ATTESTED_DECLARATION"
+    },
+    "status": "SOURCE_BOUND_EFFECTIVE_CONTRACT_CANDIDATE__NOT_FROZEN",
+    "transport_records": [],
+    "canonical_result_type": null,
+    "legal_mapping_rule": "Use source-owned contract directly; no adapter or implicit schema migration.",
+    "architecture_admission": "SOURCE_BOUND_CANDIDATE__NO_RUNTIME_ADAPTER_PROOF"
+  },
+  {
+    "route_id": "X8-12",
+    "name": "Containment and recovery",
+    "owner_document": "L6_RECOVERY.md",
+    "cross_layer_path": "L3 → L6 → L1",
+    "input_records": [
+      "PossibleExternalEffectAssessment",
+      "RestoreContainmentProof"
+    ],
+    "output_records": [
+      "CrossFrontierAdmissionProof"
+    ],
+    "related_source_record_types": [
+      "RecoveryBootstrapContract",
+      "RecoveryOwnershipLease"
+    ],
+    "authority_boundary": "L6 validates containment/uncertain effects; L1 authorizes safe resumption under epoch.",
+    "acceptance_preconditions": "isolation claim evidenced, uncertain effects reconciled or explicitly guarded, ownership lease valid.",
+    "mandatory_rejection_conditions": "snapshot restore asserted to reverse external world; unverified isolation; old worker keeps authorization.",
+    "commit_and_effect_boundary": "Canonical recovery commit fences old authority; no global rollback of external effects.",
+    "retry_and_recovery": "Reconcile IN_DOUBT before new mutation; persist recovery basis and admission evidence.",
+    "primary_source_governance": "RDMS-09 C01/C02/C03, RDMS-10 recovery bindings.",
+    "schema_authority_statuses": {
+      "RestoreContainmentProof": "ONE_ATTESTED_DECLARATION",
+      "PossibleExternalEffectAssessment": "ONE_ATTESTED_DECLARATION",
+      "CrossFrontierAdmissionProof": "ONE_ATTESTED_DECLARATION",
+      "RecoveryBootstrapContract": "ONE_ATTESTED_DECLARATION",
+      "RecoveryOwnershipLease": "ONE_ATTESTED_DECLARATION"
+    },
+    "status": "SOURCE_BOUND_EFFECTIVE_CONTRACT_CANDIDATE__NOT_FROZEN",
+    "transport_records": [],
+    "canonical_result_type": null,
+    "legal_mapping_rule": "Use source-owned contract directly; no adapter or implicit schema migration.",
+    "architecture_admission": "SOURCE_BOUND_CANDIDATE__NO_RUNTIME_ADAPTER_PROOF"
+  }
+]

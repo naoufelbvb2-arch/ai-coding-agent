@@ -1,0 +1,2732 @@
+{
+  "purpose": "Discovery index only; not an approved canonical type registry",
+  "declarations_found": 454,
+  "distinct_type_names": 400,
+  "cross_source_name_reviews": 27,
+  "declarations": [
+    {
+      "type": "State",
+      "source": "FCA v1.0.1",
+      "offset": 10922,
+      "signature_sha256": "15126c11f19c2895a2cc50b23eac18b517c3434fad5562db52d7cf182f18416b"
+    },
+    {
+      "type": "Identity",
+      "source": "FCA v1.0.1",
+      "offset": 11113,
+      "signature_sha256": "9e61ac5bc4e0b3c460288d8965afe72d94d18c734dd43b09fff0b63803e343d3"
+    },
+    {
+      "type": "SystemMentalModel",
+      "source": "FCA v1.0.1",
+      "offset": 11766,
+      "signature_sha256": "6f01482dd9ce8832f04f240b9713d20428f5c0b3f4ee23cf04d50f7f7d3238ee"
+    },
+    {
+      "type": "Claim",
+      "source": "FCA v1.0.1",
+      "offset": 12189,
+      "signature_sha256": "ef6a4d2c166fb78342a873e301058924ce4835eef3627dee5bef1e0284634d53"
+    },
+    {
+      "type": "InformationNeed",
+      "source": "FCA v1.0.1",
+      "offset": 13298,
+      "signature_sha256": "c1bc171567ca5eaa3cbf247153c7f61e6ddeb1a2813320ada59c79f34292c600"
+    },
+    {
+      "type": "Hypothesis",
+      "source": "FCA v1.0.1",
+      "offset": 13788,
+      "signature_sha256": "013093b3e37fc87ff564ed1e7b0830c4cfc82398729d3140faa537d395c9bec9"
+    },
+    {
+      "type": "OperationalCausalClaim",
+      "source": "FCA v1.0.1",
+      "offset": 14686,
+      "signature_sha256": "efbf9ece47c0014e8204a7fcc01b0a707e21f4b9decc23091f1cb8ba083e630c"
+    },
+    {
+      "type": "Observation",
+      "source": "FCA v1.0.1",
+      "offset": 16852,
+      "signature_sha256": "35ec1447b0b5f495e5f30a93c3195b5fe5f6781943cf911c23748d9f9a43c1f3"
+    },
+    {
+      "type": "EvidenceLink",
+      "source": "FCA v1.0.1",
+      "offset": 17307,
+      "signature_sha256": "d92cca818187554e335710ad972093d0af284868ab35cc689d4e229331fc7444"
+    },
+    {
+      "type": "ContradictionRecord",
+      "source": "FCA v1.0.1",
+      "offset": 18018,
+      "signature_sha256": "423e328a10eb982c6518e8977c54b6198116909a9a70d94695644bfde06f33b6"
+    },
+    {
+      "type": "ConfidenceAssessment",
+      "source": "FCA v1.0.1",
+      "offset": 18724,
+      "signature_sha256": "dbe5adf802379825ba811cad2e01c4bcac9816a05ebb3e564d5a3737217723f8"
+    },
+    {
+      "type": "ConfidenceProfile",
+      "source": "FCA v1.0.1",
+      "offset": 18952,
+      "signature_sha256": "bc6fcd4c96a727293ba2811e446ef8b128d04fa9f226f256e8cfd34251345832"
+    },
+    {
+      "type": "Goal",
+      "source": "FCA v1.0.1",
+      "offset": 19245,
+      "signature_sha256": "9211fec5b180a8f789df5e4e9b78a8390bde1c078f599574722eff8675c7d806"
+    },
+    {
+      "type": "GoalStack",
+      "source": "FCA v1.0.1",
+      "offset": 19523,
+      "signature_sha256": "d2295e9050f9903c854afacbaef8437213a10d98bd2c1cf30099ed97c4a533ff"
+    },
+    {
+      "type": "FocusState",
+      "source": "FCA v1.0.1",
+      "offset": 19871,
+      "signature_sha256": "115603fcaa7f6e2daf5cc05995f5322c9ce6cd3e4eea7d568b9d2bf30297cdd6"
+    },
+    {
+      "type": "Decision",
+      "source": "FCA v1.0.1",
+      "offset": 20265,
+      "signature_sha256": "c3cfc5b81bf7811dd55cd723b34acda7b2276d12e812696b10c3f8f9b9937885"
+    },
+    {
+      "type": "Invariant",
+      "source": "FCA v1.0.1",
+      "offset": 21500,
+      "signature_sha256": "c4ef113cd70e127c6385398263241191ba7f57a2d9fcfa6b2964cf14ab5a16e2"
+    },
+    {
+      "type": "CapabilityResult",
+      "source": "FCA v1.0.1",
+      "offset": 23831,
+      "signature_sha256": "a35f8b5454df5e3ec2a9b045eea55e9431fb5d09ca458b7215d07323537996be"
+    },
+    {
+      "type": "Slice",
+      "source": "FCA v1.0.1",
+      "offset": 28289,
+      "signature_sha256": "4c65d671484a695ec23197bfce43693468f06ecb4b175087801bfdd031ce937b"
+    },
+    {
+      "type": "SemanticChangeProposal",
+      "source": "FCA v1.0.1",
+      "offset": 31155,
+      "signature_sha256": "05bf1b65c021f503689237a60ed548bcb24806723107674d0b96b54c530aff1a"
+    },
+    {
+      "type": "Experiment",
+      "source": "FCA v1.0.1",
+      "offset": 35074,
+      "signature_sha256": "03507fcc419b497accd66a9377ccfc64c5482e5e1dbb2dfb11245cdc23796aa2"
+    },
+    {
+      "type": "ActionProposal",
+      "source": "FCA v1.0.1",
+      "offset": 36130,
+      "signature_sha256": "2b95783d1b36537f2b6d337b7bffcb254ddc819d8c61a4e80749f93c3b69614c"
+    },
+    {
+      "type": "ActionEffectSemantics",
+      "source": "FCA v1.0.1",
+      "offset": 38156,
+      "signature_sha256": "49f9466e2280b2baf476093f7fbeb9ea536312678bfb1b1dd7cce5571d77fd2c"
+    },
+    {
+      "type": "ActionLifecycle",
+      "source": "FCA v1.0.1",
+      "offset": 38623,
+      "signature_sha256": "3dfe3cf95b1931e1f2a22652356ababa1c5a652adb495e516a0d2a1501d6759f"
+    },
+    {
+      "type": "SandboxActivityRecord",
+      "source": "FCA v1.0.1",
+      "offset": 39927,
+      "signature_sha256": "0f48a2525c594a5ee245cbae362436167b3ed61565a8bbff62af97bdd29e5d52"
+    },
+    {
+      "type": "ActionRecord",
+      "source": "FCA v1.0.1",
+      "offset": 40573,
+      "signature_sha256": "18728385246d67b7da031e286d891865c6f7c73a89c9de2c986925eda527f72b"
+    },
+    {
+      "type": "LeadershipGrant",
+      "source": "FCA v1.0.1",
+      "offset": 42159,
+      "signature_sha256": "e468bedea813414b3e03631f8fdd9f4db29353abf5df2d3a92bba58f74139ecf"
+    },
+    {
+      "type": "ResumptionCapsule",
+      "source": "FCA v1.0.1",
+      "offset": 43578,
+      "signature_sha256": "6b129212935e9c6daeef387ba2e50fef0917ff0b52aea45f3e0a8f380148a195"
+    },
+    {
+      "type": "TemporalValidity",
+      "source": "FCA v1.0.1",
+      "offset": 44165,
+      "signature_sha256": "dd07c0928d6ff8bfd965699f5b89f207db053e84e94390a4ccb74fa5b0b60d0b"
+    },
+    {
+      "type": "TriggerCondition",
+      "source": "FCA v1.0.1",
+      "offset": 44678,
+      "signature_sha256": "68191ce525d55068bac72d12d628d1aafc127d7553e73c7abe9aa7444d8432bc"
+    },
+    {
+      "type": "MemoryProposal",
+      "source": "FCA v1.0.1",
+      "offset": 46304,
+      "signature_sha256": "59c2093ee8597732e0aed9ad4bc9a09bdc98c7826757173db49c9ce62b7f61fc"
+    },
+    {
+      "type": "MemoryMetadata",
+      "source": "FCA v1.0.1",
+      "offset": 46585,
+      "signature_sha256": "c691011de46fb8f1557dfd8fe0b78e2526f8c23af901f107115686f4d3f323e0"
+    },
+    {
+      "type": "Specialist",
+      "source": "FCA v1.0.1",
+      "offset": 48125,
+      "signature_sha256": "824cdda374e8fbda570f348cd12c5be46ec154c71e9d8d21315cf2aad666472b"
+    },
+    {
+      "type": "DependencyStamp",
+      "source": "FCA v1.0.1",
+      "offset": 50222,
+      "signature_sha256": "9a81875e06373f7ec5daab2056479baef7e4f20e88eb3ea277be5660b86a77b8"
+    },
+    {
+      "type": "QueryDependencyStamp",
+      "source": "FCA v1.0.1",
+      "offset": 51185,
+      "signature_sha256": "14a95032d9f991a46d878df6456a7bde93a3a56bac40605f6e5162ef7b7bb0d9"
+    },
+    {
+      "type": "ContentEnvelope",
+      "source": "FCA v1.0.1",
+      "offset": 52899,
+      "signature_sha256": "02e00ba2c805540b54027d0301573e5a4198cc160da20da606adcad6fb7ef3cf"
+    },
+    {
+      "type": "State",
+      "source": "FCA v1.0.1",
+      "offset": 85303,
+      "signature_sha256": "4f04af9032e8ae695122b007d7ca2b42aa26176047d8e2e602d2abc35127f706"
+    },
+    {
+      "type": "ProjectRuntime",
+      "source": "RDMS-01",
+      "offset": 1528,
+      "signature_sha256": "cb4a2d5dac010b42ac67eafe6247ab8f86c8cd2c3e376125acd7cbc11878e91b"
+    },
+    {
+      "type": "ControlCommit",
+      "source": "RDMS-01",
+      "offset": 2821,
+      "signature_sha256": "aabd699a0d4c8a1c08052125aeaff3aad9fcf0e12831f95dab6b96277275b83f"
+    },
+    {
+      "type": "ControlEvent",
+      "source": "RDMS-01",
+      "offset": 3355,
+      "signature_sha256": "ab91663fe0743658d8046b5b7cb47f0534e8176411ce437895b493915ae98388"
+    },
+    {
+      "type": "EntityEnvelope",
+      "source": "RDMS-01",
+      "offset": 5062,
+      "signature_sha256": "b99a6daeac64c4ed14c40c72ea82e3cc4d4c2bacaaa6864dbec1172b2b16149b"
+    },
+    {
+      "type": "Snapshot",
+      "source": "RDMS-01",
+      "offset": 6277,
+      "signature_sha256": "0fa4b00944f68eaf9bba198412b6c7dc6edf25de8c685dd268028ff240b7be01"
+    },
+    {
+      "type": "ArtifactRef",
+      "source": "RDMS-01",
+      "offset": 7309,
+      "signature_sha256": "d93cac091e77596f99ed3f34c7a9c9a639127d1b4db3a468165785df70f0c400"
+    },
+    {
+      "type": "IndexMetadata",
+      "source": "RDMS-01",
+      "offset": 8225,
+      "signature_sha256": "043a362ed23409759cbd6c0e524ea360a67212393ed1a9813e44eca83d5bc998"
+    },
+    {
+      "type": "ActorRef",
+      "source": "RDMS-01",
+      "offset": 9323,
+      "signature_sha256": "d8d9838a926cf22ab06b4af57c0b836bb109748164854bcf0f3eda63da5eb7ff"
+    },
+    {
+      "type": "RepoRef",
+      "source": "RDMS-01",
+      "offset": 10359,
+      "signature_sha256": "83952548ca262c6ba1307b4cf4d62c446abc499629b2cd9a05d6fb2bddf20e69"
+    },
+    {
+      "type": "WorldRef",
+      "source": "RDMS-01",
+      "offset": 10815,
+      "signature_sha256": "77bac5b517f6d15a23814531d9cf6f465f1759d2adabf0b4fc0eaac6529257f8"
+    },
+    {
+      "type": "DependencyStamp",
+      "source": "RDMS-01",
+      "offset": 11202,
+      "signature_sha256": "565e1ac17432147e07270cf0a663be189434d3fe102b56ec2366c3d4ae0b20e6"
+    },
+    {
+      "type": "LedgerHead",
+      "source": "RDMS-01",
+      "offset": 14440,
+      "signature_sha256": "b86b87549804060b6977a4a0b12fbe99ef93c436bec32342e9704278befe820b"
+    },
+    {
+      "type": "RuntimeStatus",
+      "source": "RDMS-01",
+      "offset": 15289,
+      "signature_sha256": "82232d0c2dd8a43d12afcd8049447bf5d440e6797391d9a77b3a4fb00b42c107"
+    },
+    {
+      "type": "ProjectHead",
+      "source": "RDMS-01",
+      "offset": 21707,
+      "signature_sha256": "800bdee6bf61dc7433507fa68f8b77af05843be8911aecfa21280682a385e363"
+    },
+    {
+      "type": "ControlCommit",
+      "source": "RDMS-01",
+      "offset": 22329,
+      "signature_sha256": "d623d3780e99724f76e180c0ee7892993b5b19a6eee0108ee81188464c8d5d14"
+    },
+    {
+      "type": "AuthorityContext",
+      "source": "RDMS-01",
+      "offset": 22710,
+      "signature_sha256": "ba973336c10778035324dcc4d9ebc03cebb485b303e05ccb5fb5a3d845d4c291"
+    },
+    {
+      "type": "CanonicalMutation",
+      "source": "RDMS-01",
+      "offset": 23754,
+      "signature_sha256": "48092277beb864dc785e8bb8d12e5f9dcc7fb993a42a781d65d7caf63c244d33"
+    },
+    {
+      "type": "CanonicalMutation",
+      "source": "RDMS-01",
+      "offset": 24277,
+      "signature_sha256": "55b7e93a4f5efa91fc51f09b8cd3ddcce84e08bdd56cc75bc8a61991e787fd5b"
+    },
+    {
+      "type": "ControlEvent",
+      "source": "RDMS-01",
+      "offset": 24709,
+      "signature_sha256": "0dc131b4b836474b9c27b5643125e906d0d159e22d7244e1d61aece1acba6e37"
+    },
+    {
+      "type": "Snapshot",
+      "source": "RDMS-01",
+      "offset": 27836,
+      "signature_sha256": "ff406f30f2d4e7f184efb0509c085b1e36e5526305ee321dbac97f4b56ca1165"
+    },
+    {
+      "type": "IndexMetadata",
+      "source": "RDMS-01",
+      "offset": 28997,
+      "signature_sha256": "778ab9db429744803557188b885bd7a552134e5811e268d088947473a2870620"
+    },
+    {
+      "type": "RepoRef",
+      "source": "RDMS-01",
+      "offset": 29354,
+      "signature_sha256": "d8e0b7ae9f114e66c6f2ad18a35502fc13453d91700179692451bca28cba3e2e"
+    },
+    {
+      "type": "ProjectStatus",
+      "source": "RDMS-01",
+      "offset": 29698,
+      "signature_sha256": "c5b28f2d7c3924d27172550900c2edf4fb4a602a9d313e43cfc803e88b07a6c1"
+    },
+    {
+      "type": "ProcessRuntimeMode",
+      "source": "RDMS-01",
+      "offset": 29789,
+      "signature_sha256": "9d6946cb9d3a0ed8cb77a0e58bc063f7d580ab72adf3100596190fc9f853f71c"
+    },
+    {
+      "type": "CanonicalEntity",
+      "source": "RDMS-02",
+      "offset": 1603,
+      "signature_sha256": "d5747d308791b98fb1ec8e26044863111bcb144ad2f2fbb5a559acd84db58816"
+    },
+    {
+      "type": "EntityRef",
+      "source": "RDMS-02",
+      "offset": 2066,
+      "signature_sha256": "b30405cd9a4773d908d502fa6fc2c00cc54314532ad6c60b02d29bd3e063d810"
+    },
+    {
+      "type": "VersionedEntityRef",
+      "source": "RDMS-02",
+      "offset": 2143,
+      "signature_sha256": "ca946575b57445775f53340e682beeb725e1c61d51de3c4d48eb72f4dac10825"
+    },
+    {
+      "type": "ScopeSpec",
+      "source": "RDMS-02",
+      "offset": 2341,
+      "signature_sha256": "153d8901b27be67a4a7430a6503397d409e4d2189d61039c4eec1bb0c0dc154a"
+    },
+    {
+      "type": "Claim",
+      "source": "RDMS-02",
+      "offset": 2610,
+      "signature_sha256": "cca1aff908a0edc39d293f7f2ee61e62e76ee0204614eba301cc34bc32bad267"
+    },
+    {
+      "type": "FactGrounding",
+      "source": "RDMS-02",
+      "offset": 3052,
+      "signature_sha256": "33a9ba0af89a96d03ffffa98e44d7df6b95f349aa8981bbb5c1a6a671f8fa850"
+    },
+    {
+      "type": "Claim",
+      "source": "RDMS-02",
+      "offset": 3535,
+      "signature_sha256": "3dcda7bf92cf6d7bd427cc3475ba61d995a1aeeae8726a0a0ad78acfe8673989"
+    },
+    {
+      "type": "InformationNeed",
+      "source": "RDMS-02",
+      "offset": 4379,
+      "signature_sha256": "0f6f575b92dbe9d88d8ca2ccf7b543dd18a094976571984b57618cc027d0982b"
+    },
+    {
+      "type": "ResolutionRef",
+      "source": "RDMS-02",
+      "offset": 5211,
+      "signature_sha256": "5864b9a6bd175f55f8b30d06fbf339f901204c6881636eb84554a5bf5b40591f"
+    },
+    {
+      "type": "Hypothesis",
+      "source": "RDMS-02",
+      "offset": 5644,
+      "signature_sha256": "0e381862ca3990c032ab58c308d620287ae22cee486e5ddc58eb21f94cd98488"
+    },
+    {
+      "type": "OperationalCausalClaim",
+      "source": "RDMS-02",
+      "offset": 6779,
+      "signature_sha256": "f3968d181e21afec2b879b1e1e05afe1983710b5b06103d8f668a206f7e14e46"
+    },
+    {
+      "type": "CausalScope",
+      "source": "RDMS-02",
+      "offset": 7182,
+      "signature_sha256": "b1ff9c9cb4fbae510818193a373bc7ea049409053df7372007af6f0dfa066c6f"
+    },
+    {
+      "type": "CausalVerificationRecord",
+      "source": "RDMS-02",
+      "offset": 7493,
+      "signature_sha256": "b5dc9fe56c0d4034b540e1c68f5e3a055eb9e5311d4b4af2a87eba16fb8f4918"
+    },
+    {
+      "type": "Goal",
+      "source": "RDMS-02",
+      "offset": 8371,
+      "signature_sha256": "1fcae03d1f807270604729454ff7ba1cab895d2690e6b7a11aff781ae8c725ef"
+    },
+    {
+      "type": "AcceptanceCriterion",
+      "source": "RDMS-02",
+      "offset": 8898,
+      "signature_sha256": "04faca4b6f74d5a247e245d8f5ca854e767a566525dfcc0e6fe8ddb089ae5bee"
+    },
+    {
+      "type": "GoalStack",
+      "source": "RDMS-02",
+      "offset": 10335,
+      "signature_sha256": "cbe17fa7d7fdf4f4b839e78ad4da1d825bc5b745f69bae3bdd4d1b5725bf4f17"
+    },
+    {
+      "type": "CanonicalFocusState",
+      "source": "RDMS-02",
+      "offset": 11080,
+      "signature_sha256": "a7e208d7344b3ff16dfe37ca2a35045fe93925b2002e63571651a596d65631a6"
+    },
+    {
+      "type": "EphemeralAttentionFrame",
+      "source": "RDMS-02",
+      "offset": 11544,
+      "signature_sha256": "865131a6e10c15be85ce9e03438f5b658c30901a783f665ab68a768ec767d1eb"
+    },
+    {
+      "type": "Decision",
+      "source": "RDMS-02",
+      "offset": 11958,
+      "signature_sha256": "f857de87909caed60c9e309ffe2761cc48450edd318fd2c4bda7530b0184ad7f"
+    },
+    {
+      "type": "DecisionOption",
+      "source": "RDMS-02",
+      "offset": 12444,
+      "signature_sha256": "625e2936b4f45e70f884969bc7419c9dffc52b10ae46b1733e129677c721d71d"
+    },
+    {
+      "type": "Invariant",
+      "source": "RDMS-02",
+      "offset": 13136,
+      "signature_sha256": "2c4752e015251339ed6d0358923dbf265ff16a7da8a03072098af05d4dbc72cf"
+    },
+    {
+      "type": "Contract",
+      "source": "RDMS-02",
+      "offset": 14525,
+      "signature_sha256": "38e176f4389cd6796d1e041024b2e552234f64672c51746e440eb93b72ab30f7"
+    },
+    {
+      "type": "ContractClause",
+      "source": "RDMS-02",
+      "offset": 14905,
+      "signature_sha256": "391ba2a04411f551d33797b935ad55313c9e5a2de8939cd9bbc117db88f93c15"
+    },
+    {
+      "type": "Risk",
+      "source": "RDMS-02",
+      "offset": 15739,
+      "signature_sha256": "8f3d9c8c9055a4792150a5867e0d21d7b2c6feee705a3db1ffd13a09e7aa4231"
+    },
+    {
+      "type": "Slice",
+      "source": "RDMS-02",
+      "offset": 16659,
+      "signature_sha256": "f561b9f94d4f0bbab87f36e697fad2b2f0126a55c4751d5d4620bf8a93009b2e"
+    },
+    {
+      "type": "ExpectedChangeSurface",
+      "source": "RDMS-02",
+      "offset": 17349,
+      "signature_sha256": "9ce0eaadfc4e18c36477a6650b5ce1f7f6f570fd47dd44202fa22eb6c696fbc4"
+    },
+    {
+      "type": "ProofObligation",
+      "source": "RDMS-02",
+      "offset": 17584,
+      "signature_sha256": "711498b5eb14abc36b7057816d159f584c32800bc2681f285e33f25ab2949fb7"
+    },
+    {
+      "type": "Commitment",
+      "source": "RDMS-02",
+      "offset": 19091,
+      "signature_sha256": "75ba2e001e8111f466d33619b75f9d4eb0d4f67d107f8b3c5a880d67b27299a7"
+    },
+    {
+      "type": "VocabularyTerm",
+      "source": "RDMS-02",
+      "offset": 19912,
+      "signature_sha256": "de40ed2246c304d51660015a620f68514e0cf7bd83f51d3f6638e018dadac3e8"
+    },
+    {
+      "type": "MentalModelElement",
+      "source": "RDMS-02",
+      "offset": 20418,
+      "signature_sha256": "6a80ac2be1c49c4167f8e42a3b8357eb4c3114ceadaadb23b70f06e47fe27edc"
+    },
+    {
+      "type": "CanonicalStateView",
+      "source": "RDMS-02",
+      "offset": 25168,
+      "signature_sha256": "60e4a8110afe2ceee5192edf28978786fc6b263e2c972ea6b3361324793487c2"
+    },
+    {
+      "type": "CanonicalEntityMeta",
+      "source": "RDMS-02",
+      "offset": 30915,
+      "signature_sha256": "f01888e1d21fbdce20f331e0a0f8ed5fa9e3e4a71c0d68c07623efa571328e2e"
+    },
+    {
+      "type": "SupportAssessment",
+      "source": "RDMS-02",
+      "offset": 31262,
+      "signature_sha256": "85c520084c6fcec84b381fbd09b8d3cdc398df4824d0290879c7be913b51ca90"
+    },
+    {
+      "type": "EpistemicUsability",
+      "source": "RDMS-02",
+      "offset": 32825,
+      "signature_sha256": "7a43731888ef2f7e088fe65e3b1bfe9be87f0c4d08db61b8eeaa6f115c57dcfd"
+    },
+    {
+      "type": "Hypothesis",
+      "source": "RDMS-02",
+      "offset": 33309,
+      "signature_sha256": "9e501b90e06c9ab4105e5b5eebf9552ebf8b1eed3841ce9f2110d32a322d01e6"
+    },
+    {
+      "type": "GoalPath",
+      "source": "RDMS-02",
+      "offset": 34569,
+      "signature_sha256": "2fadf786acfe02222a9bd53b20fca033c939c8873aa4ff4f5bc4e80a1a1db00d"
+    },
+    {
+      "type": "AcceptanceCriterion",
+      "source": "RDMS-02",
+      "offset": 35223,
+      "signature_sha256": "c356366998056ffca371c123667e4b27b9ed15737e1f354ce695206abc765d87"
+    },
+    {
+      "type": "WaiverRecord",
+      "source": "RDMS-02",
+      "offset": 35372,
+      "signature_sha256": "0da70d686940e56a3bbb67360aa0fff7fead6d53389428965a3037e1d57a86b9"
+    },
+    {
+      "type": "VersionedEntityRef",
+      "source": "RDMS-02",
+      "offset": 37455,
+      "signature_sha256": "ca946575b57445775f53340e682beeb725e1c61d51de3c4d48eb72f4dac10825"
+    },
+    {
+      "type": "EntityLineageEdge",
+      "source": "RDMS-02",
+      "offset": 37821,
+      "signature_sha256": "daab7475e09a14a1b5065697713899b42b3de619ba872573ac04f5fd77ab0363"
+    },
+    {
+      "type": "HypothesisRelation",
+      "source": "RDMS-02",
+      "offset": 38248,
+      "signature_sha256": "53b8251144ad68732d25ee95163853f26e1dbe2c9baa9681f667e49612ea2ac5"
+    },
+    {
+      "type": "SliceState",
+      "source": "RDMS-02",
+      "offset": 38599,
+      "signature_sha256": "65fc67e267d9bc85a8f019f44aea6e48cafe314cbdc74f4071d2e2f398eeddc8"
+    },
+    {
+      "type": "CanonicalFocusState",
+      "source": "RDMS-02",
+      "offset": 39996,
+      "signature_sha256": "2b543892f4558551ffa2c2ed60b72d7b86d923ccf9129c5f6cb333f3c0c7c256"
+    },
+    {
+      "type": "MentalModelElement",
+      "source": "RDMS-02",
+      "offset": 40412,
+      "signature_sha256": "a4bacbbc22e739280f9085eaf39167d2b8577dfcc419c1ebc8503c77cf9a1f96"
+    },
+    {
+      "type": "EnforcementSpec",
+      "source": "RDMS-02",
+      "offset": 41241,
+      "signature_sha256": "abaeb70fe7e0f0d994355315fe7a51da646c5ea49b6360244a41e87ffff5b416"
+    },
+    {
+      "type": "Risk",
+      "source": "RDMS-02",
+      "offset": 41931,
+      "signature_sha256": "41d59563e8e5228231f977edcea02bc883096a090a4ee23d8cdf12c269001bad"
+    },
+    {
+      "type": "RiskAssessment",
+      "source": "RDMS-02",
+      "offset": 42311,
+      "signature_sha256": "d210a79c920252a58897ddff59bf6af22b1f9ec69d6af13a32ed5e331c97f4c8"
+    },
+    {
+      "type": "Commitment",
+      "source": "RDMS-02",
+      "offset": 42793,
+      "signature_sha256": "9550091a920894ee46f43fe3fd3166566a8e72da1f4d0541ac52a0f5eeb4009d"
+    },
+    {
+      "type": "Observation",
+      "source": "RDMS-03",
+      "offset": 2083,
+      "signature_sha256": "87c111c5ff228e4b1d3022df20f5359315ec79ebc91fffb333fb5ee5914505c0"
+    },
+    {
+      "type": "SourceRef",
+      "source": "RDMS-03",
+      "offset": 2819,
+      "signature_sha256": "de32e1b2cd82bde14422c09d688327660a5a17c4ce2535e93913305daa48fd09"
+    },
+    {
+      "type": "ObservationProvenance",
+      "source": "RDMS-03",
+      "offset": 5506,
+      "signature_sha256": "c8db6f4f095cc04580ea651de0671f6902ec7b67d147633a20fa4af0085c926f"
+    },
+    {
+      "type": "ObservationAmendment",
+      "source": "RDMS-03",
+      "offset": 6835,
+      "signature_sha256": "ddf781b2a17daa3d4c65f2f2028e26531ddb8bab3725161d08031bee83c3a984"
+    },
+    {
+      "type": "EvidenceLink",
+      "source": "RDMS-03",
+      "offset": 7821,
+      "signature_sha256": "4687679d2fb2bd2ab115ddc8ba0c75da0b1267e7492959c766b133f3f5cf5ec7"
+    },
+    {
+      "type": "EvidenceLink",
+      "source": "RDMS-03",
+      "offset": 8586,
+      "signature_sha256": "77d97888543058f135cf9d3a164ccb16f306e02911719df4c77df62af9a8c71c"
+    },
+    {
+      "type": "ContradictionRecord",
+      "source": "RDMS-03",
+      "offset": 10519,
+      "signature_sha256": "26a500e3821c4d51f31ef7b72f678f591d58de066bd83cb186a3c7778241334a"
+    },
+    {
+      "type": "Prediction",
+      "source": "RDMS-03",
+      "offset": 12587,
+      "signature_sha256": "753799d44b33de0090c2d617ab54573d8b91dd3ed6b976ca92a9bd867b47abfb"
+    },
+    {
+      "type": "PredictionEvaluation",
+      "source": "RDMS-03",
+      "offset": 13387,
+      "signature_sha256": "177bfa7fc16cb0c2ad802ec92b4dc601bf5e93200b90536188ec930f72c7f9d5"
+    },
+    {
+      "type": "Experiment",
+      "source": "RDMS-03",
+      "offset": 14187,
+      "signature_sha256": "71b1cbca13151b543da357a0e9ec5cdd211a5d90d6b857cedc1312543c760736"
+    },
+    {
+      "type": "ExperimentRun",
+      "source": "RDMS-03",
+      "offset": 15019,
+      "signature_sha256": "e64d8d729212e283e4dfe906122d1cd42f3bd81cc91efc6d9af9b7dbd5222f94"
+    },
+    {
+      "type": "ExperimentConclusionProposal",
+      "source": "RDMS-03",
+      "offset": 16779,
+      "signature_sha256": "9025dbc72531528866c9a8dcc91e2264913e31f087ac1b36baf71f4da740bb2b"
+    },
+    {
+      "type": "VerificationSpec",
+      "source": "RDMS-03",
+      "offset": 17462,
+      "signature_sha256": "a60004deb632c109d816ccf5088b1c6f8b2ec3259363a1a85712a2ea47c048be"
+    },
+    {
+      "type": "VerificationRecord",
+      "source": "RDMS-03",
+      "offset": 17931,
+      "signature_sha256": "38dcebd112235621634a5d02545d7037568e98f9095d767de3d093e4ecc63895"
+    },
+    {
+      "type": "DeterministicResult",
+      "source": "RDMS-03",
+      "offset": 18683,
+      "signature_sha256": "edf56937de0dbe391b0fc5f2ab333231d4385c4042ee9b78eee1253b3e8428b4"
+    },
+    {
+      "type": "SemanticAssessment",
+      "source": "RDMS-03",
+      "offset": 19504,
+      "signature_sha256": "fef92e176c908f2df2305222a1b4d4ea67ffec4dc5b85d5d32ec8bef6881db8f"
+    },
+    {
+      "type": "SemanticAssessment",
+      "source": "RDMS-03",
+      "offset": 20243,
+      "signature_sha256": "62941702e27060cfbd61029e71dc385c3809015851b8639d6d549945b36f0e69"
+    },
+    {
+      "type": "ConfidenceAssessment",
+      "source": "RDMS-03",
+      "offset": 22516,
+      "signature_sha256": "670a1a24cd9ba19d36ccca1d9da702d0da76d67c183cc88511600d7f865f2e91"
+    },
+    {
+      "type": "ContentTrustContext",
+      "source": "RDMS-03",
+      "offset": 34724,
+      "signature_sha256": "64d4b358cd702ddc394547d19a12e95dce1f146c083dec9e1e52f83dd8035cf8"
+    },
+    {
+      "type": "AuthorityBinding",
+      "source": "RDMS-03",
+      "offset": 35687,
+      "signature_sha256": "a6599c6fcc33d8a5d56d2c65d8d47a6b32ed53c92f0682600c6413482c46e429"
+    },
+    {
+      "type": "ObservationAmendment",
+      "source": "RDMS-03",
+      "offset": 37379,
+      "signature_sha256": "5616cffc8ddf93e6b7745e20e40b55159012ba193d5a32a66fc2478cd7122c11"
+    },
+    {
+      "type": "EvidenceBasis",
+      "source": "RDMS-03",
+      "offset": 38428,
+      "signature_sha256": "65b40c0b9b12f176a53cecccd65814ec212fd3adba95f0682f1fc1114fde8ae7"
+    },
+    {
+      "type": "EvidenceBasisSignature",
+      "source": "RDMS-03",
+      "offset": 40630,
+      "signature_sha256": "96d1f4844142c7284b4a1fb0c4519eca5de7160b6f20b6c75c19bad27526dbe5"
+    },
+    {
+      "type": "ContradictionRecord",
+      "source": "RDMS-03",
+      "offset": 41576,
+      "signature_sha256": "e1c9248c89c0b04bd735ed2ef07dd58d1ec6e0fe81332cef39042e0ccdb8bd00"
+    },
+    {
+      "type": "TemporalProvenance",
+      "source": "RDMS-03",
+      "offset": 42019,
+      "signature_sha256": "31d1122a458fc5d25ba8c868ad8d17e09b59f2a763e6b65f404849348d47ff9d"
+    },
+    {
+      "type": "ExperimentDesignSnapshot",
+      "source": "RDMS-03",
+      "offset": 42579,
+      "signature_sha256": "e732fa0223a7724f5b27c3b26b4ca7e3fd9299640f0a4c5317540aaca88047e4"
+    },
+    {
+      "type": "RunPreflightEvaluation",
+      "source": "RDMS-03",
+      "offset": 43644,
+      "signature_sha256": "773b834bdf26a5bdf01ea4ec23a226ae643d1473af3ee4dfd21ec178c8ee04cb"
+    },
+    {
+      "type": "VerificationRecord",
+      "source": "RDMS-03",
+      "offset": 45624,
+      "signature_sha256": "eb8ec62c81b96d1e3e20c0e1aaf36dcdd6bb6c11523917281505330ed2c45635"
+    },
+    {
+      "type": "VerificationExecutionContext",
+      "source": "RDMS-03",
+      "offset": 45988,
+      "signature_sha256": "7ba909a7873ee6d15a7b8689219a61dbc28cc3135957619bd9f1b738e6f95c29"
+    },
+    {
+      "type": "DeterminismProfile",
+      "source": "RDMS-03",
+      "offset": 46490,
+      "signature_sha256": "fe2bb198aaeea244d84d9f8105f0baf1e52bff8c9acd70836cb57a4d63c8b76c"
+    },
+    {
+      "type": "ActionProposal",
+      "source": "RDMS-04",
+      "offset": 3094,
+      "signature_sha256": "1885994db9867383927047e1e7e5ccde138848bbef915ccffc6f34eaf2b63f2b"
+    },
+    {
+      "type": "ActionAuthorization",
+      "source": "RDMS-04",
+      "offset": 4029,
+      "signature_sha256": "7ba3ed065370dbbd854313988faf5ac29988e180780ce45f4e32ee4404cf9031"
+    },
+    {
+      "type": "ActionRecord",
+      "source": "RDMS-04",
+      "offset": 4981,
+      "signature_sha256": "382f183ed4c863d6c75a12d82aa688536f661a91844b7e95fbc6d292a51029eb"
+    },
+    {
+      "type": "ActionAttempt",
+      "source": "RDMS-04",
+      "offset": 5867,
+      "signature_sha256": "1cdc037f7164b83e47f5c5e09af3d98eaa33257b36abfac02b65d75a50ed9d5a"
+    },
+    {
+      "type": "ActionEffectSemantics",
+      "source": "RDMS-04",
+      "offset": 7325,
+      "signature_sha256": "2392ab648b7c7042f1fc8294972d4aeb360c06cea0d3c0516a3fdfc60ea22ecb"
+    },
+    {
+      "type": "ToolAdapter",
+      "source": "RDMS-04",
+      "offset": 8012,
+      "signature_sha256": "24273ef0a3e88270a408da68fd617008a765b208c9f3a0f0e0967585503b22d8"
+    },
+    {
+      "type": "ProcessExecutionRequest",
+      "source": "RDMS-04",
+      "offset": 8790,
+      "signature_sha256": "03a9a94132e8f1d055ef4d207f4b5a2d412411f3368af783ce9aa7ddff9574e0"
+    },
+    {
+      "type": "TerminalSession",
+      "source": "RDMS-04",
+      "offset": 9378,
+      "signature_sha256": "a68fe897b8b0b4d97c0b0d03f537384a9834f4c1d218958906a78c1065b7665a"
+    },
+    {
+      "type": "ProcessRun",
+      "source": "RDMS-04",
+      "offset": 9773,
+      "signature_sha256": "1ef275ced16245e3f920b1ad8039e48da79012b43425e97787b764813258f724"
+    },
+    {
+      "type": "OutputCapturePolicy",
+      "source": "RDMS-04",
+      "offset": 10427,
+      "signature_sha256": "8508bd152dd0b17a7c30c3eb3a50a72122e1b9f4546b389fd125a83159bcf911"
+    },
+    {
+      "type": "FilePatchProposal",
+      "source": "RDMS-04",
+      "offset": 13081,
+      "signature_sha256": "2ef6cf7ab9c5748ad91eceb202f4b6ebcb14788799b22bdabc9820c60c9cefad"
+    },
+    {
+      "type": "GitScope",
+      "source": "RDMS-04",
+      "offset": 14537,
+      "signature_sha256": "22a78b9fc2f55b34b868a7cac03871c6e280da6bad790fa151c36b0ff5321e50"
+    },
+    {
+      "type": "TestExecutionRequest",
+      "source": "RDMS-04",
+      "offset": 15410,
+      "signature_sha256": "72aea0d8b7080a78dff93d3c1ea8220e2c5961e16449d501b51c453058e85f6a"
+    },
+    {
+      "type": "DebuggerSession",
+      "source": "RDMS-04",
+      "offset": 16315,
+      "signature_sha256": "e0470b76f6bbdde0d9cdc694fc328cf6399b8b40e14445bc6c4134df02e83692"
+    },
+    {
+      "type": "SandboxProfile",
+      "source": "RDMS-04",
+      "offset": 17766,
+      "signature_sha256": "cbb128d3152023ed84f8fc80d27cd1b47fed6ae55c2ba9605dc923cfea7e384b"
+    },
+    {
+      "type": "ContainmentProof",
+      "source": "RDMS-04",
+      "offset": 18036,
+      "signature_sha256": "424c01a31a134d9ce0863d722db941c2b8c7e2a80869f6e0b34e188ebe2d390b"
+    },
+    {
+      "type": "SandboxActivityRecord",
+      "source": "RDMS-04",
+      "offset": 18728,
+      "signature_sha256": "05251187416e9c2d9cc28ce0fa7af1743e6cd6f9db63bf619c06f668e7c3e249"
+    },
+    {
+      "type": "CredentialPolicy",
+      "source": "RDMS-04",
+      "offset": 19656,
+      "signature_sha256": "657373ea459016901be642d2949bad87dbdb7b80fef7c4c36369a0e7704fcd0f"
+    },
+    {
+      "type": "NetworkPolicy",
+      "source": "RDMS-04",
+      "offset": 20053,
+      "signature_sha256": "61dff085d257935dcbf1e52d33ca0c8a5dafa7540bb53559a2ab5cf2cd273b70"
+    },
+    {
+      "type": "ToolResult",
+      "source": "RDMS-04",
+      "offset": 20521,
+      "signature_sha256": "1880791abf79c04b1466806b7df24ec22e85b0cefc37b46d02518c076e1a76d7"
+    },
+    {
+      "type": "OutcomeProbe",
+      "source": "RDMS-04",
+      "offset": 20712,
+      "signature_sha256": "f88e42eb534918406b537791cee9d7e6ec397c22c617cf849feb74969b1c88c4"
+    },
+    {
+      "type": "ReconciliationRecord",
+      "source": "RDMS-04",
+      "offset": 21001,
+      "signature_sha256": "f92e8ad7f8079fed95e683e4b823e8d9d89ff691ce65a4e2902a14c5416b750d"
+    },
+    {
+      "type": "DispatchOwnership",
+      "source": "RDMS-04",
+      "offset": 30512,
+      "signature_sha256": "ba1bf86d9ff3dd021f94baba16916d37e96d37d4c4450d710351d480ae6dc5ad"
+    },
+    {
+      "type": "ReadAccessGrant",
+      "source": "RDMS-04",
+      "offset": 32880,
+      "signature_sha256": "e89aebe15651a3a99c74dc1ae142673f5a508e6ae170e7f19d56981706a10da2"
+    },
+    {
+      "type": "ProcessLaunch",
+      "source": "RDMS-04",
+      "offset": 34198,
+      "signature_sha256": "ef21682c269df161ee3430b3072416da17c6f7c7ec69668e3884eaec1a52edc2"
+    },
+    {
+      "type": "TerminalSessionGrant",
+      "source": "RDMS-04",
+      "offset": 34654,
+      "signature_sha256": "ef9f2f897f0903f73b9a84bdccc48a791d8236b55a8771674b0f2d749b4f9c9d"
+    },
+    {
+      "type": "TerminalInputGrant",
+      "source": "RDMS-04",
+      "offset": 34883,
+      "signature_sha256": "44b9b44ac1801365dd2e6ff42a8ccd13753951d1c3ae8ddb7a3c59390c9486a7"
+    },
+    {
+      "type": "ProcessIdentity",
+      "source": "RDMS-04",
+      "offset": 36074,
+      "signature_sha256": "5b13a5b82f85c58b3346bcd0237e5d5b8813bfd31430837e5e6220a11cbadf3f"
+    },
+    {
+      "type": "ProcessGroupRecord",
+      "source": "RDMS-04",
+      "offset": 36484,
+      "signature_sha256": "4152c36f8ac8d4419f977f0802a6c0cf0fa3df4fdf257374501efb2b35442704"
+    },
+    {
+      "type": "ReattachmentAssessment",
+      "source": "RDMS-04",
+      "offset": 37064,
+      "signature_sha256": "4ec188c208b39bc37c29eb741832aebefa625afe5f3b14c422128ed6f1c02b7e"
+    },
+    {
+      "type": "AuthorizedFileTarget",
+      "source": "RDMS-04",
+      "offset": 37565,
+      "signature_sha256": "f8d27aca2b27057dfac1a7099ad40d30d711fb45b73cd7fb051b4113201bb1d8"
+    },
+    {
+      "type": "ChangeSet",
+      "source": "RDMS-04",
+      "offset": 37880,
+      "signature_sha256": "083fce83af43bb7faf3c867f7d4c84f852d44bf10fc4406a7d7e6e83354a2f8c"
+    },
+    {
+      "type": "GitExecutionContext",
+      "source": "RDMS-04",
+      "offset": 39189,
+      "signature_sha256": "67ad6d8022f34335a28a8d580d9585a187095a33c62857a39b14bcb9ed55e1ee"
+    },
+    {
+      "type": "ContainmentProof",
+      "source": "RDMS-04",
+      "offset": 40289,
+      "signature_sha256": "f9bd536258f7d14ac40af6b374b0f7307b8548bf8e828359434c1c26fe270be4"
+    },
+    {
+      "type": "CredentialExposurePolicy",
+      "source": "RDMS-04",
+      "offset": 41406,
+      "signature_sha256": "58f9c8f586b2461c27f04cb91b5b9e6911e0a8f7ffd391b6e85a2d612b42facb"
+    },
+    {
+      "type": "OutcomeProbeSpec",
+      "source": "RDMS-04",
+      "offset": 42462,
+      "signature_sha256": "3d66501e3d1d1e9734b495331da86c57b7f45994604a4fd074b1d17e4c6c5c6e"
+    },
+    {
+      "type": "CompensationProposal",
+      "source": "RDMS-04",
+      "offset": 43001,
+      "signature_sha256": "7205273bf302b8cba551314ea088384017ddaba69c735112051dfe0f306fe149"
+    },
+    {
+      "type": "DebuggerOperationPolicy",
+      "source": "RDMS-04",
+      "offset": 43360,
+      "signature_sha256": "9fc3c0f16c802da80fd019f76f75fd434eddcdb1f793de16393dbef3f1f46521"
+    },
+    {
+      "type": "ExecutionResourcePolicy",
+      "source": "RDMS-04",
+      "offset": 44669,
+      "signature_sha256": "a721fba4a4228465fe5580c1b89c24430a92704717fc45fe358ab3cd389cc535"
+    },
+    {
+      "type": "TemporalCoordinates",
+      "source": "RDMS-05",
+      "offset": 2424,
+      "signature_sha256": "f13536febe89c50f81841e29a26add92ce520aeba2008188027ca6619d9886b6"
+    },
+    {
+      "type": "TemporalSchedule",
+      "source": "RDMS-05",
+      "offset": 3206,
+      "signature_sha256": "cdfdd4b62ae255e6b50557d7d76c82beedb01883b25a66486fcd2d04a5d23a40"
+    },
+    {
+      "type": "TriggerDefinition",
+      "source": "RDMS-05",
+      "offset": 3936,
+      "signature_sha256": "834b70141dca33c45297e639990e9024ee20c8362dde90284e8db7377d6640a2"
+    },
+    {
+      "type": "TriggerCondition",
+      "source": "RDMS-05",
+      "offset": 4353,
+      "signature_sha256": "1ec0220082b9baebcb758730314ccc5fafc656987949d412c09a1885227bd636"
+    },
+    {
+      "type": "TriggerEvaluation",
+      "source": "RDMS-05",
+      "offset": 4942,
+      "signature_sha256": "a00dbd4b5b2e043f4a29f618f220934639178e017cfe46a9ce5b070d01342910"
+    },
+    {
+      "type": "CompositeCondition",
+      "source": "RDMS-05",
+      "offset": 6946,
+      "signature_sha256": "2160b52d476705f9c72c941a95a3acf03732b67d40676c632cdf43f6ddd870de"
+    },
+    {
+      "type": "TriggerSourceCursor",
+      "source": "RDMS-05",
+      "offset": 7942,
+      "signature_sha256": "352a7d702c4ecacc9187f6784f032fb34a81d6c5169309faf732e374a8d00726"
+    },
+    {
+      "type": "TriggerFire",
+      "source": "RDMS-05",
+      "offset": 9128,
+      "signature_sha256": "8fe53c4571ab2c4384e1b9f17794bd45f6c53df4798882d3e65d4afc20711d2d"
+    },
+    {
+      "type": "TriggerReaction",
+      "source": "RDMS-05",
+      "offset": 9666,
+      "signature_sha256": "facd07d1323c676a13ba8d79b3643cdb68c8136a7a5ef50199876f60d82aa410"
+    },
+    {
+      "type": "Commitment",
+      "source": "RDMS-05",
+      "offset": 10540,
+      "signature_sha256": "5f4972beca65aca86a8c63cdb7f37a29f174b6537b03c938e6674154988d71c0"
+    },
+    {
+      "type": "WorkReactivationBinding",
+      "source": "RDMS-05",
+      "offset": 12105,
+      "signature_sha256": "bce8ea3e059ff20bbf8ed840b18566a04d08a8fd60a617c61974ab9637bf83e6"
+    },
+    {
+      "type": "ResumptionCapsule",
+      "source": "RDMS-05",
+      "offset": 12721,
+      "signature_sha256": "ed033c5ffa4bc78b97c24e23d6d18aeede4654a89e66b3e6ce17b705b9d4d860"
+    },
+    {
+      "type": "ResumeAssessment",
+      "source": "RDMS-05",
+      "offset": 14784,
+      "signature_sha256": "947323daf21b734981a69c1953ae424ac5603f99714c0118891e83408e9ec2ca"
+    },
+    {
+      "type": "TemporalValidity",
+      "source": "RDMS-05",
+      "offset": 15556,
+      "signature_sha256": "7304a165043773b44b6c0abd8403ad6723180c3ae26f805069a83b7adf6bb564"
+    },
+    {
+      "type": "ReactivationRequest",
+      "source": "RDMS-05",
+      "offset": 18624,
+      "signature_sha256": "0fdc480d359842e32aa665fcb82991eed9fe08d9b101e10a2d1227a865112cf3"
+    },
+    {
+      "type": "TriggerSourceContract",
+      "source": "RDMS-05",
+      "offset": 29233,
+      "signature_sha256": "f25e3ea5a4bae0283c907e95cdf42751c20beba93768e22a9b29488ddb4c66b8"
+    },
+    {
+      "type": "DurableEventInboxEntry",
+      "source": "RDMS-05",
+      "offset": 29896,
+      "signature_sha256": "0afd1d25a21eb67becfaaf4e606fbbe12ae06cfc8d65936452146170485109ac"
+    },
+    {
+      "type": "EventCoverage",
+      "source": "RDMS-05",
+      "offset": 32518,
+      "signature_sha256": "3d90073568746cf55917edaa8a4dfe103d121ecc41de7fda8818e16b69f22f3a"
+    },
+    {
+      "type": "EdgeWitness",
+      "source": "RDMS-05",
+      "offset": 32955,
+      "signature_sha256": "ecc945c604e2ab992c20081b75f72088ca5fdc1317a8a898e3795b69b122fa88"
+    },
+    {
+      "type": "TriggerDefinitionSnapshot",
+      "source": "RDMS-05",
+      "offset": 34452,
+      "signature_sha256": "99adb310fa8946352b7586992c17da48c1b1fa782c7a56f9a12ff4866764db2d"
+    },
+    {
+      "type": "QualifiedOccurrenceIdentity",
+      "source": "RDMS-05",
+      "offset": 34949,
+      "signature_sha256": "af70d8b4b40a6bb310ff39c5f3aa9e711875f104b9fcb2bf2fcce837c2c27156"
+    },
+    {
+      "type": "TriggerFire",
+      "source": "RDMS-05",
+      "offset": 35281,
+      "signature_sha256": "3cf6f0ac0a6a4944a9ccec67e23bc9e4daa2ecbe51e9f50caeaac24df1c82a64"
+    },
+    {
+      "type": "RearmPolicy",
+      "source": "RDMS-05",
+      "offset": 35980,
+      "signature_sha256": "ef17b7db3dc5bd48857d44c317a25cbb683007acc45dfd97d84591f207f6ab45"
+    },
+    {
+      "type": "ConditionEvaluationContext",
+      "source": "RDMS-05",
+      "offset": 37232,
+      "signature_sha256": "787ea131a7fdc7df7039ac748695d816ebb057ec59fb11f4c0021ffdcccb12e6"
+    },
+    {
+      "type": "CompositeCoherenceAssessment",
+      "source": "RDMS-05",
+      "offset": 37578,
+      "signature_sha256": "727d83193145d5deed0996610e4cedc6cb5e0693e4bac4a43647903d7ac90cc4"
+    },
+    {
+      "type": "TemporalSchedule",
+      "source": "RDMS-05",
+      "offset": 38855,
+      "signature_sha256": "b34a26737bfb0994889f906954f5eb867cef9956c58bb69327953f9643b2d6d6"
+    },
+    {
+      "type": "ScheduleOccurrence",
+      "source": "RDMS-05",
+      "offset": 39202,
+      "signature_sha256": "7e5b79c85c6abaaebbbb5a2bf12be84ea315e43b22cc1f82f319d0ef90a0b4e1"
+    },
+    {
+      "type": "TriggerReaction",
+      "source": "RDMS-05",
+      "offset": 40528,
+      "signature_sha256": "0bace7073358ba9c4db3df54b093c411d2b779056786bda6dffcd7bdbfbfdba3"
+    },
+    {
+      "type": "ReactionExecutionClaim",
+      "source": "RDMS-05",
+      "offset": 41339,
+      "signature_sha256": "988199732a90447a21671232eb09e121e6d3eba0081d6af7021c142f36d632e9"
+    },
+    {
+      "type": "ResumptionCapsule",
+      "source": "RDMS-05",
+      "offset": 42411,
+      "signature_sha256": "60fd17390a936688294412d66544ce6273ee061938dc6bf9119c9fc0f6d0860d"
+    },
+    {
+      "type": "ResumeAssessment",
+      "source": "RDMS-05",
+      "offset": 43968,
+      "signature_sha256": "88e8bb7c80067133917baeb25a84188e5831a9f738c0ead39ef3d3e2ff8b9135"
+    },
+    {
+      "type": "TrustedEventBinding",
+      "source": "RDMS-05",
+      "offset": 45266,
+      "signature_sha256": "1197d70b8342c1ff43bed83f97526046482414667ad40b9ae60905458e6f8935"
+    },
+    {
+      "type": "ThresholdConditionPolicy",
+      "source": "RDMS-05",
+      "offset": 47186,
+      "signature_sha256": "7086e1bd3d145b2d9902d2cbda9158c0abdc0351e3bc8aafc458fba144777d96"
+    },
+    {
+      "type": "RecruitmentDecision",
+      "source": "RDMS-06",
+      "offset": 4724,
+      "signature_sha256": "29e39af453258be5d1cff9b0bca4cf465ecaec3ec501a9187959d44e55ad1885"
+    },
+    {
+      "type": "SpecialistWorkContract",
+      "source": "RDMS-06",
+      "offset": 5397,
+      "signature_sha256": "656f29a0edd509ba0beb26555a77e0377b0991a49e22fdbfbe5055e71d6cd8d2"
+    },
+    {
+      "type": "SpecialistWorkspace",
+      "source": "RDMS-06",
+      "offset": 7400,
+      "signature_sha256": "83464ad604d3264c4b494a43b2482caf92bcd3184eaf69f346506dfe32367c1c"
+    },
+    {
+      "type": "WorkPartition",
+      "source": "RDMS-06",
+      "offset": 8342,
+      "signature_sha256": "ef20c29d5e58ffe23fc635a3b0f873399baf10aa3ebf7cbd5b39a39f2576fd35"
+    },
+    {
+      "type": "ParallelConflict",
+      "source": "RDMS-06",
+      "offset": 8893,
+      "signature_sha256": "365088d6d6a4eca8f8696aa3db1dcc8764e2ea07da85ab56c615e037a71b4f38"
+    },
+    {
+      "type": "SpecialistBudget",
+      "source": "RDMS-06",
+      "offset": 9233,
+      "signature_sha256": "eb8354a87b554591d39a178c4f60141cdd405e1bcb6c9c75d109f2cd3b020459"
+    },
+    {
+      "type": "SpecialistResult",
+      "source": "RDMS-06",
+      "offset": 9562,
+      "signature_sha256": "e02262a0c3308ac39466b2d4ad54134498124880969f4fd2a4205141acfec1b0"
+    },
+    {
+      "type": "IndependentReviewContract",
+      "source": "RDMS-06",
+      "offset": 10608,
+      "signature_sha256": "4020d2a5cc5a59486e44f30e536b9ee59ed319f9f02b14aab551f1a0c6718f70"
+    },
+    {
+      "type": "DependencyStamp",
+      "source": "RDMS-06",
+      "offset": 12390,
+      "signature_sha256": "c278949f14d27da3e477c2979e6b599a350e5c63a3a2d998bcb65fc1ab27c97b"
+    },
+    {
+      "type": "DependencySet",
+      "source": "RDMS-06",
+      "offset": 12834,
+      "signature_sha256": "f1461798edfa18e7707194adc02437489e29f6d36eb3fdf7966f4fe0ab0292d9"
+    },
+    {
+      "type": "DependencyCheck",
+      "source": "RDMS-06",
+      "offset": 13877,
+      "signature_sha256": "2e5bdcc4e0e54f48d6c065552ab61cbc545a750b5bcaf563e525dc01fd2f7690"
+    },
+    {
+      "type": "DependencyEvaluation",
+      "source": "RDMS-06",
+      "offset": 14121,
+      "signature_sha256": "899c7cbfda77b57c55ae966b0903e58c2cd0f8cc6b1f516ebe5efb2eac0d350b"
+    },
+    {
+      "type": "ResultComponent",
+      "source": "RDMS-06",
+      "offset": 15668,
+      "signature_sha256": "ef8b1fb8b959993bab58b4abdcf30dbf7d847a05350e595710e4ecec4d816317"
+    },
+    {
+      "type": "QueryDependencyStamp",
+      "source": "RDMS-06",
+      "offset": 16419,
+      "signature_sha256": "bf742efc46d948fb6a144cfc5d0f433ed41af037ef1bbf7b4735399d58ce6862"
+    },
+    {
+      "type": "NegativeKnowledgeProof",
+      "source": "RDMS-06",
+      "offset": 16804,
+      "signature_sha256": "b9a5550d73ffb0b812bd47a87292d6aa7973b47570e2cb8d42d4d2d87bc7179e"
+    },
+    {
+      "type": "IntegrationCandidate",
+      "source": "RDMS-06",
+      "offset": 18785,
+      "signature_sha256": "99daaf71b9969fe810cdc99f93c7b1c45b070a1ef766d8042b64106290939ae9"
+    },
+    {
+      "type": "IntegrationReview",
+      "source": "RDMS-06",
+      "offset": 19181,
+      "signature_sha256": "172e9bd35ae05fa47014a5bce8f37d09491cd1daf8314ae21517ef355b14df5f"
+    },
+    {
+      "type": "SpecialistCreationKey",
+      "source": "RDMS-06",
+      "offset": 23731,
+      "signature_sha256": "cb735ce5999a000006c5ec4357ed105b86cc45f4a759d76428e45129d688dd16"
+    },
+    {
+      "type": "SpecialistCapabilityGrant",
+      "source": "RDMS-06",
+      "offset": 36383,
+      "signature_sha256": "e475041adb649607fcb062dc3d16ac43a0a36dca8630a906ea5929efd58947a0"
+    },
+    {
+      "type": "DelegationPolicy",
+      "source": "RDMS-06",
+      "offset": 38582,
+      "signature_sha256": "9233195a1fa27cf1246ed6baac55686846c64f26bad69d3111a0be2c7783b649"
+    },
+    {
+      "type": "SpecialistIsolationProfile",
+      "source": "RDMS-06",
+      "offset": 39173,
+      "signature_sha256": "26351f50b8e9c3f58cbde8673cc99ded55560d858e3651f17a10b0cac7a478f8"
+    },
+    {
+      "type": "SpecialistEvidenceValidation",
+      "source": "RDMS-06",
+      "offset": 40161,
+      "signature_sha256": "753eb318243dedee2b1b1dc88bda0bb3dc7011f5f72bff9885fe107a9b1dbda7"
+    },
+    {
+      "type": "ReviewerContextManifest",
+      "source": "RDMS-06",
+      "offset": 42130,
+      "signature_sha256": "9f89298d125b02d558a19c1e77e769bf12a3dfd914aedd2ef8c80bf8366f1dee"
+    },
+    {
+      "type": "SpecialistResourceBudget",
+      "source": "RDMS-06",
+      "offset": 43131,
+      "signature_sha256": "3ac6de1f59667f7c627994362ab7361526940abbdcd6ae5f5fc278ea1e4b9441"
+    },
+    {
+      "type": "IntegrationOperation",
+      "source": "RDMS-06",
+      "offset": 43984,
+      "signature_sha256": "19e76934cb986f5fda59dec60044ea851947e94b3b09940b18b3ad66479435a7"
+    },
+    {
+      "type": "IntegrationConflictAssessment",
+      "source": "RDMS-06",
+      "offset": 45767,
+      "signature_sha256": "015208e37c2dbf4ea813371e5a7d789310e29dc676a427011ea6e6e732a17ce2"
+    },
+    {
+      "type": "DependencyCaptureReceipt",
+      "source": "RDMS-06",
+      "offset": 46616,
+      "signature_sha256": "9cd1dc021a5b8197dd20ec7669568def754d0e8762beaa657d417b1516b35516"
+    },
+    {
+      "type": "DependencyAttestation",
+      "source": "RDMS-06",
+      "offset": 47700,
+      "signature_sha256": "25e5af93a5925981e99177af90cfa177f46ca3f1f89b7048f5c1fdae91fad329"
+    },
+    {
+      "type": "DependencyRequirementBinding",
+      "source": "RDMS-06",
+      "offset": 48016,
+      "signature_sha256": "1857c916eb0eb6aa15d0573a0c4c62b47517383bda9aedbda811f3754fa44aa1"
+    },
+    {
+      "type": "CompatibilityAssessment",
+      "source": "RDMS-06",
+      "offset": 48365,
+      "signature_sha256": "52c2e21929e898bdd6ae2715b7ba4771c1e21908f457ddc798106ea3f70f6eea"
+    },
+    {
+      "type": "QueryUniverseContract",
+      "source": "RDMS-06",
+      "offset": 48864,
+      "signature_sha256": "f8100c56a49d9348e3d784c779d1e49e0e48c7b9eb49fff0f18d71a2d8ccca82"
+    },
+    {
+      "type": "NegativeQueryProof",
+      "source": "RDMS-06",
+      "offset": 49551,
+      "signature_sha256": "617c87b5a9bb380c3fb6e368e461a97c2062ed79cd52726909665139ecf3a1c8"
+    },
+    {
+      "type": "DependencyEvaluationUniverse",
+      "source": "RDMS-06",
+      "offset": 50147,
+      "signature_sha256": "104c4612f1de6fad83859dead5561df0d47031a5cafa204177ca617e58bf5544"
+    },
+    {
+      "type": "DependencyLineageGraph",
+      "source": "RDMS-06",
+      "offset": 51037,
+      "signature_sha256": "7012cd07f2cd214354d9e0670949c51a188f832ed8804a8b3273a3e0f20661e4"
+    },
+    {
+      "type": "RecruitmentIntent",
+      "source": "RDMS-06",
+      "offset": 52290,
+      "signature_sha256": "45e42c84d702c5734ac65ca25b2f598fb385f562e720dce59d2f823162b4f370"
+    },
+    {
+      "type": "SpecialistRun",
+      "source": "RDMS-06",
+      "offset": 52719,
+      "signature_sha256": "19ef171306f05776cb16287d2aa5d3ac89283a14585e7473b31bf183a80f5021"
+    },
+    {
+      "type": "IntegrationApplication",
+      "source": "RDMS-06",
+      "offset": 53051,
+      "signature_sha256": "1fa9688a7599af48afcb53c431e2860253f7c510be44acad1a427cc51373036c"
+    },
+    {
+      "type": "SpecialistContextPackage",
+      "source": "RDMS-06",
+      "offset": 54258,
+      "signature_sha256": "2dc62353d048afcd22481ad1f7ef2029529ee2cc23df1d374a31afd67d40e100"
+    },
+    {
+      "type": "EngineeringEpisode",
+      "source": "RDMS-07",
+      "offset": 5885,
+      "signature_sha256": "f9c7447f05b9558e1a440b0b5f42e791bcf2a99fa82789334b23c6075e191f38"
+    },
+    {
+      "type": "ReflectionRecord",
+      "source": "RDMS-07",
+      "offset": 7579,
+      "signature_sha256": "036ebc8a2165bac38f7413d787612dfe1d5c65fccbe4fb375d0bce0d9b4af876"
+    },
+    {
+      "type": "MemoryProposal",
+      "source": "RDMS-07",
+      "offset": 9946,
+      "signature_sha256": "e724e2497c15c1f77c7e6ebd7fb6aa4536256a8b0829080c2fa81b96061232dc"
+    },
+    {
+      "type": "LearningGateEvaluation",
+      "source": "RDMS-07",
+      "offset": 10685,
+      "signature_sha256": "84b6bc8eae72a4309302d7df2b3b5c2db8a03a0e6b676f32732f9c61beb9e6bd"
+    },
+    {
+      "type": "MemoryRecord",
+      "source": "RDMS-07",
+      "offset": 11640,
+      "signature_sha256": "22bc0b598bfb34242f22f75d0ab97cadadf07d7cdc1e6bbed9943c4342b4602a"
+    },
+    {
+      "type": "ProjectMemoryScope",
+      "source": "RDMS-07",
+      "offset": 13102,
+      "signature_sha256": "18632d988609c4b983692578d9637a9b8598f4fcca3f861d42ee46b45d86b72b"
+    },
+    {
+      "type": "GeneralizationProposal",
+      "source": "RDMS-07",
+      "offset": 13961,
+      "signature_sha256": "f905bd8fb2213e0e4ad370340807421aa7f00b6351942b4c62ed6707f70f78e9"
+    },
+    {
+      "type": "ProcedureMemory",
+      "source": "RDMS-07",
+      "offset": 14856,
+      "signature_sha256": "a2e18199d32cf2a90069956877b1cbd1a92eb4c19690d1a03e0d41252542a93b"
+    },
+    {
+      "type": "DecisionMemory",
+      "source": "RDMS-07",
+      "offset": 16143,
+      "signature_sha256": "4c3d337ace6c7f9644fec901dba13bca460123626e18e6d20c4c17bc40c272a6"
+    },
+    {
+      "type": "FailurePattern",
+      "source": "RDMS-07",
+      "offset": 16953,
+      "signature_sha256": "17b20878bf2ee91172897521aa37d67345d07cc04311e93905ff0309ad016535"
+    },
+    {
+      "type": "LexiconEntry",
+      "source": "RDMS-07",
+      "offset": 17676,
+      "signature_sha256": "2db5a2984c939605c672118a35df4a0fc723aa4f23f55d9721414061f8ee6e12"
+    },
+    {
+      "type": "MemoryQuery",
+      "source": "RDMS-07",
+      "offset": 18763,
+      "signature_sha256": "3086425ae676734c7c791e9fc9efe2163395bb5ed402371f5700a6e92e2f3c50"
+    },
+    {
+      "type": "RetrievalCandidate",
+      "source": "RDMS-07",
+      "offset": 19060,
+      "signature_sha256": "4cb303938acfd36d397a63817857d26f6cea4621beb9b9aa1453d8166f5a1bb1"
+    },
+    {
+      "type": "MemoryRetrievalResult",
+      "source": "RDMS-07",
+      "offset": 19702,
+      "signature_sha256": "44cc91e3c687934f439281bafe1a2f6b43ce7e66726f26435446391e7389be98"
+    },
+    {
+      "type": "TransferAssessment",
+      "source": "RDMS-07",
+      "offset": 20346,
+      "signature_sha256": "06b8a8341cf5537f5ddc44d77304190db39c98a9004b979e623847b311fd0199"
+    },
+    {
+      "type": "MemoryConflictRecord",
+      "source": "RDMS-07",
+      "offset": 21540,
+      "signature_sha256": "032d231115de3ad1343ace0d73ec8fec5f66cae0d0e3a837fd74b422d791be8e"
+    },
+    {
+      "type": "MemoryRetrievalAdapter",
+      "source": "RDMS-07",
+      "offset": 26254,
+      "signature_sha256": "d0d62ecf6176fd4f7b1cf2860d1017c87a2180b3907c613971d03f5e94c84eca"
+    },
+    {
+      "type": "MemoryPromotionIdentity",
+      "source": "RDMS-07",
+      "offset": 26788,
+      "signature_sha256": "83d1049c35e4c9ed2588b56deed4d26fe21661df40c6f06fbc698aac27c8396c"
+    },
+    {
+      "type": "EpisodeSourceBinding",
+      "source": "RDMS-07",
+      "offset": 38303,
+      "signature_sha256": "cf053b8646e9f5d8637c10b34ecab369aa8b11300fb1c9ed6fde01078467e61b"
+    },
+    {
+      "type": "EpisodeCompletenessReceipt",
+      "source": "RDMS-07",
+      "offset": 38973,
+      "signature_sha256": "707322b6718bebe01c6228791a3a4259c074a43e92f4ca1cd64890fc0baad404"
+    },
+    {
+      "type": "MemoryEvidenceLineage",
+      "source": "RDMS-07",
+      "offset": 39845,
+      "signature_sha256": "b0334f1d4d266dde6e7d5c17946854e67e30a9520481e658e5cafa0c345afac1"
+    },
+    {
+      "type": "MemoryClaimSemantics",
+      "source": "RDMS-07",
+      "offset": 41059,
+      "signature_sha256": "1405a6ae8fb71ecd5356e1e23213a7809a9fe54c2ce6f32c41436a7831ef97bb"
+    },
+    {
+      "type": "MaturityPromotionAssessment",
+      "source": "RDMS-07",
+      "offset": 42017,
+      "signature_sha256": "113571450cf5234d9272aa9ddbf1db9ca4e2a2b41bdab7a55d7a6b525469bccc"
+    },
+    {
+      "type": "MemoryProposalSnapshot",
+      "source": "RDMS-07",
+      "offset": 43224,
+      "signature_sha256": "9cd379824e112b1f84438652ffae304495c306fc51003a969f7c5a1481377c35"
+    },
+    {
+      "type": "LearningAuthorizationBinding",
+      "source": "RDMS-07",
+      "offset": 43655,
+      "signature_sha256": "693a89d57f7e116595972d22e237e08de562ae9d19fb8ad000194ffc1cc7aedd"
+    },
+    {
+      "type": "MemoryUseAssessment",
+      "source": "RDMS-07",
+      "offset": 44875,
+      "signature_sha256": "417c9699cc927efae0e6c5068296c1de16ae9643b109765e554e59caf486dc68"
+    },
+    {
+      "type": "MemoryRetrievalCoverage",
+      "source": "RDMS-07",
+      "offset": 46053,
+      "signature_sha256": "9099ad682832819ae2f1e2069ba249eac0380e5e6e561d4c80e9fd34ecd39efc"
+    },
+    {
+      "type": "ProcedureApplicability",
+      "source": "RDMS-07",
+      "offset": 46819,
+      "signature_sha256": "28e709be68fca2236d68ff259a733b84d8110d428fd6dcdb84202afc2401fcd9"
+    },
+    {
+      "type": "MemoryVersionResolution",
+      "source": "RDMS-07",
+      "offset": 47995,
+      "signature_sha256": "4138f7891b8f474975b2583cec31736c3ee5c7ae3dc9039ee49057bf36427704"
+    },
+    {
+      "type": "MemoryContradictionAssessment",
+      "source": "RDMS-07",
+      "offset": 48764,
+      "signature_sha256": "996def121cd79ca03daf50892eec488fb87ddee14cae6126838dc2d2aa6a0314"
+    },
+    {
+      "type": "MemoryDerivationGraph",
+      "source": "RDMS-07",
+      "offset": 49558,
+      "signature_sha256": "af184f3713a9e54a7e35114e5434ce09da3bd75cc6f4c738984ccfdb7cd2bb6e"
+    },
+    {
+      "type": "MemoryConsolidationAssessment",
+      "source": "RDMS-07",
+      "offset": 50614,
+      "signature_sha256": "a399fd6da2d5e69f137e21aa6938698817a497f7a1fd28bb35021cd08d4b9d40"
+    },
+    {
+      "type": "MemoryAccessPolicy",
+      "source": "RDMS-07",
+      "offset": 51449,
+      "signature_sha256": "44b7d35902598bfe6102c8980714167227628b39e22b190171b2df3d616c3734"
+    },
+    {
+      "type": "MemoryErasureControl",
+      "source": "RDMS-07",
+      "offset": 52460,
+      "signature_sha256": "6679d7af6be42f351b5726692c28755b0e9925514c3d2f8fd68c6ae994277db5"
+    },
+    {
+      "type": "CanonicalMemorySchema",
+      "source": "RDMS-07",
+      "offset": 53954,
+      "signature_sha256": "a7db525c49ef87ddb67a8a890495d65ebb4502903813127664f75c62023e353c"
+    },
+    {
+      "type": "MemoryRevisionTransaction",
+      "source": "RDMS-07",
+      "offset": 54747,
+      "signature_sha256": "abf0f26eda676064adc9f7dbbad26da6cb55ad7a64b427dfa14f12c7c691fec5"
+    },
+    {
+      "type": "CounterexampleSearch",
+      "source": "RDMS-07",
+      "offset": 68312,
+      "signature_sha256": "6905d11e22ad745958b5cea21a0cba55fe1191c57de5f8a520a703fb3c96cc77"
+    },
+    {
+      "type": "CognitiveControlCycle",
+      "source": "RDMS-08",
+      "offset": 6076,
+      "signature_sha256": "137fb044594b32468f8426e6bb50c45fd68fa2177aaddfb7bd71c05b27427a12"
+    },
+    {
+      "type": "CognitiveAssessment",
+      "source": "RDMS-08",
+      "offset": 7714,
+      "signature_sha256": "b9f393dfb3088d643231a75b3a72da4553622c1ef75e96c9cc5d8dfdedd33d99"
+    },
+    {
+      "type": "AttentionAllocation",
+      "source": "RDMS-08",
+      "offset": 9194,
+      "signature_sha256": "6cbfde4c79ed7c9d60fede62fa62644f6160114500de7018990aa7b57585df29"
+    },
+    {
+      "type": "CognitiveOperationProposal",
+      "source": "RDMS-08",
+      "offset": 10461,
+      "signature_sha256": "3e0a331916391ed585bce957a0c0a71404c7750ff0650966ffd23b6b831f591a"
+    },
+    {
+      "type": "CognitiveControlDecision",
+      "source": "RDMS-08",
+      "offset": 11688,
+      "signature_sha256": "630cfea3d1cfc5a734f57792eb2d103ebe1dff3180dc790f8eaf2404472dd92c"
+    },
+    {
+      "type": "DecisionGravityAssessment",
+      "source": "RDMS-08",
+      "offset": 14329,
+      "signature_sha256": "f1b5bd097df3d99e75ae3af3f67d9aa834fcaa0b1298e882195b48846ef93b9d"
+    },
+    {
+      "type": "InformationAcquisitionAssessment",
+      "source": "RDMS-08",
+      "offset": 15865,
+      "signature_sha256": "5067ebf4cf61673aefa1f414f1cfc383ce3b6568841747192cf9308b350bf9be"
+    },
+    {
+      "type": "BoundedAssumption",
+      "source": "RDMS-08",
+      "offset": 17141,
+      "signature_sha256": "3e4f2963c8b716ff7f88968c49145cb21a81fb7aa85f412945db27ebb073cff6"
+    },
+    {
+      "type": "MentalSimulationProposal",
+      "source": "RDMS-08",
+      "offset": 17792,
+      "signature_sha256": "ab2abfce77596b8556207e235060ead3c8383c278cfd574e1e4cc9bd6f84c3db"
+    },
+    {
+      "type": "DelegationAssessment",
+      "source": "RDMS-08",
+      "offset": 19074,
+      "signature_sha256": "91aacf9d1df46dad7912701c61cd2276a14226ef54062bdfa61bd58fd3fb1514"
+    },
+    {
+      "type": "ImplementationReadinessAssessment",
+      "source": "RDMS-08",
+      "offset": 20685,
+      "signature_sha256": "1aeead27e11250d1bd32a73c9139d6332031ef3d4be077808dae97baa1c46cac"
+    },
+    {
+      "type": "EpistemicProgressAssessment",
+      "source": "RDMS-08",
+      "offset": 24342,
+      "signature_sha256": "d7262a19ccab4f18fbd478a7677e9e388f3ba7facca8358b8ee2d2954cc523d2"
+    },
+    {
+      "type": "EngineeringProgressAssessment",
+      "source": "RDMS-08",
+      "offset": 24816,
+      "signature_sha256": "1f6e377c94123d0be30e2ef7a862dea74e59e825473a390bc70c66989c4ca960"
+    },
+    {
+      "type": "CognitiveCircuitBreakerSignal",
+      "source": "RDMS-08",
+      "offset": 25722,
+      "signature_sha256": "c0abd9b3c920c8d4e28ef071c08b715edf8bea4f58c31905eddaff263897af89"
+    },
+    {
+      "type": "CognitiveInterruptAssessment",
+      "source": "RDMS-08",
+      "offset": 27694,
+      "signature_sha256": "96e9f7a97f6103153a94bc526dca3e65aba71788d97140f098534e4892aaff24"
+    },
+    {
+      "type": "DeliberationBudget",
+      "source": "RDMS-08",
+      "offset": 29265,
+      "signature_sha256": "bfa34c182f9571ba19c923660ec323c4670160f752504dc8b3bf5401f6683269"
+    },
+    {
+      "type": "DecisionPreparation",
+      "source": "RDMS-08",
+      "offset": 30723,
+      "signature_sha256": "0d09710a5fdee357ed8780137501c8967d04b660345409f6add2d7353aa4355f"
+    },
+    {
+      "type": "ExecutiveTransitionProposal",
+      "source": "RDMS-08",
+      "offset": 32064,
+      "signature_sha256": "1681d3ac4265a5b33442249df38975033bfb3ff8205309c6fe9144730a2769f4"
+    },
+    {
+      "type": "ExecutiveRecoveryContext",
+      "source": "RDMS-08",
+      "offset": 34290,
+      "signature_sha256": "069cc674a323d9d88e910ec5234285c52af2a8f90984bd2060e52d380c480b3c"
+    },
+    {
+      "type": "CompletionAssessment",
+      "source": "RDMS-08",
+      "offset": 35549,
+      "signature_sha256": "67407e927030c30ee41cd1f0f7b6074699563d2bad0aabb2ef4a89074f1010e9"
+    },
+    {
+      "type": "ReasoningGatewayResult",
+      "source": "RDMS-08",
+      "offset": 36647,
+      "signature_sha256": "ee7294d2c3ffffc383b7f1fadb871c820214225aaa030b166a42cfdbc700f297"
+    },
+    {
+      "type": "ExecutiveAuthorizationBinding",
+      "source": "RDMS-08",
+      "offset": 54550,
+      "signature_sha256": "b26417c0d8634c7c9dc94fa04bfb0de6f7763a1c7947321a629a568748fcb10f"
+    },
+    {
+      "type": "OperationTransitionContract",
+      "source": "RDMS-08",
+      "offset": 56516,
+      "signature_sha256": "4d26c6a0dc5b60da91c22a6a83fb0c4d91e31d8e217620a0a8aa4d1b6b196efc"
+    },
+    {
+      "type": "ControlDecisionTransaction",
+      "source": "RDMS-08",
+      "offset": 57278,
+      "signature_sha256": "1d32460cf44c1b9690caac952afbc5ad2386113bec06027dc3c004c681409825"
+    },
+    {
+      "type": "ReadinessSnapshot",
+      "source": "RDMS-08",
+      "offset": 58204,
+      "signature_sha256": "d0dea6de2bf737a39114bd9b034cccecf9cb946b539c922a6516443712d92b79"
+    },
+    {
+      "type": "MandatoryContextManifest",
+      "source": "RDMS-08",
+      "offset": 59095,
+      "signature_sha256": "7e90a53f6d69b4f7f584cc96b1358be4076753510986d1912523136c2e4d382a"
+    },
+    {
+      "type": "DecisionEstimate",
+      "source": "RDMS-08",
+      "offset": 60144,
+      "signature_sha256": "795528deb546f24cf101c3c6119bbd7713c69372296507ef9a500661d541ac20"
+    },
+    {
+      "type": "AggregateDecisionRisk",
+      "source": "RDMS-08",
+      "offset": 60916,
+      "signature_sha256": "e8daa1b44c0d288ba43a0c0e968e370043379c393afb8e4242627f8dd8c5b8d7"
+    },
+    {
+      "type": "CognitiveLoopStabilityAssessment",
+      "source": "RDMS-08",
+      "offset": 62948,
+      "signature_sha256": "909d8c15d2d72ae360aceb6e6edae3b4f28d6cb78b3f4626ab8d7016b56333ec"
+    },
+    {
+      "type": "NoAdmissibleOperationResolution",
+      "source": "RDMS-08",
+      "offset": 64095,
+      "signature_sha256": "173a62478d4eddfa6e8e4046a8ac1d963401802e85c4290505adf19794c79cc6"
+    },
+    {
+      "type": "HumanDecisionBinding",
+      "source": "RDMS-08",
+      "offset": 65072,
+      "signature_sha256": "23f79d31d5cc99db26ce8e392c1e078f16db35251ccaccf090b3a69296651593"
+    },
+    {
+      "type": "SimulationUseContract",
+      "source": "RDMS-08",
+      "offset": 65912,
+      "signature_sha256": "45f9baf0d21f280dbbe68413c9a134b78a8123c8d2ad313d6682fddd1329c351"
+    },
+    {
+      "type": "SpikeExecutionContract",
+      "source": "RDMS-08",
+      "offset": 66737,
+      "signature_sha256": "1bae5f139c06437c41c3975b97de9a8737959bae41c6b3cf73e41f2937312764"
+    },
+    {
+      "type": "ImplementationReadinessProof",
+      "source": "RDMS-08",
+      "offset": 67619,
+      "signature_sha256": "4f24b286779dd41e0a938c20160181ded796c62bc865078c8269c04d1f8fe7dd"
+    },
+    {
+      "type": "ToolInvocationEffectAssessment",
+      "source": "RDMS-08",
+      "offset": 68784,
+      "signature_sha256": "dae9115d8bfa6cb886ee42bc8790ffd6bf7aa5490ac3bb68f763029e6421f08a"
+    },
+    {
+      "type": "DelegationPortfolioAssessment",
+      "source": "RDMS-08",
+      "offset": 69363,
+      "signature_sha256": "b5a5344d616ee334c59191fee1b0a91ab09312eb885d0848c06a172aa1cca7b1"
+    },
+    {
+      "type": "ReplanningImpactAssessment",
+      "source": "RDMS-08",
+      "offset": 70207,
+      "signature_sha256": "98bb686b8e782dfc63f017b42f3d16dd2db620bed1051e41fa1379ac2cb8c09f"
+    },
+    {
+      "type": "ProgressEvidenceAssessment",
+      "source": "RDMS-08",
+      "offset": 71011,
+      "signature_sha256": "8e6bab2955cc9639d401efb1fa637a872c8f1141026af12c14b8de2b800867da"
+    },
+    {
+      "type": "CognitiveInterruptAdmission",
+      "source": "RDMS-08",
+      "offset": 72035,
+      "signature_sha256": "3bd51d8a1e4b4988dc4e231d0b92b3eeebea7489b056572275198e405f3348c8"
+    },
+    {
+      "type": "ExecutiveAttentionScheduling",
+      "source": "RDMS-08",
+      "offset": 73805,
+      "signature_sha256": "991f33caf9d53bb6e810dcb0d5a13767792e3d2f981c2dee8d802f87f5cd6738"
+    },
+    {
+      "type": "ReasoningResultAdoption",
+      "source": "RDMS-08",
+      "offset": 74688,
+      "signature_sha256": "0dac431aa6ede509b27027503d4b3fb0b3a533b0e6230bda3fba1734e6867caa"
+    },
+    {
+      "type": "FinalizationEvidenceContract",
+      "source": "RDMS-08",
+      "offset": 75410,
+      "signature_sha256": "0fe55c61ef5315850a154cf670ecd68d7d24065dd04477bbb45780e39248e1e2"
+    },
+    {
+      "type": "ExecutivePolicyBinding",
+      "source": "RDMS-08",
+      "offset": 76434,
+      "signature_sha256": "13e4520f51aec78ca60737e9bbb90662823ae695c2ed03d16607781830897bc0"
+    },
+    {
+      "type": "FailureDomain",
+      "source": "RDMS-09",
+      "offset": 5510,
+      "signature_sha256": "f66c0db0ce6fe0e8795c7e63818ee3a511d762a6990fce0077c17a2ae5f63685"
+    },
+    {
+      "type": "FailureRecord",
+      "source": "RDMS-09",
+      "offset": 5882,
+      "signature_sha256": "6d335f3fac33055e34c05434180044f9b5f4cf61e2da3effbfb0a6fff3e8081d"
+    },
+    {
+      "type": "OperationalModeTransition",
+      "source": "RDMS-09",
+      "offset": 7527,
+      "signature_sha256": "dc7eafe439fabfa78cade71fa1ac1904f398dca58666fba75567e158c198fb1a"
+    },
+    {
+      "type": "RecoveryCase",
+      "source": "RDMS-09",
+      "offset": 7916,
+      "signature_sha256": "0886b22f4f1bef44b084eb5bb86efa2c1db43c06f6d344de54a8e2dcfb733c2c"
+    },
+    {
+      "type": "StartupRecoveryAssessment",
+      "source": "RDMS-09",
+      "offset": 9510,
+      "signature_sha256": "c8490a6dd507efe78440a5fd557ebcfe68810dec762f03dce9d2293914b7ad26"
+    },
+    {
+      "type": "SnapshotValidation",
+      "source": "RDMS-09",
+      "offset": 10541,
+      "signature_sha256": "3d59e55391e59c7efbb8a1dded466637e198d61eead9d4596a2a16cdb6f7ff58"
+    },
+    {
+      "type": "BackupManifest",
+      "source": "RDMS-09",
+      "offset": 11747,
+      "signature_sha256": "3e2af8eaf47c4d6dbbe7a48172d8f15186147b252dbef22b7511ce16cd7eb34e"
+    },
+    {
+      "type": "ActionRecoveryAssessment",
+      "source": "RDMS-09",
+      "offset": 13433,
+      "signature_sha256": "bfb6cc5a05d33a6c4a0c464055369b9d45d884e3fcd9ec00e8a1172571de87c6"
+    },
+    {
+      "type": "ProviderRecoveryPolicy",
+      "source": "RDMS-09",
+      "offset": 15870,
+      "signature_sha256": "03c51884d4164a83ce2ff8809f50f7dab1549cc24db13513aa4d6ad68cdc174d"
+    },
+    {
+      "type": "ProcessRecoveryRecord",
+      "source": "RDMS-09",
+      "offset": 17068,
+      "signature_sha256": "226641e0149c8f8a6705ad4e4bcc1b33eee8621dffcacacd753fbf4a52ec4123"
+    },
+    {
+      "type": "SpecialistRecoveryAssessment",
+      "source": "RDMS-09",
+      "offset": 18109,
+      "signature_sha256": "6f2bc15b158a2c97fb228b5e7ac48e5e1051bee6cd9c8411c72953597c12657a"
+    },
+    {
+      "type": "DependencyRecoveryAssessment",
+      "source": "RDMS-09",
+      "offset": 20024,
+      "signature_sha256": "803defde732f682c920ffbeb994d2f1e93acd608e7d92c188f4221cc173b17b7"
+    },
+    {
+      "type": "MemoryRecoveryAssessment",
+      "source": "RDMS-09",
+      "offset": 20898,
+      "signature_sha256": "77c4ea086b4b56092b93513a79b5abdf223734e68a3993c2c3f5f013134312f4"
+    },
+    {
+      "type": "SecurityRecoveryAssessment",
+      "source": "RDMS-09",
+      "offset": 21936,
+      "signature_sha256": "0f7ea72d71d30507650edcae468c1c05bc01b7a71fb0f5695bcb2936734d04d7"
+    },
+    {
+      "type": "UpgradePlan",
+      "source": "RDMS-09",
+      "offset": 24091,
+      "signature_sha256": "a18eb76731c97f82a857fd33928ba77fd77f150b450c24ec3306c0237676252e"
+    },
+    {
+      "type": "DataLifecyclePolicy",
+      "source": "RDMS-09",
+      "offset": 25251,
+      "signature_sha256": "4421c7cf9c12cdd436e37222a616f2fed9baf3a40df7158976d7479eeb013d72"
+    },
+    {
+      "type": "ArtifactLineageManifest",
+      "source": "RDMS-09",
+      "offset": 25571,
+      "signature_sha256": "262a7d56e60289697bc1c668081d8665a3011933de5ee7a372ea95382abcf66b"
+    },
+    {
+      "type": "ErasureOperation",
+      "source": "RDMS-09",
+      "offset": 25886,
+      "signature_sha256": "9b9c7a2f1c66aa3648990f08266b09438cd46e5e958727db54ef40e636731803"
+    },
+    {
+      "type": "RecoveryBudgetPolicy",
+      "source": "RDMS-09",
+      "offset": 28045,
+      "signature_sha256": "46a522cc93fc32f5093ebd3a70511290e5efd630b38014394a36cd929801540e"
+    },
+    {
+      "type": "OperationalHealthAssessment",
+      "source": "RDMS-09",
+      "offset": 28815,
+      "signature_sha256": "544c1fc087aab887f0689443128cb4ea5f52923ae03df371f0def4eaa6244164"
+    },
+    {
+      "type": "RecoveryReadinessAssessment",
+      "source": "RDMS-09",
+      "offset": 29347,
+      "signature_sha256": "40048e66c9aee085387cb89f32226ca719216a652d2eda6c3c8aa4ae01a7cee4"
+    },
+    {
+      "type": "RecoveryModeAuthorityContract",
+      "source": "RDMS-09",
+      "offset": 45588,
+      "signature_sha256": "c0ae7388de9865fc9817723207a2c7f0b30937f9d1f787d2001911e73687c19c"
+    },
+    {
+      "type": "RecoveryOwnershipLease",
+      "source": "RDMS-09",
+      "offset": 47171,
+      "signature_sha256": "fb1c207bdfe6303fc1bb1b5212e9ae3691e56794ab72580d16ca2158cc3ffbdf"
+    },
+    {
+      "type": "RecoveryConsistencyManifest",
+      "source": "RDMS-09",
+      "offset": 48442,
+      "signature_sha256": "bf4a5627772c7fc5b87f82d0e7da3fcc015a6c218590de20666589086b2db69c"
+    },
+    {
+      "type": "DurabilityCapabilityAssessment",
+      "source": "RDMS-09",
+      "offset": 50177,
+      "signature_sha256": "2fa01d16784432923c1e20852c2eaebe312f09968bb2636374dca493efc6f14d"
+    },
+    {
+      "type": "AuthorityAntiRollbackAssessment",
+      "source": "RDMS-09",
+      "offset": 51565,
+      "signature_sha256": "8f07e42d4adc6a225478c871c83064b4b3d8b07fb9cecb1916b7539b9d76c6c9"
+    },
+    {
+      "type": "ExternalEffectRecoveryCoverage",
+      "source": "RDMS-09",
+      "offset": 52789,
+      "signature_sha256": "9bf1f2ef5fde92531d5087eab36f642d4c9b4a6b2322218ab5284b9a4c0513b8"
+    },
+    {
+      "type": "RecoveryProbeEvidence",
+      "source": "RDMS-09",
+      "offset": 53977,
+      "signature_sha256": "85eeefc72cc86cb45f0cbf1df11c65d03381b9d54246e29c67c8514a5adba46e"
+    },
+    {
+      "type": "ActionRecoveryOwnership",
+      "source": "RDMS-09",
+      "offset": 55112,
+      "signature_sha256": "0d6f3973344c126c76f9c6aaf6bba8562dfc7a4193700d12d893c563f868d788"
+    },
+    {
+      "type": "CompensationEffectLineage",
+      "source": "RDMS-09",
+      "offset": 56091,
+      "signature_sha256": "932b54129f4ab64971613b378ddfa5cf405d3f6c4bde13a8d1c91612588e9cce"
+    },
+    {
+      "type": "RecoverableProcessIdentity",
+      "source": "RDMS-09",
+      "offset": 57106,
+      "signature_sha256": "8cb41a3afe86afae31ae336e85215f985a6e1374e51ec1d392a62fe9ebbc2de3"
+    },
+    {
+      "type": "DownstreamFencingAssessment",
+      "source": "RDMS-09",
+      "offset": 58105,
+      "signature_sha256": "ceaba8d92dbea0c872b9b1b01361b27bad5f5cee1ed1c61e24075124dcd06e18"
+    },
+    {
+      "type": "RecoveredInvocationBinding",
+      "source": "RDMS-09",
+      "offset": 59059,
+      "signature_sha256": "fc43b536159aa1820d283e771a46ba41fbb64318d9bcd2d7fdd20e0882c2ae96"
+    },
+    {
+      "type": "TriggerRecoveryFrontier",
+      "source": "RDMS-09",
+      "offset": 59858,
+      "signature_sha256": "a27074309ad37ab6ce46069656ec7bb4f279121a375205c6f3153c1e387de7a9"
+    },
+    {
+      "type": "SpecialistRecoveryOwnership",
+      "source": "RDMS-09",
+      "offset": 60778,
+      "signature_sha256": "508b199605f2ea1ef0d3c8847115ef26826e2e7f9cee4daee2e31deedc3bf268"
+    },
+    {
+      "type": "RecoveryDependencyCoverage",
+      "source": "RDMS-09",
+      "offset": 61777,
+      "signature_sha256": "f42cf1fd23b14536101ec3996fb4ef413398f6374a8ac8228e1b8540488789fa"
+    },
+    {
+      "type": "ObservationRecoveryCoverage",
+      "source": "RDMS-09",
+      "offset": 62609,
+      "signature_sha256": "a49cb7f159fc7a34abd879addbb3898c23181a5c3f730fac351a0099c58af2d6"
+    },
+    {
+      "type": "ScopedRecoveryAdmission",
+      "source": "RDMS-09",
+      "offset": 63606,
+      "signature_sha256": "f7c22341a2ddb3a8a1d4aabbbb9868036d3cbf46b26f0fe2f2a4216ac8a16e13"
+    },
+    {
+      "type": "RecoveryTrustAnchorAssessment",
+      "source": "RDMS-09",
+      "offset": 64539,
+      "signature_sha256": "7b7a6810678672f8aa01f41ba762901ae02b60835ce43f50eca70c7f11f6fe2c"
+    },
+    {
+      "type": "CredentialSessionRecoveryAssessment",
+      "source": "RDMS-09",
+      "offset": 65583,
+      "signature_sha256": "76c273f42bb64d665b165aaf22585a6fba864c2f0e6f1624519a8d9e243cea53"
+    },
+    {
+      "type": "RecoveryContentTrustPreservation",
+      "source": "RDMS-09",
+      "offset": 66433,
+      "signature_sha256": "4a7d0c02460b5495223570e957b6c4979738bd383595705d6378f19ba3abbe9b"
+    },
+    {
+      "type": "MigrationRecoveryManifest",
+      "source": "RDMS-09",
+      "offset": 67178,
+      "signature_sha256": "18afc88ae8827ee71afe1cd915d4dd480fdd4c145eac90cb8b2e954541583e06"
+    },
+    {
+      "type": "UpgradeRollbackAssessment",
+      "source": "RDMS-09",
+      "offset": 68310,
+      "signature_sha256": "decc996c7d546a7900734cec708817522e5b6d807b8bd0d60d2a4b1464aff045"
+    },
+    {
+      "type": "DurableDataPlacementPolicy",
+      "source": "RDMS-09",
+      "offset": 69125,
+      "signature_sha256": "c61ac521a50e8db52d6e06a996b19c03f1a6935719e4162b5c5853a15ef3adde"
+    },
+    {
+      "type": "ErasureCoverageAssessment",
+      "source": "RDMS-09",
+      "offset": 70198,
+      "signature_sha256": "5d3014d3bb94b1259d2f35087ad110b915e07170080c39b93787105312cab002"
+    },
+    {
+      "type": "ErasureAntiRollbackFrontier",
+      "source": "RDMS-09",
+      "offset": 71335,
+      "signature_sha256": "d44652c79f0f35b2b300f89b814f8fc483aa5739d7c35f1fa4d26d31df92396e"
+    },
+    {
+      "type": "DataLifecycleConflictAssessment",
+      "source": "RDMS-09",
+      "offset": 72483,
+      "signature_sha256": "32dd6ba5bd792592c281be085df58161e7582a0a561a2e62374877f1fe55f5a5"
+    },
+    {
+      "type": "RecoveryActionAuthorizationAssessment",
+      "source": "RDMS-09",
+      "offset": 73456,
+      "signature_sha256": "80c8c2a6ee06d5fa9b4850c28663345c0843e2a9c46269719326fe84d6e2c6f6"
+    },
+    {
+      "type": "RecoveryProgressControl",
+      "source": "RDMS-09",
+      "offset": 74510,
+      "signature_sha256": "a10c37b6c294c043f35237ea0f301784aa140b7ee958050d97999650d66b2234"
+    },
+    {
+      "type": "RecoveryBootstrapContract",
+      "source": "RDMS-09",
+      "offset": 91114,
+      "signature_sha256": "b34b5cfe24ce8234734ccc2a3efc20cdb18da3a8a0e4dc2a6ecd9e28b408339e"
+    },
+    {
+      "type": "RecoveryAuthorityFrontier",
+      "source": "RDMS-09",
+      "offset": 94456,
+      "signature_sha256": "619d20b4931a74b352dc7e3d279933c1d59218bcc5380e162257bea7176e7f33"
+    },
+    {
+      "type": "DurabilityFailureModel",
+      "source": "RDMS-09",
+      "offset": 96641,
+      "signature_sha256": "fbf527aff88b250295923814a2f52c603dba50ad383d4edd50e7d8d741abb5c3"
+    },
+    {
+      "type": "ExternalHistoryCoverageProof",
+      "source": "RDMS-09",
+      "offset": 98658,
+      "signature_sha256": "a0e43180d6270e29150b6870377642cb34af4fabd8a7f52afb2052f8a9395b02"
+    },
+    {
+      "type": "DispatchQuiescenceAssessment",
+      "source": "RDMS-09",
+      "offset": 101000,
+      "signature_sha256": "44422109aa735cf2a6af05747e06a6f2b60fd4a29f6337a6d1dfa0488c2a6c7d"
+    },
+    {
+      "type": "RecoveryArtifactQuarantine",
+      "source": "RDMS-09",
+      "offset": 103495,
+      "signature_sha256": "199c99c3ca0d7d46b57e658da0561f80e9ab53f6d284a36b31d99337f2e22709"
+    },
+    {
+      "type": "RecoveryDisclosureBarrier",
+      "source": "RDMS-09",
+      "offset": 105546,
+      "signature_sha256": "97ce2396c44ff62878d360830c492440296dc4eb287d3f6bc0b34dbdeabe2381"
+    },
+    {
+      "type": "CanonicalSchemaVisibilityContract",
+      "source": "RDMS-09",
+      "offset": 107876,
+      "signature_sha256": "541259c3b22e16017e9a8902423e99f4a01be6f95ae3483d8aedec1fe5ddf571"
+    },
+    {
+      "type": "RecoveryAdmissionBinding",
+      "source": "RDMS-09",
+      "offset": 110351,
+      "signature_sha256": "892c2a398103dc77f07dbb17491f0f90ab5072a8e8944aaeaaf8d7b1fa69c5c0"
+    },
+    {
+      "type": "RecoverySuspensionCommitment",
+      "source": "RDMS-09",
+      "offset": 112459,
+      "signature_sha256": "c6197e946ccaa2b9a89f7e2de9cb87903b2a570e2720a2f8c9d3df189f0691e2"
+    },
+    {
+      "type": "TriggerRecoveryOrdering",
+      "source": "RDMS-09",
+      "offset": 113549,
+      "signature_sha256": "49fa1388d84df916df4611179ca950e133daa25023ab1bdd8c46bf3cf1c1fdac"
+    },
+    {
+      "type": "RecoveryConfigurationBinding",
+      "source": "RDMS-09",
+      "offset": 116788,
+      "signature_sha256": "3e9a91fd3d904de382cb8e44e4653ddc537778dc2dd3735091f95d7e47660028"
+    },
+    {
+      "type": "HumanRecoveryEscalation",
+      "source": "RDMS-09",
+      "offset": 117453,
+      "signature_sha256": "418b66f87345fc7865bf54887e4dbeda28df351e22f18206a684b44e7d940616"
+    },
+    {
+      "type": "BootstrapHandoffProof",
+      "source": "RDMS-09",
+      "offset": 130996,
+      "signature_sha256": "5e8f35093d429155cdcafa64fa1dc1e0ba2f5b556022a58b90de3cfa7a192bca"
+    },
+    {
+      "type": "AcknowledgedHistoryContinuity",
+      "source": "RDMS-09",
+      "offset": 133499,
+      "signature_sha256": "86a3fac63db536ead987d88a12c7f93485172ae124c5ac7ac0f2edab0c3dc1d9"
+    },
+    {
+      "type": "CrossFrontierAdmissionProof",
+      "source": "RDMS-09",
+      "offset": 136052,
+      "signature_sha256": "40e6504dec4024c89f673dc8e46fcc32ede4c4832c7315654323fb398e13db50"
+    },
+    {
+      "type": "PossibleExternalEffectAssessment",
+      "source": "RDMS-09",
+      "offset": 138524,
+      "signature_sha256": "4fa1da1389610c25b8e810a9ff2ea4fc16ecb38b854768d03f9d627ce4e30612"
+    },
+    {
+      "type": "SchemaCutoverEnforcement",
+      "source": "RDMS-09",
+      "offset": 141086,
+      "signature_sha256": "3b5bfaa3df19c3f57c8d469b7f4077603fe61189d33f5808638fa67aafc8daf1"
+    },
+    {
+      "type": "RestoreContainmentProof",
+      "source": "RDMS-09",
+      "offset": 143460,
+      "signature_sha256": "9a1dfde9d920dcfa77107600b4bcc0bf3118c9ffdb990aaccf8af855eb7bb2fb"
+    },
+    {
+      "type": "RestoredDataProcessingAdmission",
+      "source": "RDMS-09",
+      "offset": 145641,
+      "signature_sha256": "9253d8b4d361debee25d1184fb9e3b82ce9ea9a171b196f6a971a4031ef4aada"
+    },
+    {
+      "type": "RecoveryContinuationDurability",
+      "source": "RDMS-09",
+      "offset": 148161,
+      "signature_sha256": "eaaaee6e61c38af0e008e119ec7c956c4b72d8ee22da40345a3da3196c9d2914"
+    },
+    {
+      "type": "CapabilityInvocation",
+      "source": "RDMS-10",
+      "offset": 10352,
+      "signature_sha256": "2e366d616f318be8a3ca67e2c54ef02289c3bf12b0de2f5d9483cda47a78b64a"
+    },
+    {
+      "type": "CapabilityResult",
+      "source": "RDMS-10",
+      "offset": 10557,
+      "signature_sha256": "7f88f61b2585c8d72959d1f234ed6f6c4aa528b967b1a4ea509cb7d98c388dcc"
+    },
+    {
+      "type": "ReasoningInvocation",
+      "source": "RDMS-10",
+      "offset": 11416,
+      "signature_sha256": "9c62c12f70cb6c5e355cd1d8a19b127c4a76ebddb7f90645bfb10fad230ef787"
+    },
+    {
+      "type": "ReasoningResult",
+      "source": "RDMS-10",
+      "offset": 11698,
+      "signature_sha256": "7647c1911118beb8df97c83dfea40c246d91506887894eff3d9815d3c7b6180d"
+    },
+    {
+      "type": "ContextPackage",
+      "source": "RDMS-10",
+      "offset": 12653,
+      "signature_sha256": "58c0260b1205cca3a332853b40a231d3666dd25fb2b8d2a29a029c03df75862a"
+    },
+    {
+      "type": "CommitRequest",
+      "source": "RDMS-10",
+      "offset": 13293,
+      "signature_sha256": "ad1c9282e700d8573f5bc7962fbc26ca6c4c21076d6b3382d7bd73dbae3f0f69"
+    },
+    {
+      "type": "CommitResult",
+      "source": "RDMS-10",
+      "offset": 13486,
+      "signature_sha256": "d24c0c55a630164dcd5c5c9dad2e452a3c257b71507103a577e6cc689d5da8d7"
+    },
+    {
+      "type": "ActionAuthorizationRequest",
+      "source": "RDMS-10",
+      "offset": 14669,
+      "signature_sha256": "a8ded887b954d0212b88f414e8854ca6d9fbbb8c003baa94884855813f06bec7"
+    },
+    {
+      "type": "ActionAuthorizationResult",
+      "source": "RDMS-10",
+      "offset": 14909,
+      "signature_sha256": "d9756105555461c2fb949b3b150c48376d96ec520281f2d7566bf90b5f8c7d79"
+    },
+    {
+      "type": "DependencyEvaluationRequest",
+      "source": "RDMS-10",
+      "offset": 15531,
+      "signature_sha256": "d987efb43b1af90d03e1a55911cd1b709c360ef165357d10ce1d5a8cb20506eb"
+    },
+    {
+      "type": "DependencyEvaluationResult",
+      "source": "RDMS-10",
+      "offset": 15670,
+      "signature_sha256": "4981170aeb35ec18bfd88bedd11c743dc7d2b3f3ec80c1daae6bfd5edf1d25cd"
+    },
+    {
+      "type": "ToolExecutionRequest",
+      "source": "RDMS-10",
+      "offset": 16788,
+      "signature_sha256": "940d261251187613f401348ac0b5933c16313fadf8fcdfcdaf855d92d2ac8575"
+    },
+    {
+      "type": "ToolExecutionReport",
+      "source": "RDMS-10",
+      "offset": 17023,
+      "signature_sha256": "607c6df28d9b6a1459fbde28b37a62670098a25a50740766e4bf8e39a7f27cbc"
+    },
+    {
+      "type": "ObservationIngressRequest",
+      "source": "RDMS-10",
+      "offset": 18407,
+      "signature_sha256": "1e81ed443d4f4651d13ab36156d60c91633417ed96dd4db122f35a62bd938900"
+    },
+    {
+      "type": "ObservationIngressResult",
+      "source": "RDMS-10",
+      "offset": 18627,
+      "signature_sha256": "33d73cf5a1f1b3806753768e39b2f3c2a9ba7b79410c2a2b50be24285e5ece64"
+    },
+    {
+      "type": "SpecialistRecruitmentRequest",
+      "source": "RDMS-10",
+      "offset": 19684,
+      "signature_sha256": "449b21fc50e6e95633c0fa66ec94e7ee2cce237e3c62972355d8afa9feae691a"
+    },
+    {
+      "type": "SpecialistRecruitmentResult",
+      "source": "RDMS-10",
+      "offset": 19913,
+      "signature_sha256": "5a5cca3126f3b5b22e0988e0886cdf09dd4770355830e04d1d78a00353626b75"
+    },
+    {
+      "type": "MemoryRetrievalRequest",
+      "source": "RDMS-10",
+      "offset": 21348,
+      "signature_sha256": "947a208afee2d573446d59b47a0d39ff740f01ca42a9012b48276e34779bf122"
+    },
+    {
+      "type": "MemoryRetrievalResult",
+      "source": "RDMS-10",
+      "offset": 21518,
+      "signature_sha256": "704d6bf8527b37d92c61406618d9e24e8bef0754984f6cb31659f043d24a1e9e"
+    },
+    {
+      "type": "TriggerEvaluationRequest",
+      "source": "RDMS-10",
+      "offset": 22571,
+      "signature_sha256": "17bec25c11c18d26058359c3c4d2a71182f6c8a5ad5117b6e6b9cbfc648f8ced"
+    },
+    {
+      "type": "TriggerEvaluationResult",
+      "source": "RDMS-10",
+      "offset": 22715,
+      "signature_sha256": "47b8c3e950ed8a217933373d8fa960ae8ce5a83ef2526ace52bb107e18f863ea"
+    },
+    {
+      "type": "RecoveryAssessmentRequest",
+      "source": "RDMS-10",
+      "offset": 23550,
+      "signature_sha256": "6ffa605f4fc035c063fc205bb0fe176a5083b7ffcf4ce28b280ae4b4943ea85d"
+    },
+    {
+      "type": "RecoveryAssessmentResult",
+      "source": "RDMS-10",
+      "offset": 23755,
+      "signature_sha256": "89c1e3347de41253ad38a6f577360d9708b2e89245fad801916422e2f520488b"
+    },
+    {
+      "type": "TrustedMessageEnvelope",
+      "source": "RDMS-10",
+      "offset": 25346,
+      "signature_sha256": "cdc78aa124413e413936180b2dcda3806c2d601e6ccfe533eb347e326834c24b"
+    },
+    {
+      "type": "CanonicalContractRegistry",
+      "source": "RDMS-10",
+      "offset": 61535,
+      "signature_sha256": "14814dcd571a3de7c2806c04e382c429c4bd5b2ff4fd06fd3aab308e8b1e289f"
+    },
+    {
+      "type": "TrustedEnvelopeAdmission",
+      "source": "RDMS-10",
+      "offset": 63508,
+      "signature_sha256": "d0da68c19ec2c10589873c74937c0599fdcb0dc980b2b96468790867e39a5681"
+    },
+    {
+      "type": "HumanIngressAuthorityBinding",
+      "source": "RDMS-10",
+      "offset": 65336,
+      "signature_sha256": "b66f0b26ef7d0c5c5e143ef797cdbed872e1670fd63e3f2c6181cee004b71704"
+    },
+    {
+      "type": "RepositoryMutationIntegrationContract",
+      "source": "RDMS-10",
+      "offset": 67045,
+      "signature_sha256": "72dec85c7343a0fa60b7afcd69389791f0d5b322b31bf2fa58a66c77c661c474"
+    },
+    {
+      "type": "ExecutiveTransitionIntegrationBinding",
+      "source": "RDMS-10",
+      "offset": 68686,
+      "signature_sha256": "b53e4f188cb76382b2f9f2072b7feb2fcf9870e8647703ec76cf45f0d16aec41"
+    },
+    {
+      "type": "ControlActionDurabilityContract",
+      "source": "RDMS-10",
+      "offset": 70222,
+      "signature_sha256": "63b86c7d3e4e8a4f649bdc53259dd5be26c40dd715674b6c86cd4adf2c69b659"
+    },
+    {
+      "type": "SealedExecutionIntent",
+      "source": "RDMS-10",
+      "offset": 72139,
+      "signature_sha256": "73786287420f58146d162ae2f8b1f22f6eda6203ad4389b44dbf44f534e2ac45"
+    },
+    {
+      "type": "ActionDeliveryContract",
+      "source": "RDMS-10",
+      "offset": 74116,
+      "signature_sha256": "102bccae6cf96be33d06d75441fb09217baaa9eaf99f1994991e24372497f380"
+    },
+    {
+      "type": "ArtifactPublicationContract",
+      "source": "RDMS-10",
+      "offset": 75686,
+      "signature_sha256": "ea18d010d8343ba9a813135626b429c7874606757d1332241ecf9ff101912060"
+    },
+    {
+      "type": "CrossComponentEventContract",
+      "source": "RDMS-10",
+      "offset": 77145,
+      "signature_sha256": "32b3b3cd5529328f7127205a3a2128fe39723d2b3f28aede9e2dc8ac7ee42a3f"
+    },
+    {
+      "type": "ObservationSourceBinding",
+      "source": "RDMS-10",
+      "offset": 78710,
+      "signature_sha256": "ec1ff0c3ef91be59503aac7726eb08168f3f5f95301cff6d3c591af1cc36cf3d"
+    },
+    {
+      "type": "IntegratedCompletionEvidence",
+      "source": "RDMS-10",
+      "offset": 80280,
+      "signature_sha256": "16587ed733432b91ec2546516ccf10c97a2e98b06f05eb636136342568001391"
+    },
+    {
+      "type": "ActiveWorkInvalidationContract",
+      "source": "RDMS-10",
+      "offset": 81723,
+      "signature_sha256": "b36901e1cf1d3af2b543d75c954c0e2079a8847f1d03f12b4bc8af54fb256603"
+    },
+    {
+      "type": "ReasoningProviderCapabilityContract",
+      "source": "RDMS-10",
+      "offset": 83454,
+      "signature_sha256": "e9deb9f014d2c00bfffee01858ea37f2720c81734e35877ac6cffd94dfbe5c37"
+    },
+    {
+      "type": "ContextDisclosureAdmission",
+      "source": "RDMS-10",
+      "offset": 84944,
+      "signature_sha256": "1b7094d8d45450926fdd3e77e4b89b107efb57baba5bf4116e6dac5fa47be7b4"
+    },
+    {
+      "type": "SpecialistExecutionAuthorityBinding",
+      "source": "RDMS-10",
+      "offset": 86228,
+      "signature_sha256": "3de75546bb9d564422b20c895c2bfc4451c3f0c698919ff3fd3c80e4ab3aeaa1"
+    },
+    {
+      "type": "SpecialistIntegrationTransaction",
+      "source": "RDMS-10",
+      "offset": 87745,
+      "signature_sha256": "1e2f4044b18fb883cb356f00c77d7e8ccc366037ce41aef77c7d97f5463d10b5"
+    },
+    {
+      "type": "TriggerActionCausalityBinding",
+      "source": "RDMS-10",
+      "offset": 89332,
+      "signature_sha256": "255f39544cdce4e04b7c2a324dbc701effe13ef25121688264e1fb40b7785abc"
+    },
+    {
+      "type": "RuntimeActivationContract",
+      "source": "RDMS-10",
+      "offset": 90714,
+      "signature_sha256": "12db67f394d71c8a1c6059f387be1607649a3ef8b32d4de424571927a1ae961c"
+    },
+    {
+      "type": "ProjectExecutionBoundary",
+      "source": "RDMS-10",
+      "offset": 92181,
+      "signature_sha256": "feec1419d0889bd775edfd5fb4d216626448ff0f1fa5e1765be11d638fc8ae48"
+    },
+    {
+      "type": "ExecutionContainmentContract",
+      "source": "RDMS-10",
+      "offset": 93528,
+      "signature_sha256": "31a7c072baca41a63dc3c4d529dd5991aa6e37782c0d4a5afed43b5d0ee2ab42"
+    },
+    {
+      "type": "ImplementationDependencyGraph",
+      "source": "RDMS-10",
+      "offset": 95111,
+      "signature_sha256": "b882ce34c92bf078264a8fafe774a1818844b25c168b2e771f1f2190ba87c36b"
+    },
+    {
+      "type": "CapabilityActivationContract",
+      "source": "RDMS-10",
+      "offset": 95779,
+      "signature_sha256": "a6670116ae6947427a5b39b0387b1e13189723f07b7e2ef4ca930291829d7953"
+    },
+    {
+      "type": "RecoverableActionDeliveryObligation",
+      "source": "RDMS-10",
+      "offset": 115175,
+      "signature_sha256": "529604f05aa857d1ab3e63be016173e928b765b2380c9d38be2c12ca012101a7"
+    },
+    {
+      "type": "TriggerDerivedWorkCommitment",
+      "source": "RDMS-10",
+      "offset": 118225,
+      "signature_sha256": "374bf875553eb437fc61461c210ca976dea7876d12fae352fff6bf2fcc436e41"
+    },
+    {
+      "type": "EffectiveExecutionBinding",
+      "source": "RDMS-10",
+      "offset": 121129,
+      "signature_sha256": "4cde88a48873dc2b741530b492ef9587e0cba9299a4ffc5b3de1b29e9fd03022"
+    },
+    {
+      "type": "DispatchAdmissionCutover",
+      "source": "RDMS-10",
+      "offset": 123265,
+      "signature_sha256": "2fc7b95244053b1935c9800ca56080aa0d31cdf6ff021ac73c7c8a8d80335bb0"
+    },
+    {
+      "type": "EffectiveExecutionAuthorityScope",
+      "source": "RDMS-10",
+      "offset": 125683,
+      "signature_sha256": "87d074a3c02c348367a414c17bb2c564e7fa8c0eb03ee694a6476e5d9d0c128f"
+    },
+    {
+      "type": "ObservationCausalAttachmentContract",
+      "source": "RDMS-10",
+      "offset": 127833,
+      "signature_sha256": "09418cb0b6fc10cac35b7149e4e00e0bc296a9586b0ad10bf4661aa5d9d59bf3"
+    },
+    {
+      "type": "SealedOutboundContext",
+      "source": "RDMS-10",
+      "offset": 129860,
+      "signature_sha256": "0c6d30716d0ea4e47284672b8a9ad2b66e92b3f91aa4744c7388ba2eaaeaf824"
+    },
+    {
+      "type": "CompletionStateBinding",
+      "source": "RDMS-10",
+      "offset": 132092,
+      "signature_sha256": "aa6058c9155ab82a108a9d8b9c0324b66f0e3af758d125c1ea32db125e5f21df"
+    }
+  ]
+}

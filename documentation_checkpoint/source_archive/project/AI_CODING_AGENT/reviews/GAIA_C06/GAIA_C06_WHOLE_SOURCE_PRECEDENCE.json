@@ -1,0 +1,272 @@
+[
+  {
+    "specification": "RDMS-01",
+    "part_order": 0,
+    "source_part": "Original draft",
+    "message_id": "2aacdc73-38d8-4456-9a73-9900fe14f900",
+    "text_sha256": "278dee38200e828c246e4488ceebeada0d19b03d4c6267083083527a28e460ba",
+    "line_count": 1272,
+    "classification": "HISTORICAL_DRAFT",
+    "owner_layer": "L1_CONTROL.md"
+  },
+  {
+    "specification": "RDMS-01",
+    "part_order": 1,
+    "source_part": "R1 corrections and final freeze decision",
+    "message_id": "e3a45231-ddae-4ed4-9bd1-35202ecdfcf7",
+    "text_sha256": "4398e8f667678ad2efcaf328720ff94857d9aac764a32411b78bd7d590c2860f",
+    "line_count": 931,
+    "classification": "APPROVED_LATER_SOURCE_TEXT",
+    "owner_layer": "L1_CONTROL.md"
+  },
+  {
+    "specification": "RDMS-02",
+    "part_order": 0,
+    "source_part": "Original draft",
+    "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+    "text_sha256": "eec2e2185aee35051ef7890e23dcc7e50887b400f33e75f5c96b0fe742a46ff8",
+    "line_count": 1903,
+    "classification": "HISTORICAL_DRAFT",
+    "owner_layer": "L2_COGNITION.md"
+  },
+  {
+    "specification": "RDMS-02",
+    "part_order": 1,
+    "source_part": "C01, second review corrections and final freeze decision",
+    "message_id": "266bb347-d2a5-41ea-872a-32e140c803eb",
+    "text_sha256": "cf8e7754f0a58a394fc9cda66b04e389877c8b4c97b5f940ec2cbbe3b67665bd",
+    "line_count": 1599,
+    "classification": "APPROVED_LATER_SOURCE_TEXT",
+    "owner_layer": "L2_COGNITION.md"
+  },
+  {
+    "specification": "RDMS-03",
+    "part_order": 0,
+    "source_part": "Original draft",
+    "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+    "text_sha256": "f480ee1377c008f7af72f7b64eb900669e78e3a1214e7f8d1b9852fb5d277066",
+    "line_count": 1892,
+    "classification": "HISTORICAL_DRAFT",
+    "owner_layer": "L3_ACTIONS.md"
+  },
+  {
+    "specification": "RDMS-03",
+    "part_order": 1,
+    "source_part": "C01 and Freeze Review 02 Final",
+    "message_id": "a1ca0249-b287-4c4b-8254-773c8f6edbda",
+    "text_sha256": "b803958899b2fa6eeb551850c422ba4c5ca7c8466127a90f054b591df17533d7",
+    "line_count": 1698,
+    "classification": "APPROVED_LATER_SOURCE_TEXT",
+    "owner_layer": "L3_ACTIONS.md"
+  },
+  {
+    "specification": "RDMS-04",
+    "part_order": 0,
+    "source_part": "Original draft",
+    "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+    "text_sha256": "0682c4e1f0a077c9a968b84c069027dac93b09012bf26c74e5bb73e0557fa346",
+    "line_count": 1583,
+    "classification": "HISTORICAL_DRAFT",
+    "owner_layer": "L3_ACTIONS.md"
+  },
+  {
+    "specification": "RDMS-04",
+    "part_order": 1,
+    "source_part": "C01",
+    "message_id": "4f585132-49b6-448d-8506-4b502aee6311",
+    "text_sha256": "d9b933b15f0bed87694d7d6dae30634f430f2586c352a5226253ea2f481ed6be",
+    "line_count": 922,
+    "classification": "APPROVED_LATER_SOURCE_TEXT",
+    "owner_layer": "L3_ACTIONS.md"
+  },
+  {
+    "specification": "RDMS-04",
+    "part_order": 2,
+    "source_part": "Adversarial Freeze Review 02 and freeze decision",
+    "message_id": "9c2e281b-8959-48e4-b6f8-17a51d8185f2",
+    "text_sha256": "d66759028203dd79d234b4a2d847b2e79db999fb1afd2383b47c49a2d41592c7",
+    "line_count": 284,
+    "classification": "APPROVED_LATER_SOURCE_TEXT",
+    "owner_layer": "L3_ACTIONS.md"
+  },
+  {
+    "specification": "RDMS-05",
+    "part_order": 0,
+    "source_part": "Original draft",
+    "message_id": "6276f296-457b-462d-b674-933a15194429",
+    "text_sha256": "db1e79b1ef7ef4c0dfc0d37e867d3eb10a8f4ed26b3491f88ae7fa3dec5c6a81",
+    "line_count": 1326,
+    "classification": "HISTORICAL_DRAFT",
+    "owner_layer": "L4_TEMPORAL_SPECIALISTS.md"
+  },
+  {
+    "specification": "RDMS-05",
+    "part_order": 1,
+    "source_part": "C01",
+    "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+    "text_sha256": "85e84811c215f9bb36712184607d5d8c12860f0cb1802752fdb0b25e7751c63a",
+    "line_count": 1069,
+    "classification": "APPROVED_LATER_SOURCE_TEXT",
+    "owner_layer": "L4_TEMPORAL_SPECIALISTS.md"
+  },
+  {
+    "specification": "RDMS-05",
+    "part_order": 2,
+    "source_part": "Adversarial Freeze Review 02 and freeze decision",
+    "message_id": "87d8aced-dfbc-477b-80dc-e6d90997fe59",
+    "text_sha256": "56897e37087b889ccad5db59ef5762467e15c2b705db3a833a87c4468ce02360",
+    "line_count": 481,
+    "classification": "APPROVED_LATER_SOURCE_TEXT",
+    "owner_layer": "L4_TEMPORAL_SPECIALISTS.md"
+  },
+  {
+    "specification": "RDMS-06",
+    "part_order": 0,
+    "source_part": "Original draft",
+    "message_id": "4bcbb2bf-86d9-4b93-9b1c-9f9529916667",
+    "text_sha256": "25c065b1342f4d233d2098daa28a1430075b21cd66e9d9d3e72c87144a53e807",
+    "line_count": 1653,
+    "classification": "HISTORICAL_DRAFT",
+    "owner_layer": "L4_TEMPORAL_SPECIALISTS.md"
+  },
+  {
+    "specification": "RDMS-06",
+    "part_order": 1,
+    "source_part": "C01 and Adversarial Freeze Review 02 with freeze decision",
+    "message_id": "1ed5a815-4917-47b8-9e00-0b450a0581e2",
+    "text_sha256": "c0b40ccb644f3838a607e840856fe222ecf1b118dfc4bf9fd3be43c6d091ac8f",
+    "line_count": 1707,
+    "classification": "APPROVED_LATER_SOURCE_TEXT",
+    "owner_layer": "L4_TEMPORAL_SPECIALISTS.md"
+  },
+  {
+    "specification": "RDMS-07",
+    "part_order": 0,
+    "source_part": "Original draft",
+    "message_id": "938c1bc7-97a0-46ad-be19-cd3ba3ca125f",
+    "text_sha256": "45bc1f1965d2e907cb69126f28a07c5fc609bb6dd22eec6949d2c74c0759e0ab",
+    "line_count": 1841,
+    "classification": "HISTORICAL_DRAFT",
+    "owner_layer": "L5_MEMORY.md"
+  },
+  {
+    "specification": "RDMS-07",
+    "part_order": 1,
+    "source_part": "C01 and Adversarial Freeze Review 02 with freeze decision",
+    "message_id": "5ee62ad7-b67d-4382-be9d-cd85f6331a8c",
+    "text_sha256": "23addcae945bf4cef76cb4dfb2c6bb33df3976dd8c99d7719f1caa659f7e59ce",
+    "line_count": 1748,
+    "classification": "APPROVED_LATER_SOURCE_TEXT",
+    "owner_layer": "L5_MEMORY.md"
+  },
+  {
+    "specification": "RDMS-08",
+    "part_order": 0,
+    "source_part": "Original draft",
+    "message_id": "c955b372-e904-441b-8a0f-c8d9ae56c2f7",
+    "text_sha256": "f604eb638cfdeaf521dce1253ae3940d71071a0bf5f84979ebc23dd99d181e9c",
+    "line_count": 2445,
+    "classification": "HISTORICAL_DRAFT",
+    "owner_layer": "L2_COGNITION.md"
+  },
+  {
+    "specification": "RDMS-08",
+    "part_order": 1,
+    "source_part": "C01 and Adversarial Freeze Review 02 with freeze decision",
+    "message_id": "a0f04ffe-181e-409d-9f94-d7d5c426502b",
+    "text_sha256": "31ca30e0e48b4a954d238d7fa87d2f4d625e2e8256d3f8f1944fd1c2b617191d",
+    "line_count": 2186,
+    "classification": "APPROVED_LATER_SOURCE_TEXT",
+    "owner_layer": "L2_COGNITION.md"
+  },
+  {
+    "specification": "RDMS-09",
+    "part_order": 0,
+    "source_part": "Original draft",
+    "message_id": "6ee1a6d1-3dfe-4de8-8c44-54ac4b07f8d4",
+    "text_sha256": "8969f63306d2edd49ef3134470beb2c165a34a020a8f6b6b59e8eea4ad2ac189",
+    "line_count": 1954,
+    "classification": "HISTORICAL_DRAFT",
+    "owner_layer": "L6_RECOVERY.md"
+  },
+  {
+    "specification": "RDMS-09",
+    "part_order": 1,
+    "source_part": "C01",
+    "message_id": "74cf7fd3-01ca-4f35-abed-fbbc8716eb5c",
+    "text_sha256": "5346bec7236de0f3748dfe22cc2ed860f7dab2c767c3611e3baab0a35d8154cf",
+    "line_count": 2072,
+    "classification": "APPROVED_LATER_SOURCE_TEXT",
+    "owner_layer": "L6_RECOVERY.md"
+  },
+  {
+    "specification": "RDMS-09",
+    "part_order": 2,
+    "source_part": "C02",
+    "message_id": "d59160dd-fa7a-4058-8892-69794f57e9b8",
+    "text_sha256": "e5a0232edd30952513f34b11cb44b4fe11e889e270ba122a6aba2e2b4eed3df5",
+    "line_count": 1809,
+    "classification": "APPROVED_LATER_SOURCE_TEXT",
+    "owner_layer": "L6_RECOVERY.md"
+  },
+  {
+    "specification": "RDMS-09",
+    "part_order": 3,
+    "source_part": "C03",
+    "message_id": "89e41ed5-ac4e-4b95-9680-b9bec79f278a",
+    "text_sha256": "489524057fceb6108bcb0d34ff749cdc85d7f904c51db29914dec0eb4cb9ea67",
+    "line_count": 1514,
+    "classification": "APPROVED_LATER_SOURCE_TEXT",
+    "owner_layer": "L6_RECOVERY.md"
+  },
+  {
+    "specification": "RDMS-09",
+    "part_order": 4,
+    "source_part": "Adversarial Freeze Review 04 and final freeze decision",
+    "message_id": "79d37199-2fe2-4973-bbe9-ac99b4bb5b34",
+    "text_sha256": "0d56d4b48b750caeae6ac87e7ccfae6fab74a938da582254394387d3bb6ae0db",
+    "line_count": 1099,
+    "classification": "APPROVED_LATER_SOURCE_TEXT",
+    "owner_layer": "L6_RECOVERY.md"
+  },
+  {
+    "specification": "RDMS-10",
+    "part_order": 0,
+    "source_part": "Original draft",
+    "message_id": "99533762-bba8-407a-b27b-952a236c00a4",
+    "text_sha256": "5c7036fa7129667f9a9a8b09650304d5043580b7fb0dd244a0f5c6ea17f9d962",
+    "line_count": 2852,
+    "classification": "HISTORICAL_DRAFT",
+    "owner_layer": "L7_RUNTIME_INTEGRATION.md"
+  },
+  {
+    "specification": "RDMS-10",
+    "part_order": 1,
+    "source_part": "C01",
+    "message_id": "e4828797-8ddb-48ae-a3e4-3e9ec47b70c3",
+    "text_sha256": "d59f204ea967179c6fa30d90bb5ab9b2eafeae6793e2bd4472dd497a761605ca",
+    "line_count": 2673,
+    "classification": "APPROVED_LATER_SOURCE_TEXT",
+    "owner_layer": "L7_RUNTIME_INTEGRATION.md"
+  },
+  {
+    "specification": "RDMS-10",
+    "part_order": 2,
+    "source_part": "C02",
+    "message_id": "5f33fe0d-af3e-4f37-aeac-8979e64d941f",
+    "text_sha256": "8781cf17c6df4ade0312cdb7ffce92985fbdca767eebc16c6b84432fb272c095",
+    "line_count": 1570,
+    "classification": "APPROVED_LATER_SOURCE_TEXT",
+    "owner_layer": "L7_RUNTIME_INTEGRATION.md"
+  },
+  {
+    "specification": "RDMS-10",
+    "part_order": 3,
+    "source_part": "Final Freeze Review 03 and final decisions",
+    "message_id": "2c677ac2-0588-4d02-8149-fabfe690afd8",
+    "text_sha256": "9e3629a311d087c13ca553900869362c245b32fbefed872ede2779395ee4f389",
+    "line_count": 758,
+    "classification": "APPROVED_LATER_SOURCE_TEXT",
+    "owner_layer": "L7_RUNTIME_INTEGRATION.md"
+  }
+]

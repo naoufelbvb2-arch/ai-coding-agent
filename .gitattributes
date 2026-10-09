@@ -1,0 +1,7 @@
+.gitattributes text eol=lf
+.gitignore text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.csv text eol=lf
+*.py text eol=lf
+documentation_checkpoint/source_archive/** -text

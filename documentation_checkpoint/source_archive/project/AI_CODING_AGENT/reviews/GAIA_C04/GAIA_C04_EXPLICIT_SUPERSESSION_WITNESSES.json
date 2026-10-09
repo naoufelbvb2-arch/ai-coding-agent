@@ -1,0 +1,127 @@
+[
+  {
+    "id": "C04-W01",
+    "specification": "RDMS-01",
+    "status": "SOURCE_BACKED_EXPLICIT_SUPERSESSION",
+    "meaning": "Event-sourcing projection-only assertion replaced by one authoritative ControlCommit atomic mutation+ledger model",
+    "effective_source": {
+      "message_id": "e3a45231-ddae-4ed4-9bd1-35202ecdfcf7",
+      "lines": [
+        13,
+        41
+      ],
+      "sha256": "d29448b2272dfda4a3b27e753fc2cd52c2bf8616d4d2ed78d7c6d2993aad4bff"
+    },
+    "superseded_source": {
+      "message_id": "2aacdc73-38d8-4456-9a73-9900fe14f900",
+      "lines": [
+        75,
+        112
+      ],
+      "sha256": "3fb096dce2ed66c36ac18f60877241f59889b9ce5b8fd116c135c8247525aa67"
+    }
+  },
+  {
+    "id": "C04-W02",
+    "specification": "RDMS-01",
+    "status": "SOURCE_BACKED_EXPLICIT_SUPERSESSION",
+    "meaning": "ControlCommit fields and authority-context distinction are replaced in R1",
+    "effective_source": {
+      "message_id": "e3a45231-ddae-4ed4-9bd1-35202ecdfcf7",
+      "lines": [
+        137,
+        181
+      ],
+      "sha256": "c83de9a9553b65c3a139916affdce723eea7d38ed47e55069ab4d5cfbac61080"
+    },
+    "superseded_source": {
+      "message_id": "2aacdc73-38d8-4456-9a73-9900fe14f900",
+      "lines": [
+        122,
+        146
+      ],
+      "sha256": "b988f1f5f4b5cd7852255008f531e805d9f5a93ccd2b44ef7db9bcde4c10fe7f"
+    }
+  },
+  {
+    "id": "C04-W03",
+    "specification": "RDMS-01",
+    "status": "SOURCE_BACKED_CLARIFICATION",
+    "meaning": "commit_seq strictly increasing, not necessarily gapless",
+    "effective_source": {
+      "message_id": "e3a45231-ddae-4ed4-9bd1-35202ecdfcf7",
+      "lines": [
+        110,
+        137
+      ],
+      "sha256": "53c8d06b7bf541df061035e7d171577463fb4f467507494577f8f17a747c9e7e"
+    },
+    "superseded_source": {
+      "message_id": "2aacdc73-38d8-4456-9a73-9900fe14f900",
+      "lines": [
+        147,
+        161
+      ],
+      "sha256": "5875839fa10dd7aa57f5e2848bbd142cedde9b5b0c0c0223078c668e29818223"
+    }
+  },
+  {
+    "id": "C04-W04",
+    "specification": "RDMS-01",
+    "status": "SOURCE_BACKED_CLARIFICATION",
+    "meaning": "Physical UUID choice made implementation boundary; typed IDs still required",
+    "effective_source": {
+      "message_id": "e3a45231-ddae-4ed4-9bd1-35202ecdfcf7",
+      "lines": [
+        366,
+        384
+      ],
+      "sha256": "5f84daf6df802c2f997f8818b725e3e745af4b831d0c53bdad2a391f89fa95c5"
+    },
+    "superseded_source": {
+      "message_id": "2aacdc73-38d8-4456-9a73-9900fe14f900",
+      "lines": [
+        199,
+        234
+      ],
+      "sha256": "8adee46c5612390d3e03d7f710332fb8aef263561bbc3902c931e653ea041a90"
+    }
+  },
+  {
+    "id": "C04-W05",
+    "specification": "RDMS-02",
+    "status": "SOURCE_BACKED_EXPLICIT_SUPERSESSION",
+    "meaning": "Remove shared CanonicalEntity.lifecycle_status and use CanonicalEntityMeta + own domain lifecycle",
+    "effective_source": {
+      "message_id": "266bb347-d2a5-41ea-872a-32e140c803eb",
+      "lines": [
+        11,
+        35
+      ],
+      "sha256": "c583a79b5249aed56a2b769034e179202d0bdc16c7c5af45431ad261faa58f21"
+    },
+    "superseded_source": {
+      "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+      "lines": [
+        35,
+        75
+      ],
+      "sha256": "220801b2870ecfe5d9295be3c90b7545daf3edd90a04daa5959ef371a2f6954b"
+    }
+  },
+  {
+    "id": "C04-W06",
+    "specification": "RDMS-02",
+    "status": "SOURCE_BACKED_EXPLICIT_SUPERSESSION",
+    "meaning": "Commitment use one reactivation-condition root instead of three competing mechanisms",
+    "effective_source": {
+      "message_id": "266bb347-d2a5-41ea-872a-32e140c803eb",
+      "lines": [
+        907,
+        943
+      ],
+      "sha256": "81683d007bde77b05fbdf650d6711cc17a28e70786afbbdc704ebb356f20448c"
+    },
+    "superseded_source": null
+  }
+]

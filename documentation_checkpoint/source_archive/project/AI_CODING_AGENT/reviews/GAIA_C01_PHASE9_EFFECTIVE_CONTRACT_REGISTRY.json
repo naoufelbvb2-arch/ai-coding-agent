@@ -1,0 +1,1092 @@
+{
+  "phase": "GAIA-C01 Phase 9",
+  "status": "SOURCE_PUBLICATION_COMPLETE__EFFECTIVE_SCHEMA_FREEZE_DENIED",
+  "owners_are": "REVIEW_CANDIDATES_UNTIL_APPROVED",
+  "count": 27,
+  "entries": [
+    {
+      "name": "ActionEffectSemantics",
+      "owning_layer_candidate": "L3",
+      "owning_specification_source": "RDMS-04",
+      "review_case": "C8-01",
+      "risk_group": "CONDITIONAL",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-04",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+        "start_line": 341,
+        "extracted_declaration_sha256": "ca6d6918eda0e62cea8f48991be8f43175dfebf598417ec7b775bc5fda4802b5"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 1756,
+          "extracted_declaration_sha256": "2dde35f70157acd7b6fe0c55722e9f047834db65e3605c182672e478c4f61def",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-04",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+          "start_line": 341,
+          "extracted_declaration_sha256": "ca6d6918eda0e62cea8f48991be8f43175dfebf598417ec7b775bc5fda4802b5",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Probe/compensation/timeout_spec refs resolve to exact original semantics; unknown non-idempotent effect never blindly retried",
+      "risk_rule": "Retry policy and verification_mode not weakened"
+    },
+    {
+      "name": "ActionProposal",
+      "owning_layer_candidate": "L3",
+      "owning_specification_source": "RDMS-04",
+      "review_case": "S8-01",
+      "risk_group": "SEMANTIC",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-04",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+        "start_line": 97,
+        "extracted_declaration_sha256": "1d1d2dfa1eaacd278ba44f59a1e7c5a2807b8f4e22cd867864b3688ac7587273"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 1663,
+          "extracted_declaration_sha256": "3ccde2ec4776465ddb382bb68533703477bd3d0ad6534c40d700c6149ede2080",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-04",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+          "start_line": 97,
+          "extracted_declaration_sha256": "1d1d2dfa1eaacd278ba44f59a1e7c5a2807b8f4e22cd867864b3688ac7587273",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Signed/effective operation specs with explicit discriminator; version/integrity-resolvable context; downstream use and reverse-projection proof.",
+      "risk_rule": "Keep detailed operation kind as a mandatory, typed effective-operation discriminator separate from broad action_kind transport categories (FILESYSTEM, TERMINAL, etc.) and separate from action_class. A category alone never authorizes an effect."
+    },
+    {
+      "name": "ActionRecord",
+      "owning_layer_candidate": "L3",
+      "owning_specification_source": "RDMS-04",
+      "review_case": "C8-02",
+      "risk_group": "CONDITIONAL",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-04",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+        "start_line": 208,
+        "extracted_declaration_sha256": "b04404a6eafcf8aec73c83958aa5553aca3762a62a892c1cc8e857d5f0e3f386"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 1883,
+          "extracted_declaration_sha256": "5daceb512bac466d481793e906f30aa61ef41d74aee71369c180f45b61a522a9",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-04",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+          "start_line": 208,
+          "extracted_declaration_sha256": "b04404a6eafcf8aec73c83958aa5553aca3762a62a892c1cc8e857d5f0e3f386",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Recover all attempts, reports, observations, compensation, timestamps; latest_attempt_ref alone insufficient",
+      "risk_rule": "Action Journal legal history complete"
+    },
+    {
+      "name": "CapabilityResult",
+      "owning_layer_candidate": "L2",
+      "owning_specification_source": "FCA v1.0.1",
+      "review_case": "P6-01",
+      "risk_group": "HIGH_PRIORITY",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "FCA v1.0.1",
+        "source_part": "FCA v1.0.1 baseline",
+        "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "start_line": 1012,
+        "extracted_declaration_sha256": "b60b418b16f38240fec6c0be2929b5701ef1cbb2d8c59cf0014fb6bf2fb26e4a"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 1012,
+          "extracted_declaration_sha256": "b60b418b16f38240fec6c0be2929b5701ef1cbb2d8c59cf0014fb6bf2fb26e4a",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-10",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+          "start_line": 384,
+          "extracted_declaration_sha256": "e8ae9d35f870fc3efb84694641074038fd2961677393b2a5f5ee6d6f0cb717b5",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Crosswalk proof pending",
+      "risk_rule": "FCA full semantic result remains canonical. L7 CapabilityTransportResult must resolve immutable original and preserve all fields, including needs, rationale and specialist_request."
+    },
+    {
+      "name": "Claim",
+      "owning_layer_candidate": "L2",
+      "owning_specification_source": "RDMS-02",
+      "review_case": "S8-02",
+      "risk_group": "SEMANTIC",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-02",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "start_line": 211,
+        "extracted_declaration_sha256": "28c429da95506d97a29d01a07cf4519a2f805ab04ce63aac809e9827a1698367"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 387,
+          "extracted_declaration_sha256": "66de9a53c60431507f005e8d628764e3c21c1cf2e9137c917f95d947a5d75ed5",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-02",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "start_line": 132,
+          "extracted_declaration_sha256": "0cc9ca22709f89fa2ed2187d5495b91a57d92b5beb04229b530afce7b69d7a45",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-02",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "start_line": 211,
+          "extracted_declaration_sha256": "28c429da95506d97a29d01a07cf4519a2f805ab04ce63aac809e9827a1698367",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Source version lineage, evidence links, grounding, support-assessment provenance and temporal validity reconstruct FCA-level meaning.",
+      "risk_rule": "RDMS-02 C01 support assessment governs current support; FCA evidence_for/evidence_against and provenance must remain recoverable via accepted RDMS-03 EvidenceLink relations and historical provenance. FactGrounding remains mandatory for FACT."
+    },
+    {
+      "name": "Commitment",
+      "owning_layer_candidate": "L2",
+      "owning_specification_source": "RDMS-02",
+      "review_case": "P6-03",
+      "risk_group": "HIGH_PRIORITY",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-02",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "start_line": 1380,
+        "extracted_declaration_sha256": "da8ac753225c695d17105d549b2d3eca57f648d2343a84a0a8daefc58e46fce9"
+      },
+      "correction_or_overlay_refs": [
+        {
+          "source": "RDMS-02",
+          "source_part": "C01, second review corrections and final freeze decision",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "start_line": 2842,
+          "extracted_declaration_sha256": "bbf875e7b0cbf30ca4d9017a16388b676e74ef8ce1bc2e0840b520c777a78836",
+          "partial_overlay": true
+        }
+      ],
+      "all_occurrences": [
+        {
+          "source": "RDMS-02",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "start_line": 1380,
+          "extracted_declaration_sha256": "da8ac753225c695d17105d549b2d3eca57f648d2343a84a0a8daefc58e46fce9",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-02",
+          "source_part": "C01, second review corrections and final freeze decision",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "start_line": 2842,
+          "extracted_declaration_sha256": "bbf875e7b0cbf30ca4d9017a16388b676e74ef8ce1bc2e0840b520c777a78836",
+          "partial_overlay": true
+        },
+        {
+          "source": "RDMS-05",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+          "start_line": 526,
+          "extracted_declaration_sha256": "b9f1955870bd84b03c06400dc25992a54d5c6e25ae2af05d74764502e180ae3e",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Crosswalk proof pending",
+      "risk_rule": "No direct field union; purpose, owner, scope, links, statement, follow-up, timestamp and sequence remain distinct; RDMS-02 C01 reactivation root mandatory."
+    },
+    {
+      "name": "ConfidenceAssessment",
+      "owning_layer_candidate": "L3",
+      "owning_specification_source": "RDMS-03",
+      "review_case": "C8-03",
+      "risk_group": "CONDITIONAL",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-03",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "start_line": 1412,
+        "extracted_declaration_sha256": "46c9cd5d0f92dc55e58ffeb74a393a7dd28ba124d72a9981bb8f77c4858d4844"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 698,
+          "extracted_declaration_sha256": "60f97cbdb4ad6e9d399a928f74773eb0eb1253a3a65837af65b84a760e68b0c4",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-03",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+          "start_line": 1412,
+          "extracted_declaration_sha256": "46c9cd5d0f92dc55e58ffeb74a393a7dd28ba124d72a9981bb8f77c4858d4844",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Evidence/verification refs resolve and wall-clock timestamps not silently mapped to commit sequence",
+      "risk_rule": "Confidence independent of mere ranking"
+    },
+    {
+      "name": "ContradictionRecord",
+      "owning_layer_candidate": "L3",
+      "owning_specification_source": "RDMS-03",
+      "review_case": "S8-03",
+      "risk_group": "SEMANTIC",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-03",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "start_line": 632,
+        "extracted_declaration_sha256": "e8e2641455efb82f3da738cfff8f716fcead8179e6b63ddbd46618cbc58948ed"
+      },
+      "correction_or_overlay_refs": [
+        {
+          "source": "RDMS-03",
+          "source_part": "C01 and Freeze Review 02 Final",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+          "start_line": 2381,
+          "extracted_declaration_sha256": "02fb0ca2cc801ad9abf3659661af8e9d5ba4e2cd3cae7b81c41e31be927f788f",
+          "partial_overlay": true
+        }
+      ],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 662,
+          "extracted_declaration_sha256": "846f9b29c677f7fdd1c9568033c1a7a2ef5dd082522427077985048ffcdf1a5c",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-03",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+          "start_line": 632,
+          "extracted_declaration_sha256": "e8e2641455efb82f3da738cfff8f716fcead8179e6b63ddbd46618cbc58948ed",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-03",
+          "source_part": "C01 and Freeze Review 02 Final",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+          "start_line": 2381,
+          "extracted_declaration_sha256": "02fb0ca2cc801ad9abf3659661af8e9d5ba4e2cd3cae7b81c41e31be927f788f",
+          "partial_overlay": true
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "State history with comparability assessment, observation references, interpretation/proof separation and unresolved-state query.",
+      "risk_rule": "Use RDMS-03 lifecycle as current owner. FCA UNRESOLVED is an active unresolved epistemic condition, never map to RDMS-03 RESOLVED. For legacy migration preserve historical UNRESOLVED claim and derive unresolved as nonterminal/non-dismissed with no accepted resolution, only when demonstrably equivalent."
+    },
+    {
+      "name": "Decision",
+      "owning_layer_candidate": "L2",
+      "owning_specification_source": "RDMS-02",
+      "review_case": "C8-04",
+      "risk_group": "CONDITIONAL",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-02",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "start_line": 855,
+        "extracted_declaration_sha256": "fc803bc3048da8b08ac3b0ab75526590734254f44a140e69bd61e806d380a3b9"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 805,
+          "extracted_declaration_sha256": "c49d059ce57f71ffcd3ea0286ae25d8f754abb00bcd37ec26eafeff28ead3f7c",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-02",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "start_line": 855,
+          "extracted_declaration_sha256": "fc803bc3048da8b08ac3b0ab75526590734254f44a140e69bd61e806d380a3b9",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Preserve chosen option, rejected option reasons, evidence, alternatives, constraints, scope, version",
+      "risk_rule": "Choice/rejection rationale lossless"
+    },
+    {
+      "name": "DependencyStamp",
+      "owning_layer_candidate": "L4",
+      "owning_specification_source": "RDMS-06",
+      "review_case": "C8-05",
+      "risk_group": "CONDITIONAL",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-06",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt",
+        "start_line": 659,
+        "extracted_declaration_sha256": "eebe0f2d3f0cbd14f6cc9881d28b165d4410f5c08e645141c582ad48cb4d9588"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 2486,
+          "extracted_declaration_sha256": "fe1b5afc30b30904b9f97ee8149eb7ed2902831342ee6d5231f61619627039c6",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-01",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt",
+          "start_line": 794,
+          "extracted_declaration_sha256": "7e0052bac2d827cb5d4770490ec81ece9fb83698c2c07c0eaf39aa113425d53e",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-06",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt",
+          "start_line": 659,
+          "extracted_declaration_sha256": "eebe0f2d3f0cbd14f6cc9881d28b165d4410f5c08e645141c582ad48cb4d9588",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Enumerate all nine FCA kinds; RDMS-01 projections cannot bypass currentness checks",
+      "risk_rule": "Single RDMS-06 freshness semantics"
+    },
+    {
+      "name": "EvidenceLink",
+      "owning_layer_candidate": "L3",
+      "owning_specification_source": "RDMS-03",
+      "review_case": "S8-04",
+      "risk_group": "SEMANTIC",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-03",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "start_line": 514,
+        "extracted_declaration_sha256": "c3afbd4eb962992437673decec2fc0f1672639db8a9a935f704eb0c450995eaa"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 616,
+          "extracted_declaration_sha256": "b778f6414a5d8315d412befe2202e2209969c7d06acb162fa26b4a3f3054781d",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-03",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+          "start_line": 461,
+          "extracted_declaration_sha256": "b56d24206ab7628d92c266e4a6d8c3e3a63aa29a627ede82c373819a56071e26",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-03",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+          "start_line": 514,
+          "extracted_declaration_sha256": "c3afbd4eb962992437673decec2fc0f1672639db8a9a935f704eb0c450995eaa",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Observation ID multiplicity, link IDs, acceptance history, signed source trace and exact target/relation preservation.",
+      "risk_rule": "RDMS-03 may bind multiple canonical observation_refs to one EvidenceLink with individual provenance; a FCA single observation_id view can be emitted only when cardinality equals one or via explicit composite link reference preserving whole set, not by silently spawning several independent accepted links."
+    },
+    {
+      "name": "Experiment",
+      "owning_layer_candidate": "L3",
+      "owning_specification_source": "RDMS-03",
+      "review_case": "S8-05",
+      "risk_group": "SEMANTIC",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-03",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "start_line": 871,
+        "extracted_declaration_sha256": "77b9d1f12e730ad6d94c444aef8d1dd545a8852df355849803557a8712ed4ea8"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 1595,
+          "extracted_declaration_sha256": "ea560db75c5ad83ab9575a76164360d37f83ef162db8ba98ee4b34091a5e0dda",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-03",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+          "start_line": 871,
+          "extracted_declaration_sha256": "77b9d1f12e730ad6d94c444aef8d1dd545a8852df355849803557a8712ed4ea8",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "ExperimentID/RunID mapping, immutable prediction hashes, risk/authorization, run timestamps, observations and status history.",
+      "risk_rule": "RDMS-03 Experiment is the authorized immutable design; ExperimentRun owns execution and outcome. FCA aggregate Experiment is a compatibility view over the design plus zero/multiple runs; design lifecycle does not inherit RUNNING or FAILED."
+    },
+    {
+      "name": "Goal",
+      "owning_layer_candidate": "L2",
+      "owning_specification_source": "RDMS-02",
+      "review_case": "L8-01",
+      "risk_group": "LOW_RISK",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-02",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "start_line": 576,
+        "extracted_declaration_sha256": "439feac4e9de294a5b70fbdd4f3e8aa59ba872f08a6ed331d90f0ece5cb7ead3"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 735,
+          "extracted_declaration_sha256": "4624ad9773f94d9fcfe0c611bb64af47bca482b1926064e80d467af7c62d14df",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-02",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "start_line": 576,
+          "extracted_declaration_sha256": "439feac4e9de294a5b70fbdd4f3e8aa59ba872f08a6ed331d90f0ece5cb7ead3",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Preserve hierarchy, status, acceptance criteria, blockers, provenance and priority as typed-or-unresolved",
+      "risk_rule": "No fabricated priority class"
+    },
+    {
+      "name": "GoalStack",
+      "owning_layer_candidate": "L2",
+      "owning_specification_source": "RDMS-02",
+      "review_case": "L8-02",
+      "risk_group": "LOW_RISK",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-02",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "start_line": 736,
+        "extracted_declaration_sha256": "12db1841ca08885f94aaac07231d05bdd08aabf4198fbb2e48bb83736cb22831"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 760,
+          "extracted_declaration_sha256": "ee729084a582557cafaeddb4dab6e64a256c277381f88d591ed2e41589d6dd8f",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-02",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "start_line": 736,
+          "extracted_declaration_sha256": "12db1841ca08885f94aaac07231d05bdd08aabf4198fbb2e48bb83736cb22831",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Empty/populated stack yields same focus, project/version and ordering",
+      "risk_rule": "No fabricated optional hierarchy entities"
+    },
+    {
+      "name": "Hypothesis",
+      "owning_layer_candidate": "L2",
+      "owning_specification_source": "RDMS-02",
+      "review_case": "S8-06",
+      "risk_group": "SEMANTIC",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-02",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "start_line": 382,
+        "extracted_declaration_sha256": "5470bd7bd74b0f796f4368162311fa068f2ad31a715fd1b7571832e0a87d6d23"
+      },
+      "correction_or_overlay_refs": [
+        {
+          "source": "RDMS-02",
+          "source_part": "C01, second review corrections and final freeze decision",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "start_line": 2117,
+          "extracted_declaration_sha256": "4bc5f8ebc0e4c08e573a6f04ff8b16b8cb24d204594cbd5d87ed409c3f8b830a",
+          "partial_overlay": true
+        }
+      ],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 472,
+          "extracted_declaration_sha256": "3f5f77207a227c57e2a01e4a382eece22d5553b5b7d0eb4f55814481eb630c20",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-02",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "start_line": 382,
+          "extracted_declaration_sha256": "5470bd7bd74b0f796f4368162311fa068f2ad31a715fd1b7571832e0a87d6d23",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-02",
+          "source_part": "C01, second review corrections and final freeze decision",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "start_line": 2117,
+          "extracted_declaration_sha256": "4bc5f8ebc0e4c08e573a6f04ff8b16b8cb24d204594cbd5d87ed409c3f8b830a",
+          "partial_overlay": true
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Typed reference resolution for each FCA cognitive relation and explicit authorized OVC verification record.",
+      "risk_rule": "RDMS-02 C01 separates support assessment from lifecycle. Strongly supported or CONFIRMED hypotheses are not CAUSALLY_VERIFIED merely by ranking; only correctly evidenced causal-closure path to OVC can justify verified causal status."
+    },
+    {
+      "name": "InformationNeed",
+      "owning_layer_candidate": "L2",
+      "owning_specification_source": "RDMS-02",
+      "review_case": "L8-03",
+      "risk_group": "LOW_RISK",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-02",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "start_line": 285,
+        "extracted_declaration_sha256": "791b6588fd8e9657af0176ab75230f739901d2dac2ed6a28054ab6937db58adb"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 440,
+          "extracted_declaration_sha256": "1e74d814f30b30ec1584f20bb6292edf6944b546b19ca1bc75175df112d61d01",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-02",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "start_line": 285,
+          "extracted_declaration_sha256": "791b6588fd8e9657af0176ab75230f739901d2dac2ed6a28054ab6937db58adb",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Preserve route, blockers and resolution reference, else require review",
+      "risk_rule": "No fabricated answer provenance"
+    },
+    {
+      "name": "Invariant",
+      "owning_layer_candidate": "L2",
+      "owning_specification_source": "RDMS-02",
+      "review_case": "C8-06",
+      "risk_group": "CONDITIONAL",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-02",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "start_line": 947,
+        "extracted_declaration_sha256": "6485492b47f3dfc614c02ccf2de26dd19ff7038d484dbf9876c5a3bd196a66bc"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 887,
+          "extracted_declaration_sha256": "4c7c9ea71b197011ad98011f1d39bcc3dc13cfdafaea2735617315b5e60c10a8",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-02",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "start_line": 947,
+          "extracted_declaration_sha256": "6485492b47f3dfc614c02ccf2de26dd19ff7038d484dbf9876c5a3bd196a66bc",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "All enforcement modes, severity, scope and failure semantics survive",
+      "risk_rule": "Hard/critical guard cannot be softened"
+    },
+    {
+      "name": "MemoryProposal",
+      "owning_layer_candidate": "L5",
+      "owning_specification_source": "RDMS-07",
+      "review_case": "C8-07",
+      "risk_group": "CONDITIONAL",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-07",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+        "start_line": 486,
+        "extracted_declaration_sha256": "954762e236b07d60a1c7480f60f9383a0f914a88043e9f541e6567ed0a6557af"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 2237,
+          "extracted_declaration_sha256": "d41c6f0f4bebcb0f89ae4d64c49e56fce0cca07a1bbae721801906c79165945b",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-07",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+          "start_line": 486,
+          "extracted_declaration_sha256": "954762e236b07d60a1c7480f60f9383a0f914a88043e9f541e6567ed0a6557af",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Evidence, counterexamples, applicability, consent/provenance and approval path preserved",
+      "risk_rule": "No automatic learning or disclosure"
+    },
+    {
+      "name": "MemoryRetrievalResult",
+      "owning_layer_candidate": "L5",
+      "owning_specification_source": "RDMS-07",
+      "review_case": "P6-02",
+      "risk_group": "HIGH_PRIORITY",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-07",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+        "start_line": 1080,
+        "extracted_declaration_sha256": "e4ae715a27b230289f343447d8b7723501f62538065a5e61fa5dc5009c17c67d"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "RDMS-07",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+          "start_line": 1080,
+          "extracted_declaration_sha256": "e4ae715a27b230289f343447d8b7723501f62538065a5e61fa5dc5009c17c67d",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-10",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+          "start_line": 1148,
+          "extracted_declaration_sha256": "a70de6ab479231f1c2f991196c6406715513f940d0af266e1e05b22ce533c35a",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Crosswalk proof pending",
+      "risk_rule": "RDMS-07 retrieval coverage/ranking/filtering remains canonical. L7 MemoryRetrievalTransportResult is a bounded view with required canonical reference."
+    },
+    {
+      "name": "Observation",
+      "owning_layer_candidate": "L3",
+      "owning_specification_source": "RDMS-03",
+      "review_case": "S8-07",
+      "risk_group": "SEMANTIC",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-03",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "start_line": 82,
+        "extracted_declaration_sha256": "2e8195bef03066422a8996e4d6329cdf17d9415a4d0584a12d65b788d09aebc1"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 581,
+          "extracted_declaration_sha256": "2d9506cadb8e3faa0eb3c5606edaddd0a68fe19c005880b9baa32aecd8e7d110",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-03",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+          "start_line": 82,
+          "extracted_declaration_sha256": "2e8195bef03066422a8996e4d6329cdf17d9415a4d0584a12d65b788d09aebc1",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Raw byte hash, explicit source identity, clock trust, event order, capture integrity and interpretation provenance.",
+      "risk_rule": "RDMS-03 stores normalized observation with immutable raw artifact provenance and source/capture/ingest time separation. The original reported content remains retrievable; a trusted envelope or checksum proves integrity/provenance, not truth of source claim."
+    },
+    {
+      "name": "OperationalCausalClaim",
+      "owning_layer_candidate": "L2",
+      "owning_specification_source": "RDMS-02",
+      "review_case": "S8-08",
+      "risk_group": "SEMANTIC",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-02",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "start_line": 461,
+        "extracted_declaration_sha256": "25acaae38d4e0e7933822b74e801146eedd80d82784a97f384e9f359af8ab0d5"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 514,
+          "extracted_declaration_sha256": "5a80584ba889e54ef99b9d03c6d5930297857d77236b4519a6c3c0a9842b6b7e",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-02",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "start_line": 461,
+          "extracted_declaration_sha256": "25acaae38d4e0e7933822b74e801146eedd80d82784a97f384e9f359af8ab0d5",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Ref dereference yields full source checklist with chronological commits, authority, specific environment and dependency frontier.",
+      "risk_rule": "RDMS-02 C01 verification_ref resolves complete FCA causal-closure checklist and its temporal order; canonical causal history and derived dependency freshness are distinct. Staleness is not evidence of causal refutation and later validity does not rewrite historical causal closure."
+    },
+    {
+      "name": "QueryDependencyStamp",
+      "owning_layer_candidate": "L4",
+      "owning_specification_source": "RDMS-06",
+      "review_case": "L8-04",
+      "risk_group": "LOW_RISK",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-06",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt",
+        "start_line": 897,
+        "extracted_declaration_sha256": "1b3ae40841edc5f5853a4b5867cfaa3c76e2ed21564b77df463f92fe64b69e1f"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 2544,
+          "extracted_declaration_sha256": "b8e5ac3c661a644278bb1c41d19478fd45c3caeb54f77e7495cf0eae92ab48e2",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-06",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt",
+          "start_line": 897,
+          "extracted_declaration_sha256": "1b3ae40841edc5f5853a4b5867cfaa3c76e2ed21564b77df463f92fe64b69e1f",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Validate exact frontier, proof scope, revision, index generation/hash and freshness",
+      "risk_rule": "No widened absence proof"
+    },
+    {
+      "name": "ResumptionCapsule",
+      "owning_layer_candidate": "L4",
+      "owning_specification_source": "RDMS-05",
+      "review_case": "P6-05",
+      "risk_group": "HIGH_PRIORITY",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-05",
+        "source_part": "C01",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "start_line": 2067,
+        "extracted_declaration_sha256": "1c38a08ce60f890ed64f69cfd6cb8d2928d75d5b6637be31299a5b209e420409"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 2037,
+          "extracted_declaration_sha256": "3b1813aa4640f6305cb0a84a6b157dc3758c2083b212ceb26c088397c247117a",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-05",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+          "start_line": 654,
+          "extracted_declaration_sha256": "c1d22ca4a7ddbf38aa27abd8caa3fbbf1587f636463b3d7827b840bc809528b1",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-05",
+          "source_part": "C01",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+          "start_line": 2067,
+          "extracted_declaration_sha256": "1c38a08ce60f890ed64f69cfd6cb8d2928d75d5b6637be31299a5b209e420409",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Crosswalk proof pending",
+      "risk_rule": "FCA complete recovery-context fields must remain in verified durable RDMS-05 C01 payload with integrity-pinned header, and resume never auto-dispatches next action."
+    },
+    {
+      "name": "SandboxActivityRecord",
+      "owning_layer_candidate": "L3",
+      "owning_specification_source": "RDMS-04",
+      "review_case": "C8-08",
+      "risk_group": "CONDITIONAL",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-04",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+        "start_line": 1124,
+        "extracted_declaration_sha256": "cba4e17ccdd40f411d046f637d1f356611c940f30120987d45d657ff5f8fd855"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 1857,
+          "extracted_declaration_sha256": "04ce19cb7964822cf2646606d30b1078dc687ef9ee8fd46c3bde41e418fcfd58",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-04",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+          "start_line": 1124,
+          "extracted_declaration_sha256": "cba4e17ccdd40f411d046f637d1f356611c940f30120987d45d657ff5f8fd855",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Recover evidence of isolation, op counts, output/observation refs and result including partial failure",
+      "risk_rule": "Containment evidence and outcome preserved"
+    },
+    {
+      "name": "Slice",
+      "owning_layer_candidate": "L2",
+      "owning_specification_source": "RDMS-02",
+      "review_case": "C8-09",
+      "risk_group": "CONDITIONAL",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-02",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "start_line": 1217,
+        "extracted_declaration_sha256": "c447062cf9a8ed563d98cf2d43f84ecee81c6ffdf0bc82c275f83bde54de929c"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 1246,
+          "extracted_declaration_sha256": "45ebbb719962e7401700a8ffa38aa2a42c246ea2eed62cc85774252fcc12e65a",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-02",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "start_line": 1217,
+          "extracted_declaration_sha256": "c447062cf9a8ed563d98cf2d43f84ecee81c6ffdf0bc82c275f83bde54de929c",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Actual-vs-expected change surface, rollback/proof obligations and all slice statuses remain separate",
+      "risk_rule": "Plan transition and proof obligations preserved"
+    },
+    {
+      "name": "TemporalValidity",
+      "owning_layer_candidate": "L4",
+      "owning_specification_source": "RDMS-05",
+      "review_case": "L8-05",
+      "risk_group": "LOW_RISK",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-05",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "start_line": 803,
+        "extracted_declaration_sha256": "250b7997581e6b41d4a3de5ae7b300e8b17108baf13eff0590e3173bf1e43969"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 2088,
+          "extracted_declaration_sha256": "c87bb435ce09bfde6bef4c24d01f0f6bf7a57606b2a1998624c01de43c700359",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-05",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+          "start_line": 803,
+          "extracted_declaration_sha256": "250b7997581e6b41d4a3de5ae7b300e8b17108baf13eff0590e3173bf1e43969",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "CURRENT/STALE/UNKNOWN map case-insensitively but CURRENT requires validity reevaluation",
+      "risk_rule": "Enum normalization only"
+    },
+    {
+      "name": "TriggerCondition",
+      "owning_layer_candidate": "L4",
+      "owning_specification_source": "RDMS-05",
+      "review_case": "P6-04",
+      "risk_group": "HIGH_PRIORITY",
+      "publication_state": "VERBATIM_SOURCE_BASELINE_PUBLISHED__EFFECTIVE_MAPPING_NOT_APPROVED",
+      "chosen_source": {
+        "source": "RDMS-05",
+        "source_part": "Original draft",
+        "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "start_line": 191,
+        "extracted_declaration_sha256": "c3092a02ce0b441049cfe58978e5eaa1bbee23f7b4fd879240b58e666822bdbd"
+      },
+      "correction_or_overlay_refs": [],
+      "all_occurrences": [
+        {
+          "source": "FCA v1.0.1",
+          "source_part": "FCA v1.0.1 baseline",
+          "path": "reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "start_line": 2126,
+          "extracted_declaration_sha256": "cc1d38d3e27b521df8628445f93a5a887b2473472cfa55e83de47002c9ffb8ee",
+          "partial_overlay": false
+        },
+        {
+          "source": "RDMS-05",
+          "source_part": "Original draft",
+          "path": "reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+          "start_line": 191,
+          "extracted_declaration_sha256": "c3092a02ce0b441049cfe58978e5eaa1bbee23f7b4fd879240b58e666822bdbd",
+          "partial_overlay": false
+        }
+      ],
+      "change_allowed": false,
+      "proof_gate": "Crosswalk proof pending",
+      "risk_rule": "FCA full trigger vs RDMS-05 predicate; use distinct effective names and reconstruct full trigger with both detection and fire axes and exact reaction identity."
+    }
+  ],
+  "immutable_sources_preserved": true,
+  "production_code_authorized": false
+}

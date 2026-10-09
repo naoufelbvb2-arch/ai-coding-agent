@@ -1,0 +1,11 @@
+[
+  "tests/architecture_review/test_effective_source_merge.py::test_11_legacy_supersessions_have_clear_after_text",
+  "tests/architecture_review/test_effective_source_merge.py::test_12_routes_are_named_and_complete",
+  "tests/architecture_review/test_effective_source_merge.py::test_explicit_legal_replacements_are_current",
+  "tests/architecture_review/test_effective_source_merge.py::test_layers_have_effective_schemas_and_full_source_regions",
+  "tests/architecture_review/test_effective_source_merge.py::test_names_and_source_fields_not_colliding",
+  "tests/architecture_review/test_effective_source_merge.py::test_no_legacy_competing_reactivation_roots_in_current_schema",
+  "tests/architecture_review/test_effective_source_merge.py::test_primitive_types_not_invented",
+  "tests/architecture_review/test_effective_source_merge.py::test_retained_resumption_header_and_payload",
+  "tests/architecture_review/test_effective_source_merge.py::test_source_archive_unchanged"
+]
