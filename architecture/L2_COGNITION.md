@@ -3944,7 +3944,7 @@ Parent/other-source declarations have different record surfaces. The registry re
 
 Canonical owner: L2; defining specification: RDMS-02.
 
-**Record-shape reconciliation remains OPEN.** The operative rules in this document apply; no complete replacement declaration is asserted. Every exact candidate and its field spelling remains in the source registry; this prevents a historical or partial declaration from being published as current complete law.
+**Representation detail DEFERRED TO IMPLEMENTATION DESIGN.** The operative rules in this document apply; no complete replacement declaration is asserted. Every exact candidate and its field spelling remains in the source registry; the binding obligations and intentionally unspecified representation detail are recorded in the targeted review below. Parent-field questions remain separately classified.
 
 - [Original draft](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L1734>); SHA-256 `1273b28ea555bf9b66941d3622b96b452ca6bfed7f75605c8571b270b57a3750`.
 
@@ -5204,7 +5204,7 @@ Scoped amendment effects:
 
 Conditionally mandatory fields: {'CANCELLED': ['cancellation_reason', 'cancellation_authority_ref']}. These are textual source conditions, not invented optional serializer fields.
 
-Parent/other-source declarations have different record surfaces. The registry retains their exact clauses; preserving the parent semantic obligations is mandatory, and field-renaming/conversion is not automatically approved.
+Parent semantic preservation is proven by the authoritative elaborations cited in the targeted review below. This does not approve an automatic historical-record converter.
 
 ### GoalPath
 
@@ -5475,7 +5475,7 @@ InformationNeed {
 }
 ```
 
-Parent/other-source declarations have different record surfaces. The registry retains their exact clauses; preserving the parent semantic obligations is mandatory, and field-renaming/conversion is not automatically approved.
+Parent semantic preservation is proven by the authoritative elaborations cited in the targeted review below. This does not approve an automatic historical-record converter.
 
 ### Invariant
 
@@ -5524,7 +5524,7 @@ Scoped amendment effects:
 - RDMS-02 C01-19 removes authoritative scalar superseded_by; use independently owned EntityLineageEdge
 - RDMS-02 C01-28 replaces enforcement mode collection with EnforcementSpec collection
 
-Parent/other-source declarations have different record surfaces. The registry retains their exact clauses; preserving the parent semantic obligations is mandatory, and field-renaming/conversion is not automatically approved.
+Parent semantic preservation is proven by the authoritative elaborations cited in the targeted review below. This does not approve an automatic historical-record converter.
 
 ### MandatoryContextManifest
 
@@ -5923,14 +5923,70 @@ ResolutionRef {
 
 ### Risk
 
-Canonical owner: L2; defining specification: RDMS-02.
+Canonical owner: L2. Approved current scoped contract.
 
-Source: [Risk](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L1143>); declaration SHA-256 `f20f77bdf7132da8e3db1cafb0521518c0959298524df9ec4b7816360216ddbd`.
+```text
+Risk {
+    risk_id
 
-**Record-shape reconciliation remains OPEN.** The operative rules in this document apply; no complete replacement declaration is asserted. Every exact candidate and its field spelling remains in the source registry; this prevents a historical or partial declaration from being published as current complete law.
+    statement
 
-- [Original draft](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L1143>); SHA-256 `f20f77bdf7132da8e3db1cafb0521518c0959298524df9ec4b7816360216ddbd`.
-- [C01, second review corrections and final freeze decision](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2774>); SHA-256 `127cb6a861cd68bb7a4297cdf823f3c1e50d6cf6d81a2da99c9c1dd57e3eec26`.
+    scope: ScopeSpec
+
+    category:
+        CORRECTNESS
+        ARCHITECTURE
+        SECURITY
+        DATA
+        PERFORMANCE
+        OPERABILITY
+        COMPATIBILITY
+        DELIVERY
+        KNOWLEDGE
+        OTHER
+
+    likelihood:
+        UNKNOWN
+        LOW
+        MEDIUM
+        HIGH
+
+    impact:
+        LOW
+        MEDIUM
+        HIGH
+        CRITICAL
+
+    affected_refs[]
+
+    mitigation_refs[]
+
+    evidence_basis_refs[]
+
+    owner_ref?
+
+    lifecycle:
+        OPEN
+        MITIGATED
+        REALIZED
+        OBSOLETE
+
+    treatment:
+        UNASSESSED
+        MONITOR
+        MITIGATE
+        ACCEPT
+        AVOID
+
+    accepted_by_decision_id?
+
+    current_assessment_ref?
+}
+```
+
+Retain risk_id, statement, scope, category, likelihood, impact, affected_refs, mitigation_refs, evidence_basis_refs, owner_ref and accepted_by_decision_id. Replace the single status with the exact C01 lifecycle/treatment enums and add current_assessment_ref. RiskAssessment freshness remains derived; acceptance is a Decision, not elimination of risk.
+
+The historical declarations remain in the immutable archive; their current disposition and exact amendment evidence are in the targeted review below. No historical converter is approved.
 
 ### RiskAssessment
 
@@ -6155,7 +6211,7 @@ Canonical owner: L2; defining specification: FCA.
 
 Source: [State](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L3541>); declaration SHA-256 `2634917c8582261b5b430cdb6bb50176a1e93e17d8df4491ff24cd5e2cd1a8ab`.
 
-**Record-shape reconciliation remains OPEN.** The operative rules in this document apply; no complete replacement declaration is asserted. Every exact candidate and its field spelling remains in the source registry; this prevents a historical or partial declaration from being published as current complete law.
+**Representation detail DEFERRED TO IMPLEMENTATION DESIGN.** The operative rules in this document apply; no complete replacement declaration is asserted. Every exact candidate and its field spelling remains in the source registry; the binding obligations and intentionally unspecified representation detail are recorded in the targeted review below. Parent-field questions remain separately classified.
 
 - [v1.0.1 FROZEN](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L287>); SHA-256 `c58142f3a8646e7853d482987e375e8416567161163b3d4e7d488e666bf0d4a4`.
 - [v1.0.1 FROZEN](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L3541>); SHA-256 `2634917c8582261b5b430cdb6bb50176a1e93e17d8df4491ff24cd5e2cd1a8ab`.
@@ -6504,3 +6560,158 @@ Source: [RDMS-08-M16-U140](<../documentation_checkpoint/source_archive/project/A
 RDMS-02 baseline RDMS-I46 remains effective: canonical state is a composite view over normalized entities, not a single mutable state blob. Baseline RDMS-I23–45 are replaced by C01-35; the prior GoalStack and giant lifecycle statements are not reintroduced.
 
 Source: [RDMS-02-M02-U073](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L1761>).
+
+## Targeted normative reconciliation
+
+This targeted review uses the published consolidation as its baseline. Classes B/E remain open; C defers only the stated representation detail; D is source-determined. These dispositions supply no new architectural decision, serializer alias, threshold or authority.
+
+### L2-NR-SHAPE-CanonicalStateView
+
+**C — IMPLEMENTATION_DETAIL_DEFERRED; DEFERRED_TO_IMPLEMENTATION_DESIGN.**
+
+The sole declaration is explicitly abbreviated with an ellipsis and is a read view, not a new canonical entity. RDMS-02 defines the entity owners and later explicitly replaces GoalStack. There is no competing current legal state schema to decide between.
+
+**Binding obligations:** Read the authoritative canonical entities; use GoalPath and the current canonical focus; preserve epistemic types, derived OVC usability and scope. A view cannot create state, permission, a lifecycle or an independent freshness engine.
+
+**Remaining detail / acceptance limit:** Read-view class, table joins, nesting, pagination and serialized member names. These choices cannot omit information required by a particular consuming contract; that conformance obligation remains binding.
+
+Exact authoritative evidence: [FCA-6](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L278>); [RDMS-02-M02-U000](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L23>); [RDMS-02-M03-U009](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2209>); [RDMS-02-M03-U025](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2631>); [RDMS-10-M24-U010](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt#L3090>); [RDMS-02-M02-U072](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L1733>).
+
+### L2-NR-PARENT-Claim
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+C01 explicitly externalizes support and independent relations. That resolves their authority, but the parent evidence/provenance and temporal information require a documented reconstruction through the exact accepted links and metadata; the record specimen alone does not prove it.
+
+**Binding obligations:** Preserve statement identity, kind, scope, evidence for/against, provenance, lifecycle, temporal validity and entity version. SupportAssessment and EvidenceLink own their respective conclusions/relations; no second authoritative embedded evidence list.
+
+**Remaining detail / acceptance limit:** Prove evidence_for/evidence_against, provenance, version and parent temporal_validity preservation through the associated records and exact reference policy, including the optional temporal_validity specimen.
+
+Exact authoritative evidence: [FCA-8](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L384>); [RDMS-02-M03-U000](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L1935>); [RDMS-02-M03-U001](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L1961>); [RDMS-02-M03-U032](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2869>); [RDMS-03-M04-U021](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L508>); [RDMS-02-M02-U004](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L131>); [RDMS-02-M02-U006](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L207>).
+
+### L2-NR-PARENT-Decision
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+C01 resolves accepted-content immutability, freshness and lineage. It does not give a complete crosswalk for FCA evidence_refs, rejected option reasons and chosen content into the later option/reference surface.
+
+**Binding obligations:** Preserve question/context, gravity, quality drivers, constraints, alternatives, chosen option, every rejection reason, assumptions, accepted tradeoffs, evidence, consequences, risks, revisitation, lifecycle and version. Accepted semantic content is immutable.
+
+**Remaining detail / acceptance limit:** Prove evidence_refs and every rejected {option, reason}, chosen content and version are recoverable through the exact owner records; do not infer that dependency_set_ref substitutes for evidence.
+
+Exact authoritative evidence: [FCA-17](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L802>); [RDMS-02-M02-U034](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L854>); [RDMS-02-M02-U035](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L895>); [RDMS-02-M03-U014](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2340>); [RDMS-02-M03-U015](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2384>).
+
+### L2-NR-PARENT-Goal
+
+**D — ALREADY_RESOLVED; RESOLVED_WITH_SOURCE_EVIDENCE.**
+
+All FCA Goal information is retained by RDMS-02 Goal plus AcceptanceCriterion. C01-14 explicitly renames priority to declared_priority; C01-11 adds cancellation without dropping the original states. This is an approved owner elaboration, not an unproved competing projection.
+
+**Binding obligations:** Preserve typed Goal identity and parent, intent, acceptance criteria, declared priority, all original statuses and created_from. CANCELLED requires cancellation_reason and cancellation_authority_ref. Priority alone cannot drive scheduling.
+
+**Remaining detail / acceptance limit:** No importer conversion API is approved. Entity identity is governed by CanonicalEntityMeta, and criterion requirements/waivers by the owner law.
+
+Exact authoritative evidence: [FCA-15](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L732>); [RDMS-02-M02-U021](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L575>); [RDMS-02-M02-U022](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L616>); [RDMS-02-M03-U000](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L1935>); [RDMS-02-M03-U010](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2242>); [RDMS-02-M03-U013](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2321>).
+
+### L2-NR-PARENT-Hypothesis
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+Support, closure, relation and lineage ownership are explicitly amended, but a complete parent evidence/assumption/prediction/experiment reconstruction still needs proof. HG-01 separately handles the missing support-admission correspondence.
+
+**Binding obligations:** Retain immutable explanatory identity, scope, explained subjects, assumptions, predictions, for/against evidence, experiments and competing relations. One lifecycle and one SupportAssessment authority; closure points to the causal result when applicable.
+
+**Remaining detail / acceptance limit:** Prove complete original information across references and independent relation owners. This entry does not resolve HG-01 or permit replacing old support values with guessed new thresholds.
+
+Exact authoritative evidence: [FCA-10](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L469>); [RDMS-02-M03-U001](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L1961>); [RDMS-02-M03-U006](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2113>); [RDMS-02-M03-U019](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2497>); [RDMS-02-M03-U032](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2869>); [RDMS-02-M02-U013](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L381>).
+
+### L2-NR-PARENT-InformationNeed
+
+**D — ALREADY_RESOLVED; RESOLVED_WITH_SOURCE_EVIDENCE.**
+
+RDMS-02 section 10 explicitly replaces the single resolution route with resolution_routes[] because multiple routes can answer the same question; section 12 explicitly makes the answer a typed ResolutionRef. Original identity, question, importance, blocks, candidates and all four lifecycle states remain.
+
+**Binding obligations:** Retain all routes and source candidates; preserve typed blocked entities and resolution evidence. OBSOLETE is distinct from RESOLVED. HUMAN in the route list does not itself require immediate escalation.
+
+**Remaining detail / acceptance limit:** Physical reference/serialization encoding; no new route, lifecycle or authority is introduced.
+
+Exact authoritative evidence: [FCA-9](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L435>); [RDMS-02-M02-U002](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L86>); [RDMS-02-M02-U009](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L284>); [RDMS-02-M02-U010](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L322>); [RDMS-02-M02-U011](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L347>); [RDMS-02-M02-U012](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L369>).
+
+### L2-NR-PARENT-Invariant
+
+**D — ALREADY_RESOLVED; RESOLVED_WITH_SOURCE_EVIDENCE.**
+
+RDMS-02 section 39 explicitly permits simultaneous enforcement modes; C01-28 replaces these with EnforcementSpec entries while preserving severity and modes. C01-01 supplies version metadata and C01-17/18 pins engineering semantics. No original enforcement duty is waived.
+
+**Binding obligations:** Retain statement, scope, kind, severity, predicate/verification and source authority, version and ACTIVE/SUPERSEDED/RETIRED lifecycle. EnforcementSpec records mode, verifier, coverage and fail behavior. HARD remains unacceptable even when checking is semantic.
+
+**Remaining detail / acceptance limit:** No automatic field converter is asserted. Runtime verifier mechanics cannot weaken coverage or fail behavior.
+
+Exact authoritative evidence: [FCA-19](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L884>); [RDMS-02-M02-U038](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L946>); [RDMS-02-M03-U000](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L1935>); [RDMS-02-M03-U016](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2414>); [RDMS-02-M03-U017](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2435>); [RDMS-02-M03-U027](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2717>); [RDMS-02-M03-U028](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2750>).
+
+### L2-NR-PARENT-OperationalCausalClaim
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+CausalVerificationRecord is explicitly a compact replacement for inline verification, and C01 makes freshness derived. Complete proof is still needed for every FCA evidence/dependency/verification and promotion-time field, including conditional regression capture.
+
+**Binding obligations:** Preserve all eight FCA causal-closure obligations, causal scope, evidence, dependencies, contradictory observations and promotion history. OVC is scoped operational knowledge, not universal Fact; STALE usability does not become an independent lifecycle.
+
+**Remaining detail / acceptance limit:** Prove evidence_refs, promoted_at, exact CausalScope and verification content through the approved records. Optional regression_verification_ref does not waive FCA technically-feasible durable regression duty.
+
+Exact authoritative evidence: [FCA-10](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L469>); [RDMS-02-M02-U017](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L490>); [RDMS-02-M02-U018](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L511>); [RDMS-02-M03-U007](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2146>); [RDMS-03-M05-U041](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L2823>); [RDMS-02-M02-U016](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L460>).
+
+### L2-NR-SHAPE-Risk
+
+**D — ALREADY_RESOLVED; RESOLVED_WITH_SOURCE_EVIDENCE.**
+
+C01-30 is explicitly an abbreviated scoped amendment: status is split into lifecycle and treatment, with current_assessment_ref added. The ellipsis cannot erase unrelated original fields. The source therefore determines a conservative complete overlay without a guessed state migration.
+
+**Binding obligations:** Retain risk_id, statement, scope, category, likelihood, impact, affected_refs, mitigation_refs, evidence_basis_refs, owner_ref and accepted_by_decision_id. Replace the single status with the exact C01 lifecycle/treatment enums and add current_assessment_ref. RiskAssessment freshness remains derived; acceptance is a Decision, not elimination of risk.
+
+**Remaining detail / acceptance limit:** No old-status-to-new-pair converter or inline likelihood/impact-to-assessment alias is approved. These historical conversions require source-compatible conformance evidence; they do not prevent publishing the current scoped fields.
+
+Source-determined correction: Apply only the explicit lifecycle/treatment overlay and retain every unrelated baseline field.
+
+Exact authoritative evidence: [RDMS-02-M02-U045](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L1139>); [RDMS-02-M02-U046](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L1192>); [RDMS-02-M03-U029](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2770>); [RDMS-02-M03-U030](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2802>).
+
+### L2-NR-PARENT-Slice
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+C01 explicitly resolves SliceState decomposition and scoped freshness. It does not expressly waive parent rollback information or prove all inline engineering/change-surface information through the later reference specimen.
+
+**Binding obligations:** Retain engineering scope, preconditions, pinned invariants/contracts, expected/actual effects and change surface, risk, proof, verification and rollback obligations. Keep stage/condition/terminal independent and use dependency freshness rather than global version alone.
+
+**Remaining detail / acceptance limit:** Prove mandatory rollback versus rollback_spec?, risk_profile versus risk_refs, dependencies and inline expected-change-surface information. No automatic status-to-SliceState migration is chosen.
+
+Exact authoritative evidence: [FCA-29](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L1243>); [RDMS-02-M02-U048](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L1268>); [RDMS-02-M03-U020](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2527>); [RDMS-02-M03-U024](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2615>); [RDMS-02-M03-U017](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2435>); [RDMS-02-M02-U047](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L1216>).
+
+### L2-NR-SHAPE-State
+
+**C — IMPLEMENTATION_DETAIL_DEFERRED; DEFERRED_TO_IMPLEMENTATION_DESIGN.**
+
+FCA section 6 gives logical groups; Appendix D expands a composite state view. RDMS defines the actual entity ownership and current replacements. A grouped view need not itself be a second canonical aggregate with a competing schema.
+
+**Binding obligations:** Preserve access to all FCA logical categories and control references through their actual owners. Use GoalPath, derived validity and source-owned records. A State view cannot commit, redefine lifecycle or claim a separate recovery authority.
+
+**Remaining detail / acceptance limit:** Composite view nesting, physical tables, joins and serializer layout. This does not defer any underlying entity field question; those remain individually classified.
+
+Exact authoritative evidence: [FCA-6](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L278>); [RDMS-02-M03-U009](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2209>); [RDMS-02-M03-U032](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2869>); [RDMS-10-M24-U010](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt#L3090>); [FCA-APP-D](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L3536>).
+
+### L2-NR-HG-01
+
+**E — EXPLICIT_ARCHITECTURAL_DECISION_REQUIRED; OPEN_ARCHITECTURAL_DECISION.**
+
+C01 removes scalar Hypothesis.support and uses a shared SupportAssessment level vocabulary. C01-07 and RDMS-03 C01-42 resolve OVC closure authority, but no clause supplies the complete ordinary CONFIRMED/REJECTED admission correspondence from the earlier support combinations. This affects a legal transition; it cannot be deferred to a serializer.
+
+**Binding obligations:** Keep immutable assessments and derived validity, one Hypothesis lifecycle, historical closure precursor and the full Causal Closure Gate. STRONG and REFUTED are present in both vocabularies, but that fact is not a complete new admission table; generic VERIFIED is not automatically causal verification.
+
+**Remaining detail / acceptance limit:** Smallest decision: ratify the effective support-assessment predicates for ordinary CONFIRMED/REJECTED admission after C01, including validity and whether VERIFIED satisfies the old minimum. Do not reopen OVC gate or invent weaker support thresholds.
+
+Architecture review must decide the stated minimum; neither alternative is adopted.
+
+- Ratify a minimal shared-level admission rule: Explicitly retain the known STRONG/REFUTED obligations and specify treatment of the remaining new assessment levels/validity. This supplies a new approved legal guard; an implementation cannot choose it.
+- Ratify a complete legacy-to-assessment correspondence: Specify each relevant old support meaning and the predicates supporting ordinary closure under C01; preserves interpretable historical transitions but requires a broader approved crosswalk.
+
+Exact authoritative evidence: [RDMS-02-M02-U014](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L422>); [RDMS-02-M02-U015](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L448>); [RDMS-02-M03-U001](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L1961>); [RDMS-02-M03-U002](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2003>); [RDMS-02-M03-U006](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt#L2113>); [RDMS-03-M05-U041](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L2823>).
