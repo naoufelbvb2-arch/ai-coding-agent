@@ -4,20 +4,20 @@
     "archive_files": 195,
     "catalogued_source_units": 2628,
     "source_backed_articles": 1615,
-    "local_links_checked": 2384,
+    "local_links_checked": 2395,
     "single_owner_exported_record_definitions": 385,
     "interface_paths_processed": 12
   },
   "failures": [],
   "document_sha256": {
     "L0": "2e25c819a9a662ce20a241226260ca0a2fea5ebc3333171d9ada834bd83a69e7",
-    "L1": "ecc9d140c81b787a9b9f14379845e747040c2d469c865f69854d1bdc1611aec0",
+    "L1": "cbcd52503a3c4ca40a8ad1d4361b610691aa301dfa0e862b9a11cd1a9c9c6b42",
     "L2": "db02d224ca8f41541241326f2cd8a8aacd884288322b84bc6d0ac983c7296543",
-    "L3": "8f2d79d519a895098dea283a38c3f2d96d9cdf9620ea25f16794bee9f3c13ee8",
-    "L4": "555e5e26fc9b83cb9db48b7180cbbae2b41020f60c925224e7e054f817293cb9",
-    "L5": "6df88bf76353349db3bc5618c6d14fb5493b434fa6563f938f05d03df17b904b",
-    "L6": "0d815e53386b210d89cffb2c88d6caa21392c94b192aa8334ef9c47a2d27c211",
-    "L7": "7a7caf01b07575474d24f47fbc91cc8257e8882c31a85b34ba74d9feda0cbb63"
+    "L3": "46ff88e280cefc06d5b1f8e58e1fc42f67a485c49849ba3bfaf7d90057928c92",
+    "L4": "47c35130f9c9e3fbbc673ae6239e2ccbd2eb43ed360d0e1477aee8d843168ac6",
+    "L5": "ee9eb7e1ae4176249b3a8d938e10cd116528d293b59a00c67955b4d622322a7f",
+    "L6": "537d899d1de3b4c2c3eb2032ab617a836894201454770ca4dc3654c1b37e4b88",
+    "L7": "f07421f6459b22b1812fd84254b6b792c6a3bf065128820542c5828d3d018e4e"
   },
   "mandatory_semantic_acceptance": {
     "complete_authoritative_source_inventory": "PASS",

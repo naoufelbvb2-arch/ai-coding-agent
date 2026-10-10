@@ -9,7 +9,7 @@ Command: python tools/verify_consolidation.py. This check verifies custody, loca
 | archive_files | 195 |
 | catalogued_source_units | 2628 |
 | source_backed_articles | 1615 |
-| local_links_checked | 2384 |
+| local_links_checked | 2395 |
 | single_owner_exported_record_definitions | 385 |
 | interface_paths_processed | 12 |
 

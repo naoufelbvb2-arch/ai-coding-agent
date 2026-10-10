@@ -1,0 +1,50 @@
+[
+  {
+    "layer": "L0",
+    "sha": "7b6d6d3e1f5c41bf7698128cd99d7e491515a37a",
+    "document": "architecture/L0_FOUNDATION.md",
+    "verified_document_sha256": "2e25c819a9a662ce20a241226260ca0a2fea5ebc3333171d9ada834bd83a69e7"
+  },
+  {
+    "layer": "L1",
+    "sha": "d09895e3d66e2b4b152f3f7cef4a6646f6fb4af9",
+    "document": "architecture/L1_CONTROL.md",
+    "verified_document_sha256": "cbcd52503a3c4ca40a8ad1d4361b610691aa301dfa0e862b9a11cd1a9c9c6b42"
+  },
+  {
+    "layer": "L2",
+    "sha": "713ce5b8409e8c73cebb79b3c796fe9700169ac9",
+    "document": "architecture/L2_COGNITION.md",
+    "verified_document_sha256": "db02d224ca8f41541241326f2cd8a8aacd884288322b84bc6d0ac983c7296543"
+  },
+  {
+    "layer": "L3",
+    "sha": "983306ee9b7ebb016322ef58a9b94b92f027c177",
+    "document": "architecture/L3_ACTIONS.md",
+    "verified_document_sha256": "46ff88e280cefc06d5b1f8e58e1fc42f67a485c49849ba3bfaf7d90057928c92"
+  },
+  {
+    "layer": "L4",
+    "sha": "50c469c320ba4b6ad1596e62950165d674ae06f3",
+    "document": "architecture/L4_TEMPORAL_SPECIALISTS.md",
+    "verified_document_sha256": "47c35130f9c9e3fbbc673ae6239e2ccbd2eb43ed360d0e1477aee8d843168ac6"
+  },
+  {
+    "layer": "L5",
+    "sha": "78c99e922e658bd41b8774c1663f9fe8f78788fc",
+    "document": "architecture/L5_MEMORY.md",
+    "verified_document_sha256": "ee9eb7e1ae4176249b3a8d938e10cd116528d293b59a00c67955b4d622322a7f"
+  },
+  {
+    "layer": "L6",
+    "sha": "f0cb3a96b40da59ef351d579f45211cfc47f772f",
+    "document": "architecture/L6_RECOVERY.md",
+    "verified_document_sha256": "537d899d1de3b4c2c3eb2032ab617a836894201454770ca4dc3654c1b37e4b88"
+  },
+  {
+    "layer": "L7",
+    "sha": "7ec14eff8d436445a3ebb2233f2f0572a1661eea",
+    "document": "architecture/L7_RUNTIME_INTEGRATION.md",
+    "verified_document_sha256": "f07421f6459b22b1812fd84254b6b792c6a3bf065128820542c5828d3d018e4e"
+  }
+]

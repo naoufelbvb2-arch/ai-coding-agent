@@ -29,7 +29,7 @@ def complete():
                 if 'ADDITIONAL FORMAL INVARIANTS' in s['heading']:
                     from render_layer import retained_prose
                     text+='\n'+retained_prose({**s,'source_path':message(17)['source_path']},'L2-X-INV')
-        path.write_text(text,encoding='utf-8',newline='\n')
+        path.write_text(text.rstrip()+'\n',encoding='utf-8',newline='\n')
 
 if __name__=='__main__':
     complete()

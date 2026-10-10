@@ -19,6 +19,6 @@ def add():
         if layer=='L2':
             source=next(s for s in message(2)['segments'] if s['heading'].startswith('74. '))
             text+='RDMS-02 baseline RDMS-I46 remains effective: canonical state is a composite view over normalized entities, not a single mutable state blob. Baseline RDMS-I23–45 are replaced by C01-35; the prior GoalStack and giant lifecycle statements are not reintroduced.\n\nSource: '+source_link({**source,'source_path':message(2)['source_path']})+'.\n'
-        path.write_text(text,encoding='utf-8',newline='\n')
+        path.write_text(text.rstrip()+'\n',encoding='utf-8',newline='\n')
 
 if __name__=='__main__':add()

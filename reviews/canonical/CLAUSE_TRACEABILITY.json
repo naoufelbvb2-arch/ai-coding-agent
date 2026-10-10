@@ -5307,11 +5307,11 @@
     "clause_id": "L3-BI6",
     "owner": "L3",
     "document": "architecture/L3_ACTIONS.md",
-    "line": 6315,
+    "line": 6314,
     "source_unit_ids": [
       "RDMS-04-M06-U074"
     ],
-    "article_sha256": "66965ec70f4e2ebbbf9b7f515204e46f829c15fabc595d9f3db10c8478bea800"
+    "article_sha256": "d410bbde75e25b631b3611efca8816eac8e776be29d2ff94238c793f9e2529bc"
   },
   {
     "clause_id": "L4-A10-U001",
@@ -7487,7 +7487,7 @@
     "clause_id": "L4-BI9",
     "owner": "L4",
     "document": "architecture/L4_TEMPORAL_SPECIALISTS.md",
-    "line": 5464,
+    "line": 5463,
     "source_unit_ids": [
       "RDMS-05-M09-U073"
     ],
@@ -7497,11 +7497,11 @@
     "clause_id": "L4-BI12",
     "owner": "L4",
     "document": "architecture/L4_TEMPORAL_SPECIALISTS.md",
-    "line": 5573,
+    "line": 5572,
     "source_unit_ids": [
       "RDMS-06-M12-U093"
     ],
-    "article_sha256": "863d98005b38a1089b2b329ee59b4020af69a98689682c3262d25f09a0dafda7"
+    "article_sha256": "adee67c7aca86d7e6b0134a76cde621f9ded601acea0e3cd80e8093a0307a2f5"
   },
   {
     "clause_id": "L5-A15-U001",
@@ -8977,11 +8977,11 @@
     "clause_id": "L5-BI14",
     "owner": "L5",
     "document": "architecture/L5_MEMORY.md",
-    "line": 3506,
+    "line": 3505,
     "source_unit_ids": [
       "RDMS-07-M14-U115"
     ],
-    "article_sha256": "55820f597386bc8687483bccc16f78c7894d77e5d92ea99b46939b4b5e09f68c"
+    "article_sha256": "8ffd0f3d73ce53392eae0337e164861ad985d682bd7f9dabc0d4b9d5e23db7fd"
   },
   {
     "clause_id": "L6-A10-U042",
@@ -13037,11 +13037,11 @@
     "clause_id": "L6-BI18",
     "owner": "L6",
     "document": "architecture/L6_RECOVERY.md",
-    "line": 8000,
+    "line": 7999,
     "source_unit_ids": [
       "RDMS-09-M18-U128"
     ],
-    "article_sha256": "0bb6594c3e7924a1664fabf080f87a0ab2ec3db7ec3e2aff4d99458046dcf9cb"
+    "article_sha256": "1014fbbaa7380fc399ca53742da5898fbc2a32bc1b1fb0d4002410e4f825a003"
   },
   {
     "clause_id": "L7-A24-U001",
@@ -16261,6 +16261,6 @@
     "source_unit_ids": [
       "RDMS-10-M23-U122"
     ],
-    "article_sha256": "aa35c8ad175df038279e0a36faa3d0c7a44f2a9f38d3e1531f4dc23543eeb3bb"
+    "article_sha256": "331f30ff1f8aead50bc7161b134b266866c77656c95d00b149d6d53600789cbd"
   }
 ]
