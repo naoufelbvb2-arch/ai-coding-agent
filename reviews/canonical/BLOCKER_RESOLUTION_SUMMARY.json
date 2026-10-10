@@ -1,0 +1,19 @@
+{
+  "baseline": "d50b7f88105b5397aa7d76e0bb8a1c2099a7c85e",
+  "original_questions": 40,
+  "classification_totals": {
+    "A": 0,
+    "B": 25,
+    "C": 6,
+    "D": 8,
+    "E": 1
+  },
+  "resolved": 8,
+  "implementation_deferred": 6,
+  "open_lossless_mapping_proofs": 25,
+  "open_normative_conflicts": 0,
+  "architectural_decisions": 1,
+  "freeze_readiness": "HOLD",
+  "architecture_frozen": false,
+  "new_architectural_decision_adopted": false
+}

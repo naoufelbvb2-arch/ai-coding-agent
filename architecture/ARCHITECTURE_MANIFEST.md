@@ -7,11 +7,11 @@ The approved checkpoint is preserved at 397c9a5b8878ba5d5a8d8ab93a3e175146022f8d
 | Layer | Authoritative coverage and applied amendments | Completion status | Open contract questions |
 |---|---|---|---|
 | [L0](L0_FOUNDATION.md) | FCA v1.0.1 foundation, authority/trust, Appendices C/F/G | Foundation responsibilities verified; owner imports remain governed by their own acceptance | 0 |
-| [L1](L1_CONTROL.md) | FCA 48–51; RDMS-01 original + R1 and final freeze | Current source scopes consolidated; full field/semantic acceptance remains OPEN | 2 |
-| [L2](L2_COGNITION.md) | FCA cognition; RDMS-02 original + C01/final; RDMS-08 original + C01/final | Current source scopes consolidated; full field/semantic acceptance remains OPEN | 12 |
-| [L3](L3_ACTIONS.md) | FCA action/evidence; RDMS-03 original + C01/final; RDMS-04 original + C01 + Review 02 | Current source scopes consolidated; full field/semantic acceptance remains OPEN | 12 |
-| [L4](L4_TEMPORAL_SPECIALISTS.md) | FCA temporal/specialists; RDMS-05 original + C01 + FC05-01/02; RDMS-06 original + C01/final | Current source scopes consolidated; full field/semantic acceptance remains OPEN | 8 |
-| [L5](L5_MEMORY.md) | FCA memory; RDMS-07 original + C01/final | Current source scopes consolidated; full field/semantic acceptance remains OPEN | 1 |
+| [L1](L1_CONTROL.md) | FCA 48–51; RDMS-01 original + R1 and final freeze | Runtime embedding deferred; event metadata binding proof OPEN | 1 |
+| [L2](L2_COGNITION.md) | FCA cognition; RDMS-02 original + C01/final; RDMS-08 original + C01/final | Risk overlay and Goal/Need/Invariant preservation proven; 5 mapping proofs and HG-01 decision OPEN | 6 |
+| [L3](L3_ACTIONS.md) | FCA action/evidence; RDMS-03 original + C01/final; RDMS-04 original + C01 + Review 02 | Current containment binding proven; EvidenceBasis embedding and ToolResult serializer deferred; parent proofs OPEN | 9 |
+| [L4](L4_TEMPORAL_SPECIALISTS.md) | FCA temporal/specialists; RDMS-05 original + C01 + FC05-01/02; RDMS-06 original + C01/final | Stable Fire and TemporalValidity proven; cursor embedding deferred; mapping proofs OPEN | 5 |
+| [L5](L5_MEMORY.md) | FCA memory; RDMS-07 original + C01/final | MemoryProposal semantic preservation proven; L7 retrieval projection remains separately OPEN | 0 |
 | [L6](L6_RECOVERY.md) | FCA 52/53/82; RDMS-05 capsule/resume scopes; RDMS-09 original + C01 + C02 + C03 + FC09-04-01…04 | Current source scopes consolidated; full field/semantic acceptance remains OPEN | 3 |
 | [L7](L7_RUNTIME_INTEGRATION.md) | FCA 85; RDMS-10 original + C01 + C02 + FC10-03-01…08 | Current source scopes consolidated; full field/semantic acceptance remains OPEN | 2 |
 
@@ -39,12 +39,12 @@ Coverage indexes 27 complete source messages, all 88 FCA numbered sections, 50 i
 
 All twelve interface paths have owner/type, authority/transition, durability, failure/retry/recovery and rejection evidence. [Interface review](../reviews/canonical/INTERFACE_VALIDATION.md) and its JSON retain source fields and exact locators. None is declared fully accepted while owner-field/projection questions remain. Unspecified callable signatures are left unspecified.
 
-The [issues register](../reviews/canonical/UNRESOLVED_ISSUES.md) contains 40 questions: 13 incomplete/differing record shapes, parent/projection conformance obligations, canonical-event envelope interpretation, changed hypothesis support-floor correspondence and two transport payload mappings. Exact conflicting/candidate clauses, field sets, line ranges, source hashes and consequences are preserved. Questions are bounded; independently verified laws remain effective.
+The [issues register](../reviews/canonical/UNRESOLVED_ISSUES.md) preserves all 40 original questions with exactly one classification per question: A 0, B 25, C 6, D 8, E 1. Eight source-determined questions are closed; six representation details are deferred with binding architectural obligations; 25 preservation proofs and HG-01 remain open. See [classification evidence](../reviews/canonical/BLOCKER_CLASSIFICATION.md) and [source-determined proofs](../reviews/canonical/SOURCE_DETERMINATE_PROOFS.md). No direct irreconcilable pair was established. That does not waive the remaining legal-information or admission gaps.
 
 The [verification record](../reviews/canonical/VERIFICATION.md) separates mechanical PASS from semantic/field acceptance OPEN. [Clause trace](../reviews/canonical/CLAUSE_TRACEABILITY.json) and [source dispositions](../reviews/canonical/SOURCE_COVERAGE.json) provide bidirectional review evidence. No production code, new law, redesign, merge into main or new freeze is authorized.
 
 ## Reproduction
 
-Run python tools/build_documents.py to regenerate documentation and evidence from the preserved originals. Run python tools/verify_consolidation.py for current checks. The older checkpoint verifier intentionally verifies Stage A only and must not be used as a current full-consolidation gate.
+Run python tools/verify_consolidation.py and python tools/verify_blocker_resolution.py for current checks. Full regeneration is disabled after the targeted review; the published layer documents are the working baseline. The one-time targeted reconciliation script refuses to overwrite an existing review. The older checkpoint verifier intentionally verifies Stage A only and must not be used as a current full-consolidation gate.
 
-Git publication is restricted to docs/canonical-source-checkpoint. [Completion report](../reviews/canonical/COMPLETION_REPORT.md) records layer commits and publication evidence.
+Git publication is restricted to docs/canonical-source-checkpoint. The [targeted resolution report](../reviews/canonical/BLOCKER_RESOLUTION_REPORT.md) records this review. The [prior completion report](../reviews/canonical/COMPLETION_REPORT.md) and LAYER_COMMITS.json retain historical baseline commit evidence; current document hashes are in VERIFICATION.json.

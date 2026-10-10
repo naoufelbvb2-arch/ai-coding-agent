@@ -5,7 +5,7 @@
   "fca_appendices": 7,
   "fca_invariants": 50,
   "source_scope_units": 2628,
-  "canonical_articles": 1615,
+  "canonical_articles": 1655,
   "registered_record_labels": 402,
   "scope_dispositions": {
     "CURRENT_SCOPE_INCORPORATED": 1717,
@@ -13,16 +13,22 @@
     "EXPLANATORY_CONTEXT_RETAINED_IN_ARCHIVE": 5,
     "HISTORICAL_REVIEW_OR_NON_NORMATIVE_CONTEXT": 134,
     "REVIEW_OR_SECTION_STRUCTURE_RETAINED_IN_ARCHIVE": 628,
-    "PARENT_ENTITY_SCOPE_CROSSWALK; FIELD_CONFORMANCE_OPEN": 4,
+    "PARENT_ENTITY_SCOPE_CROSSWALK; FIELD_CONFORMANCE_OPEN": 3,
+    "PARENT_OWNER_ELABORATION_PROVEN": 1,
     "SOURCE_FREEZE_EVIDENCE_ONLY": 1,
     "HISTORICAL_OR_NON_NORMATIVE_APPENDIX": 3,
-    "COMPOSITE_VIEW; EFFECTIVE_OWNER_RECORDS_AND_OPEN_FIELD_RECONCILIATION": 1,
+    "COMPOSITE_VIEW; REPRESENTATION_DETAIL_DEFERRED; OWNER_FIELD_QUESTIONS_REMAIN_OPEN": 1,
     "CURRENT_INVARIANT_INCORPORATED": 50
   },
   "residual_scope_units": 0,
   "contract_issue_entries": 40,
-  "record_shape_issues": 13,
   "interface_paths_processed": 12,
   "fully_accepted_interface_paths": 0,
-  "full_normative_completion": false
+  "full_normative_completion": false,
+  "original_record_shape_questions": 13,
+  "current_open_record_shape_questions": 4,
+  "resolved_questions": 8,
+  "implementation_deferred_questions": 6,
+  "open_mapping_proofs": 25,
+  "open_architectural_decisions": 1
 }

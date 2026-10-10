@@ -10,7 +10,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt",
     "owner": "L1",
     "canonical_clauses": [
-      "L1-C23"
+      "L1-C23",
+      "L1-NR-SHAPE-ProjectRuntime"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -517,7 +518,8 @@
     "owner": "L1",
     "canonical_clauses": [
       "L4-A13-U031",
-      "L4-A13-U032"
+      "L4-A13-U032",
+      "L4-NR-PARENT-DependencyStamp"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -855,7 +857,8 @@
     "owner": "L1",
     "canonical_clauses": [
       "L1-C01",
-      "L1-C27"
+      "L1-C27",
+      "L1-NR-SHAPE-ProjectRuntime"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -871,7 +874,8 @@
     "owner": "L1",
     "canonical_clauses": [
       "L1-C01",
-      "L1-C02"
+      "L1-C02",
+      "L1-NR-SHAPE-ProjectRuntime"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -886,7 +890,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt",
     "owner": "L1",
     "canonical_clauses": [
-      "L1-C03"
+      "L1-C03",
+      "L1-NR-SHAPE-ProjectRuntime"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -917,7 +922,9 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt",
     "owner": "L1",
     "canonical_clauses": [
-      "L1-C05"
+      "L1-C05",
+      "L3-NR-PARENT-ConfidenceAssessment",
+      "L1-NR-CE-01"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -992,7 +999,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt",
     "owner": "L1",
     "canonical_clauses": [
-      "L1-C08"
+      "L1-C08",
+      "L1-NR-CE-01"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -1083,7 +1091,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt",
     "owner": "L1",
     "canonical_clauses": [
-      "L1-C12"
+      "L1-C12",
+      "L1-NR-CE-01"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -1098,7 +1107,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt",
     "owner": "L1",
     "canonical_clauses": [
-      "L1-C13"
+      "L1-C13",
+      "L1-NR-CE-01"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -1203,7 +1213,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt",
     "owner": "L1",
     "canonical_clauses": [
-      "L1-C19"
+      "L1-C19",
+      "L1-NR-SHAPE-ProjectRuntime"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -1316,7 +1327,9 @@
     "source_part": "Original draft",
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
-    "canonical_clauses": [],
+    "canonical_clauses": [
+      "L2-NR-SHAPE-CanonicalStateView"
+    ],
     "disposition": "EXPLANATORY_CONTEXT_RETAINED_IN_ARCHIVE"
   },
   {
@@ -1349,7 +1362,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-B03"
+      "L2-B03",
+      "L2-NR-PARENT-InformationNeed"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -1381,7 +1395,8 @@
     "canonical_clauses": [
       "L2-E02",
       "L2-E03",
-      "L2-E20"
+      "L2-E20",
+      "L2-NR-PARENT-Claim"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -1418,7 +1433,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-B07"
+      "L2-B07",
+      "L2-NR-PARENT-Claim"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -1467,7 +1483,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-B10"
+      "L2-B10",
+      "L2-NR-PARENT-InformationNeed"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -1482,7 +1499,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-B11"
+      "L2-B11",
+      "L2-NR-PARENT-InformationNeed"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -1497,7 +1515,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-B12"
+      "L2-B12",
+      "L2-NR-PARENT-InformationNeed"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -1512,7 +1531,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-B13"
+      "L2-B13",
+      "L2-NR-PARENT-InformationNeed"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -1531,7 +1551,8 @@
       "L2-E04",
       "L2-E10",
       "L2-E19",
-      "L2-E20"
+      "L2-E20",
+      "L2-NR-PARENT-Hypothesis"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -1552,7 +1573,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E20"
+      "L2-E20",
+      "L2-NR-HG-01"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -1567,7 +1589,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-B16"
+      "L2-B16",
+      "L2-NR-HG-01"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -1582,7 +1605,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E04"
+      "L2-E04",
+      "L2-NR-PARENT-OperationalCausalClaim"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -1601,7 +1625,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-B18"
+      "L2-B18",
+      "L2-NR-PARENT-OperationalCausalClaim"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -1616,7 +1641,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-B19"
+      "L2-B19",
+      "L2-NR-PARENT-OperationalCausalClaim"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -1665,7 +1691,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E06"
+      "L2-E06",
+      "L2-NR-PARENT-Goal"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -1685,7 +1712,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E06"
+      "L2-E06",
+      "L2-NR-PARENT-Goal"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -1889,7 +1917,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E08"
+      "L2-E08",
+      "L2-NR-PARENT-Decision"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -1909,7 +1938,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-B36"
+      "L2-B36",
+      "L2-NR-PARENT-Decision"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -1954,7 +1984,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E14"
+      "L2-E14",
+      "L2-NR-PARENT-Invariant"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -2073,7 +2104,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E15"
+      "L2-E15",
+      "L2-NR-SHAPE-Risk"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -2093,7 +2125,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E15"
+      "L2-E15",
+      "L2-NR-SHAPE-Risk"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -2114,7 +2147,8 @@
     "owner": "L2",
     "canonical_clauses": [
       "L2-E11",
-      "L2-E12"
+      "L2-E12",
+      "L2-NR-PARENT-Slice"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -2134,7 +2168,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-B49"
+      "L2-B49",
+      "L2-NR-PARENT-Slice"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -2526,7 +2561,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-B73"
+      "L2-B73",
+      "L2-NR-SHAPE-CanonicalStateView"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -2595,7 +2631,10 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E01"
+      "L2-E01",
+      "L2-NR-PARENT-Claim",
+      "L2-NR-PARENT-Goal",
+      "L2-NR-PARENT-Invariant"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -2611,7 +2650,10 @@
     "owner": "L2",
     "canonical_clauses": [
       "L2-E02",
-      "L2-E20"
+      "L2-E20",
+      "L2-NR-PARENT-Claim",
+      "L2-NR-PARENT-Hypothesis",
+      "L2-NR-HG-01"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -2626,7 +2668,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E02"
+      "L2-E02",
+      "L2-NR-HG-01"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -2688,7 +2731,9 @@
     "canonical_clauses": [
       "L2-E04",
       "L2-E19",
-      "L2-E20"
+      "L2-E20",
+      "L2-NR-PARENT-Hypothesis",
+      "L2-NR-HG-01"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -2703,7 +2748,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E04"
+      "L2-E04",
+      "L2-NR-PARENT-OperationalCausalClaim"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -2733,7 +2779,9 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E05"
+      "L2-E05",
+      "L2-NR-SHAPE-CanonicalStateView",
+      "L2-NR-SHAPE-State"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -2748,7 +2796,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E06"
+      "L2-E06",
+      "L2-NR-PARENT-Goal"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -2793,7 +2842,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E06"
+      "L2-E06",
+      "L2-NR-PARENT-Goal"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -2808,7 +2858,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E08"
+      "L2-E08",
+      "L2-NR-PARENT-Decision"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -2823,7 +2874,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E08"
+      "L2-E08",
+      "L2-NR-PARENT-Decision"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -2838,7 +2890,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E09"
+      "L2-E09",
+      "L2-NR-PARENT-Invariant"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -2853,7 +2906,9 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E09"
+      "L2-E09",
+      "L2-NR-PARENT-Invariant",
+      "L2-NR-PARENT-Slice"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -2883,7 +2938,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E10"
+      "L2-E10",
+      "L2-NR-PARENT-Hypothesis"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -2898,7 +2954,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E11"
+      "L2-E11",
+      "L2-NR-PARENT-Slice"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -2958,7 +3015,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E12"
+      "L2-E12",
+      "L2-NR-PARENT-Slice"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -2973,7 +3031,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E13"
+      "L2-E13",
+      "L2-NR-SHAPE-CanonicalStateView"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -3003,7 +3062,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E14"
+      "L2-E14",
+      "L2-NR-PARENT-Invariant"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -3018,7 +3078,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E14"
+      "L2-E14",
+      "L2-NR-PARENT-Invariant"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -3033,7 +3094,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E15"
+      "L2-E15",
+      "L2-NR-SHAPE-Risk"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -3048,7 +3110,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E15"
+      "L2-E15",
+      "L2-NR-SHAPE-Risk"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -3078,7 +3141,10 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
     "owner": "L2",
     "canonical_clauses": [
-      "L2-E17"
+      "L2-E17",
+      "L2-NR-PARENT-Claim",
+      "L2-NR-PARENT-Hypothesis",
+      "L2-NR-SHAPE-State"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -3495,7 +3561,8 @@
       "L3-A05-U000",
       "L3-A05-U005",
       "L3-A05-U014",
-      "L3-A05-U020"
+      "L3-A05-U020",
+      "L3-NR-PARENT-Observation"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -3640,7 +3707,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-A05-U005"
+      "L3-A05-U005",
+      "L3-NR-PARENT-Observation"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -3659,7 +3727,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B04-012"
+      "L3-B04-012",
+      "L3-NR-PARENT-Observation"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -3792,7 +3861,9 @@
       "L3-A05-U009",
       "L3-A05-U010",
       "L3-A05-U011",
-      "L3-A05-U012"
+      "L3-A05-U012",
+      "L3-NR-SHAPE-EvidenceLink",
+      "L3-NR-PARENT-EvidenceLink"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -3829,7 +3900,10 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B04-022"
+      "L3-B04-022",
+      "L2-NR-PARENT-Claim",
+      "L3-NR-SHAPE-EvidenceLink",
+      "L3-NR-PARENT-EvidenceLink"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -3846,7 +3920,8 @@
     "canonical_clauses": [
       "L3-A05-U009",
       "L3-A05-U010",
-      "L3-A05-U011"
+      "L3-A05-U011",
+      "L3-NR-PARENT-EvidenceLink"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -3963,7 +4038,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-A05-U019"
+      "L3-A05-U019",
+      "L3-NR-PARENT-ContradictionRecord"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -4012,7 +4088,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B04-033"
+      "L3-B04-033",
+      "L3-NR-PARENT-ContradictionRecord"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -4132,7 +4209,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B04-041"
+      "L3-B04-041",
+      "L3-NR-PARENT-Experiment"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -4150,7 +4228,8 @@
       "L3-A05-U022",
       "L3-A05-U023",
       "L3-A05-U024",
-      "L3-A05-U025"
+      "L3-A05-U025",
+      "L3-NR-PARENT-Experiment"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -4192,7 +4271,8 @@
       "L3-A05-U028",
       "L3-A05-U029",
       "L3-A05-U030",
-      "L3-A05-U031"
+      "L3-A05-U031",
+      "L3-NR-PARENT-Experiment"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -4246,7 +4326,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B04-047"
+      "L3-B04-047",
+      "L3-NR-PARENT-Experiment"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -4276,7 +4357,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B04-049"
+      "L3-B04-049",
+      "L3-NR-PARENT-Experiment"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -4574,7 +4656,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B04-067"
+      "L3-B04-067",
+      "L3-NR-PARENT-ConfidenceAssessment"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -4962,7 +5045,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-A05-U000"
+      "L3-A05-U000",
+      "L3-NR-PARENT-Observation"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -5007,7 +5091,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-A05-U003"
+      "L3-A05-U003",
+      "L3-NR-SHAPE-EvidenceLink"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -5097,7 +5182,9 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-A05-U009"
+      "L3-A05-U009",
+      "L3-NR-SHAPE-EvidenceLink",
+      "L3-NR-PARENT-EvidenceLink"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -5112,7 +5199,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-A05-U010"
+      "L3-A05-U010",
+      "L3-NR-SHAPE-EvidenceLink"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -5127,7 +5215,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-A05-U011"
+      "L3-A05-U011",
+      "L3-NR-SHAPE-EvidenceLink"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -5142,7 +5231,9 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-A05-U012"
+      "L3-A05-U012",
+      "L3-NR-SHAPE-EvidenceLink",
+      "L3-NR-PARENT-EvidenceLink"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -5247,7 +5338,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-A05-U019"
+      "L3-A05-U019",
+      "L3-NR-PARENT-ContradictionRecord"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -5262,7 +5354,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-A05-U020"
+      "L3-A05-U020",
+      "L3-NR-PARENT-Observation"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -5307,7 +5400,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-A05-U023"
+      "L3-A05-U023",
+      "L3-NR-PARENT-Experiment"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -5562,7 +5656,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-A05-U040"
+      "L3-A05-U040",
+      "L3-NR-PARENT-ConfidenceAssessment"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -5577,7 +5672,9 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-A05-U041"
+      "L3-A05-U041",
+      "L2-NR-PARENT-OperationalCausalClaim",
+      "L2-NR-HG-01"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -6128,7 +6225,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B06-003"
+      "L3-B06-003",
+      "L3-NR-PARENT-ActionProposal"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -6143,7 +6241,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B06-004"
+      "L3-B06-004",
+      "L3-NR-PARENT-ActionProposal"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -6158,7 +6257,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B06-005"
+      "L3-B06-005",
+      "L3-NR-PARENT-ActionProposal"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -6186,7 +6286,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B06-006"
+      "L3-B06-006",
+      "L3-NR-PARENT-ActionRecord"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -6216,7 +6317,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B06-008"
+      "L3-B06-008",
+      "L3-NR-PARENT-ActionRecord"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -6250,7 +6352,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B06-010"
+      "L3-B06-010",
+      "L3-NR-PARENT-ActionEffectSemantics"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -6293,7 +6396,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B06-012"
+      "L3-B06-012",
+      "L3-NR-SHAPE-ToolResult"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -6370,7 +6474,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B06-016"
+      "L3-B06-016",
+      "L3-NR-SHAPE-ToolResult"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -6856,7 +6961,9 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B06-043"
+      "L3-B06-043",
+      "L3-NR-SHAPE-ContainmentProof",
+      "L3-NR-PARENT-SandboxActivityRecord"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -6886,7 +6993,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B06-045"
+      "L3-B06-045",
+      "L3-NR-PARENT-SandboxActivityRecord"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -6901,7 +7009,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B06-046"
+      "L3-B06-046",
+      "L3-NR-PARENT-SandboxActivityRecord"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -7002,7 +7111,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B06-051"
+      "L3-B06-051",
+      "L3-NR-SHAPE-ToolResult"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -7032,7 +7142,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B06-053"
+      "L3-B06-053",
+      "L3-NR-PARENT-ActionRecord"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -7133,7 +7244,9 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-B06-058"
+      "L3-B06-058",
+      "L3-NR-PARENT-ActionRecord",
+      "L3-NR-SHAPE-ToolResult"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -7247,7 +7360,9 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-A07-U002"
+      "L3-A07-U002",
+      "L3-NR-PARENT-ActionProposal",
+      "L3-NR-PARENT-ActionRecord"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -7700,7 +7815,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-A07-U033"
+      "L3-A07-U033",
+      "L3-NR-SHAPE-ContainmentProof"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -7715,7 +7831,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-A07-U034"
+      "L3-A07-U034",
+      "L3-NR-SHAPE-ContainmentProof"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -7788,7 +7905,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-A07-U039"
+      "L3-A07-U039",
+      "L3-NR-SHAPE-ToolResult"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -7816,7 +7934,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-A07-U041"
+      "L3-A07-U041",
+      "L3-NR-PARENT-ActionEffectSemantics"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -7831,7 +7950,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-A07-U042"
+      "L3-A07-U042",
+      "L3-NR-PARENT-ActionEffectSemantics"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -7846,7 +7966,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
     "owner": "L3",
     "canonical_clauses": [
-      "L3-A07-U043"
+      "L3-A07-U043",
+      "L3-NR-PARENT-ActionEffectSemantics"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -8381,7 +8502,8 @@
       "L4-A10-U031",
       "L4-A10-U032",
       "L4-A10-U033",
-      "L4-A10-U034"
+      "L4-A10-U034",
+      "L4-NR-SHAPE-TemporalSchedule"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -8417,7 +8539,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-B09-006"
+      "L4-B09-006",
+      "L4-NR-PARENT-TriggerCondition"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -8432,7 +8555,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-B09-007"
+      "L4-B09-007",
+      "L4-NR-PARENT-TriggerCondition"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -8535,7 +8659,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-B09-013"
+      "L4-B09-013",
+      "L4-NR-PARENT-TriggerCondition"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -8634,7 +8759,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-A10-U006"
+      "L4-A10-U006",
+      "L4-NR-SHAPE-TriggerSourceCursor"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -8703,7 +8829,8 @@
     "owner": "L4",
     "canonical_clauses": [
       "L4-A10-U016",
-      "L4-A10-U017"
+      "L4-A10-U017",
+      "L4-NR-SHAPE-TriggerFire"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -8748,7 +8875,8 @@
       "L4-A10-U036",
       "L4-A10-U037",
       "L4-A10-U038",
-      "L4-A10-U039"
+      "L4-A10-U039",
+      "L4-NR-SHAPE-TriggerReaction"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -8772,7 +8900,8 @@
     "owner": "L4",
     "canonical_clauses": [
       "L4-A10-U018",
-      "L4-A10-U039"
+      "L4-A10-U039",
+      "L4-NR-SHAPE-TriggerReaction"
     ],
     "disposition": "EXPLICIT_AMENDED_SCOPE_CROSSWALK",
     "effective_source_units": [
@@ -8923,7 +9052,9 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L6",
     "canonical_clauses": [
-      "L6-B09-031"
+      "L6-B09-031",
+      "L6-NR-SHAPE-ResumptionCapsule",
+      "L6-NR-PARENT-ResumptionCapsule"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -8938,7 +9069,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L6",
     "canonical_clauses": [
-      "L4-B09-032"
+      "L4-B09-032",
+      "L6-NR-SHAPE-ResumptionCapsule"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -8968,7 +9100,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L6",
     "canonical_clauses": [
-      "L6-B09-034"
+      "L6-B09-034",
+      "L6-NR-PARENT-ResumptionCapsule"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -9011,7 +9144,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L6",
     "canonical_clauses": [
-      "L6-B09-036"
+      "L6-B09-036",
+      "L6-NR-SHAPE-ResumeAssessment"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -9054,7 +9188,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-B09-038"
+      "L4-B09-038",
+      "L4-NR-PARENT-TemporalValidity"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -9069,7 +9204,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-B09-039"
+      "L4-B09-039",
+      "L4-NR-PARENT-TemporalValidity"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -9516,7 +9652,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-A10-U005"
+      "L4-A10-U005",
+      "L4-NR-SHAPE-TriggerSourceCursor"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -9531,7 +9668,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-A10-U006"
+      "L4-A10-U006",
+      "L4-NR-SHAPE-TriggerSourceCursor"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -9546,7 +9684,9 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-A10-U007"
+      "L4-A10-U007",
+      "L4-NR-SHAPE-TriggerFire",
+      "L4-NR-SHAPE-TriggerSourceCursor"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -9662,7 +9802,9 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-A10-U015"
+      "L4-A10-U015",
+      "L4-NR-PARENT-TriggerCondition",
+      "L4-NR-SHAPE-TriggerFire"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -9677,7 +9819,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-A10-U016"
+      "L4-A10-U016",
+      "L4-NR-SHAPE-TriggerFire"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -9692,7 +9835,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-A10-U017"
+      "L4-A10-U017",
+      "L4-NR-SHAPE-TriggerFire"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -9707,7 +9851,9 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-A10-U018"
+      "L4-A10-U018",
+      "L4-NR-PARENT-TriggerCondition",
+      "L4-NR-SHAPE-TriggerReaction"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -9881,7 +10027,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-A10-U030"
+      "L4-A10-U030",
+      "L4-NR-SHAPE-TemporalSchedule"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -9896,7 +10043,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-A10-U031"
+      "L4-A10-U031",
+      "L4-NR-SHAPE-TemporalSchedule"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -9911,7 +10059,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-A10-U032"
+      "L4-A10-U032",
+      "L4-NR-SHAPE-TemporalSchedule"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -9926,7 +10075,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-A10-U033"
+      "L4-A10-U033",
+      "L4-NR-SHAPE-TemporalSchedule"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -9969,7 +10119,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-A10-U036"
+      "L4-A10-U036",
+      "L4-NR-SHAPE-TriggerReaction"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -9984,7 +10135,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-A10-U037"
+      "L4-A10-U037",
+      "L4-NR-SHAPE-TriggerReaction"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -10014,7 +10166,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-A10-U039"
+      "L4-A10-U039",
+      "L4-NR-SHAPE-TriggerReaction"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -10057,7 +10210,9 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L6",
     "canonical_clauses": [
-      "L6-A10-U042"
+      "L6-A10-U042",
+      "L6-NR-SHAPE-ResumptionCapsule",
+      "L6-NR-PARENT-ResumptionCapsule"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -10072,7 +10227,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L6",
     "canonical_clauses": [
-      "L6-A10-U043"
+      "L6-A10-U043",
+      "L6-NR-SHAPE-ResumptionCapsule"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -10087,7 +10243,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L6",
     "canonical_clauses": [
-      "L6-A10-U044"
+      "L6-A10-U044",
+      "L6-NR-SHAPE-ResumptionCapsule"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -10115,7 +10272,9 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L6",
     "canonical_clauses": [
-      "L6-A10-U046"
+      "L6-A10-U046",
+      "L6-NR-SHAPE-ResumeAssessment",
+      "L6-NR-PARENT-ResumptionCapsule"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -10130,7 +10289,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L6",
     "canonical_clauses": [
-      "L6-A10-U047"
+      "L6-A10-U047",
+      "L6-NR-SHAPE-ResumeAssessment"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -10160,7 +10320,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L6",
     "canonical_clauses": [
-      "L6-A10-U049"
+      "L6-A10-U049",
+      "L6-NR-SHAPE-ResumeAssessment"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -10175,7 +10336,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
     "owner": "L6",
     "canonical_clauses": [
-      "L6-A10-U050"
+      "L6-A10-U050",
+      "L6-NR-SHAPE-ResumeAssessment"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -11411,7 +11573,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-B12-028"
+      "L4-B12-028",
+      "L4-NR-PARENT-DependencyStamp"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -11441,7 +11604,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-B12-030"
+      "L4-B12-030",
+      "L4-NR-PARENT-DependencyStamp"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -11645,7 +11809,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-B12-041"
+      "L4-B12-041",
+      "L4-NR-PARENT-QueryDependencyStamp"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -11660,7 +11825,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-B12-042"
+      "L4-B12-042",
+      "L4-NR-PARENT-QueryDependencyStamp"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -11675,7 +11841,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-B12-043"
+      "L4-B12-043",
+      "L4-NR-PARENT-QueryDependencyStamp"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -12702,7 +12869,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt",
     "owner": "L4",
     "canonical_clauses": [
-      "L4-A13-U031"
+      "L4-A13-U031",
+      "L4-NR-PARENT-DependencyStamp"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -14140,7 +14308,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
     "owner": "L5",
     "canonical_clauses": [
-      "L5-B14-017"
+      "L5-B14-017",
+      "L5-NR-PARENT-MemoryProposal"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -14230,7 +14399,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
     "owner": "L5",
     "canonical_clauses": [
-      "L5-B14-023"
+      "L5-B14-023",
+      "L5-NR-PARENT-MemoryProposal"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -14258,7 +14428,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
     "owner": "L5",
     "canonical_clauses": [
-      "L5-B14-024"
+      "L5-B14-024",
+      "L5-NR-PARENT-MemoryProposal"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -14273,7 +14444,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
     "owner": "L5",
     "canonical_clauses": [
-      "L5-B14-025"
+      "L5-B14-025",
+      "L5-NR-PARENT-MemoryProposal"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -14883,7 +15055,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
     "owner": "L5",
     "canonical_clauses": [
-      "L5-B14-057"
+      "L5-B14-057",
+      "L7-NR-TRANSPORT-MemoryRetrievalResult"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -29659,7 +29832,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
     "owner": "L7",
     "canonical_clauses": [
-      "L7-B23-009"
+      "L7-B23-009",
+      "L7-NR-TRANSPORT-CapabilityResult"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -30157,7 +30331,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
     "owner": "L7",
     "canonical_clauses": [
-      "L7-B23-037"
+      "L7-B23-037",
+      "L7-NR-TRANSPORT-MemoryRetrievalResult"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -31574,7 +31749,9 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
     "owner": "L7",
     "canonical_clauses": [
-      "L7-A24-U007"
+      "L7-A24-U007",
+      "L7-NR-TRANSPORT-CapabilityResult",
+      "L7-NR-TRANSPORT-MemoryRetrievalResult"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -31589,7 +31766,8 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
     "owner": "L7",
     "canonical_clauses": [
-      "L7-A24-U008"
+      "L7-A24-U008",
+      "L7-NR-TRANSPORT-CapabilityResult"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -31619,7 +31797,9 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
     "owner": "L7",
     "canonical_clauses": [
-      "L7-A24-U010"
+      "L7-A24-U010",
+      "L2-NR-SHAPE-CanonicalStateView",
+      "L2-NR-SHAPE-State"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -36043,7 +36223,9 @@
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
     "owner": "L7",
     "canonical_clauses": [
-      "L7-A26-U023"
+      "L7-A26-U023",
+      "L7-NR-TRANSPORT-CapabilityResult",
+      "L7-NR-TRANSPORT-MemoryRetrievalResult"
     ],
     "disposition": "CURRENT_SCOPE_INCORPORATED"
   },
@@ -36109,7 +36291,10 @@
     "source_part": "Final Freeze Review 03 and final decisions",
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
     "owner": "L7",
-    "canonical_clauses": [],
+    "canonical_clauses": [
+      "L7-NR-TRANSPORT-CapabilityResult",
+      "L7-NR-TRANSPORT-MemoryRetrievalResult"
+    ],
     "disposition": "HISTORICAL_REVIEW_OR_NON_NORMATIVE_CONTEXT"
   },
   {
@@ -36284,7 +36469,9 @@
     "owner": "L2",
     "disposition": "CURRENT_SCOPE_INCORPORATED",
     "canonical_clauses": [
-      "L2-F06"
+      "L2-F06",
+      "L2-NR-SHAPE-CanonicalStateView",
+      "L2-NR-SHAPE-State"
     ]
   },
   {
@@ -36309,7 +36496,8 @@
     "disposition": "PARENT_ENTITY_SCOPE_CROSSWALK; FIELD_CONFORMANCE_OPEN",
     "canonical_clauses": [
       "L2-E03",
-      "L2-E20"
+      "L2-E20",
+      "L2-NR-PARENT-Claim"
     ]
   },
   {
@@ -36321,7 +36509,8 @@
     "owner": "L2",
     "disposition": "CURRENT_SCOPE_INCORPORATED",
     "canonical_clauses": [
-      "L2-F09"
+      "L2-F09",
+      "L2-NR-PARENT-InformationNeed"
     ]
   },
   {
@@ -36333,7 +36522,9 @@
     "owner": "L2",
     "disposition": "CURRENT_SCOPE_INCORPORATED",
     "canonical_clauses": [
-      "L2-F10"
+      "L2-F10",
+      "L2-NR-PARENT-Hypothesis",
+      "L2-NR-PARENT-OperationalCausalClaim"
     ]
   },
   {
@@ -36345,7 +36536,8 @@
     "owner": "L3",
     "disposition": "CURRENT_SCOPE_INCORPORATED",
     "canonical_clauses": [
-      "L3-F11"
+      "L3-F11",
+      "L3-NR-PARENT-Observation"
     ]
   },
   {
@@ -36357,7 +36549,9 @@
     "owner": "L3",
     "disposition": "CURRENT_SCOPE_INCORPORATED",
     "canonical_clauses": [
-      "L3-F12"
+      "L3-F12",
+      "L3-NR-SHAPE-EvidenceLink",
+      "L3-NR-PARENT-EvidenceLink"
     ]
   },
   {
@@ -36369,7 +36563,8 @@
     "owner": "L3",
     "disposition": "CURRENT_SCOPE_INCORPORATED",
     "canonical_clauses": [
-      "L3-F13"
+      "L3-F13",
+      "L3-NR-PARENT-ContradictionRecord"
     ]
   },
   {
@@ -36381,7 +36576,8 @@
     "owner": "L3",
     "disposition": "CURRENT_SCOPE_INCORPORATED",
     "canonical_clauses": [
-      "L3-F14"
+      "L3-F14",
+      "L3-NR-PARENT-ConfidenceAssessment"
     ]
   },
   {
@@ -36391,10 +36587,11 @@
     "end_line": 774,
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
     "owner": "L2",
-    "disposition": "PARENT_ENTITY_SCOPE_CROSSWALK; FIELD_CONFORMANCE_OPEN",
+    "disposition": "PARENT_OWNER_ELABORATION_PROVEN",
     "canonical_clauses": [
       "L2-E05",
-      "L2-E06"
+      "L2-E06",
+      "L2-NR-PARENT-Goal"
     ]
   },
   {
@@ -36419,7 +36616,8 @@
     "disposition": "PARENT_ENTITY_SCOPE_CROSSWALK; FIELD_CONFORMANCE_OPEN",
     "canonical_clauses": [
       "L2-E07",
-      "L2-E08"
+      "L2-E08",
+      "L2-NR-PARENT-Decision"
     ]
   },
   {
@@ -36443,7 +36641,8 @@
     "owner": "L2",
     "disposition": "CURRENT_SCOPE_INCORPORATED",
     "canonical_clauses": [
-      "L2-F19"
+      "L2-F19",
+      "L2-NR-PARENT-Invariant"
     ]
   },
   {
@@ -36491,7 +36690,8 @@
     "owner": "L2",
     "disposition": "CURRENT_SCOPE_INCORPORATED",
     "canonical_clauses": [
-      "L2-F23"
+      "L2-F23",
+      "L7-NR-TRANSPORT-CapabilityResult"
     ]
   },
   {
@@ -36564,7 +36764,8 @@
     "disposition": "PARENT_ENTITY_SCOPE_CROSSWALK; FIELD_CONFORMANCE_OPEN",
     "canonical_clauses": [
       "L2-E11",
-      "L2-E12"
+      "L2-E12",
+      "L2-NR-PARENT-Slice"
     ]
   },
   {
@@ -36696,7 +36897,8 @@
     "owner": "L3",
     "disposition": "CURRENT_SCOPE_INCORPORATED",
     "canonical_clauses": [
-      "L3-F40"
+      "L3-F40",
+      "L3-NR-PARENT-Experiment"
     ]
   },
   {
@@ -36720,7 +36922,9 @@
     "owner": "L3",
     "disposition": "CURRENT_SCOPE_INCORPORATED",
     "canonical_clauses": [
-      "L3-F42"
+      "L3-F42",
+      "L3-NR-PARENT-ActionProposal",
+      "L3-NR-SHAPE-ContainmentProof"
     ]
   },
   {
@@ -36732,7 +36936,8 @@
     "owner": "L3",
     "disposition": "CURRENT_SCOPE_INCORPORATED",
     "canonical_clauses": [
-      "L3-F43"
+      "L3-F43",
+      "L3-NR-PARENT-ActionEffectSemantics"
     ]
   },
   {
@@ -36756,7 +36961,8 @@
     "owner": "L3",
     "disposition": "CURRENT_SCOPE_INCORPORATED",
     "canonical_clauses": [
-      "L3-F45"
+      "L3-F45",
+      "L3-NR-PARENT-SandboxActivityRecord"
     ]
   },
   {
@@ -36768,7 +36974,8 @@
     "owner": "L3",
     "disposition": "CURRENT_SCOPE_INCORPORATED",
     "canonical_clauses": [
-      "L3-F46"
+      "L3-F46",
+      "L3-NR-PARENT-ActionRecord"
     ]
   },
   {
@@ -36794,7 +37001,8 @@
     "canonical_clauses": [
       "L1-C01",
       "L1-C02",
-      "L1-C08"
+      "L1-C08",
+      "L1-NR-CE-01"
     ]
   },
   {
@@ -36855,7 +37063,9 @@
     "owner": "L6",
     "disposition": "CURRENT_SCOPE_INCORPORATED",
     "canonical_clauses": [
-      "L6-F53"
+      "L6-F53",
+      "L6-NR-SHAPE-ResumptionCapsule",
+      "L6-NR-PARENT-ResumptionCapsule"
     ]
   },
   {
@@ -36867,7 +37077,8 @@
     "owner": "L4",
     "disposition": "CURRENT_SCOPE_INCORPORATED",
     "canonical_clauses": [
-      "L4-F54"
+      "L4-F54",
+      "L4-NR-PARENT-TemporalValidity"
     ]
   },
   {
@@ -36891,7 +37102,8 @@
     "owner": "L4",
     "disposition": "CURRENT_SCOPE_INCORPORATED",
     "canonical_clauses": [
-      "L4-F56"
+      "L4-F56",
+      "L4-NR-PARENT-TriggerCondition"
     ]
   },
   {
@@ -36939,7 +37151,8 @@
     "owner": "L5",
     "disposition": "CURRENT_SCOPE_INCORPORATED",
     "canonical_clauses": [
-      "L5-F60"
+      "L5-F60",
+      "L5-NR-PARENT-MemoryProposal"
     ]
   },
   {
@@ -37047,7 +37260,8 @@
     "owner": "L4",
     "disposition": "CURRENT_SCOPE_INCORPORATED",
     "canonical_clauses": [
-      "L4-F69"
+      "L4-F69",
+      "L4-NR-PARENT-DependencyStamp"
     ]
   },
   {
@@ -37059,7 +37273,8 @@
     "owner": "L4",
     "disposition": "CURRENT_SCOPE_INCORPORATED",
     "canonical_clauses": [
-      "L4-F70"
+      "L4-F70",
+      "L4-NR-PARENT-QueryDependencyStamp"
     ]
   },
   {
@@ -37303,8 +37518,10 @@
     "end_line": 3628,
     "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
     "owner": "L2",
-    "disposition": "COMPOSITE_VIEW; EFFECTIVE_OWNER_RECORDS_AND_OPEN_FIELD_RECONCILIATION",
-    "canonical_clauses": []
+    "disposition": "COMPOSITE_VIEW; REPRESENTATION_DETAIL_DEFERRED; OWNER_FIELD_QUESTIONS_REMAIN_OPEN",
+    "canonical_clauses": [
+      "L2-NR-SHAPE-State"
+    ]
   },
   {
     "unit_id": "FCA-APP-E",

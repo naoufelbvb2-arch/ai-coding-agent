@@ -111,6 +111,11 @@ def verify():
        'cross_layer_interfaces':'12 constraints reviewed; complete field/projection acceptance OPEN',
        'durability_and_recovery':'SOURCE REQUIREMENTS PRESERVED; serialization/admission conformance and runtime proof not claimed'},
       'full_normative_completion':False,'architecture_frozen':False,'production_implementation':False}
+    targeted=OUT/'BLOCKER_RESOLUTION_SUMMARY.json'
+    if targeted.exists():
+        result['targeted_normative_review']=json.loads(targeted.read_text(encoding='utf-8'))
+        result['mandatory_semantic_acceptance']['complete_non_superseded_field_preservation']='8 source-determined questions closed; 25 mapping proofs and 1 architectural decision OPEN; 6 representation details deferred with binding obligations'
+        result['mandatory_semantic_acceptance']['cross_layer_interfaces']='12 baseline legal-semantic constraints rechecked; full field/preservation acceptance remains OPEN on all 12'
     (OUT/'VERIFICATION.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     lines=['# Current consolidation verification','',
      '**Mechanical result: '+result['mechanical_status']+'. Full normative acceptance: OPEN.**','',

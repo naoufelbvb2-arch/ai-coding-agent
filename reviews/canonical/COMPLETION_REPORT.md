@@ -1,5 +1,7 @@
 # Canonical documentation consolidation report
 
+Historical consolidation report for d50b7f8. Current issue dispositions and verification: [targeted resolution report](BLOCKER_RESOLUTION_REPORT.md). The original layer commit/document hashes below describe that earlier baseline.
+
 **All eight layer documents processed and committed separately. Mechanical verification PASS. Full normative completion remains OPEN; the consolidated architecture is NOT FROZEN.**
 
 The approved source checkpoint commits remain ancestors of every consolidation commit. Initial checkpoint publication was verified at local and remote SHA 397c9a5b8878ba5d5a8d8ab93a3e175146022f8d. No production implementation, new architectural law, redesign or merge into main was performed.

@@ -15,8 +15,10 @@
     "atomicity_durability": "No canonical state transition follows delivery alone. Owner-authorized adoption enters L1 ControlTransaction.",
     "failure_retry_recovery": "Provider timeout, malformed output or old epoch yields rejection/revalidation; retries are invocation delivery and never automatic tool redispatch.",
     "rejection_conditions": "Reject omitted canonical payload, forged authority, stale dependencies or any unproved lossy transport conversion.",
-    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
-    "field_or_projection_review": [],
+    "status": "SOURCE_CONSTRAINTS_RECHECKED; FULL_ACCEPTANCE_OPEN",
+    "field_or_projection_review": [
+      "TRANSPORT-CapabilityResult"
+    ],
     "source_units": [
       {
         "unit_id": "RDMS-10-M23-U012",
@@ -113,7 +115,24 @@
           "message_order": 23
         }
       }
-    ]
+    ],
+    "targeted_review": {
+      "issue_ids": [
+        "TRANSPORT-CapabilityResult",
+        "SHAPE-CanonicalStateView"
+      ],
+      "resolved_issue_ids": [],
+      "implementation_deferred_issue_ids": [
+        "SHAPE-CanonicalStateView"
+      ],
+      "open_issue_ids": [
+        "TRANSPORT-CapabilityResult"
+      ],
+      "authority_transition_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "durability_recovery_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "rejection_check": "MISSING REQUIRED INFORMATION REMAINS REJECTED",
+      "full_acceptance": false
+    }
   },
   {
     "id": "X8-02",
@@ -132,8 +151,10 @@
     "atomicity_durability": "Memory revisions use L1 durability; transport cannot replace retrieval coverage, query identity or canonical version.",
     "failure_retry_recovery": "Provider/index failure reports partial/unknown coverage; absent search results do not prove absence.",
     "rejection_conditions": "Reject missing trust/provenance/coverage, unauthorized cross-project disclosure or lossy result mapping.",
-    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
-    "field_or_projection_review": [],
+    "status": "SOURCE_CONSTRAINTS_RECHECKED; FULL_ACCEPTANCE_OPEN",
+    "field_or_projection_review": [
+      "TRANSPORT-MemoryRetrievalResult"
+    ],
     "source_units": [
       {
         "unit_id": "RDMS-07-M14-U074",
@@ -265,7 +286,24 @@
           "message_order": 23
         }
       }
-    ]
+    ],
+    "targeted_review": {
+      "issue_ids": [
+        "TRANSPORT-MemoryRetrievalResult",
+        "PARENT-MemoryProposal"
+      ],
+      "resolved_issue_ids": [
+        "PARENT-MemoryProposal"
+      ],
+      "implementation_deferred_issue_ids": [],
+      "open_issue_ids": [
+        "TRANSPORT-MemoryRetrievalResult"
+      ],
+      "authority_transition_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "durability_recovery_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "rejection_check": "MISSING REQUIRED INFORMATION REMAINS REJECTED",
+      "full_acceptance": false
+    }
   },
   {
     "id": "X8-03",
@@ -285,11 +323,11 @@
     "atomicity_durability": "Preserve one condition root, inbox/processing separation and atomic fire/reaction target mutation. Detection may repeat; canonical application deduplicates.",
     "failure_retry_recovery": "Replayable sources and qualified occurrence identity govern replay; UNKNOWN coverage cannot assert a missed edge or absence.",
     "rejection_conditions": "Reject unbound temporal commitment, incoherent composite input, changed frozen definition, duplicate effect or invalid target version.",
-    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "status": "SOURCE_CONSTRAINTS_RECHECKED; FULL_ACCEPTANCE_OPEN",
     "field_or_projection_review": [
-      "TriggerCondition",
-      "TriggerFire",
-      "TriggerReaction"
+      "PARENT-TriggerCondition",
+      "SHAPE-TriggerReaction",
+      "SHAPE-TemporalSchedule"
     ],
     "source_units": [
       {
@@ -411,9 +449,11 @@
       {
         "type": "TriggerFire",
         "owner": "L4",
-        "status": "MULTIPLE_NATIVE_SURFACES_REQUIRE_SCOPED_RECONCILIATION",
-        "effective_raw": null,
-        "explicit_overlays": [],
+        "status": "SOURCE_RECORD_SURFACE_WITH_EXPLICIT_REPLACEMENT",
+        "effective_raw": "TriggerFire {\n    fire_id\n\n    trigger_definition_snapshot_ref\n    qualified_occurrence_ref\n\n    evidence_basis_refs[]\n    source_frontier_ref\n\n    fire_identity_key\n\n    created_commit_seq\n}",
+        "explicit_overlays": [
+          "RDMS-05 C01-12/13/14 replaces unstable fire construction with frozen definition and qualified occurrence identity; C01-06 governs atomic durable processing."
+        ],
         "associated_contracts": null,
         "selected": {
           "name": "TriggerFire",
@@ -454,7 +494,31 @@
           "message_order": 10
         }
       }
-    ]
+    ],
+    "targeted_review": {
+      "issue_ids": [
+        "PARENT-TriggerCondition",
+        "SHAPE-TriggerFire",
+        "SHAPE-TriggerReaction",
+        "SHAPE-TriggerSourceCursor",
+        "SHAPE-TemporalSchedule"
+      ],
+      "resolved_issue_ids": [
+        "SHAPE-TriggerFire"
+      ],
+      "implementation_deferred_issue_ids": [
+        "SHAPE-TriggerSourceCursor"
+      ],
+      "open_issue_ids": [
+        "PARENT-TriggerCondition",
+        "SHAPE-TriggerReaction",
+        "SHAPE-TemporalSchedule"
+      ],
+      "authority_transition_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "durability_recovery_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "rejection_check": "MISSING REQUIRED INFORMATION REMAINS REJECTED",
+      "full_acceptance": false
+    }
   },
   {
     "id": "X8-04",
@@ -474,11 +538,12 @@
     "atomicity_durability": "Reaction/continuation is atomic where required. Dispatch needs ActionGate, durable intent, legal ownership and trusted executor fencing.",
     "failure_retry_recovery": "Reaction replay deduplicates. Action delivery recovery enumerates obligations; external retry follows L3 effect semantics.",
     "rejection_conditions": "Reject obsolete generation, cancelled target, orphaned obligation, missing durable dispatch intent or reused unsafe authorization.",
-    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "status": "SOURCE_CONSTRAINTS_RECHECKED; FULL_ACCEPTANCE_OPEN",
     "field_or_projection_review": [
-      "TriggerReaction",
-      "ActionProposal",
-      "ActionRecord"
+      "SHAPE-TriggerReaction",
+      "PARENT-ActionProposal",
+      "PARENT-ActionRecord",
+      "PARENT-ActionEffectSemantics"
     ],
     "source_units": [
       {
@@ -634,7 +699,27 @@
           "message_order": 6
         }
       }
-    ]
+    ],
+    "targeted_review": {
+      "issue_ids": [
+        "SHAPE-TriggerReaction",
+        "PARENT-ActionProposal",
+        "PARENT-ActionRecord",
+        "PARENT-ActionEffectSemantics"
+      ],
+      "resolved_issue_ids": [],
+      "implementation_deferred_issue_ids": [],
+      "open_issue_ids": [
+        "SHAPE-TriggerReaction",
+        "PARENT-ActionProposal",
+        "PARENT-ActionRecord",
+        "PARENT-ActionEffectSemantics"
+      ],
+      "authority_transition_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "durability_recovery_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "rejection_check": "MISSING REQUIRED INFORMATION REMAINS REJECTED",
+      "full_acceptance": false
+    }
   },
   {
     "id": "X8-05",
@@ -653,10 +738,11 @@
     "atomicity_durability": "Durable capsule bytes/hash precede atomic suspension metadata and legal recovery continuation. Cursor advancement cannot outrun required durable reaction.",
     "failure_retry_recovery": "Missing/corrupt capsule or unresolved action blocks resume. Persistence failure cannot be reported as guaranteed automatic recovery.",
     "rejection_conditions": "Reject corrupt/missing payload, stale check at commit, unproved action outcome or expanded recovery scope.",
-    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "status": "SOURCE_CONSTRAINTS_RECHECKED; FULL_ACCEPTANCE_OPEN",
     "field_or_projection_review": [
-      "ResumptionCapsule",
-      "ResumeAssessment"
+      "SHAPE-ResumptionCapsule",
+      "PARENT-ResumptionCapsule",
+      "SHAPE-ResumeAssessment"
     ],
     "source_units": [
       {
@@ -807,7 +893,28 @@
           "message_order": 20
         }
       }
-    ]
+    ],
+    "targeted_review": {
+      "issue_ids": [
+        "SHAPE-ResumptionCapsule",
+        "PARENT-ResumptionCapsule",
+        "SHAPE-ResumeAssessment",
+        "SHAPE-TriggerSourceCursor"
+      ],
+      "resolved_issue_ids": [],
+      "implementation_deferred_issue_ids": [
+        "SHAPE-TriggerSourceCursor"
+      ],
+      "open_issue_ids": [
+        "SHAPE-ResumptionCapsule",
+        "PARENT-ResumptionCapsule",
+        "SHAPE-ResumeAssessment"
+      ],
+      "authority_transition_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "durability_recovery_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "rejection_check": "MISSING REQUIRED INFORMATION REMAINS REJECTED",
+      "full_acceptance": false
+    }
   },
   {
     "id": "X8-06",
@@ -827,12 +934,13 @@
     "atomicity_durability": "Compare expected state/resources, commit dispatch ownership, persist acknowledged recoverable intent, validate effective execution at last enforceable boundary, then dispatch.",
     "failure_retry_recovery": "Before possible dispatch, revoke/revalidate. At intent or later, preserve unknown effects and reconcile; compensation is a new authorized action.",
     "rejection_conditions": "Reject stale epoch, failed expected-version check, altered effective operation, unknown containment or missing recoverable durability.",
-    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "status": "SOURCE_CONSTRAINTS_RECHECKED; FULL_ACCEPTANCE_OPEN",
     "field_or_projection_review": [
-      "Slice",
-      "ActionProposal",
-      "ActionRecord",
-      "ControlCommit"
+      "PARENT-ActionProposal",
+      "PARENT-ActionRecord",
+      "PARENT-ActionEffectSemantics",
+      "PARENT-Slice",
+      "CE-01"
     ],
     "source_units": [
       {
@@ -1011,7 +1119,32 @@
           "message_order": 1
         }
       }
-    ]
+    ],
+    "targeted_review": {
+      "issue_ids": [
+        "PARENT-ActionProposal",
+        "PARENT-ActionRecord",
+        "PARENT-ActionEffectSemantics",
+        "PARENT-Slice",
+        "SHAPE-ContainmentProof",
+        "CE-01"
+      ],
+      "resolved_issue_ids": [
+        "SHAPE-ContainmentProof"
+      ],
+      "implementation_deferred_issue_ids": [],
+      "open_issue_ids": [
+        "PARENT-ActionProposal",
+        "PARENT-ActionRecord",
+        "PARENT-ActionEffectSemantics",
+        "PARENT-Slice",
+        "CE-01"
+      ],
+      "authority_transition_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "durability_recovery_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "rejection_check": "MISSING REQUIRED INFORMATION REMAINS REJECTED",
+      "full_acceptance": false
+    }
   },
   {
     "id": "X8-07",
@@ -1032,13 +1165,14 @@
     "atomicity_durability": "Observation append has legal commit ordering; historical capture and accepted evidence are immutable. Source causality is not inferred from arrival.",
     "failure_retry_recovery": "Duplicate capture retains origin lineage. Missing causal parent may allow raw capture while causal attachment remains pending.",
     "rejection_conditions": "Reject model-fabricated observation, semantic capture deletion, unsupported evidence root, wrapper inflation or forged source/authority metadata.",
-    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "status": "SOURCE_CONSTRAINTS_RECHECKED; FULL_ACCEPTANCE_OPEN",
     "field_or_projection_review": [
-      "Observation",
-      "EvidenceLink",
-      "Claim",
-      "Hypothesis",
-      "CanonicalMutation"
+      "PARENT-Observation",
+      "PARENT-EvidenceLink",
+      "PARENT-Claim",
+      "PARENT-Hypothesis",
+      "CE-01",
+      "HG-01"
     ],
     "source_units": [
       {
@@ -1257,7 +1391,34 @@
           "message_order": 1
         }
       }
-    ]
+    ],
+    "targeted_review": {
+      "issue_ids": [
+        "PARENT-Observation",
+        "SHAPE-EvidenceLink",
+        "PARENT-EvidenceLink",
+        "PARENT-Claim",
+        "PARENT-Hypothesis",
+        "HG-01",
+        "CE-01"
+      ],
+      "resolved_issue_ids": [],
+      "implementation_deferred_issue_ids": [
+        "SHAPE-EvidenceLink"
+      ],
+      "open_issue_ids": [
+        "PARENT-Observation",
+        "PARENT-EvidenceLink",
+        "PARENT-Claim",
+        "PARENT-Hypothesis",
+        "CE-01",
+        "HG-01"
+      ],
+      "authority_transition_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "durability_recovery_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "rejection_check": "MISSING REQUIRED INFORMATION REMAINS REJECTED",
+      "full_acceptance": false
+    }
   },
   {
     "id": "X8-08",
@@ -1279,11 +1440,12 @@
     "atomicity_durability": "Prediction freeze, authorized design snapshot and experiment authorization are atomic. Every run pins exact design and relevant execution context.",
     "failure_retry_recovery": "Execution failure differs from falsified prediction. Nonconforming or unresolved required effects cannot close the intended experiment.",
     "rejection_conditions": "Reject post-result prediction rewriting, current-experiment-only run binding, causal truth from simulation or COMPLETED alone.",
-    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "status": "SOURCE_CONSTRAINTS_RECHECKED; FULL_ACCEPTANCE_OPEN",
     "field_or_projection_review": [
-      "Hypothesis",
-      "Experiment",
-      "OperationalCausalClaim"
+      "PARENT-Hypothesis",
+      "PARENT-Experiment",
+      "PARENT-OperationalCausalClaim",
+      "HG-01"
     ],
     "source_units": [
       {
@@ -1504,7 +1666,27 @@
           "message_order": 2
         }
       }
-    ]
+    ],
+    "targeted_review": {
+      "issue_ids": [
+        "PARENT-Hypothesis",
+        "PARENT-Experiment",
+        "PARENT-OperationalCausalClaim",
+        "HG-01"
+      ],
+      "resolved_issue_ids": [],
+      "implementation_deferred_issue_ids": [],
+      "open_issue_ids": [
+        "PARENT-Hypothesis",
+        "PARENT-Experiment",
+        "PARENT-OperationalCausalClaim",
+        "HG-01"
+      ],
+      "authority_transition_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "durability_recovery_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "rejection_check": "MISSING REQUIRED INFORMATION REMAINS REJECTED",
+      "full_acceptance": false
+    }
   },
   {
     "id": "X8-09",
@@ -1524,13 +1706,10 @@
     "atomicity_durability": "Preserve conflicting observations and comparison provenance; lifecycle changes cannot erase historical capture.",
     "failure_retry_recovery": "Resolve dimensions such as time/input/environment before interpretation; unknown comparability requires acquisition rather than invented cause.",
     "rejection_conditions": "Reject hidden root-cause truth in dimension_analysis or inconvenient observation invalidation.",
-    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "status": "SOURCE_CONSTRAINTS_RECHECKED; FULL_ACCEPTANCE_OPEN",
     "field_or_projection_review": [
-      "ContradictionRecord",
-      "Observation",
-      "InformationNeed",
-      "Hypothesis",
-      "Claim"
+      "PARENT-ContradictionRecord",
+      "PARENT-Observation"
     ],
     "source_units": [
       {
@@ -1685,7 +1864,26 @@
           "message_order": 2
         }
       }
-    ]
+    ],
+    "targeted_review": {
+      "issue_ids": [
+        "PARENT-ContradictionRecord",
+        "PARENT-Observation",
+        "PARENT-InformationNeed"
+      ],
+      "resolved_issue_ids": [
+        "PARENT-InformationNeed"
+      ],
+      "implementation_deferred_issue_ids": [],
+      "open_issue_ids": [
+        "PARENT-ContradictionRecord",
+        "PARENT-Observation"
+      ],
+      "authority_transition_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "durability_recovery_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "rejection_check": "MISSING REQUIRED INFORMATION REMAINS REJECTED",
+      "full_acceptance": false
+    }
   },
   {
     "id": "X8-10",
@@ -1706,9 +1904,12 @@
     "atomicity_durability": "Use coherent dependency universe, transitive lineage and commit-time recheck of affected state. Completion is atomically bound to evidence-covered state.",
     "failure_retry_recovery": "Unrelated repository changes need not invalidate valid scoped knowledge. Incomplete indexes and unproved negative-query coverage remain UNKNOWN.",
     "rejection_conditions": "Reject downgraded EXACT requirements, COMPATIBLE without proof, stale supporting dependencies or future-state completion claims.",
-    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "status": "SOURCE_CONSTRAINTS_RECHECKED; FULL_ACCEPTANCE_OPEN",
     "field_or_projection_review": [
-      "CanonicalMutation"
+      "PARENT-DependencyStamp",
+      "PARENT-QueryDependencyStamp",
+      "PARENT-Slice",
+      "PARENT-Decision"
     ],
     "source_units": [
       {
@@ -1911,7 +2112,32 @@
           "message_order": 1
         }
       }
-    ]
+    ],
+    "targeted_review": {
+      "issue_ids": [
+        "PARENT-DependencyStamp",
+        "PARENT-QueryDependencyStamp",
+        "PARENT-TemporalValidity",
+        "PARENT-Slice",
+        "PARENT-Decision",
+        "PARENT-Invariant"
+      ],
+      "resolved_issue_ids": [
+        "PARENT-TemporalValidity",
+        "PARENT-Invariant"
+      ],
+      "implementation_deferred_issue_ids": [],
+      "open_issue_ids": [
+        "PARENT-DependencyStamp",
+        "PARENT-QueryDependencyStamp",
+        "PARENT-Slice",
+        "PARENT-Decision"
+      ],
+      "authority_transition_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "durability_recovery_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "rejection_check": "MISSING REQUIRED INFORMATION REMAINS REJECTED",
+      "full_acceptance": false
+    }
   },
   {
     "id": "X8-11",
@@ -1932,10 +2158,10 @@
     "atomicity_durability": "Freeze proposal/evidence binding, revalidate LearningGate at commit and use governed revision transaction. Actual outbound bytes/destination/purpose must match sealed admission.",
     "failure_retry_recovery": "Replay learning promotion idempotently. Revision conflicts require new evaluation; provider switching or altered outbound context requires renewed disclosure checks.",
     "rejection_conditions": "Reject unsupported causal memory, repeated evidence counted as diversity, stale promotion, stored prompt authority or unapproved actual egress.",
-    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "status": "SOURCE_CONSTRAINTS_RECHECKED; FULL_ACCEPTANCE_OPEN",
     "field_or_projection_review": [
-      "Observation",
-      "MemoryProposal"
+      "PARENT-Observation",
+      "TRANSPORT-MemoryRetrievalResult"
     ],
     "source_units": [
       {
@@ -2136,7 +2362,26 @@
           "message_order": 25
         }
       }
-    ]
+    ],
+    "targeted_review": {
+      "issue_ids": [
+        "PARENT-MemoryProposal",
+        "PARENT-Observation",
+        "TRANSPORT-MemoryRetrievalResult"
+      ],
+      "resolved_issue_ids": [
+        "PARENT-MemoryProposal"
+      ],
+      "implementation_deferred_issue_ids": [],
+      "open_issue_ids": [
+        "PARENT-Observation",
+        "TRANSPORT-MemoryRetrievalResult"
+      ],
+      "authority_transition_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "durability_recovery_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "rejection_check": "MISSING REQUIRED INFORMATION REMAINS REJECTED",
+      "full_acceptance": false
+    }
   },
   {
     "id": "X8-12",
@@ -2157,10 +2402,12 @@
     "atomicity_durability": "Prove acknowledged-history continuity, anti-rollback/admission frontiers, containment and disclosure barriers before enabling affected execution.",
     "failure_retry_recovery": "Restore cannot undo possible post-backup effects. Unknown scope uses conservative bounds; independent proved scopes may proceed.",
     "rejection_conditions": "Reject guessed successful effect, blind retry, unfenced stale writer, missing authority frontier or uncontained restored executable data.",
-    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "status": "SOURCE_CONSTRAINTS_RECHECKED; FULL_ACCEPTANCE_OPEN",
     "field_or_projection_review": [
-      "ContainmentProof",
-      "ActionRecord"
+      "PARENT-ActionRecord",
+      "PARENT-ActionEffectSemantics",
+      "SHAPE-ResumptionCapsule",
+      "SHAPE-ResumeAssessment"
     ],
     "source_units": [
       {
@@ -2228,9 +2475,11 @@
       {
         "type": "ContainmentProof",
         "owner": "L3",
-        "status": "MULTIPLE_NATIVE_SURFACES_REQUIRE_SCOPED_RECONCILIATION",
-        "effective_raw": null,
-        "explicit_overlays": [],
+        "status": "SOURCE_RECORD_SURFACE_WITH_EXPLICIT_REPLACEMENT",
+        "effective_raw": "ContainmentProof {\n    proof_id\n\n    sandbox_ref\n\n    effective_config_fingerprint\n    executor_generation\n\n    mount_namespace_ref?\n    filesystem_policy_ref\n    network_policy_ref\n    credential_policy_ref\n    process_policy_ref\n\n    enforcement_basis_refs[]\n\n    coverage_scope\n\n    evaluated_at\n}",
+        "explicit_overlays": [
+          "RDMS-04 C01-27/28 binds effective containment; original reachable-effect isolation duties remain required."
+        ],
         "associated_contracts": null,
         "selected": {
           "name": "ContainmentProof",
@@ -2363,6 +2612,29 @@
           "message_order": 21
         }
       }
-    ]
+    ],
+    "targeted_review": {
+      "issue_ids": [
+        "SHAPE-ContainmentProof",
+        "PARENT-ActionRecord",
+        "PARENT-ActionEffectSemantics",
+        "SHAPE-ResumptionCapsule",
+        "SHAPE-ResumeAssessment"
+      ],
+      "resolved_issue_ids": [
+        "SHAPE-ContainmentProof"
+      ],
+      "implementation_deferred_issue_ids": [],
+      "open_issue_ids": [
+        "PARENT-ActionRecord",
+        "PARENT-ActionEffectSemantics",
+        "SHAPE-ResumptionCapsule",
+        "SHAPE-ResumeAssessment"
+      ],
+      "authority_transition_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "durability_recovery_check": "BASELINE SOURCE CONSTRAINTS PRESERVED",
+      "rejection_check": "MISSING REQUIRED INFORMATION REMAINS REJECTED",
+      "full_acceptance": false
+    }
   }
 ]

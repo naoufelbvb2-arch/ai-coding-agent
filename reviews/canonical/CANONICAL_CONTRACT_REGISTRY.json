@@ -473,6 +473,13 @@
       "compensation_spec",
       "verification_mode",
       "timeout_policy_ref"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-ActionEffectSemantics",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
     ]
   },
   {
@@ -610,6 +617,13 @@
       "effect_semantics_ref",
       "execution_spec_ref",
       "mode"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-ActionProposal",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
     ]
   },
   {
@@ -686,6 +700,13 @@
       "compensation_action_ref",
       "created_commit_seq",
       "updated_commit_seq"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-ActionRecord",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
     ]
   },
   {
@@ -1985,7 +2006,14 @@
     "distinct_native_surfaces": 0,
     "parent_or_projection_variance": false,
     "interface_signature_ratified": false,
-    "current_top_level_fields": []
+    "current_top_level_fields": [],
+    "targeted_review": [
+      {
+        "issue_id": "SHAPE-CanonicalStateView",
+        "classification": "C",
+        "status": "DEFERRED_TO_IMPLEMENTATION_DESIGN"
+      }
+    ]
   },
   {
     "type": "CapabilityActivationContract",
@@ -2453,6 +2481,13 @@
       "dependency_set_ref",
       "temporal_validity",
       "status"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-Claim",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
     ]
   },
   {
@@ -3610,6 +3645,13 @@
       "dependency_set_ref",
       "assessed_at_commit_seq",
       "supersedes_assessment_id"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-ConfidenceAssessment",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
     ]
   },
   {
@@ -3717,13 +3759,22 @@
       "bundle_end_line": 2181,
       "message_order": 7
     },
-    "effective_raw": null,
-    "explicit_overlays": [],
-    "status": "MULTIPLE_NATIVE_SURFACES_REQUIRE_SCOPED_RECONCILIATION",
+    "effective_raw": "ContainmentProof {\n    proof_id\n\n    sandbox_ref\n\n    effective_config_fingerprint\n    executor_generation\n\n    mount_namespace_ref?\n    filesystem_policy_ref\n    network_policy_ref\n    credential_policy_ref\n    process_policy_ref\n\n    enforcement_basis_refs[]\n\n    coverage_scope\n\n    evaluated_at\n}",
+    "explicit_overlays": [
+      "RDMS-04 C01-27/28 binds effective containment; original reachable-effect isolation duties remain required."
+    ],
+    "status": "SOURCE_RECORD_SURFACE_WITH_EXPLICIT_REPLACEMENT",
     "distinct_native_surfaces": 2,
     "parent_or_projection_variance": true,
     "interface_signature_ratified": false,
-    "current_top_level_fields": []
+    "current_top_level_fields": [],
+    "targeted_review": [
+      {
+        "issue_id": "SHAPE-ContainmentProof",
+        "classification": "D",
+        "status": "RESOLVED_WITH_SOURCE_EVIDENCE"
+      }
+    ]
   },
   {
     "type": "ContentEnvelope",
@@ -4137,6 +4188,13 @@
       "information_need_id",
       "explanation_ref",
       "resolution_ref"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-ContradictionRecord",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
     ]
   },
   {
@@ -5019,6 +5077,13 @@
       "status",
       "dependency_set_ref",
       "validity_conditions"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-Decision",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
     ]
   },
   {
@@ -6176,6 +6241,13 @@
       "version_or_hash",
       "validity_condition_ref",
       "freshness_requirement"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-DependencyStamp",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
     ]
   },
   {
@@ -7888,7 +7960,19 @@
       "EvidenceBasis",
       "VersionedEntityRef<AuthorityBinding> when AUTHORITATIVE"
     ],
-    "current_top_level_fields": []
+    "current_top_level_fields": [],
+    "targeted_review": [
+      {
+        "issue_id": "SHAPE-EvidenceLink",
+        "classification": "C",
+        "status": "DEFERRED_TO_IMPLEMENTATION_DESIGN"
+      },
+      {
+        "issue_id": "PARENT-EvidenceLink",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
+    ]
   },
   {
     "type": "ExecutionContainmentContract",
@@ -8461,6 +8545,13 @@
       "risk_refs",
       "lifecycle",
       "prediction_set_frozen_at_commit_seq"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-Experiment",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
     ]
   },
   {
@@ -9382,6 +9473,13 @@
       "blocker_refs",
       "waiting_on_refs",
       "terminal_reason"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-Goal",
+        "classification": "D",
+        "status": "RESOLVED_WITH_SOURCE_EVIDENCE"
+      }
     ]
   },
   {
@@ -9749,6 +9847,13 @@
       "lifecycle",
       "dependency_set_ref",
       "closure_ref"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-Hypothesis",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
     ]
   },
   {
@@ -10269,6 +10374,13 @@
       "status",
       "resolution_ref",
       "opened_from"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-InformationNeed",
+        "classification": "D",
+        "status": "RESOLVED_WITH_SOURCE_EVIDENCE"
+      }
     ]
   },
   {
@@ -10679,6 +10791,13 @@
       "verification_spec_ref",
       "source_authority_ref",
       "status"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-Invariant",
+        "classification": "D",
+        "status": "RESOLVED_WITH_SOURCE_EVIDENCE"
+      }
     ]
   },
   {
@@ -11658,6 +11777,13 @@
       "dependency_set_ref",
       "provenance_ref",
       "proposed_memory_category"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-MemoryProposal",
+        "classification": "D",
+        "status": "RESOLVED_WITH_SOURCE_EVIDENCE"
+      }
     ]
   },
   {
@@ -12805,6 +12931,13 @@
       "trust_context_ref",
       "normalization_profile_ref",
       "evidence_origin_group_ref"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-Observation",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
     ]
   },
   {
@@ -13334,6 +13467,13 @@
       "contradictory_observation_refs",
       "status",
       "promoted_commit_seq"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-OperationalCausalClaim",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
     ]
   },
   {
@@ -14589,7 +14729,14 @@
       "ProjectStatus",
       "ProcessRuntimeMode"
     ],
-    "current_top_level_fields": []
+    "current_top_level_fields": [],
+    "targeted_review": [
+      {
+        "issue_id": "SHAPE-ProjectRuntime",
+        "classification": "C",
+        "status": "DEFERRED_TO_IMPLEMENTATION_DESIGN"
+      }
+    ]
   },
   {
     "type": "ProjectStatus",
@@ -14867,6 +15014,13 @@
       "frontier_hash",
       "invalidation_rule_ref",
       "repo_ref"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-QueryDependencyStamp",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
     ]
   },
   {
@@ -17595,7 +17749,14 @@
     "distinct_native_surfaces": 2,
     "parent_or_projection_variance": true,
     "interface_signature_ratified": false,
-    "current_top_level_fields": []
+    "current_top_level_fields": [],
+    "targeted_review": [
+      {
+        "issue_id": "SHAPE-ResumeAssessment",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
+    ]
   },
   {
     "type": "ResumptionCapsule",
@@ -17670,7 +17831,19 @@
     "distinct_native_surfaces": 2,
     "parent_or_projection_variance": true,
     "interface_signature_ratified": false,
-    "current_top_level_fields": []
+    "current_top_level_fields": [],
+    "targeted_review": [
+      {
+        "issue_id": "SHAPE-ResumptionCapsule",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      },
+      {
+        "issue_id": "PARENT-ResumptionCapsule",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
+    ]
   },
   {
     "type": "RetrievalCandidate",
@@ -17832,13 +18005,22 @@
       "bundle_end_line": 1191,
       "message_order": 2
     },
-    "effective_raw": null,
-    "explicit_overlays": [],
-    "status": "PARTIAL_RISK_OVERLAY_WITH_REQUIRED_BASELINE_PRESERVATION",
+    "effective_raw": "Risk {\n    risk_id\n\n    statement\n\n    scope: ScopeSpec\n\n    category:\n        CORRECTNESS\n        ARCHITECTURE\n        SECURITY\n        DATA\n        PERFORMANCE\n        OPERABILITY\n        COMPATIBILITY\n        DELIVERY\n        KNOWLEDGE\n        OTHER\n\n    likelihood:\n        UNKNOWN\n        LOW\n        MEDIUM\n        HIGH\n\n    impact:\n        LOW\n        MEDIUM\n        HIGH\n        CRITICAL\n\n    affected_refs[]\n\n    mitigation_refs[]\n\n    evidence_basis_refs[]\n\n    owner_ref?\n\n    lifecycle:\n        OPEN\n        MITIGATED\n        REALIZED\n        OBSOLETE\n\n    treatment:\n        UNASSESSED\n        MONITOR\n        MITIGATE\n        ACCEPT\n        AVOID\n\n    accepted_by_decision_id?\n\n    current_assessment_ref?\n}",
+    "explicit_overlays": [
+      "RDMS-02 C01-30 splits status into lifecycle/treatment and adds current_assessment_ref; the ellipsis retains all unrelated baseline fields. No historical state migration or likelihood/impact alias is ratified."
+    ],
+    "status": "EXPLICIT_SCOPED_OVERLAY_APPLIED",
     "distinct_native_surfaces": 1,
     "parent_or_projection_variance": true,
     "interface_signature_ratified": false,
-    "current_top_level_fields": []
+    "current_top_level_fields": [],
+    "targeted_review": [
+      {
+        "issue_id": "SHAPE-Risk",
+        "classification": "D",
+        "status": "RESOLVED_WITH_SOURCE_EVIDENCE"
+      }
+    ]
   },
   {
     "type": "RiskAssessment",
@@ -18122,6 +18304,13 @@
       "observation_refs",
       "final_sandbox_snapshot_ref",
       "completed_at"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-SandboxActivityRecord",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
     ]
   },
   {
@@ -18840,6 +19029,13 @@
       "base_repo_ref",
       "actual_effects",
       "actual_change_surface"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-Slice",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
     ]
   },
   {
@@ -20248,7 +20444,14 @@
     "distinct_native_surfaces": 2,
     "parent_or_projection_variance": true,
     "interface_signature_ratified": false,
-    "current_top_level_fields": []
+    "current_top_level_fields": [],
+    "targeted_review": [
+      {
+        "issue_id": "SHAPE-State",
+        "classification": "C",
+        "status": "DEFERRED_TO_IMPLEMENTATION_DESIGN"
+      }
+    ]
   },
   {
     "type": "SupportAssessment",
@@ -20515,7 +20718,14 @@
     "distinct_native_surfaces": 2,
     "parent_or_projection_variance": true,
     "interface_signature_ratified": false,
-    "current_top_level_fields": []
+    "current_top_level_fields": [],
+    "targeted_review": [
+      {
+        "issue_id": "SHAPE-TemporalSchedule",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
+    ]
   },
   {
     "type": "TemporalValidity",
@@ -20582,6 +20792,13 @@
       "state_version",
       "valid_until_condition",
       "freshness"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-TemporalValidity",
+        "classification": "D",
+        "status": "RESOLVED_WITH_SOURCE_EVIDENCE"
+      }
     ]
   },
   {
@@ -21100,7 +21317,14 @@
     "distinct_native_surfaces": 0,
     "parent_or_projection_variance": false,
     "interface_signature_ratified": false,
-    "current_top_level_fields": []
+    "current_top_level_fields": [],
+    "targeted_review": [
+      {
+        "issue_id": "SHAPE-ToolResult",
+        "classification": "C",
+        "status": "DEFERRED_TO_IMPLEMENTATION_DESIGN"
+      }
+    ]
   },
   {
     "type": "TransferAssessment",
@@ -21279,6 +21503,13 @@
       "predicate_spec",
       "dependency_set_ref",
       "required_evidence_policy_ref"
+    ],
+    "targeted_review": [
+      {
+        "issue_id": "PARENT-TriggerCondition",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
     ]
   },
   {
@@ -21662,13 +21893,22 @@
       "bundle_end_line": 1704,
       "message_order": 10
     },
-    "effective_raw": null,
-    "explicit_overlays": [],
-    "status": "MULTIPLE_NATIVE_SURFACES_REQUIRE_SCOPED_RECONCILIATION",
+    "effective_raw": "TriggerFire {\n    fire_id\n\n    trigger_definition_snapshot_ref\n    qualified_occurrence_ref\n\n    evidence_basis_refs[]\n    source_frontier_ref\n\n    fire_identity_key\n\n    created_commit_seq\n}",
+    "explicit_overlays": [
+      "RDMS-05 C01-12/13/14 replaces unstable fire construction with frozen definition and qualified occurrence identity; C01-06 governs atomic durable processing."
+    ],
+    "status": "SOURCE_RECORD_SURFACE_WITH_EXPLICIT_REPLACEMENT",
     "distinct_native_surfaces": 2,
     "parent_or_projection_variance": true,
     "interface_signature_ratified": false,
-    "current_top_level_fields": []
+    "current_top_level_fields": [],
+    "targeted_review": [
+      {
+        "issue_id": "SHAPE-TriggerFire",
+        "classification": "D",
+        "status": "RESOLVED_WITH_SOURCE_EVIDENCE"
+      }
+    ]
   },
   {
     "type": "TriggerReaction",
@@ -21728,7 +21968,14 @@
     "distinct_native_surfaces": 2,
     "parent_or_projection_variance": true,
     "interface_signature_ratified": false,
-    "current_top_level_fields": []
+    "current_top_level_fields": [],
+    "targeted_review": [
+      {
+        "issue_id": "SHAPE-TriggerReaction",
+        "classification": "B",
+        "status": "OPEN_MAPPING_PROOF"
+      }
+    ]
   },
   {
     "type": "TriggerRecoveryFrontier",
@@ -21944,7 +22191,14 @@
       "IngressCursor",
       "TriggerProcessingCursor"
     ],
-    "current_top_level_fields": []
+    "current_top_level_fields": [],
+    "targeted_review": [
+      {
+        "issue_id": "SHAPE-TriggerSourceCursor",
+        "classification": "C",
+        "status": "DEFERRED_TO_IMPLEMENTATION_DESIGN"
+      }
+    ]
   },
   {
     "type": "TrustedEnvelopeAdmission",

@@ -3,21 +3,21 @@
   "counts": {
     "archive_files": 195,
     "catalogued_source_units": 2628,
-    "source_backed_articles": 1615,
-    "local_links_checked": 2395,
-    "single_owner_exported_record_definitions": 385,
+    "source_backed_articles": 1655,
+    "local_links_checked": 2832,
+    "single_owner_exported_record_definitions": 388,
     "interface_paths_processed": 12
   },
   "failures": [],
   "document_sha256": {
     "L0": "2e25c819a9a662ce20a241226260ca0a2fea5ebc3333171d9ada834bd83a69e7",
-    "L1": "cbcd52503a3c4ca40a8ad1d4361b610691aa301dfa0e862b9a11cd1a9c9c6b42",
-    "L2": "db02d224ca8f41541241326f2cd8a8aacd884288322b84bc6d0ac983c7296543",
-    "L3": "46ff88e280cefc06d5b1f8e58e1fc42f67a485c49849ba3bfaf7d90057928c92",
-    "L4": "47c35130f9c9e3fbbc673ae6239e2ccbd2eb43ed360d0e1477aee8d843168ac6",
-    "L5": "ee9eb7e1ae4176249b3a8d938e10cd116528d293b59a00c67955b4d622322a7f",
-    "L6": "537d899d1de3b4c2c3eb2032ab617a836894201454770ca4dc3654c1b37e4b88",
-    "L7": "f07421f6459b22b1812fd84254b6b792c6a3bf065128820542c5828d3d018e4e"
+    "L1": "30a8e06063630ff042c007f27eefec254521d7703ceb6e9095a6568673a7f61f",
+    "L2": "dbd17f940888f9c83288bcc207ad78bef25748467b2b7c34cdef7b11b2abff90",
+    "L3": "c5634282698670d8babd9821a104c80baadc1cc9ddae3ea7eb835bd6dce8e1c0",
+    "L4": "e0f6c682e12af83bb3965e11e9daee6dcbed7c76042c4fd0c6159c9064c51321",
+    "L5": "33db0ec3a4f6a69d94d637fa903d0b567719b54be4642868e6230c2fca04e2c8",
+    "L6": "74b1793f5120cfe70fe74cfa3d2f4d14f0a072cd52ca5d8421df49411478fa52",
+    "L7": "89539243e8dedda70487a671b8eb5bf2bfdbe3eddb447cab0fbefbc7061959e6"
   },
   "mandatory_semantic_acceptance": {
     "complete_authoritative_source_inventory": "PASS",
@@ -25,13 +25,32 @@
     "original_source_sha256_integrity": "PASS",
     "unique_assigned_contract_ownership": "PASS",
     "known_explicit_field_replacements": "PASS",
-    "complete_non_superseded_field_preservation": "OPEN; exact shape and parent/projection questions recorded",
+    "complete_non_superseded_field_preservation": "8 source-determined questions closed; 25 mapping proofs and 1 architectural decision OPEN; 6 representation details deferred with binding obligations",
     "amendment_precedence_and_no_contradictory_effective_laws": "SCOPED REPLACEMENTS VERIFIED; full semantic acceptance remains OPEN",
     "no_unauthorized_authority_expansion": "SOURCE-BOUND AUTHORITY CONTRACTS RECORDED; independent semantic review required",
-    "cross_layer_interfaces": "12 constraints reviewed; complete field/projection acceptance OPEN",
+    "cross_layer_interfaces": "12 baseline legal-semantic constraints rechecked; full field/preservation acceptance remains OPEN on all 12",
     "durability_and_recovery": "SOURCE REQUIREMENTS PRESERVED; serialization/admission conformance and runtime proof not claimed"
   },
   "full_normative_completion": false,
   "architecture_frozen": false,
-  "production_implementation": false
+  "production_implementation": false,
+  "targeted_normative_review": {
+    "baseline": "d50b7f88105b5397aa7d76e0bb8a1c2099a7c85e",
+    "original_questions": 40,
+    "classification_totals": {
+      "A": 0,
+      "B": 25,
+      "C": 6,
+      "D": 8,
+      "E": 1
+    },
+    "resolved": 8,
+    "implementation_deferred": 6,
+    "open_lossless_mapping_proofs": 25,
+    "open_normative_conflicts": 0,
+    "architectural_decisions": 1,
+    "freeze_readiness": "HOLD",
+    "architecture_frozen": false,
+    "new_architectural_decision_adopted": false
+  }
 }

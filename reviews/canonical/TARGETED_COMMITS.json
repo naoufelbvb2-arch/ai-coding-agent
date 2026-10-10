@@ -1,0 +1,51 @@
+[
+  {
+    "sha": "e7a0b81ad0fedcdef683855476f159b02593de42",
+    "subject": "docs(L3): bind approved containment and retain action contract obligations",
+    "files": [
+      "architecture/L3_ACTIONS.md"
+    ]
+  },
+  {
+    "sha": "5cc4d34df8f59fe5a8568c2169f939b6e7d6947e",
+    "subject": "docs(L1): clarify mandatory event metadata and deferred runtime embedding",
+    "files": [
+      "architecture/L1_CONTROL.md"
+    ]
+  },
+  {
+    "sha": "33eb2bddc66d5830fd39d78ba72e7022b64f044a",
+    "subject": "docs(L6): delimit capsule context and resume preservation proofs",
+    "files": [
+      "architecture/L6_RECOVERY.md"
+    ]
+  },
+  {
+    "sha": "d57918afd5d8453d20f658696cb8b49216c76488",
+    "subject": "docs(L4): bind stable fires and classify temporal contract questions",
+    "files": [
+      "architecture/L4_TEMPORAL_SPECIALISTS.md"
+    ]
+  },
+  {
+    "sha": "c2c9c1c317b71455c07194be4157152b5ade8011",
+    "subject": "docs(L2): apply scoped Risk amendment and delimit admission blockers",
+    "files": [
+      "architecture/L2_COGNITION.md"
+    ]
+  },
+  {
+    "sha": "45db6bb0df354395bce57b28905331a044858198",
+    "subject": "docs(L5): prove source-owned MemoryProposal preservation",
+    "files": [
+      "architecture/L5_MEMORY.md"
+    ]
+  },
+  {
+    "sha": "c6d0cf74cddc95d121400265ba81e328836f03b2",
+    "subject": "docs(L7): retain canonical payload requirements across transport projections",
+    "files": [
+      "architecture/L7_RUNTIME_INTEGRATION.md"
+    ]
+  }
+]

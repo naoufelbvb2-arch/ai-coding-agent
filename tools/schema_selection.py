@@ -115,7 +115,23 @@ def select():
         if len(unique) > 1 and not record["explicit_overlays"] and name not in RETIRED:
             record["status"] = "MULTIPLE_NATIVE_SURFACES_REQUIRE_SCOPED_RECONCILIATION"
         if name == "Risk":
-            record["status"] = "PARTIAL_RISK_OVERLAY_WITH_REQUIRED_BASELINE_PRESERVATION"
+            baseline = next(x for x in items if x['source_part'] == 'Original draft' and not x['partial_or_example'])
+            raw = field_replace(baseline['raw'], 'status',
+                '    lifecycle:\n        OPEN\n        MITIGATED\n        REALIZED\n        OBSOLETE\n\n'
+                '    treatment:\n        UNASSESSED\n        MONITOR\n        MITIGATE\n        ACCEPT\n        AVOID')
+            raw = add_fields(raw, '    current_assessment_ref?')
+            record.update(selected=baseline, effective_raw=raw, status='EXPLICIT_SCOPED_OVERLAY_APPLIED')
+            record['explicit_overlays'].append('RDMS-02 C01-30 splits status into lifecycle/treatment and adds current_assessment_ref; the ellipsis retains all unrelated baseline fields. No historical state migration or likelihood/impact alias is ratified.')
+        if name in {'ContainmentProof', 'TriggerFire'}:
+            # C01 scoped native restatements; remaining parent projection
+            # questions are not closed by selecting a newer record.
+            approved = next(x for x in candidates if x['source_part'].startswith('C01'))
+            record.update(selected=approved, effective_raw=approved['raw'],
+                          status='SOURCE_RECORD_SURFACE_WITH_EXPLICIT_REPLACEMENT')
+            record['explicit_overlays'].append(
+                'RDMS-04 C01-27/28 binds effective containment; original reachable-effect isolation duties remain required.'
+                if name == 'ContainmentProof' else
+                'RDMS-05 C01-12/13/14 replaces unstable fire construction with frozen definition and qualified occurrence identity; C01-06 governs atomic durable processing.')
         if source == "RDMS-01" and name in {"ControlCommit", "ControlEvent", "Snapshot", "IndexMetadata", "RepoRef"}:
             record["status"] = "SOURCE_RECORD_SURFACE_WITH_EXPLICIT_REPLACEMENT"
             record["explicit_overlays"].append("RDMS-01 R1 replaces this native declaration; FCA event metadata still applies and CE-01 remains open")

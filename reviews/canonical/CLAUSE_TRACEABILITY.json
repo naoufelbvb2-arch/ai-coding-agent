@@ -2966,7 +2966,7 @@
     "clause_id": "L2-X-INV",
     "owner": "L2",
     "document": "architecture/L2_COGNITION.md",
-    "line": 6362,
+    "line": 6418,
     "source_unit_ids": [
       "RDMS-08-M17-U112"
     ],
@@ -2976,7 +2976,7 @@
     "clause_id": "L2-BI16",
     "owner": "L2",
     "document": "architecture/L2_COGNITION.md",
-    "line": 6420,
+    "line": 6476,
     "source_unit_ids": [
       "RDMS-02-M02-U073",
       "RDMS-08-M16-U140"
@@ -5307,7 +5307,7 @@
     "clause_id": "L3-BI6",
     "owner": "L3",
     "document": "architecture/L3_ACTIONS.md",
-    "line": 6314,
+    "line": 6334,
     "source_unit_ids": [
       "RDMS-04-M06-U074"
     ],
@@ -7487,7 +7487,7 @@
     "clause_id": "L4-BI9",
     "owner": "L4",
     "document": "architecture/L4_TEMPORAL_SPECIALISTS.md",
-    "line": 5463,
+    "line": 5476,
     "source_unit_ids": [
       "RDMS-05-M09-U073"
     ],
@@ -7497,7 +7497,7 @@
     "clause_id": "L4-BI12",
     "owner": "L4",
     "document": "architecture/L4_TEMPORAL_SPECIALISTS.md",
-    "line": 5572,
+    "line": 5585,
     "source_unit_ids": [
       "RDMS-06-M12-U093"
     ],
@@ -16262,5 +16262,579 @@
       "RDMS-10-M23-U122"
     ],
     "article_sha256": "331f30ff1f8aead50bc7161b134b266866c77656c95d00b149d6d53600789cbd"
+  },
+  {
+    "clause_id": "L3-NR-PARENT-ActionEffectSemantics",
+    "owner": "L3",
+    "document": "architecture/L3_ACTIONS.md",
+    "line": 6427,
+    "source_unit_ids": [
+      "FCA-43",
+      "RDMS-04-M06-U012",
+      "RDMS-04-M07-U041",
+      "RDMS-04-M07-U042",
+      "RDMS-04-M07-U043"
+    ],
+    "article_sha256": "5a62d1351b6814a212cf1db655b84fa0adecba7c7293f99a8ab01a30659a91b6"
+  },
+  {
+    "clause_id": "L3-NR-PARENT-ActionProposal",
+    "owner": "L3",
+    "document": "architecture/L3_ACTIONS.md",
+    "line": 6439,
+    "source_unit_ids": [
+      "FCA-42",
+      "RDMS-04-M06-U004",
+      "RDMS-04-M06-U005",
+      "RDMS-04-M06-U006",
+      "RDMS-04-M07-U002"
+    ],
+    "article_sha256": "d5897c0f6cb58a708163ae044a520939461150ec31427b21abe74de9a9a7b5a2"
+  },
+  {
+    "clause_id": "L3-NR-PARENT-ActionRecord",
+    "owner": "L3",
+    "document": "architecture/L3_ACTIONS.md",
+    "line": 6451,
+    "source_unit_ids": [
+      "FCA-46",
+      "RDMS-04-M06-U008",
+      "RDMS-04-M06-U010",
+      "RDMS-04-M06-U064",
+      "RDMS-04-M06-U071",
+      "RDMS-04-M07-U002"
+    ],
+    "article_sha256": "c43a792ea419bc6dd9d71d6c3a1518d633cb289dafc7ec340e939964f7911ba5"
+  },
+  {
+    "clause_id": "L2-NR-SHAPE-CanonicalStateView",
+    "owner": "L2",
+    "document": "architecture/L2_COGNITION.md",
+    "line": 6568,
+    "source_unit_ids": [
+      "FCA-6",
+      "RDMS-02-M02-U000",
+      "RDMS-02-M03-U009",
+      "RDMS-02-M03-U025",
+      "RDMS-10-M24-U010",
+      "RDMS-02-M02-U072"
+    ],
+    "article_sha256": "87ccc8ca0e54fcc6ea522670bc08a63e530b1f032db197af744e149605400226"
+  },
+  {
+    "clause_id": "L2-NR-PARENT-Claim",
+    "owner": "L2",
+    "document": "architecture/L2_COGNITION.md",
+    "line": 6580,
+    "source_unit_ids": [
+      "FCA-8",
+      "RDMS-02-M03-U000",
+      "RDMS-02-M03-U001",
+      "RDMS-02-M03-U032",
+      "RDMS-03-M04-U021",
+      "RDMS-02-M02-U004",
+      "RDMS-02-M02-U006"
+    ],
+    "article_sha256": "5d43b2fe2a9920890a776bd6a4975b96e72e1fe39eaa29e0b9dcf78ae4f46f91"
+  },
+  {
+    "clause_id": "L3-NR-PARENT-ConfidenceAssessment",
+    "owner": "L3",
+    "document": "architecture/L3_ACTIONS.md",
+    "line": 6463,
+    "source_unit_ids": [
+      "FCA-14",
+      "RDMS-03-M05-U040",
+      "RDMS-01-M01-U004",
+      "RDMS-03-M04-U066"
+    ],
+    "article_sha256": "2ac8f7f0c6f5d3c61d775eedf423199f408fa0d3884132b560a82d5c46da07ce"
+  },
+  {
+    "clause_id": "L3-NR-SHAPE-ContainmentProof",
+    "owner": "L3",
+    "document": "architecture/L3_ACTIONS.md",
+    "line": 6475,
+    "source_unit_ids": [
+      "FCA-42",
+      "RDMS-04-M06-U052",
+      "RDMS-04-M07-U033",
+      "RDMS-04-M07-U034"
+    ],
+    "article_sha256": "6a51b89ae6985472eef3c0752b87ff2873dbe0957a219c46c1595f2039276d87"
+  },
+  {
+    "clause_id": "L3-NR-PARENT-ContradictionRecord",
+    "owner": "L3",
+    "document": "architecture/L3_ACTIONS.md",
+    "line": 6489,
+    "source_unit_ids": [
+      "FCA-13",
+      "RDMS-03-M04-U029",
+      "RDMS-03-M04-U032",
+      "RDMS-03-M05-U019"
+    ],
+    "article_sha256": "ddd99b0be6dc7ed763ca2e6e165d4151f65e30942e86733829f8a65adc106f83"
+  },
+  {
+    "clause_id": "L2-NR-PARENT-Decision",
+    "owner": "L2",
+    "document": "architecture/L2_COGNITION.md",
+    "line": 6592,
+    "source_unit_ids": [
+      "FCA-17",
+      "RDMS-02-M02-U034",
+      "RDMS-02-M02-U035",
+      "RDMS-02-M03-U014",
+      "RDMS-02-M03-U015"
+    ],
+    "article_sha256": "34ba3b09b4986e84b45c7e9635812cbbf2d844b4f470c38bccbde379233e4fe9"
+  },
+  {
+    "clause_id": "L4-NR-PARENT-DependencyStamp",
+    "owner": "L4",
+    "document": "architecture/L4_TEMPORAL_SPECIALISTS.md",
+    "line": 5699,
+    "source_unit_ids": [
+      "FCA-69",
+      "RDMS-06-M12-U038",
+      "RDMS-06-M12-U040",
+      "RDMS-06-M13-U031",
+      "RDMS-01-M00-U028"
+    ],
+    "article_sha256": "303e589bf9a62c5c446ebf97ff9d6f6defed5ebb5eadb34093455d47091bc92f"
+  },
+  {
+    "clause_id": "L3-NR-SHAPE-EvidenceLink",
+    "owner": "L3",
+    "document": "architecture/L3_ACTIONS.md",
+    "line": 6501,
+    "source_unit_ids": [
+      "RDMS-03-M05-U003",
+      "RDMS-03-M05-U009",
+      "RDMS-03-M05-U010",
+      "RDMS-03-M05-U011",
+      "RDMS-03-M05-U012",
+      "FCA-12",
+      "RDMS-03-M04-U019",
+      "RDMS-03-M04-U021"
+    ],
+    "article_sha256": "c7eae3a73fc56bb333f1b150b24c8e90a402d76ce15751dd618b0dd9ce764b53"
+  },
+  {
+    "clause_id": "L3-NR-PARENT-EvidenceLink",
+    "owner": "L3",
+    "document": "architecture/L3_ACTIONS.md",
+    "line": 6513,
+    "source_unit_ids": [
+      "FCA-12",
+      "RDMS-03-M04-U021",
+      "RDMS-03-M04-U022",
+      "RDMS-03-M05-U009",
+      "RDMS-03-M05-U012",
+      "RDMS-03-M04-U019"
+    ],
+    "article_sha256": "94c447fc0aa2e439a6efa8b4cf3bac297643122fa1f8366270057a102eb015f7"
+  },
+  {
+    "clause_id": "L3-NR-PARENT-Experiment",
+    "owner": "L3",
+    "document": "architecture/L3_ACTIONS.md",
+    "line": 6525,
+    "source_unit_ids": [
+      "FCA-40",
+      "RDMS-03-M04-U040",
+      "RDMS-03-M04-U043",
+      "RDMS-03-M04-U046",
+      "RDMS-03-M04-U048",
+      "RDMS-03-M05-U023",
+      "RDMS-03-M04-U041"
+    ],
+    "article_sha256": "1642d67f4eb781a354967869aea6d7a1b0d78473e21321786215fb207fb2c42e"
+  },
+  {
+    "clause_id": "L2-NR-PARENT-Goal",
+    "owner": "L2",
+    "document": "architecture/L2_COGNITION.md",
+    "line": 6604,
+    "source_unit_ids": [
+      "FCA-15",
+      "RDMS-02-M02-U021",
+      "RDMS-02-M02-U022",
+      "RDMS-02-M03-U000",
+      "RDMS-02-M03-U010",
+      "RDMS-02-M03-U013"
+    ],
+    "article_sha256": "fc41a44b5d52caaaba754ec954211acf2f018077d017a408702debd7be415bfe"
+  },
+  {
+    "clause_id": "L2-NR-PARENT-Hypothesis",
+    "owner": "L2",
+    "document": "architecture/L2_COGNITION.md",
+    "line": 6616,
+    "source_unit_ids": [
+      "FCA-10",
+      "RDMS-02-M03-U001",
+      "RDMS-02-M03-U006",
+      "RDMS-02-M03-U019",
+      "RDMS-02-M03-U032",
+      "RDMS-02-M02-U013"
+    ],
+    "article_sha256": "f06a3bc03c8178c84c96fd8d693780f1520bf0e844f0536ac23338bd173cd40f"
+  },
+  {
+    "clause_id": "L2-NR-PARENT-InformationNeed",
+    "owner": "L2",
+    "document": "architecture/L2_COGNITION.md",
+    "line": 6628,
+    "source_unit_ids": [
+      "FCA-9",
+      "RDMS-02-M02-U002",
+      "RDMS-02-M02-U009",
+      "RDMS-02-M02-U010",
+      "RDMS-02-M02-U011",
+      "RDMS-02-M02-U012"
+    ],
+    "article_sha256": "f3f881e118babce1e6eede4c924ebf93bdc990fe4e013c89e382163c5073358c"
+  },
+  {
+    "clause_id": "L2-NR-PARENT-Invariant",
+    "owner": "L2",
+    "document": "architecture/L2_COGNITION.md",
+    "line": 6640,
+    "source_unit_ids": [
+      "FCA-19",
+      "RDMS-02-M02-U038",
+      "RDMS-02-M03-U000",
+      "RDMS-02-M03-U016",
+      "RDMS-02-M03-U017",
+      "RDMS-02-M03-U027",
+      "RDMS-02-M03-U028"
+    ],
+    "article_sha256": "26c72498f6984f0f101a771702c6e36c62c8bc0d2fca56840613d7d9f06ee125"
+  },
+  {
+    "clause_id": "L5-NR-PARENT-MemoryProposal",
+    "owner": "L5",
+    "document": "architecture/L5_MEMORY.md",
+    "line": 3621,
+    "source_unit_ids": [
+      "FCA-60",
+      "RDMS-07-M14-U023",
+      "RDMS-07-M14-U029",
+      "RDMS-07-M14-U031",
+      "RDMS-07-M14-U032"
+    ],
+    "article_sha256": "296e0c078164becac2dd5be324260152c532b97af19f4795a58a3c838d724582"
+  },
+  {
+    "clause_id": "L3-NR-PARENT-Observation",
+    "owner": "L3",
+    "document": "architecture/L3_ACTIONS.md",
+    "line": 6537,
+    "source_unit_ids": [
+      "FCA-11",
+      "RDMS-03-M04-U002",
+      "RDMS-03-M04-U010",
+      "RDMS-03-M04-U011",
+      "RDMS-03-M05-U000",
+      "RDMS-03-M05-U020"
+    ],
+    "article_sha256": "1c1718cf1868243e1e4b7e05e7e6f1a5027e52738f6f15e1e0158e0bbddbc0bc"
+  },
+  {
+    "clause_id": "L2-NR-PARENT-OperationalCausalClaim",
+    "owner": "L2",
+    "document": "architecture/L2_COGNITION.md",
+    "line": 6652,
+    "source_unit_ids": [
+      "FCA-10",
+      "RDMS-02-M02-U017",
+      "RDMS-02-M02-U018",
+      "RDMS-02-M03-U007",
+      "RDMS-03-M05-U041",
+      "RDMS-02-M02-U016"
+    ],
+    "article_sha256": "aea128d0a52c64c73f1c8a49438095847ab0e6a978f47b967734f11f9359f98d"
+  },
+  {
+    "clause_id": "L1-NR-SHAPE-ProjectRuntime",
+    "owner": "L1",
+    "document": "architecture/L1_CONTROL.md",
+    "line": 640,
+    "source_unit_ids": [
+      "RDMS-01-M01-U000",
+      "RDMS-01-M01-U001",
+      "RDMS-01-M01-U002",
+      "RDMS-01-M01-U023",
+      "RDMS-01-M00-U000"
+    ],
+    "article_sha256": "1363c1366e0fd94bcf67fc1cf70a25e040c65296c98592c910732e7e2807f8f6"
+  },
+  {
+    "clause_id": "L4-NR-PARENT-QueryDependencyStamp",
+    "owner": "L4",
+    "document": "architecture/L4_TEMPORAL_SPECIALISTS.md",
+    "line": 5711,
+    "source_unit_ids": [
+      "FCA-70",
+      "RDMS-06-M12-U054",
+      "RDMS-06-M12-U055",
+      "RDMS-06-M12-U056"
+    ],
+    "article_sha256": "2db1c5c0b5754ce601f54b848c0a604456cf27a96498d9e40bce592259572650"
+  },
+  {
+    "clause_id": "L6-NR-SHAPE-ResumeAssessment",
+    "owner": "L6",
+    "document": "architecture/L6_RECOVERY.md",
+    "line": 8087,
+    "source_unit_ids": [
+      "RDMS-05-M09-U046",
+      "RDMS-05-M10-U046",
+      "RDMS-05-M10-U047",
+      "RDMS-05-M10-U049",
+      "RDMS-05-M10-U050"
+    ],
+    "article_sha256": "11662f2d401aae5143c0849836226ff3bece8911f28ca3fe6f0cb8a1bb13191c"
+  },
+  {
+    "clause_id": "L6-NR-SHAPE-ResumptionCapsule",
+    "owner": "L6",
+    "document": "architecture/L6_RECOVERY.md",
+    "line": 8099,
+    "source_unit_ids": [
+      "FCA-53",
+      "RDMS-05-M09-U040",
+      "RDMS-05-M09-U041",
+      "RDMS-05-M10-U042",
+      "RDMS-05-M10-U043",
+      "RDMS-05-M10-U044"
+    ],
+    "article_sha256": "87ed3e7f7f6f4cec6cc0fb398b911a1613099583ac0790cf5bd65de55c15b937"
+  },
+  {
+    "clause_id": "L6-NR-PARENT-ResumptionCapsule",
+    "owner": "L6",
+    "document": "architecture/L6_RECOVERY.md",
+    "line": 8111,
+    "source_unit_ids": [
+      "FCA-53",
+      "RDMS-05-M09-U040",
+      "RDMS-05-M09-U043",
+      "RDMS-05-M10-U042",
+      "RDMS-05-M10-U046"
+    ],
+    "article_sha256": "b97454312c37ae3aecdc649c429d6619a1f14e45920ffd05706df96f078251a6"
+  },
+  {
+    "clause_id": "L2-NR-SHAPE-Risk",
+    "owner": "L2",
+    "document": "architecture/L2_COGNITION.md",
+    "line": 6664,
+    "source_unit_ids": [
+      "RDMS-02-M02-U045",
+      "RDMS-02-M02-U046",
+      "RDMS-02-M03-U029",
+      "RDMS-02-M03-U030"
+    ],
+    "article_sha256": "4a96eba361c17e04cbd62f5b0b3fbcb6ad4c9e53ed2265c6519e0f200c21f65f"
+  },
+  {
+    "clause_id": "L3-NR-PARENT-SandboxActivityRecord",
+    "owner": "L3",
+    "document": "architecture/L3_ACTIONS.md",
+    "line": 6549,
+    "source_unit_ids": [
+      "FCA-45",
+      "RDMS-04-M06-U052",
+      "RDMS-04-M06-U054",
+      "RDMS-04-M06-U055"
+    ],
+    "article_sha256": "e2c481170abb3f0e9f6c4dd52730d25a9767ccb1968a4d66520da6b93d74ebf1"
+  },
+  {
+    "clause_id": "L2-NR-PARENT-Slice",
+    "owner": "L2",
+    "document": "architecture/L2_COGNITION.md",
+    "line": 6678,
+    "source_unit_ids": [
+      "FCA-29",
+      "RDMS-02-M02-U048",
+      "RDMS-02-M03-U020",
+      "RDMS-02-M03-U024",
+      "RDMS-02-M03-U017",
+      "RDMS-02-M02-U047"
+    ],
+    "article_sha256": "087f232f35a5ed1ef2045d831191e9bc56aacb7dfdf400129d1f5221f69fa5fa"
+  },
+  {
+    "clause_id": "L2-NR-SHAPE-State",
+    "owner": "L2",
+    "document": "architecture/L2_COGNITION.md",
+    "line": 6690,
+    "source_unit_ids": [
+      "FCA-6",
+      "RDMS-02-M03-U009",
+      "RDMS-02-M03-U032",
+      "RDMS-10-M24-U010",
+      "FCA-APP-D"
+    ],
+    "article_sha256": "7b185fe1c14ed19de2f1286665c91c6ebeebd5aaf1d4b684df859db1d2070e6f"
+  },
+  {
+    "clause_id": "L4-NR-SHAPE-TemporalSchedule",
+    "owner": "L4",
+    "document": "architecture/L4_TEMPORAL_SPECIALISTS.md",
+    "line": 5723,
+    "source_unit_ids": [
+      "RDMS-05-M09-U006",
+      "RDMS-05-M10-U030",
+      "RDMS-05-M10-U031",
+      "RDMS-05-M10-U032",
+      "RDMS-05-M10-U033"
+    ],
+    "article_sha256": "9fdc3ac2b83a13408019e9a5d9135aef0a02244e52b8e11f670bd46b922e6dcf"
+  },
+  {
+    "clause_id": "L4-NR-PARENT-TemporalValidity",
+    "owner": "L4",
+    "document": "architecture/L4_TEMPORAL_SPECIALISTS.md",
+    "line": 5735,
+    "source_unit_ids": [
+      "FCA-54",
+      "RDMS-05-M09-U049",
+      "RDMS-05-M09-U050"
+    ],
+    "article_sha256": "6e4d07909472de94f540d56b045a26284c60b4fc379cbd770c7dc5c99bde55b7"
+  },
+  {
+    "clause_id": "L3-NR-SHAPE-ToolResult",
+    "owner": "L3",
+    "document": "architecture/L3_ACTIONS.md",
+    "line": 6561,
+    "source_unit_ids": [
+      "RDMS-04-M06-U015",
+      "RDMS-04-M06-U020",
+      "RDMS-04-M06-U062",
+      "RDMS-04-M06-U071",
+      "RDMS-04-M07-U039"
+    ],
+    "article_sha256": "6d735ec1edd23e364095effd94e1fd0ecc08899799a698ee386786b4bef4794b"
+  },
+  {
+    "clause_id": "L4-NR-PARENT-TriggerCondition",
+    "owner": "L4",
+    "document": "architecture/L4_TEMPORAL_SPECIALISTS.md",
+    "line": 5747,
+    "source_unit_ids": [
+      "FCA-56",
+      "RDMS-05-M09-U008",
+      "RDMS-05-M09-U016",
+      "RDMS-05-M10-U015",
+      "RDMS-05-M10-U018",
+      "RDMS-05-M09-U009"
+    ],
+    "article_sha256": "ad966e27cc248387174421749646e1a044877f6057417d50ab1b627c3ce40841"
+  },
+  {
+    "clause_id": "L4-NR-SHAPE-TriggerFire",
+    "owner": "L4",
+    "document": "architecture/L4_TEMPORAL_SPECIALISTS.md",
+    "line": 5759,
+    "source_unit_ids": [
+      "RDMS-05-M09-U027",
+      "RDMS-05-M10-U007",
+      "RDMS-05-M10-U015",
+      "RDMS-05-M10-U016",
+      "RDMS-05-M10-U017"
+    ],
+    "article_sha256": "745046cd65b4166de4cd8999d2dfb5eaf3ad2649c4dd51ee42e6e25f36bc547c"
+  },
+  {
+    "clause_id": "L4-NR-SHAPE-TriggerReaction",
+    "owner": "L4",
+    "document": "architecture/L4_TEMPORAL_SPECIALISTS.md",
+    "line": 5773,
+    "source_unit_ids": [
+      "RDMS-05-M09-U029",
+      "RDMS-05-M09-U030",
+      "RDMS-05-M10-U018",
+      "RDMS-05-M10-U036",
+      "RDMS-05-M10-U037",
+      "RDMS-05-M10-U039"
+    ],
+    "article_sha256": "b98cf37f1d49819be8704b8ce310d324d7eeb7bd309040f4345b24232b810a78"
+  },
+  {
+    "clause_id": "L4-NR-SHAPE-TriggerSourceCursor",
+    "owner": "L4",
+    "document": "architecture/L4_TEMPORAL_SPECIALISTS.md",
+    "line": 5785,
+    "source_unit_ids": [
+      "RDMS-05-M09-U023",
+      "RDMS-05-M10-U005",
+      "RDMS-05-M10-U006",
+      "RDMS-05-M10-U007"
+    ],
+    "article_sha256": "85c29e792dd5bcc7cc54512a60708b1ce5f37aab54e71c07543e24b26298d410"
+  },
+  {
+    "clause_id": "L1-NR-CE-01",
+    "owner": "L1",
+    "document": "architecture/L1_CONTROL.md",
+    "line": 652,
+    "source_unit_ids": [
+      "FCA-48",
+      "RDMS-01-M01-U004",
+      "RDMS-01-M01-U009",
+      "RDMS-01-M01-U015",
+      "RDMS-01-M01-U016"
+    ],
+    "article_sha256": "02deba8439f2b4314fbcddb640afbb79c93264d47318040f5a7321a2a87779e2"
+  },
+  {
+    "clause_id": "L2-NR-HG-01",
+    "owner": "L2",
+    "document": "architecture/L2_COGNITION.md",
+    "line": 6702,
+    "source_unit_ids": [
+      "RDMS-02-M02-U014",
+      "RDMS-02-M02-U015",
+      "RDMS-02-M03-U001",
+      "RDMS-02-M03-U002",
+      "RDMS-02-M03-U006",
+      "RDMS-03-M05-U041"
+    ],
+    "article_sha256": "6df10b54c038632f19d7d0277d1f75a7497c057ce43d66cb2a81e05afccd55b5"
+  },
+  {
+    "clause_id": "L7-NR-TRANSPORT-CapabilityResult",
+    "owner": "L7",
+    "document": "architecture/L7_RUNTIME_INTEGRATION.md",
+    "line": 6962,
+    "source_unit_ids": [
+      "FCA-23",
+      "RDMS-10-M23-U012",
+      "RDMS-10-M24-U007",
+      "RDMS-10-M24-U008",
+      "RDMS-10-M26-U023",
+      "RDMS-10-M26-U028"
+    ],
+    "article_sha256": "908c2eb3b1c02e88d54d0cfbd2fe301fc7428dddbdfd7095f761266682a7ac4d"
+  },
+  {
+    "clause_id": "L7-NR-TRANSPORT-MemoryRetrievalResult",
+    "owner": "L7",
+    "document": "architecture/L7_RUNTIME_INTEGRATION.md",
+    "line": 6974,
+    "source_unit_ids": [
+      "RDMS-07-M14-U074",
+      "RDMS-10-M23-U046",
+      "RDMS-10-M24-U007",
+      "RDMS-10-M26-U023",
+      "RDMS-10-M26-U028"
+    ],
+    "article_sha256": "5c4bb30925d1c3abe83b1a43c1ac661bc6f5896d2504cd5603dd48d03d14bcb1"
   }
 ]
