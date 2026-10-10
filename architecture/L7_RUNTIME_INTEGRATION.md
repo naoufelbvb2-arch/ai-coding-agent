@@ -6954,3 +6954,31 @@ RDMS10-I39 — Unknown mandatory safety conditions block dependent operations wi
 RDMS10-I40 — Runtime integration must preserve the semantics of all frozen parent specifications.
 
 Source: [RDMS-10-M23-U122](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt#L2331>).
+
+## Targeted normative reconciliation
+
+This targeted review uses the published consolidation as its baseline. Classes B/E remain open; C defers only the stated representation detail; D is source-determined. These dispositions supply no new architectural decision, serializer alias, threshold or authority.
+
+### L7-NR-TRANSPORT-CapabilityResult
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+The canonical payload has patch, typed propositions, needs, evidence, assessments, specialist request and rationale categories missing as literal members of the RDMS-10 envelope. FC10-03-08 forbids redefinition, and the final registry limitation expressly leaves field audit necessary. proposal_refs is not evidence that all payload survives.
+
+**Binding obligations:** Retain all eleven FCA result categories with optionality, types, provenance, dependencies and immutable identity/version when required. Only the Executive adopts cognition; delivery cannot authorize commits/actions.
+
+**Remaining detail / acceptance limit:** Produce a lossless payload/reference projection proof for each canonical field, particularly specialist_request, needs, rationale_summary and evidence_refs. No new attachment field or field alias is selected.
+
+Exact authoritative evidence: [FCA-23](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L999>); [RDMS-10-M23-U012](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt#L342>); [RDMS-10-M24-U007](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt#L3036>); [RDMS-10-M24-U008](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt#L3048>); [RDMS-10-M26-U023](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt#L7658>); [RDMS-10-M26-U028](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt#L7720>).
+
+### L7-NR-TRANSPORT-MemoryRetrievalResult
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+The transport envelope does not literally include canonical retrieval/query identity, omitted scope, ranking policy, coverage, freshness or creation time. Memory and transport meanings may coexist, but trust annotations do not prove those retrieval facts are carried.
+
+**Binding obligations:** Retain retrieval_id, query_ref, candidate_refs, omitted_or_filtered_scope, ranking_policy_ref, retrieval_coverage, freshness_summary and created_at plus transport trust/provenance/applicability. Retrieval never promotes truth or grants disclosure.
+
+**Remaining detail / acceptance limit:** Produce a lossless reference/payload projection for every canonical retrieval field. Do not equate memory_refs with candidate_refs or provenance with coverage without source-compatible proof.
+
+Exact authoritative evidence: [RDMS-07-M14-U074](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt#L1079>); [RDMS-10-M23-U046](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt#L1134>); [RDMS-10-M24-U007](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt#L3036>); [RDMS-10-M26-U023](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt#L7658>); [RDMS-10-M26-U028](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt#L7720>).
