@@ -4736,14 +4736,34 @@ ConfidenceProfile {
 
 ### ContainmentProof
 
-Canonical owner: L3; defining specification: RDMS-04.
+Canonical owner: L3. Approved current scoped contract.
 
-Source: [ContainmentProof](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L2162>); declaration SHA-256 `243b8e9c2fdb3226b01e8b824a1ceff4b2bf75c302dbeb08a1abac73edf39721`.
+```text
+ContainmentProof {
+    proof_id
 
-**Record-shape reconciliation remains OPEN.** The operative rules in this document apply; no complete replacement declaration is asserted. Every exact candidate and its field spelling remains in the source registry; this prevents a historical or partial declaration from being published as current complete law.
+    sandbox_ref
 
-- [Original draft](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L1084>); SHA-256 `8afe55f363492888687b8293db33ba35dbc53df9a3e33292433bf0428a4843a4`.
-- [C01](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L2162>); SHA-256 `243b8e9c2fdb3226b01e8b824a1ceff4b2bf75c302dbeb08a1abac73edf39721`.
+    effective_config_fingerprint
+    executor_generation
+
+    mount_namespace_ref?
+    filesystem_policy_ref
+    network_policy_ref
+    credential_policy_ref
+    process_policy_ref
+
+    enforcement_basis_refs[]
+
+    coverage_scope
+
+    evaluated_at
+}
+```
+
+Use the C01-27 native fields and trusted enforcement evidence. Prove filesystem isolation, absence of shared writable mounts and dangerous credentials, blocking of mutating network/privileged paths and disposability of reachable effects. Enforce the policy during execution; drift invalidates new launches under an old proof.
+
+The historical declarations remain in the immutable archive; their current disposition and exact amendment evidence are in the targeted review below. No historical converter is approved.
 
 ### ContentTrustContext
 
@@ -5050,7 +5070,7 @@ Canonical owner: L3; defining specification: RDMS-03.
 
 Source: [EvidenceLink](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L461>); declaration SHA-256 `b56d24206ab7628d92c266e4a6d8c3e3a63aa29a627ede82c373819a56071e26`.
 
-**Record-shape reconciliation remains OPEN.** The operative rules in this document apply; no complete replacement declaration is asserted. Every exact candidate and its field spelling remains in the source registry; this prevents a historical or partial declaration from being published as current complete law.
+**Representation detail DEFERRED TO IMPLEMENTATION DESIGN.** The operative rules in this document apply; no complete replacement declaration is asserted. Every exact candidate and its field spelling remains in the source registry; the binding obligations and intentionally unspecified representation detail are recorded in the targeted review below. Parent-field questions remain separately classified.
 
 - [v1.0.1 FROZEN](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L616>); SHA-256 `b778f6414a5d8315d412befe2202e2209969c7d06acb162fa26b4a3f3054781d`.
 - [Original draft](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L461>); SHA-256 `b56d24206ab7628d92c266e4a6d8c3e3a63aa29a627ede82c373819a56071e26`.
@@ -6122,7 +6142,7 @@ ToolAdapter {
 
 Canonical owner: L3; defining specification: RDMS-04.
 
-**Record-shape reconciliation remains OPEN.** The operative rules in this document apply; no complete replacement declaration is asserted. Every exact candidate and its field spelling remains in the source registry; this prevents a historical or partial declaration from being published as current complete law.
+**Representation detail DEFERRED TO IMPLEMENTATION DESIGN.** The operative rules in this document apply; no complete replacement declaration is asserted. Every exact candidate and its field spelling remains in the source registry; the binding obligations and intentionally unspecified representation detail are recorded in the targeted review below. Parent-field questions remain separately classified.
 
 - [Original draft](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L1245>); SHA-256 `e3eae85aa021ec192cafaa0d0510c973ccb51a2e5f4e7c45f30ec7075869b855`.
 
@@ -6399,3 +6419,153 @@ ToolAdapter interfaces cannot grant themselves authority
 beyond the ActionAuthorization.
 
 Source: [RDMS-04-M06-U074](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L1401>).
+
+## Targeted normative reconciliation
+
+This targeted review uses the published consolidation as its baseline. Classes B/E remain open; C defers only the stated representation detail; D is source-determined. These dispositions supply no new architectural decision, serializer alias, threshold or authority.
+
+### L3-NR-PARENT-ActionEffectSemantics
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+The retry and verification enums agree. The sources do not explicitly bind the inline outcome_probe, compensation and timeout_policy to the later spec/reference fields. Those contents govern safe retry; equal names or comparable labels are not a preservation proof.
+
+**Binding obligations:** Retain effect identity, idempotency identity, all three retry policies, all three verification modes, timeout semantics, probe adequacy and authorized compensation. A referenced spec must preserve the original operational content.
+
+**Remaining detail / acceptance limit:** Proof for outcome_probe versus outcome_probe_spec, compensation versus compensation_spec, and timeout_policy versus timeout_policy_ref, including reference integrity and historical reconstruction. No alias is approved here.
+
+Exact authoritative evidence: [FCA-43](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L1751>); [RDMS-04-M06-U012](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L340>); [RDMS-04-M07-U041](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L2260>); [RDMS-04-M07-U042](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L2280>); [RDMS-04-M07-U043](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L2298>).
+
+### L3-NR-PARENT-ActionProposal
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+RDMS-04 expressly makes the requested class advisory and provides a separate authorization. That resolves the authority division, but does not prove preservation of every FCA proposal field. FCA base_world_ref/risk_profile are mandatory where the RDMS specimen makes their references optional; authority_required and proposal status have no explicit complete crosswalk.
+
+**Binding obligations:** Requested class never authorizes execution. Preserve identity, requester, Goal/Slice lineage, intent, detailed operation, target/effect/precondition information, risk, reversibility, compensation, diagnostic/production meaning, relevant world basis, required authority and proposal history. ActionGate and authorization fingerprint govern actual execution.
+
+**Remaining detail / acceptance limit:** Prove the detailed operation-kind information, mandatory risk/world information, authority_required and proposal status survive in the owner records. An ActionAuthorization is not itself a proved storage location for proposal authority requirements.
+
+Exact authoritative evidence: [FCA-42](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L1660>); [RDMS-04-M06-U004](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L96>); [RDMS-04-M06-U005](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L155>); [RDMS-04-M06-U006](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L181>); [RDMS-04-M07-U002](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L1643>).
+
+### L3-NR-PARENT-ActionRecord
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+RDMS-04 separates action, attempt, report, observation and reconciled effect explicitly. This proves the decomposition, but not a complete per-action reconstruction of every original timestamp, observation membership and before-world requirement.
+
+**Binding obligations:** Retain the original action identity, proposal, lifecycle, before/after world context, execution reports, observations, compensation association and start/finish information. Keep ActionId, AttemptId and DispatchId distinct; latest_attempt_ref cannot erase older attempts or establish the effect.
+
+**Remaining detail / acceptance limit:** Proof for mandatory world_ref_before, execution_result, observation_ids, compensation_action_id, started_at and finished_at across ActionRecord/ActionAttempt/Observation/ProcessRun/ReconciliationRecord. Do not choose first/last-attempt timestamp aggregation.
+
+Exact authoritative evidence: [FCA-46](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L1880>); [RDMS-04-M06-U008](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L207>); [RDMS-04-M06-U010](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L266>); [RDMS-04-M06-U064](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L1281>); [RDMS-04-M06-U071](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L1365>); [RDMS-04-M07-U002](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L1643>).
+
+### L3-NR-PARENT-ConfidenceAssessment
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+The level values and residual uncertainty agree, but assessed_at and assessed_at_commit_seq are different information. A commit ordering number is not a wall-clock timestamp or a complete evidence-basis conversion.
+
+**Binding obligations:** Preserve target, confidence level, evidence basis, residual uncertainty and assessment time/context. Claim/Hypothesis support must not gain a competing ConfidenceAssessment authority.
+
+**Remaining detail / acceptance limit:** Proof for basis versus evidence_link_refs plus verification_record_refs, and assessed_at versus assessed_at_commit_seq. Do not silently equate time with sequence.
+
+Exact authoritative evidence: [FCA-14](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L693>); [RDMS-03-M05-U040](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L2791>); [RDMS-01-M01-U004](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt#L1430>); [RDMS-03-M04-U066](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L1408>).
+
+### L3-NR-SHAPE-ContainmentProof
+
+**D — ALREADY_RESOLVED; RESOLVED_WITH_SOURCE_EVIDENCE.**
+
+C01-27 is the approved complete scoped restatement of ContainmentProof for effective configuration and trusted enforcement. C01-28 supplements it with continuous enforcement. The old record is not a second current native schema. FCA reachable-effect isolation duties remain unchanged.
+
+**Binding obligations:** Use the C01-27 native fields and trusted enforcement evidence. Prove filesystem isolation, absence of shared writable mounts and dangerous credentials, blocking of mutating network/privileged paths and disposability of reachable effects. Enforce the policy during execution; drift invalidates new launches under an old proof.
+
+**Remaining detail / acceptance limit:** No historical-record converter or Boolean-to-policy alias is asserted. Backend-specific proof encoding remains subject to the retained containment duties.
+
+Source-determined correction: Publish the approved C01-27 record once and explicitly retain the original isolation duties.
+
+Exact authoritative evidence: [FCA-42](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L1660>); [RDMS-04-M06-U052](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L1083>); [RDMS-04-M07-U033](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L2161>); [RDMS-04-M07-U034](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L2185>).
+
+### L3-NR-PARENT-ContradictionRecord
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+The comparison and causal-explanation boundary are explicit, but FCA UNRESOLVED is absent from the RDMS lifecycle, and possible_dimensions is replaced by dimension_analysis. No exact lifecycle/field projection is authorized by the excerpts.
+
+**Binding obligations:** Preserve both observations, subject, scope, comparability, time/input/environment/world/nondeterminism/measurement dimensions and unresolved information. Causal explanations must refer to a typed proposition/result; they are not hidden in dimension_analysis.
+
+**Remaining detail / acceptance limit:** Document how FCA unresolved status and dimension information are represented without inventing a new lifecycle value or declaring UNRESOLVED equal to CONFIRMED.
+
+Exact authoritative evidence: [FCA-13](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L657>); [RDMS-03-M04-U029](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L631>); [RDMS-03-M04-U032](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L697>); [RDMS-03-M05-U019](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L2377>).
+
+### L3-NR-SHAPE-EvidenceLink
+
+**C — IMPLEMENTATION_DETAIL_DEFERRED; DEFERRED_TO_IMPLEMENTATION_DESIGN.**
+
+This question specifically concerns the embedding field for already specified EvidenceBasis and pinned AuthorityBinding. C01-04 and C01-10 through 13 fully bind their information and usability. Choosing a member name or inline versus reference encoding supplies no additional legal meaning. Parent field preservation is separately kept open as PARENT-EvidenceLink.
+
+**Binding obligations:** Carry EvidenceBasis items with observation identity and REQUIRED/CORROBORATING/CONTEXT role, ALL_REQUIRED or STRUCTURED semantics and the required derivation. Pin the AuthorityBinding version for AUTHORITATIVE evidence. Retain accepted-link immutability and derived usability.
+
+**Remaining detail / acceptance limit:** Embedding member name and serializer layout only. Missing basis, lost role, unpinned authority, unavailable referent or changed derivation is a normative violation, never an implementation discretion.
+
+Exact authoritative evidence: [RDMS-03-M05-U003](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L2019>); [RDMS-03-M05-U009](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L2165>); [RDMS-03-M05-U010](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L2185>); [RDMS-03-M05-U011](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L2199>); [RDMS-03-M05-U012](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L2217>); [FCA-12](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L611>); [RDMS-03-M04-U019](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L457>); [RDMS-03-M04-U021](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L508>).
+
+### L3-NR-PARENT-EvidenceLink
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+Multi-observation support and structured roles are explicitly approved. The full parent target identity/type, single-observation information and accepted semantic-link projection still need an exact reference/preservation proof; an unspecified embedding does not discharge this distinct question.
+
+**Binding obligations:** Preserve link identity, canonical observations, typed target identity, relation, rationale, derivation and lifecycle. Every accepted link has a real Observation root. Preserve C01 basis roles, pinned authority and historical meaning.
+
+**Remaining detail / acceptance limit:** Field-by-field parent/current reconstruction including observation_id, target_type/target_id and the new structured basis. No lossy flattening of REQUIRED/CORROBORATING/CONTEXT or automatic alias.
+
+Exact authoritative evidence: [FCA-12](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L611>); [RDMS-03-M04-U021](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L508>); [RDMS-03-M04-U022](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L529>); [RDMS-03-M05-U009](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L2165>); [RDMS-03-M05-U012](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L2217>); [RDMS-03-M04-U019](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L457>).
+
+### L3-NR-PARENT-Experiment
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+RDMS-03 expressly separates design from run, observations and conclusion proposals. That is a resolved legal distinction. The complete FCA design/run lifecycle and designed_at/executed_at reconstruction is not established by the abbreviated cross-layer record inventory.
+
+**Binding obligations:** Retain question, hypotheses, method, discriminating predictions, authorized actions, risk, design/execution history, observations, conclusion proposal and time. Freeze predictions before runs; failed execution does not refute a hypothesis.
+
+**Remaining detail / acceptance limit:** Prove all original fields through Experiment/Prediction/ExperimentRun/Observation/ExperimentConclusionProposal, especially original timestamps and lifecycle participation. No run-state-to-design-state alias.
+
+Exact authoritative evidence: [FCA-40](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L1592>); [RDMS-03-M04-U040](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L848>); [RDMS-03-M04-U043](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L929>); [RDMS-03-M04-U046](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L994>); [RDMS-03-M04-U048](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L1033>); [RDMS-03-M05-U023](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L2473>); [RDMS-03-M04-U041](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L870>).
+
+### L3-NR-PARENT-Observation
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+C01 binds content trust, normalization and temporal provenance, but the whole parent field projection is not proven: mandatory parent world_ref versus optional native reference and source_authority versus associated bindings affect evidential interpretation.
+
+**Binding obligations:** Preserve source, authority when applicable, real observation context/time/content/raw material/provenance/integrity and stable event identity. Normalization cannot introduce semantic inference. Trust metadata must travel with content.
+
+**Remaining detail / acceptance limit:** Proof of parent world context, source authority and content/raw/integrity projection into the current surface. Do not manufacture a world reference for an observation whose source has no known world context.
+
+Exact authoritative evidence: [FCA-11](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L576>); [RDMS-03-M04-U002](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L81>); [RDMS-03-M04-U010](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L264>); [RDMS-03-M04-U011](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L286>); [RDMS-03-M05-U000](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L1924>); [RDMS-03-M05-U020](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt#L2410>).
+
+### L3-NR-PARENT-SandboxActivityRecord
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+The sandbox proof and snapshot references are explicit, but the parent result has no approved equivalence to activity_summary or completed_at. A completed activity is not necessarily a successful or effect-verified activity.
+
+**Binding obligations:** Retain activity/Slice identity, base snapshot, proven containment, operation count, output and observation references and actual result. Sandbox completion cannot authorize artifact promotion.
+
+**Remaining detail / acceptance limit:** Prove containment_profile/base_snapshot/output_refs and especially result survive in the current record/proof/artifacts. Do not replace result with a prose summary or completion time.
+
+Exact authoritative evidence: [FCA-45](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L1808>); [RDMS-04-M06-U052](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L1083>); [RDMS-04-M06-U054](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L1123>); [RDMS-04-M06-U055](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L1146>).
+
+### L3-NR-SHAPE-ToolResult
+
+**C — IMPLEMENTATION_DETAIL_DEFERRED; DEFERRED_TO_IMPLEMENTATION_DESIGN.**
+
+The only declaration is explicitly an example exit_code = 0, used to demonstrate that a report does not establish reality. RDMS-04 ToolAdapter has output_schema_ref; ProcessRun, ActionAttempt and Observation already define binding semantics. The example is not an incomplete mandatory canonical ToolResult schema.
+
+**Binding obligations:** Keep reported output attributed to its actual attempt/process/source; preserve output completeness/integrity and capture it through Observation Ingress. Exit code zero does not prove the requested effect; OutcomeProbe/reconciliation still apply.
+
+**Remaining detail / acceptance limit:** Adapter-specific result representation and output serializer under output_schema_ref. No new canonical ToolResult entity, success lifecycle or dispatch authority is created.
+
+Exact authoritative evidence: [RDMS-04-M06-U015](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L386>); [RDMS-04-M06-U020](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L498>); [RDMS-04-M06-U062](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L1241>); [RDMS-04-M06-U071](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L1365>); [RDMS-04-M07-U039](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt#L2247>).
