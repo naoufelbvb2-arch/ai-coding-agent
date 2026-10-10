@@ -5140,7 +5140,7 @@ TemporalValidity {
 }
 ```
 
-Parent/other-source declarations have different record surfaces. The registry retains their exact clauses; preserving the parent semantic obligations is mandatory, and field-renaming/conversion is not automatically approved.
+Parent semantic preservation is proven by the authoritative elaborations cited in the targeted review below. This does not approve an automatic historical-record converter.
 
 ### ThresholdConditionPolicy
 
@@ -5280,14 +5280,27 @@ TriggerEvaluation {
 
 ### TriggerFire
 
-Canonical owner: L4; defining specification: RDMS-05.
+Canonical owner: L4. Approved current scoped contract.
 
-Source: [TriggerFire](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L1692>); declaration SHA-256 `5bdd4a1ad86972d86c9fd8cb77adaec3e60236a88d76f37540b48f091096f69c`.
+```text
+TriggerFire {
+    fire_id
 
-**Record-shape reconciliation remains OPEN.** The operative rules in this document apply; no complete replacement declaration is asserted. Every exact candidate and its field spelling remains in the source registry; this prevents a historical or partial declaration from being published as current complete law.
+    trigger_definition_snapshot_ref
+    qualified_occurrence_ref
 
-- [Original draft](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L451>); SHA-256 `559e11a3e82f870ebb618aa1f4932f5a0c389404f52a5a7d17abf6f1e8a6c9ce`.
-- [C01](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L1692>); SHA-256 `5bdd4a1ad86972d86c9fd8cb77adaec3e60236a88d76f37540b48f091096f69c`.
+    evidence_basis_refs[]
+    source_frontier_ref
+
+    fire_identity_key
+
+    created_commit_seq
+}
+```
+
+Use the exact C01-14 fields. The definition and occurrence bind the trigger and generation; preserve immutable condition/reaction identity, evidence basis and source frontier. Enforce uniqueness of trigger_id/generation/occurrence_key; replay returns the same Fire. The canonical creation sequence is not the source event time.
+
+The historical declarations remain in the immutable archive; their current disposition and exact amendment evidence are in the targeted review below. No historical converter is approved.
 
 ### TriggerReaction
 
@@ -5339,7 +5352,7 @@ Canonical owner: L4; defining specification: RDMS-05.
 
 Source: [TriggerSourceCursor](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L387>); declaration SHA-256 `53c8e493c18ff7b3b0d99d0645a8a806482586f7fafac3dd36263461d988d5bd`.
 
-**Record-shape reconciliation remains OPEN.** The operative rules in this document apply; no complete replacement declaration is asserted. Every exact candidate and its field spelling remains in the source registry; this prevents a historical or partial declaration from being published as current complete law.
+**Representation detail DEFERRED TO IMPLEMENTATION DESIGN.** The operative rules in this document apply; no complete replacement declaration is asserted. Every exact candidate and its field spelling remains in the source registry; the binding obligations and intentionally unspecified representation detail are recorded in the targeted review below. Parent-field questions remain separately classified.
 
 - [Original draft](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L387>); SHA-256 `53c8e493c18ff7b3b0d99d0645a8a806482586f7fafac3dd36263461d988d5bd`.
 
@@ -5678,3 +5691,105 @@ Dependency evaluation itself does not create authority to
 mutate the results it evaluates.
 
 Source: [RDMS-06-M12-U093](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt#L1350>).
+
+## Targeted normative reconciliation
+
+This targeted review uses the published consolidation as its baseline. Classes B/E remain open; C defers only the stated representation detail; D is source-determined. These dispositions supply no new architectural decision, serializer alias, threshold or authority.
+
+### L4-NR-PARENT-DependencyStamp
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+RDMS-06 explicitly retains FCA dependency kinds and freshness meanings. The inline validity_condition and the later validity_condition_ref still require preservation of the condition and its version/identity; this affects correctness, not only encoding.
+
+**Binding obligations:** Retain dependency kind/subject, version or hash, validity condition and EXACT/COMPATIBLE/ADVISORY meaning. Use the one dependency engine; an incomplete dependency universe cannot certify complete validity.
+
+**Remaining detail / acceptance limit:** Prove the subject and validity-condition reference binding, including source version, available content and replay/retention. No ref/dep-ref or inline-condition alias is invented.
+
+Exact authoritative evidence: [FCA-69](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L2481>); [RDMS-06-M12-U038](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt#L655>); [RDMS-06-M12-U040](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt#L706>); [RDMS-06-M13-U031](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt#L2268>); [RDMS-01-M00-U028](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt#L790>).
+
+### L4-NR-PARENT-QueryDependencyStamp
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+The query kinds and frontier fields agree. The invalidation_rule is inline in FCA and referenced in RDMS-06; an exact identity/content/version binding is not established by equal-sounding names.
+
+**Binding obligations:** Retain query, query kind, proof scope, dependency frontier, index kind/generation/hash where present, invalidation rule and repository basis. Negative knowledge cannot exceed proved coverage.
+
+**Remaining detail / acceptance limit:** Prove invalidation_rule_ref preserves the exact invalidation rule with the required scope and historical/reference integrity. This is a freshness correctness proof, not just member naming.
+
+Exact authoritative evidence: [FCA-70](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L2524>); [RDMS-06-M12-U054](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt#L896>); [RDMS-06-M12-U055](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt#L923>); [RDMS-06-M12-U056](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt#L949>).
+
+### L4-NR-SHAPE-TemporalSchedule
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+C01 hardens timezone/DST/discontinuity policies but its complete specimen omits original instant/local rule and validity bounds. Those specify which occurrence is legal and cannot be deferred as mere serialization.
+
+**Binding obligations:** Preserve schedule kind, intended instant/local/recurring rule and not-before/valid-until bounds, timezone and rules version, DST/missed-occurrence/discontinuity policy. Legal occurrence identity must not depend on worker processing time.
+
+**Remaining detail / acceptance limit:** Prove absolute_instant, local_time_rule, not_before and valid_until are retained by the effective schedule/occurrence contracts; no field alias or new scheduling law is selected.
+
+Exact authoritative evidence: [RDMS-05-M09-U006](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L124>); [RDMS-05-M10-U030](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L1879>); [RDMS-05-M10-U031](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L1901>); [RDMS-05-M10-U032](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L1922>); [RDMS-05-M10-U033](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L1942>).
+
+### L4-NR-PARENT-TemporalValidity
+
+**D — ALREADY_RESOLVED; RESOLVED_WITH_SOURCE_EVIDENCE.**
+
+The six field names and optionalities are identical. The three freshness symbols differ only in capitalization, and RDMS-05 section 38 explicitly preserves the FCA concept while stating that freshness is derived. There is no missing field or lifecycle mapping.
+
+**Binding obligations:** Retain observed_at?, verified_at?, repo_ref?, state_version?, valid_until_condition? and CURRENT/STALE/UNKNOWN freshness. Use the canonical dependency engine; the Scheduler cannot assert authoritative freshness.
+
+**Remaining detail / acceptance limit:** Serializer capitalization only; no independent freshness field authority.
+
+Exact authoritative evidence: [FCA-54](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L2083>); [RDMS-05-M09-U049](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L799>); [RDMS-05-M09-U050](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L820>).
+
+### L4-NR-PARENT-TriggerCondition
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+RDMS-05 section 6 expressly splits repetition and detection dimensions; section 13 preserves conceptual trigger states and separates evaluation/fire/reaction. The remaining FCA last_evaluated_at/last_fire_id/source/watch and reaction associations still need a complete information-preservation crosswalk.
+
+**Binding obligations:** Retain trigger identity/generation, both semantics dimensions, watched sources/predicate, cursor, reaction identity, linked object, on-fire semantics, conceptual state and evaluation/fire history. L4 evaluates; it never authorizes a world action.
+
+**Remaining detail / acceptance limit:** Prove each original field through TriggerDefinition, condition, state/evaluation, fire and reaction records, especially timestamps and last-fire relation. No condition-state or time-to-commit alias is invented.
+
+Exact authoritative evidence: [FCA-56](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L2123>); [RDMS-05-M09-U008](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L155>); [RDMS-05-M09-U016](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L307>); [RDMS-05-M10-U015](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L1638>); [RDMS-05-M10-U018](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L1716>); [RDMS-05-M09-U009](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L190>).
+
+### L4-NR-SHAPE-TriggerFire
+
+**D — ALREADY_RESOLVED; RESOLVED_WITH_SOURCE_EVIDENCE.**
+
+C01-12/13/14 explicitly replace unstable fire construction with immutable definition and qualified occurrence references plus a uniqueness tuple. C01-06 binds canonical processing atomically. This is the approved current native fire surface; old direct trigger/generation/condition fields are retained by the frozen definition/occurrence semantics rather than competing mutable copies.
+
+**Binding obligations:** Use the exact C01-14 fields. The definition and occurrence bind the trigger and generation; preserve immutable condition/reaction identity, evidence basis and source frontier. Enforce uniqueness of trigger_id/generation/occurrence_key; replay returns the same Fire. The canonical creation sequence is not the source event time.
+
+**Remaining detail / acceptance limit:** No old-record importer or fired_at_commit_seq/created_commit_seq wire alias is invented. Source occurrence time and canonical processing order remain distinct.
+
+Source-determined correction: Publish the approved stable TriggerFire record and its source-defined identity/atomicity requirements.
+
+Exact authoritative evidence: [RDMS-05-M09-U027](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L450>); [RDMS-05-M10-U007](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L1509>); [RDMS-05-M10-U015](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L1638>); [RDMS-05-M10-U016](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L1670>); [RDMS-05-M10-U017](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L1691>).
+
+### L4-NR-SHAPE-TriggerReaction
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+C01-29 supplies target-version/lifecycle admission and C01-15 the stable reaction identity. The relationship of old reaction_kind/reaction_key to frozen_reaction_spec_ref/reaction identity is not a complete declared field mapping. Deduplication is legally mandatory.
+
+**Binding obligations:** Preserve the frozen reaction kind, target, stable reaction identity/key and exact trigger definition generation. Apply legal target transition, APPLIED and key consumption in one ControlCommit. Worker reclaiming is not a second effect or action authority.
+
+**Remaining detail / acceptance limit:** Prove all original reaction_kind/key semantics through the frozen spec and C01 identity without guessing a key alias or hash serialization. C01 target-bound statuses govern current admission; source history remains intact.
+
+Exact authoritative evidence: [RDMS-05-M09-U029](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L482>); [RDMS-05-M09-U030](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L511>); [RDMS-05-M10-U018](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L1716>); [RDMS-05-M10-U036](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L1968>); [RDMS-05-M10-U037](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L1993>); [RDMS-05-M10-U039](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L2031>).
+
+### L4-NR-SHAPE-TriggerSourceCursor
+
+**C — IMPLEMENTATION_DETAIL_DEFERRED; DEFERRED_TO_IMPLEMENTATION_DESIGN.**
+
+C01-05 explicitly replaces the conflated cursor concept with two different frontiers and defines exactly when each may advance. The remaining question is how to embed these already distinct contracts. Position meaning is explicitly delegated to the source adapter, not guessed globally.
+
+**Binding obligations:** IngressCursor tracks durable source capture; TriggerProcessingCursor tracks durable evaluation and required Fire/Reaction or deferred evaluation obligations. Neither can outrun its own durable frontier. Retain source generation, adapter-defined position and coverage semantics.
+
+**Remaining detail / acceptance limit:** Member names, physical cursor tables, position serialization and aggregate embedding. Never defer the capture/processing distinction, acknowledgement fence, coverage or atomicity.
+
+Exact authoritative evidence: [RDMS-05-M09-U023](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L386>); [RDMS-05-M10-U005](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L1471>); [RDMS-05-M10-U006](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L1493>); [RDMS-05-M10-U007](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L1509>).
