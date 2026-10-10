@@ -3025,7 +3025,7 @@ MemoryProposal {
 }
 ```
 
-Parent/other-source declarations have different record surfaces. The registry retains their exact clauses; preserving the parent semantic obligations is mandatory, and field-renaming/conversion is not automatically approved.
+Parent semantic preservation is proven by the authoritative elaborations cited in the targeted review below. This does not approve an automatic historical-record converter.
 
 ### MemoryProposalSnapshot
 
@@ -3613,3 +3613,19 @@ A memory derived from multiple agents or reflections must preserve
 its underlying independent evidence roots.
 
 Source: [RDMS-07-M14-U115](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt#L1529>).
+
+## Targeted normative reconciliation
+
+This targeted review uses the published consolidation as its baseline. Classes B/E remain open; C defers only the stated representation detail; D is source-determined. These dispositions supply no new architectural decision, serializer alias, threshold or authority.
+
+### L5-NR-PARENT-MemoryProposal
+
+**D — ALREADY_RESOLVED; RESOLVED_WITH_SOURCE_EVIDENCE.**
+
+RDMS-07 section 24 expressly adopts and expands FCA fields. Section 25 enumerates the required claim, scope, evidence, counterconditions/examples, requested maturity and invalidating dependencies; section 17 preserves the FCA maturity ladder. There is no omitted parent semantic category.
+
+**Binding obligations:** Retain claim, proposed scope, source episodes, optional causal basis, applicability/counterconditions/counterexamples, evidence, confidence assessment and requested maturity. Added provenance/category/dependencies do not authorize promotion; LearningGate and Executive approval remain required.
+
+**Remaining detail / acceptance limit:** Reference encoding only; no maturity_target/proposed_maturity wire alias or lossy converter is declared by this review.
+
+Exact authoritative evidence: [FCA-60](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L2234>); [RDMS-07-M14-U023](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt#L399>); [RDMS-07-M14-U029](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt#L461>); [RDMS-07-M14-U031](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt#L482>); [RDMS-07-M14-U032](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt#L513>).
