@@ -8079,3 +8079,43 @@ RDMS09-I39 — Recovery cannot silently downgrade hard security or authority con
 RDMS09-I40 — Return to normal operation requires explicit satisfaction of applicable recovery-admission conditions.
 
 Source: [RDMS-09-M18-U128](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-09_APPROVED_SOURCE_SET.txt#L1614>).
+
+## Targeted normative reconciliation
+
+This targeted review uses the published consolidation as its baseline. Classes B/E remain open; C defers only the stated representation detail; D is source-determined. These dispositions supply no new architectural decision, serializer alias, threshold or authority.
+
+### L6-NR-SHAPE-ResumeAssessment
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+C01-38 adds context, reconciliations and Goal/Slice validity while retaining result meanings. It does not explicitly prove preservation of the earlier unresolved_action_refs and created_commit_seq through those aggregates. Scope completeness is recovery-critical.
+
+**Binding obligations:** Assess current repository/world/environment context, every relevant unresolved action and its reconciliation, dependency evaluation and Goal/Slice validity. Retain assessment identity, capsule, basis and canonical history. RESUMABLE permits cognition, not world mutation.
+
+**Remaining detail / acceptance limit:** Prove baseline current_repo_ref/current_world_ref, unresolved_action_refs and created_commit_seq remain recoverable. A list of reconciliation refs alone cannot prove that all relevant unresolved actions were considered.
+
+Exact authoritative evidence: [RDMS-05-M09-U046](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L758>); [RDMS-05-M10-U046](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L2120>); [RDMS-05-M10-U047](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L2147>); [RDMS-05-M10-U049](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L2188>); [RDMS-05-M10-U050](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L2200>).
+
+### L6-NR-SHAPE-ResumptionCapsule
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+C01-34 supplies durable payload and integrity references, not an explicit content crosswalk for every earlier context member. relevant_entity_refs and canonical_snapshot_ref do not by themselves prove retained context coverage. L6 sole ownership is already settled.
+
+**Binding obligations:** Retain all source-required suspension context, canonical/repository/world/environment basis, dependencies, focus, claims/hypotheses/evidence/decisions, rejected paths, slices/actions, unknowns, commitments and temporary changes. Verify durable payload before atomic suspension; a capsule never authorizes replay of an old action.
+
+**Remaining detail / acceptance limit:** Field/payload preservation proof for original project/context/basis collections and their versions. No new payload schema, snapshot alias or field embedding is selected.
+
+Exact authoritative evidence: [FCA-53](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L2032>); [RDMS-05-M09-U040](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L653>); [RDMS-05-M09-U041](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L694>); [RDMS-05-M10-U042](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L2066>); [RDMS-05-M10-U043](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L2092>); [RDMS-05-M10-U044](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L2107>).
+
+### L6-NR-PARENT-ResumptionCapsule
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+The FCA goal/subgoal, current focus, repo basis, created time and contextual arrays are mandatory architectural information. The compact amended capsule does not prove they are present merely by holding a payload/snapshot reference.
+
+**Binding obligations:** Preserve every FCA suspension-context category and timestamp plus all non-superseded RDMS additions. Restore canonical state, evaluate changes and stale dependencies, reconcile relevant actions and then resume through Executive authority.
+
+**Remaining detail / acceptance limit:** Prove task/goal/subgoal, base_state_version, repo_ref, focus, hypotheses/evidence/rejected paths/temporary changes/open needs, optional next action and created_at in the frozen referenced content. Do not equate created_at to a sequence number.
+
+Exact authoritative evidence: [FCA-53](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L2032>); [RDMS-05-M09-U040](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L653>); [RDMS-05-M09-U043](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L722>); [RDMS-05-M10-U042](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L2066>); [RDMS-05-M10-U046](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt#L2120>).
