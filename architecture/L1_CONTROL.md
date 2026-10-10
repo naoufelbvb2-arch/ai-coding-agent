@@ -610,7 +610,7 @@ Canonical owner: L1; defining specification: RDMS-01.
 
 Source: [ProjectRuntime](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt#L33>); declaration SHA-256 `fe0b217ab857240617ab25d12f48cb2865064d86a4cdd3af7c3c0962bf3751b1`.
 
-**Record-shape reconciliation remains OPEN.** The operative rules in this document apply; no complete replacement declaration is asserted. Every exact candidate and its field spelling remains in the source registry; this prevents a historical or partial declaration from being published as current complete law.
+**Representation detail DEFERRED TO IMPLEMENTATION DESIGN.** The operative rules in this document apply; no complete replacement declaration is asserted. Every exact candidate and its field spelling remains in the source registry; the binding obligations and intentionally unspecified representation detail are recorded in the targeted review below. Parent-field questions remain separately classified.
 
 - [Original draft](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt#L33>); SHA-256 `fe0b217ab857240617ab25d12f48cb2865064d86a4cdd3af7c3c0962bf3751b1`.
 
@@ -632,3 +632,31 @@ Source: [FCA-I33](<../documentation_checkpoint/source_archive/project/AI_CODING_
 **FCA-I37** — Recoverability-critical control metadata commits atomically.
 
 Source: [FCA-I37](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L2997>).
+
+## Targeted normative reconciliation
+
+This targeted review uses the published consolidation as its baseline. Classes B/E remain open; C defers only the stated representation detail; D is source-determined. These dispositions supply no new architectural decision, serializer alias, threshold or authority.
+
+### L1-NR-SHAPE-ProjectRuntime
+
+**C — IMPLEMENTATION_DETAIL_DEFERRED; DEFERRED_TO_IMPLEMENTATION_DESIGN.**
+
+R1 explicitly provides ProjectHead, the atomic current-store/ledger boundary and separate durable ProjectStatus/process-local ProcessRuntimeMode. Only the aggregate embedding names remain unspecified; there is no missing authority or recovery state definition.
+
+**Binding obligations:** One authoritative ControlTransaction atomically advances current state and replay/control records. ProjectHead carries the legal head/epoch/schema/status. Startup resets process mode and requires RecoveryBarrier before READY. Never persist READY as durable project truth.
+
+**Remaining detail / acceptance limit:** ProjectRuntime aggregate member names, class layout and lookup arrangement. These cannot merge ProjectStatus with ProcessRuntimeMode or create a second control head.
+
+Exact authoritative evidence: [RDMS-01-M01-U000](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt#L1305>); [RDMS-01-M01-U001](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt#L1336>); [RDMS-01-M01-U002](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt#L1377>); [RDMS-01-M01-U023](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt#L1952>); [RDMS-01-M00-U000](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt#L25>).
+
+### L1-NR-CE-01
+
+**B — LOSSLESS_MAPPING_REQUIRED; OPEN_MAPPING_PROOF.**
+
+FCA says each canonical event includes at least event_id/schema_version/idempotency_key; R1 adds event_type_version and separates schema dimensions. These requirements can coexist, so this is not a proved contradiction. R1 does not explicitly waive the two FCA members or equate them with enclosing commit metadata.
+
+**Binding obligations:** Preserve event_id, schema_version and idempotency_key for every canonical event, alongside R1 event type/version, ordinal and payload. Preserve ControlCommit control_schema_version, command idempotency_key/fingerprint and immutable events. Do not conflate event, payload, control and snapshot codec versions.
+
+**Remaining detail / acceptance limit:** Prove event metadata inclusion/resolution and its exact scope. No schema_version = event_type_version/control_schema_version or event key = enclosing commit key is approved. The original warning is narrowed to this precise binding proof.
+
+Exact authoritative evidence: [FCA-48](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md#L1921>); [RDMS-01-M01-U004](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt#L1430>); [RDMS-01-M01-U009](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt#L1600>); [RDMS-01-M01-U015](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt#L1750>); [RDMS-01-M01-U016](<../documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt#L1768>).
