@@ -1,0 +1,2368 @@
+[
+  {
+    "id": "X8-01",
+    "path": "L2 → L7 → L2",
+    "ownership": "L2 canonical capability meaning / L7 transport",
+    "input_records": [
+      "CapabilityInvocation"
+    ],
+    "output_records": [
+      "CapabilityResult",
+      "CapabilityTransportResult"
+    ],
+    "signature": "UNSPECIFIED; record participation only",
+    "authority": "Executive consumes proposals; L7 cannot issue cognitive or action permission.",
+    "atomicity_durability": "No canonical state transition follows delivery alone. Owner-authorized adoption enters L1 ControlTransaction.",
+    "failure_retry_recovery": "Provider timeout, malformed output or old epoch yields rejection/revalidation; retries are invocation delivery and never automatic tool redispatch.",
+    "rejection_conditions": "Reject omitted canonical payload, forged authority, stale dependencies or any unproved lossy transport conversion.",
+    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "field_or_projection_review": [],
+    "source_units": [
+      {
+        "unit_id": "RDMS-10-M23-U012",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+        "line": 342,
+        "sha256": "31f9c1d70d2c898cf2ec50af580bacbf9f69166956aacc52ad44d0c40d1d8d09"
+      },
+      {
+        "unit_id": "RDMS-10-M24-U008",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+        "line": 3048,
+        "sha256": "756a49a85a51c12d5169370471ee89376d97b067c74cfa015da0cf36449c1b09"
+      },
+      {
+        "unit_id": "RDMS-10-M26-U023",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+        "line": 7658,
+        "sha256": "0320f8065d47d9c92113923a91057bce2dc864f49639fafb2886fb2ebc93b447"
+      },
+      {
+        "unit_id": "FCA-23",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 999,
+        "sha256": "f178e442ef0316251de825f34bfd3a59368497abd7fa32cb8d9140758d76615e"
+      }
+    ],
+    "record_evidence": [
+      {
+        "type": "CapabilityInvocation",
+        "owner": "L7",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "CapabilityInvocation {\n    invocation_id\n\n    capability_kind\n\n    goal_ref\n\n    cognitive_context_ref\n\n    dependency_set_ref\n\n    provider_policy_ref?\n\n    resource_budget_ref\n\n    requested_outputs[]\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "CapabilityInvocation",
+          "start_line": 355,
+          "end_line": 371,
+          "raw": "CapabilityInvocation {\n    invocation_id\n\n    capability_kind\n\n    goal_ref\n\n    cognitive_context_ref\n\n    dependency_set_ref\n\n    provider_policy_ref?\n\n    resource_budget_ref\n\n    requested_outputs[]\n}",
+          "raw_sha256": "8fec5e274ffc9f94b0bbde0178edb4b6fdcfe0241105dd079e62d1f954b26ccd",
+          "partial_or_example": false,
+          "specification": "RDMS-10",
+          "source_part": "Original draft",
+          "message_id": "99533762-bba8-407a-b27b-952a236c00a4",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 367,
+          "bundle_end_line": 383,
+          "message_order": 23
+        }
+      },
+      {
+        "type": "CapabilityResult",
+        "owner": "L2",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "CapabilityResult {\n    patch_proposal?\n\n    proposed_claims[]\n    proposed_hypotheses[]\n    proposed_information_needs[]\n\n    evidence_refs[]\n\n    tool_requests[]\n    experiment_requests[]\n\n    confidence_assessment?\n\n    specialist_request?\n\n    needs[]\n\n    rationale_summary?\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "CapabilityResult",
+          "start_line": 1012,
+          "end_line": 1031,
+          "raw": "CapabilityResult {\n    patch_proposal?\n\n    proposed_claims[]\n    proposed_hypotheses[]\n    proposed_information_needs[]\n\n    evidence_refs[]\n\n    tool_requests[]\n    experiment_requests[]\n\n    confidence_assessment?\n\n    specialist_request?\n\n    needs[]\n\n    rationale_summary?\n}",
+          "raw_sha256": "b60b418b16f38240fec6c0be2929b5701ef1cbb2d8c59cf0014fb6bf2fb26e4a",
+          "partial_or_example": false,
+          "specification": "FCA",
+          "source_part": "v1.0.1 FROZEN",
+          "message_id": "FCA-1.0.1-FROZEN-SPEC",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+          "bundle_start_line": 1012,
+          "bundle_end_line": 1031,
+          "message_order": -1
+        }
+      },
+      {
+        "type": "CapabilityTransportResult",
+        "owner": "L7",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "CapabilityResult {\n    invocation_id\n\n    proposal_refs[]\n\n    information_need_refs[]\n\n    tool_request_refs[]\n\n    experiment_request_refs[]\n\n    assessment_refs[]\n\n    dependency_set_ref\n\n    provenance_refs[]\n\n    result_status\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "CapabilityResult",
+          "start_line": 372,
+          "end_line": 390,
+          "raw": "CapabilityResult {\n    invocation_id\n\n    proposal_refs[]\n\n    information_need_refs[]\n\n    tool_request_refs[]\n\n    experiment_request_refs[]\n\n    assessment_refs[]\n\n    dependency_set_ref\n\n    provenance_refs[]\n\n    result_status\n}",
+          "raw_sha256": "e8ae9d35f870fc3efb84694641074038fd2961677393b2a5f5ee6d6f0cb717b5",
+          "partial_or_example": false,
+          "specification": "RDMS-10",
+          "source_part": "Original draft",
+          "message_id": "99533762-bba8-407a-b27b-952a236c00a4",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 384,
+          "bundle_end_line": 402,
+          "message_order": 23
+        }
+      }
+    ]
+  },
+  {
+    "id": "X8-02",
+    "path": "L5 → L7 → L2",
+    "ownership": "L5 canonical retrieval / L7 transport",
+    "input_records": [
+      "MemoryQuery",
+      "MemoryRetrievalRequest"
+    ],
+    "output_records": [
+      "MemoryRetrievalResult",
+      "MemoryRetrievalTransportResult"
+    ],
+    "signature": "UNSPECIFIED; record participation only",
+    "authority": "Retrieval supplies precedent; only Executive can adopt current guidance, and LearningGate governs promotion.",
+    "atomicity_durability": "Memory revisions use L1 durability; transport cannot replace retrieval coverage, query identity or canonical version.",
+    "failure_retry_recovery": "Provider/index failure reports partial/unknown coverage; absent search results do not prove absence.",
+    "rejection_conditions": "Reject missing trust/provenance/coverage, unauthorized cross-project disclosure or lossy result mapping.",
+    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "field_or_projection_review": [],
+    "source_units": [
+      {
+        "unit_id": "RDMS-07-M14-U074",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+        "line": 1079,
+        "sha256": "514eac84723bb69455b0b9eff453c8dd3ce4bdbc70dd75e915df11d20cdf8822"
+      },
+      {
+        "unit_id": "RDMS-07-M15-U024",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+        "line": 2308,
+        "sha256": "1c1e946b840ee6a9e44df0dba82a3733a42cbfcb35378ce7fdb7b9acb8b428d1"
+      },
+      {
+        "unit_id": "RDMS-07-M15-U027",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+        "line": 2377,
+        "sha256": "e8bb348d04aa67b2450cd4adb1ba0c98d217538148992fea4c2a9622c0b2a318"
+      },
+      {
+        "unit_id": "RDMS-10-M23-U046",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+        "line": 1134,
+        "sha256": "1a657d69c455d9f9d7261ae137196bfdf88d6121d71c85fede97fddc480924df"
+      },
+      {
+        "unit_id": "RDMS-10-M26-U023",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+        "line": 7658,
+        "sha256": "0320f8065d47d9c92113923a91057bce2dc864f49639fafb2886fb2ebc93b447"
+      },
+      {
+        "unit_id": "FCA-62",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 2294,
+        "sha256": "e4d72a2127d59b02986b85e69a0c7badf88741fddc8f6c4b022a664e376feb2b"
+      }
+    ],
+    "record_evidence": [
+      {
+        "type": "MemoryQuery",
+        "owner": "L5",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "MemoryQuery {\n    query_id\n\n    requesting_goal_ref\n\n    problem_context_ref\n\n    requested_memory_categories[]\n\n    allowed_memory_scopes[]\n\n    structural_features[]\n\n    causal_features[]\n\n    environment_constraints[]\n\n    retrieval_budget\n\n    sensitivity_policy_ref\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "MemoryQuery",
+          "start_line": 1008,
+          "end_line": 1028,
+          "raw": "MemoryQuery {\n    query_id\n\n    requesting_goal_ref\n\n    problem_context_ref\n\n    requested_memory_categories[]\n\n    allowed_memory_scopes[]\n\n    structural_features[]\n\n    causal_features[]\n\n    environment_constraints[]\n\n    retrieval_budget\n\n    sensitivity_policy_ref\n}",
+          "raw_sha256": "1d13a70b418a3ccd0bce28f109f9ef7bb7670633f4b8c5d572cd4173d45272d6",
+          "partial_or_example": false,
+          "specification": "RDMS-07",
+          "source_part": "Original draft",
+          "message_id": "938c1bc7-97a0-46ad-be19-cd3ba3ca125f",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 1020,
+          "bundle_end_line": 1040,
+          "message_order": 14
+        }
+      },
+      {
+        "type": "MemoryRetrievalRequest",
+        "owner": "L7",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "MemoryRetrievalRequest {\n    project_ref\n\n    query_context_ref\n\n    requested_memory_scopes[]\n\n    applicability_context_ref\n\n    access_policy_ref\n\n    result_budget\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "MemoryRetrievalRequest",
+          "start_line": 1123,
+          "end_line": 1135,
+          "raw": "MemoryRetrievalRequest {\n    project_ref\n\n    query_context_ref\n\n    requested_memory_scopes[]\n\n    applicability_context_ref\n\n    access_policy_ref\n\n    result_budget\n}",
+          "raw_sha256": "52a9b95579ab0c8cb214cff7e5cd1fef339e20d509c4a10944811e445f887d36",
+          "partial_or_example": false,
+          "specification": "RDMS-10",
+          "source_part": "Original draft",
+          "message_id": "99533762-bba8-407a-b27b-952a236c00a4",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 1135,
+          "bundle_end_line": 1147,
+          "message_order": 23
+        }
+      },
+      {
+        "type": "MemoryRetrievalResult",
+        "owner": "L5",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "MemoryRetrievalResult {\n    retrieval_id\n\n    query_ref\n\n    candidate_refs[]\n\n    omitted_or_filtered_scope[]\n\n    ranking_policy_ref\n\n    retrieval_coverage\n\n    freshness_summary\n\n    created_at\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "MemoryRetrievalResult",
+          "start_line": 1068,
+          "end_line": 1084,
+          "raw": "MemoryRetrievalResult {\n    retrieval_id\n\n    query_ref\n\n    candidate_refs[]\n\n    omitted_or_filtered_scope[]\n\n    ranking_policy_ref\n\n    retrieval_coverage\n\n    freshness_summary\n\n    created_at\n}",
+          "raw_sha256": "e4ae715a27b230289f343447d8b7723501f62538065a5e61fa5dc5009c17c67d",
+          "partial_or_example": false,
+          "specification": "RDMS-07",
+          "source_part": "Original draft",
+          "message_id": "938c1bc7-97a0-46ad-be19-cd3ba3ca125f",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 1080,
+          "bundle_end_line": 1096,
+          "message_order": 14
+        }
+      },
+      {
+        "type": "MemoryRetrievalTransportResult",
+        "owner": "L7",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "MemoryRetrievalResult {\n    memory_refs[]\n\n    relevance_assessments[]\n\n    provenance_refs[]\n\n    applicability_assessments[]\n\n    trust_metadata_refs[]\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "MemoryRetrievalResult",
+          "start_line": 1136,
+          "end_line": 1146,
+          "raw": "MemoryRetrievalResult {\n    memory_refs[]\n\n    relevance_assessments[]\n\n    provenance_refs[]\n\n    applicability_assessments[]\n\n    trust_metadata_refs[]\n}",
+          "raw_sha256": "a70de6ab479231f1c2f991196c6406715513f940d0af266e1e05b22ce533c35a",
+          "partial_or_example": false,
+          "specification": "RDMS-10",
+          "source_part": "Original draft",
+          "message_id": "99533762-bba8-407a-b27b-952a236c00a4",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 1148,
+          "bundle_end_line": 1158,
+          "message_order": 23
+        }
+      }
+    ]
+  },
+  {
+    "id": "X8-03",
+    "path": "L2 → L4 → L1",
+    "ownership": "L2 Commitment / L4 condition and processing",
+    "input_records": [
+      "Commitment",
+      "TriggerCondition"
+    ],
+    "output_records": [
+      "TriggerEvaluation",
+      "TriggerFire",
+      "TriggerReaction"
+    ],
+    "signature": "UNSPECIFIED; record participation only",
+    "authority": "Executive owns Commitment transitions. L4 may evaluate frozen temporal predicates and apply only the declared reaction authority.",
+    "atomicity_durability": "Preserve one condition root, inbox/processing separation and atomic fire/reaction target mutation. Detection may repeat; canonical application deduplicates.",
+    "failure_retry_recovery": "Replayable sources and qualified occurrence identity govern replay; UNKNOWN coverage cannot assert a missed edge or absence.",
+    "rejection_conditions": "Reject unbound temporal commitment, incoherent composite input, changed frozen definition, duplicate effect or invalid target version.",
+    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "field_or_projection_review": [
+      "TriggerCondition",
+      "TriggerFire",
+      "TriggerReaction"
+    ],
+    "source_units": [
+      {
+        "unit_id": "RDMS-02-M03-U031",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "line": 2831,
+        "sha256": "b60766ce38c9c2cd2b0f5470fe4e6a6fc708df32dc7f8255c2ef821d8f417cac"
+      },
+      {
+        "unit_id": "RDMS-05-M10-U001",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "line": 1357,
+        "sha256": "4618ebc4ac28d03aac0a99e5fe732779e99377bf1e8822a2c77f0e0941cb74ec"
+      },
+      {
+        "unit_id": "RDMS-05-M10-U007",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "line": 1509,
+        "sha256": "466da8d823ae30630d7508103067a38e4218ca7df1d489e2cb82c356a210138e"
+      },
+      {
+        "unit_id": "RDMS-05-M10-U017",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "line": 1691,
+        "sha256": "cb8af7b1b7fdee083176211599a95d022ed6ee7dfc98d7d74ac2fe02ebbd75ae"
+      },
+      {
+        "unit_id": "RDMS-05-M10-U037",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "line": 1993,
+        "sha256": "ebce671ca443ac7f49cae1b759186e500ab84e6e6c2b6ce95816a79646ad2d40"
+      },
+      {
+        "unit_id": "FCA-55",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 2106,
+        "sha256": "1d443ed7149c40de365f9fa82457837c253a5ff0294e5246afc13b813f2b34b8"
+      },
+      {
+        "unit_id": "FCA-56",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 2123,
+        "sha256": "a504c3234651d99cd6822d5be04ad75d144dc36dc74b5d2836b049a5c8fed256"
+      }
+    ],
+    "record_evidence": [
+      {
+        "type": "Commitment",
+        "owner": "L2",
+        "status": "EXPLICIT_SCOPED_OVERLAY_APPLIED",
+        "effective_raw": "Commitment {\n    commitment_id\n\n    statement\n\n    why_temporary\n\n    scope: ScopeSpec\n\n    owner_ref?\n\n    linked_entity_refs[]\n\n    created_at\n\n    status:\n        ACTIVE\n        DUE\n        SATISFIED\n        CANCELLED\n        SUPERSEDED\n\n    resolution_ref?\n\n    reactivation_condition_ref\n}",
+        "explicit_overlays": [
+          "RDMS-02 C01-32 removes due_at/removal_trigger_id/revisit_trigger_id and adds reactivation_condition_ref; all other baseline fields retained",
+          "RDMS-05 C01-01 preserves RDMS-02 ownership and prohibits alternative lifecycle"
+        ],
+        "associated_contracts": null,
+        "selected": {
+          "name": "Commitment",
+          "start_line": 1368,
+          "end_line": 1396,
+          "raw": "Commitment {\n    commitment_id\n\n    statement\n\n    why_temporary\n\n    scope: ScopeSpec\n\n    owner_ref?\n\n    linked_entity_refs[]\n\n    created_at\n\n    due_at?\n\n    removal_trigger_id?\n    revisit_trigger_id?\n\n    status:\n        ACTIVE\n        DUE\n        SATISFIED\n        CANCELLED\n        SUPERSEDED\n\n    resolution_ref?\n}",
+          "raw_sha256": "da8ac753225c695d17105d549b2d3eca57f648d2343a84a0a8daefc58e46fce9",
+          "partial_or_example": false,
+          "specification": "RDMS-02",
+          "source_part": "Original draft",
+          "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 1380,
+          "bundle_end_line": 1408,
+          "message_order": 2
+        }
+      },
+      {
+        "type": "TriggerCondition",
+        "owner": "L4",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "TriggerCondition {\n    condition_id\n\n    kind:\n        STATE_EVENT\n        REPO_CHANGE\n        METRIC_THRESHOLD\n        TEMPORAL\n        EXTERNAL_EVENT\n        HUMAN_EVENT\n        SEMANTIC_REVIEW\n        COMPOSITE\n\n    predicate_spec\n\n    dependency_set_ref?\n\n    required_evidence_policy_ref?\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "TriggerCondition",
+          "start_line": 179,
+          "end_line": 197,
+          "raw": "TriggerCondition {\n    condition_id\n\n    kind:\n        STATE_EVENT\n        REPO_CHANGE\n        METRIC_THRESHOLD\n        TEMPORAL\n        EXTERNAL_EVENT\n        HUMAN_EVENT\n        SEMANTIC_REVIEW\n        COMPOSITE\n\n    predicate_spec\n\n    dependency_set_ref?\n\n    required_evidence_policy_ref?\n}",
+          "raw_sha256": "c3092a02ce0b441049cfe58978e5eaa1bbee23f7b4fd879240b58e666822bdbd",
+          "partial_or_example": false,
+          "specification": "RDMS-05",
+          "source_part": "Original draft",
+          "message_id": "6276f296-457b-462d-b674-933a15194429",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 191,
+          "bundle_end_line": 209,
+          "message_order": 9
+        }
+      },
+      {
+        "type": "TriggerEvaluation",
+        "owner": "L4",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "TriggerEvaluation {\n    evaluation_id\n\n    trigger_ref\n\n    evaluated_source_frontier_ref\n\n    observed_basis_refs[]\n\n    outcome:\n        TRUE\n        FALSE\n        UNKNOWN\n\n    evaluator_version_ref\n\n    evaluated_at_commit_seq?\n    evaluated_at_time?\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "TriggerEvaluation",
+          "start_line": 204,
+          "end_line": 222,
+          "raw": "TriggerEvaluation {\n    evaluation_id\n\n    trigger_ref\n\n    evaluated_source_frontier_ref\n\n    observed_basis_refs[]\n\n    outcome:\n        TRUE\n        FALSE\n        UNKNOWN\n\n    evaluator_version_ref\n\n    evaluated_at_commit_seq?\n    evaluated_at_time?\n}",
+          "raw_sha256": "4fbb6bfdf077671afdbdcc8730f329e333eb205e85428f93a39f0d14ef8816c1",
+          "partial_or_example": false,
+          "specification": "RDMS-05",
+          "source_part": "Original draft",
+          "message_id": "6276f296-457b-462d-b674-933a15194429",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 216,
+          "bundle_end_line": 234,
+          "message_order": 9
+        }
+      },
+      {
+        "type": "TriggerFire",
+        "owner": "L4",
+        "status": "MULTIPLE_NATIVE_SURFACES_REQUIRE_SCOPED_RECONCILIATION",
+        "effective_raw": null,
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "TriggerFire",
+          "start_line": 345,
+          "end_line": 357,
+          "raw": "TriggerFire {\n    fire_id\n\n    trigger_definition_snapshot_ref\n    qualified_occurrence_ref\n\n    evidence_basis_refs[]\n    source_frontier_ref\n\n    fire_identity_key\n\n    created_commit_seq\n}",
+          "raw_sha256": "5bdd4a1ad86972d86c9fd8cb77adaec3e60236a88d76f37540b48f091096f69c",
+          "partial_or_example": false,
+          "specification": "RDMS-05",
+          "source_part": "C01",
+          "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 1692,
+          "bundle_end_line": 1704,
+          "message_order": 10
+        }
+      },
+      {
+        "type": "TriggerReaction",
+        "owner": "L4",
+        "status": "MULTIPLE_NATIVE_SURFACES_REQUIRE_SCOPED_RECONCILIATION",
+        "effective_raw": null,
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "TriggerReaction",
+          "start_line": 622,
+          "end_line": 642,
+          "raw": "TriggerReaction {\n    reaction_id\n\n    fire_ref\n\n    target_entity_ref\n    expected_target_version\n    expected_lifecycle\n\n    target_goal_lineage_ref?\n\n    frozen_reaction_spec_ref\n\n    status:\n        PENDING\n        CLAIMED\n        APPLIED\n        BLOCKED\n        OBSOLETE\n        CANCELLED\n}",
+          "raw_sha256": "89679654e9b97a64373c679bb1c0a96e71021f9d8d3df7dd19cfa3fa682f0fd3",
+          "partial_or_example": false,
+          "specification": "RDMS-05",
+          "source_part": "C01",
+          "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 1969,
+          "bundle_end_line": 1989,
+          "message_order": 10
+        }
+      }
+    ]
+  },
+  {
+    "id": "X8-04",
+    "path": "L4 → L1 → L3",
+    "ownership": "L4 temporal reaction / L3 action authority",
+    "input_records": [
+      "TriggerReaction",
+      "TriggerDerivedWorkCommitment"
+    ],
+    "output_records": [
+      "ActionProposal",
+      "ActionAuthorization",
+      "ActionRecord"
+    ],
+    "signature": "UNSPECIFIED; record participation only",
+    "authority": "Trigger reaction may commit continuation work; it never authorizes ActionProposal or dispatch independently.",
+    "atomicity_durability": "Reaction/continuation is atomic where required. Dispatch needs ActionGate, durable intent, legal ownership and trusted executor fencing.",
+    "failure_retry_recovery": "Reaction replay deduplicates. Action delivery recovery enumerates obligations; external retry follows L3 effect semantics.",
+    "rejection_conditions": "Reject obsolete generation, cancelled target, orphaned obligation, missing durable dispatch intent or reused unsafe authorization.",
+    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "field_or_projection_review": [
+      "TriggerReaction",
+      "ActionProposal",
+      "ActionRecord"
+    ],
+    "source_units": [
+      {
+        "unit_id": "RDMS-05-M10-U036",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "line": 1968,
+        "sha256": "8bba170728ae848a62dde28ac52347bc64e5d268a0aa4f79c4c29aac0c84bf6e"
+      },
+      {
+        "unit_id": "RDMS-05-M11-U001",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "line": 2453,
+        "sha256": "762917502f49926d92106a0026c60395688fcee4fe6aeec1e6946c27bbf79e2d"
+      },
+      {
+        "unit_id": "RDMS-10-M25-U018",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+        "line": 5827,
+        "sha256": "8202cf44065ffe577f2ccf2513d5d60b9e29889ecbdca72b2f07b637bc74ce43"
+      },
+      {
+        "unit_id": "RDMS-10-M25-U019",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+        "line": 5853,
+        "sha256": "a2f3413cd3f55b17cc29b0f35146bf6bc2c61e16d4bd19e8732cc49b4f80ea6b"
+      },
+      {
+        "unit_id": "RDMS-10-M26-U019",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+        "line": 7640,
+        "sha256": "0ee3455ef0120e6a329701a105c1026f918c822b8babc6cdd74573c3b6b27004"
+      },
+      {
+        "unit_id": "FCA-45",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 1808,
+        "sha256": "4b2197bec3a08b40a37eca8cf701670c15937891675713af3b9ef2c8322caa9d"
+      }
+    ],
+    "record_evidence": [
+      {
+        "type": "TriggerReaction",
+        "owner": "L4",
+        "status": "MULTIPLE_NATIVE_SURFACES_REQUIRE_SCOPED_RECONCILIATION",
+        "effective_raw": null,
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "TriggerReaction",
+          "start_line": 622,
+          "end_line": 642,
+          "raw": "TriggerReaction {\n    reaction_id\n\n    fire_ref\n\n    target_entity_ref\n    expected_target_version\n    expected_lifecycle\n\n    target_goal_lineage_ref?\n\n    frozen_reaction_spec_ref\n\n    status:\n        PENDING\n        CLAIMED\n        APPLIED\n        BLOCKED\n        OBSOLETE\n        CANCELLED\n}",
+          "raw_sha256": "89679654e9b97a64373c679bb1c0a96e71021f9d8d3df7dd19cfa3fa682f0fd3",
+          "partial_or_example": false,
+          "specification": "RDMS-05",
+          "source_part": "C01",
+          "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 1969,
+          "bundle_end_line": 1989,
+          "message_order": 10
+        }
+      },
+      {
+        "type": "TriggerDerivedWorkCommitment",
+        "owner": "L7",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "TriggerDerivedWorkCommitment {\n    trigger_ref\n\n    trigger_generation\n\n    source_event_identity\n\n    canonical_reaction_identity\n\n    reaction_commit_ref\n\n    derived_work_identity\n\n    required_continuation_scope\n\n    durable_continuation_ref\n\n    existing_action_refs[]\n\n    required_authorization_path\n\n    recovery_deduplication_basis\n\n    current_continuation_assessment\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "TriggerDerivedWorkCommitment",
+          "start_line": 273,
+          "end_line": 297,
+          "raw": "TriggerDerivedWorkCommitment {\n    trigger_ref\n\n    trigger_generation\n\n    source_event_identity\n\n    canonical_reaction_identity\n\n    reaction_commit_ref\n\n    derived_work_identity\n\n    required_continuation_scope\n\n    durable_continuation_ref\n\n    existing_action_refs[]\n\n    required_authorization_path\n\n    recovery_deduplication_basis\n\n    current_continuation_assessment\n}",
+          "raw_sha256": "d9b47cadcb4d7322b954a69c91d8acb6c3e871b54bd31510b1e216f209714373",
+          "partial_or_example": false,
+          "specification": "RDMS-10",
+          "source_part": "C02",
+          "message_id": "5f33fe0d-af3e-4f37-aeac-8979e64d941f",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 5828,
+          "bundle_end_line": 5852,
+          "message_order": 25
+        }
+      },
+      {
+        "type": "ActionProposal",
+        "owner": "L3",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "ActionProposal {\n    action_proposal_id\n    project_id\n\n    requested_by_ref\n    goal_id\n    slice_id\n\n    action_kind:\n        TERMINAL\n        FILESYSTEM\n        GIT\n        TEST\n        BUILD\n        DEBUGGER\n        DATABASE\n        NETWORK\n        DEPLOYMENT\n        OTHER\n\n    requested_action_class:\n        EPHEMERAL_SANDBOX\n        SHARED_WORLD\n\n    intent\n\n    target_scope[]\n    expected_effects[]\n    preconditions[]\n\n    base_repo_ref?\n    base_world_ref?\n\n    dependency_set_ref?\n\n    risk_profile_ref?\n\n    reversibility:\n        REVERSIBLE\n        COMPENSATABLE\n        PARTIALLY_REVERSIBLE\n        IRREVERSIBLE\n\n    compensation_plan_ref?\n\n    effect_semantics_ref\n\n    execution_spec_ref\n\n    mode:\n        DIAGNOSTIC\n        PRODUCTION\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "ActionProposal",
+          "start_line": 85,
+          "end_line": 137,
+          "raw": "ActionProposal {\n    action_proposal_id\n    project_id\n\n    requested_by_ref\n    goal_id\n    slice_id\n\n    action_kind:\n        TERMINAL\n        FILESYSTEM\n        GIT\n        TEST\n        BUILD\n        DEBUGGER\n        DATABASE\n        NETWORK\n        DEPLOYMENT\n        OTHER\n\n    requested_action_class:\n        EPHEMERAL_SANDBOX\n        SHARED_WORLD\n\n    intent\n\n    target_scope[]\n    expected_effects[]\n    preconditions[]\n\n    base_repo_ref?\n    base_world_ref?\n\n    dependency_set_ref?\n\n    risk_profile_ref?\n\n    reversibility:\n        REVERSIBLE\n        COMPENSATABLE\n        PARTIALLY_REVERSIBLE\n        IRREVERSIBLE\n\n    compensation_plan_ref?\n\n    effect_semantics_ref\n\n    execution_spec_ref\n\n    mode:\n        DIAGNOSTIC\n        PRODUCTION\n}",
+          "raw_sha256": "1d1d2dfa1eaacd278ba44f59a1e7c5a2807b8f4e22cd867864b3688ac7587273",
+          "partial_or_example": false,
+          "specification": "RDMS-04",
+          "source_part": "Original draft",
+          "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 97,
+          "bundle_end_line": 149,
+          "message_order": 6
+        }
+      },
+      {
+        "type": "ActionAuthorization",
+        "owner": "L3",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "ActionAuthorization {\n    authorization_id\n\n    proposal_ref\n    proposal_fingerprint\n\n    executive_epoch\n\n    approved_scope\n    approved_effects\n\n    approved_execution_policy_ref\n\n    approved_action_class\n\n    validity_conditions[]\n    dependency_set_ref?\n\n    authorized_commit_seq\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "ActionAuthorization",
+          "start_line": 144,
+          "end_line": 163,
+          "raw": "ActionAuthorization {\n    authorization_id\n\n    proposal_ref\n    proposal_fingerprint\n\n    executive_epoch\n\n    approved_scope\n    approved_effects\n\n    approved_execution_policy_ref\n\n    approved_action_class\n\n    validity_conditions[]\n    dependency_set_ref?\n\n    authorized_commit_seq\n}",
+          "raw_sha256": "250e1e39b2eec30129d69a099b5ed68e6ea0e6bb69acd01ac1c31549f0c025c6",
+          "partial_or_example": false,
+          "specification": "RDMS-04",
+          "source_part": "Original draft",
+          "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 156,
+          "bundle_end_line": 175,
+          "message_order": 6
+        }
+      },
+      {
+        "type": "ActionRecord",
+        "owner": "L3",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "ActionRecord {\n    action_id\n    proposal_ref\n    authorization_ref\n\n    action_class\n\n    lifecycle\n\n    world_ref_before?\n    repo_ref_before?\n\n    effect_semantics_ref\n\n    latest_attempt_ref?\n\n    world_ref_after?\n    repo_ref_after?\n\n    effect_verification_refs[]\n\n    compensation_action_ref?\n\n    created_commit_seq\n    updated_commit_seq\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "ActionRecord",
+          "start_line": 196,
+          "end_line": 221,
+          "raw": "ActionRecord {\n    action_id\n    proposal_ref\n    authorization_ref\n\n    action_class\n\n    lifecycle\n\n    world_ref_before?\n    repo_ref_before?\n\n    effect_semantics_ref\n\n    latest_attempt_ref?\n\n    world_ref_after?\n    repo_ref_after?\n\n    effect_verification_refs[]\n\n    compensation_action_ref?\n\n    created_commit_seq\n    updated_commit_seq\n}",
+          "raw_sha256": "b04404a6eafcf8aec73c83958aa5553aca3762a62a892c1cc8e857d5f0e3f386",
+          "partial_or_example": false,
+          "specification": "RDMS-04",
+          "source_part": "Original draft",
+          "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 208,
+          "bundle_end_line": 233,
+          "message_order": 6
+        }
+      }
+    ]
+  },
+  {
+    "id": "X8-05",
+    "path": "L4 → L6 → L1",
+    "ownership": "L6 capsule, suspension and resume integrity / L4 scheduling",
+    "input_records": [
+      "ResumptionCapsule",
+      "WorkReactivationBinding"
+    ],
+    "output_records": [
+      "ResumeAssessment",
+      "RecoveryAdmissionBinding"
+    ],
+    "signature": "UNSPECIFIED; record participation only",
+    "authority": "L6 owns admission/integrity; L4 schedules detection and reactivation. Executive must reassess resumed cognition.",
+    "atomicity_durability": "Durable capsule bytes/hash precede atomic suspension metadata and legal recovery continuation. Cursor advancement cannot outrun required durable reaction.",
+    "failure_retry_recovery": "Missing/corrupt capsule or unresolved action blocks resume. Persistence failure cannot be reported as guaranteed automatic recovery.",
+    "rejection_conditions": "Reject corrupt/missing payload, stale check at commit, unproved action outcome or expanded recovery scope.",
+    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "field_or_projection_review": [
+      "ResumptionCapsule",
+      "ResumeAssessment"
+    ],
+    "source_units": [
+      {
+        "unit_id": "RDMS-05-M10-U042",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "line": 2066,
+        "sha256": "47ad5f80264c32f523e411bca4192b6a10a439d077617c0639f01c886902959c"
+      },
+      {
+        "unit_id": "RDMS-05-M10-U043",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "line": 2092,
+        "sha256": "047638194c53009d676ba22ba7df2092ffde4a3afb1f6a62188857f409912a5c"
+      },
+      {
+        "unit_id": "RDMS-05-M10-U046",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "line": 2120,
+        "sha256": "bebba0477e38228d4c7b84a45bafd4b26eb3665e09d576b578326967183c67cc"
+      },
+      {
+        "unit_id": "RDMS-05-M10-U049",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "line": 2188,
+        "sha256": "bfc4fa164d0d5b9038241be02127aa4ec08dc0bd0ac6820e345d5b1995a498ca"
+      },
+      {
+        "unit_id": "RDMS-09-M21-U070",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-09_APPROVED_SOURCE_SET.txt",
+        "line": 6851,
+        "sha256": "364f50391a9b02bfe491ef9740ec5b5c1695790131157c62892b726d905d1df2"
+      },
+      {
+        "unit_id": "RDMS-09-M22-U016",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-09_APPROVED_SOURCE_SET.txt",
+        "line": 8258,
+        "sha256": "1b94f18ebf2319bb701434b9608aadad17ea15f0a16f5035b4563aa8bf43d287"
+      },
+      {
+        "unit_id": "FCA-52",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 2009,
+        "sha256": "d031c29c80d690b8e12d41195a1d76f67d254419ec4c68826a355bd37166ea1f"
+      },
+      {
+        "unit_id": "FCA-53",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 2032,
+        "sha256": "45c7097412dce7ff947da60fb592d6d7c7678d4046d402af2ba61bc6980292a5"
+      },
+      {
+        "unit_id": "FCA-82",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 2842,
+        "sha256": "92b9097710856ff2fb540eac313422afc0852e6f5588e47d62d498b15d0eacf2"
+      }
+    ],
+    "record_evidence": [
+      {
+        "type": "ResumptionCapsule",
+        "owner": "L6",
+        "status": "MULTIPLE_NATIVE_SURFACES_REQUIRE_SCOPED_RECONCILIATION",
+        "effective_raw": null,
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "ResumptionCapsule",
+          "start_line": 720,
+          "end_line": 741,
+          "raw": "ResumptionCapsule {\n    capsule_id\n\n    task_or_goal_ref\n\n    suspended_from_state\n\n    canonical_snapshot_ref\n\n    relevant_entity_refs[]\n\n    dependency_set_ref\n\n    unresolved_action_refs[]\n\n    next_action_proposal_ref?\n\n    durable_payload_artifact_ref\n    content_integrity_ref\n\n    created_commit_seq\n}",
+          "raw_sha256": "1c38a08ce60f890ed64f69cfd6cb8d2928d75d5b6637be31299a5b209e420409",
+          "partial_or_example": false,
+          "specification": "RDMS-05",
+          "source_part": "C01",
+          "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 2067,
+          "bundle_end_line": 2088,
+          "message_order": 10
+        }
+      },
+      {
+        "type": "WorkReactivationBinding",
+        "owner": "L4",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "WorkReactivationBinding {\n    binding_id\n\n    goal_or_slice_ref\n\n    suspension_or_wait_reason_ref\n\n    trigger_refs[]\n\n    resumption_capsule_ref?\n\n    created_commit_seq\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "WorkReactivationBinding",
+          "start_line": 600,
+          "end_line": 612,
+          "raw": "WorkReactivationBinding {\n    binding_id\n\n    goal_or_slice_ref\n\n    suspension_or_wait_reason_ref\n\n    trigger_refs[]\n\n    resumption_capsule_ref?\n\n    created_commit_seq\n}",
+          "raw_sha256": "33ac48045f93d3cbee54d77bbd28bbb0c9439f88452722346acba3219f983e69",
+          "partial_or_example": false,
+          "specification": "RDMS-05",
+          "source_part": "Original draft",
+          "message_id": "6276f296-457b-462d-b674-933a15194429",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 612,
+          "bundle_end_line": 624,
+          "message_order": 9
+        }
+      },
+      {
+        "type": "ResumeAssessment",
+        "owner": "L6",
+        "status": "MULTIPLE_NATIVE_SURFACES_REQUIRE_SCOPED_RECONCILIATION",
+        "effective_raw": null,
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "ResumeAssessment",
+          "start_line": 801,
+          "end_line": 821,
+          "raw": "ResumeAssessment {\n    assessment_id\n\n    capsule_ref\n\n    current_context_refs[]\n\n    action_reconciliation_refs[]\n\n    dependency_evaluation_ref\n\n    goal_slice_validity_refs[]\n\n    result:\n        RESUMABLE\n        REPLAN_REQUIRED\n        BLOCKED\n        UNKNOWN\n\n    basis_refs[]\n}",
+          "raw_sha256": "d384cbdf16eb937275f6c75d4af8363e3ded033509c0f90d3aae3310ec06950c",
+          "partial_or_example": false,
+          "specification": "RDMS-05",
+          "source_part": "C01",
+          "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 2148,
+          "bundle_end_line": 2168,
+          "message_order": 10
+        }
+      },
+      {
+        "type": "RecoveryAdmissionBinding",
+        "owner": "L6",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "RecoveryAdmissionBinding {\n    admission_id\n\n    recovery_case_ref\n\n    admitted_project_scope\n\n    admitted_operation_classes[]\n\n    current_executive_epoch\n\n    canonical_state_frontier\n\n    policy_frontier\n\n    dependency_frontier\n\n    security_frontier\n\n    suppression_frontier\n\n    unresolved_action_constraints[]\n\n    admission_generation\n\n    invalidation_conditions[]\n\n    admission_integrity_ref\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "RecoveryAdmissionBinding",
+          "start_line": 1085,
+          "end_line": 1113,
+          "raw": "RecoveryAdmissionBinding {\n    admission_id\n\n    recovery_case_ref\n\n    admitted_project_scope\n\n    admitted_operation_classes[]\n\n    current_executive_epoch\n\n    canonical_state_frontier\n\n    policy_frontier\n\n    dependency_frontier\n\n    security_frontier\n\n    suppression_frontier\n\n    unresolved_action_constraints[]\n\n    admission_generation\n\n    invalidation_conditions[]\n\n    admission_integrity_ref\n}",
+          "raw_sha256": "6999b109f9532e1ccce580354e9c6bb30c52921f487e04769ee4229fec5f0f6b",
+          "partial_or_example": false,
+          "specification": "RDMS-09",
+          "source_part": "C02",
+          "message_id": "d59160dd-fa7a-4058-8892-69794f57e9b8",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-09_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 5141,
+          "bundle_end_line": 5169,
+          "message_order": 20
+        }
+      }
+    ]
+  },
+  {
+    "id": "X8-06",
+    "path": "L2 → L3 → L1",
+    "ownership": "L3 world action / L2 Executive / L1 durability",
+    "input_records": [
+      "Slice",
+      "ActionProposal"
+    ],
+    "output_records": [
+      "ActionAuthorization",
+      "ActionRecord",
+      "ControlCommit"
+    ],
+    "signature": "UNSPECIFIED; record participation only",
+    "authority": "Current Executive supplies semantic authorization; ActionGate validates legal scope and effect; control persistence grants no independent permission.",
+    "atomicity_durability": "Compare expected state/resources, commit dispatch ownership, persist acknowledged recoverable intent, validate effective execution at last enforceable boundary, then dispatch.",
+    "failure_retry_recovery": "Before possible dispatch, revoke/revalidate. At intent or later, preserve unknown effects and reconcile; compensation is a new authorized action.",
+    "rejection_conditions": "Reject stale epoch, failed expected-version check, altered effective operation, unknown containment or missing recoverable durability.",
+    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "field_or_projection_review": [
+      "Slice",
+      "ActionProposal",
+      "ActionRecord",
+      "ControlCommit"
+    ],
+    "source_units": [
+      {
+        "unit_id": "RDMS-04-M07-U004",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+        "line": 1687,
+        "sha256": "4aaf0feeba98a29d5db6dc8514478a01a3813f28562bf0ef1d26d1ff8132294b"
+      },
+      {
+        "unit_id": "RDMS-04-M07-U005",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+        "line": 1712,
+        "sha256": "cb710262d6dce6f8aa43a09fcc950ca82a43b681e65f950796d94c1b60218a8a"
+      },
+      {
+        "unit_id": "RDMS-10-M24-U051",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+        "line": 3620,
+        "sha256": "82bccbec81a83e5cf065d1bbd2d6a618c8b178489b28bfde0da4a354a9e3137c"
+      },
+      {
+        "unit_id": "RDMS-10-M25-U028",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+        "line": 5977,
+        "sha256": "cf1460ef3d1aa5e0dd740105e627f583b8a5c9da90cd82f96a3db83ee52f131a"
+      },
+      {
+        "unit_id": "RDMS-10-M25-U038",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+        "line": 6090,
+        "sha256": "0079f235a4c2cfec539347308d7c97285ace60a603fdf96f544a1ccf7380b6ba"
+      },
+      {
+        "unit_id": "FCA-41",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 1641,
+        "sha256": "c094687b52cd30548b46014b794d3bf556bd122e79f09840168aa4d09e894625"
+      },
+      {
+        "unit_id": "FCA-42",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 1660,
+        "sha256": "d417f013d5198212eacf31f896fb7e179247beb03df58f900247d478207ef734"
+      },
+      {
+        "unit_id": "FCA-45",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 1808,
+        "sha256": "4b2197bec3a08b40a37eca8cf701670c15937891675713af3b9ef2c8322caa9d"
+      },
+      {
+        "unit_id": "FCA-49",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 1949,
+        "sha256": "f0799d14dfde373ffb26e9f6205b665497853562cf44f895e02f1e7e6dd4dc5c"
+      }
+    ],
+    "record_evidence": [
+      {
+        "type": "Slice",
+        "owner": "L2",
+        "status": "EXPLICIT_SCOPED_OVERLAY_APPLIED",
+        "effective_raw": "Slice {\n    slice_id\n\n    goal_id\n    parent_slice_id?\n\n    intent\n\n    dependency_refs[]\n\n    allowed_scope[]\n    forbidden_scope[]\n\n    preconditions[]\n\n    invariant_refs[]\n    contract_refs[]\n\n    expected_effects[]\n\n    expected_change_surface\n\n    risk_refs[]\n\n    proof_obligations[]\n\n    verification_specs[]\n\n    rollback_spec?\n\n    planned_from_commit_seq\n    dependency_set_ref\n\n    base_repo_ref\n\n    actual_effects[]\n    actual_change_surface?\n}",
+        "explicit_overlays": [
+          "RDMS-02 C01-21 explicitly abolishes single giant status enum; separately owned SliceState carries stage/condition/terminal",
+          "RDMS-02 C01-25 removes base_state_version and replaces freshness basis with planned_from_commit_seq/dependency_set_ref/base_repo_ref"
+        ],
+        "associated_contracts": null,
+        "selected": {
+          "name": "Slice",
+          "start_line": 1205,
+          "end_line": 1255,
+          "raw": "Slice {\n    slice_id\n\n    goal_id\n    parent_slice_id?\n\n    intent\n\n    dependency_refs[]\n\n    allowed_scope[]\n    forbidden_scope[]\n\n    preconditions[]\n\n    invariant_refs[]\n    contract_refs[]\n\n    expected_effects[]\n\n    expected_change_surface\n\n    risk_refs[]\n\n    proof_obligations[]\n\n    verification_specs[]\n\n    rollback_spec?\n\n    base_state_version\n    base_repo_ref\n\n    status:\n        PLANNED\n        READY\n        EXECUTING\n        IMPLEMENTED\n        VERIFYING\n        VERIFIED\n        INTEGRATED\n        CLOSED\n        BLOCKED\n        SUSPENDED\n        FAILED\n        CANCELLED\n        OBSOLETE\n\n    actual_effects[]\n    actual_change_surface?\n}",
+          "raw_sha256": "c447062cf9a8ed563d98cf2d43f84ecee81c6ffdf0bc82c275f83bde54de929c",
+          "partial_or_example": false,
+          "specification": "RDMS-02",
+          "source_part": "Original draft",
+          "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 1217,
+          "bundle_end_line": 1267,
+          "message_order": 2
+        }
+      },
+      {
+        "type": "ActionProposal",
+        "owner": "L3",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "ActionProposal {\n    action_proposal_id\n    project_id\n\n    requested_by_ref\n    goal_id\n    slice_id\n\n    action_kind:\n        TERMINAL\n        FILESYSTEM\n        GIT\n        TEST\n        BUILD\n        DEBUGGER\n        DATABASE\n        NETWORK\n        DEPLOYMENT\n        OTHER\n\n    requested_action_class:\n        EPHEMERAL_SANDBOX\n        SHARED_WORLD\n\n    intent\n\n    target_scope[]\n    expected_effects[]\n    preconditions[]\n\n    base_repo_ref?\n    base_world_ref?\n\n    dependency_set_ref?\n\n    risk_profile_ref?\n\n    reversibility:\n        REVERSIBLE\n        COMPENSATABLE\n        PARTIALLY_REVERSIBLE\n        IRREVERSIBLE\n\n    compensation_plan_ref?\n\n    effect_semantics_ref\n\n    execution_spec_ref\n\n    mode:\n        DIAGNOSTIC\n        PRODUCTION\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "ActionProposal",
+          "start_line": 85,
+          "end_line": 137,
+          "raw": "ActionProposal {\n    action_proposal_id\n    project_id\n\n    requested_by_ref\n    goal_id\n    slice_id\n\n    action_kind:\n        TERMINAL\n        FILESYSTEM\n        GIT\n        TEST\n        BUILD\n        DEBUGGER\n        DATABASE\n        NETWORK\n        DEPLOYMENT\n        OTHER\n\n    requested_action_class:\n        EPHEMERAL_SANDBOX\n        SHARED_WORLD\n\n    intent\n\n    target_scope[]\n    expected_effects[]\n    preconditions[]\n\n    base_repo_ref?\n    base_world_ref?\n\n    dependency_set_ref?\n\n    risk_profile_ref?\n\n    reversibility:\n        REVERSIBLE\n        COMPENSATABLE\n        PARTIALLY_REVERSIBLE\n        IRREVERSIBLE\n\n    compensation_plan_ref?\n\n    effect_semantics_ref\n\n    execution_spec_ref\n\n    mode:\n        DIAGNOSTIC\n        PRODUCTION\n}",
+          "raw_sha256": "1d1d2dfa1eaacd278ba44f59a1e7c5a2807b8f4e22cd867864b3688ac7587273",
+          "partial_or_example": false,
+          "specification": "RDMS-04",
+          "source_part": "Original draft",
+          "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 97,
+          "bundle_end_line": 149,
+          "message_order": 6
+        }
+      },
+      {
+        "type": "ActionAuthorization",
+        "owner": "L3",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "ActionAuthorization {\n    authorization_id\n\n    proposal_ref\n    proposal_fingerprint\n\n    executive_epoch\n\n    approved_scope\n    approved_effects\n\n    approved_execution_policy_ref\n\n    approved_action_class\n\n    validity_conditions[]\n    dependency_set_ref?\n\n    authorized_commit_seq\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "ActionAuthorization",
+          "start_line": 144,
+          "end_line": 163,
+          "raw": "ActionAuthorization {\n    authorization_id\n\n    proposal_ref\n    proposal_fingerprint\n\n    executive_epoch\n\n    approved_scope\n    approved_effects\n\n    approved_execution_policy_ref\n\n    approved_action_class\n\n    validity_conditions[]\n    dependency_set_ref?\n\n    authorized_commit_seq\n}",
+          "raw_sha256": "250e1e39b2eec30129d69a099b5ed68e6ea0e6bb69acd01ac1c31549f0c025c6",
+          "partial_or_example": false,
+          "specification": "RDMS-04",
+          "source_part": "Original draft",
+          "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 156,
+          "bundle_end_line": 175,
+          "message_order": 6
+        }
+      },
+      {
+        "type": "ActionRecord",
+        "owner": "L3",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "ActionRecord {\n    action_id\n    proposal_ref\n    authorization_ref\n\n    action_class\n\n    lifecycle\n\n    world_ref_before?\n    repo_ref_before?\n\n    effect_semantics_ref\n\n    latest_attempt_ref?\n\n    world_ref_after?\n    repo_ref_after?\n\n    effect_verification_refs[]\n\n    compensation_action_ref?\n\n    created_commit_seq\n    updated_commit_seq\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "ActionRecord",
+          "start_line": 196,
+          "end_line": 221,
+          "raw": "ActionRecord {\n    action_id\n    proposal_ref\n    authorization_ref\n\n    action_class\n\n    lifecycle\n\n    world_ref_before?\n    repo_ref_before?\n\n    effect_semantics_ref\n\n    latest_attempt_ref?\n\n    world_ref_after?\n    repo_ref_after?\n\n    effect_verification_refs[]\n\n    compensation_action_ref?\n\n    created_commit_seq\n    updated_commit_seq\n}",
+          "raw_sha256": "b04404a6eafcf8aec73c83958aa5553aca3762a62a892c1cc8e857d5f0e3f386",
+          "partial_or_example": false,
+          "specification": "RDMS-04",
+          "source_part": "Original draft",
+          "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 208,
+          "bundle_end_line": 233,
+          "message_order": 6
+        }
+      },
+      {
+        "type": "ControlCommit",
+        "owner": "L1",
+        "status": "SOURCE_RECORD_SURFACE_WITH_EXPLICIT_REPLACEMENT",
+        "effective_raw": "ControlCommit {\n    commit_id\n\n    project_id\n    commit_seq\n\n    control_schema_version\n\n    authority_context\n\n    idempotency_key\n    request_fingerprint\n\n    correlation_id?\n    causation_ref?\n\n    initiator_ref\n\n    mutations[]\n\n    events[]\n\n    committed_at\n}",
+        "explicit_overlays": [
+          "RDMS-01 R1 replaces this native declaration; FCA event metadata still applies and CE-01 remains open"
+        ],
+        "associated_contracts": null,
+        "selected": {
+          "name": "ControlCommit",
+          "start_line": 138,
+          "end_line": 161,
+          "raw": "ControlCommit {\n    commit_id\n\n    project_id\n    commit_seq\n\n    control_schema_version\n\n    authority_context\n\n    idempotency_key\n    request_fingerprint\n\n    correlation_id?\n    causation_ref?\n\n    initiator_ref\n\n    mutations[]\n\n    events[]\n\n    committed_at\n}",
+          "raw_sha256": "41502380fc6597de922a89d6827a323f77c3f445e3f4c795a7bb04930990a837",
+          "partial_or_example": false,
+          "specification": "RDMS-01",
+          "source_part": "R1 corrections and final freeze decision",
+          "message_id": "e3a45231-ddae-4ed4-9bd1-35202ecdfcf7",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 1431,
+          "bundle_end_line": 1454,
+          "message_order": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "X8-07",
+    "path": "L3 → L2 → L1",
+    "ownership": "L3 observation/evidence / L2 epistemic adoption",
+    "input_records": [
+      "Observation",
+      "EvidenceLink",
+      "SupportAssessment"
+    ],
+    "output_records": [
+      "Claim",
+      "Hypothesis",
+      "CanonicalMutation"
+    ],
+    "signature": "UNSPECIFIED; record participation only",
+    "authority": "Trusted Observation Ingress captures reality without Executive semantic inference. Executive authorizes interpretation/adoption under grounding law.",
+    "atomicity_durability": "Observation append has legal commit ordering; historical capture and accepted evidence are immutable. Source causality is not inferred from arrival.",
+    "failure_retry_recovery": "Duplicate capture retains origin lineage. Missing causal parent may allow raw capture while causal attachment remains pending.",
+    "rejection_conditions": "Reject model-fabricated observation, semantic capture deletion, unsupported evidence root, wrapper inflation or forged source/authority metadata.",
+    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "field_or_projection_review": [
+      "Observation",
+      "EvidenceLink",
+      "Claim",
+      "Hypothesis",
+      "CanonicalMutation"
+    ],
+    "source_units": [
+      {
+        "unit_id": "RDMS-03-M05-U000",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "line": 1924,
+        "sha256": "4a8d6a8140e71f7e10c61060095182f940079bbba0ca310b40588be24eddbe9c"
+      },
+      {
+        "unit_id": "RDMS-03-M05-U006",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "line": 2098,
+        "sha256": "e61b86407d56ad394e6165e409030e751e640a0b9132af900496e6401d807ec3"
+      },
+      {
+        "unit_id": "RDMS-03-M05-U009",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "line": 2165,
+        "sha256": "c57c5535155ec9c37e83dc2e09dff4c48b58d55782a13144357dab4c40d34985"
+      },
+      {
+        "unit_id": "RDMS-03-M05-U018",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "line": 2357,
+        "sha256": "947dea1a14ccd472bcbb647790f0cb61e01c1e0120812f6e4f1e7017c6bd5d70"
+      },
+      {
+        "unit_id": "RDMS-10-M25-U057",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+        "line": 6308,
+        "sha256": "5a2068a7ab445108d88f367973bd4d30aa82f1e73982c9187b3ee0a7464519fc"
+      },
+      {
+        "unit_id": "RDMS-10-M26-U020",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+        "line": 7644,
+        "sha256": "216199c35e9182022d844f051bf34cdee42a41036c0a9f33ccf2246f5c6ecef3"
+      },
+      {
+        "unit_id": "FCA-7",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 367,
+        "sha256": "698908aabfdf0bf0a907b70326532b92168b7f018b4f0ce0c15909cf3f3bc8be"
+      },
+      {
+        "unit_id": "FCA-11",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 576,
+        "sha256": "f801fe90f486e3892cfd8a928f9d7bccb1b0a3f372a782bff89639842e46e389"
+      },
+      {
+        "unit_id": "FCA-12",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 611,
+        "sha256": "5ef71bc94e17ddf208e6e3dc542231c816fb28d1f755d98effbd6674f9f95252"
+      },
+      {
+        "unit_id": "FCA-76",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 2716,
+        "sha256": "4076d933af183bf732e62735180ca5f63f517aba516c8ca60b48778e755d7b51"
+      }
+    ],
+    "record_evidence": [
+      {
+        "type": "Observation",
+        "owner": "L3",
+        "status": "EXPLICIT_SCOPED_OVERLAY_APPLIED",
+        "effective_raw": "Observation {\n    observation_id\n    project_id\n\n    observation_kind\n\n    source_ref\n\n    subject_ref?\n\n    observed_at\n    ingested_commit_seq\n\n    repo_ref?\n    world_ref?\n    environment_ref?\n\n    normalized_content\n\n    raw_artifact_ref?\n\n    provenance\n\n    capture_integrity\n\n    origin_ref?\n\n    trust_context_ref\n    normalization_profile_ref?\n    evidence_origin_group_ref\n}",
+        "explicit_overlays": [
+          "RDMS-03 C01-01/06/15 explicitly adds these fields; C01-21 also requires associated TemporalProvenance, without freezing an embedding field spelling"
+        ],
+        "associated_contracts": [
+          "TemporalProvenance"
+        ],
+        "selected": {
+          "name": "Observation",
+          "start_line": 70,
+          "end_line": 96,
+          "raw": "Observation {\n    observation_id\n    project_id\n\n    observation_kind\n\n    source_ref\n\n    subject_ref?\n\n    observed_at\n    ingested_commit_seq\n\n    repo_ref?\n    world_ref?\n    environment_ref?\n\n    normalized_content\n\n    raw_artifact_ref?\n\n    provenance\n\n    capture_integrity\n\n    origin_ref?\n}",
+          "raw_sha256": "2e8195bef03066422a8996e4d6329cdf17d9415a4d0584a12d65b788d09aebc1",
+          "partial_or_example": false,
+          "specification": "RDMS-03",
+          "source_part": "Original draft",
+          "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 82,
+          "bundle_end_line": 108,
+          "message_order": 4
+        }
+      },
+      {
+        "type": "EvidenceLink",
+        "owner": "L3",
+        "status": "UNSPECIFIED_ASSOCIATED_CONTRACT_EMBEDDING",
+        "effective_raw": null,
+        "explicit_overlays": [
+          "RDMS-03 C01-04/10–13 requires pinned authority and structured basis; exact replacement embedding for observation_refs is not declared"
+        ],
+        "associated_contracts": [
+          "EvidenceBasis",
+          "VersionedEntityRef<AuthorityBinding> when AUTHORITATIVE"
+        ],
+        "selected": {
+          "name": "EvidenceLink",
+          "start_line": 449,
+          "end_line": 480,
+          "raw": "EvidenceLink {\n    evidence_link_id\n\n    observation_refs[]\n\n    target_ref\n\n    relation:\n        SUPPORTS\n        WEAKENS\n        CONTRADICTS\n        RELEVANT\n\n    derivation:\n        DETERMINISTIC\n        SEMANTIC\n        AUTHORITATIVE\n\n    rationale\n\n    derivation_ref?\n\n    dependency_set_ref?\n\n    lifecycle:\n        PROPOSED\n        ACCEPTED\n        REJECTED\n        SUPERSEDED\n\n    accepted_commit_seq?\n}",
+          "raw_sha256": "b56d24206ab7628d92c266e4a6d8c3e3a63aa29a627ede82c373819a56071e26",
+          "partial_or_example": false,
+          "specification": "RDMS-03",
+          "source_part": "Original draft",
+          "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 461,
+          "bundle_end_line": 492,
+          "message_order": 4
+        }
+      },
+      {
+        "type": "SupportAssessment",
+        "owner": "L2",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "SupportAssessment {\n    assessment_id\n\n    target_ref\n\n    level:\n        UNASSESSED\n        WEAK\n        MODERATE\n        STRONG\n        VERIFIED\n        REFUTED\n\n    basis_refs[]\n\n    dependency_set_ref?\n\n    assessed_at_commit_seq\n\n    supersedes_assessment_id?\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "SupportAssessment",
+          "start_line": 43,
+          "end_line": 63,
+          "raw": "SupportAssessment {\n    assessment_id\n\n    target_ref\n\n    level:\n        UNASSESSED\n        WEAK\n        MODERATE\n        STRONG\n        VERIFIED\n        REFUTED\n\n    basis_refs[]\n\n    dependency_set_ref?\n\n    assessed_at_commit_seq\n\n    supersedes_assessment_id?\n}",
+          "raw_sha256": "3dc75d0e803592fc2881698a2fe7844835709b648ce5110b119e4ad5e3efa1e9",
+          "partial_or_example": false,
+          "specification": "RDMS-02",
+          "source_part": "C01, second review corrections and final freeze decision",
+          "message_id": "266bb347-d2a5-41ea-872a-32e140c803eb",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 1967,
+          "bundle_end_line": 1987,
+          "message_order": 3
+        }
+      },
+      {
+        "type": "Claim",
+        "owner": "L2",
+        "status": "EXPLICIT_SCOPED_OVERLAY_APPLIED",
+        "effective_raw": "Claim {\n    claim_id\n\n    kind:\n        FACT\n        BELIEF\n        ASSUMPTION\n\n    statement\n\n    scope: ScopeSpec\n\n    current_support_assessment_ref?\n\n    grounding?\n    dependency_set_ref?\n\n    temporal_validity?\n\n    status:\n        ACTIVE\n        REFUTED\n        SUPERSEDED\n\n}",
+        "explicit_overlays": [
+          "RDMS-02 C01-19 removes authoritative scalar superseded_by; use independently owned EntityLineageEdge",
+          "RDMS-02 C01-02 moves support conclusion and its commit/dependencies into SupportAssessment"
+        ],
+        "associated_contracts": null,
+        "selected": {
+          "name": "Claim",
+          "start_line": 120,
+          "end_line": 152,
+          "raw": "Claim {\n    claim_id\n\n    kind:\n        FACT\n        BELIEF\n        ASSUMPTION\n\n    statement\n\n    scope: ScopeSpec\n\n    support:\n        UNASSESSED\n        WEAK\n        MODERATE\n        STRONG\n        VERIFIED\n\n    support_assessed_at_commit?\n\n    grounding?\n    dependency_set_ref?\n\n    temporal_validity?\n\n    status:\n        ACTIVE\n        REFUTED\n        SUPERSEDED\n\n    superseded_by?\n}",
+          "raw_sha256": "0cc9ca22709f89fa2ed2187d5495b91a57d92b5beb04229b530afce7b69d7a45",
+          "partial_or_example": false,
+          "specification": "RDMS-02",
+          "source_part": "Original draft",
+          "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 132,
+          "bundle_end_line": 164,
+          "message_order": 2
+        }
+      },
+      {
+        "type": "Hypothesis",
+        "owner": "L2",
+        "status": "EXPLICIT_SCOPED_OVERLAY_APPLIED",
+        "effective_raw": "Hypothesis {\n    hypothesis_id\n\n    explanation\n\n    scope: ScopeSpec\n\n    explains_refs[]\n\n    assumption_refs[]\n\n    prediction_refs[]\n\n    experiment_refs[]\n\n    current_support_assessment_ref?\n\n    lifecycle:\n        ACTIVE\n        REJECTED\n        CONFIRMED\n        SUPERSEDED\n\n    dependency_set_ref?\n\n    closure_ref?\n}",
+        "explicit_overlays": [
+          "RDMS-02 C01-19 removes authoritative scalar superseded_by; use independently owned EntityLineageEdge",
+          "RDMS-02 C01-07/20 replaces hypothesis lifecycle, adds closure_ref and externalizes authoritative hypothesis relations",
+          "RDMS-02 C01-02 moves support conclusion and its commit/dependencies into SupportAssessment"
+        ],
+        "associated_contracts": null,
+        "selected": {
+          "name": "Hypothesis",
+          "start_line": 370,
+          "end_line": 404,
+          "raw": "Hypothesis {\n    hypothesis_id\n\n    explanation\n\n    scope: ScopeSpec\n\n    explains_refs[]\n\n    assumption_refs[]\n\n    prediction_refs[]\n\n    competing_hypothesis_ids[]\n\n    experiment_refs[]\n\n    support:\n        UNTESTED\n        PLAUSIBLE\n        SUPPORTED\n        STRONG\n        CAUSALLY_VERIFIED\n        REFUTED\n\n    status:\n        ACTIVE\n        REJECTED\n        CONFIRMED\n        SUPERSEDED\n\n    dependency_set_ref?\n\n    superseded_by?\n}",
+          "raw_sha256": "5470bd7bd74b0f796f4368162311fa068f2ad31a715fd1b7571832e0a87d6d23",
+          "partial_or_example": false,
+          "specification": "RDMS-02",
+          "source_part": "Original draft",
+          "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 382,
+          "bundle_end_line": 416,
+          "message_order": 2
+        }
+      },
+      {
+        "type": "CanonicalMutation",
+        "owner": "L1",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "CanonicalMutation {\n    mutation_id\n\n    entity_kind\n    entity_id\n\n    operation:\n        CREATE\n        REPLACE\n        TOMBSTONE\n\n    expected:\n        ABSENT\n        or entity_version\n\n    new_entity_version\n\n    payload_schema_version\n\n    after_image\n        or payload_ref\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "CanonicalMutation",
+          "start_line": 237,
+          "end_line": 258,
+          "raw": "CanonicalMutation {\n    mutation_id\n\n    entity_kind\n    entity_id\n\n    operation:\n        CREATE\n        REPLACE\n        TOMBSTONE\n\n    expected:\n        ABSENT\n        or entity_version\n\n    new_entity_version\n\n    payload_schema_version\n\n    after_image\n        or payload_ref\n}",
+          "raw_sha256": "8735b403de80146409ebf3cb7f07f3e532f0a4489b87d36ab48448ade9101aea",
+          "partial_or_example": false,
+          "specification": "RDMS-01",
+          "source_part": "R1 corrections and final freeze decision",
+          "message_id": "e3a45231-ddae-4ed4-9bd1-35202ecdfcf7",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 1530,
+          "bundle_end_line": 1551,
+          "message_order": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "X8-08",
+    "path": "L2 → L3 → L2",
+    "ownership": "L2 hypothesis/causal entities / L3 experimental evidence",
+    "input_records": [
+      "Hypothesis",
+      "Experiment",
+      "ExperimentDesignSnapshot"
+    ],
+    "output_records": [
+      "ExperimentRun",
+      "PredictionEvaluation",
+      "CausalVerificationRecord",
+      "OperationalCausalClaim"
+    ],
+    "signature": "UNSPECIFIED; record participation only",
+    "authority": "Executive approves experiments and causal adoption; mutating experiment steps separately obey ActionGate.",
+    "atomicity_durability": "Prediction freeze, authorized design snapshot and experiment authorization are atomic. Every run pins exact design and relevant execution context.",
+    "failure_retry_recovery": "Execution failure differs from falsified prediction. Nonconforming or unresolved required effects cannot close the intended experiment.",
+    "rejection_conditions": "Reject post-result prediction rewriting, current-experiment-only run binding, causal truth from simulation or COMPLETED alone.",
+    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "field_or_projection_review": [
+      "Hypothesis",
+      "Experiment",
+      "OperationalCausalClaim"
+    ],
+    "source_units": [
+      {
+        "unit_id": "RDMS-02-M03-U006",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "line": 2113,
+        "sha256": "7cb7593e5b5effa4b927154f7d3652be0c7af588fdc03e93d420849e30d3946a"
+      },
+      {
+        "unit_id": "RDMS-03-M05-U022",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "line": 2444,
+        "sha256": "742d35472a6c52ce7155b2476a9b400326b95eb69480e6b401bba40f99522210"
+      },
+      {
+        "unit_id": "RDMS-03-M05-U023",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "line": 2473,
+        "sha256": "abe5e52902c2e3ed365b2f713ecf01128bbb26e98da5ead9cc463a9475bb5ad7"
+      },
+      {
+        "unit_id": "RDMS-03-M05-U030",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "line": 2601,
+        "sha256": "2e0689020f03fafe3bdff5c3e7e3f5a3048081dafed5decb0a3bc4f5d9a3dadc"
+      },
+      {
+        "unit_id": "RDMS-03-M05-U032",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "line": 2639,
+        "sha256": "a9341ae426f46c2b1a8ee61c6c204b524c3a39fd674a4af8191f144249c1e339"
+      },
+      {
+        "unit_id": "RDMS-03-M05-U041",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "line": 2823,
+        "sha256": "e53577149775b535859cd9a216a73626c64a8f63e3a3ffad7e71c8bf7057fa31"
+      },
+      {
+        "unit_id": "FCA-40",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 1592,
+        "sha256": "0eeea169b1ab303d7c573825fa02e6bf2f65807a65b5617d9198710e7346ae8e"
+      },
+      {
+        "unit_id": "FCA-74",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 2674,
+        "sha256": "e493cb9fb56600bb9699bac3e8f58fd1cef41859a0c70d63069f45869ac515b5"
+      }
+    ],
+    "record_evidence": [
+      {
+        "type": "Hypothesis",
+        "owner": "L2",
+        "status": "EXPLICIT_SCOPED_OVERLAY_APPLIED",
+        "effective_raw": "Hypothesis {\n    hypothesis_id\n\n    explanation\n\n    scope: ScopeSpec\n\n    explains_refs[]\n\n    assumption_refs[]\n\n    prediction_refs[]\n\n    experiment_refs[]\n\n    current_support_assessment_ref?\n\n    lifecycle:\n        ACTIVE\n        REJECTED\n        CONFIRMED\n        SUPERSEDED\n\n    dependency_set_ref?\n\n    closure_ref?\n}",
+        "explicit_overlays": [
+          "RDMS-02 C01-19 removes authoritative scalar superseded_by; use independently owned EntityLineageEdge",
+          "RDMS-02 C01-07/20 replaces hypothesis lifecycle, adds closure_ref and externalizes authoritative hypothesis relations",
+          "RDMS-02 C01-02 moves support conclusion and its commit/dependencies into SupportAssessment"
+        ],
+        "associated_contracts": null,
+        "selected": {
+          "name": "Hypothesis",
+          "start_line": 370,
+          "end_line": 404,
+          "raw": "Hypothesis {\n    hypothesis_id\n\n    explanation\n\n    scope: ScopeSpec\n\n    explains_refs[]\n\n    assumption_refs[]\n\n    prediction_refs[]\n\n    competing_hypothesis_ids[]\n\n    experiment_refs[]\n\n    support:\n        UNTESTED\n        PLAUSIBLE\n        SUPPORTED\n        STRONG\n        CAUSALLY_VERIFIED\n        REFUTED\n\n    status:\n        ACTIVE\n        REJECTED\n        CONFIRMED\n        SUPERSEDED\n\n    dependency_set_ref?\n\n    superseded_by?\n}",
+          "raw_sha256": "5470bd7bd74b0f796f4368162311fa068f2ad31a715fd1b7571832e0a87d6d23",
+          "partial_or_example": false,
+          "specification": "RDMS-02",
+          "source_part": "Original draft",
+          "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 382,
+          "bundle_end_line": 416,
+          "message_order": 2
+        }
+      },
+      {
+        "type": "Experiment",
+        "owner": "L3",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "Experiment {\n    experiment_id\n\n    question\n\n    purpose:\n        REPRODUCTION\n        DISCRIMINATING\n        CAUSAL_INTERVENTION\n        REGRESSION\n        PERFORMANCE\n        EXPLORATORY\n        OTHER\n\n    target_hypothesis_ids[]\n\n    method_spec\n\n    prediction_ids[]\n\n    required_action_specs[]\n\n    risk_refs[]\n\n    lifecycle:\n        DRAFT\n        DESIGNED\n        AUTHORIZED\n        RETIRED\n        CANCELLED\n\n    prediction_set_frozen_at_commit_seq?\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "Experiment",
+          "start_line": 859,
+          "end_line": 891,
+          "raw": "Experiment {\n    experiment_id\n\n    question\n\n    purpose:\n        REPRODUCTION\n        DISCRIMINATING\n        CAUSAL_INTERVENTION\n        REGRESSION\n        PERFORMANCE\n        EXPLORATORY\n        OTHER\n\n    target_hypothesis_ids[]\n\n    method_spec\n\n    prediction_ids[]\n\n    required_action_specs[]\n\n    risk_refs[]\n\n    lifecycle:\n        DRAFT\n        DESIGNED\n        AUTHORIZED\n        RETIRED\n        CANCELLED\n\n    prediction_set_frozen_at_commit_seq?\n}",
+          "raw_sha256": "77b9d1f12e730ad6d94c444aef8d1dd545a8852df355849803557a8712ed4ea8",
+          "partial_or_example": false,
+          "specification": "RDMS-03",
+          "source_part": "Original draft",
+          "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 871,
+          "bundle_end_line": 903,
+          "message_order": 4
+        }
+      },
+      {
+        "type": "ExperimentDesignSnapshot",
+        "owner": "L3",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "ExperimentDesignSnapshot {\n    design_snapshot_id\n\n    experiment_id\n    design_version\n\n    question\n\n    purpose\n\n    method_spec\n\n    prediction_refs[]:\n        VersionedEntityRef<Prediction>\n\n    required_action_specs[]\n\n    risk_refs[]\n\n    design_scope\n\n    authorized_commit_seq\n\n    design_fingerprint\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "ExperimentDesignSnapshot",
+          "start_line": 535,
+          "end_line": 559,
+          "raw": "ExperimentDesignSnapshot {\n    design_snapshot_id\n\n    experiment_id\n    design_version\n\n    question\n\n    purpose\n\n    method_spec\n\n    prediction_refs[]:\n        VersionedEntityRef<Prediction>\n\n    required_action_specs[]\n\n    risk_refs[]\n\n    design_scope\n\n    authorized_commit_seq\n\n    design_fingerprint\n}",
+          "raw_sha256": "fbdf6d6301d7fa360c4f13c7ffbc2cf8ad4c191e341558d219c605548b73966b",
+          "partial_or_example": false,
+          "specification": "RDMS-03",
+          "source_part": "C01 and Freeze Review 02 Final",
+          "message_id": "a1ca0249-b287-4c4b-8254-773c8f6edbda",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 2448,
+          "bundle_end_line": 2472,
+          "message_order": 5
+        }
+      },
+      {
+        "type": "ExperimentRun",
+        "owner": "L3",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "ExperimentRun {\n    experiment_run_id\n\n    experiment_id\n    run_number\n\n    repo_ref?\n    world_ref?\n    environment_ref?\n\n    dependency_set_ref?\n\n    run_state:\n        PREPARED\n        RUNNING\n        BLOCKED\n        COMPLETED\n        PARTIAL\n        FAILED_TO_EXECUTE\n        CANCELLED\n\n    started_at?\n    ended_at?\n\n    execution_issue_ref?\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "ExperimentRun",
+          "start_line": 918,
+          "end_line": 943,
+          "raw": "ExperimentRun {\n    experiment_run_id\n\n    experiment_id\n    run_number\n\n    repo_ref?\n    world_ref?\n    environment_ref?\n\n    dependency_set_ref?\n\n    run_state:\n        PREPARED\n        RUNNING\n        BLOCKED\n        COMPLETED\n        PARTIAL\n        FAILED_TO_EXECUTE\n        CANCELLED\n\n    started_at?\n    ended_at?\n\n    execution_issue_ref?\n}",
+          "raw_sha256": "809f19f3dd7a910bff6e6e48f04a1d684257914c8a7706fb57b035fde58fc948",
+          "partial_or_example": false,
+          "specification": "RDMS-03",
+          "source_part": "Original draft",
+          "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 930,
+          "bundle_end_line": 955,
+          "message_order": 4
+        }
+      },
+      {
+        "type": "PredictionEvaluation",
+        "owner": "L3",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "PredictionEvaluation {\n    evaluation_id\n\n    prediction_id\n    experiment_run_id\n\n    observation_refs[]\n\n    outcome:\n        MATCHED\n        NOT_MATCHED\n        INCONCLUSIVE\n        NOT_OBSERVED\n\n    derivation:\n        DETERMINISTIC\n        SEMANTIC\n\n    rationale?\n\n    created_commit_seq\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "PredictionEvaluation",
+          "start_line": 802,
+          "end_line": 823,
+          "raw": "PredictionEvaluation {\n    evaluation_id\n\n    prediction_id\n    experiment_run_id\n\n    observation_refs[]\n\n    outcome:\n        MATCHED\n        NOT_MATCHED\n        INCONCLUSIVE\n        NOT_OBSERVED\n\n    derivation:\n        DETERMINISTIC\n        SEMANTIC\n\n    rationale?\n\n    created_commit_seq\n}",
+          "raw_sha256": "e1ed3c443376ab11fae5c59bc6b35feaa67496daf3ccb783362caddfbbbdc6bb",
+          "partial_or_example": false,
+          "specification": "RDMS-03",
+          "source_part": "Original draft",
+          "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 814,
+          "bundle_end_line": 835,
+          "message_order": 4
+        }
+      },
+      {
+        "type": "CausalVerificationRecord",
+        "owner": "L2",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "CausalVerificationRecord {\n    reproduced_failure_ref\n\n    pre_intervention_prediction_ref\n\n    intervention_experiment_ref\n\n    observed_effect_refs[]\n\n    regression_verification_ref?\n\n    alternatives_weakened[]\n\n    counterfactual_or_ablation_ref?\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "CausalVerificationRecord",
+          "start_line": 503,
+          "end_line": 517,
+          "raw": "CausalVerificationRecord {\n    reproduced_failure_ref\n\n    pre_intervention_prediction_ref\n\n    intervention_experiment_ref\n\n    observed_effect_refs[]\n\n    regression_verification_ref?\n\n    alternatives_weakened[]\n\n    counterfactual_or_ablation_ref?\n}",
+          "raw_sha256": "1ffe32b15eb4ffab0601a991b0088af0871234a3a3b88d93d6f8a27bebd65598",
+          "partial_or_example": false,
+          "specification": "RDMS-02",
+          "source_part": "Original draft",
+          "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 515,
+          "bundle_end_line": 529,
+          "message_order": 2
+        }
+      },
+      {
+        "type": "OperationalCausalClaim",
+        "owner": "L2",
+        "status": "EXPLICIT_SCOPED_OVERLAY_APPLIED",
+        "effective_raw": "OperationalCausalClaim {\n    causal_claim_id\n\n    source_hypothesis_id\n\n    cause\n    effect\n    mechanism\n\n    scope: CausalScope\n\n    verification_ref\n\n    dependency_set_ref\n\n    validity_conditions[]\n\n    contradictory_observation_refs[]\n\n    status:\n        OPERATIONALLY_VERIFIED\n        CONTRADICTED\n        SUPERSEDED\n\n    promoted_commit_seq\n\n}",
+        "explicit_overlays": [
+          "RDMS-02 C01-19 removes authoritative scalar superseded_by; use independently owned EntityLineageEdge",
+          "RDMS-02 C01-08 explicitly removes STALE from canonical lifecycle; OVCUsability is derived"
+        ],
+        "associated_contracts": null,
+        "selected": {
+          "name": "OperationalCausalClaim",
+          "start_line": 449,
+          "end_line": 477,
+          "raw": "OperationalCausalClaim {\n    causal_claim_id\n\n    source_hypothesis_id\n\n    cause\n    effect\n    mechanism\n\n    scope: CausalScope\n\n    verification_ref\n\n    dependency_set_ref\n\n    validity_conditions[]\n\n    contradictory_observation_refs[]\n\n    status:\n        OPERATIONALLY_VERIFIED\n        STALE\n        CONTRADICTED\n        SUPERSEDED\n\n    promoted_commit_seq\n\n    superseded_by?\n}",
+          "raw_sha256": "25acaae38d4e0e7933822b74e801146eedd80d82784a97f384e9f359af8ab0d5",
+          "partial_or_example": false,
+          "specification": "RDMS-02",
+          "source_part": "Original draft",
+          "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 461,
+          "bundle_end_line": 489,
+          "message_order": 2
+        }
+      }
+    ]
+  },
+  {
+    "id": "X8-09",
+    "path": "L3 → L2",
+    "ownership": "L3 comparison record / L2 causal proposition",
+    "input_records": [
+      "ContradictionRecord",
+      "Observation"
+    ],
+    "output_records": [
+      "InformationNeed",
+      "Hypothesis",
+      "Claim"
+    ],
+    "signature": "UNSPECIFIED; record participation only",
+    "authority": "A contradiction record compares scoped observations; causal explanation belongs to a typed proposition or deterministic result adopted under Executive authority.",
+    "atomicity_durability": "Preserve conflicting observations and comparison provenance; lifecycle changes cannot erase historical capture.",
+    "failure_retry_recovery": "Resolve dimensions such as time/input/environment before interpretation; unknown comparability requires acquisition rather than invented cause.",
+    "rejection_conditions": "Reject hidden root-cause truth in dimension_analysis or inconvenient observation invalidation.",
+    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "field_or_projection_review": [
+      "ContradictionRecord",
+      "Observation",
+      "InformationNeed",
+      "Hypothesis",
+      "Claim"
+    ],
+    "source_units": [
+      {
+        "unit_id": "RDMS-03-M05-U007",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "line": 2124,
+        "sha256": "a440ba757305fa53ce589424e4834dbd0afe19523bcfe7d4c3be4ba7b1b7ef7d"
+      },
+      {
+        "unit_id": "RDMS-03-M05-U019",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "line": 2377,
+        "sha256": "2b206cb7339c66cc8b18424105430df44040316545e260389f07c35d9b38b756"
+      },
+      {
+        "unit_id": "RDMS-03-M05-U020",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "line": 2410,
+        "sha256": "3b1d03c5407f83b2a6cea27dce6b05fe1c52ddb6bee3d9da8ea7b8d01cabb3b2"
+      },
+      {
+        "unit_id": "FCA-13",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 657,
+        "sha256": "2c657494b4f8daa0b0f99a06b7d50d715b65b0aad5a5b8be2990b4301b54cfa2"
+      }
+    ],
+    "record_evidence": [
+      {
+        "type": "ContradictionRecord",
+        "owner": "L3",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "ContradictionRecord {\n    contradiction_id\n\n    observation_refs[]\n\n    subject_ref?\n    subject_key?\n\n    comparison_scope\n\n    comparability\n\n    dimension_analysis[]\n\n    lifecycle:\n        CANDIDATE\n        CONFIRMED\n        EXPLAINED\n        RESOLVED\n        DISMISSED\n\n    information_need_id?\n\n    explanation_ref?\n    resolution_ref?\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "ContradictionRecord",
+          "start_line": 620,
+          "end_line": 645,
+          "raw": "ContradictionRecord {\n    contradiction_id\n\n    observation_refs[]\n\n    subject_ref?\n    subject_key?\n\n    comparison_scope\n\n    comparability\n\n    dimension_analysis[]\n\n    lifecycle:\n        CANDIDATE\n        CONFIRMED\n        EXPLAINED\n        RESOLVED\n        DISMISSED\n\n    information_need_id?\n\n    explanation_ref?\n    resolution_ref?\n}",
+          "raw_sha256": "e8e2641455efb82f3da738cfff8f716fcead8179e6b63ddbd46618cbc58948ed",
+          "partial_or_example": false,
+          "specification": "RDMS-03",
+          "source_part": "Original draft",
+          "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 632,
+          "bundle_end_line": 657,
+          "message_order": 4
+        }
+      },
+      {
+        "type": "Observation",
+        "owner": "L3",
+        "status": "EXPLICIT_SCOPED_OVERLAY_APPLIED",
+        "effective_raw": "Observation {\n    observation_id\n    project_id\n\n    observation_kind\n\n    source_ref\n\n    subject_ref?\n\n    observed_at\n    ingested_commit_seq\n\n    repo_ref?\n    world_ref?\n    environment_ref?\n\n    normalized_content\n\n    raw_artifact_ref?\n\n    provenance\n\n    capture_integrity\n\n    origin_ref?\n\n    trust_context_ref\n    normalization_profile_ref?\n    evidence_origin_group_ref\n}",
+        "explicit_overlays": [
+          "RDMS-03 C01-01/06/15 explicitly adds these fields; C01-21 also requires associated TemporalProvenance, without freezing an embedding field spelling"
+        ],
+        "associated_contracts": [
+          "TemporalProvenance"
+        ],
+        "selected": {
+          "name": "Observation",
+          "start_line": 70,
+          "end_line": 96,
+          "raw": "Observation {\n    observation_id\n    project_id\n\n    observation_kind\n\n    source_ref\n\n    subject_ref?\n\n    observed_at\n    ingested_commit_seq\n\n    repo_ref?\n    world_ref?\n    environment_ref?\n\n    normalized_content\n\n    raw_artifact_ref?\n\n    provenance\n\n    capture_integrity\n\n    origin_ref?\n}",
+          "raw_sha256": "2e8195bef03066422a8996e4d6329cdf17d9415a4d0584a12d65b788d09aebc1",
+          "partial_or_example": false,
+          "specification": "RDMS-03",
+          "source_part": "Original draft",
+          "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 82,
+          "bundle_end_line": 108,
+          "message_order": 4
+        }
+      },
+      {
+        "type": "InformationNeed",
+        "owner": "L2",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "InformationNeed {\n    information_need_id\n\n    question\n\n    scope: ScopeSpec\n\n    importance:\n        LOW\n        MEDIUM\n        HIGH\n        CRITICAL\n\n    blocks[]:\n        EntityRef\n\n    source_candidates[]\n\n    resolution_routes[]:\n        INTERNAL_REASONING\n        REALITY\n        HUMAN\n        EXTERNAL_DEPENDENCY\n\n    status:\n        OPEN\n        INVESTIGATING\n        RESOLVED\n        OBSOLETE\n\n    resolution_ref?\n\n    opened_from?\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "InformationNeed",
+          "start_line": 273,
+          "end_line": 306,
+          "raw": "InformationNeed {\n    information_need_id\n\n    question\n\n    scope: ScopeSpec\n\n    importance:\n        LOW\n        MEDIUM\n        HIGH\n        CRITICAL\n\n    blocks[]:\n        EntityRef\n\n    source_candidates[]\n\n    resolution_routes[]:\n        INTERNAL_REASONING\n        REALITY\n        HUMAN\n        EXTERNAL_DEPENDENCY\n\n    status:\n        OPEN\n        INVESTIGATING\n        RESOLVED\n        OBSOLETE\n\n    resolution_ref?\n\n    opened_from?\n}",
+          "raw_sha256": "791b6588fd8e9657af0176ab75230f739901d2dac2ed6a28054ab6937db58adb",
+          "partial_or_example": false,
+          "specification": "RDMS-02",
+          "source_part": "Original draft",
+          "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 285,
+          "bundle_end_line": 318,
+          "message_order": 2
+        }
+      },
+      {
+        "type": "Hypothesis",
+        "owner": "L2",
+        "status": "EXPLICIT_SCOPED_OVERLAY_APPLIED",
+        "effective_raw": "Hypothesis {\n    hypothesis_id\n\n    explanation\n\n    scope: ScopeSpec\n\n    explains_refs[]\n\n    assumption_refs[]\n\n    prediction_refs[]\n\n    experiment_refs[]\n\n    current_support_assessment_ref?\n\n    lifecycle:\n        ACTIVE\n        REJECTED\n        CONFIRMED\n        SUPERSEDED\n\n    dependency_set_ref?\n\n    closure_ref?\n}",
+        "explicit_overlays": [
+          "RDMS-02 C01-19 removes authoritative scalar superseded_by; use independently owned EntityLineageEdge",
+          "RDMS-02 C01-07/20 replaces hypothesis lifecycle, adds closure_ref and externalizes authoritative hypothesis relations",
+          "RDMS-02 C01-02 moves support conclusion and its commit/dependencies into SupportAssessment"
+        ],
+        "associated_contracts": null,
+        "selected": {
+          "name": "Hypothesis",
+          "start_line": 370,
+          "end_line": 404,
+          "raw": "Hypothesis {\n    hypothesis_id\n\n    explanation\n\n    scope: ScopeSpec\n\n    explains_refs[]\n\n    assumption_refs[]\n\n    prediction_refs[]\n\n    competing_hypothesis_ids[]\n\n    experiment_refs[]\n\n    support:\n        UNTESTED\n        PLAUSIBLE\n        SUPPORTED\n        STRONG\n        CAUSALLY_VERIFIED\n        REFUTED\n\n    status:\n        ACTIVE\n        REJECTED\n        CONFIRMED\n        SUPERSEDED\n\n    dependency_set_ref?\n\n    superseded_by?\n}",
+          "raw_sha256": "5470bd7bd74b0f796f4368162311fa068f2ad31a715fd1b7571832e0a87d6d23",
+          "partial_or_example": false,
+          "specification": "RDMS-02",
+          "source_part": "Original draft",
+          "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 382,
+          "bundle_end_line": 416,
+          "message_order": 2
+        }
+      },
+      {
+        "type": "Claim",
+        "owner": "L2",
+        "status": "EXPLICIT_SCOPED_OVERLAY_APPLIED",
+        "effective_raw": "Claim {\n    claim_id\n\n    kind:\n        FACT\n        BELIEF\n        ASSUMPTION\n\n    statement\n\n    scope: ScopeSpec\n\n    current_support_assessment_ref?\n\n    grounding?\n    dependency_set_ref?\n\n    temporal_validity?\n\n    status:\n        ACTIVE\n        REFUTED\n        SUPERSEDED\n\n}",
+        "explicit_overlays": [
+          "RDMS-02 C01-19 removes authoritative scalar superseded_by; use independently owned EntityLineageEdge",
+          "RDMS-02 C01-02 moves support conclusion and its commit/dependencies into SupportAssessment"
+        ],
+        "associated_contracts": null,
+        "selected": {
+          "name": "Claim",
+          "start_line": 120,
+          "end_line": 152,
+          "raw": "Claim {\n    claim_id\n\n    kind:\n        FACT\n        BELIEF\n        ASSUMPTION\n\n    statement\n\n    scope: ScopeSpec\n\n    support:\n        UNASSESSED\n        WEAK\n        MODERATE\n        STRONG\n        VERIFIED\n\n    support_assessed_at_commit?\n\n    grounding?\n    dependency_set_ref?\n\n    temporal_validity?\n\n    status:\n        ACTIVE\n        REFUTED\n        SUPERSEDED\n\n    superseded_by?\n}",
+          "raw_sha256": "0cc9ca22709f89fa2ed2187d5495b91a57d92b5beb04229b530afce7b69d7a45",
+          "partial_or_example": false,
+          "specification": "RDMS-02",
+          "source_part": "Original draft",
+          "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 132,
+          "bundle_end_line": 164,
+          "message_order": 2
+        }
+      }
+    ]
+  },
+  {
+    "id": "X8-10",
+    "path": "L4 → L2 → L1",
+    "ownership": "L4 freshness / L2 adoption and finalization",
+    "input_records": [
+      "DependencySet",
+      "DependencyEvaluation",
+      "ReadinessSnapshot"
+    ],
+    "output_records": [
+      "CognitiveControlDecision",
+      "CompletionStateBinding",
+      "CanonicalMutation"
+    ],
+    "signature": "UNSPECIFIED; record participation only",
+    "authority": "One dependency engine reports freshness. Executive owns adoption/completion; estimates and compatibility claims cannot self-authorize transitions.",
+    "atomicity_durability": "Use coherent dependency universe, transitive lineage and commit-time recheck of affected state. Completion is atomically bound to evidence-covered state.",
+    "failure_retry_recovery": "Unrelated repository changes need not invalidate valid scoped knowledge. Incomplete indexes and unproved negative-query coverage remain UNKNOWN.",
+    "rejection_conditions": "Reject downgraded EXACT requirements, COMPATIBLE without proof, stale supporting dependencies or future-state completion claims.",
+    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "field_or_projection_review": [
+      "CanonicalMutation"
+    ],
+    "source_units": [
+      {
+        "unit_id": "RDMS-06-M13-U031",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt",
+        "line": 2268,
+        "sha256": "4a07a9a8fc3f6558016d14f7bba7e2f4926a921dbd3ad1cb2b1e3e5bc0e2b40a"
+      },
+      {
+        "unit_id": "RDMS-06-M13-U038",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt",
+        "line": 2390,
+        "sha256": "1f2eea45c36481d02721e2e73a265f9ba7b4dd241b8c331ebbe9e3a61359543a"
+      },
+      {
+        "unit_id": "RDMS-06-M13-U042",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt",
+        "line": 2468,
+        "sha256": "30d5e5a94d90ca47b2da34637ba17b8a49022cbd495c10b6a75e8c6c98fc9ceb"
+      },
+      {
+        "unit_id": "RDMS-06-M13-U045",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt",
+        "line": 2518,
+        "sha256": "7e3ef7f2d1955e46b4f8a0dc966609a2db1e0d688b37a8cfff52a9b5b253e1e2"
+      },
+      {
+        "unit_id": "RDMS-08-M17-U016",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-08_APPROVED_SOURCE_SET.txt",
+        "line": 2766,
+        "sha256": "d735eeae6128f892e2f026a6a946a3cd9907b4ae111fb076dfb831bd35a148f1"
+      },
+      {
+        "unit_id": "RDMS-10-M25-U078",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+        "line": 6526,
+        "sha256": "e51e1812b9345d6dadac8f22137c6d72072733fbba4d4562c9aca5bca9ac91f6"
+      },
+      {
+        "unit_id": "RDMS-10-M26-U022",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+        "line": 7654,
+        "sha256": "c89cd365824d5f84d467ac036e2525a6430a01a0beffaa18b46102acf5fa3290"
+      },
+      {
+        "unit_id": "FCA-69",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 2481,
+        "sha256": "81783c9a0b820f54159342529e3082a6dc064831ce6765703b5ef72983134394"
+      },
+      {
+        "unit_id": "FCA-70",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 2524,
+        "sha256": "48a4a7470cd71ff0f1160fc9260478d40ce265082eae3410215f45796718cf5d"
+      },
+      {
+        "unit_id": "FCA-71",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 2601,
+        "sha256": "6dfb4e84f426d4ffa5c718deea8adc002f987de843e89d1738273d79602f7cea"
+      }
+    ],
+    "record_evidence": [
+      {
+        "type": "DependencySet",
+        "owner": "L4",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "DependencySet {\n    dependency_set_id\n\n    owner_result_ref\n\n    stamps[]\n\n    derivation_context_ref?\n\n    capture_frontier_ref?\n\n    dependency_set_fingerprint\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "DependencySet",
+          "start_line": 676,
+          "end_line": 688,
+          "raw": "DependencySet {\n    dependency_set_id\n\n    owner_result_ref\n\n    stamps[]\n\n    derivation_context_ref?\n\n    capture_frontier_ref?\n\n    dependency_set_fingerprint\n}",
+          "raw_sha256": "f596f8c673ea27846249b5dcfa447baa4e251351ee006131cc0ae5688825d270",
+          "partial_or_example": false,
+          "specification": "RDMS-06",
+          "source_part": "Original draft",
+          "message_id": "4bcbb2bf-86d9-4b93-9b1c-9f9529916667",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 688,
+          "bundle_end_line": 700,
+          "message_order": 12
+        }
+      },
+      {
+        "type": "DependencyEvaluation",
+        "owner": "L4",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "DependencyEvaluation {\n    evaluation_id\n\n    dependency_set_ref\n\n    target_result_ref\n\n    current_evaluation_context_ref\n\n    stamp_results[]\n\n    aggregate_result:\n        VALID\n        PARTIALLY_STALE\n        STALE\n        UNKNOWN\n\n    unaffected_result_scope[]\n    invalidated_result_scope[]\n    uncertain_result_scope[]\n\n    basis_refs[]\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "DependencyEvaluation",
+          "start_line": 761,
+          "end_line": 783,
+          "raw": "DependencyEvaluation {\n    evaluation_id\n\n    dependency_set_ref\n\n    target_result_ref\n\n    current_evaluation_context_ref\n\n    stamp_results[]\n\n    aggregate_result:\n        VALID\n        PARTIALLY_STALE\n        STALE\n        UNKNOWN\n\n    unaffected_result_scope[]\n    invalidated_result_scope[]\n    uncertain_result_scope[]\n\n    basis_refs[]\n}",
+          "raw_sha256": "6bd44f6e42beaa869954129f4eac0ae94ad5e214a0df33cd36514a41059d7a5a",
+          "partial_or_example": false,
+          "specification": "RDMS-06",
+          "source_part": "Original draft",
+          "message_id": "4bcbb2bf-86d9-4b93-9b1c-9f9529916667",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 773,
+          "bundle_end_line": 795,
+          "message_order": 12
+        }
+      },
+      {
+        "type": "ReadinessSnapshot",
+        "owner": "L2",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "ReadinessSnapshot {\n    readiness_id\n\n    target_slice_ref\n    target_slice_version\n\n    relevant_contract_versions[]\n\n    requirement_versions[]\n\n    canonical_state_ref\n\n    repository_snapshot_ref\n\n    dependency_set_ref\n\n    expected_change_surface_ref\n\n    verification_obligations[]\n\n    assessment_result\n\n    assessment_integrity_ref\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "ReadinessSnapshot",
+          "start_line": 304,
+          "end_line": 327,
+          "raw": "ReadinessSnapshot {\n    readiness_id\n\n    target_slice_ref\n    target_slice_version\n\n    relevant_contract_versions[]\n\n    requirement_versions[]\n\n    canonical_state_ref\n\n    repository_snapshot_ref\n\n    dependency_set_ref\n\n    expected_change_surface_ref\n\n    verification_obligations[]\n\n    assessment_result\n\n    assessment_integrity_ref\n}",
+          "raw_sha256": "8a7263fe8270e972aa604a90a0c71b5a451b2ec360fba071924cb3b4b4c8c32a",
+          "partial_or_example": false,
+          "specification": "RDMS-08",
+          "source_part": "C01 and Adversarial Freeze Review 02 with freeze decision",
+          "message_id": "a0f04ffe-181e-409d-9f94-d7d5c426502b",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-08_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 2770,
+          "bundle_end_line": 2793,
+          "message_order": 17
+        }
+      },
+      {
+        "type": "CognitiveControlDecision",
+        "owner": "L2",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "CognitiveControlDecision {\n    decision_id\n\n    cycle_ref\n\n    executive_epoch\n\n    candidate_operations[]\n\n    admissible_operations[]\n\n    rejected_operations[] {\n        operation_ref\n        rejection_reason\n    }\n\n    selected_operation_ref?\n\n    decision_gravity_ref\n\n    evidence_refs[]\n\n    selection_rationale\n\n    expected_outcome_ref\n\n    revisit_conditions[]\n\n    authorization_ref?\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "CognitiveControlDecision",
+          "start_line": 549,
+          "end_line": 578,
+          "raw": "CognitiveControlDecision {\n    decision_id\n\n    cycle_ref\n\n    executive_epoch\n\n    candidate_operations[]\n\n    admissible_operations[]\n\n    rejected_operations[] {\n        operation_ref\n        rejection_reason\n    }\n\n    selected_operation_ref?\n\n    decision_gravity_ref\n\n    evidence_refs[]\n\n    selection_rationale\n\n    expected_outcome_ref\n\n    revisit_conditions[]\n\n    authorization_ref?\n}",
+          "raw_sha256": "9e19b753ebe4390f9558a2fa226a23ac5e7293d66e52ae484d26254e2dc0d02f",
+          "partial_or_example": false,
+          "specification": "RDMS-08",
+          "source_part": "Original draft",
+          "message_id": "c955b372-e904-441b-8a0f-c8d9ae56c2f7",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-08_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 561,
+          "bundle_end_line": 590,
+          "message_order": 16
+        }
+      },
+      {
+        "type": "CompletionStateBinding",
+        "owner": "L7",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "CompletionStateBinding {\n    goal_ref\n\n    goal_version\n\n    acceptance_criteria_frontier\n\n    verified_repository_ref\n\n    verified_world_state_scope\n\n    verification_evidence_refs[]\n\n    dependency_validation_ref\n\n    relevant_policy_frontier\n\n    unresolved_obligation_refs[]\n\n    finalization_commit_preconditions[]\n\n    finalization_commit_ref?\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "CompletionStateBinding",
+          "start_line": 972,
+          "end_line": 994,
+          "raw": "CompletionStateBinding {\n    goal_ref\n\n    goal_version\n\n    acceptance_criteria_frontier\n\n    verified_repository_ref\n\n    verified_world_state_scope\n\n    verification_evidence_refs[]\n\n    dependency_validation_ref\n\n    relevant_policy_frontier\n\n    unresolved_obligation_refs[]\n\n    finalization_commit_preconditions[]\n\n    finalization_commit_ref?\n}",
+          "raw_sha256": "fa6057f2f9c27814e892375aa6f9af148e8edcf0abcb5239dce4d4210d87b515",
+          "partial_or_example": false,
+          "specification": "RDMS-10",
+          "source_part": "C02",
+          "message_id": "5f33fe0d-af3e-4f37-aeac-8979e64d941f",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 6527,
+          "bundle_end_line": 6549,
+          "message_order": 25
+        }
+      },
+      {
+        "type": "CanonicalMutation",
+        "owner": "L1",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "CanonicalMutation {\n    mutation_id\n\n    entity_kind\n    entity_id\n\n    operation:\n        CREATE\n        REPLACE\n        TOMBSTONE\n\n    expected:\n        ABSENT\n        or entity_version\n\n    new_entity_version\n\n    payload_schema_version\n\n    after_image\n        or payload_ref\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "CanonicalMutation",
+          "start_line": 237,
+          "end_line": 258,
+          "raw": "CanonicalMutation {\n    mutation_id\n\n    entity_kind\n    entity_id\n\n    operation:\n        CREATE\n        REPLACE\n        TOMBSTONE\n\n    expected:\n        ABSENT\n        or entity_version\n\n    new_entity_version\n\n    payload_schema_version\n\n    after_image\n        or payload_ref\n}",
+          "raw_sha256": "8735b403de80146409ebf3cb7f07f3e532f0a4489b87d36ab48448ade9101aea",
+          "partial_or_example": false,
+          "specification": "RDMS-01",
+          "source_part": "R1 corrections and final freeze decision",
+          "message_id": "e3a45231-ddae-4ed4-9bd1-35202ecdfcf7",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 1530,
+          "bundle_end_line": 1551,
+          "message_order": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "X8-11",
+    "path": "L3 → L5 → L7",
+    "ownership": "L5 learning/use / L7 actual egress binding",
+    "input_records": [
+      "Observation",
+      "MemoryProposal",
+      "MemoryProposalSnapshot"
+    ],
+    "output_records": [
+      "MemoryRecord",
+      "MemoryRetrievalResult",
+      "SealedOutboundContext"
+    ],
+    "signature": "UNSPECIFIED; record participation only",
+    "authority": "LearningGate plus Executive authorization governs canonical promotion. Retrieval and transport cannot promote truth or grant disclosure.",
+    "atomicity_durability": "Freeze proposal/evidence binding, revalidate LearningGate at commit and use governed revision transaction. Actual outbound bytes/destination/purpose must match sealed admission.",
+    "failure_retry_recovery": "Replay learning promotion idempotently. Revision conflicts require new evaluation; provider switching or altered outbound context requires renewed disclosure checks.",
+    "rejection_conditions": "Reject unsupported causal memory, repeated evidence counted as diversity, stale promotion, stored prompt authority or unapproved actual egress.",
+    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "field_or_projection_review": [
+      "Observation",
+      "MemoryProposal"
+    ],
+    "source_units": [
+      {
+        "unit_id": "RDMS-07-M15-U018",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+        "line": 2221,
+        "sha256": "4dfedf1f122b76a18adef36161da4e955cdbcd779c8139963771b858a23a8d88"
+      },
+      {
+        "unit_id": "RDMS-07-M15-U021",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+        "line": 2271,
+        "sha256": "7de97c1c43686d812ca675e5cbaa4248a822b4f0a37e77afed83f9724d50823e"
+      },
+      {
+        "unit_id": "RDMS-07-M15-U032",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+        "line": 2451,
+        "sha256": "96bf107c0c5722f3107e89cbb4f397a07f47aac51208b61a01932d467edd5d97"
+      },
+      {
+        "unit_id": "RDMS-07-M15-U059",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+        "line": 2860,
+        "sha256": "da378a501f60864cda543ac00cde7d00f24fe66146a480b81d340e4e82faae98"
+      },
+      {
+        "unit_id": "RDMS-10-M25-U067",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+        "line": 6412,
+        "sha256": "029f8848c7f121f837fae1d32c65a260e70b10bece525dd8db695869353456f5"
+      },
+      {
+        "unit_id": "RDMS-10-M26-U021",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+        "line": 7650,
+        "sha256": "ac8cfb93c9d8d2ee63796bfbcb5d3970880415eb0bb7e980d3740c5acfc0e130"
+      },
+      {
+        "unit_id": "FCA-60",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 2234,
+        "sha256": "3cf5efff268c8cbd604d294e913eaabddc3405a4a3d6828d92c6e1832021b245"
+      },
+      {
+        "unit_id": "FCA-62",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 2294,
+        "sha256": "e4d72a2127d59b02986b85e69a0c7badf88741fddc8f6c4b022a664e376feb2b"
+      },
+      {
+        "unit_id": "FCA-77",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 2732,
+        "sha256": "88f0d216af63bc319baeca4d4ecc782c63031b84eb65aa105a702d0361400ce9"
+      }
+    ],
+    "record_evidence": [
+      {
+        "type": "Observation",
+        "owner": "L3",
+        "status": "EXPLICIT_SCOPED_OVERLAY_APPLIED",
+        "effective_raw": "Observation {\n    observation_id\n    project_id\n\n    observation_kind\n\n    source_ref\n\n    subject_ref?\n\n    observed_at\n    ingested_commit_seq\n\n    repo_ref?\n    world_ref?\n    environment_ref?\n\n    normalized_content\n\n    raw_artifact_ref?\n\n    provenance\n\n    capture_integrity\n\n    origin_ref?\n\n    trust_context_ref\n    normalization_profile_ref?\n    evidence_origin_group_ref\n}",
+        "explicit_overlays": [
+          "RDMS-03 C01-01/06/15 explicitly adds these fields; C01-21 also requires associated TemporalProvenance, without freezing an embedding field spelling"
+        ],
+        "associated_contracts": [
+          "TemporalProvenance"
+        ],
+        "selected": {
+          "name": "Observation",
+          "start_line": 70,
+          "end_line": 96,
+          "raw": "Observation {\n    observation_id\n    project_id\n\n    observation_kind\n\n    source_ref\n\n    subject_ref?\n\n    observed_at\n    ingested_commit_seq\n\n    repo_ref?\n    world_ref?\n    environment_ref?\n\n    normalized_content\n\n    raw_artifact_ref?\n\n    provenance\n\n    capture_integrity\n\n    origin_ref?\n}",
+          "raw_sha256": "2e8195bef03066422a8996e4d6329cdf17d9415a4d0584a12d65b788d09aebc1",
+          "partial_or_example": false,
+          "specification": "RDMS-03",
+          "source_part": "Original draft",
+          "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 82,
+          "bundle_end_line": 108,
+          "message_order": 4
+        }
+      },
+      {
+        "type": "MemoryProposal",
+        "owner": "L5",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "MemoryProposal {\n    proposal_id\n\n    claim\n\n    proposed_scope\n\n    source_episode_refs[]\n\n    causal_basis_ref?\n\n    applicability_conditions[]\n    counter_conditions[]\n    counterexamples[]\n\n    evidence_refs[]\n\n    confidence_assessment_ref\n\n    proposed_maturity\n\n    dependency_set_ref\n\n    provenance_ref\n\n    proposed_memory_category\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "MemoryProposal",
+          "start_line": 474,
+          "end_line": 500,
+          "raw": "MemoryProposal {\n    proposal_id\n\n    claim\n\n    proposed_scope\n\n    source_episode_refs[]\n\n    causal_basis_ref?\n\n    applicability_conditions[]\n    counter_conditions[]\n    counterexamples[]\n\n    evidence_refs[]\n\n    confidence_assessment_ref\n\n    proposed_maturity\n\n    dependency_set_ref\n\n    provenance_ref\n\n    proposed_memory_category\n}",
+          "raw_sha256": "954762e236b07d60a1c7480f60f9383a0f914a88043e9f541e6567ed0a6557af",
+          "partial_or_example": false,
+          "specification": "RDMS-07",
+          "source_part": "Original draft",
+          "message_id": "938c1bc7-97a0-46ad-be19-cd3ba3ca125f",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 486,
+          "bundle_end_line": 512,
+          "message_order": 14
+        }
+      },
+      {
+        "type": "MemoryProposalSnapshot",
+        "owner": "L5",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "MemoryProposalSnapshot {\n    proposal_id\n    proposal_version\n\n    claim_ref\n    scope_ref\n\n    applicability_ref\n    counterconditions_ref\n\n    evidence_basis_ref\n    dependency_set_ref\n\n    maturity_target\n\n    canonical_content_fingerprint\n\n    created_commit_seq\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "MemoryProposalSnapshot",
+          "start_line": 363,
+          "end_line": 381,
+          "raw": "MemoryProposalSnapshot {\n    proposal_id\n    proposal_version\n\n    claim_ref\n    scope_ref\n\n    applicability_ref\n    counterconditions_ref\n\n    evidence_basis_ref\n    dependency_set_ref\n\n    maturity_target\n\n    canonical_content_fingerprint\n\n    created_commit_seq\n}",
+          "raw_sha256": "a97e3db998a67a93225c997e701ae6b2fcdd45a001da937a9a38309ae247c75f",
+          "partial_or_example": false,
+          "specification": "RDMS-07",
+          "source_part": "C01 and Adversarial Freeze Review 02 with freeze decision",
+          "message_id": "5ee62ad7-b67d-4382-be9d-cd85f6331a8c",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 2225,
+          "bundle_end_line": 2243,
+          "message_order": 15
+        }
+      },
+      {
+        "type": "MemoryRecord",
+        "owner": "L5",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "MemoryRecord {\n    memory_id\n\n    memory_category\n\n    claim_or_procedure_ref\n\n    scope\n\n    maturity\n\n    applicability_conditions[]\n    counter_conditions[]\n\n    evidence_basis_refs[]\n\n    provenance_refs[]\n\n    dependency_set_ref\n\n    confidence_assessment_ref\n\n    stability\n\n    version\n\n    lifecycle\n\n    derived_from[]\n    supersedes[]\n\n    created_commit_seq\n    updated_commit_seq\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "MemoryRecord",
+          "start_line": 588,
+          "end_line": 621,
+          "raw": "MemoryRecord {\n    memory_id\n\n    memory_category\n\n    claim_or_procedure_ref\n\n    scope\n\n    maturity\n\n    applicability_conditions[]\n    counter_conditions[]\n\n    evidence_basis_refs[]\n\n    provenance_refs[]\n\n    dependency_set_ref\n\n    confidence_assessment_ref\n\n    stability\n\n    version\n\n    lifecycle\n\n    derived_from[]\n    supersedes[]\n\n    created_commit_seq\n    updated_commit_seq\n}",
+          "raw_sha256": "4d4f24539c6c089eb406401aea694a4db5f2db2be5b2c817c88d7a455c75aa68",
+          "partial_or_example": false,
+          "specification": "RDMS-07",
+          "source_part": "Original draft",
+          "message_id": "938c1bc7-97a0-46ad-be19-cd3ba3ca125f",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 600,
+          "bundle_end_line": 633,
+          "message_order": 14
+        }
+      },
+      {
+        "type": "MemoryRetrievalResult",
+        "owner": "L5",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "MemoryRetrievalResult {\n    retrieval_id\n\n    query_ref\n\n    candidate_refs[]\n\n    omitted_or_filtered_scope[]\n\n    ranking_policy_ref\n\n    retrieval_coverage\n\n    freshness_summary\n\n    created_at\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "MemoryRetrievalResult",
+          "start_line": 1068,
+          "end_line": 1084,
+          "raw": "MemoryRetrievalResult {\n    retrieval_id\n\n    query_ref\n\n    candidate_refs[]\n\n    omitted_or_filtered_scope[]\n\n    ranking_policy_ref\n\n    retrieval_coverage\n\n    freshness_summary\n\n    created_at\n}",
+          "raw_sha256": "e4ae715a27b230289f343447d8b7723501f62538065a5e61fa5dc5009c17c67d",
+          "partial_or_example": false,
+          "specification": "RDMS-07",
+          "source_part": "Original draft",
+          "message_id": "938c1bc7-97a0-46ad-be19-cd3ba3ca125f",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 1080,
+          "bundle_end_line": 1096,
+          "message_order": 14
+        }
+      },
+      {
+        "type": "SealedOutboundContext",
+        "owner": "L7",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "SealedOutboundContext {\n    invocation_ref\n\n    originating_project_ref\n\n    final_destination_provider_ref\n\n    final_destination_boundary_ref\n\n    final_context_manifest_ref\n\n    included_content_integrity_refs[]\n\n    included_data_classification_refs[]\n\n    applicable_disclosure_policy_frontier\n\n    authorized_processing_purpose\n\n    disclosure_admission_ref\n\n    outbound_integrity_binding\n\n    release_eligibility\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "SealedOutboundContext",
+          "start_line": 858,
+          "end_line": 882,
+          "raw": "SealedOutboundContext {\n    invocation_ref\n\n    originating_project_ref\n\n    final_destination_provider_ref\n\n    final_destination_boundary_ref\n\n    final_context_manifest_ref\n\n    included_content_integrity_refs[]\n\n    included_data_classification_refs[]\n\n    applicable_disclosure_policy_frontier\n\n    authorized_processing_purpose\n\n    disclosure_admission_ref\n\n    outbound_integrity_binding\n\n    release_eligibility\n}",
+          "raw_sha256": "9a32bf619d57ada734a71008191da386626d6d7fbd7d4c8da3bd4383e79674f6",
+          "partial_or_example": false,
+          "specification": "RDMS-10",
+          "source_part": "C02",
+          "message_id": "5f33fe0d-af3e-4f37-aeac-8979e64d941f",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 6413,
+          "bundle_end_line": 6437,
+          "message_order": 25
+        }
+      }
+    ]
+  },
+  {
+    "id": "X8-12",
+    "path": "L3 → L6 → L1",
+    "ownership": "L6 recovery admission / L3 containment and effects",
+    "input_records": [
+      "ContainmentProof",
+      "ActionRecord",
+      "RecoveryCase"
+    ],
+    "output_records": [
+      "ScopedRecoveryAdmission",
+      "RecoveryAdmissionBinding",
+      "CrossFrontierAdmissionProof"
+    ],
+    "signature": "UNSPECIFIED; record participation only",
+    "authority": "Recovery has bounded source-owned authority. Destructive restore, compensation and world mutation retain ActionGate requirements.",
+    "atomicity_durability": "Prove acknowledged-history continuity, anti-rollback/admission frontiers, containment and disclosure barriers before enabling affected execution.",
+    "failure_retry_recovery": "Restore cannot undo possible post-backup effects. Unknown scope uses conservative bounds; independent proved scopes may proceed.",
+    "rejection_conditions": "Reject guessed successful effect, blind retry, unfenced stale writer, missing authority frontier or uncontained restored executable data.",
+    "status": "CONSTRAINTS_RECORDED; FULL_ACCEPTANCE_OPEN",
+    "field_or_projection_review": [
+      "ContainmentProof",
+      "ActionRecord"
+    ],
+    "source_units": [
+      {
+        "unit_id": "RDMS-09-M19-U029",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-09_APPROVED_SOURCE_SET.txt",
+        "line": 2426,
+        "sha256": "5c10f4bca32de519318dc79182af98ddc31a032fd1eb8023a4cded15ae4ed215"
+      },
+      {
+        "unit_id": "RDMS-09-M19-U082",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-09_APPROVED_SOURCE_SET.txt",
+        "line": 3006,
+        "sha256": "7072429ac17906a2ebf3333a7367b07feaee7ee57d3bd847344fa83b4b3430a2"
+      },
+      {
+        "unit_id": "RDMS-09-M20-U042",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-09_APPROVED_SOURCE_SET.txt",
+        "line": 4681,
+        "sha256": "958bb21026c66b25e755e6585984764ca1fb31836624497fb7bb53d03871f09d"
+      },
+      {
+        "unit_id": "RDMS-09-M21-U015",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-09_APPROVED_SOURCE_SET.txt",
+        "line": 6119,
+        "sha256": "739933acc91dfef8c4ad8a4acec93dcc78d6570a0e2bce8336a3850383e51497"
+      },
+      {
+        "unit_id": "RDMS-09-M21-U024",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-09_APPROVED_SOURCE_SET.txt",
+        "line": 6251,
+        "sha256": "3938e0a9f7d6a7a0deca6323b3626da924a259fb7abce378e7bee7bd270ae161"
+      },
+      {
+        "unit_id": "RDMS-09-M21-U052",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-09_APPROVED_SOURCE_SET.txt",
+        "line": 6612,
+        "sha256": "8222723fe1bd03ca4edf42b82c7f32ab4ae5e140bb3f5f3585f714ca9835372f"
+      },
+      {
+        "unit_id": "RDMS-09-M22-U013",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-09_APPROVED_SOURCE_SET.txt",
+        "line": 8240,
+        "sha256": "94afd2c9e49956d669a905b56c58fc8b38134d870f54e0d7cb813a197f160b86"
+      },
+      {
+        "unit_id": "FCA-48",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 1921,
+        "sha256": "ccb6b64224f31f353fd63c697214ef5fe8717c5409cd63053c3006d1068bf821"
+      },
+      {
+        "unit_id": "FCA-52",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 2009,
+        "sha256": "d031c29c80d690b8e12d41195a1d76f67d254419ec4c68826a355bd37166ea1f"
+      },
+      {
+        "unit_id": "FCA-73",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "line": 2656,
+        "sha256": "abe467ed1424ecac6dd4102b0d4cd11ef86dccfc47ea6022de3d1e3af9c29483"
+      }
+    ],
+    "record_evidence": [
+      {
+        "type": "ContainmentProof",
+        "owner": "L3",
+        "status": "MULTIPLE_NATIVE_SURFACES_REQUIRE_SCOPED_RECONCILIATION",
+        "effective_raw": null,
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "ContainmentProof",
+          "start_line": 558,
+          "end_line": 577,
+          "raw": "ContainmentProof {\n    proof_id\n\n    sandbox_ref\n\n    effective_config_fingerprint\n    executor_generation\n\n    mount_namespace_ref?\n    filesystem_policy_ref\n    network_policy_ref\n    credential_policy_ref\n    process_policy_ref\n\n    enforcement_basis_refs[]\n\n    coverage_scope\n\n    evaluated_at\n}",
+          "raw_sha256": "243b8e9c2fdb3226b01e8b824a1ceff4b2bf75c302dbeb08a1abac73edf39721",
+          "partial_or_example": false,
+          "specification": "RDMS-04",
+          "source_part": "C01",
+          "message_id": "4f585132-49b6-448d-8506-4b502aee6311",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 2162,
+          "bundle_end_line": 2181,
+          "message_order": 7
+        }
+      },
+      {
+        "type": "ActionRecord",
+        "owner": "L3",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "ActionRecord {\n    action_id\n    proposal_ref\n    authorization_ref\n\n    action_class\n\n    lifecycle\n\n    world_ref_before?\n    repo_ref_before?\n\n    effect_semantics_ref\n\n    latest_attempt_ref?\n\n    world_ref_after?\n    repo_ref_after?\n\n    effect_verification_refs[]\n\n    compensation_action_ref?\n\n    created_commit_seq\n    updated_commit_seq\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "ActionRecord",
+          "start_line": 196,
+          "end_line": 221,
+          "raw": "ActionRecord {\n    action_id\n    proposal_ref\n    authorization_ref\n\n    action_class\n\n    lifecycle\n\n    world_ref_before?\n    repo_ref_before?\n\n    effect_semantics_ref\n\n    latest_attempt_ref?\n\n    world_ref_after?\n    repo_ref_after?\n\n    effect_verification_refs[]\n\n    compensation_action_ref?\n\n    created_commit_seq\n    updated_commit_seq\n}",
+          "raw_sha256": "b04404a6eafcf8aec73c83958aa5553aca3762a62a892c1cc8e857d5f0e3f386",
+          "partial_or_example": false,
+          "specification": "RDMS-04",
+          "source_part": "Original draft",
+          "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 208,
+          "bundle_end_line": 233,
+          "message_order": 6
+        }
+      },
+      {
+        "type": "RecoveryCase",
+        "owner": "L6",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "RecoveryCase {\n    recovery_case_id\n\n    project_id\n\n    initiating_failure_refs[]\n\n    affected_domains[]\n\n    recovery_scope\n\n    originating_control_frontier\n\n    current_executive_epoch?\n\n    unresolved_action_refs[]\n\n    unresolved_trigger_refs[]\n\n    unresolved_specialist_refs[]\n\n    data_integrity_assessment_ref?\n\n    required_reconciliation_refs[]\n\n    recovery_policy_version\n\n    current_disposition\n\n    audit_refs[]\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "RecoveryCase",
+          "start_line": 314,
+          "end_line": 344,
+          "raw": "RecoveryCase {\n    recovery_case_id\n\n    project_id\n\n    initiating_failure_refs[]\n\n    affected_domains[]\n\n    recovery_scope\n\n    originating_control_frontier\n\n    current_executive_epoch?\n\n    unresolved_action_refs[]\n\n    unresolved_trigger_refs[]\n\n    unresolved_specialist_refs[]\n\n    data_integrity_assessment_ref?\n\n    required_reconciliation_refs[]\n\n    recovery_policy_version\n\n    current_disposition\n\n    audit_refs[]\n}",
+          "raw_sha256": "8f38223481bf97fb24854bbf54a4928c8c2eeac3cb4ffe94329c6fc242fd8380",
+          "partial_or_example": false,
+          "specification": "RDMS-09",
+          "source_part": "Original draft",
+          "message_id": "6ee1a6d1-3dfe-4de8-8c44-54ac4b07f8d4",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-09_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 326,
+          "bundle_end_line": 356,
+          "message_order": 18
+        }
+      },
+      {
+        "type": "ScopedRecoveryAdmission",
+        "owner": "L6",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "ScopedRecoveryAdmission {\n    requested_project_scope\n\n    requested_operation_classes[]\n\n    required_control_integrity\n\n    shared_resource_refs[]\n\n    required_dependency_frontier\n\n    unresolved_action_impact\n\n    security_restrictions[]\n\n    applicable_policy_versions[]\n\n    admission_result\n\n    authorized_operational_scope\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "ScopedRecoveryAdmission",
+          "start_line": 1035,
+          "end_line": 1055,
+          "raw": "ScopedRecoveryAdmission {\n    requested_project_scope\n\n    requested_operation_classes[]\n\n    required_control_integrity\n\n    shared_resource_refs[]\n\n    required_dependency_frontier\n\n    unresolved_action_impact\n\n    security_restrictions[]\n\n    applicable_policy_versions[]\n\n    admission_result\n\n    authorized_operational_scope\n}",
+          "raw_sha256": "1a6c785dcf313e1b24021bd53850fada86ccb37ba0f97286160d04d22543ab72",
+          "partial_or_example": false,
+          "specification": "RDMS-09",
+          "source_part": "C01",
+          "message_id": "74cf7fd3-01ca-4f35-abed-fbbc8716eb5c",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-09_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 3010,
+          "bundle_end_line": 3030,
+          "message_order": 19
+        }
+      },
+      {
+        "type": "RecoveryAdmissionBinding",
+        "owner": "L6",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "RecoveryAdmissionBinding {\n    admission_id\n\n    recovery_case_ref\n\n    admitted_project_scope\n\n    admitted_operation_classes[]\n\n    current_executive_epoch\n\n    canonical_state_frontier\n\n    policy_frontier\n\n    dependency_frontier\n\n    security_frontier\n\n    suppression_frontier\n\n    unresolved_action_constraints[]\n\n    admission_generation\n\n    invalidation_conditions[]\n\n    admission_integrity_ref\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "RecoveryAdmissionBinding",
+          "start_line": 1085,
+          "end_line": 1113,
+          "raw": "RecoveryAdmissionBinding {\n    admission_id\n\n    recovery_case_ref\n\n    admitted_project_scope\n\n    admitted_operation_classes[]\n\n    current_executive_epoch\n\n    canonical_state_frontier\n\n    policy_frontier\n\n    dependency_frontier\n\n    security_frontier\n\n    suppression_frontier\n\n    unresolved_action_constraints[]\n\n    admission_generation\n\n    invalidation_conditions[]\n\n    admission_integrity_ref\n}",
+          "raw_sha256": "6999b109f9532e1ccce580354e9c6bb30c52921f487e04769ee4229fec5f0f6b",
+          "partial_or_example": false,
+          "specification": "RDMS-09",
+          "source_part": "C02",
+          "message_id": "d59160dd-fa7a-4058-8892-69794f57e9b8",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-09_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 5141,
+          "bundle_end_line": 5169,
+          "message_order": 20
+        }
+      },
+      {
+        "type": "CrossFrontierAdmissionProof",
+        "owner": "L6",
+        "status": "SOURCE_RECORD_SURFACE",
+        "effective_raw": "CrossFrontierAdmissionProof {\n    admission_ref\n\n    project_scope\n\n    permitted_operation_classes[]\n\n    executive_epoch\n\n    canonical_state_ref\n\n    policy_frontier_refs[]\n\n    security_frontier_refs[]\n\n    suppression_frontier_refs[]\n\n    dependency_frontier_refs[]\n\n    outstanding_effect_constraints[]\n\n    compatibility_results[]\n\n    required_revalidation_conditions[]\n\n    applicable_gate_refs[]\n\n    admission_status\n}",
+        "explicit_overlays": [],
+        "associated_contracts": null,
+        "selected": {
+          "name": "CrossFrontierAdmissionProof",
+          "start_line": 378,
+          "end_line": 406,
+          "raw": "CrossFrontierAdmissionProof {\n    admission_ref\n\n    project_scope\n\n    permitted_operation_classes[]\n\n    executive_epoch\n\n    canonical_state_ref\n\n    policy_frontier_refs[]\n\n    security_frontier_refs[]\n\n    suppression_frontier_refs[]\n\n    dependency_frontier_refs[]\n\n    outstanding_effect_constraints[]\n\n    compatibility_results[]\n\n    required_revalidation_conditions[]\n\n    applicable_gate_refs[]\n\n    admission_status\n}",
+          "raw_sha256": "a3c71d0e55272f3b8ee54a710026eb0875282e7c0811e1dcdb4341a975dc9203",
+          "partial_or_example": false,
+          "specification": "RDMS-09",
+          "source_part": "C03",
+          "message_id": "89e41ed5-ac4e-4b95-9680-b9bec79f278a",
+          "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-09_APPROVED_SOURCE_SET.txt",
+          "bundle_start_line": 6252,
+          "bundle_end_line": 6280,
+          "message_order": 21
+        }
+      }
+    ]
+  }
+]

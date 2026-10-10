@@ -1,0 +1,2188 @@
+[
+  {
+    "id": "PARENT-ActionEffectSemantics",
+    "owner": "L3",
+    "type": "ActionEffectSemantics",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "ActionEffectSemantics",
+        "start_line": 1756,
+        "end_line": 1776,
+        "raw": "ActionEffectSemantics {\n    effect_identity?\n\n    retry_policy:\n        IDEMPOTENT\n        PROBE_THEN_RETRY\n        NO_AUTOMATIC_RETRY\n\n    idempotency_key?\n\n    outcome_probe?\n\n    compensation?\n\n    verification_mode:\n        DIRECT_EFFECT\n        ACKNOWLEDGEMENT_ONLY\n        BEST_EFFORT\n\n    timeout_policy\n}",
+        "raw_sha256": "2dde35f70157acd7b6fe0c55722e9f047834db65e3605c182672e478c4f61def",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 1756,
+        "bundle_end_line": 1776,
+        "message_order": -1
+      },
+      {
+        "name": "ActionEffectSemantics",
+        "start_line": 329,
+        "end_line": 349,
+        "raw": "ActionEffectSemantics {\n    effect_identity?\n\n    retry_policy:\n        IDEMPOTENT\n        PROBE_THEN_RETRY\n        NO_AUTOMATIC_RETRY\n\n    idempotency_key?\n\n    outcome_probe_spec?\n\n    compensation_spec?\n\n    verification_mode:\n        DIRECT_EFFECT\n        ACKNOWLEDGEMENT_ONLY\n        BEST_EFFORT\n\n    timeout_policy_ref\n}",
+        "raw_sha256": "ca6d6918eda0e62cea8f48991be8f43175dfebf598417ec7b775bc5fda4802b5",
+        "partial_or_example": false,
+        "specification": "RDMS-04",
+        "source_part": "Original draft",
+        "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 341,
+        "bundle_end_line": 361,
+        "message_order": 6
+      }
+    ],
+    "scoped_amendments": [],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "PARENT-ActionProposal",
+    "owner": "L3",
+    "type": "ActionProposal",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "ActionProposal",
+        "start_line": 1663,
+        "end_line": 1713,
+        "raw": "ActionProposal {\n    id\n\n    requested_by\n    slice_id\n    goal_id\n\n    action_class:\n        EPHEMERAL_SANDBOX\n        SHARED_WORLD\n\n    kind:\n        file_write\n        file_delete\n        shell\n        git\n        database\n        network\n        deployment\n        debugger_control\n        other\n\n    target_scope[]\n\n    intent\n    expected_effects[]\n\n    preconditions[]\n\n    risk_profile\n\n    reversibility:\n        reversible\n        compensatable\n        partially_reversible\n        irreversible\n\n    rollback_or_compensation?\n\n    mode:\n        diagnostic\n        production\n\n    base_world_ref\n\n    authority_required\n\n    effect_semantics\n\n    status\n}",
+        "raw_sha256": "3ccde2ec4776465ddb382bb68533703477bd3d0ad6534c40d700c6149ede2080",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 1663,
+        "bundle_end_line": 1713,
+        "message_order": -1
+      },
+      {
+        "name": "ActionProposal",
+        "start_line": 85,
+        "end_line": 137,
+        "raw": "ActionProposal {\n    action_proposal_id\n    project_id\n\n    requested_by_ref\n    goal_id\n    slice_id\n\n    action_kind:\n        TERMINAL\n        FILESYSTEM\n        GIT\n        TEST\n        BUILD\n        DEBUGGER\n        DATABASE\n        NETWORK\n        DEPLOYMENT\n        OTHER\n\n    requested_action_class:\n        EPHEMERAL_SANDBOX\n        SHARED_WORLD\n\n    intent\n\n    target_scope[]\n    expected_effects[]\n    preconditions[]\n\n    base_repo_ref?\n    base_world_ref?\n\n    dependency_set_ref?\n\n    risk_profile_ref?\n\n    reversibility:\n        REVERSIBLE\n        COMPENSATABLE\n        PARTIALLY_REVERSIBLE\n        IRREVERSIBLE\n\n    compensation_plan_ref?\n\n    effect_semantics_ref\n\n    execution_spec_ref\n\n    mode:\n        DIAGNOSTIC\n        PRODUCTION\n}",
+        "raw_sha256": "1d1d2dfa1eaacd278ba44f59a1e7c5a2807b8f4e22cd867864b3688ac7587273",
+        "partial_or_example": false,
+        "specification": "RDMS-04",
+        "source_part": "Original draft",
+        "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 97,
+        "bundle_end_line": 149,
+        "message_order": 6
+      }
+    ],
+    "scoped_amendments": [],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "PARENT-ActionRecord",
+    "owner": "L3",
+    "type": "ActionRecord",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "ActionRecord",
+        "start_line": 1883,
+        "end_line": 1900,
+        "raw": "ActionRecord {\n    action_id\n    proposal_ref\n\n    lifecycle\n\n    world_ref_before\n    world_ref_after?\n\n    execution_result?\n\n    observation_ids[]\n\n    compensation_action_id?\n\n    started_at?\n    finished_at?\n}",
+        "raw_sha256": "5daceb512bac466d481793e906f30aa61ef41d74aee71369c180f45b61a522a9",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 1883,
+        "bundle_end_line": 1900,
+        "message_order": -1
+      },
+      {
+        "name": "ActionRecord",
+        "start_line": 196,
+        "end_line": 221,
+        "raw": "ActionRecord {\n    action_id\n    proposal_ref\n    authorization_ref\n\n    action_class\n\n    lifecycle\n\n    world_ref_before?\n    repo_ref_before?\n\n    effect_semantics_ref\n\n    latest_attempt_ref?\n\n    world_ref_after?\n    repo_ref_after?\n\n    effect_verification_refs[]\n\n    compensation_action_ref?\n\n    created_commit_seq\n    updated_commit_seq\n}",
+        "raw_sha256": "b04404a6eafcf8aec73c83958aa5553aca3762a62a892c1cc8e857d5f0e3f386",
+        "partial_or_example": false,
+        "specification": "RDMS-04",
+        "source_part": "Original draft",
+        "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 208,
+        "bundle_end_line": 233,
+        "message_order": 6
+      }
+    ],
+    "scoped_amendments": [],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "SHAPE-CanonicalStateView",
+    "owner": "L2",
+    "type": "CanonicalStateView",
+    "status": "OPEN",
+    "question": "PARTIAL_SOURCE_DECLARATION_ONLY",
+    "exact_source_declarations": [
+      {
+        "name": "CanonicalStateView",
+        "start_line": 1722,
+        "end_line": 1745,
+        "raw": "CanonicalStateView {\n    identity\n    current GoalStack\n    current FocusState\n\n    active Goals\n\n    MentalModelElements\n\n    active Claims\n    open InformationNeeds\n    active Hypotheses\n    valid OVCs\n\n    active Decisions\n    Invariants\n    Contracts\n    Risks\n\n    active Execution Slices\n    active Commitments\n\n    ...\n}",
+        "raw_sha256": "1273b28ea555bf9b66941d3622b96b452ca6bfed7f75605c8571b270b57a3750",
+        "partial_or_example": true,
+        "specification": "RDMS-02",
+        "source_part": "Original draft",
+        "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 1734,
+        "bundle_end_line": 1757,
+        "message_order": 2
+      }
+    ],
+    "scoped_amendments": [],
+    "associated_contracts": [],
+    "consequence": "No complete serializer or conversion is accepted. Independently specified semantic laws remain effective.",
+    "field_variance": [
+      {
+        "source": "RDMS-02 / Original draft",
+        "line": 1734,
+        "fields": [
+          "identity",
+          "MentalModelElements",
+          "Invariants",
+          "Contracts",
+          "Risks"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "PARENT-Claim",
+    "owner": "L2",
+    "type": "Claim",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "Claim",
+        "start_line": 387,
+        "end_line": 418,
+        "raw": "Claim {\n    id\n\n    kind:\n        fact\n        belief\n        assumption\n\n    statement\n    scope\n\n    support:\n        unassessed\n        weak\n        moderate\n        strong\n        verified\n\n    evidence_for[]\n    evidence_against[]\n\n    provenance[]\n\n    status:\n        active\n        refuted\n        superseded\n\n    temporal_validity\n\n    version\n}",
+        "raw_sha256": "66de9a53c60431507f005e8d628764e3c21c1cf2e9137c917f95d947a5d75ed5",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 387,
+        "bundle_end_line": 418,
+        "message_order": -1
+      },
+      {
+        "name": "Claim",
+        "start_line": 120,
+        "end_line": 152,
+        "raw": "Claim {\n    claim_id\n\n    kind:\n        FACT\n        BELIEF\n        ASSUMPTION\n\n    statement\n\n    scope: ScopeSpec\n\n    support:\n        UNASSESSED\n        WEAK\n        MODERATE\n        STRONG\n        VERIFIED\n\n    support_assessed_at_commit?\n\n    grounding?\n    dependency_set_ref?\n\n    temporal_validity?\n\n    status:\n        ACTIVE\n        REFUTED\n        SUPERSEDED\n\n    superseded_by?\n}",
+        "raw_sha256": "0cc9ca22709f89fa2ed2187d5495b91a57d92b5beb04229b530afce7b69d7a45",
+        "partial_or_example": false,
+        "specification": "RDMS-02",
+        "source_part": "Original draft",
+        "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 132,
+        "bundle_end_line": 164,
+        "message_order": 2
+      },
+      {
+        "name": "Claim",
+        "start_line": 199,
+        "end_line": 202,
+        "raw": "Claim {\n    kind = FACT\n    grounding = null\n}",
+        "raw_sha256": "28c429da95506d97a29d01a07cf4519a2f805ab04ce63aac809e9827a1698367",
+        "partial_or_example": true,
+        "specification": "RDMS-02",
+        "source_part": "Original draft",
+        "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 211,
+        "bundle_end_line": 214,
+        "message_order": 2
+      }
+    ],
+    "scoped_amendments": [
+      "RDMS-02 C01-19 removes authoritative scalar superseded_by; use independently owned EntityLineageEdge",
+      "RDMS-02 C01-02 moves support conclusion and its commit/dependencies into SupportAssessment"
+    ],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "PARENT-ConfidenceAssessment",
+    "owner": "L3",
+    "type": "ConfidenceAssessment",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "ConfidenceAssessment",
+        "start_line": 698,
+        "end_line": 709,
+        "raw": "ConfidenceAssessment {\n    level:\n        unknown\n        low\n        medium\n        high\n        verified\n\n    basis: EvidenceLinkId[]\n    residual_uncertainty[]\n    assessed_at\n}",
+        "raw_sha256": "60f97cbdb4ad6e9d399a928f74773eb0eb1253a3a65837af65b84a760e68b0c4",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 698,
+        "bundle_end_line": 709,
+        "message_order": -1
+      },
+      {
+        "name": "ConfidenceAssessment",
+        "start_line": 1400,
+        "end_line": 1423,
+        "raw": "ConfidenceAssessment {\n    confidence_assessment_id\n\n    target_ref\n\n    level:\n        UNKNOWN\n        LOW\n        MEDIUM\n        HIGH\n        VERIFIED\n\n    evidence_link_refs[]\n\n    verification_record_refs[]\n\n    residual_uncertainty[]\n\n    dependency_set_ref?\n\n    assessed_at_commit_seq\n\n    supersedes_assessment_id?\n}",
+        "raw_sha256": "46c9cd5d0f92dc55e58ffeb74a393a7dd28ba124d72a9981bb8f77c4858d4844",
+        "partial_or_example": false,
+        "specification": "RDMS-03",
+        "source_part": "Original draft",
+        "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 1412,
+        "bundle_end_line": 1435,
+        "message_order": 4
+      }
+    ],
+    "scoped_amendments": [],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "SHAPE-ContainmentProof",
+    "owner": "L3",
+    "type": "ContainmentProof",
+    "status": "OPEN",
+    "question": "MULTIPLE_NATIVE_SURFACES_REQUIRE_SCOPED_RECONCILIATION",
+    "exact_source_declarations": [
+      {
+        "name": "ContainmentProof",
+        "start_line": 1072,
+        "end_line": 1092,
+        "raw": "ContainmentProof {\n    proof_id\n\n    sandbox_ref\n\n    filesystem_isolation_verified\n\n    shared_writable_mounts_absent\n\n    dangerous_credentials_absent\n\n    mutating_network_paths_blocked\n\n    privileged_interfaces_blocked\n\n    reachable_effects_disposable\n\n    verified_against_configuration_ref\n\n    evaluated_at\n}",
+        "raw_sha256": "8afe55f363492888687b8293db33ba35dbc53df9a3e33292433bf0428a4843a4",
+        "partial_or_example": false,
+        "specification": "RDMS-04",
+        "source_part": "Original draft",
+        "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 1084,
+        "bundle_end_line": 1104,
+        "message_order": 6
+      },
+      {
+        "name": "ContainmentProof",
+        "start_line": 558,
+        "end_line": 577,
+        "raw": "ContainmentProof {\n    proof_id\n\n    sandbox_ref\n\n    effective_config_fingerprint\n    executor_generation\n\n    mount_namespace_ref?\n    filesystem_policy_ref\n    network_policy_ref\n    credential_policy_ref\n    process_policy_ref\n\n    enforcement_basis_refs[]\n\n    coverage_scope\n\n    evaluated_at\n}",
+        "raw_sha256": "243b8e9c2fdb3226b01e8b824a1ceff4b2bf75c302dbeb08a1abac73edf39721",
+        "partial_or_example": false,
+        "specification": "RDMS-04",
+        "source_part": "C01",
+        "message_id": "4f585132-49b6-448d-8506-4b502aee6311",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 2162,
+        "bundle_end_line": 2181,
+        "message_order": 7
+      }
+    ],
+    "scoped_amendments": [],
+    "associated_contracts": [],
+    "consequence": "No complete serializer or conversion is accepted. Independently specified semantic laws remain effective.",
+    "field_variance": [
+      {
+        "source": "RDMS-04 / Original draft",
+        "line": 1084,
+        "fields": [
+          "proof_id",
+          "sandbox_ref",
+          "filesystem_isolation_verified",
+          "shared_writable_mounts_absent",
+          "dangerous_credentials_absent",
+          "mutating_network_paths_blocked",
+          "privileged_interfaces_blocked",
+          "reachable_effects_disposable",
+          "verified_against_configuration_ref",
+          "evaluated_at"
+        ]
+      },
+      {
+        "source": "RDMS-04 / C01",
+        "line": 2162,
+        "fields": [
+          "proof_id",
+          "sandbox_ref",
+          "effective_config_fingerprint",
+          "executor_generation",
+          "mount_namespace_ref",
+          "filesystem_policy_ref",
+          "network_policy_ref",
+          "credential_policy_ref",
+          "process_policy_ref",
+          "enforcement_basis_refs",
+          "coverage_scope",
+          "evaluated_at"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "PARENT-ContradictionRecord",
+    "owner": "L3",
+    "type": "ContradictionRecord",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "ContradictionRecord",
+        "start_line": 662,
+        "end_line": 684,
+        "raw": "ContradictionRecord {\n    id\n\n    observations[]\n    subject\n    compared_scope\n\n    status:\n        candidate\n        confirmed\n        explained\n        unresolved\n\n    possible_dimensions:\n        time\n        input\n        environment\n        world_version\n        nondeterminism\n        measurement_error\n\n    information_need_id?\n}",
+        "raw_sha256": "846f9b29c677f7fdd1c9568033c1a7a2ef5dd082522427077985048ffcdf1a5c",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 662,
+        "bundle_end_line": 684,
+        "message_order": -1
+      },
+      {
+        "name": "ContradictionRecord",
+        "start_line": 620,
+        "end_line": 645,
+        "raw": "ContradictionRecord {\n    contradiction_id\n\n    observation_refs[]\n\n    subject_ref?\n    subject_key?\n\n    comparison_scope\n\n    comparability\n\n    dimension_analysis[]\n\n    lifecycle:\n        CANDIDATE\n        CONFIRMED\n        EXPLAINED\n        RESOLVED\n        DISMISSED\n\n    information_need_id?\n\n    explanation_ref?\n    resolution_ref?\n}",
+        "raw_sha256": "e8e2641455efb82f3da738cfff8f716fcead8179e6b63ddbd46618cbc58948ed",
+        "partial_or_example": false,
+        "specification": "RDMS-03",
+        "source_part": "Original draft",
+        "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 632,
+        "bundle_end_line": 657,
+        "message_order": 4
+      },
+      {
+        "name": "ContradictionRecord",
+        "start_line": 468,
+        "end_line": 473,
+        "raw": "ContradictionRecord {\n    ...\n\n    dimension_analysis[]\n    explanation_ref?\n}",
+        "raw_sha256": "02fb0ca2cc801ad9abf3659661af8e9d5ba4e2cd3cae7b81c41e31be927f788f",
+        "partial_or_example": true,
+        "specification": "RDMS-03",
+        "source_part": "C01 and Freeze Review 02 Final",
+        "message_id": "a1ca0249-b287-4c4b-8254-773c8f6edbda",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 2381,
+        "bundle_end_line": 2386,
+        "message_order": 5
+      }
+    ],
+    "scoped_amendments": [],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "PARENT-Decision",
+    "owner": "L2",
+    "type": "Decision",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "Decision",
+        "start_line": 805,
+        "end_line": 846,
+        "raw": "Decision {\n    id\n\n    question\n    context\n\n    gravity:\n        low\n        medium\n        high\n\n    quality_drivers[]\n    constraints[]\n\n    alternatives[]\n\n    chosen\n\n    rejected[] {\n        option\n        reason\n    }\n\n    assumptions[]\n\n    accepted_tradeoffs[]\n\n    evidence_refs[]\n\n    expected_consequences[]\n    risks[]\n\n    revisit_triggers[]\n\n    status:\n        proposed\n        accepted\n        superseded\n        invalidated\n\n    version\n}",
+        "raw_sha256": "c49d059ce57f71ffcd3ea0286ae25d8f754abb00bcd37ec26eafeff28ead3f7c",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 805,
+        "bundle_end_line": 846,
+        "message_order": -1
+      },
+      {
+        "name": "Decision",
+        "start_line": 843,
+        "end_line": 882,
+        "raw": "Decision {\n    decision_id\n\n    question\n    context\n\n    scope: ScopeSpec\n\n    gravity:\n        LOW\n        MEDIUM\n        HIGH\n\n    quality_drivers[]\n    constraints[]\n\n    alternatives[]\n\n    chosen_option_id?\n\n    rejected_options[]\n\n    assumption_refs[]\n\n    accepted_tradeoffs[]\n\n    expected_consequences[]\n\n    risk_refs[]\n\n    revisit_trigger_ids[]\n\n    status:\n        PROPOSED\n        ACCEPTED\n        SUPERSEDED\n        INVALIDATED\n\n    superseded_by?\n}",
+        "raw_sha256": "fc803bc3048da8b08ac3b0ab75526590734254f44a140e69bd61e806d380a3b9",
+        "partial_or_example": false,
+        "specification": "RDMS-02",
+        "source_part": "Original draft",
+        "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 855,
+        "bundle_end_line": 894,
+        "message_order": 2
+      }
+    ],
+    "scoped_amendments": [
+      "RDMS-02 C01-19 removes authoritative scalar superseded_by; use independently owned EntityLineageEdge",
+      "RDMS-02 C01-16 explicitly adds dependency_set_ref? and validity_conditions[]; no REVIEW_REQUIRED lifecycle"
+    ],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "PARENT-DependencyStamp",
+    "owner": "L4",
+    "type": "DependencyStamp",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "DependencyStamp",
+        "start_line": 2486,
+        "end_line": 2508,
+        "raw": "DependencyStamp {\n    kind:\n        state_entity\n        repo_content\n        query_scope\n        observation\n        memory\n        tool\n        environment\n        external_contract\n        human_requirement\n\n    ref\n\n    version_or_hash?\n\n    validity_condition?\n\n    freshness_requirement:\n        exact\n        compatible\n        advisory\n}",
+        "raw_sha256": "fe1b5afc30b30904b9f97ee8149eb7ed2902831342ee6d5231f61619627039c6",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 2486,
+        "bundle_end_line": 2508,
+        "message_order": -1
+      },
+      {
+        "name": "DependencyStamp",
+        "start_line": 782,
+        "end_line": 795,
+        "raw": "DependencyStamp {\n    dependency_kind\n\n    ref\n\n    version_or_hash?\n\n    validity_condition?\n\n    freshness_requirement:\n        exact\n        compatible\n        advisory\n}",
+        "raw_sha256": "7e0052bac2d827cb5d4770490ec81ece9fb83698c2c07c0eaf39aa113425d53e",
+        "partial_or_example": false,
+        "specification": "RDMS-01",
+        "source_part": "Original draft",
+        "message_id": "2aacdc73-38d8-4456-9a73-9900fe14f900",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 794,
+        "bundle_end_line": 807,
+        "message_order": 0
+      },
+      {
+        "name": "DependencyStamp",
+        "start_line": 647,
+        "end_line": 671,
+        "raw": "DependencyStamp {\n    stamp_id\n\n    kind:\n        STATE_ENTITY\n        REPO_CONTENT\n        QUERY_SCOPE\n        OBSERVATION\n        MEMORY\n        TOOL\n        ENVIRONMENT\n        EXTERNAL_CONTRACT\n        HUMAN_REQUIREMENT\n\n    dependency_ref\n\n    version_or_hash?\n\n    validity_condition_ref?\n\n    freshness_requirement:\n        EXACT\n        COMPATIBLE\n        ADVISORY\n}",
+        "raw_sha256": "eebe0f2d3f0cbd14f6cc9881d28b165d4410f5c08e645141c582ad48cb4d9588",
+        "partial_or_example": false,
+        "specification": "RDMS-06",
+        "source_part": "Original draft",
+        "message_id": "4bcbb2bf-86d9-4b93-9b1c-9f9529916667",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 659,
+        "bundle_end_line": 683,
+        "message_order": 12
+      }
+    ],
+    "scoped_amendments": [],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "SHAPE-EvidenceLink",
+    "owner": "L3",
+    "type": "EvidenceLink",
+    "status": "OPEN",
+    "question": "UNSPECIFIED_ASSOCIATED_CONTRACT_EMBEDDING",
+    "exact_source_declarations": [
+      {
+        "name": "EvidenceLink",
+        "start_line": 616,
+        "end_line": 648,
+        "raw": "EvidenceLink {\n    id\n\n    observation_id\n\n    target_type:\n        claim\n        hypothesis\n        decision\n        risk\n        model_element\n\n    target_id\n\n    relation:\n        supports\n        weakens\n        contradicts\n        relevant\n\n    rationale\n\n    derivation:\n        deterministic\n        semantic\n        authoritative\n\n    status:\n        proposed\n        accepted\n        rejected\n        superseded\n}",
+        "raw_sha256": "b778f6414a5d8315d412befe2202e2209969c7d06acb162fa26b4a3f3054781d",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 616,
+        "bundle_end_line": 648,
+        "message_order": -1
+      },
+      {
+        "name": "EvidenceLink",
+        "start_line": 449,
+        "end_line": 480,
+        "raw": "EvidenceLink {\n    evidence_link_id\n\n    observation_refs[]\n\n    target_ref\n\n    relation:\n        SUPPORTS\n        WEAKENS\n        CONTRADICTS\n        RELEVANT\n\n    derivation:\n        DETERMINISTIC\n        SEMANTIC\n        AUTHORITATIVE\n\n    rationale\n\n    derivation_ref?\n\n    dependency_set_ref?\n\n    lifecycle:\n        PROPOSED\n        ACCEPTED\n        REJECTED\n        SUPERSEDED\n\n    accepted_commit_seq?\n}",
+        "raw_sha256": "b56d24206ab7628d92c266e4a6d8c3e3a63aa29a627ede82c373819a56071e26",
+        "partial_or_example": false,
+        "specification": "RDMS-03",
+        "source_part": "Original draft",
+        "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 461,
+        "bundle_end_line": 492,
+        "message_order": 4
+      },
+      {
+        "name": "EvidenceLink",
+        "start_line": 502,
+        "end_line": 505,
+        "raw": "EvidenceLink {\n    observation_refs = []\n    rationale = \"I strongly believe...\"\n}",
+        "raw_sha256": "c3afbd4eb962992437673decec2fc0f1672639db8a9a935f704eb0c450995eaa",
+        "partial_or_example": true,
+        "specification": "RDMS-03",
+        "source_part": "Original draft",
+        "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 514,
+        "bundle_end_line": 517,
+        "message_order": 4
+      }
+    ],
+    "scoped_amendments": [
+      "RDMS-03 C01-04/10–13 requires pinned authority and structured basis; exact replacement embedding for observation_refs is not declared"
+    ],
+    "associated_contracts": [
+      "EvidenceBasis",
+      "VersionedEntityRef<AuthorityBinding> when AUTHORITATIVE"
+    ],
+    "consequence": "No complete serializer or conversion is accepted. Independently specified semantic laws remain effective.",
+    "field_variance": [
+      {
+        "source": "FCA / v1.0.1 FROZEN",
+        "line": 616,
+        "fields": [
+          "id",
+          "observation_id",
+          "target_type",
+          "target_id",
+          "relation",
+          "rationale",
+          "derivation",
+          "status"
+        ]
+      },
+      {
+        "source": "RDMS-03 / Original draft",
+        "line": 461,
+        "fields": [
+          "evidence_link_id",
+          "observation_refs",
+          "target_ref",
+          "relation",
+          "derivation",
+          "rationale",
+          "derivation_ref",
+          "dependency_set_ref",
+          "lifecycle",
+          "accepted_commit_seq"
+        ]
+      },
+      {
+        "source": "RDMS-03 / Original draft",
+        "line": 514,
+        "fields": []
+      }
+    ]
+  },
+  {
+    "id": "PARENT-EvidenceLink",
+    "owner": "L3",
+    "type": "EvidenceLink",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "EvidenceLink",
+        "start_line": 616,
+        "end_line": 648,
+        "raw": "EvidenceLink {\n    id\n\n    observation_id\n\n    target_type:\n        claim\n        hypothesis\n        decision\n        risk\n        model_element\n\n    target_id\n\n    relation:\n        supports\n        weakens\n        contradicts\n        relevant\n\n    rationale\n\n    derivation:\n        deterministic\n        semantic\n        authoritative\n\n    status:\n        proposed\n        accepted\n        rejected\n        superseded\n}",
+        "raw_sha256": "b778f6414a5d8315d412befe2202e2209969c7d06acb162fa26b4a3f3054781d",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 616,
+        "bundle_end_line": 648,
+        "message_order": -1
+      },
+      {
+        "name": "EvidenceLink",
+        "start_line": 449,
+        "end_line": 480,
+        "raw": "EvidenceLink {\n    evidence_link_id\n\n    observation_refs[]\n\n    target_ref\n\n    relation:\n        SUPPORTS\n        WEAKENS\n        CONTRADICTS\n        RELEVANT\n\n    derivation:\n        DETERMINISTIC\n        SEMANTIC\n        AUTHORITATIVE\n\n    rationale\n\n    derivation_ref?\n\n    dependency_set_ref?\n\n    lifecycle:\n        PROPOSED\n        ACCEPTED\n        REJECTED\n        SUPERSEDED\n\n    accepted_commit_seq?\n}",
+        "raw_sha256": "b56d24206ab7628d92c266e4a6d8c3e3a63aa29a627ede82c373819a56071e26",
+        "partial_or_example": false,
+        "specification": "RDMS-03",
+        "source_part": "Original draft",
+        "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 461,
+        "bundle_end_line": 492,
+        "message_order": 4
+      },
+      {
+        "name": "EvidenceLink",
+        "start_line": 502,
+        "end_line": 505,
+        "raw": "EvidenceLink {\n    observation_refs = []\n    rationale = \"I strongly believe...\"\n}",
+        "raw_sha256": "c3afbd4eb962992437673decec2fc0f1672639db8a9a935f704eb0c450995eaa",
+        "partial_or_example": true,
+        "specification": "RDMS-03",
+        "source_part": "Original draft",
+        "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 514,
+        "bundle_end_line": 517,
+        "message_order": 4
+      }
+    ],
+    "scoped_amendments": [
+      "RDMS-03 C01-04/10–13 requires pinned authority and structured basis; exact replacement embedding for observation_refs is not declared"
+    ],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "PARENT-Experiment",
+    "owner": "L3",
+    "type": "Experiment",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "Experiment",
+        "start_line": 1595,
+        "end_line": 1628,
+        "raw": "Experiment {\n    id\n\n    question\n\n    target_hypotheses[]\n\n    method\n\n    predictions[] {\n        hypothesis_id\n        expected_observation\n        discriminates_from[]\n    }\n\n    required_actions[]\n\n    risk_profile\n\n    status:\n        designed\n        authorized\n        running\n        completed\n        failed\n        cancelled\n\n    observation_ids[]\n\n    conclusion_proposal?\n\n    designed_at\n    executed_at?\n}",
+        "raw_sha256": "ea560db75c5ad83ab9575a76164360d37f83ef162db8ba98ee4b34091a5e0dda",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 1595,
+        "bundle_end_line": 1628,
+        "message_order": -1
+      },
+      {
+        "name": "Experiment",
+        "start_line": 859,
+        "end_line": 891,
+        "raw": "Experiment {\n    experiment_id\n\n    question\n\n    purpose:\n        REPRODUCTION\n        DISCRIMINATING\n        CAUSAL_INTERVENTION\n        REGRESSION\n        PERFORMANCE\n        EXPLORATORY\n        OTHER\n\n    target_hypothesis_ids[]\n\n    method_spec\n\n    prediction_ids[]\n\n    required_action_specs[]\n\n    risk_refs[]\n\n    lifecycle:\n        DRAFT\n        DESIGNED\n        AUTHORIZED\n        RETIRED\n        CANCELLED\n\n    prediction_set_frozen_at_commit_seq?\n}",
+        "raw_sha256": "77b9d1f12e730ad6d94c444aef8d1dd545a8852df355849803557a8712ed4ea8",
+        "partial_or_example": false,
+        "specification": "RDMS-03",
+        "source_part": "Original draft",
+        "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 871,
+        "bundle_end_line": 903,
+        "message_order": 4
+      }
+    ],
+    "scoped_amendments": [],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "PARENT-Goal",
+    "owner": "L2",
+    "type": "Goal",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "Goal",
+        "start_line": 735,
+        "end_line": 756,
+        "raw": "Goal {\n    id\n    parent_id?\n\n    intent\n    acceptance[]\n    priority\n\n    status:\n        backlog\n        ready\n        active\n        suspended\n        blocked\n        waiting\n        deferred\n        verified\n        closed\n        obsolete\n\n    created_from\n}",
+        "raw_sha256": "4624ad9773f94d9fcfe0c611bb64af47bca482b1926064e80d467af7c62d14df",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 735,
+        "bundle_end_line": 756,
+        "message_order": -1
+      },
+      {
+        "name": "Goal",
+        "start_line": 564,
+        "end_line": 603,
+        "raw": "Goal {\n    goal_id\n\n    parent_goal_id?\n\n    goal_kind:\n        MISSION\n        MILESTONE\n        TASK\n        SUBGOAL\n\n    intent\n\n    acceptance_criteria[]\n\n    priority:\n        LOW\n        NORMAL\n        HIGH\n        CRITICAL\n\n    status:\n        BACKLOG\n        READY\n        ACTIVE\n        SUSPENDED\n        BLOCKED\n        WAITING\n        DEFERRED\n        VERIFIED\n        CLOSED\n        OBSOLETE\n\n    created_from\n\n    blocker_refs[]?\n    waiting_on_refs[]?\n\n    terminal_reason?\n}",
+        "raw_sha256": "439feac4e9de294a5b70fbdd4f3e8aa59ba872f08a6ed331d90f0ece5cb7ead3",
+        "partial_or_example": false,
+        "specification": "RDMS-02",
+        "source_part": "Original draft",
+        "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 576,
+        "bundle_end_line": 615,
+        "message_order": 2
+      }
+    ],
+    "scoped_amendments": [
+      "RDMS-02 C01-11 adds CANCELLED with cancellation_reason/authority conditions",
+      "RDMS-02 C01-14 renames priority to declared_priority"
+    ],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "PARENT-Hypothesis",
+    "owner": "L2",
+    "type": "Hypothesis",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "Hypothesis",
+        "start_line": 472,
+        "end_line": 500,
+        "raw": "Hypothesis {\n    id\n    explanation\n\n    explains[]\n    assumptions[]\n\n    predictions[]\n\n    evidence_for[]\n    evidence_against[]\n\n    competing_hypotheses[]\n    experiments[]\n\n    support:\n        untested\n        plausible\n        supported\n        strong\n        causally_verified\n        refuted\n\n    status:\n        active\n        rejected\n        confirmed\n        superseded\n}",
+        "raw_sha256": "3f5f77207a227c57e2a01e4a382eece22d5553b5b7d0eb4f55814481eb630c20",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 472,
+        "bundle_end_line": 500,
+        "message_order": -1
+      },
+      {
+        "name": "Hypothesis",
+        "start_line": 370,
+        "end_line": 404,
+        "raw": "Hypothesis {\n    hypothesis_id\n\n    explanation\n\n    scope: ScopeSpec\n\n    explains_refs[]\n\n    assumption_refs[]\n\n    prediction_refs[]\n\n    competing_hypothesis_ids[]\n\n    experiment_refs[]\n\n    support:\n        UNTESTED\n        PLAUSIBLE\n        SUPPORTED\n        STRONG\n        CAUSALLY_VERIFIED\n        REFUTED\n\n    status:\n        ACTIVE\n        REJECTED\n        CONFIRMED\n        SUPERSEDED\n\n    dependency_set_ref?\n\n    superseded_by?\n}",
+        "raw_sha256": "5470bd7bd74b0f796f4368162311fa068f2ad31a715fd1b7571832e0a87d6d23",
+        "partial_or_example": false,
+        "specification": "RDMS-02",
+        "source_part": "Original draft",
+        "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 382,
+        "bundle_end_line": 416,
+        "message_order": 2
+      },
+      {
+        "name": "Hypothesis",
+        "start_line": 193,
+        "end_line": 205,
+        "raw": "Hypothesis {\n    ...\n\n    current_support_assessment_ref?\n\n    lifecycle:\n        ACTIVE\n        REJECTED\n        CONFIRMED\n        SUPERSEDED\n\n    closure_ref?\n}",
+        "raw_sha256": "4bc5f8ebc0e4c08e573a6f04ff8b16b8cb24d204594cbd5d87ed409c3f8b830a",
+        "partial_or_example": true,
+        "specification": "RDMS-02",
+        "source_part": "C01, second review corrections and final freeze decision",
+        "message_id": "266bb347-d2a5-41ea-872a-32e140c803eb",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 2117,
+        "bundle_end_line": 2129,
+        "message_order": 3
+      }
+    ],
+    "scoped_amendments": [
+      "RDMS-02 C01-19 removes authoritative scalar superseded_by; use independently owned EntityLineageEdge",
+      "RDMS-02 C01-07/20 replaces hypothesis lifecycle, adds closure_ref and externalizes authoritative hypothesis relations",
+      "RDMS-02 C01-02 moves support conclusion and its commit/dependencies into SupportAssessment"
+    ],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "PARENT-InformationNeed",
+    "owner": "L2",
+    "type": "InformationNeed",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "InformationNeed",
+        "start_line": 440,
+        "end_line": 462,
+        "raw": "InformationNeed {\n    id\n    question\n\n    importance\n    blocks[]\n\n    source_candidates[]\n\n    resolvable:\n        internally\n        reality\n        human\n        external_dependency\n\n    status:\n        open\n        investigating\n        resolved\n        obsolete\n\n    resolution?\n}",
+        "raw_sha256": "1e74d814f30b30ec1584f20bb6292edf6944b546b19ca1bc75175df112d61d01",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 440,
+        "bundle_end_line": 462,
+        "message_order": -1
+      },
+      {
+        "name": "InformationNeed",
+        "start_line": 273,
+        "end_line": 306,
+        "raw": "InformationNeed {\n    information_need_id\n\n    question\n\n    scope: ScopeSpec\n\n    importance:\n        LOW\n        MEDIUM\n        HIGH\n        CRITICAL\n\n    blocks[]:\n        EntityRef\n\n    source_candidates[]\n\n    resolution_routes[]:\n        INTERNAL_REASONING\n        REALITY\n        HUMAN\n        EXTERNAL_DEPENDENCY\n\n    status:\n        OPEN\n        INVESTIGATING\n        RESOLVED\n        OBSOLETE\n\n    resolution_ref?\n\n    opened_from?\n}",
+        "raw_sha256": "791b6588fd8e9657af0176ab75230f739901d2dac2ed6a28054ab6937db58adb",
+        "partial_or_example": false,
+        "specification": "RDMS-02",
+        "source_part": "Original draft",
+        "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 285,
+        "bundle_end_line": 318,
+        "message_order": 2
+      }
+    ],
+    "scoped_amendments": [],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "PARENT-Invariant",
+    "owner": "L2",
+    "type": "Invariant",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "Invariant",
+        "start_line": 887,
+        "end_line": 923,
+        "raw": "Invariant {\n    id\n    statement\n    scope\n\n    kind:\n        state\n        architectural\n        behavioral\n        business\n        security\n        semantic\n\n    severity:\n        hard\n        critical\n        advisory\n\n    enforcement:\n        commit_gate\n        pre_action_gate\n        post_action_verify\n        runtime_monitor\n        semantic_review\n\n    predicate?\n    verification_spec?\n\n    source_authority\n\n    version\n\n    status:\n        active\n        superseded\n        retired\n}",
+        "raw_sha256": "4c7c9ea71b197011ad98011f1d39bcc3dc13cfdafaea2735617315b5e60c10a8",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 887,
+        "bundle_end_line": 923,
+        "message_order": -1
+      },
+      {
+        "name": "Invariant",
+        "start_line": 935,
+        "end_line": 973,
+        "raw": "Invariant {\n    invariant_id\n\n    statement\n\n    scope: ScopeSpec\n\n    kind:\n        STATE\n        ARCHITECTURAL\n        BEHAVIORAL\n        BUSINESS\n        SECURITY\n        SEMANTIC\n\n    severity:\n        HARD\n        CRITICAL\n        ADVISORY\n\n    enforcement_modes[]:\n        COMMIT_GATE\n        PRE_ACTION_GATE\n        POST_ACTION_VERIFY\n        RUNTIME_MONITOR\n        SEMANTIC_REVIEW\n\n    predicate_ref?\n    verification_spec_ref?\n\n    source_authority_ref\n\n    status:\n        ACTIVE\n        SUPERSEDED\n        RETIRED\n\n    superseded_by?\n}",
+        "raw_sha256": "6485492b47f3dfc614c02ccf2de26dd19ff7038d484dbf9876c5a3bd196a66bc",
+        "partial_or_example": false,
+        "specification": "RDMS-02",
+        "source_part": "Original draft",
+        "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 947,
+        "bundle_end_line": 985,
+        "message_order": 2
+      }
+    ],
+    "scoped_amendments": [
+      "RDMS-02 C01-19 removes authoritative scalar superseded_by; use independently owned EntityLineageEdge",
+      "RDMS-02 C01-28 replaces enforcement mode collection with EnforcementSpec collection"
+    ],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "PARENT-MemoryProposal",
+    "owner": "L5",
+    "type": "MemoryProposal",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "MemoryProposal",
+        "start_line": 2237,
+        "end_line": 2255,
+        "raw": "MemoryProposal {\n    claim\n\n    proposed_scope\n\n    source_episodes[]\n\n    causal_basis?\n\n    applicability_conditions[]\n    counter_conditions[]\n    counterexamples[]\n\n    evidence_refs[]\n\n    confidence_assessment\n\n    maturity_target\n}",
+        "raw_sha256": "d41c6f0f4bebcb0f89ae4d64c49e56fce0cca07a1bbae721801906c79165945b",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 2237,
+        "bundle_end_line": 2255,
+        "message_order": -1
+      },
+      {
+        "name": "MemoryProposal",
+        "start_line": 474,
+        "end_line": 500,
+        "raw": "MemoryProposal {\n    proposal_id\n\n    claim\n\n    proposed_scope\n\n    source_episode_refs[]\n\n    causal_basis_ref?\n\n    applicability_conditions[]\n    counter_conditions[]\n    counterexamples[]\n\n    evidence_refs[]\n\n    confidence_assessment_ref\n\n    proposed_maturity\n\n    dependency_set_ref\n\n    provenance_ref\n\n    proposed_memory_category\n}",
+        "raw_sha256": "954762e236b07d60a1c7480f60f9383a0f914a88043e9f541e6567ed0a6557af",
+        "partial_or_example": false,
+        "specification": "RDMS-07",
+        "source_part": "Original draft",
+        "message_id": "938c1bc7-97a0-46ad-be19-cd3ba3ca125f",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 486,
+        "bundle_end_line": 512,
+        "message_order": 14
+      }
+    ],
+    "scoped_amendments": [],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "PARENT-Observation",
+    "owner": "L3",
+    "type": "Observation",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "Observation",
+        "start_line": 581,
+        "end_line": 602,
+        "raw": "Observation {\n    id\n\n    source\n    source_authority?\n\n    world_ref\n    repo_ref?\n    environment_ref?\n\n    observed_at\n\n    content\n    raw_ref?\n\n    provenance\n\n    integrity:\n        verified\n        unverified\n        degraded\n}",
+        "raw_sha256": "2d9506cadb8e3faa0eb3c5606edaddd0a68fe19c005880b9baa32aecd8e7d110",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 581,
+        "bundle_end_line": 602,
+        "message_order": -1
+      },
+      {
+        "name": "Observation",
+        "start_line": 70,
+        "end_line": 96,
+        "raw": "Observation {\n    observation_id\n    project_id\n\n    observation_kind\n\n    source_ref\n\n    subject_ref?\n\n    observed_at\n    ingested_commit_seq\n\n    repo_ref?\n    world_ref?\n    environment_ref?\n\n    normalized_content\n\n    raw_artifact_ref?\n\n    provenance\n\n    capture_integrity\n\n    origin_ref?\n}",
+        "raw_sha256": "2e8195bef03066422a8996e4d6329cdf17d9415a4d0584a12d65b788d09aebc1",
+        "partial_or_example": false,
+        "specification": "RDMS-03",
+        "source_part": "Original draft",
+        "message_id": "11d811dc-87b8-4c44-8322-bdae96f7b95d",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-03_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 82,
+        "bundle_end_line": 108,
+        "message_order": 4
+      }
+    ],
+    "scoped_amendments": [
+      "RDMS-03 C01-01/06/15 explicitly adds these fields; C01-21 also requires associated TemporalProvenance, without freezing an embedding field spelling"
+    ],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "PARENT-OperationalCausalClaim",
+    "owner": "L2",
+    "type": "OperationalCausalClaim",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "OperationalCausalClaim",
+        "start_line": 514,
+        "end_line": 552,
+        "raw": "OperationalCausalClaim {\n    id\n\n    source_hypothesis_id\n\n    cause\n    effect\n    mechanism\n\n    scope {\n        repo_or_system_version\n        environment\n        inputs_or_preconditions[]\n        runtime_conditions[]\n    }\n\n    verification {\n        reproduced_failure\n        persisted_pre_intervention_prediction\n        targeted_intervention\n        predicted_effect_observed\n        regression_capture\n        alternatives_weakened[]\n        counterfactual_or_ablation?\n    }\n\n    evidence_refs[]\n    dependency_stamps[]\n    validity_conditions[]\n    contradictory_observations[]\n\n    status:\n        operationally_verified\n        stale\n        contradicted\n        superseded\n\n    promoted_at\n}",
+        "raw_sha256": "5a80584ba889e54ef99b9d03c6d5930297857d77236b4519a6c3c0a9842b6b7e",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 514,
+        "bundle_end_line": 552,
+        "message_order": -1
+      },
+      {
+        "name": "OperationalCausalClaim",
+        "start_line": 449,
+        "end_line": 477,
+        "raw": "OperationalCausalClaim {\n    causal_claim_id\n\n    source_hypothesis_id\n\n    cause\n    effect\n    mechanism\n\n    scope: CausalScope\n\n    verification_ref\n\n    dependency_set_ref\n\n    validity_conditions[]\n\n    contradictory_observation_refs[]\n\n    status:\n        OPERATIONALLY_VERIFIED\n        STALE\n        CONTRADICTED\n        SUPERSEDED\n\n    promoted_commit_seq\n\n    superseded_by?\n}",
+        "raw_sha256": "25acaae38d4e0e7933822b74e801146eedd80d82784a97f384e9f359af8ab0d5",
+        "partial_or_example": false,
+        "specification": "RDMS-02",
+        "source_part": "Original draft",
+        "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 461,
+        "bundle_end_line": 489,
+        "message_order": 2
+      }
+    ],
+    "scoped_amendments": [
+      "RDMS-02 C01-19 removes authoritative scalar superseded_by; use independently owned EntityLineageEdge",
+      "RDMS-02 C01-08 explicitly removes STALE from canonical lifecycle; OVCUsability is derived"
+    ],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "SHAPE-ProjectRuntime",
+    "owner": "L1",
+    "type": "ProjectRuntime",
+    "status": "OPEN",
+    "question": "UNSPECIFIED_ASSOCIATED_CONTRACT_EMBEDDING",
+    "exact_source_declarations": [
+      {
+        "name": "ProjectRuntime",
+        "start_line": 21,
+        "end_line": 34,
+        "raw": "ProjectRuntime {\n    project_id\n\n    control_head\n    canonical_state\n\n    current_executive_epoch\n\n    repo_binding\n\n    schema_version\n\n    runtime_status\n}",
+        "raw_sha256": "fe0b217ab857240617ab25d12f48cb2865064d86a4cdd3af7c3c0962bf3751b1",
+        "partial_or_example": false,
+        "specification": "RDMS-01",
+        "source_part": "Original draft",
+        "message_id": "2aacdc73-38d8-4456-9a73-9900fe14f900",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 33,
+        "bundle_end_line": 46,
+        "message_order": 0
+      }
+    ],
+    "scoped_amendments": [
+      "RDMS-01 R1 replaces the head/status model; PR-01 records the unspecified aggregate field representation"
+    ],
+    "associated_contracts": [
+      "ProjectHead",
+      "ProjectStatus",
+      "ProcessRuntimeMode"
+    ],
+    "consequence": "No complete serializer or conversion is accepted. Independently specified semantic laws remain effective.",
+    "field_variance": [
+      {
+        "source": "RDMS-01 / Original draft",
+        "line": 33,
+        "fields": [
+          "project_id",
+          "control_head",
+          "canonical_state",
+          "current_executive_epoch",
+          "repo_binding",
+          "schema_version",
+          "runtime_status"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "PARENT-QueryDependencyStamp",
+    "owner": "L4",
+    "type": "QueryDependencyStamp",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "QueryDependencyStamp",
+        "start_line": 2544,
+        "end_line": 2567,
+        "raw": "QueryDependencyStamp {\n    query\n\n    query_kind:\n        symbol_call\n        import\n        config_reference\n        textual_protocol\n        runtime_registry\n        global_search\n        custom\n\n    proof_scope\n\n    dependency_frontier[]\n\n    index_kind?\n    index_generation?\n    frontier_hash?\n\n    invalidation_rule\n\n    repo_ref\n}",
+        "raw_sha256": "b8e5ac3c661a644278bb1c41d19478fd45c3caeb54f77e7495cf0eae92ab48e2",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 2544,
+        "bundle_end_line": 2567,
+        "message_order": -1
+      },
+      {
+        "name": "QueryDependencyStamp",
+        "start_line": 885,
+        "end_line": 910,
+        "raw": "QueryDependencyStamp {\n    query_id\n\n    query\n\n    query_kind:\n        SYMBOL_CALL\n        IMPORT\n        CONFIG_REFERENCE\n        TEXTUAL_PROTOCOL\n        RUNTIME_REGISTRY\n        GLOBAL_SEARCH\n        CUSTOM\n\n    proof_scope\n\n    dependency_frontier[]\n\n    index_kind?\n    index_generation?\n    frontier_hash?\n\n    invalidation_rule_ref\n\n    repo_ref\n}",
+        "raw_sha256": "1b3ae40841edc5f5853a4b5867cfaa3c76e2ed21564b77df463f92fe64b69e1f",
+        "partial_or_example": false,
+        "specification": "RDMS-06",
+        "source_part": "Original draft",
+        "message_id": "4bcbb2bf-86d9-4b93-9b1c-9f9529916667",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-06_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 897,
+        "bundle_end_line": 922,
+        "message_order": 12
+      }
+    ],
+    "scoped_amendments": [],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "SHAPE-ResumeAssessment",
+    "owner": "L6",
+    "type": "ResumeAssessment",
+    "status": "OPEN",
+    "question": "MULTIPLE_NATIVE_SURFACES_REQUIRE_SCOPED_RECONCILIATION",
+    "exact_source_declarations": [
+      {
+        "name": "ResumeAssessment",
+        "start_line": 747,
+        "end_line": 768,
+        "raw": "ResumeAssessment {\n    assessment_id\n\n    capsule_ref\n\n    current_repo_ref?\n    current_world_ref?\n\n    dependency_evaluation_ref\n\n    unresolved_action_refs[]\n\n    result:\n        RESUMABLE\n        REPLAN_REQUIRED\n        BLOCKED\n        UNKNOWN\n\n    basis_refs[]\n\n    created_commit_seq\n}",
+        "raw_sha256": "cbddafc46b96fc64c2b1510423d639c4429f2168ca4378c63b876f4438f73b3e",
+        "partial_or_example": false,
+        "specification": "RDMS-05",
+        "source_part": "Original draft",
+        "message_id": "6276f296-457b-462d-b674-933a15194429",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 759,
+        "bundle_end_line": 780,
+        "message_order": 9
+      },
+      {
+        "name": "ResumeAssessment",
+        "start_line": 801,
+        "end_line": 821,
+        "raw": "ResumeAssessment {\n    assessment_id\n\n    capsule_ref\n\n    current_context_refs[]\n\n    action_reconciliation_refs[]\n\n    dependency_evaluation_ref\n\n    goal_slice_validity_refs[]\n\n    result:\n        RESUMABLE\n        REPLAN_REQUIRED\n        BLOCKED\n        UNKNOWN\n\n    basis_refs[]\n}",
+        "raw_sha256": "d384cbdf16eb937275f6c75d4af8363e3ded033509c0f90d3aae3310ec06950c",
+        "partial_or_example": false,
+        "specification": "RDMS-05",
+        "source_part": "C01",
+        "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 2148,
+        "bundle_end_line": 2168,
+        "message_order": 10
+      }
+    ],
+    "scoped_amendments": [],
+    "associated_contracts": [],
+    "consequence": "No complete serializer or conversion is accepted. Independently specified semantic laws remain effective.",
+    "field_variance": [
+      {
+        "source": "RDMS-05 / Original draft",
+        "line": 759,
+        "fields": [
+          "assessment_id",
+          "capsule_ref",
+          "current_repo_ref",
+          "current_world_ref",
+          "dependency_evaluation_ref",
+          "unresolved_action_refs",
+          "result",
+          "basis_refs",
+          "created_commit_seq"
+        ]
+      },
+      {
+        "source": "RDMS-05 / C01",
+        "line": 2148,
+        "fields": [
+          "assessment_id",
+          "capsule_ref",
+          "current_context_refs",
+          "action_reconciliation_refs",
+          "dependency_evaluation_ref",
+          "goal_slice_validity_refs",
+          "result",
+          "basis_refs"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "SHAPE-ResumptionCapsule",
+    "owner": "L6",
+    "type": "ResumptionCapsule",
+    "status": "OPEN",
+    "question": "MULTIPLE_NATIVE_SURFACES_REQUIRE_SCOPED_RECONCILIATION",
+    "exact_source_declarations": [
+      {
+        "name": "ResumptionCapsule",
+        "start_line": 2037,
+        "end_line": 2062,
+        "raw": "ResumptionCapsule {\n    task_id\n\n    suspended_from_state\n\n    base_state_version\n    repo_ref\n\n    goal\n    subgoal\n\n    current_focus\n\n    current_hypotheses[]\n    relevant_evidence[]\n\n    rejected_paths[]\n\n    temporary_changes[]\n\n    open_information_needs[]\n\n    next_concrete_action?\n\n    created_at\n}",
+        "raw_sha256": "3b1813aa4640f6305cb0a84a6b157dc3758c2083b212ceb26c088397c247117a",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 2037,
+        "bundle_end_line": 2062,
+        "message_order": -1
+      },
+      {
+        "name": "ResumptionCapsule",
+        "start_line": 642,
+        "end_line": 678,
+        "raw": "ResumptionCapsule {\n    capsule_id\n\n    project_id\n    task_or_goal_ref\n\n    suspended_from_state\n\n    base_canonical_commit_seq\n\n    repo_ref?\n    world_ref?\n    environment_ref?\n\n    dependency_set_ref?\n\n    current_focus_ref?\n\n    relevant_claim_refs[]\n    relevant_hypothesis_refs[]\n    relevant_evidence_refs[]\n\n    decision_refs[]\n    rejected_path_refs[]\n\n    active_slice_refs[]\n    unresolved_action_refs[]\n\n    open_information_need_refs[]\n    commitment_refs[]\n\n    temporary_change_refs[]\n\n    next_action_proposal_ref?\n\n    created_commit_seq\n}",
+        "raw_sha256": "c1d22ca4a7ddbf38aa27abd8caa3fbbf1587f636463b3d7827b840bc809528b1",
+        "partial_or_example": false,
+        "specification": "RDMS-05",
+        "source_part": "Original draft",
+        "message_id": "6276f296-457b-462d-b674-933a15194429",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 654,
+        "bundle_end_line": 690,
+        "message_order": 9
+      },
+      {
+        "name": "ResumptionCapsule",
+        "start_line": 720,
+        "end_line": 741,
+        "raw": "ResumptionCapsule {\n    capsule_id\n\n    task_or_goal_ref\n\n    suspended_from_state\n\n    canonical_snapshot_ref\n\n    relevant_entity_refs[]\n\n    dependency_set_ref\n\n    unresolved_action_refs[]\n\n    next_action_proposal_ref?\n\n    durable_payload_artifact_ref\n    content_integrity_ref\n\n    created_commit_seq\n}",
+        "raw_sha256": "1c38a08ce60f890ed64f69cfd6cb8d2928d75d5b6637be31299a5b209e420409",
+        "partial_or_example": false,
+        "specification": "RDMS-05",
+        "source_part": "C01",
+        "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 2067,
+        "bundle_end_line": 2088,
+        "message_order": 10
+      }
+    ],
+    "scoped_amendments": [],
+    "associated_contracts": [],
+    "consequence": "No complete serializer or conversion is accepted. Independently specified semantic laws remain effective.",
+    "field_variance": [
+      {
+        "source": "FCA / v1.0.1 FROZEN",
+        "line": 2037,
+        "fields": [
+          "task_id",
+          "suspended_from_state",
+          "base_state_version",
+          "repo_ref",
+          "goal",
+          "subgoal",
+          "current_focus",
+          "current_hypotheses",
+          "relevant_evidence",
+          "rejected_paths",
+          "temporary_changes",
+          "open_information_needs",
+          "next_concrete_action",
+          "created_at"
+        ]
+      },
+      {
+        "source": "RDMS-05 / Original draft",
+        "line": 654,
+        "fields": [
+          "capsule_id",
+          "project_id",
+          "task_or_goal_ref",
+          "suspended_from_state",
+          "base_canonical_commit_seq",
+          "repo_ref",
+          "world_ref",
+          "environment_ref",
+          "dependency_set_ref",
+          "current_focus_ref",
+          "relevant_claim_refs",
+          "relevant_hypothesis_refs",
+          "relevant_evidence_refs",
+          "decision_refs",
+          "rejected_path_refs",
+          "active_slice_refs",
+          "unresolved_action_refs",
+          "open_information_need_refs",
+          "commitment_refs",
+          "temporary_change_refs",
+          "next_action_proposal_ref",
+          "created_commit_seq"
+        ]
+      },
+      {
+        "source": "RDMS-05 / C01",
+        "line": 2067,
+        "fields": [
+          "capsule_id",
+          "task_or_goal_ref",
+          "suspended_from_state",
+          "canonical_snapshot_ref",
+          "relevant_entity_refs",
+          "dependency_set_ref",
+          "unresolved_action_refs",
+          "next_action_proposal_ref",
+          "durable_payload_artifact_ref",
+          "content_integrity_ref",
+          "created_commit_seq"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "PARENT-ResumptionCapsule",
+    "owner": "L6",
+    "type": "ResumptionCapsule",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "ResumptionCapsule",
+        "start_line": 2037,
+        "end_line": 2062,
+        "raw": "ResumptionCapsule {\n    task_id\n\n    suspended_from_state\n\n    base_state_version\n    repo_ref\n\n    goal\n    subgoal\n\n    current_focus\n\n    current_hypotheses[]\n    relevant_evidence[]\n\n    rejected_paths[]\n\n    temporary_changes[]\n\n    open_information_needs[]\n\n    next_concrete_action?\n\n    created_at\n}",
+        "raw_sha256": "3b1813aa4640f6305cb0a84a6b157dc3758c2083b212ceb26c088397c247117a",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 2037,
+        "bundle_end_line": 2062,
+        "message_order": -1
+      },
+      {
+        "name": "ResumptionCapsule",
+        "start_line": 642,
+        "end_line": 678,
+        "raw": "ResumptionCapsule {\n    capsule_id\n\n    project_id\n    task_or_goal_ref\n\n    suspended_from_state\n\n    base_canonical_commit_seq\n\n    repo_ref?\n    world_ref?\n    environment_ref?\n\n    dependency_set_ref?\n\n    current_focus_ref?\n\n    relevant_claim_refs[]\n    relevant_hypothesis_refs[]\n    relevant_evidence_refs[]\n\n    decision_refs[]\n    rejected_path_refs[]\n\n    active_slice_refs[]\n    unresolved_action_refs[]\n\n    open_information_need_refs[]\n    commitment_refs[]\n\n    temporary_change_refs[]\n\n    next_action_proposal_ref?\n\n    created_commit_seq\n}",
+        "raw_sha256": "c1d22ca4a7ddbf38aa27abd8caa3fbbf1587f636463b3d7827b840bc809528b1",
+        "partial_or_example": false,
+        "specification": "RDMS-05",
+        "source_part": "Original draft",
+        "message_id": "6276f296-457b-462d-b674-933a15194429",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 654,
+        "bundle_end_line": 690,
+        "message_order": 9
+      },
+      {
+        "name": "ResumptionCapsule",
+        "start_line": 720,
+        "end_line": 741,
+        "raw": "ResumptionCapsule {\n    capsule_id\n\n    task_or_goal_ref\n\n    suspended_from_state\n\n    canonical_snapshot_ref\n\n    relevant_entity_refs[]\n\n    dependency_set_ref\n\n    unresolved_action_refs[]\n\n    next_action_proposal_ref?\n\n    durable_payload_artifact_ref\n    content_integrity_ref\n\n    created_commit_seq\n}",
+        "raw_sha256": "1c38a08ce60f890ed64f69cfd6cb8d2928d75d5b6637be31299a5b209e420409",
+        "partial_or_example": false,
+        "specification": "RDMS-05",
+        "source_part": "C01",
+        "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 2067,
+        "bundle_end_line": 2088,
+        "message_order": 10
+      }
+    ],
+    "scoped_amendments": [],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "SHAPE-Risk",
+    "owner": "L2",
+    "type": "Risk",
+    "status": "OPEN",
+    "question": "PARTIAL_RISK_OVERLAY_WITH_REQUIRED_BASELINE_PRESERVATION",
+    "exact_source_declarations": [
+      {
+        "name": "Risk",
+        "start_line": 1131,
+        "end_line": 1179,
+        "raw": "Risk {\n    risk_id\n\n    statement\n\n    scope: ScopeSpec\n\n    category:\n        CORRECTNESS\n        ARCHITECTURE\n        SECURITY\n        DATA\n        PERFORMANCE\n        OPERABILITY\n        COMPATIBILITY\n        DELIVERY\n        KNOWLEDGE\n        OTHER\n\n    likelihood:\n        UNKNOWN\n        LOW\n        MEDIUM\n        HIGH\n\n    impact:\n        LOW\n        MEDIUM\n        HIGH\n        CRITICAL\n\n    affected_refs[]\n\n    mitigation_refs[]\n\n    evidence_basis_refs[]\n\n    owner_ref?\n\n    status:\n        OPEN\n        MONITORING\n        MITIGATED\n        ACCEPTED\n        REALIZED\n        OBSOLETE\n\n    accepted_by_decision_id?\n}",
+        "raw_sha256": "f20f77bdf7132da8e3db1cafb0521518c0959298524df9ec4b7816360216ddbd",
+        "partial_or_example": false,
+        "specification": "RDMS-02",
+        "source_part": "Original draft",
+        "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 1143,
+        "bundle_end_line": 1191,
+        "message_order": 2
+      },
+      {
+        "name": "Risk",
+        "start_line": 850,
+        "end_line": 869,
+        "raw": "Risk {\n    ...\n\n    lifecycle:\n        OPEN\n        MITIGATED\n        REALIZED\n        OBSOLETE\n\n    treatment:\n        UNASSESSED\n        MONITOR\n        MITIGATE\n        ACCEPT\n        AVOID\n\n    current_assessment_ref?\n\n    accepted_by_decision_id?\n}",
+        "raw_sha256": "127cb6a861cd68bb7a4297cdf823f3c1e50d6cf6d81a2da99c9c1dd57e3eec26",
+        "partial_or_example": true,
+        "specification": "RDMS-02",
+        "source_part": "C01, second review corrections and final freeze decision",
+        "message_id": "266bb347-d2a5-41ea-872a-32e140c803eb",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 2774,
+        "bundle_end_line": 2793,
+        "message_order": 3
+      }
+    ],
+    "scoped_amendments": [],
+    "associated_contracts": [],
+    "consequence": "No complete serializer or conversion is accepted. Independently specified semantic laws remain effective.",
+    "field_variance": [
+      {
+        "source": "RDMS-02 / Original draft",
+        "line": 1143,
+        "fields": [
+          "risk_id",
+          "statement",
+          "scope",
+          "category",
+          "likelihood",
+          "impact",
+          "affected_refs",
+          "mitigation_refs",
+          "evidence_basis_refs",
+          "owner_ref",
+          "status",
+          "accepted_by_decision_id"
+        ]
+      },
+      {
+        "source": "RDMS-02 / C01, second review corrections and final freeze decision",
+        "line": 2774,
+        "fields": [
+          "lifecycle",
+          "treatment",
+          "current_assessment_ref",
+          "accepted_by_decision_id"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "PARENT-SandboxActivityRecord",
+    "owner": "L3",
+    "type": "SandboxActivityRecord",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "SandboxActivityRecord",
+        "start_line": 1857,
+        "end_line": 1866,
+        "raw": "SandboxActivityRecord {\n    activity_id\n    slice_id\n    base_snapshot\n    containment_profile\n    operation_count\n    output_refs[]\n    observation_refs[]\n    result\n}",
+        "raw_sha256": "04ce19cb7964822cf2646606d30b1078dc687ef9ee8fd46c3bde41e418fcfd58",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 1857,
+        "bundle_end_line": 1866,
+        "message_order": -1
+      },
+      {
+        "name": "SandboxActivityRecord",
+        "start_line": 1112,
+        "end_line": 1133,
+        "raw": "SandboxActivityRecord {\n    activity_id\n\n    project_id\n    slice_id\n\n    sandbox_ref\n    containment_proof_ref\n\n    base_snapshot_ref\n\n    operation_count\n\n    activity_summary\n\n    output_artifact_refs[]\n    observation_refs[]\n\n    final_sandbox_snapshot_ref?\n\n    completed_at\n}",
+        "raw_sha256": "cba4e17ccdd40f411d046f637d1f356611c940f30120987d45d657ff5f8fd855",
+        "partial_or_example": false,
+        "specification": "RDMS-04",
+        "source_part": "Original draft",
+        "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 1124,
+        "bundle_end_line": 1145,
+        "message_order": 6
+      }
+    ],
+    "scoped_amendments": [],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "PARENT-Slice",
+    "owner": "L2",
+    "type": "Slice",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "Slice",
+        "start_line": 1246,
+        "end_line": 1289,
+        "raw": "Slice {\n    id\n\n    goal_id\n    parent_slice?\n\n    intent\n\n    dependencies[]\n\n    allowed_scope[]\n    forbidden_scope[]\n\n    preconditions[]\n\n    invariants[]\n    contracts[]\n\n    expected_effects[]\n\n    expected_change_surface {\n        modules[]\n        contracts[]\n        state_owners[]\n        public_apis[]\n        persistent_data[]\n    }\n\n    risk_profile\n\n    proof_obligations[]\n\n    verification[]\n\n    rollback\n\n    base_state_version\n    base_repo_ref\n\n    status\n\n    actual_effects[]\n    actual_change_surface?\n}",
+        "raw_sha256": "45ebbb719962e7401700a8ffa38aa2a42c246ea2eed62cc85774252fcc12e65a",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 1246,
+        "bundle_end_line": 1289,
+        "message_order": -1
+      },
+      {
+        "name": "Slice",
+        "start_line": 1205,
+        "end_line": 1255,
+        "raw": "Slice {\n    slice_id\n\n    goal_id\n    parent_slice_id?\n\n    intent\n\n    dependency_refs[]\n\n    allowed_scope[]\n    forbidden_scope[]\n\n    preconditions[]\n\n    invariant_refs[]\n    contract_refs[]\n\n    expected_effects[]\n\n    expected_change_surface\n\n    risk_refs[]\n\n    proof_obligations[]\n\n    verification_specs[]\n\n    rollback_spec?\n\n    base_state_version\n    base_repo_ref\n\n    status:\n        PLANNED\n        READY\n        EXECUTING\n        IMPLEMENTED\n        VERIFYING\n        VERIFIED\n        INTEGRATED\n        CLOSED\n        BLOCKED\n        SUSPENDED\n        FAILED\n        CANCELLED\n        OBSOLETE\n\n    actual_effects[]\n    actual_change_surface?\n}",
+        "raw_sha256": "c447062cf9a8ed563d98cf2d43f84ecee81c6ffdf0bc82c275f83bde54de929c",
+        "partial_or_example": false,
+        "specification": "RDMS-02",
+        "source_part": "Original draft",
+        "message_id": "a62cc59d-b288-4be8-97c4-ac84d835a933",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 1217,
+        "bundle_end_line": 1267,
+        "message_order": 2
+      }
+    ],
+    "scoped_amendments": [
+      "RDMS-02 C01-21 explicitly abolishes single giant status enum; separately owned SliceState carries stage/condition/terminal",
+      "RDMS-02 C01-25 removes base_state_version and replaces freshness basis with planned_from_commit_seq/dependency_set_ref/base_repo_ref"
+    ],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "SHAPE-State",
+    "owner": "L2",
+    "type": "State",
+    "status": "OPEN",
+    "question": "MULTIPLE_NATIVE_SURFACES_REQUIRE_SCOPED_RECONCILIATION",
+    "exact_source_declarations": [
+      {
+        "name": "State",
+        "start_line": 287,
+        "end_line": 308,
+        "raw": "State {\n    identity\n\n    goals\n    focus\n\n    model\n\n    epistemic\n\n    engineering\n\n    execution\n\n    temporal\n\n    specialists\n\n    memory_refs\n\n    meta\n}",
+        "raw_sha256": "c58142f3a8646e7853d482987e375e8416567161163b3d4e7d488e666bf0d4a4",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 287,
+        "bundle_end_line": 308,
+        "message_order": -1
+      },
+      {
+        "name": "State",
+        "start_line": 3541,
+        "end_line": 3622,
+        "raw": "State {\n  identity {\n    project_id\n    global_state_version\n    repo_ref\n    schema_version\n    current_executive_epoch\n  }\n\n  goals {\n    stack\n    items[]\n  }\n\n  focus: FocusState\n\n  model {\n    domain\n    structure\n    runtime\n    causal\n    risk\n  }\n\n  epistemic {\n    claims[]\n    information_needs[]\n    hypotheses[]\n    observations[]\n    evidence_links[]\n    contradictions[]\n    experiments[]\n  }\n\n  engineering {\n    invariants[]\n    contracts[]\n    vocabulary[]\n    decisions[]\n    risks[]\n  }\n\n  execution {\n    graph[]\n    active_slice?\n    deviations[]\n    structural_diffs[]\n    semantic_change_proposals[]\n    verification_records[]\n  }\n\n  temporal {\n    active_tasks[]\n    suspended_tasks[]\n    blocked_tasks[]\n    waiting_tasks[]\n    commitments[]\n    triggers[]\n    resumption_capsules[]\n  }\n\n  specialists[]\n\n  memory_refs[]\n\n  meta {\n    confidence_profile\n    contradictions[]\n    prediction_errors[]\n    stagnation_signals[]\n    drift_signals[]\n    residual_risks[]\n    current_strategy\n    cognitive_depth\n  }\n\n  control_refs {\n    action_records[]\n    control_events[]\n    leadership_grant\n  }\n}",
+        "raw_sha256": "2634917c8582261b5b430cdb6bb50176a1e93e17d8df4491ff24cd5e2cd1a8ab",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 3541,
+        "bundle_end_line": 3622,
+        "message_order": -1
+      }
+    ],
+    "scoped_amendments": [],
+    "associated_contracts": [],
+    "consequence": "No complete serializer or conversion is accepted. Independently specified semantic laws remain effective.",
+    "field_variance": [
+      {
+        "source": "FCA / v1.0.1 FROZEN",
+        "line": 287,
+        "fields": [
+          "identity",
+          "goals",
+          "focus",
+          "model",
+          "epistemic",
+          "engineering",
+          "execution",
+          "temporal",
+          "specialists",
+          "memory_refs",
+          "meta"
+        ]
+      },
+      {
+        "source": "FCA / v1.0.1 FROZEN",
+        "line": 3541,
+        "fields": [
+          "project_id",
+          "global_state_version",
+          "repo_ref",
+          "schema_version",
+          "current_executive_epoch",
+          "stack",
+          "items",
+          "domain",
+          "structure",
+          "runtime",
+          "causal",
+          "risk",
+          "claims",
+          "information_needs",
+          "hypotheses",
+          "observations",
+          "evidence_links",
+          "contradictions",
+          "experiments",
+          "invariants",
+          "contracts",
+          "vocabulary",
+          "decisions",
+          "risks",
+          "graph",
+          "active_slice",
+          "deviations",
+          "structural_diffs",
+          "semantic_change_proposals",
+          "verification_records",
+          "active_tasks",
+          "suspended_tasks",
+          "blocked_tasks",
+          "waiting_tasks",
+          "commitments",
+          "triggers",
+          "resumption_capsules",
+          "confidence_profile",
+          "contradictions",
+          "prediction_errors",
+          "stagnation_signals",
+          "drift_signals",
+          "residual_risks",
+          "current_strategy",
+          "cognitive_depth",
+          "action_records",
+          "control_events",
+          "leadership_grant"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "SHAPE-TemporalSchedule",
+    "owner": "L4",
+    "type": "TemporalSchedule",
+    "status": "OPEN",
+    "question": "MULTIPLE_NATIVE_SURFACES_REQUIRE_SCOPED_RECONCILIATION",
+    "exact_source_declarations": [
+      {
+        "name": "TemporalSchedule",
+        "start_line": 113,
+        "end_line": 134,
+        "raw": "TemporalSchedule {\n    schedule_id\n\n    schedule_kind:\n        INSTANT\n        INTERVAL\n        RECURRING\n\n    time_zone?\n\n    local_time_rule?\n    absolute_instant?\n\n    recurrence_rule?\n\n    not_before?\n    valid_until?\n\n    ambiguous_time_policy?\n    nonexistent_time_policy?\n    missed_occurrence_policy\n}",
+        "raw_sha256": "5f0f2b031ccf35baa751dac89addaff5400e3cc2a6887bde7a41ddd6fa3601c6",
+        "partial_or_example": false,
+        "specification": "RDMS-05",
+        "source_part": "Original draft",
+        "message_id": "6276f296-457b-462d-b674-933a15194429",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 125,
+        "bundle_end_line": 146,
+        "message_order": 9
+      },
+      {
+        "name": "TemporalSchedule",
+        "start_line": 533,
+        "end_line": 553,
+        "raw": "TemporalSchedule {\n    schedule_id\n    version\n\n    schedule_kind:\n        INSTANT\n        INTERVAL\n        RECURRING\n\n    time_zone_id?\n\n    time_zone_rules_version?\n\n    recurrence_rule?\n\n    ambiguous_local_time_policy\n    nonexistent_local_time_policy\n\n    missed_occurrence_policy\n    clock_discontinuity_policy\n}",
+        "raw_sha256": "ab7d540111ffe08336b9db465666f304a81a636e934829213115b84295c0c690",
+        "partial_or_example": false,
+        "specification": "RDMS-05",
+        "source_part": "C01",
+        "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 1880,
+        "bundle_end_line": 1900,
+        "message_order": 10
+      }
+    ],
+    "scoped_amendments": [],
+    "associated_contracts": [],
+    "consequence": "No complete serializer or conversion is accepted. Independently specified semantic laws remain effective.",
+    "field_variance": [
+      {
+        "source": "RDMS-05 / Original draft",
+        "line": 125,
+        "fields": [
+          "schedule_id",
+          "schedule_kind",
+          "time_zone",
+          "local_time_rule",
+          "absolute_instant",
+          "recurrence_rule",
+          "not_before",
+          "valid_until",
+          "ambiguous_time_policy",
+          "nonexistent_time_policy",
+          "missed_occurrence_policy"
+        ]
+      },
+      {
+        "source": "RDMS-05 / C01",
+        "line": 1880,
+        "fields": [
+          "schedule_id",
+          "version",
+          "schedule_kind",
+          "time_zone_id",
+          "time_zone_rules_version",
+          "recurrence_rule",
+          "ambiguous_local_time_policy",
+          "nonexistent_local_time_policy",
+          "missed_occurrence_policy",
+          "clock_discontinuity_policy"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "PARENT-TemporalValidity",
+    "owner": "L4",
+    "type": "TemporalValidity",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "TemporalValidity",
+        "start_line": 2088,
+        "end_line": 2101,
+        "raw": "TemporalValidity {\n    observed_at?\n    verified_at?\n\n    repo_ref?\n    state_version?\n\n    valid_until_condition?\n\n    freshness:\n        current\n        stale\n        unknown\n}",
+        "raw_sha256": "c87bb435ce09bfde6bef4c24d01f0f6bf7a57606b2a1998624c01de43c700359",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 2088,
+        "bundle_end_line": 2101,
+        "message_order": -1
+      },
+      {
+        "name": "TemporalValidity",
+        "start_line": 791,
+        "end_line": 804,
+        "raw": "TemporalValidity {\n    observed_at?\n    verified_at?\n\n    repo_ref?\n    state_version?\n\n    valid_until_condition?\n\n    freshness:\n        CURRENT\n        STALE\n        UNKNOWN\n}",
+        "raw_sha256": "250b7997581e6b41d4a3de5ae7b300e8b17108baf13eff0590e3173bf1e43969",
+        "partial_or_example": false,
+        "specification": "RDMS-05",
+        "source_part": "Original draft",
+        "message_id": "6276f296-457b-462d-b674-933a15194429",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 803,
+        "bundle_end_line": 816,
+        "message_order": 9
+      }
+    ],
+    "scoped_amendments": [],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "SHAPE-ToolResult",
+    "owner": "L3",
+    "type": "ToolResult",
+    "status": "OPEN",
+    "question": "PARTIAL_SOURCE_DECLARATION_ONLY",
+    "exact_source_declarations": [
+      {
+        "name": "ToolResult",
+        "start_line": 1233,
+        "end_line": 1235,
+        "raw": "ToolResult {\n    exit_code = 0\n}",
+        "raw_sha256": "e3eae85aa021ec192cafaa0d0510c973ccb51a2e5f4e7c45f30ec7075869b855",
+        "partial_or_example": true,
+        "specification": "RDMS-04",
+        "source_part": "Original draft",
+        "message_id": "32ad532a-40cd-4b2a-8a0a-3372937cf6db",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-04_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 1245,
+        "bundle_end_line": 1247,
+        "message_order": 6
+      }
+    ],
+    "scoped_amendments": [],
+    "associated_contracts": [],
+    "consequence": "No complete serializer or conversion is accepted. Independently specified semantic laws remain effective.",
+    "field_variance": [
+      {
+        "source": "RDMS-04 / Original draft",
+        "line": 1245,
+        "fields": []
+      }
+    ]
+  },
+  {
+    "id": "PARENT-TriggerCondition",
+    "owner": "L4",
+    "type": "TriggerCondition",
+    "status": "OPEN_CONFORMANCE_PROOF",
+    "question": "Preserve all non-superseded parent semantic fields; a rename, aggregate reference or projection is not by itself a proved mapping.",
+    "exact_source_declarations": [
+      {
+        "name": "TriggerCondition",
+        "start_line": 2126,
+        "end_line": 2163,
+        "raw": "TriggerCondition {\n    id\n    generation\n\n    semantics:\n        ONE_SHOT\n        REARMABLE\n        LEVEL_TRIGGERED\n        EDGE_TRIGGERED\n\n    kind:\n        state_event\n        repo_change\n        metric_threshold\n        temporal\n        external_event\n        human_event\n        semantic_review\n\n    watches[]\n    predicate?\n\n    source_cursor?\n\n    reaction_key\n\n    linked_object\n    on_fire\n\n    status:\n        armed\n        fired\n        satisfied\n        cancelled\n\n    last_evaluated_at\n    last_fire_id?\n}",
+        "raw_sha256": "cc1d38d3e27b521df8628445f93a5a887b2473472cfa55e83de47002c9ffb8ee",
+        "partial_or_example": false,
+        "specification": "FCA",
+        "source_part": "v1.0.1 FROZEN",
+        "message_id": "FCA-1.0.1-FROZEN-SPEC",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+        "bundle_start_line": 2126,
+        "bundle_end_line": 2163,
+        "message_order": -1
+      },
+      {
+        "name": "TriggerCondition",
+        "start_line": 179,
+        "end_line": 197,
+        "raw": "TriggerCondition {\n    condition_id\n\n    kind:\n        STATE_EVENT\n        REPO_CHANGE\n        METRIC_THRESHOLD\n        TEMPORAL\n        EXTERNAL_EVENT\n        HUMAN_EVENT\n        SEMANTIC_REVIEW\n        COMPOSITE\n\n    predicate_spec\n\n    dependency_set_ref?\n\n    required_evidence_policy_ref?\n}",
+        "raw_sha256": "c3092a02ce0b441049cfe58978e5eaa1bbee23f7b4fd879240b58e666822bdbd",
+        "partial_or_example": false,
+        "specification": "RDMS-05",
+        "source_part": "Original draft",
+        "message_id": "6276f296-457b-462d-b674-933a15194429",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 191,
+        "bundle_end_line": 209,
+        "message_order": 9
+      }
+    ],
+    "scoped_amendments": [],
+    "consequence": "Current source-owned records retain their defining semantics; callers cannot assume a lossless inter-specification mapping."
+  },
+  {
+    "id": "SHAPE-TriggerFire",
+    "owner": "L4",
+    "type": "TriggerFire",
+    "status": "OPEN",
+    "question": "MULTIPLE_NATIVE_SURFACES_REQUIRE_SCOPED_RECONCILIATION",
+    "exact_source_declarations": [
+      {
+        "name": "TriggerFire",
+        "start_line": 439,
+        "end_line": 454,
+        "raw": "TriggerFire {\n    fire_id\n\n    trigger_id\n    generation\n\n    condition_version_ref\n\n    triggering_basis_refs[]\n\n    source_frontier_ref\n\n    fire_identity_key\n\n    fired_at_commit_seq\n}",
+        "raw_sha256": "559e11a3e82f870ebb618aa1f4932f5a0c389404f52a5a7d17abf6f1e8a6c9ce",
+        "partial_or_example": false,
+        "specification": "RDMS-05",
+        "source_part": "Original draft",
+        "message_id": "6276f296-457b-462d-b674-933a15194429",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 451,
+        "bundle_end_line": 466,
+        "message_order": 9
+      },
+      {
+        "name": "TriggerFire",
+        "start_line": 345,
+        "end_line": 357,
+        "raw": "TriggerFire {\n    fire_id\n\n    trigger_definition_snapshot_ref\n    qualified_occurrence_ref\n\n    evidence_basis_refs[]\n    source_frontier_ref\n\n    fire_identity_key\n\n    created_commit_seq\n}",
+        "raw_sha256": "5bdd4a1ad86972d86c9fd8cb77adaec3e60236a88d76f37540b48f091096f69c",
+        "partial_or_example": false,
+        "specification": "RDMS-05",
+        "source_part": "C01",
+        "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 1692,
+        "bundle_end_line": 1704,
+        "message_order": 10
+      }
+    ],
+    "scoped_amendments": [],
+    "associated_contracts": [],
+    "consequence": "No complete serializer or conversion is accepted. Independently specified semantic laws remain effective.",
+    "field_variance": [
+      {
+        "source": "RDMS-05 / Original draft",
+        "line": 451,
+        "fields": [
+          "fire_id",
+          "trigger_id",
+          "generation",
+          "condition_version_ref",
+          "triggering_basis_refs",
+          "source_frontier_ref",
+          "fire_identity_key",
+          "fired_at_commit_seq"
+        ]
+      },
+      {
+        "source": "RDMS-05 / C01",
+        "line": 1692,
+        "fields": [
+          "fire_id",
+          "trigger_definition_snapshot_ref",
+          "qualified_occurrence_ref",
+          "evidence_basis_refs",
+          "source_frontier_ref",
+          "fire_identity_key",
+          "created_commit_seq"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "SHAPE-TriggerReaction",
+    "owner": "L4",
+    "type": "TriggerReaction",
+    "status": "OPEN",
+    "question": "MULTIPLE_NATIVE_SURFACES_REQUIRE_SCOPED_RECONCILIATION",
+    "exact_source_declarations": [
+      {
+        "name": "TriggerReaction",
+        "start_line": 471,
+        "end_line": 491,
+        "raw": "TriggerReaction {\n    reaction_id\n\n    fire_ref\n    target_ref\n\n    reaction_kind:\n        MARK_COMMITMENT_DUE\n        REQUEST_GOAL_REACTIVATION\n        REQUEST_SLICE_REVALIDATION\n        REQUEST_EXECUTIVE_ATTENTION\n        RECORD_CONDITION_SATISFIED\n\n    reaction_key\n\n    lifecycle:\n        PENDING\n        APPLIED\n        BLOCKED\n        CANCELLED\n}",
+        "raw_sha256": "23f43aee7f11e84ef54c3c9e4f2d9d3909f51068ee0230bb59b2ea4d51ae8b4b",
+        "partial_or_example": false,
+        "specification": "RDMS-05",
+        "source_part": "Original draft",
+        "message_id": "6276f296-457b-462d-b674-933a15194429",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 483,
+        "bundle_end_line": 503,
+        "message_order": 9
+      },
+      {
+        "name": "TriggerReaction",
+        "start_line": 622,
+        "end_line": 642,
+        "raw": "TriggerReaction {\n    reaction_id\n\n    fire_ref\n\n    target_entity_ref\n    expected_target_version\n    expected_lifecycle\n\n    target_goal_lineage_ref?\n\n    frozen_reaction_spec_ref\n\n    status:\n        PENDING\n        CLAIMED\n        APPLIED\n        BLOCKED\n        OBSOLETE\n        CANCELLED\n}",
+        "raw_sha256": "89679654e9b97a64373c679bb1c0a96e71021f9d8d3df7dd19cfa3fa682f0fd3",
+        "partial_or_example": false,
+        "specification": "RDMS-05",
+        "source_part": "C01",
+        "message_id": "77caba5f-8e8e-4b8e-a9fe-027c4801efad",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 1969,
+        "bundle_end_line": 1989,
+        "message_order": 10
+      }
+    ],
+    "scoped_amendments": [],
+    "associated_contracts": [],
+    "consequence": "No complete serializer or conversion is accepted. Independently specified semantic laws remain effective.",
+    "field_variance": [
+      {
+        "source": "RDMS-05 / Original draft",
+        "line": 483,
+        "fields": [
+          "reaction_id",
+          "fire_ref",
+          "target_ref",
+          "reaction_kind",
+          "reaction_key",
+          "lifecycle"
+        ]
+      },
+      {
+        "source": "RDMS-05 / C01",
+        "line": 1969,
+        "fields": [
+          "reaction_id",
+          "fire_ref",
+          "target_entity_ref",
+          "expected_target_version",
+          "expected_lifecycle",
+          "target_goal_lineage_ref",
+          "frozen_reaction_spec_ref",
+          "status"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "SHAPE-TriggerSourceCursor",
+    "owner": "L4",
+    "type": "TriggerSourceCursor",
+    "status": "OPEN",
+    "question": "UNSPECIFIED_ASSOCIATED_CONTRACT_EMBEDDING",
+    "exact_source_declarations": [
+      {
+        "name": "TriggerSourceCursor",
+        "start_line": 375,
+        "end_line": 391,
+        "raw": "TriggerSourceCursor {\n    cursor_id\n\n    trigger_id\n    source_ref\n\n    source_generation\n\n    last_processed_position\n\n    coverage_state:\n        COMPLETE\n        GAP_DETECTED\n        UNKNOWN\n\n    updated_commit_seq\n}",
+        "raw_sha256": "53c8e493c18ff7b3b0d99d0645a8a806482586f7fafac3dd36263461d988d5bd",
+        "partial_or_example": false,
+        "specification": "RDMS-05",
+        "source_part": "Original draft",
+        "message_id": "6276f296-457b-462d-b674-933a15194429",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-05_APPROVED_SOURCE_SET.txt",
+        "bundle_start_line": 387,
+        "bundle_end_line": 403,
+        "message_order": 9
+      }
+    ],
+    "scoped_amendments": [
+      "RDMS-05 C01-05 separates durable ingress and legal trigger-processing frontiers; original TriggerSourceCursor must not conflate them"
+    ],
+    "associated_contracts": [
+      "IngressCursor",
+      "TriggerProcessingCursor"
+    ],
+    "consequence": "No complete serializer or conversion is accepted. Independently specified semantic laws remain effective.",
+    "field_variance": [
+      {
+        "source": "RDMS-05 / Original draft",
+        "line": 387,
+        "fields": [
+          "cursor_id",
+          "trigger_id",
+          "source_ref",
+          "source_generation",
+          "last_processed_position",
+          "coverage_state",
+          "updated_commit_seq"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "CE-01",
+    "owner": "L1",
+    "status": "OPEN",
+    "question": "Canonical event schema_version/idempotency_key versus R1 ControlEvent/event_type_version and enclosing ControlCommit.",
+    "exact_conflicting_scopes": [
+      {
+        "unit_id": "FCA-48",
+        "section": "48",
+        "title": "Control Ledger",
+        "start_line": 1921,
+        "end_line": 1948,
+        "raw": "## 48. Control Ledger\n\nThe Control Ledger is the authoritative durability boundary for control-plane state.\n\nIt stores or atomically references at least:\n\n```text\nExecutive Epoch\nCanonical cognitive commits\nAction lifecycle\nTrigger lifecycle\nSpecialist lifecycle\nMemory promotions\nGoal/task lifecycle\n```\n\nLarge artifacts may live elsewhere, but recoverability-critical references and lifecycle metadata belong to the authoritative control boundary.\n\nEach canonical event includes at least:\n\n```text\nevent_id\nschema_version\nidempotency_key\n```\n\n---\n",
+        "sha256": "ccb6b64224f31f353fd63c697214ef5fe8717c5409cd63053c3006d1068bf821",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md"
+      },
+      {
+        "level": 1,
+        "heading": "10. Semantic Events منفصلة عن Replay Mutations",
+        "start_line": 307,
+        "end_line": 340,
+        "raw": "10. Semantic Events منفصلة عن Replay Mutations\n\nControlCommit قد تحتوي كذلك:\n\nControlEvent {\n    event_id\n\n    event_type\n    event_type_version\n\n    ordinal\n\n    payload\n}\n\nمثل:\n\nDecisionAccepted\nTriggerArmed\nGoalBlocked\nSpecialistIntegrated\n\nلكن هذه الأحداث ليست مضطرة وحدها لإعادة بناء الـentity.\n\nلدينا فصل:\n\nCanonicalMutation\n→ deterministic state replay\n\nControlEvent\n→ meaning / audit / lifecycle / forensics\n\nوهذا يبسط schema evolution كثيرًا.\n",
+        "sha256": "16911b12a0b1e999653d4fc9789b6779fa89cf96ee9a69763a8e5b0720b4caa0",
+        "bundle_start_line": 1600,
+        "bundle_end_line": 1633,
+        "unit_id": "RDMS-01-M01-U009",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-01_APPROVED_SOURCE_SET.txt"
+      }
+    ],
+    "consequence": "Preserve both non-superseded semantic requirements; do not invent a field alias or assessment threshold."
+  },
+  {
+    "id": "HG-01",
+    "owner": "L2",
+    "status": "OPEN",
+    "question": "Baseline confirmed/rejected support-floor combinations use removed Hypothesis support values; C01 introduces different SupportAssessment levels without an explicit complete threshold crosswalk.",
+    "exact_conflicting_scopes": [
+      {
+        "level": 1,
+        "heading": "15. Hypothesis Legal Combinations",
+        "start_line": 410,
+        "end_line": 435,
+        "raw": "15. Hypothesis Legal Combinations\nACTIVE\n\nيسمح:\n\nUNTESTED\nPLAUSIBLE\nSUPPORTED\nSTRONG\nCAUSALLY_VERIFIED\nREJECTED\n\nيجب:\n\nsupport = REFUTED\nCONFIRMED\n\nيجب على الأقل:\n\nsupport = STRONG\nor\nCAUSALLY_VERIFIED\nSUPERSEDED\n\nتعني أن explanation لم تعد هي formulation الحالية، وليس بالضرورة أنها proved false.\n",
+        "sha256": "4457dbb4241487d68a4cf7bf603e411fe9d7f5254550684df962e6e5d0dd8aad",
+        "bundle_start_line": 422,
+        "bundle_end_line": 447,
+        "unit_id": "RDMS-02-M02-U014",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt"
+      },
+      {
+        "level": 1,
+        "heading": "C01-02 — SupportAssessment",
+        "start_line": 37,
+        "end_line": 78,
+        "raw": "C01-02 — SupportAssessment\n\nClaim.support وHypothesis.support لا ينبغي أن يكونا مجرد قيمة قديمة لا تعرف هل ما زال أساسها صالحًا.\n\nننشئ:\n\nSupportAssessment {\n    assessment_id\n\n    target_ref\n\n    level:\n        UNASSESSED\n        WEAK\n        MODERATE\n        STRONG\n        VERIFIED\n        REFUTED\n\n    basis_refs[]\n\n    dependency_set_ref?\n\n    assessed_at_commit_seq\n\n    supersedes_assessment_id?\n}\n\nالـassessment نفسها immutable بعد commit.\n\nالكيان المستهدف يحمل:\n\ncurrent_support_assessment_ref?\n\nإذا Dependencies الخاصة بالـassessment أصبحت stale:\n\nassessment validity = STALE\n\nبصورة مشتقة.\n\nلا نحتاج كتابة Claim جديدة فقط لأن Repo تغير.\n",
+        "sha256": "e76034721bedc234c6ee03c2e40d3ba8af686a41f29ae0ba2ab0fc749e03806b",
+        "bundle_start_line": 1961,
+        "bundle_end_line": 2002,
+        "unit_id": "RDMS-02-M03-U001",
+        "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-02_APPROVED_SOURCE_SET.txt"
+      }
+    ],
+    "consequence": "Preserve both non-superseded semantic requirements; do not invent a field alias or assessment threshold."
+  },
+  {
+    "id": "TRANSPORT-CapabilityResult",
+    "owner": "L7",
+    "status": "OPEN",
+    "question": "Exact canonical payload/reference preservation and field conversion are not frozen by an editorial alias.",
+    "canonical_source": {
+      "name": "CapabilityResult",
+      "start_line": 1012,
+      "end_line": 1031,
+      "raw": "CapabilityResult {\n    patch_proposal?\n\n    proposed_claims[]\n    proposed_hypotheses[]\n    proposed_information_needs[]\n\n    evidence_refs[]\n\n    tool_requests[]\n    experiment_requests[]\n\n    confidence_assessment?\n\n    specialist_request?\n\n    needs[]\n\n    rationale_summary?\n}",
+      "raw_sha256": "b60b418b16f38240fec6c0be2929b5701ef1cbb2d8c59cf0014fb6bf2fb26e4a",
+      "partial_or_example": false,
+      "specification": "FCA",
+      "source_part": "v1.0.1 FROZEN",
+      "message_id": "FCA-1.0.1-FROZEN-SPEC",
+      "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/Formal_Cognitive_Architecture_v1.0.1_FROZEN_SPEC.md",
+      "bundle_start_line": 1012,
+      "bundle_end_line": 1031,
+      "message_order": -1
+    },
+    "transport_source": {
+      "name": "CapabilityResult",
+      "start_line": 372,
+      "end_line": 390,
+      "raw": "CapabilityResult {\n    invocation_id\n\n    proposal_refs[]\n\n    information_need_refs[]\n\n    tool_request_refs[]\n\n    experiment_request_refs[]\n\n    assessment_refs[]\n\n    dependency_set_ref\n\n    provenance_refs[]\n\n    result_status\n}",
+      "raw_sha256": "e8ae9d35f870fc3efb84694641074038fd2961677393b2a5f5ee6d6f0cb717b5",
+      "partial_or_example": false,
+      "specification": "RDMS-10",
+      "source_part": "Original draft",
+      "message_id": "99533762-bba8-407a-b27b-952a236c00a4",
+      "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+      "bundle_start_line": 384,
+      "bundle_end_line": 402,
+      "message_order": 23
+    },
+    "canonical_fields": [
+      "patch_proposal",
+      "proposed_claims",
+      "proposed_hypotheses",
+      "proposed_information_needs",
+      "evidence_refs",
+      "tool_requests",
+      "experiment_requests",
+      "confidence_assessment",
+      "specialist_request",
+      "needs",
+      "rationale_summary"
+    ],
+    "transport_fields": [
+      "invocation_id",
+      "proposal_refs",
+      "information_need_refs",
+      "tool_request_refs",
+      "experiment_request_refs",
+      "assessment_refs",
+      "dependency_set_ref",
+      "provenance_refs",
+      "result_status"
+    ],
+    "consequence": "Reject lossy conversion; carry source-owned meaning and provenance. Do not assert a fabricated callable signature."
+  },
+  {
+    "id": "TRANSPORT-MemoryRetrievalResult",
+    "owner": "L7",
+    "status": "OPEN",
+    "question": "Exact canonical payload/reference preservation and field conversion are not frozen by an editorial alias.",
+    "canonical_source": {
+      "name": "MemoryRetrievalResult",
+      "start_line": 1068,
+      "end_line": 1084,
+      "raw": "MemoryRetrievalResult {\n    retrieval_id\n\n    query_ref\n\n    candidate_refs[]\n\n    omitted_or_filtered_scope[]\n\n    ranking_policy_ref\n\n    retrieval_coverage\n\n    freshness_summary\n\n    created_at\n}",
+      "raw_sha256": "e4ae715a27b230289f343447d8b7723501f62538065a5e61fa5dc5009c17c67d",
+      "partial_or_example": false,
+      "specification": "RDMS-07",
+      "source_part": "Original draft",
+      "message_id": "938c1bc7-97a0-46ad-be19-cd3ba3ca125f",
+      "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-07_APPROVED_SOURCE_SET.txt",
+      "bundle_start_line": 1080,
+      "bundle_end_line": 1096,
+      "message_order": 14
+    },
+    "transport_source": {
+      "name": "MemoryRetrievalResult",
+      "start_line": 1136,
+      "end_line": 1146,
+      "raw": "MemoryRetrievalResult {\n    memory_refs[]\n\n    relevance_assessments[]\n\n    provenance_refs[]\n\n    applicability_assessments[]\n\n    trust_metadata_refs[]\n}",
+      "raw_sha256": "a70de6ab479231f1c2f991196c6406715513f940d0af266e1e05b22ce533c35a",
+      "partial_or_example": false,
+      "specification": "RDMS-10",
+      "source_part": "Original draft",
+      "message_id": "99533762-bba8-407a-b27b-952a236c00a4",
+      "source_path": "documentation_checkpoint/source_archive/project/AI_CODING_AGENT/reviews/source_archive/RDMS_ORIGINAL_SOURCES/RDMS-10_APPROVED_SOURCE_SET.txt",
+      "bundle_start_line": 1148,
+      "bundle_end_line": 1158,
+      "message_order": 23
+    },
+    "canonical_fields": [
+      "retrieval_id",
+      "query_ref",
+      "candidate_refs",
+      "omitted_or_filtered_scope",
+      "ranking_policy_ref",
+      "retrieval_coverage",
+      "freshness_summary",
+      "created_at"
+    ],
+    "transport_fields": [
+      "memory_refs",
+      "relevance_assessments",
+      "provenance_refs",
+      "applicability_assessments",
+      "trust_metadata_refs"
+    ],
+    "consequence": "Reject lossy conversion; carry source-owned meaning and provenance. Do not assert a fabricated callable signature."
+  }
+]
